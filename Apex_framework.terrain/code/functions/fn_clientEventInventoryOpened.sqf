@@ -1,13 +1,13 @@
 /*
 File: fn_clientEventInventoryOpened.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	22/11/2016 A3 1.64 by Quiksilver
-	
+
 Description:
 
 	Inventory Opened Event
@@ -93,7 +93,7 @@ private _isBackpack = getNumber (configFile >> 'CfgVehicles' >> (typeOf _invento
 				closeDialog 0;
 				(isNull (findDisplay 602))
 			};
-			50 cutText [(format ['%1s backpack is locked',(name _objectParent)]),'PLAIN'];
+			50 cutText [(format ['%1s рюкзак заблоковано',(name _objectParent)]),'PLAIN'];
 		};
 		if (player getVariable 'QS_backpack_lockState') then {
 			_QS_buttonCtrl ctrlSetText '\a3\Modules_f\data\iconlock_ca.paa';
@@ -127,7 +127,7 @@ if (!isNil {_inventory getVariable 'QS_arsenal_object'}) then {
 				['Open',TRUE] call (missionNamespace getVariable 'BIS_fnc_arsenal');
 				if (isNil {player getVariable 'QS_arsenalAmmoPrompt'}) then {
 					player setVariable ['QS_arsenalAmmoPrompt',TRUE,FALSE];
-					50 cutText ['To add ammunition, open the container on the LEFT (uniform,vest,backpack) and add ammunition on the RIGHT.','PLAIN'];
+					50 cutText ['Щоб додати амуніцію відкрийте контейнер ЛІВОРУЧ (уніформа,розгрузка,рюкзак) та додайте амуніцію ПРАВОРУЧ.','PLAIN'];
 				};
 				_c = TRUE;
 			};
@@ -135,7 +135,7 @@ if (!isNil {_inventory getVariable 'QS_arsenal_object'}) then {
 	};
 };
 if (!isNil {_inventory getVariable 'QS_inventory_disabled'}) then {
-	50 cutText ['This inventory is disabled!','PLAIN'];
+	50 cutText ['Цей інвентар вимкнено!','PLAIN'];
 	_c = TRUE;
 };
 if (_isBackpack isEqualTo 1) then {
@@ -145,7 +145,7 @@ if (_isBackpack isEqualTo 1) then {
 			if (alive _objectParent) then {
 				if (!isNil {_objectParent getVariable 'QS_backpack_lockState'}) then {
 					if (_objectParent getVariable 'QS_backpack_lockState') then {
-						50 cutText [(format ['%1s backpack is locked',(name _objectParent)]),'PLAIN',0.5];
+						50 cutText [(format ['%1s рюкзак заблоковано',(name _objectParent)]),'PLAIN',0.5];
 						_c = TRUE;
 					};
 				};
