@@ -42,5 +42,5 @@ if ((_obj getVariable 'QS_ears_remaining') < 1) then {
 [61,[player,(getPlayerUID player),profileName]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 ['ScoreBonus',['Ear slicer','1']] call (missionNamespace getVariable 'QS_fnc_showNotification');
 playSound 'ClickSoft';
-50 cutText ['Ear collected','PLAIN DOWN'];
+50 cutText ['Забрати жетон','PLAIN DOWN'];
 TRUE;

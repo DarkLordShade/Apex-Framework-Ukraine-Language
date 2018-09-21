@@ -3,11 +3,11 @@ File: fn_SMpriorityAA.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	21/07/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Anti-Air Battery
@@ -71,57 +71,57 @@ private _compositionData = [
 	[
 		["o_sam_system_04_f",[0.230469,-6.17627,0.0173378],179.236,[],TRUE,TRUE,FALSE,{(_this select 0)}], 			// o_sam_system_04_f   O_APC_Tracked_02_AA_F
 		["o_sam_system_04_f",[-0.212402,9.61426,0.0157723],359.523,[],TRUE,TRUE,FALSE,{(_this select 0)}], 			//	o_sam_system_04_f   O_APC_Tracked_02_AA_F
-		["Land_HBarrier_5_F",[-0.302979,1.63086,1.72132],0,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_Big_F",[-0.20874,1.77246,0],0,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_Big_F",[5.12134,-1.37109,0],271.094,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_5_F",[5.0769,1.81445,1.72132],89.7338,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_Big_F",[-5.27954,-1.6084,0],271.094,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_5_F",[-5.30835,1.51318,1.72132],89.7338,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_Big_F",[5.03076,5.12256,0],271.094,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[-7.21362,-0.240234,0.0305414],360,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_Big_F",[-5.32275,4.90576,0],271.094,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[7.15332,3.21045,0.0305414],359.999,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[-5.26563,-6.72168,0.0305414],6.13621e-005,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[4.98267,10.3843,0.0305424],360,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[3.98584,-11.5811,0],176.61,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[-10.6821,-6.2666,0],272.427,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[-3.64233,-11.9756,0],182.945,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[-10.8394,6.53223,0],270.45,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[12.0781,-4.38086,0],90.4428,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[9.75806,-9.31543,0],145.115,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[11.6382,8.96875,0],90.4428,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[-8.74756,12.0044,0],315.066,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall6_F",[-2.82495,14.6338,0],2.07366,[],FALSE,FALSE,TRUE,{}],  
-		["Land_HBarrierWall6_F",[5.39624,14.6694,0],1.06539,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrierWall_corner_F",[-10.2822,-11.9663,0],182.02,[],FALSE,FALSE,TRUE,{}], 
+		["Land_HBarrier_5_F",[-0.302979,1.63086,1.72132],0,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_Big_F",[-0.20874,1.77246,0],0,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_Big_F",[5.12134,-1.37109,0],271.094,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_5_F",[5.0769,1.81445,1.72132],89.7338,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_Big_F",[-5.27954,-1.6084,0],271.094,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_5_F",[-5.30835,1.51318,1.72132],89.7338,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_Big_F",[5.03076,5.12256,0],271.094,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[-7.21362,-0.240234,0.0305414],360,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_Big_F",[-5.32275,4.90576,0],271.094,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[7.15332,3.21045,0.0305414],359.999,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[-5.26563,-6.72168,0.0305414],6.13621e-005,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[4.98267,10.3843,0.0305424],360,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[3.98584,-11.5811,0],176.61,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[-10.6821,-6.2666,0],272.427,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[-3.64233,-11.9756,0],182.945,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[-10.8394,6.53223,0],270.45,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[12.0781,-4.38086,0],90.4428,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[9.75806,-9.31543,0],145.115,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[11.6382,8.96875,0],90.4428,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[-8.74756,12.0044,0],315.066,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[-2.82495,14.6338,0],2.07366,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall6_F",[5.39624,14.6694,0],1.06539,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrierWall_corner_F",[-10.2822,-11.9663,0],182.02,[],FALSE,FALSE,TRUE,{}],
 		["Land_HBarrierWall_corner_F",[11.0156,14.7471,0],0,[],FALSE,FALSE,TRUE,{}]
 	],
 	[
 		["o_sam_system_04_f",[-0.0292969,-6.354,0.0168018],178.855,[],TRUE,TRUE,FALSE,{(_this select 0)}], 		// o_sam_system_04_f    O_T_APC_Tracked_02_AA_ghex_F
 		["o_sam_system_04_f",[-0.321777,8.54443,0.0163908],359.998,[],TRUE,TRUE,FALSE,{(_this select 0)}], 		// o_sam_system_04_f   O_T_APC_Tracked_02_AA_ghex_F
-		["Land_HBarrier_01_big_4_green_F",[-0.081543,1.03174,0],0,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_line_5_green_F",[-0.195801,1.05566,1.74458],0,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_line_5_green_F",[5.23779,0.97168,1.69463],90,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_line_5_green_F",[-5.31372,0.904785,1.69334],268.879,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_big_4_green_F",[5.17529,-2.11475,0],88.4046,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_big_4_green_F",[-5.32666,-2.39697,0],269.013,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_big_4_green_F",[5.19482,4.3623,0],89.9908,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_big_4_green_F",[-5.57227,4.06348,0],269.013,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[-7.29956,-1.11963,0.0305424],0.000326158,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[7.06738,2.33105,0.0305405],359.999,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[-5.35156,-7.60107,0.0305414],360,[],FALSE,FALSE,TRUE,{}], 
-		["Box_East_AmmoVeh_F",[4.89673,9.50488,0.0305443],359.998,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[-10.9766,5.59082,0],272.586,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[-10.927,-6.896,0],272.586,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[3.46362,-12.6069,0],178.77,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[11.8621,-5.60059,0],90,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[-4.17578,-12.7153,0],181.822,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[11.6755,7.30371,0],90,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[-3.31226,13.3999,0],1.80299,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[9.60425,-10.2549,0],144.711,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[-8.68701,11.1494,0],316.332,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_6_green_F",[4.74365,13.3765,0],1.80299,[],FALSE,FALSE,TRUE,{}], 
-		["Land_HBarrier_01_wall_corner_green_F",[-10.5381,-12.6621,0],183.027,[],FALSE,FALSE,TRUE,{}], 
+		["Land_HBarrier_01_big_4_green_F",[-0.081543,1.03174,0],0,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_line_5_green_F",[-0.195801,1.05566,1.74458],0,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_line_5_green_F",[5.23779,0.97168,1.69463],90,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_line_5_green_F",[-5.31372,0.904785,1.69334],268.879,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_big_4_green_F",[5.17529,-2.11475,0],88.4046,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_big_4_green_F",[-5.32666,-2.39697,0],269.013,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_big_4_green_F",[5.19482,4.3623,0],89.9908,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_big_4_green_F",[-5.57227,4.06348,0],269.013,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[-7.29956,-1.11963,0.0305424],0.000326158,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[7.06738,2.33105,0.0305405],359.999,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[-5.35156,-7.60107,0.0305414],360,[],FALSE,FALSE,TRUE,{}],
+		["Box_East_AmmoVeh_F",[4.89673,9.50488,0.0305443],359.998,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[-10.9766,5.59082,0],272.586,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[-10.927,-6.896,0],272.586,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[3.46362,-12.6069,0],178.77,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[11.8621,-5.60059,0],90,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[-4.17578,-12.7153,0],181.822,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[11.6755,7.30371,0],90,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[-3.31226,13.3999,0],1.80299,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[9.60425,-10.2549,0],144.711,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[-8.68701,11.1494,0],316.332,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_6_green_F",[4.74365,13.3765,0],1.80299,[],FALSE,FALSE,TRUE,{}],
+		["Land_HBarrier_01_wall_corner_green_F",[-10.5381,-12.6621,0],183.027,[],FALSE,FALSE,TRUE,{}],
 		["Land_HBarrier_01_wall_corner_green_F",[11.1887,13.1079,0],4.08422,[],FALSE,FALSE,TRUE,{}]
 	]
 ] select (worldName in ['Tanoa','Lingor3']);
@@ -184,7 +184,7 @@ _compositionData = nil;
 					_damage = _oldDamage + (_damage - _oldDamage) * 0.67;
 					_damage;
 				}
-			];		
+			];
 		};
 		_aaHull addEventHandler [
 			'Deleted',
@@ -223,7 +223,7 @@ _compositionData = nil;
 		(crew _aaHull) joinSilent (createGroup [EAST,TRUE]);
 		{
 			_x setVariable ['QS_hidden',TRUE,TRUE];
-		} forEach (crew _aaHull);		
+		} forEach (crew _aaHull);
 		_aaTurrets pushBack [_aaHull,(gunner _aaHull),(group (gunner _aaHull)),(typeOf _aaHull),((weapons _aaHull) select ([0,1] select (_aaHull isKindOf 'Tank'))),0,0,0];
 	};
 } forEach _aaHulls;
@@ -240,14 +240,14 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Priority Target: Anti-Air Battery',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Пріоритетне завдання: Протиповітряна батарея',(toString [32,32,32])]);
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'The enemy has set up an Anti-Air Battery near our base. This is a priority target, soldiers! It has extremely long range! Get over there and take it out at all cost. While it is active, it is not advised to use air transport. This objective is not accurately marked. While it is re-arming (30 seconds), it will not be able to lock on at long range. Bringing heavy explosives is advised.',
-		'Anti-Air Battery',
-		'Anti-Air Battery'
+		'Противник встановив протиповітряну батарею біля нашої бази. Це пріоритетна мета, солдати! Батарея має надзвичайно великий радіус дії! Рухайтесь туди і ліквідійте ціль за будь-яку ціну. Поки ціль активна, не рекомендується використовувати повітряний транспорт.',
+		'Противоповітряна Батарея',
+		'Противоповітряна Батарея'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -257,7 +257,7 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center' size='2.2'>Priority Target</t><br/><t size='1.5' color='#b60000'>Anti-Air Battery</t><br/>____________________<br/>OPFOR forces are setting up an anti-air battery to hit you guys damned hard! We've picked up their positions with thermal imaging scans and have marked it on your map.<br/><br/>This is a priority target, boys!";
+_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Противоповітряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповітряну батарею, щоб заблокувати наш повітряний транспорт! Ми визначили їхне розташування за допомогою зображень з безпілотника і позначили ціль на карті.<br/><br/>Пріоритетна ціль";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewPriorityTarget',['Anti-Air Battery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 //comment 'Loop';

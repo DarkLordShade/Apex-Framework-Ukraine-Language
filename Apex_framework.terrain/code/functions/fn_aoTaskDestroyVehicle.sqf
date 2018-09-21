@@ -1,6 +1,6 @@
 /*
 File: fn_aoTaskDestroyVehicle.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -11,7 +11,7 @@ Last Modified:
 Description:
 
 	Destroy vehicle task
-	
+
 Flow:
 
 	Find vehicle
@@ -78,7 +78,7 @@ if (_state isEqualTo 1) then {
 					params ['_killed','_killer','_instigator'];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
-							['sideChat',[WEST,'HQ'],(format ['Target destroyed by %1!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+							['sideChat',[WEST,'HQ'],(format ['%1 знищив ціль!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
 				}
@@ -88,9 +88,9 @@ if (_state isEqualTo 1) then {
 				'QS_IA_TASK_AO_3',
 				TRUE,
 				[
-					'Intel has located an enemy vehicle. Take it out!',
-					'Destroy vehicle',
-					'Destroy vehicle'
+					'Розвідка виявила ворожий транспорт. Знищіть його.',
+					'Знищити транспорт',
+					'Знищити транспорт'
 				],
 				[_vehicle,TRUE],
 				'CREATED',
@@ -107,7 +107,7 @@ if (_state isEqualTo 1) then {
 					_vehicle
 				]
 			];
-			diag_log 'Destroy vehicle task created';
+			diag_log 'Знищити ворощий транспорт';
 		};
 	};
 };

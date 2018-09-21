@@ -3,15 +3,15 @@ File: secureIntelVehicle.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	5/10/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	Recover intel from a vehicle
-	
+
 	((([_position select 0,_position select 1] nearRoads 25) select {((_x isEqualType objNull) && (!((count (roadsConnectedTo _x)) isEqualTo 0)))}) isEqualTo [])
 ___________________________________________________________________________/*/
 
@@ -63,16 +63,16 @@ while {!_accepted} do {
 	};
 	if (_accepted) exitWith {};
 };
-	
+
 /*/------------------------------------------------------------------------- NEARBY POSITIONS TO SPAWN STUFF (THEY SPAWN IN TRIANGLE SO NO ONE WILL KNOW WHICH IS THE OBJ VEHICLE. HEHEHEHE./*/
-	
+
 _flatPos1 = _flatPos getPos [2,(random 360)];
 _flatPos2 = _flatPos getPos [10,(random 360)];
 _flatPos3 = _flatPos getPos [15,(random 360)];
-	
+
 /*/------------------------------------------------------------------------- CREATE GROUP, VEHICLE AND UNIT/*/
 /*/--------- OBJ 1/*/
-		
+
 _objVehType = selectRandom _objVehTypes;
 _obj1 = createVehicle [_objVehType,_flatPos1,[],0,'NONE'];
 missionNamespace setVariable [
@@ -93,9 +93,9 @@ missionNamespace setVariable [
 ];
 _objUnit1 assignAsDriver _obj1;
 _objUnit1 moveInDriver _obj1;
-	
+
 /*/--------- OBJ 2 /*/
-		
+
 _objVehType = selectRandom _objVehTypes;
 _obj2 = createVehicle [_objVehType,_flatPos2,[],0,'NONE'];
 missionNamespace setVariable [
@@ -116,9 +116,9 @@ missionNamespace setVariable [
 ];
 _objUnit2 assignAsDriver _obj2;
 _objUnit2 moveInDriver _obj2;
-	
+
 /*/-------- OBJ 3/*/
-		
+
 _objVehType = selectRandom _objVehTypes;
 _obj3 = createVehicle [_objVehType,_flatPos3,[],0,'NONE'];
 missionNamespace setVariable [
@@ -151,9 +151,9 @@ if ((random 1) > 0.5) then {
 };
 
 /*/---------- WHICH VEHICLE IS THE OBJECTIVE?/*/
-	
+
 _intelObj = selectRandom [_obj1,_obj2,_obj3];
-	
+
 /*/--------- OKAY, NOW ADD ACTION TO IT/*/
 
 for '_x' from 0 to 2 step 1 do {
@@ -180,7 +180,7 @@ _intelObj addEventHandler [
 			_killerDisplayName = getText (configFile >> 'CfgVehicles' >> _killerType >> 'displayName');
 			_objDisplayName = getText (configFile >> 'CfgVehicles' >> _objType >> 'displayName');
 			_name = name _killer;
-			['sideChat',[WEST,'BLU'],(format ['%1 has destroyed the Intel vehicle ( %2 )',_name,_objDisplayName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'BLU'],(format ['%1 знищив транспорт з документами ( %2 )',_name,_objDisplayName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	}
 ];
@@ -199,23 +199,23 @@ _intelObj addEventHandler [
 /*/--------------------------------------------------------------------------- SPAWN GUARDS/*/
 
 _enemiesArray = [_flatPos1] call (missionNamespace getVariable 'QS_fnc_smEnemyEastIntel');
-	
+
 /*/-------------------------------------------------------------------------- BRIEFING/*/
 
 _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 300) + (random 600),0];
 {
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
-} count ['QS_marker_sideMarker','QS_marker_sideCircle'];	
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Intel (Vehicle)',(toString [32,32,32])]);
+} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити документи (Траспорт)',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Sensitive intel is changing hands between high-ranking enemy officers. We believe the intel is located inside a vehicle. Search the vehicle inventories to locate the intel. If they detect our presence, they may attempt to escape. This objective is not accurately marked.',
-		'Secure Intel (Vehicle)',
-		'Secure Intel (Vehicle)'
+		'Важлива інформація переходить з рук до рук серед високопосадових ворожих офіцерів. Ми знаємо, що документи знаходиться всередині автомобіля. Якщо вони виявлять нашу присутність - можуть намагатися втекти.',
+		'Захопити документи (Траспорт)',
+		'Захопити документи (Траспорт)'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -226,10 +226,10 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Intel</t><br/>____________________<br/>We have reports from locals that sensitive, strategic information is changing hands. This is a target of opportunity!<br/><br/>We've marked the position on your map; head over there and secure the intel. It should be stored on one of the vehicles or on their persons.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повідомлення від місцевих жителів, які чули, що важлива інформація попала в ворожі руки.!<br/><br/>Ми позначили позицію на вашій карті. Її зберігають в одному з транспортних засобів або інформація у когось з бійців.</t>";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Intel']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-	
+
 /*/----- Set vars/*/
 
 _notEscaping = TRUE;
@@ -244,16 +244,16 @@ missionNamespace setVariable ['QS_sm_enemyDetected',FALSE,FALSE];
 for '_x' from 0 to 1 step 0 do {
 
 	/*/------------------------------------------ IF VEHICLE IS DESTROYED [FAIL]/*/
-	
+
 	if (!alive _intelObj) exitWith {
 		sleep 0.3;
-		['sideChat',[WEST,'HQ'],'Objective destroyed, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт знищено. Міссію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
-		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];	
+		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		sleep 120;
 		{
 			missionNamespace setVariable [
@@ -269,40 +269,40 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	/*/----------------------------------------- IS THE ENEMY TRYING TO ESCAPE? /*/
-	
+
 	if (_notEscaping) then {
 		/*/---------- NO? then LOOP until YES or an exitWith {}./*/
 		sleep 0.3;
 		if (([_intelObj,500] call (missionNamespace getVariable 'QS_fnc_enemyDetected')) || {(missionNamespace getVariable 'QS_sm_enemyDetected')}) then {
 			missionNamespace setVariable ['QS_sm_enemyDetected',FALSE,FALSE];
 			sleep 0.3;
-			['sideChat',[WEST,'HQ'],'The target has spotted us and is trying to escape with the intel!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-		
+			['sideChat',[WEST,'HQ'],'Ворог виявив нас і намагається втекти з документами!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+
 			/*/--------- WHERE TO / HOW WILL THE OBJECTIVES ESCAPE?/*/
-			
+
 			{
-				_escape1WP = _x addWaypoint [(missionNamespace getVariable 'QS_AOpos'), 100];	
+				_escape1WP = _x addWaypoint [(missionNamespace getVariable 'QS_AOpos'), 100];
 				_escape1WP setWaypointType 'MOVE';
 				_escape1WP setWaypointBehaviour 'CARELESS';
 				_escape1WP setWaypointSpeed 'FULL';
 			} forEach [_aGroup,_bGroup,_cGroup];
-			
+
 			/*/--------- END THE NOT ESCAPING LOOP/*/
-		
+
 			_notEscaping = false;
 			sleep 0.3;
-			
+
 			/*/--------- SET GETTING AWAY TO TRUE TO DETECT IF HE'S ESCAPED./*/
-			
+
 			_gettingAway = true;
 			_chaseTime = time + _chaseTimer;
 		};
 	};
-	
+
 	/*/------------------------------------------- THE ENEMY IS TRYING TO ESCAPE/*/
-	
+
 	if (_gettingAway) then {
 		sleep 2;
 		_currentIntelPos = position _intelObj;
@@ -319,7 +319,7 @@ for '_x' from 0 to 1 step 0 do {
 			_gettingAway = FALSE;
 		};
 	};
-	
+
 	if (!(_intelObj inArea 'QS_marker_sideCircle')) then {
 		_fuzzyPos = [(((position _intelObj) select 0) - 300) + (random 600),(((position _intelObj) select 1) - 300) + (random 600),0];
 		{
@@ -328,21 +328,21 @@ for '_x' from 0 to 1 step 0 do {
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		['QS_IA_TASK_SM_0',_fuzzyPos] call (missionNamespace getVariable 'BIS_fnc_taskSetDestination');
 	};
-	
+
 	/*/------------------------------------------ THE ENEMY ESCAPED [FAIL]/*/
-	
+
 	if (_heEscaped) exitWith {
-		['sideChat',[WEST,'HQ'],'Objective escaped, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ціль втекла, місія провалена!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		sleep 0.3;
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
-		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];	
-		
+		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
+
 		/*/--------- DELETE/*/
-		
+
 		{
 			missionNamespace setVariable [
 				'QS_analytics_entities_deleted',
@@ -358,19 +358,19 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	/*/------------------------------------------- THE INTEL WAS RECOVERED [SUCCESS]/*/
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
 		sleep 0.3;
-		['sideChat',[WEST,'HQ'],'Intel received. Mission accomplished! We are sending the data up to HQ for analysis.'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Документи отримані. Місію виконано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
-		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];	
-		
+		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
+
 		/*/--------- DELETE/*/
 
 		sleep 120;
@@ -382,11 +382,11 @@ for '_x' from 0 to 1 step 0 do {
 			];
 			deleteVehicle _x;
 		} forEach [_objUnit1,_objUnit2,_objUnit3,_obj1,_obj2,_obj3];
-		{	
+		{
 			if (_x isEqualType objNull) then {
 				0 = QS_garbageCollector pushBack [_x,'NOW_DISCREET',0];
 			};
 		} count _enemiesArray;
-	};	
+	};
 	sleep 1;
 };

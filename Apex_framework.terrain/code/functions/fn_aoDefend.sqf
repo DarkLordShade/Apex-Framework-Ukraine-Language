@@ -61,7 +61,7 @@ _defendMessages = [
 	_x setMarkerAlpha 0.75;
 	_x setMarkerPos (missionNamespace getVariable 'QS_HQpos');
 } forEach ['QS_marker_aoCircle','QS_marker_aoMarker'];
-'QS_marker_aoMarker' setMarkerText format['%1Defend %2 HQ',(toString [32,32,32]),(missionNamespace getVariable 'QS_aoDisplayName')];
+'QS_marker_aoMarker' setMarkerText format['%Обороняйте %2 Штаб',(toString [32,32,32]),(missionNamespace getVariable 'QS_aoDisplayName')];
 _centerPos = missionNamespace getVariable 'QS_HQpos';
 _centerPos params ['_centerPosX','_centerPosY','_centerPosZ'];
 private _allPlayers = allPlayers;
@@ -481,7 +481,7 @@ private _groupLeader = objNull;
 missionNamespace setVariable ['QS_defend_blockTimeout',FALSE,FALSE]; //missionNamespace setVariable ['QS_defend_blockTimeout',((random 1) > 0.95),FALSE];
 private _extended = FALSE;
 private _blockMessageShown = FALSE;
-private _blockMessage = 'The enemy is not giving up! Hold on as long as you can, soldiers!';
+private _blockMessage = 'Вороги не здаються! Протримайтесь скільки зможете, бійці!';
 missionNamespace setVariable ['QS_AI_targetsKnowledge_suspend',TRUE,FALSE];
 //comment 'Functions preload';
 _fn_serverDetector = missionNamespace getVariable 'QS_fnc_serverDetector';

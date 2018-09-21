@@ -3,11 +3,11 @@ File: secureUrban.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	25/06/2016 A3 1.62 by Quiksilver
-	
+
 Description:
 
 	Secure 3 weapons crates in a town
@@ -63,7 +63,7 @@ if (_QS_playerCount > 30) then {
 	_QS_inBuildingCount = 4;
 	_QS_garrisonCount = 16;
 	_QS_patrolCount = 4;
-	_QS_civilianCount = 9;		
+	_QS_civilianCount = 9;
 };
 if (_QS_playerCount > 40) then {
 	_QS_inBuildingCount = 5;
@@ -397,7 +397,7 @@ _index = 1;
 		_QS_object1 enableVehicleCargo FALSE;
 		_QS_object1 setPosATL _QS_obj1BP;
 		_QS_object1 setVariable ['QS_interaction_disabled',TRUE,TRUE];
-		
+
 		/*/_QS_object1 setPosATL [((getPosATL _QS_building) select 0),((getPosATL _QS_building) select 1),1];/*/
 		_QS_object1 enableSimulationGlobal TRUE;
 		for '_x' from 0 to 2 step 1 do {
@@ -431,7 +431,7 @@ _index = 1;
 		_grp = [_safePos,(random 360),EAST,'OIA_GuardSentry',FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 		{
 			0 = _QS_allArray pushBack _x;
-			0 = _QS_enemyArray pushBack _x;		
+			0 = _QS_enemyArray pushBack _x;
 		} count (units _grp);
 		[(units _grp),1] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 		[_grp,_safePos,50] call (missionNamespace getVariable 'QS_fnc_taskPatrol');
@@ -473,7 +473,7 @@ _index = 1;
 			_QS_unit enableStamina FALSE;
 			0 = _QS_allArray pushBack _QS_unit;
 			0 = _QS_enemyArray pushBack _QS_unit;
-			
+
 			_QS_unit disableAI 'PATH';
 			if ((random 1) > 0.25) then {
 				_QS_unit setUnitPos 'UP';
@@ -485,7 +485,7 @@ _index = 1;
 		_grp = [_safePos,(random 360),EAST,'OIA_GuardSentry',FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 		{
 			0 = _QS_allArray pushBack _x;
-			0 = _QS_enemyArray pushBack _x;		
+			0 = _QS_enemyArray pushBack _x;
 		} count (units _grp);
 		[(units _grp),1] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 		[_grp,_safePos,50] call (missionNamespace getVariable 'QS_fnc_taskPatrol');
@@ -540,7 +540,7 @@ _index = 1;
 		_grp = [_safePos,(random 360),EAST,'OIA_GuardSentry',FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 		{
 			0 = _QS_allArray pushBack _x;
-			0 = _QS_enemyArray pushBack _x;		
+			0 = _QS_enemyArray pushBack _x;
 		} count (units _grp);
 		[(units _grp),1] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 		[_grp,_safePos,50] call (missionNamespace getVariable 'QS_fnc_taskPatrol');
@@ -676,15 +676,15 @@ missionNamespace setVariable ['QS_mission_urban_objectsSecured',0,FALSE];
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 _QS_firstDetected = FALSE;
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Caches',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити схрони',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'The enemy is supplying an insurgency with advanced guidance systems for their anti-air launchers. Get over there and secure the crates! They look like small plastic boxes. There will be 3 crates located in the marked areas, search the nearby buildings to locate.',
-		'Secure Caches',
-		'Secure Caches'
+		'Ворог постачає повстанцям передові системами наведення для протиповітряних пускових установок. Прямуйте туди і захопіть ящики. У відмічених областях буде розташовано 3 ящики.',
+		'Захопити ворожі схрони',
+		'Захопити ворожі схрони'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -757,7 +757,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if ((_QS_objectArray findIf {(alive _x)}) isEqualTo -1) then {
 		_QS_missionSuccess = FALSE;
-		_QS_missionFailed = TRUE;		
+		_QS_missionFailed = TRUE;
 	};
 	_QS_allSecured = TRUE;
 	{
@@ -785,7 +785,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (_QS_enemyDetected) exitWith {};
 		} count _QS_enemyArray;
 		if (_QS_enemyDetected) then {
-			['ST_URBAN',['Side Mission Update','The enemy has detected our approach']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_URBAN',['Додаткова місія оновлена','Ворог виявив наш підхід']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			{
 				if (alive _x) then {
 					if ((random 1) > 0.75) then {
@@ -797,11 +797,11 @@ for '_x' from 0 to 1 step 0 do {
 			['QS_IA_TASK_SM_0',TRUE,_QS_enemyDetected_endTime] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 			_QS_bombTimer_started = TRUE;
 			_QS_urbanTimerBroadcast_delay = time + 25;
-			_QS_text = format ['CSAT will destroy the intel in %1',[((round(_QS_enemyDetected_endTime - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
+			_QS_text = format ['CSAT намагається знищити документи %1',[((round(_QS_enemyDetected_endTime - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
 			['systemChat',_QS_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
-	
+
 	if (!(_box1_secured)) then {
 		if (!isNull _QS_object1) then {
 			if (alive _QS_object1) then {
@@ -811,7 +811,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object1 setPos [-5000,-5000,0];
 					(_markers select 0) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Side Mission Update',(format ['%1 / 3 intel secured',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -825,7 +825,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object2 setPos [-5000,-5000,0];
 					(_markers select 1) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Side Mission Update',(format ['%1 / 3 intel secured',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -839,7 +839,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object3 setPos [-5000,-5000,0];
 					(_markers select 2) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Side Mission Update',(format ['%1 / 3 intel secured',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -850,7 +850,7 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				(group _x) setBehaviour 'AWARE';
 			} count _QS_enemyArray;
-			
+
 			if (!(_QS_qrfDeployed)) then {
 				_QS_qrfDeployed = TRUE;
 				_QS_positionAccepted = FALSE;
@@ -877,10 +877,10 @@ for '_x' from 0 to 1 step 0 do {
 				[(units _QS_qrfGroup),2] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 				{0 = _QS_enemyArray pushBack _x;} count (units _QS_qrfGroup);
 			};
-			
+
 			if (serverTime > _QS_enemyDetected_endTime) then {
 				if (!(_allSecured)) then {
-					['systemChat','CSAT has destroyed the crates!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+					['systemChat','CSAT знищили ящики!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				};
 			};
 		};
@@ -910,11 +910,11 @@ for '_x' from 0 to 1 step 0 do {
 					};
 				} forEach _QS_objectArray;
 				_QS_missionSuccess = FALSE;
-				_QS_missionFailed = TRUE;		
+				_QS_missionFailed = TRUE;
 			};
 		};
 	};
-	
+
 	if (time > _QS_checkEnemyDelay) then {
 		if (({(alive _x)} count _QS_enemyArray) < 14) then {
 			for '_x' from 0 to 49 step 1 do {
@@ -932,7 +932,7 @@ for '_x' from 0 to 1 step 0 do {
 				];
 				_QS_unit = _QS_unit call (missionNamespace getVariable 'QS_fnc_unitSetup');
 				0 = _QS_allArray pushBack _QS_unit;
-				0 = _QS_enemyArray pushBack _QS_unit;		
+				0 = _QS_enemyArray pushBack _QS_unit;
 				_QS_unit enableStamina FALSE;
 				[_QS_unit,'GryffinRegiment'] call (missionNamespace getVariable 'BIS_fnc_setUnitInsignia');
 			};

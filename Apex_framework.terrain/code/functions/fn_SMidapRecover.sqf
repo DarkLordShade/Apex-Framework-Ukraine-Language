@@ -3,13 +3,13 @@ File: idapRecover.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	24/03/2018 A3 1.82 by Quiksilver
-	
+
 Description:
-	
+
 	Recover some stuff stolen from an IDAP supply depot
 _________________________________________________/*/
 
@@ -203,9 +203,9 @@ _composition = [
 	["Land_PaperBox_01_small_stacked_F",[-9.0957,-1.04272,0.0240006],179.618,[],false,false,TRUE,{}],
 	["Land_Net_Fence_8m_F",[2.37012,7.05811,0],180.311,[],false,false,false,{}],
 	["Land_Net_Fence_8m_F",[-2.43213,6.95508,0],0.492948,[],false,false,false,{}],
-	["C_IDAP_Van_02_vehicle_F",[9.3125,2.05249,0.0848665],0.000515136,[],false,false,false,{(_this select 0) lock 2;(_this select 0) enableVehicleCargo FALSE;(_this select 0) enableRopeAttach FALSE;(_this select 0) setVariable ['QS_curator_disableEditability',TRUE,FALSE];(_this select 0);}], 
+	["C_IDAP_Van_02_vehicle_F",[9.3125,2.05249,0.0848665],0.000515136,[],false,false,false,{(_this select 0) lock 2;(_this select 0) enableVehicleCargo FALSE;(_this select 0) enableRopeAttach FALSE;(_this select 0) setVariable ['QS_curator_disableEditability',TRUE,FALSE];(_this select 0);}],
 	["Land_Sign_WarningNoWeapon_F",[3.12988,-9.2605,0],0,[],false,false,false,{}],
-	["Flag_IDAP_F",[3.50391,-8.65796,0],0,[],false,true,false,{}], 
+	["Flag_IDAP_F",[3.50391,-8.65796,0],0,[],false,true,false,{}],
 	["Land_FieldToilet_F",[-8.99414,-5.93384,0.0240054],269.987,[],false,false,TRUE,{}],
 	["Land_Net_Fence_8m_F",[-10.4458,-0.914307,0],90.1643,[],false,false,false,{}],
 	["Land_Net_Fence_8m_F",[-2.55664,-8.93701,0],0,[],false,false,false,{}],
@@ -213,10 +213,10 @@ _composition = [
 	["Land_Net_Fence_8m_F",[-10.4487,-0.946045,0],270.329,[],false,false,false,{}],
 	["Land_Net_Fence_Gate_F",[12.3018,-9.02319,0],0,[],false,true,false,{}],
 	["Land_PaperBox_01_small_stacked_F",[-9.36426,-7.62183,0.0240002],179.617,[],false,false,TRUE,{}],
-	["Land_LampShabby_F",[-10.1895,6.77344,0],139.81,[],false,true,false,{}], 
+	["Land_LampShabby_F",[-10.1895,6.77344,0],139.81,[],false,true,false,{}],
 	["Land_WaterBottle_01_stack_F",[12.6294,1.07324,0.0291462],360,[],false,false,TRUE,{}],
 	["Land_FoodSack_01_full_white_idap_F",[13.6191,-1.97363,0.0240002],236.526,[],false,false,TRUE,{}],
-	["Land_LampShabby_F",[-10.3164,-8.75342,0],42.4054,[],false,true,false,{}], 
+	["Land_LampShabby_F",[-10.3164,-8.75342,0],42.4054,[],false,true,false,{}],
 	["Land_FoodSacks_01_large_white_idap_F",[14.2363,-0.9021,0.0240002],277.766,[],false,false,TRUE,{}],
 	["Land_FoodSacks_01_small_white_idap_F",[14.418,-2.02002,0.0240002],360,[],false,false,TRUE,{}],
 	["Land_Cargo20_IDAP_F",[14.2031,3.91797,0.0240016],179.372,[],false,false,TRUE,{}],
@@ -396,7 +396,7 @@ private _uncertainPosition = [
 	((_idapScenePosition select 1) + 250 - (random 600)),
 	0
 ];
-'QS_marker_sideMarker' setMarkerText (format ['%1Help IDAP',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Допомога IDAP',(toString [32,32,32])]);
 {
 	_x setMarkerPos _uncertainPosition;
 	_x setMarkerAlpha 1;
@@ -405,9 +405,9 @@ private _uncertainPosition = [
 	'QS_TASK_SM_IDAP_1',
 	TRUE,
 	[
-		(format ['<br/>1. Examine scene.<br/>2. Find the wounded aid worker, and search for clues.<br/>3. Locate medical supplies.<br/>4. Bring critical medical supplies to wounded aid worker.<br/>5. Medevac aid worker to our Medevac HQ at base or another field hospital.<br/><br/><br/>A local IDAP supply depot has come under attack by insurgents. A nearby civilian reported that one aid worker appeared to be still alive. Your job is to get over there and recover him. Some of the insurgents have already left the scene, taking critical medical supplies with them. You may have to track them down to recover the medical supplies.<br/><br/>Examine bodies at the scene for clues as to the location of the insurgents.<br/><br/>This objective is not accurately marked.']),
-		'Help IDAP',
-		'Help IDAP'
+		(format ['<br/>1. Перевірте сцену.<br/>2. Знайдіть поранених і шукайте підказки.<br/>3. Знайдіть медичні приналежності.<br/>4. Bring critical medical supplies to wounded aid worker.<br/>5. ???.<br/><br/><br/>Місцевий пункт постачання IDAP. Цивільні поряд говорять, що один з робітників допоміжної служби все ще залишається в живих. Ваша робота - дістатися туди та визволити його. Дехто з повстанців залишив зону та забрав з собою деяке медичне устаткування. Вам треба відстежити їх та повернути медичне обладнання.<br/><br/>Оглядайте тіла загиблих на місці щоб дізнатись про розташування повстанців.<br/><br/>Цілі не точно позначені на мапі']),
+		'Допомога IDAP',
+		'Допомога IDAP'
 	],
 	_uncertainPosition,
 	'CREATED',
@@ -522,7 +522,7 @@ private _sounds = [
 	'A_01','A_02','A_03','A_04','A_05','A_06','A_07','A_08',
 	'B_01','B_02','B_03','B_04','B_05','B_06','B_07','B_08',
 	'C_01','C_02','C_03','C_04','C_05'
-];	
+];
 private _unitStabilised = FALSE;
 private _aidMarker = '';
 _aidMarker = createMarker [(format ['QS_marker_aid_%1',(str (random 10e3))]),[0,0,0]];
@@ -552,7 +552,7 @@ for '_x' from 0 to 1 step 0 do {
 		['SM_IDAP_BRIEF',['Side Mission','Mission failed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		sleep 5;
 		[0,[0,0,0]] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
-	};	
+	};
 	if (_findNewLocation) then {
 		_houseFoundAttempts = 0;
 		_searchMaxRadius = 1800;
@@ -587,7 +587,7 @@ for '_x' from 0 to 1 step 0 do {
 			missionNamespace setVariable ['QS_sidemission_building',_house,FALSE];
 			_housePosition = position _house;
 			_houseMarker = createMarker [(format ['QS_marker_house_%1',(str (random 10e3))]),[0,0,0]];
-			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Side Mission: Locate medical supplies']);
+			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Додаткова місія: Знайдіть медичні приналежності']);
 			_houseMarker setMarkerAlpha 0;
 			_houseMarker setMarkerPos _housePosition;
 			_houseMarker setMarkerShape 'ICON';
@@ -595,7 +595,7 @@ for '_x' from 0 to 1 step 0 do {
 			_houseMarker setMarkerColor 'ColorGREEN';
 			_houseMarker setMarkerType 'mil_triangle';
 			_houseMarker setMarkerAlpha 1;
-			
+
 			['SM_IDAP_UPDATE',['Side Mission Update','Locate medical supplies']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 			_truckPos = [_housePosition,10,25,5,0,0.5,0] call _fn_findSafePos;
@@ -669,11 +669,11 @@ for '_x' from 0 to 1 step 0 do {
 						[
 							[],
 							{
-								50 cutText ['No medical supplies found. Keep searching, soldier!','PLAIN DOWN',0.75];
+								50 cutText ['Медичних припасів не знайдено.  Продовжуй пошуки, солдат!','PLAIN DOWN',0.75];
 							}
 						] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
 						['SM_IDAP_UPDATE',['Side Mission Update','Medical supplies not found']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-						
+
 						_findNewLocation = TRUE;
 						_monitorScene = FALSE;
 						_houseFound = FALSE;
@@ -688,14 +688,14 @@ for '_x' from 0 to 1 step 0 do {
 				if (alive _crate) then {
 					if (_crateState isEqualTo 'DETACHED') then {
 						if (!isNull (attachedTo _crate)) then {
-						
+
 							if (!(_suppliesFound)) then {
 								_suppliesFound = TRUE;
 								['SM_IDAP_UPDATE',['Side Mission Update','Medical supplies located!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 								[
 									[],
 									{
-										50 cutText ['Medical supplies located!','PLAIN DOWN',0.75];
+										50 cutText ['Медичні припаси знайдені!','PLAIN DOWN',0.75];
 									}
 								] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
 							};
@@ -771,7 +771,7 @@ for '_x' from 0 to 1 step 0 do {
 								_medevacTaskID,
 								TRUE,
 								[
-									'The humanitarian worker has been stabilised, get him back to a field hospital to complete our mission!',
+									'Гуманітарного працівника стабілізовано. Доставте його до польового шпиталю як найшвидше щоб завершити міссію!',
 									'Medevac',
 									'Medevac'
 								],
@@ -866,7 +866,7 @@ for '_x' from 0 to 1 step 0 do {
 					{
 						if (alive _x) then {
 							if (_x isKindOf 'Man') then {
-								if (alive _crate) then {	
+								if (alive _crate) then {
 									doStop _x;
 									_x doMove (getPosATL _crate);
 								};

@@ -3,11 +3,11 @@ File: escortVehicle.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	1/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Get vehicle to its destination
@@ -139,7 +139,7 @@ if (worldName isEqualTo 'Tanoa') then {
 	_distanceInFront_random = 500;
 } else {
 	_distanceInFront_fixed = 600;
-	_distanceInFront_random = 1000;	
+	_distanceInFront_random = 1000;
 };
 _distanceToAmbush = 0;
 _vehiclePosInFront = _vehicle getPos [(_distanceInFront_fixed + (random _distanceInFront_random)),_vehicleTravelDirection];
@@ -182,7 +182,7 @@ _vehicle addEventHandler [
 		params ['_vehicle','_position','_unit','_turret'];
 		if (_position == 'driver') then {
 			if (isPlayer _unit) then {
-				['vehicleChat',_vehicle,'Get this vehicle to its destination, soldier!'] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
+				['vehicleChat',_vehicle,'Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
 			};
 		};
 	}
@@ -199,12 +199,12 @@ _vehicle addEventHandler [
 		params ['_vehicle','_unit1','_unit2'];
 		if ('Driver' in (assignedVehicleRole _unit1)) then {
 			if (isPlayer _unit1) then {
-				['vehicleChat',_vehicle,'Mission: Get this vehicle to its destination, soldier!'] remoteExec ['QS_fnc_remoteExecCmd',_unit1,FALSE];
+				['vehicleChat',_vehicle,'Місія: Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit1,FALSE];
 			};
 		};
 		if ('Driver' in (assignedVehicleRole _unit2)) then {
 			if (isPlayer _unit2) then {
-				['vehicleChat',_vehicle,'Mission: Get this vehicle to its destination, soldier!'] remoteExec ['QS_fnc_remoteExecCmd',_unit2,FALSE];
+				['vehicleChat',_vehicle,'Місія: Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit2,FALSE];
 			};
 		};
 	}
@@ -278,11 +278,11 @@ _launch = FALSE;
 _IEDtype = 'ATMine';
 _armorTokenVehicle = [];
 _bto = [
-	'BUILDING','HOUSE','CHURCH','CHAPEL', 
-	'CROSS','ROCK','BUNKER','FORTRESS','FOUNTAIN','VIEW-TOWER', 
-	'LIGHTHOUSE','QUAY','FUELSTATION','HOSPITAL','FENCE','WALL', 
-	'BUSSTOP','ROAD','TRANSMITTER','STACK','RUIN', 
-	'TOURISM','WATERTOWER','ROCKS','POWER LINES','RAILWAY', 
+	'BUILDING','HOUSE','CHURCH','CHAPEL',
+	'CROSS','ROCK','BUNKER','FORTRESS','FOUNTAIN','VIEW-TOWER',
+	'LIGHTHOUSE','QUAY','FUELSTATION','HOSPITAL','FENCE','WALL',
+	'BUSSTOP','ROAD','TRANSMITTER','STACK','RUIN',
+	'TOURISM','WATERTOWER','ROCKS','POWER LINES','RAILWAY',
 	'POWERSOLAR','POWERWAVE','POWERWIND','SHIPWRECK'
 ];
 comment '[_position,_bto] call _nearbySpawnPos';
@@ -308,7 +308,7 @@ _marker0 setMarkerShape 'Icon';
 _marker0 setMarkerType 'mil_dot';
 _marker0 setMarkerColor 'ColorGreen';
 _marker0 setMarkerAlpha 1;
-_marker0 setMarkerText (format ['%1Side mission: Truck Destination',(toString [32,32,32])]);
+_marker0 setMarkerText (format ['%1Додаткова місія: Місце доставки вантажівки',(toString [32,32,32])]);
 _marker0 setMarkerPos _destination;
 _distanceInFront_fixed = 250;
 _distanceInFront_random = 500;
@@ -336,9 +336,9 @@ comment 'Communicate to players';
 	'QS_IA_TASK_SM_ESCORT',
 	TRUE,
 	[
-		(format ['Get the vehicle to its destination near %1 (marked on map). It is strongly advised to stay on roads, and not to bring tanks or APCs, as this can disturb buried IEDs. It is suggested to keep moving even during contact, to prevent getting flanked and attacked by more heavily armed insurgents. Good luck, soldier!',_nearestVillage]),
-		'Side Mission: Escort truck',
-		'Side Mission: Escort truck'
+		(format ['Отримайте транспортний засіб %1 (транспорт позначений на мапі).',_nearestVillage]),
+		'Додаткова місія: Супровід вантажівки',
+		'Додаткова місія: Супровід вантажівки'
 	],
 	[_vehicle,TRUE],
 	'CREATED',
@@ -349,7 +349,7 @@ comment 'Communicate to players';
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 ['NewSideMission',['Escort truck']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-'QS_marker_sideMarker' setMarkerText (format ['%1Escort truck',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Супровід вантажівки',(toString [32,32,32])]);
 waitUntil {
 	sleep 3;
 	(!alive _vehicle) ||
@@ -383,7 +383,7 @@ for '_x' from 0 to 1 step 0 do {
 							if ((_vehiclePos distance2D _startPosition) > _safezone_radius) then {
 								_timeOffRoad = _timeOffRoad + 1;
 								if (_timeOffRoad > 7) then {
-									['sideChat',[WEST,'BLU'],'Side mission - The vehicle has struck a buried landmine!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+									['sideChat',[WEST,'BLU'],'Додаткова місія - Транспорт вражено міною!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									_hasHitLandmine = TRUE;
 								};
 							};
@@ -515,13 +515,13 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 		if (_enabled_IED) then {
-		
+
 		};
 		if (_enabled_mech) then {
-		
+
 		};
 		if (_enabled_RPG) then {
-		
+
 		};
 		comment 'Spawn force protection';
 		_ambushCount = _ambushCount + 1;
@@ -772,7 +772,7 @@ for '_x' from 0 to 1 step 0 do {
 					};
 				};
 			} count _enemyArray;
-			
+
 			if (time > _updateMoveDelay) then {
 				{
 					_unit = _x;
@@ -831,7 +831,7 @@ for '_x' from 0 to 1 step 0 do {
 							_suppressTarget attachTo [_convoyVehicle,[0,(random 2),(random 1)]];
 							_convoyVehicle setVariable [_suppressTarget_var,_suppressTarget,FALSE];
 							0 = _suppressTargets pushBack _suppressTarget;
-						};	
+						};
 					};
 				} count _QS_manage_convoy_vehicles;
 				if (!(_QS_manage_convoy_armor isEqualTo [])) then {

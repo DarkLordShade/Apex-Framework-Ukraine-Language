@@ -1443,7 +1443,7 @@ if (_case < 80) exitWith {
 				_marker1 setMarkerShape 'ICON';
 				_marker1 setMarkerType 'mil_dot';
 				_marker1 setMarkerColor 'ColorWEST';
-				_marker1 setMarkerText (format ['%1Supply Depot',(toString [32,32,32])]);
+				_marker1 setMarkerText (format ['%1Ворожі припаси',(toString [32,32,32])]);
 				_marker1 setMarkerSize [0.5,0.5];
 				_marker1 setMarkerPos (missionNamespace getVariable ['QS_virtualSectors_sd_position',[-1000,-1000,0]]);
 				_marker1 setMarkerAlpha 1;
@@ -1612,7 +1612,7 @@ if (_case < 90) exitWith {
 			if (!(isObjectHidden _entity)) then {
 				_entity hideObjectGlobal TRUE;
 			};
-			_text = format ['%1 (%2) located intel',_profileName,_groupID];
+			_text = format ['%1 (%2) знайшов документи',_profileName,_groupID];
 			_text remoteExec ['systemChat',-2];
 			if (!((_entity getVariable ['QS_intel_marker',-1]) isEqualTo -1)) then {
 				for '_x' from 0 to 1 step 1 do {
@@ -1626,7 +1626,7 @@ if (_case < 90) exitWith {
 		if (!(isObjectHidden _entity)) then {
 			_entity hideObjectGlobal TRUE;
 			_entity enableSimulationGlobal FALSE;
-			_text = format ['%1 (%2) located intel',_profileName,_groupID];
+			_text = format ['%1 (%2) знайшов документи',_profileName,_groupID];
 			_text remoteExec ['systemChat',-2];
 			[(_entity getVariable ['QS_entity_assocPos',(position _entity)]),_clientOwner] spawn (missionNamespace getVariable 'QS_fnc_aoTaskIDAP');
 		};
@@ -1636,7 +1636,7 @@ if (_case < 90) exitWith {
 		if (!(isObjectHidden _entity)) then {
 			_entity hideObjectGlobal TRUE;
 			_entity enableSimulationGlobal FALSE;
-			_text = format ['%1 (%2) located intel',_profileName,_groupID];
+			_text = format ['%1 (%2) знайшов документи',_profileName,_groupID];
 			_text remoteExec ['systemChat',-2];
 			[(_entity getVariable ['QS_entity_assocPos',(getPosATL _entity)]),_clientOwner] spawn (missionNamespace getVariable 'QS_fnc_aoTaskIG');
 		};
@@ -1733,14 +1733,14 @@ if (_case < 90) exitWith {
 		if (!(isObjectHidden _entity)) then {
 			_entity hideObjectGlobal TRUE;
 			_entity enableSimulationGlobal FALSE;
-			_text = format ['%1 (%2) located intel',_profileName,_groupID];
+			_text = format ['%1 (%2) знайшов документи',_profileName,_groupID];
 			_text remoteExec ['systemChat',-2];
 			[(getPosATL _entity)] spawn (missionNamespace getVariable 'QS_fnc_aoTaskKill');
 		};
 	};
 	if (_case isEqualTo 85) then {
 		['GRID_IDAP_UPDATE',['Area Of Operations','Objective failed<br/>No civilian casualties']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		'QS_marker_grid_civState' setMarkerText (format ['%1No civilian casualties (failed)',(toString [32,32,32])]);
+		'QS_marker_grid_civState' setMarkerText (format ['%1Жодних жертв серед цивільного населення (Провалено)',(toString [32,32,32])]);
 		'QS_marker_grid_civState' setMarkerColor 'ColorRED';
 	};
 	if (_case isEqualTo 86) then {

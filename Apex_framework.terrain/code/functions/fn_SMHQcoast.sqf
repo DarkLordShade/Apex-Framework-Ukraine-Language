@@ -168,15 +168,15 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Smuggled Explosives',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити ворожу контрабанду',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		(format ['Secure the smuggled explosives! There are smuggled explosives somewhere on the %1 coastline in this area. Locate and secure them. Once you have secured the explosives, run away! This objective is not accurately marked.',worldName]),
-		'Secure Smuggled Explosives',
-		'Secure Smuggled Explosives'
+		(format ['Захопити ворожу контрабанду! Контрабандні вибухові речовини десь на береговій лінії %1 в цій області. Знайдіть і захопіть їх. Як тільки захопите вибухівку, біжіть подалі від неї!',worldName]),
+		'Захопити ворожу контрабанду',
+		'Захопити ворожу контрабанду'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -188,12 +188,12 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
 _c4Messages = [
-	'The charge has been set! 15 seconds until detonation.',
-	'The c4 has been set! 15 seconds until detonation.',
-	'The charge is set! 15 seconds until detonation.'
+	'15 секунд до детонації.',
+	'C4 встановлено!  15 секунд до детонації.',
+	'Заряд встановлений!  15 секунд до детонації.'
 ];
 _c4Message = selectRandom _c4Messages;
-_briefing = parseText "<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Smuggled Explosives</t><br/>____________________<br/>The OPFOR have been smuggling explosives onto the island and hiding them in a Mobile HQ on the coastline.<br/><br/>We've marked the building on your map; head over there and secure the current shipment. Keep well back when you blow it; there's a lot of stuff in that building.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити ворожу контрабанду</t><br/>____________________<br/>OPFOR займається контрабандою на острові, вони переховуються у мобільному штабі на узбережжі.<br/><br/>Ми позначили будівлю на вашій карті; направляйся туди і захопіть партію контрабанди.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Smuggled Explosives']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	

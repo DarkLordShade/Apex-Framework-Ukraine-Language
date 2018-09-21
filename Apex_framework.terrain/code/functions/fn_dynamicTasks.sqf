@@ -1,6 +1,6 @@
 /*/
 File: fn_dynamicTasks.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -10,7 +10,7 @@ Last Modified:
 
 Description:
 
-	Dynamic Tasks	
+	Dynamic Tasks
 ____________________________________________________________________________/*/
 
 params ['_case','_type','_params','_isRx'];
@@ -83,7 +83,7 @@ if (_case isEqualTo 1) then {
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
 		(missionNamespace getVariable ['QS_dynTask_medevac_array',[]]) pushBack _entity;
 		[_entityName,{50 cutText [(format ['%1 has requested Medevac',_this]),'PLAIN DOWN',0.5];}] remoteExec ['call',(allPlayers select {(_x getUnitTrait 'QS_trait_pilot')}),FALSE];
-		private _description = format ['Medevac %1.<br/><br/> Bring %1 to the medical facility at base. The location is marked on your map as Medevac HQ.<br/><br/>This person cannot be revived by others.<br/><br/>If the task does not complete, have the patient wait at the medical facility for approximately 30 seconds.',_entityName];
+		private _description = format ['Врятувати %1.<br/><br/> Принести %1 до мед палатки на базі. Місце розташування позначено на вашій карті як Мед.штаб.<br/><br/>Цю людину не можуть відродити інші.<br/><br/>Якщо завдання не завершено, тоді той, кого доставили до Мед.штабу, мусить зачекати в ньому 30-50 секунд.',_entityName];
 		_array = [
 			_taskID,
 			'ADD',
@@ -100,8 +100,8 @@ if (_case isEqualTo 1) then {
 						TRUE,
 						[
 							_description,
-							'Medevac',
-							'Medevac'
+							'Врятувати',
+							'Врятувати'
 						],
 						[_entity,TRUE],
 						'CREATED',
@@ -152,7 +152,7 @@ if (_case isEqualTo 1) then {
 	if (_type isEqualTo 'PRISONER') then {
 		_entity = _params select 0;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
-		private _description = 'Ground forces have arrested a unit, get him back to base for interrogation. Locate the fenced area at base (map marker GITMO) and release him there to complete the mission.';
+		private _description = 'Сухопутні війська заарештували бійця, доставте його на базу для допиту. Знайдіть огорожене місце в базі (маркер на базі Вязниця ) та відпустіть його там, щоб завершити місію.';
 		_array = [
 			_taskID,
 			'ADD',
@@ -169,8 +169,8 @@ if (_case isEqualTo 1) then {
 						TRUE,
 						[
 							_description,
-							'Prisoner Extract',
-							'Prisoner Extract'
+							'Доставити заручника',
+							'Доставити заручника'
 						],
 						[_entity,TRUE],
 						'CREATED',
@@ -220,7 +220,7 @@ if (_case isEqualTo 1) then {
 		_entity = _params select 0;
 		_entityName = _params select 1;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
-		private _description = format ['A pilot ( %1 ) has been separated from his aircraft and needs a ride back to base. When he is within 500m of base the mission will be completed.',_entityName];
+		private _description = format ['Пілот ( %1 ) катапультувався зі свого транспорту та потребує транспорту на базу. Коли він буде на відстані 500м від бази - міссію буде завершено.',_entityName];
 		_array = [
 			_taskID,
 			'ADD',
@@ -279,7 +279,7 @@ if (_case isEqualTo 1) then {
 			],
 			_params
 		];
-		(missionNamespace getVariable 'QS_module_dynamicTasks_add') pushBack _array;		
+		(missionNamespace getVariable 'QS_module_dynamicTasks_add') pushBack _array;
 	};
 	if (_type isEqualTo 'FIRE_SUPPORT') then {
 		_entity = _params select 0;

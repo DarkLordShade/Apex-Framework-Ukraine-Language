@@ -1,10 +1,10 @@
 /*
 File: fn_aoBriefing.sqf
-Author: 
+Author:
 
 	Quiksilver
 
-Last modified: 
+Last modified:
 
 	9/06/2016 A3 1.61 by Quiksilver
 
@@ -29,7 +29,7 @@ if (_type isEqualTo 'BRIEF') then {
 	];
 	'QS_marker_aoMarker' setMarkerText format ['%1Take %2',(toString [32,32,32]),_ao];
 	_targetStartText = parseText format [
-		"<t align='center' size='2.2'>New Target</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>We did a good job with the last target, lads. I want to see the same again. Get yourselves over to %1 and take 'em all down!<br/><br/>Remember to take down that radio tower to stop the enemy from calling in CAS.",
+		"<t align='center' size='2.2'>Нова ціль</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>Ми добре попрацювали на останній місії. Я хочу знову побачити те ж. Рухайся до %1 та вбий їх всіх!<br/><br/>Не забудьте знищити радіовишку щоб припинити виклик підтримки з повітря.",
 		_ao
 	];
 	if (!(missionNamespace getVariable 'QS_mainao_firstRun')) then {
@@ -73,7 +73,7 @@ if (_type isEqualTo 'BRIEF') then {
 			_x setMarkerColor 'ColorOPFOR';
 			_x setMarkerAlpha 0.5;
 		} forEach (missionNamespace getVariable 'QS_virtualSectors_sub_3_markers');
-	};	
+	};
 	{
 		_x call (missionNamespace getVariable 'BIS_fnc_setTask');
 	} forEach [
@@ -81,9 +81,9 @@ if (_type isEqualTo 'BRIEF') then {
 			'QS_IA_TASK_AO_2',
 			TRUE,
 			[
-				'Seize the enemy headquarters to degrade enemy coordination. This objective is completed when the enemy commander dies. He is usually located in the immediate vicinity of the HQ. This objective is not a requirement in order to finish the mission, however may be useful.',
-				'Enemy HQ',
-				'Seize Enemy HQ'
+				'Взяти під контроль ворожий штаб, щоб погіршити координацію противника.  Завдання буде виконано коли ворожого командира буде вбитий. Він, зазвичай, знаходиться в безпосередній близькості від штабу. Завдання не є обовязковим для завершення місії, проте може бути корисним.',
+				'Ворожий Штаб',
+				'Захопити ворожий штаб'
 			],
 			(markerPos 'QS_marker_hqMarker'),
 			'CREATED',
@@ -97,9 +97,9 @@ if (_type isEqualTo 'BRIEF') then {
 			'QS_IA_TASK_AO_1',
 			TRUE,
 			[
-				'Destroy the radio tower. Destroying the radio tower will degrade enemy communications and prevent them from calling in air support. This objective is not accurately marked. The radio tower is somewhere within the surrounding circle.',
-				'Destroy radiotower',
-				'Destroy radiotower'
+				'Знищити ворожу радіо антену. Знищення радіо антени призведе до погіршення комунікації противника також ворог не зможе викликати повітряну підтримку.',
+				'Знищити радіо антену',
+				'Знищити радіо антену'
 			],
 			(markerPos 'QS_marker_radioMarker'),
 			'CREATED',
@@ -113,9 +113,9 @@ if (_type isEqualTo 'BRIEF') then {
 			'QS_IA_TASK_AO_0',
 			TRUE,
 			[
-				'Clear the marked area of resistance. Once there are under 10 enemies in this area and no more sub-objectives to do, this task will complete. You may have to conduct a number of patrols around the zone to finish them off.',
-				(format ['Take %1',_ao]),
-				(format ['Take %1',_ao])
+				'Очистити зазначену зону. Після того, як в цій області залишиться менше 10 ворогів і більше не буде додаткових завдань, це завдання буде завершено.',
+				(format ['Захопити %1',_ao]),
+				(format ['Захопити %1',_ao])
 			],
 			_QS_AOpos,
 			'ASSIGNED',
@@ -125,11 +125,11 @@ if (_type isEqualTo 'BRIEF') then {
 			'X',
 			TRUE
 		]
-	];	
+	];
 };
 if (_type isEqualTo 'DEBRIEF') then {
 	['QS_IA_TASK_AO_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-	_targetCompleteText = parseText format ["<t align='center' size='2.2'>Target Taken</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/><t align='left'>Fantastic job taking %1, boys!<br/><br/>Enemies imprisoned: %2</t>",(_ao select 0),(missionNamespace getVariable 'QS_enemiesCaptured_AO')];
+	_targetCompleteText = parseText format ["<t align='center' size='2.2'>Ціль захоплено</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/><t align='left'>Гарне захоплення %1, солдати!<br/><br/>Вороги ув'язнені: %2</t>",(_ao select 0),(missionNamespace getVariable 'QS_enemiesCaptured_AO')];
 	//['hint',_targetCompleteText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	missionNamespace setVariable ['QS_evacPosition_1',_QS_AOpos,TRUE];
 	{

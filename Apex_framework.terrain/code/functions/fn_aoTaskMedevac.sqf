@@ -1,6 +1,6 @@
 /*
 File: fn_aoTaskMedevac.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -59,7 +59,7 @@ if (_state isEqualTo 1) then {
 		_unit setSkill 0;
 		_unit allowDamage FALSE;
 		_unit spawn {
-			sleep 5; 
+			sleep 5;
 			_this allowDamage TRUE;
 		};
 		_unit setUnconscious TRUE;
@@ -95,7 +95,7 @@ if (_state isEqualTo 1) then {
 			{
 				params ['_killed','_killer'];
 				detach _killed;
-				['sideChat',[WEST,'BLU'],'Wounded soldier has been killed.'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+				['sideChat',[WEST,'BLU'],'Поранений солдат був убитий.'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			}
 		];
 		for '_x' from 0 to 1 step 1 do {
@@ -127,9 +127,9 @@ if (_state isEqualTo 1) then {
 			'QS_IA_TASK_AO_3',
 			TRUE,
 			[
-				'A recon soldier has been wounded in the AO and requires urgent medevac. Get him back to the Medevac HQ at base (small white building) to complete the mission. If he dies or bleeds out (about 60 minutes from mission start), the mission is failed. Good luck soldiers!',
-				'Medevac',
-				'Medevac'
+				'Солдат був поранений та потребує термінової евакуації. Поверніть його на базу (маленька біла будівля), щоб завершити місію. Якщо він загине, місія провалиться. Успіху, солдати!',
+				'Евакуація',
+				'Евакуація'
 			],
 			[_unit,TRUE],
 			'CREATED',
@@ -164,7 +164,7 @@ if (_state isEqualTo 2) then {
 	};
 	if (serverTime > _missionDuration) exitWith {
 		//comment 'Mission failure';
-		['ST_MEDEVAC',['Medevac','Medevac failed, soldier bled out!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Medevac','Евакуацію провалено, солдат не вибрався!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		_return = [
 			_case,
@@ -175,10 +175,10 @@ if (_state isEqualTo 2) then {
 				_missionDestination
 			]
 		];
-	};	
+	};
 	if ((((_unit distance _missionDestination) < 3.5) && (isNull (attachedTo _unit))) || (([0,_unit] call (missionNamespace getVariable 'QS_fnc_isNearFieldHospital')) && (isNull (attachedTo _unit)) && (isNull (objectParent _unit)))) exitWith {
 		//comment 'Mission success';
-		['ST_MEDEVAC',['Medevac','Medevac complete!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Medevac','Евакуацію завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];
@@ -202,7 +202,7 @@ if (_state isEqualTo 2) then {
 	};
 	if (!alive _unit) exitWith {
 		//comment 'Mission failure';
-		['ST_MEDEVAC',['Medevac','Medevac failed, soldier killed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Medevac','Евакуацію провалено, солдат вбитий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		_return = [
 			_case,

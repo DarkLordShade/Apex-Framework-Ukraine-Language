@@ -3,11 +3,11 @@ File: fn_clientInteractCarry.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	10/11/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	-
@@ -160,12 +160,12 @@ if (_t isKindOf 'CAManBase') then {
 					[[],{FALSE}]
 				] spawn (missionNamespace getVariable 'QS_fnc_clientProgressVisualization');
 			} else {
-				50 cutText ['Must be standing','PLAIN',0.3];
+				50 cutText ['Ви маєте стояти','PLAIN',0.3];
 			};
 		} else {
-			50 cutText ['Object not carryable','PLAIN',0.3];
+			50 cutText ['Об’єкт не можна переносити','PLAIN',0.3];
 		};
 	} else {
-		50 cutText ['Object not carryable','PLAIN',0.3];
+		50 cutText ['Об’єкт не можна переносити','PLAIN',0.3];
 	};
 };

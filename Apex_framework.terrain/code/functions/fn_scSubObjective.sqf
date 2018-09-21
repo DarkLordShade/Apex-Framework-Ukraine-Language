@@ -1,6 +1,6 @@
 /*/
 File: fn_scSubObjective.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -11,7 +11,7 @@ Last Modified:
 Description:
 
 	SC Sub Objectives
-	
+
 Types:
 
 	Datalink
@@ -34,19 +34,19 @@ if (_type isEqualTo 0) exitWith {
 	diag_log '***** SC SUB OBJ ***** DELETE *****';
 	comment 'Delete';
 	if (_subType isEqualTo 'INTEL') then {
-	
+
 	};
 	if (_subType isEqualTo 'VEHICLE') then {
-	
+
 	};
 	if (_subType isEqualTo 'GEAR') then {
-	
+
 	};
 	if (_subType isEqualTo 'SUPPORT') then {
-	
+
 	};
 	if (_subType isEqualTo 'JAMMER') then {
-	
+
 	};
 	_return;
 };
@@ -136,7 +136,7 @@ if (_type isEqualTo 1) exitWith {
 					};
 				}]
 			];
-			
+
 			_houseType = [
 				'Land_Cargo_House_V3_F',
 				'Land_Cargo_House_V4_F'
@@ -146,7 +146,7 @@ if (_type isEqualTo 1) exitWith {
 			_house allowDamage FALSE;
 			_composition pushBack _house;
 			_house setDir (random 360);
-			{	
+			{
 				if ((_x distance2D _position) < 8) then {
 					0 = (missionNamespace getVariable 'QS_virtualSectors_hiddenTerrainObjects') pushBack _x;
 					_x hideObjectGlobal TRUE;
@@ -188,7 +188,7 @@ if (_type isEqualTo 1) exitWith {
 				'OIA_InfSentry',
 				'OIA_InfSentry',
 				'OI_reconSentry'
-			];	
+			];
 			private _grp = [_position,(random 360),EAST,(selectRandom _grpTypes),FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 			[(units _grp),2] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 			{
@@ -229,7 +229,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker1 setMarkerShape 'ICON';
 			_marker1 setMarkerType 'mil_dot';
 			_marker1 setMarkerColor 'ColorOPFOR';
-			_marker1 setMarkerText (format ['%1Datalink',(toString [32,32,32])]);
+			_marker1 setMarkerText (format ['%1Дата Центр',(toString [32,32,32])]);
 			_marker1 setMarkerSize [0.5,0.5];
 			_marker1 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_1_markers') pushBack _marker1;
@@ -242,9 +242,9 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerSize [100,100];
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_1_markers') pushBack _marker2;
-			_description = 'Locate and secure the enemy datalink.<br/><br/>The enemy datalink allows the enemy to more easily communicate and share information on our troop movements, strength and force disposition. With this data they can adapt and better counter our attacks.<br/><br/> This datalink also allows them to call in UAV recon support. Securing the datalink will deny the enemy these benefits.';
-			_title = 'Secure Datalink';
-			_tooltip = 'Datalink';
+			_description = 'Знайти та знищити ворожий канал звязку.<br/><br/>Дата центр дозволяє ворогу більш легко обмінюватися та ділитися інформацією про маневри наших бійців. За допомогою цих даних вони можуть адаптуватися та краще протидіяти нашим атакам.<br/><br/> Також дата центр дозволяє їм викликати БПЛА. Знищіть дата центр.';
+			_title = 'Знищити дата центр';
+			_tooltip = 'Дата центр';
 			_icon = 'intel';
 			[
 				'QS_virtualSectors_sub_1_task',
@@ -264,7 +264,7 @@ if (_type isEqualTo 1) exitWith {
 			] call (missionNamespace getVariable 'BIS_fnc_setTask');
 			missionNamespace setVariable ['QS_virtualSectors_sub_1_active',TRUE,FALSE];
 			_return = [2,_subType,[_position,{},_composition]];
-		};	
+		};
 	};
 	if (_subType isEqualTo 'VEHICLE') then {
 		comment 'Radio Tower';
@@ -326,7 +326,7 @@ if (_type isEqualTo 1) exitWith {
 		comment 'Spawn composition';
 		if (_positionFound) then {
 			missionNamespace setVariable ['QS_registeredPositions',((missionNamespace getVariable 'QS_registeredPositions') + [_position]),FALSE];
-			{	
+			{
 				if ((_x distance2D _position) < 8) then {
 					0 = (missionNamespace getVariable 'QS_virtualSectors_hiddenTerrainObjects') pushBack _x;
 					_x hideObjectGlobal TRUE;
@@ -375,7 +375,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker1 setMarkerShape 'ICON';
 			_marker1 setMarkerType 'mil_dot';
 			_marker1 setMarkerColor 'ColorOPFOR';
-			_marker1 setMarkerText (format ['%1Radio Tower',(toString [32,32,32])]);
+			_marker1 setMarkerText (format ['%1Радіо антена',(toString [32,32,32])]);
 			_marker1 setMarkerSize [0.5,0.5];
 			_marker1 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_2_markers') pushBack _marker1;
@@ -388,9 +388,9 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerSize [100,100];
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_2_markers') pushBack _marker2;
-			_description = 'Destroy the enemy radio tower!<br/><br/>The enemy relies on radio communications to call in helicopter and armored vehicle reinforcements.<br/><br/>Destroying this target will greatly reduce the enemies ability to call in these force multipliers.';
-			_title = 'Destroy Radio Tower';
-			_tooltip = 'Radio Tower';
+			_description = 'Знищити ворожу радіо антену!<br/><br/>Ворог використовує радіозвязок для виклику для підкріплення гвинтокрилів та броньованого транспорту.<br/><br/>Знищення цієї цілі значно зменшить кількість ворожого транспорту.';
+			_title = 'Знищити радіо антену';
+			_tooltip = 'Радіо Антена';
 			_icon = 'destroy';
 			[
 				'QS_virtualSectors_sub_2_task',
@@ -468,7 +468,7 @@ if (_type isEqualTo 1) exitWith {
 			};
 			_attempts = _attempts + 1;
 			_totalAttempts = _totalAttempts + 1;
-		};		
+		};
 		comment 'Spawn composition';
 		if (_positionFound) then {
 			missionNamespace setVariable ['QS_registeredPositions',((missionNamespace getVariable 'QS_registeredPositions') + [_position]),FALSE];
@@ -515,7 +515,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker1 setMarkerShape 'ICON';
 			_marker1 setMarkerType 'mil_dot';
 			_marker1 setMarkerColor 'ColorOPFOR';
-			_marker1 setMarkerText (format ['%1Supply Depot',(toString [32,32,32])]);
+			_marker1 setMarkerText (format ['%1Ворожі припаси',(toString [32,32,32])]);
 			_marker1 setMarkerSize [0.5,0.5];
 			_marker1 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker1;
@@ -529,9 +529,9 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker2;
 			missionNamespace setVariable ['QS_virtualSectors_sd_position',_position,FALSE];
-			_description = 'Secure the enemy supply depot.<br/><br/>The enemy relies on this supply depot to distribute advanced gear to the enemy. This depot allows the enemy to equip with more Anti-Air, Anti-Tank and even call in the dreaded Viper units.<br/><br/>Securing this depot will greatly reduce the enemies ability to spawn AA teams, AT teams and Viper teams.<br/><br/>To secure the supply depot, simply use your Scroll Menu on the Taru pod located inside the fortifications.';
-			_title = 'Enemy Supply Depot';
-			_tooltip = 'Suppy Depot';
+			_description = 'Знищити припаси противника.<br/><br/>Ворог використовує ці припаси для поширення зброї. Ці припаси дозволяють ворогам обладнати солдат ПТ і ПА.<br/><br/>Знищення цієї бази зменшить кількість ПА і ПТ бійців<br/><br/>Щоб убезпечити склад - просто використай своє Скролл-меню на нижній частині Taru всередині укріплення.';
+			_title = 'Ворожі припаси';
+			_tooltip = 'Ворожі припаси';
 			_icon = 'rearm';
 			[
 				'QS_virtualSectors_sub_3_task',
@@ -554,10 +554,10 @@ if (_type isEqualTo 1) exitWith {
 		};
 	};
 	if (_subType isEqualTo 'SUPPORT') then {
-		comment 'Vehicle support base';
-		
-		
-		
+		comment 'База підтримки транспортних засобів';
+
+
+
 	};
 	if (_subType isEqualTo 'JAMMER') then {
 		private _position = [0,0,0];
@@ -579,19 +579,19 @@ if (_type isEqualTo 2) exitWith {
 	diag_log '***** SC SUB OBJ ***** EVALUATE *****';
 	_return = _this;
 	if (_subType isEqualTo 'INTEL') then {
-	
+
 	};
 	if (_subType isEqualTo 'VEHICLE') then {
-	
+
 	};
 	if (_subType isEqualTo 'GEAR') then {
-	
+
 	};
 	if (_subType isEqualTo 'SUPPORT') then {
-	
+
 	};
 	if (_subType isEqualTo 'JAMMER') then {
-	
+
 	};
 	_return;
 };

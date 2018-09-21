@@ -1,9 +1,9 @@
 /*/
 File: fn_clientDiary.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	6/12/2017 A3 1.78 by Quiksilver
@@ -11,7 +11,7 @@ Last Modified:
 Description:
 
 	-
-	
+
 License Notes:
 
 	Part of the EULA for this framework is to ensure this file executes as normal.
@@ -54,43 +54,43 @@ if ((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'GRI
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'General channel',
-		'Subscribe to the General channel for Voice communications.<br/><br/>Transmission of music and other non-voice sounds is not permitted on this channel.<br/><br/>Verbal abuse is, of course, not tolerated.'
+		'Загальний канал',
+		'Підключіться до Загального каналу для голосового звязку.<br/><br/>Передача музики та інших неголосних звуків не дозволяється на цьому каналі.<br/><br/>.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'Platoon channels',
-		'Join a Platoon channel (Alpha, Bravo or Charlie) for inter-squad communications.<br/><br/>You can only be subscribed to one Platoon channel at a time.'
+		'Канал Взводів',
+		'Приєднуйтесь до канал взводу (Альфа, Браво або Чарлі) для спілкування в групі.<br/><br/>Одночасно можна підключитись лише до одного каналу.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'AO channels',
+		'Канали AO',
 		'If you are subscribed to these channels, you will automatically be added to these channels when within 2km of the Primary AO, and 1km of the Secondary AO (side mission). When you leave this area, you will no longer be able to receive or transmit on it.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'Aircraft channel',
-		'Pilots and UAV Operator are active on this channel.<br/><br/>Currently only Pilots and UAV Operator can transmit voice on this channel.<br/><br/>If you are not Pilot or UAV Operator, you can still listen to this channel, if you are in the Air Traffic Control tower or the TOC (map marker at base).'
+		'Канал авіації',
+		'Пілоти та оператор БПЛА активні на цьому каналі.<br/><br/>Тільки пілоти та Оператор БПЛА можуть спілкуватись на цьому каналі.<br/><br/>Якщо ви не є пілотом або оператором БПЛА, ви можете прослухати цей канал, якщо ви знаходитесь в башті керування повітряним рухом або ЦТО (маркер на карті).'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'Side channel',
-		'Voice communication is disabled on Side channel<br/><br/>Use General channel to transmit voice to all players on the server.'
+		'Додатковий канал',
+		'Голосовий звязок відключений на додатковому каналі<br/><br/>Використовуйте Загальний канал для передачі голосу всім гравцям на сервері.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
-		'Overview',
-		'Beta v0.9<br/><br/>A number of custom radio channels are available for use in-game.<br/><br/>To access: Press [Home] >> [Comm-Link] >> [Radio Management]<br/><br/>A Radio inventory item is required to transmit voice communications.<br/><br/>Transmission of music or other audio is only permitted over Group, Vehicle and Direct channels (when away from base).<br/><br/>Spamming and generally annoying other players using Voice communications can lead to administrative action.'
+		'Огляд',
+		'Бета v0.9<br/><br/>Для використання в грі доступні цілий ряд користувацьких радіоканалів.<br/><br/>Щоб зайти: натисніть [Home] >> [Comm-Link] >> [Radio Management]<br/><br/>Для передачі голосових повідомлень потрібна рація..<br/><br/>Передача музики чи звуку дозволена лише в прямий канал і транспортний канал.<br/><br/>Спам набридлива поведінка призведе до адміністративних дій щодо порушника.'
 	]
 ];
 
@@ -99,7 +99,7 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_inventory',
 	[
-		'Inventory Editing',
+		'Редагування інвентарю',
 		'Near the Crate Area and Inventory markers at base, you are able to easily customize the inventory of vehicles and ammo crates'
 	]
 ];
@@ -109,8 +109,8 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_revive',
 	[
-		'Medical Vehicles',
-		'Load incapacitated soldiers into a Medical vehicle (HEMTT Medical, Taru Medical Pod, etc) to revive them.<br/><br/>The vehicle must have sufficient Revive Tickets.<br/>Reviving a player consumes a Revive Ticket.<br/>Revive tickets can be replenished at the Base Service markers.<br/>Revive tickets correspond to number of cargo seats in the vehicle.'
+		'Медичні транспортні засоби',
+		'Щоб підняти солдата просто завантажте його в медичний транспорт (HEMTT медичний, Медичний модуль Taru і  т.і.)<br/><br/>Транспорт повинен мати потрібну кількість квитків на відродженняВідродження гравців використовує квитки.<br/>Квитки на відродження пожуть бути відновлені на Сервісних маркерах на базі.<br/>Кількість квитків на відродження відповідає кількості місць в транспорті.'
 	]
 ];
 
@@ -119,41 +119,41 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'General',
-		(format ['Forward Operating Bases are scattered around %1.<br/><br/>Some services are available from these FOBs, and they are also locations of interest to the enemy.',worldName])
+		'Загальне',
+		(format ['Forward Operating Bases (Передові Оперативні Бази - ПОБ) розкидані навкруги %1.<br/><br/>Даякі послуги доступні на цих ПОБах, а також вони є об’єктами підвищеного інтересу супротивника.',worldName])
 	]
 ];
 
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'Radar Services',
-		'When the FOB is active and held by your faction, enemy map data and radar data will be available<br/><br/>To interact with the FOBs, there is a laptop inside the main building.<br/><br/>When certain types of vehicles/crates are within a radius of the FOB, they can activate certain services.'
+		'Послуги радару',
+		'Коли ПОБ активний та утримується вашими силами - ворожі карти та радари будуть для вас доступними.<br/><br/>Для взаємодыі з ПОБами всередині головного будинку розміщено ноутбуки.<br/>Коли певні типи транспорту/ящиків пыдпадають під радіус діі ПОБа вони можуть активувати певні сервіси.<br/>'
 	]
 ];
 
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'Respawning',
-		'Respawning is available at FOBs if several conditions are met:<br/><br/>
-		- The FOB must be online and held by your faction<br/>
-		- You must enable your personal FOB respawn. This can be done at the FOB terminal located inside the FOB HQ building<br/>
-		- You are NOT a pilot<br/>
-		- The FOB has more than 0 Respawn Tickets<br/>
-		- You have not respawned there in the past 3 minutes'
+		'Відродження',
+		'Відродження на ПОБах можливе, коли дотримуються певні умови:<br/><br/>
+		- ПОБ має працювати та утримуватися вашою фракцією<br/>
+		- Ви повинні активувати ваше персональне відродження на ПОБі. Це можна зробити з терминалу ПОБ в головній будівлі<br/>
+		- Ви не є пілотом<br/>
+		- На ПОБі є більше ніж 0 квитків на відродження<br/>
+		- Ви не відроджувались там за останні 3 хвилини'
 	]
 ];
 
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'Vehicle Services',
-		'Several vehicle services are available at the FOBs for Aircraft and Land Vehicles:<br/><br/>
-		- Respawn - Bring a HEMTT Mover or HEMTT Box truck to the FOB to activate Vehicle Respawn Services<br/>
-		- Repair - Bring a repair truck or crate to the FOB to activate Repair Services<br/>
-		- Fuel - Bring a fuel truck or crate to the FOB to bring Refueling Services online<br/>
-		- Ammo - Bring an Ammo truck or crate to the FOB to bring Ammo Services online<br/>
+		'Транспортні послуги',
+		'Декілька транспортних послуг доступні на ПОБах для повітрянного та наземного транспорту:<br/><br/>
+		- Відродження - Приведіть HEMTT Mover або HEMTT Box на ПОБ для активації послуги відродження транспорту<br/>
+		- Ремонт - Приведіть ремонтну вантажівку або модуль на ПОБ для активації послуг ремонту<br/>
+		- Заправка - Приведіть заправщик або модуль для активації послуг заправки<br/>
+		- Спорядження - Приведіть вантажівку зі спорядженням або модуль для активації послуги переспорядження<br/>
 		'
 	]
 ];
@@ -161,16 +161,16 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'Respawn Tickets',
-		'Bring Medical Vehicles and Crates to the FOB to replenish its Revive Tickets'
+		'Квитки відродження',
+		'Приведіть Медичну машину або модуль на ПОБ для переспорядження його квитками відродження'
 	]
 ];
 
 player createDiaryRecord [
 	'QS_diary_fobs',
 	[
-		'Ammo Crate',
-		'Load Crates at base with gear and Tow or Sling to the FOB to add that gear to the FOB Ammo Crate'
+		'Модулі спорядження',
+		'Завантажте модулі на базі потрібними речами та транспортуйте його повітрям або землею до ПОБ щоб переспорядити його модуль спорядження'
 	]
 ];
 
@@ -180,49 +180,49 @@ player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Gitmo',
-		'Earn points by imprisoning enemies in "Gitmo".<br/><br/>Multipliers: n/a<br/><br/>Gitmo is marked on your map at base. See "Gitmo" diary tab for further details.'
+		'Отримуйте бали за розміщення ворогів у в’язниці.<br/><br/>Мультиплеєри: n/a<br/><br/>В’зницю позначено на ваших мапах на базі. Дивіться детальну інформацію в щоденнику'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Tower Rangers',
-		'Earn points as an infantryman by destroying the radiotower (pilots not eligible).<br/><br/>Multipliers: n/a'
+		'Отримуйте бали за знищення радіовеж (не доступно для пілотів).<br/><br/>Мультиплеєри: n/a'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Gold Diggers',
-		'Earn points by collecting human trophies (gold teeth) from dead enemies (very rare).<br/><br/>Multipliers: n/a'
+		'Отримуйте бали за збирання людських частин (золоті зуби) з вбитих ворогів (дуже сире).<br/><br/>Мультиплеєри: n/a'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Ear Slicers',
-		'Earn points by collecting human trophies (ears) from dead enemies.<br/><br/>Multipliers: n/a'
+		'Отримуйте бали за збирання людських частин (вуха) з вбитих ворогів.<br/><br/>Мультиплеєри: n/a'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Revivalists',
-		'Earn points as a Medic by reviving fallen soldiers.<br/><br/>Multipliers: Stamina<br/><br/>Top 3 medics of the week (ending Sunday 23:59h) added to whitelisted medic slot for following week.'
+		'Отримуйте бали як Медик за оживлення поранених товаришів.<br/><br/>МультиплеєриТоп 3 медика тижня (закінчується в Неділю о 23:59) додаються до білого списку слотів медика на наступний тиждень.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
 		'Transporters',
-		'Earn points as a Pilot by safely transporting soldiers to and from missions in helicopters.<br/><br/>Multipliers: Advanced Flight Model<br/><br/>Top 3 pilots of the week (ending Sunday 23:59h) added to whitelisted pilot slot for following week.<br/><br/>Sling loading is not currently supported.<br/>Vehicle cargo is not currently supported.'
+		'Отримуйте бали за безпечне транспортування солдатів з/на базу гелікоптерами.<br/><br/>Мультиплеєри: Розширена модель пілотування<br/><br/>Топ 3 пілоти тижня (закінчується в Неділю о 23:59) додаються до білого списку слотів пілотів на наступний тиждень.<br/><br/>Транспортування на підвісы не підтримується наразі.<br/>Повантаження транспорту не підтримується наразі.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
-		'General Info',
-		format ['<t size="2">Version 1.0</t><br/><br/>Leaderboards are reset each Monday at 00:01h.<br/><br/>Please report bugs and weird shit on the forums or to Quiksilver on TS.<br/><br/>To maintain performance and FPS, the leaderboards are synchronized every 5-10 minutes instead of continuously, and saved to database every 10-15 minutes. For this reason, points accumulated just prior to server restart may not be saved (*sadface*). Since it is new, we are experimenting with the best and most performance-friendly methods.<br/><br/>Thanks for your patience, %1!',profileName]
+		'Загальна інформація',
+		format ['<t size="2">Version 1.0</t><br/><br/>Таблиця рахунку скидаэться кожного Понеділка о 00:01.<br/><br/>Please report bugs and weird shit on the forums or to Quiksilver on TS.<br/><br/>To maintain performance and FPS, the leaderboards are synchronized every 5-10 minutes instead of continuously, and saved to database every 10-15 minutes. For this reason, points accumulated just prior to server restart may not be saved (*sadface*). Since it is new, we are experimenting with the best and most performance-friendly methods.<br/><br/>Thanks for your patience, %1!',profileName]
 	]
 ];
 
@@ -293,15 +293,15 @@ player createDiaryRecord [
 		<br />
 		<br />Guideline for enforcement:
 		<br />
-		<br />-	Innocent rule violation and disruptive behavior: 
+		<br />-	Innocent rule violation and disruptive behavior:
 		<br />
 		<br />		= Verbal / Written request to cease, or warning.
-		<br /> 
+		<br />
 		<br />-	Minor or first-time rule violation:
 		<br />
 		<br />		= Kick, or 0 - 3 day ban.
 		<br />
-		<br />-	Serious or repetitive rule violation: 
+		<br />-	Serious or repetitive rule violation:
 		<br />
 		<br />		= 3 - 7 day ban.
 		<br />
@@ -334,19 +334,19 @@ player createDiaryRecord [
 		<br />1. You MUST be on our Teamspeak server--in the correct channel--and communicable. Exception if TS is down or full.
 		<br />
 		<br />2. You MUST be a pilot to fly an aircraft.
-		<br />	If you are a non-pilot and there are less than 20 players on the server, then you may fly a hummingbird in copilot. 
+		<br />	If you are a non-pilot and there are less than 20 players on the server, then you may fly a hummingbird in copilot.
 		<br />	If there are over 20 players, you may fly a hummingbird to a side mission ONLY.
-		<br />	
+		<br />
 		<br />3. Pilots must not play infantry while in a pilot slot.
 		<br />
 		<br />4a. If you are an inexperienced pilot, please consider the time and enjoyment of others. The editor is there for a reason.
-		<br /> 
+		<br />
 		<br />4b. This is a public server. Helicopters are not private/reserved transport. A Pilots primary role is to provide timely general transport to and from objectives.
-		<br /> 
+		<br />
 		<br />-		* General transport in this context is defined as: Indiscriminate and timely transport for each and all players on the server.
 		<br />
 		<br />5. You must be able to fly AND LAND any aircraft with reasonable competence, if you do not have experience in any aircraft, you may be asked to leave the role.
-		<br />		
+		<br />
 		<br />6. Landing or slinging objects/vehicles inside of infantry spawn may result in a warning or a kick for first offense.
 		<br />
 		<br />7. Ramming enemy or intentional crashing may result in a ban without warning, try to preserve assets.
@@ -413,8 +413,8 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_gitmo',
 	[
-		'Enemy Capture',
-		'It is possible to capture enemies!<br/><br/>To capture an enemy soldier, you must get within 5m and aim at him. You may get a Command Surrender action on your scroll wheel. To receive full reward, bring the captive back to the Gitmo area at base. To incarcerate a prisoner into Gitmo, walk up to the Phone Booth with your prisoner, look at the Phone Booth, wait 3-5 seconds and Release your prisoner while looking at the phone booth.<br/><br/>Good hunting!'
+		'Захоплення ворогів',
+		'Є можливість брати ворогів у полон!<br/><br/>Щоб захопити ворожого солдата ви маєти підійти до нього на відстань до 5 метрыв та виконати взаємодію з ним. У вас повинна з’явитись Команда капіталяції в скролл-меню. Щоб отримати повну винагороду - відконвоюйте полоненого до в’язниці на базі. Щоб ув’знити полоненого у в’зницы - підійдіть з ним до телефонної будки, подивіться на телефонну будку близько 3-5 секунд та Відпустіть полоненого не відвертаючи увагу від будки.<br/><br/>Гарного полювання!'
 	]
 ];
 
@@ -441,14 +441,14 @@ player createDiaryRecord [
 	'QS_diary_credits',
 	[
 		'Community Editors',
-		'Your Name Here'
+		'Prioric, LordShade, varrkan_ua'
 	]
 ];
 
 ////////////////////////////////// EDIT ABOVE ///////////////////////////////////////
 
 ////////////////////////////////// DO NOT EDIT BELOW ///////////////////////////////////////
-/*/ 
+/*/
 Please do not tamper with the below lines.
 Part of license for use of this framework is to maintain accessibility for players to donate to the Apex Framework developer.
 Servers which have made it difficult or impossible for players to access this link are in violation of the EULA.

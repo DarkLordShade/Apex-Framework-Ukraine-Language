@@ -178,7 +178,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=1;
@@ -198,7 +198,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=2;
@@ -218,7 +218,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=3;
@@ -238,7 +238,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=4;
@@ -258,7 +258,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=5;
@@ -278,7 +278,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=6;
@@ -298,7 +298,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=7;
@@ -318,7 +318,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Alpha Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=8;
@@ -352,7 +352,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=10;
@@ -372,7 +372,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=11;
@@ -392,7 +392,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=12;
@@ -412,7 +412,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=13;
@@ -432,7 +432,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=14;
@@ -452,7 +452,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=15;
@@ -472,7 +472,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=16;
@@ -492,7 +492,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Bravo Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=17;
@@ -526,7 +526,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=19;
@@ -546,7 +546,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=20;
@@ -566,7 +566,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=21;
@@ -586,7 +586,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=22;
@@ -606,7 +606,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=23;
@@ -625,7 +625,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=24;
@@ -645,7 +645,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=25;
@@ -665,7 +665,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Charlie Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=26;
@@ -699,7 +699,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=28;
@@ -719,7 +719,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=29;
@@ -739,7 +739,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=30;
@@ -759,7 +759,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=31;
@@ -779,7 +779,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=32;
@@ -798,7 +798,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=33;
@@ -818,7 +818,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=34;
@@ -838,7 +838,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Delta Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=35;
@@ -872,7 +872,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=37;
@@ -892,7 +892,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=38;
@@ -912,7 +912,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=39;
@@ -932,7 +932,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=40;
@@ -952,7 +952,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=41;
@@ -972,7 +972,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=42;
@@ -992,7 +992,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=43;
@@ -1012,7 +1012,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Echo Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=44;
@@ -1046,7 +1046,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=46;
@@ -1066,7 +1066,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=47;
@@ -1086,7 +1086,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=48;
@@ -1105,7 +1105,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=49;
@@ -1125,7 +1125,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=50;
@@ -1143,7 +1143,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=51;
@@ -1163,7 +1163,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=52;
@@ -1183,7 +1183,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Foxtrot Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=53;
@@ -1216,7 +1216,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Squad Leader";
+						description="Старший сержант";
 						isPlayable=1;
 					};
 					id=55;
@@ -1234,7 +1234,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=56;
@@ -1254,7 +1254,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Engineer";
+						description="Інженер";
 						isPlayable=1;
 					};
 					id=57;
@@ -1272,7 +1272,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=58;
@@ -1290,7 +1290,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Autorifleman";
+						description="Кулеметник";
 						isPlayable=1;
 					};
 					id=59;
@@ -1310,7 +1310,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Grenadier";
+						description="Стрілок Гренадер";
 						isPlayable=1;
 					};
 					id=60;
@@ -1329,7 +1329,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=61;
@@ -1347,7 +1347,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Golf Missile Specialist (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=62;
@@ -1381,7 +1381,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon Team Leader";
+						description="Старший сержант Розвідки";
 						isPlayable=1;
 					};
 					id=64;
@@ -1401,7 +1401,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon JTAC";
+						description="Сержант Навідник";
 						isPlayable=1;
 					};
 					id=65;
@@ -1421,7 +1421,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon Marksman";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=66;
@@ -1440,7 +1440,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon (AT)";
+						description="Стрілок ПТ";
 						isPlayable=1;
 					};
 					id=67;
@@ -1460,7 +1460,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon (AT)";
+						description="Старший ПТ";
 						isPlayable=1;
 					};
 					id=68;
@@ -1480,7 +1480,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon Demo Specialist";
+						description="Мінер";
 						isPlayable=1;
 					};
 					id=69;
@@ -1514,7 +1514,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Sniper";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=71;
@@ -1534,7 +1534,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Sniper";
+						description="Снайпер";
 						isPlayable=1;
 					};
 					id=72;
@@ -1568,7 +1568,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="CLS Team Leader";
+						description="Старший Сержант";
 						isPlayable=1;
 					};
 					id=74;
@@ -1588,7 +1588,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="CLS Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=75;
@@ -1607,7 +1607,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="CLS Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=76;
@@ -1626,7 +1626,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="CLS Medic";
+						description="Медик";
 						isPlayable=1;
 					};
 					id=77;
@@ -1659,7 +1659,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Mortar Gunner ( Mk6 )";
+						description="Мінометник";
 						isPlayable=1;
 					};
 					id=79;
@@ -1679,7 +1679,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="UAV Operator";
+						description="Оператор БПЛА";
 						isPlayable=1;
 					};
 					id=80;
@@ -1713,7 +1713,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot";
+						description="Пілот";
 						isPlayable=1;
 					};
 					id=82;
@@ -1733,7 +1733,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot";
+						description="Пілот;
 						isPlayable=1;
 					};
 					id=83;
@@ -1753,7 +1753,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot";
+						description="Пілот";
 						isPlayable=1;
 					};
 					id=84;
@@ -1773,7 +1773,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot";
+						description="Пілот";
 						isPlayable=1;
 					};
 					id=85;
@@ -1793,7 +1793,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot";
+						description="Пілот";
 						isPlayable=1;
 					};
 					id=86;
@@ -1827,7 +1827,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Pilot ( whitelist )";
+						description="Пілот ( Вайтлист )";
 						isPlayable=1;
 					};
 					id=88;
@@ -1847,7 +1847,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon Paramedic ( whitelist )";
+						description="Парамедик розвідки ( Вайтлист )";
 						isPlayable=1;
 					};
 					id=89;
@@ -1867,7 +1867,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Recon Paramedic ( whitelist )";
+						description="Парамедик розвідки ( Вайтлист )";
 						isPlayable=1;
 					};
 					id=90;
@@ -1887,7 +1887,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Engineer ( whitelist )";
+						description="Інженер ( Вайтлист )";
 						isPlayable=1;
 					};
 					id=91;
@@ -1907,7 +1907,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Jungle Sniper ( whitelist )";
+						description="Снайпер ( Вайтлист )";
 						isPlayable=1;
 					};
 					id=92;
@@ -1941,7 +1941,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Fighter Pilot ( CAS whitelist ) ( Jets DLC )";
+						description="Пілот ( CAS Вайтлист )";
 						isPlayable=1;
 					};
 					id=94;
@@ -2763,3 +2763,4 @@ class Mission
 		};
 	};
 };
+

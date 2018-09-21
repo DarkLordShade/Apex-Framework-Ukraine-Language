@@ -2,11 +2,11 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	3/05/2016 A3 1.58 by Quiksilver
-	
+
 Description:
 
 	Secure HQ supplies before destroying it.
@@ -122,9 +122,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Intercept the weapons transfer! Enemy supply trucks have stopped in this area to transfer Anti-Air launchers. Intercept and secure them! This objective is not accurately marked.',
-		'Secure AA Launchers',
-		'Secure AA Launchers'
+		'Перехопити передачу зброї! В цьому районі зупинились вантажні перевезення противника для передачі протиповітряних пускових установок. Перехопіть та захистіть їх!.',
+		'Захистіть АА устанровки',
+		'Захистіть AA установки'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -135,10 +135,11 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText format ["<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Launchers</t><br/>____________________<br/>Rogue AAF are supplying OPFOR with advanced weapons and anti-air launchers.<br/><br/>We've located the transfer location. Get over there quick before they get away, and secure those launchers.</t>"];
+_briefing = parseText format ["<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Launchers</t><br/>____________________<br/>Rogue AAF постачають OPFOR з передовими озброєннями та протиповітряними пусковими установками.
+<br/><br/>Ми знайшли місце переміщення.  Рухайтесь туди швидше, перш ніж вони відійдуть, і захистіть ці пускові установки.</t>"];
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Launchers']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-	
+
 /*/-------------------- [ CORE LOOPS ] ------------------------ [ CORE LOOPS ]/*/
 
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
@@ -177,12 +178,12 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	/*/--------------------------------------------- IF PACKAGE DESTROYED [FAIL]/*/
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-		uiSleep 14;											
+		uiSleep 14;
 		'Bo_Mk82' createVehicle (getPos _object);
 		missionNamespace setVariable [
 			'QS_analytics_entities_created',

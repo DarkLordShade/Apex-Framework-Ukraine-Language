@@ -216,14 +216,14 @@ _fuzzyPos = [((_spawnPosition select 0) - 500) + (random 1000),((_spawnPosition 
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Side Mission: Enemy Regenerator',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Додаткова місія: Ворожий Регенератор',(toString [32,32,32])]);
 _task = [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'The enemy has deployed a high frequency ionic device which activates wound-healing technology in CSAT uniforms. While the device is active, the enemy may be harder to kill.<br/><br/>Send a team to destroy it!',
-		'Regenerator',
-		'Regenerator'
+		'Супротивник розгорнув високочастотний іонний пристрій, який активує технологію високого захисту у формі CSAT. Поки пристрій активний, противник може бути важче вбити.<br/><br/>Надішліть команду, щоб знищити ціль!',
+		'Регенератор',
+		'Регенератор'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',

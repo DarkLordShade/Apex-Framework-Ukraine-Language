@@ -49,5 +49,5 @@ if (_exit) exitWith {
 (uiNamespace getVariable 'QS_vehicle_activations') pushBack diag_tickTime;
 playSound 'Click';
 player playActionNow 'PutDown';
-50 cutText [(format ['Activating %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName'))]),'PLAIN DOWN',0.25];
+50 cutText [(format ['Активувати %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName'))]),'PLAIN DOWN',0.25];
 [69,_cursorObject,clientOwner,player,(getPlayerUID player)] remoteExecCall ['QS_fnc_remoteExec',2,FALSE];

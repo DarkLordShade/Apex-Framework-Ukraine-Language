@@ -3,15 +3,15 @@ File: fn_secureIntelUAV.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	11/02/2016 A3 1.54 by Quiksilver
-	
+
 Description:
 
 	Secure Intel from a crashed UAV
-	
+
 To do:
 
 	Don't spawn the UAV until players are < 100m, to hide from magic map
@@ -110,16 +110,16 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 {
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
-} count ['QS_marker_sideMarker','QS_marker_sideCircle'];	
+} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 'QS_marker_sideMarker' setMarkerText (format ['%1Secure Intel (UAV)',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		(format ['An enemy UAV has gone down off the coast of %1. This is a chance to secure intel on how their UAV systems operate. Get down there and secure the UAVs intel. This mission is underwater, so ensure you have a rebreather and dive goggles! This objective is not accurately marked. A GPS will help to locate the precise position. This mission is time-critical.',worldName]),
-		'Secure Intel (UAV)',
-		'Secure Intel (UAV)'
+		(format ['Ворожий безпілотник розбився біля узбережжя %1. Це шанс дістати дані щодо того, як працюють їхні системи безпілотника. Доберіться до цілі і захопіть її. Ця місія є підводною, тому переконайтеся, що у вас є ребрізер та окуляри для пірнання! GPS допоможе визначити розташування. Може бути обмеження за часом.',worldName]),
+		'Захопити дані (UAV)',
+		'Захопити дані (UAV)'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -131,7 +131,7 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 ['QS_IA_TASK_SM_0',TRUE,_timeEnd] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 
-_briefing = parseText format ["<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Intel</t><br/>____________________<br/>An enemy UAV has gone down off the coast of %1.<br/><br/> Signals Intelligence indicates the enemy is on site attempting to find and destroy the UAVs flight recorder. Get over there and secure the intel before they destroy it!<br/> You have about 30 minutes to complete the mission.<br/></t>",worldName];
+_briefing = parseText format ["<t align='center'><t size='2.2'>Додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>Безпілотник супротивника розбився на узбережжі %1.<br/><br/> Дані розвідки розвідки вказують, що ворог на місці намагається знайти і знищити безпілотник.!<br/> У вас є близько 30 хвилин для виконання місії.<br/></t>",worldName];
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Intel']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
@@ -249,7 +249,7 @@ for '_x' from 0 to 1 step 0 do {
 					};
 				} forEach (magazines _unit);
 			};
-			[(units _grp),1] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');	
+			[(units _grp),1] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 			for '_x' from 0 to 2 step 1 do {
 				_relPos = [_safePos,(100 + (random 200)),(random 360),TRUE] call _QS_fnc_radPos;
 				_patrolRoute pushBack [_relPos select 0,_relPos select 1,(getTerrainHeightASL (getPosWorld ((units _grp) select 0)))];
