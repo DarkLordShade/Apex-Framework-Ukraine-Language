@@ -18,10 +18,10 @@ _t = cursorTarget;
 if (!isNull (objectParent _t)) exitWith {};
 if ((!(_t isKindOf 'CAManBase')) && (!([0,_t,objNull] call (missionNamespace getVariable 'QS_fnc_getCustomCargoParams')))) exitWith {};
 if (_t getVariable ['QS_interaction_disabled',FALSE]) exitWith {
-	50 cutText ['Взаємодію з цим об’эктом вимкнуто','PLAIN',0.3];
+	50 cutText ['Взаємодію з цим об’эктом вимкнено','PLAIN',0.3];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Одиницю треба стабілызувати','PLAIN',0.3];
+	50 cutText ['Одиницю треба стабілізувати','PLAIN',0.3];
 };
 if (_t isKindOf 'CAManBase') then {
 	if (!((currentWeapon player) isEqualTo '')) then {
