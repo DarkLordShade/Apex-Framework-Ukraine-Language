@@ -1,13 +1,13 @@
 /*
 File: fn_clientEventMapSingleClick.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	3/09/2016 A3 1.62 by Quiksilver
-	
+
 Description:
 
 	Map Single Click Mission Event
@@ -36,18 +36,18 @@ if (missionNamespace getVariable ['QS_customAO_GT_active',FALSE]) then {
 								};
 								player setVehiclePosition [(markerPos 'QS_marker_GT_TP'),[],15,'NONE'];
 								openMap FALSE;
-								50 cutText [(format ['Welcome to %1',(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.5];
+								50 cutText [(format ['Вітаємо в %1',(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.5];
 							} else {
-								50 cutText ['Cannot teleport while incapacitated','PLAIN DOWN',0.5];
+								50 cutText ['Не можна телепортуватися пораненим','PLAIN DOWN',0.5];
 							};
 						} else {
-							50 cutText ['Must be unencumbered to teleport','PLAIN DOWN',0.5];
+							50 cutText ['Треба бути не перевантаженим, щоб телепортуватися','PLAIN DOWN',0.5];
 						};
 					} else {
-						50 cutText ['Must be on foot to teleport','PLAIN DOWN',0.5];
+						50 cutText ['Треба бути на ногах, щоб телепортуватися','PLAIN DOWN',0.5];
 					};
 				} else {
-					50 cutText ['Too close to teleporter','PLAIN DOWN',0.5];
+					50 cutText ['Надто близько до телепору','PLAIN DOWN',0.5];
 				};
 			};
 		};

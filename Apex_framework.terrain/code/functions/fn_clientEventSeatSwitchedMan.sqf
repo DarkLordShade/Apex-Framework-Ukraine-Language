@@ -1,17 +1,17 @@
 /*
 File: fn_clientEventSeatSwitchedMan.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	25/04/2016 A3 1.56 by Quiksilver
-	
+
 Description:
 
 	Seat Switched Man Event
-	
+
 	unit1: Object - Unit switching seat.
 	unit2: Object - Unit with which unit1 is switching seat.
 	vehicle: Object - Vehicle where switching seats is taking place.
@@ -29,7 +29,7 @@ if ((typeOf _v) in _taru) then {
 	if (((assignedVehicleRole _u1) select 0) in ['driver','Turret']) then {
 		if (!(_u1 getUnitTrait 'QS_trait_pilot')) then {
 			_v enableCopilot FALSE;
-			systemChat 'You are not a pilot';
+			systemChat 'Ви не пілот';
 			moveOut _u1;
 		};
 	};

@@ -3,13 +3,13 @@ File: fn_clientInteractCarrierLaunch.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	10/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
-	
+
 	Carrier Launch handling
 ___________________________________________________/*/
 
@@ -67,7 +67,7 @@ if (!(_cameraOn getVariable ['QS_carrier_launch',FALSE])) then {
 			params ['_actionTarget','_actionCaller','_actionID','_actionArguments'];
 			_actionArguments params ['_cameraOn'];
 			if (!isEngineOn _cameraOn) exitWith {
-				50 cutText ['Engine must be ON to launch','PLAIN',0.5];
+				50 cutText ['Двигун має бути увімкнуто для запуску','PLAIN',0.5];
 			};
 			if (_cameraOn getVariable ['QS_carrier_launch',FALSE]) then {
 				_cameraOn setAirplaneThrottle 0;
@@ -81,7 +81,7 @@ if (!(_cameraOn getVariable ['QS_carrier_launch',FALSE])) then {
 					playSound3D ['A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_Flaps_Down.wss',objNull,FALSE,((_carrierAnimData select 0) modelToWorldWorld ((_carrierAnimData select 0) selectionPosition ((_carrierAnimData select 1) select 0))),25,1,75];
 				};
 				[83,0,_cameraOn] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-				50 cutText ['Launch Cancelled','PLAIN DOWN',0.75];
+				50 cutText ['Запуск відмінено','PLAIN DOWN',0.75];
 			};
 			_cameraOn removeAction _actionID;
 			missionNamespace setVariable ['QS_client_action_carrierLaunchCancel',[],FALSE];

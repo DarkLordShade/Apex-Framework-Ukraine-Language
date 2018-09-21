@@ -18,10 +18,10 @@ _t = cursorTarget;
 if (!isNull (objectParent _t)) exitWith {};
 if ((!(_t isKindOf 'CAManBase')) && (!([0,_t,objNull] call (missionNamespace getVariable 'QS_fnc_getCustomCargoParams')))) exitWith {};
 if (_t getVariable ['QS_interaction_disabled',FALSE]) exitWith {
-	50 cutText ['Interaction disabled on this object','PLAIN',0.3];
+	50 cutText ['Взаємодію з цим об’эктом вимкнуто','PLAIN',0.3];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Unit needs to be stabilised','PLAIN',0.3];
+	50 cutText ['Одиницю треба стабілызувати','PLAIN',0.3];
 };
 if (_t isKindOf 'CAManBase') then {
 	if (!((currentWeapon player) isEqualTo '')) then {
@@ -53,7 +53,7 @@ if (_t isKindOf 'CAManBase') then {
 			FALSE
 		};
 		[
-			'Picking up ...',
+			'Підбирання ...',
 			3,
 			0,
 			[[_t],{FALSE}],
@@ -62,7 +62,7 @@ if (_t isKindOf 'CAManBase') then {
 			[[],{FALSE}]
 		] spawn (missionNamespace getVariable 'QS_fnc_clientProgressVisualization');
 	} else {
-		50 cutText ['Need a weapon in hand to start carrying a person.','PLAIN DOWN',0.4];
+		50 cutText ['Потрібна збрроя в руках щоб підняти гравця.','PLAIN DOWN',0.4];
 	};
 } else {
 	//comment 'Crate carrying';
@@ -112,7 +112,7 @@ if (_t isKindOf 'CAManBase') then {
 							['setDir',_entity,90] remoteExec ['QS_fnc_remoteExecCmd',[_entity,player],FALSE];
 						};
 					};
-					50 cutText [(format ['Carrying a(n) %1',(_entity getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))])]),'PLAIN DOWN',0.3];
+					50 cutText [(format ['Піднімання %1',(_entity getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))])]),'PLAIN DOWN',0.3];
 					[_entity] spawn {
 						scriptName 'QS Interact Carry Monitor';
 						params ['_entity'];
@@ -151,7 +151,7 @@ if (_t isKindOf 'CAManBase') then {
 					FALSE
 				};
 				[
-					'Picking up',
+					'Піднімання',
 					2,
 					0,
 					[[_t],{FALSE}],

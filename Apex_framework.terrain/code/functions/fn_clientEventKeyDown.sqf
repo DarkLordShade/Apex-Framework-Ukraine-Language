@@ -1,22 +1,22 @@
-/*/ 
-File: fn_clientEventKeyDown.sqf 
+/*/
+File: fn_clientEventKeyDown.sqf
 Author:
-	
-	Quiksilver 	 
-	
-Last Modified:  	
 
-	15/08/2018 A3 1.84 by Quiksilver  
-	
-Description:  	
+	Quiksilver
 
-	Client Event Key Down 
-__________________________________________________________/*/  
+Last Modified:
+
+	15/08/2018 A3 1.84 by Quiksilver
+
+Description:
+
+	Client Event Key Down
+__________________________________________________________/*/
 
 params ['','_key','_shift','_ctrl','_alt'];
-private _c = FALSE; 
-player setVariable ['QS_client_afkTimeout',time,FALSE]; 
-if (_key isEqualTo 5) then { 	
+private _c = FALSE;
+player setVariable ['QS_client_afkTimeout',time,FALSE];
+if (_key isEqualTo 5) then {
 	if (commandingMenu isEqualTo '') then {
 		if (isNull (objectParent player)) then {
 			if (isNull (attachedTo player)) then {
@@ -56,7 +56,7 @@ if (_key in ((actionKeys 'Throw') + (actionKeys 'Put'))) then {
 	if (isNull (objectParent player)) then {
 		if (!(unitIsUav cameraOn)) then {
 			if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-				50 cutText ['Do not throw grenades near base, please!','PLAIN DOWN'];
+				50 cutText ['Будьласка, не кидайте гранат біля бази!','PLAIN DOWN'];
 				_c = TRUE;
 			};
 		};
@@ -69,7 +69,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 				if (!((getPlayerUID player) in (['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
 					if (!(player getUnitTrait 'QS_trait_HQ')) then {
 						setCurrentChannel 5;
-						50 cutText ['Use General channel for general voice communications. Press [Home] >> [Comm-Link] >> [Radio Management] to subscribe.','PLAIN DOWN'];
+						50 cutText ['Використовуйте Загальний канал для розмов на загальні теми. Натисніть [Home] >> [Comm-Link] >> [Radio Management] для того, щоб підписатися.','PLAIN DOWN'];
 						_c = TRUE;
 					};
 				};
@@ -80,7 +80,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 							if (!(player getUnitTrait 'QS_trait_HQ')) then {
 								if (!((getPlayerUID player) in (['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
 									setCurrentChannel 5;
-									50 cutText ['Only Pilots and UAV Operator can transmit voice on Aircraft channel','PLAIN DOWN'];
+									50 cutText ['Тільки пілоти та оператори БПЛА можуть розмовляти в каналі авіації','PLAIN DOWN'];
 									_c = TRUE;
 								};
 							};
@@ -90,7 +90,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 			};
 		} else {
 			setCurrentChannel 5;
-			50 cutText ['You need a Radio item to transmit over radio channels!','PLAIN DOWN'];
+			50 cutText ['Вам потрібна рація щоб розмовляти в радіоканалах!','PLAIN DOWN'];
 			_c = TRUE;
 		};
 	};
@@ -121,7 +121,7 @@ if (_key in (actionKeys 'AutoHover')) then {
 					player setVariable ['QS_client_lastAutoHoverMsg',(diag_tickTime + 5),FALSE];
 					_arrayToSend = (crew _v) select {((!(_x isEqualTo player)) && (alive _x) && (isPlayer _x))};
 					if (!(_arrayToSend isEqualTo [])) then {
-						[63,[5,[(format ['Your pilot ( %1 ) has turned on autohover!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
+						[63,[5,[(format ['Ваш пілот ( %1 ) увімкнув автозависання!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
 					};
 				};
 			};
@@ -170,7 +170,7 @@ if (_key in (actionKeys 'ReloadMagazine')) then {
 	};
 };
 if (_key in (actionKeys 'VehLockTargets')) then {};
-if (_key in (actionKeys 'Zeus')) then {}; 
+if (_key in (actionKeys 'Zeus')) then {};
 if (_ctrl) then {
 	if (_key in [0x4C,0x4B,0x47,0x48,0x49,0x4D,0x51]) then {
 		if (isNull (objectParent player)) then {
@@ -240,10 +240,10 @@ if (_key isEqualTo 15) then {
 				player setVariable ['QS_pilot_rappellSafety',TRUE,FALSE];
 				if (isNil {(vehicle player) getVariable 'QS_rappellSafety'}) then {
 					(vehicle player) setVariable ['QS_rappellSafety',TRUE,TRUE];
-					50 cutText ['Fastrope disabled','PLAIN DOWN',1];
+					50 cutText ['Швидкий спуск канатом вимкнено','PLAIN DOWN',1];
 				} else {
 					(vehicle player) setVariable ['QS_rappellSafety',nil,TRUE];
-					50 cutText ['Fastrope enabled','PLAIN DOWN',1];
+					50 cutText ['Швидкий спуск канатом увімкнуто','PLAIN DOWN',1];
 				};
 				0 spawn {
 					uiSleep 4.5;
