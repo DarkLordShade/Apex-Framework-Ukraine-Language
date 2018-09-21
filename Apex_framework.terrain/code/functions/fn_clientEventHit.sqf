@@ -3,11 +3,11 @@ File: fn_clientEventHit.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	13/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	-
@@ -150,9 +150,9 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 						_n2 = '[AI]';
 					};
 				} else {
-					_n2 = '[N/A]'; 
+					_n2 = '[N/A]';
 				};
-				_text = parseText format ['You were wounded by a(n):<br/> %1.<br/> The crew consists of:<br/> %2 (Driver)<br/> %3 (Gunner)',_vtxt,_n1,_n2];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)',_vtxt,_n1,_n2];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			};
 		};
@@ -180,7 +180,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n3 = '[N/A]';
 				};
-				_text = parseText format ['You were wounded by a(n):<br/> %1. <br/> Its crew consists of:<br/> %2 (Gunner)<br/> %3 (Commander)',_vtxt,_n2,_n3];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Стрілець)<br/> %3 (Командир)',_vtxt,_n2,_n3];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			} else {
 				if (!isNull (driver _v)) then {
@@ -216,7 +216,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n3 = '[N/A]';
 				};
-				_text = parseText format ['You were wounded by a(n):<br/> %1.<br/> Its crew consists of:<br/> %2 (Driver)<br/> %3 (Gunner)<br/> %4 (Commander)',_vtxt,_n1,_n2,_n3];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)<br/> %4 (Командир)',_vtxt,_n1,_n2,_n3];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			};
 		};
@@ -227,15 +227,15 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				_n1 = name _causedBy1;
 				_uid1 = getPlayerUID _causedBy1;
 			};
-			_text = parseText format ['You were wounded by a %1, being controlled by %2',_vtxt,_n1];
+			_text = parseText format ['Вас пошкодив %1, що контролюється %2',_vtxt,_n1];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
-		} else {	
+		} else {
 			if (!isNull (driver _v)) then {
 				if (isPlayer (driver _v)) then {
 					_causedBy1 = driver _v;
 					_n1 = name _causedBy1;
 					_uid1 = getPlayerUID _causedBy1;
-					_text = format ['You were wounded, likely by %1, driving a(n) %2',_n1,_vtxt];
+					_text = format ['Вас пошкодив, здається %1, що керує %2',_n1,_vtxt];
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 				};
 			};
@@ -273,7 +273,7 @@ if (_v isKindOf 'Air') then {
 						_causedBy3 = _v turretUnit [2];
 						_n3 = name _causedBy3;
 						_uid3 = getPlayerUID _causedBy3;
-						_text = format ['You were wounded by %1, operating the RIGHT turret of a(n) %2.',_n3,_vtxt];
+						_text = format ['Вас пошкодив %1, що керує ПРАВОЮ туреллю %2.',_n3,_vtxt];
 						(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 					} else {
 						_n3 = '[AI]';
@@ -288,7 +288,7 @@ if (_v isKindOf 'Air') then {
 							_causedBy2 = _v turretUnit [1];
 							_n2 = name _causedBy2;
 							_uid2 = getPlayerUID _causedBy2;
-							_text = format ['You were wounded by %1, operating the LEFT turret of a(n) %2.',_n2,_vtxt];
+							_text = format ['Вас пошкодив %1, що керує ЛІВОЮ туреллю %2.',_n2,_vtxt];
 							(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 						} else {
 							_n2 = '[AI]';
@@ -335,11 +335,11 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n3 = '[N/A]';
 			};
-			_text = parseText format ['You were wounded by a(n):<br/> %1.<br/> Its crew consists of:<br/>%2 (Pilot). <br/>%3 (Left Turret). <br/>%4 (Right Turret).',_vtxt,_n1,_n2,_n3];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пілот). <br/>%3 (Ліва турель). <br/>%4 (Права турель).',_vtxt,_n1,_n2,_n3];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,12,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-	
+
 	if (_vTypeL in _gunnerVehicles) then {
 		if ((_posObject distance2D _posCausedBy) > 15) then {
 			if (!isNull (gunner _v)) then {
@@ -353,7 +353,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n2 = '[N/A]';
 			};
-			_text = format ['You were wounded by %1, Gunner of a(n) %2.',_n1,_vtxt];
+			_text = format ['Ваш пошкодив %1, Стрілець на %2.',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		} else {
 			if (!isNull (driver _v)) then {
@@ -378,16 +378,16 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n2 = '[N/A]';
 			};
-			_text = parseText format ['You were wounded by a(n):<br/> %1. <br/>Its crew consists of:<br/> %2 (Pilot) <br/>%3 (Gunner)',_vtxt,_n1,_n2];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пілот) <br/>%3 (Стрілець)',_vtxt,_n1,_n2];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-	
+
 	if (_vTypeL in _driverGunnerVehicles) then {
 		_causedBy1 = driver _v;
 		_n1 = name _causedBy1;
 		_uid1 = getPlayerUID _causedBy1;
-		_text = format ['You were wounded by %1, in a(n) %2.',_n1,_vtxt];
+		_text = format ['Вас пошкодив %1, з %2.',_n1,_vtxt];
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 	};
 	if (unitIsUAV _v) then {
@@ -423,7 +423,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_mf = '[OFF]';
 			};
-			_text = parseText format ['You were wounded by a(n):<br/> %1.<br/> Its crew consists of:<br/> %2 (Driver)<br/> %3 (Gunner)<br/> Manual-Fire is %4',_vtxt,_n1,_n2,_mf];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)<br/> Ручне керування вогнем %4',_vtxt,_n1,_n2,_mf];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -436,11 +436,11 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n1 = '[AI]';
 			};
-			_text = format ['You were wounded by %1, pilot of a(n) %2.',_n1,_vtxt];
+			_text = format ['Вас пошкодив %1, пілот %2.',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-	
+
 	if ((_posCausedBy distance2D _posObject) < 15) then {
 		_exclusionFound = FALSE;
 		if (_v isKindOf 'Helicopter') then {
@@ -507,7 +507,7 @@ if (_exit) exitWith {
 		0 = QS_sub_actions pushBack QS_sub_actions01;
 		if (!isNull _causedBy1) then {
 			QS_sub_actions02 = player addAction [
-				format ['(ROBOCOP) Report %1',_n1],
+				format ['(ROBOCOP) Повідомлення %1',_n1],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid1,_causedBy1,_posObject,_n1],
 				94,
@@ -519,7 +519,7 @@ if (_exit) exitWith {
 		};
 		if (!isNull _causedBy2) then {
 			QS_sub_actions03 = player addAction [
-				format ['(ROBOCOP) Report %1',_n2],
+				format ['(ROBOCOP) Повідомлення %1',_n2],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid2,_causedBy2,_posObject,_n2],
 				93,
@@ -531,7 +531,7 @@ if (_exit) exitWith {
 		};
 		if (!isNull _causedBy3) then {
 			QS_sub_actions04 = player addAction [
-				format ['(ROBOCOP) Report %1',_n3],
+				format ['(ROBOCOP) Повідомлення %1',_n3],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid3,_causedBy3,_posObject,_n3],
 				92,
@@ -548,8 +548,8 @@ if (_exit) exitWith {
 				_image = "media\images\general\robocop.jpg";
 				while {(!((missionNamespace getVariable 'QS_sub_actions') isEqualTo []))} do {
 					_tr = (_ti - time);
-					[(format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>In your Action Menu (SCROLL MENU), you have the option to anonymously report the incident. This option is available for %1 seconds.',(round _tr),_image])] call (missionNamespace getVariable 'QS_fnc_hint');
-					//hintSilent parseText format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>In your Action Menu (SCROLL MENU), you have the option to anonymously report the incident. This option is available for %1 seconds.',(round _tr),_image];					
+					[(format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>В Вашому Меню взаємодії (SCROLL MENU), у Вас є можливість анонімно повідомити про інцидент. Ця опція доступна %1 секунд.',(round _tr),_image])] call (missionNamespace getVariable 'QS_fnc_hint');
+					//hintSilent parseText format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>In your Action Menu (SCROLL MENU), you have the option to anonymously report the incident. This option is available for %1 seconds.',(round _tr),_image];
 					uiSleep 0.5;
 					if ((missionNamespace getVariable 'QS_sub_actions') isEqualTo []) exitWith {};
 					if (time >= _ti) exitWith {[''] call (missionNamespace getVariable 'QS_fnc_hint');};
