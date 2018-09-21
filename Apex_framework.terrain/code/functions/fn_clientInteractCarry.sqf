@@ -18,7 +18,7 @@ _t = cursorTarget;
 if (!isNull (objectParent _t)) exitWith {};
 if ((!(_t isKindOf 'CAManBase')) && (!([0,_t,objNull] call (missionNamespace getVariable 'QS_fnc_getCustomCargoParams')))) exitWith {};
 if (_t getVariable ['QS_interaction_disabled',FALSE]) exitWith {
-	50 cutText ['Взаємодію з цим об’эктом вимкнено','PLAIN',0.3];
+	50 cutText ['Взаємодію з цим об’єктом вимкнено','PLAIN',0.3];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
 	50 cutText ['Одиницю треба стабілізувати','PLAIN',0.3];
@@ -62,7 +62,7 @@ if (_t isKindOf 'CAManBase') then {
 			[[],{FALSE}]
 		] spawn (missionNamespace getVariable 'QS_fnc_clientProgressVisualization');
 	} else {
-		50 cutText ['Потрібна збрроя в руках щоб підняти гравця.','PLAIN DOWN',0.4];
+		50 cutText ['Потрібна зброя в руках щоб підняти гравця.','PLAIN DOWN',0.4];
 	};
 } else {
 	//comment 'Crate carrying';
