@@ -209,7 +209,7 @@ if (_state isEqualTo 1) then {
 						if (!isNull _killed) then {
 							if (!isNull _killer) then {
 								if (isPlayer _killer) then {
-									_text = format ['Завдання провалено!  НВЦ загинув від рук %1!',(name _killer)];
+									_text = format ['Завдання провалено!  HVC загинув від рук %1!',(name _killer)];
 									['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 								};
 							};
@@ -225,14 +225,14 @@ if (_state isEqualTo 1) then {
 				];
 				missionNamespace setVariable ['QS_arrest_target',_agent,TRUE];
 				missionNamespace setVariable ['QS_aoSmallTask_Arrested',FALSE,TRUE];
-				['ST_HVT',['High Value Target','Заарештувати НВЦ']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['ST_HVT',['High Value Target','Заарештувати HVC']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				[
 					'QS_IA_TASK_AO_3',
 					TRUE,
 					[
 						'В розвід данних вказано пріоритетну ціль в області. Рухайтесь туди та заарештуйте його!',
-						'Арешт НВЦ',
-						'Арешт НВЦ'
+						'Арешт HVC',
+						'Арешт HVC'
 					],
 					[_agent,TRUE],
 					'CREATED',
@@ -295,8 +295,8 @@ if (_state isEqualTo 2) then {
 	_enemyArray = _data select 1;
 	if (missionNamespace getVariable ['QS_aoSmallTask_Arrested',FALSE]) then {
 		//comment 'Mission success';
-		['ST_HVT',['High Value Target','НВЦ заарештовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'Доставити НВЦ на базу та помістити його до вязниці'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['ST_HVT',['High Value Target','HVC заарештовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Доставити HVC на базу та помістити його до вязниці'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];
@@ -319,7 +319,7 @@ if (_state isEqualTo 2) then {
 	} else {
 		if (!alive _agent) then {
 			//comment 'Mission failure';
-			['ST_HVT',['High Value Target','НВЦ мертвий, арешт провалився!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_HVT',['High Value Target','HVC мертвий, арешт провалився!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 			_return = [
 				_case,
