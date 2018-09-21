@@ -171,6 +171,7 @@ ___________________________________________/*/
 	'Deploy camo net',
 	'Розгорнути маскувальну сітку',
 	'Remove camo net',
+	'Згортання камуфляжноі сітки',
 	'Mount slat armor',
 	'Remove slat armor',
 	'Retract Cargo Ropes',
