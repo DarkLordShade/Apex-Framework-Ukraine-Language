@@ -185,7 +185,7 @@ ___________________________________________/*/
 	'Стабілізувати',
 	'Inspect',
 	'Self destruct',
-	'Deploy camo net',
+	'Розгорнути маскувальну сітку',
 	'Remove camo net',
 	'Mount slat armor',
 	'Remove slat armor',
