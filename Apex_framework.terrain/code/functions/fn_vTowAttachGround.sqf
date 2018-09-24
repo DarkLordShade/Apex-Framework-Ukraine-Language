@@ -241,6 +241,6 @@ if (!isNull (attachedTo _towedVehicle)) then {
 };
 _towedVehicle setPos (_vehicle modelToWorld _detachPos);
 _towedVehicle setVectorUp (surfaceNormal (getPosWorld _towedVehicle));
-50 cutText ['Released','PLAIN DOWN',0.25];
+50 cutText ['Відпущено','PLAIN DOWN',0.25];
 uiSleep 0.5;
 _vehicle allowDamage TRUE;

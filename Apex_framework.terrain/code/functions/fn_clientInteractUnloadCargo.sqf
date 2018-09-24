@@ -63,7 +63,7 @@ private _hasUnloaded = FALSE;
 						if (!((currentWeapon player) isEqualTo '')) then {_exit = TRUE;};
 						if (!((lifeState player) in ['HEALTHY','INJURED'])) then {_exit = TRUE;};
 						if (_exit) exitWith {
-							50 cutText ['Released','PLAIN DOWN',0.3];
+							50 cutText ['Відпущено','PLAIN DOWN',0.3];
 							detach _entity;
 							player forceWalk FALSE;
 							if (_entity call (missionNamespace getVariable 'QS_fnc_isBoundingBoxIntersected')) then {
@@ -72,7 +72,7 @@ private _hasUnloaded = FALSE;
 									_entity setVectorUp (surfaceNormal _position);
 									_entity setPos _position; /*/maybe setvehicleposition?/*/
 									_entity allowDamage (_entity getVariable ['QS_isDamageAllowed',TRUE]);
-									50 cutText ['Released','PLAIN DOWN',0.3];
+									50 cutText ['Відпущено','PLAIN DOWN',0.3];
 								};
 							};
 						};

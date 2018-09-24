@@ -28,7 +28,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 					0 = ['switchMove',player,''] remoteExec ['QS_fnc_remoteExecCmd',0,FALSE];
 				};
 				if ((animationState _unit) in ['ainjppnemrunsnonwnondb_grab','ainjppnemrunsnonwnondb_still','acts_injuredlyingrifle02','ainjppnemstpsnonwnondnon']) then {
-					50 cutText ['Released','PLAIN DOWN',0.3];
+					50 cutText ['Відпущено','PLAIN DOWN',0.3];
 					_released = TRUE;
 					detach _unit;
 					player playAction 'released';
@@ -48,7 +48,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 						'ainjpfalmstpsnonwrfldnon_carried_up','ainjpfalmstpsnonwnondf_carried_dead','ainjpfalmstpsnonwnondnon_carried_up','ainjpfalmstpsnonwrfldnon_carried_still','ainjppnemstpsnonwnondnon',
 						'ainjpfalmstpsnonwnondnon_carried_still'
 					]) then {
-						50 cutText ['Released','PLAIN DOWN',0.3];
+						50 cutText ['Відпущено','PLAIN DOWN',0.3];
 						_released = TRUE;
 						detach _unit;
 						_anim = ['AinjPfalMstpSnonWrflDnon_carried_down','AinjPfalMstpSnonWnonDnon_carried_down'] select ((primaryWeapon _unit) isEqualTo '');
@@ -61,7 +61,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 							player setVariable ['QS_RD_interacting',FALSE,TRUE];
 						};
 					} else {
-						50 cutText ['Released','PLAIN DOWN',0.3];
+						50 cutText ['Відпущено','PLAIN DOWN',0.3];
 						_released = TRUE;
 						detach _unit;
 						if ((lifeState _unit) isEqualTo 'INCAPACITATED') then {
@@ -94,7 +94,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 				};
 				if (!isNil {_unit getVariable 'QS_RD_escorted'}) then {
 					if (_unit getVariable 'QS_RD_escorted') then {
-						50 cutText ['Released','PLAIN DOWN',0.3];
+						50 cutText ['Відпущено','PLAIN DOWN',0.3];
 						_released = TRUE;
 						detach _unit;
 						0 = ['switchMove',_unit,(_unit getVariable ['QS_RD_storedAnim',''])] remoteExec ['QS_fnc_remoteExecCmd',0,FALSE];
@@ -176,7 +176,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 						if (!(_isDamageAllowed)) then {
 							_object allowDamage FALSE;
 						};
-						50 cutText ['Released','PLAIN DOWN',0.3];
+						50 cutText ['Відпущено','PLAIN DOWN',0.3];
 					} else {
 						50 cutText ['Не можливо тут звільнити (виявлено перепони).','PLAIN DOWN',0.5];
 					};
