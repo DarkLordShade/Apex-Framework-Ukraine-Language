@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuWounded.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	28/04/2016 A3 1.58 by Quiksilver
@@ -25,9 +25,9 @@ if (_type isEqualTo 1) then {
 	((findDisplay 8000) displayCtrl 1600) ctrlEnable FALSE;
 	((findDisplay 8000) displayCtrl 1604) ctrlEnable FALSE;
 	((findDisplay 8000) displayCtrl 1605) ctrlEnable FALSE;
-	
+
 	private ['_QS_medics','_nearEntities'];
-	
+
 	_QS_medics = [
 		'B_medic_F','B_recon_medic_F','B_G_medic_F','O_G_medic_F','I_G_medic_F','O_medic_F','I_medic_F','O_recon_medic_f',
 		'B_CTRG_soldier_M_medic_F','B_soldier_universal_f','O_soldier_universal_f','I_soldier_universal_f'
@@ -46,8 +46,8 @@ if (_type isEqualTo 1) then {
 			};
 		};
 	};
-	['sideChat',[WEST,'BLU'],format ['%1 is waiting for Medical Treatment.',profileName]] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	50 cutText ['Respawn disabled for 60 seconds','PLAIN DOWN'];
+	['sideChat',[WEST,'BLU'],format ['%1 очікує медичного втручання.',profileName]] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	50 cutText ['Респаун вимкнено на 60 секунд','PLAIN DOWN'];
 };
 if (_type isEqualTo 2) then {
 	[1] call (missionNamespace getVariable 'QS_fnc_clientMSpectate');

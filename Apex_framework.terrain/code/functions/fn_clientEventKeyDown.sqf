@@ -56,7 +56,7 @@ if (_key in ((actionKeys 'Throw') + (actionKeys 'Put'))) then {
 	if (isNull (objectParent player)) then {
 		if (!(unitIsUav cameraOn)) then {
 			if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-				50 cutText ['Будьласка, не кидайте гранат біля бази!','PLAIN DOWN'];
+				50 cutText ['Будь ласка, не кидайте гранат біля бази!','PLAIN DOWN'];
 				_c = TRUE;
 			};
 		};

@@ -1,9 +1,9 @@
 /*/
 File: fn_clientMenuOptions.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	23/04/2018 A3 1.82 by Quiksilver
@@ -40,7 +40,7 @@ if (_type isEqualTo 'onLoad') then {
 		};
 	} else {
 		ctrlEnable [1810,FALSE];
-		(_display displayCtrl 1810) ctrlSetToolTip 'Third Person View disabled by server';
+		(_display displayCtrl 1810) ctrlSetToolTip 'Гра від третьої особи відключена на цьому сервері';
 	};
 	(_display displayCtrl 1813) cbSetChecked (!isNil {player getVariable 'QS_HUD_3'});
 	(_display displayCtrl 1815) cbSetChecked (environmentEnabled select 0);
@@ -65,7 +65,7 @@ if (_type isEqualTo 'StaminaCheckbox') then {
 	};
 	if ((_this select 2) isEqualTo 0) then {
 		_state = FALSE;
-		50 cutText ['Stamina disabled','PLAIN DOWN',0.5];
+		50 cutText ['Витривалісь вимкнена','PLAIN DOWN',0.5];
 	};
 	if ((missionNamespace getVariable ['QS_missionConfig_stamina',0]) isEqualTo 0) then {
 		player enableStamina _state;
@@ -82,7 +82,7 @@ if (_type isEqualTo '1PVCheckbox') then {
 	_state = _this select 2;
 	if ((_this select 2) isEqualTo 1) then {
 		_state = TRUE;
-		50 cutText ['1st Person View locked for 20 minutes or by reconnect','PLAIN DOWN',0.75];
+		50 cutText ['Огляд від першої особи заблоковано на 20 хвилин або до перепідключення','PLAIN DOWN',0.75];
 		if (isNil {player getVariable 'QS_1stPersonLock'}) then {
 			player setVariable ['QS_1stPersonLock',TRUE,FALSE];
 			[46,[player,5]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
@@ -91,7 +91,7 @@ if (_type isEqualTo '1PVCheckbox') then {
 	};
 	if ((_this select 2) isEqualTo 0) then {
 		_state = FALSE;
-		50 cutText ['Camera view unlocked','PLAIN DOWN',0.75];
+		50 cutText ['Огляд з камери розблоковано','PLAIN DOWN',0.75];
 	};
 	if (_state) then {
 		ctrlEnable [1810,FALSE];
@@ -114,11 +114,11 @@ if (_type isEqualTo 'AmbientCheckbox') then {
 	if ((_this select 2) isEqualTo 1) then {
 		profileNamespace setVariable ['QS_options_ambientLife',TRUE];
 		enableEnvironment [TRUE,TRUE];
-		50 cutText ['Ambient Life enabled','PLAIN DOWN',0.5];
+		50 cutText ['Оточуючу живність увімкнено','PLAIN DOWN',0.5];
 	} else {
 		profileNamespace setVariable ['QS_options_ambientLife',FALSE];
 		enableEnvironment [FALSE,TRUE];
-		50 cutText ['Ambient Life disabled','PLAIN DOWN',0.5];
+		50 cutText ['Оточуючу живність вимкнено','PLAIN DOWN',0.5];
 	};
 	saveProfileNamespace;
 };
@@ -131,7 +131,7 @@ if (_type isEqualTo 'T_Checkbox') then {
 	} else {
 		{
 			_x setSimpleTaskAlwaysVisible FALSE;
-		} count (simpleTasks player);	
+		} count (simpleTasks player);
 	};
 };
 if (_type isEqualTo 'DynSimCheckbox') then {
@@ -140,7 +140,7 @@ if (_type isEqualTo 'DynSimCheckbox') then {
 		if (isNull (missionNamespace getVariable ['QS_dynSim_script',scriptNull])) then {
 			profileNamespace setVariable ['QS_options_dynSim',TRUE];
 			missionNamespace setVariable ['QS_options_dynSim',TRUE,FALSE];
-			50 cutText ['Dynamic Simulation enabled','PLAIN DOWN',0.5];
+			50 cutText ['Динамічну симуляцію увімкнено','PLAIN DOWN',0.5];
 			missionNamespace setVariable [
 				'QS_dynSim_script',
 				(1 spawn (missionNamespace getVariable 'QS_fnc_clientSimulationManager')),
@@ -150,7 +150,7 @@ if (_type isEqualTo 'DynSimCheckbox') then {
 	} else {
 		profileNamespace setVariable ['QS_options_dynSim',FALSE];
 		missionNamespace setVariable ['QS_options_dynSim',FALSE,FALSE];
-		50 cutText ['Dynamic Simulation disabled','PLAIN DOWN',0.5];
+		50 cutText ['Динамічну симуляцію вимкнено','PLAIN DOWN',0.5];
 	};
 	saveProfileNamespace;
 };

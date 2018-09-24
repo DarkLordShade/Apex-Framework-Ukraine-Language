@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuUTexture.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	5/10/2016 A3 1.64 by Quiksilver
@@ -65,7 +65,7 @@ if (_type isEqualTo 'Select') then {
 					profileNamespace setVariable ['QS_ClientUTexture2_Uniforms2',_validUniforms];
 					if (!(_patch isEqualTo '')) then {
 						if (!((vest player) isEqualTo '')) then {
-						
+
 						};
 						/*/
 						if (!((backpack player) isEqualTo '')) then {
@@ -89,11 +89,11 @@ if (_type isEqualTo 'Select') then {
 					saveProfileNamespace;
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Uniform Texture Reset',[],-1];
 				} else {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,8,-1,'Unsupported uniform for selected skin. Please select correct uniform type.',[],-1];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,8,-1,'Уніформа не підтримується обраним скіном. Будь ласка, оберіть інший тип уніформи.',[],-1];
 				};
 			};
 		} else {
-			_text = parseText format ['Supporter level required: %1<br/>Your supporter level: %2<br/>Uniform Texture not set.',_supporterAccess,_supporterLevel];
+			_text = parseText format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Текстура уніформи не встановлена.',_supporterAccess,_supporterLevel];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,_text,[],-1];
 		};
 	};

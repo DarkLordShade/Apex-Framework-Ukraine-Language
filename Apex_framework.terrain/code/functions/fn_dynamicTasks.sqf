@@ -83,7 +83,7 @@ if (_case isEqualTo 1) then {
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
 		(missionNamespace getVariable ['QS_dynTask_medevac_array',[]]) pushBack _entity;
 		[_entityName,{50 cutText [(format ['%1 has requested Medevac',_this]),'PLAIN DOWN',0.5];}] remoteExec ['call',(allPlayers select {(_x getUnitTrait 'QS_trait_pilot')}),FALSE];
-		private _description = format ['Врятувати %1.<br/><br/> Принести %1 до мед палатки на базі. Місце розташування позначено на вашій карті як Мед.штаб.<br/><br/>Цю людину не можуть відродити інші.<br/><br/>Якщо завдання не завершено, тоді той, кого доставили до Мед.штабу, мусить зачекати в ньому 30-50 секунд.',_entityName];
+		private _description = format ['Врятувати %1.<br/><br/> Принести %1 до мед палатки на базі. Місце розташування позначено на вашій карті як Мед.штаб.<br/><br/>Цю людину не можуть відродити інші.<br/><br/>Якщо завдання не закінчено, тоді той, кого доставили до Мед.штабу, мусить зачекати в ньому 30-50 секунд.',_entityName];
 		_array = [
 			_taskID,
 			'ADD',
@@ -220,7 +220,7 @@ if (_case isEqualTo 1) then {
 		_entity = _params select 0;
 		_entityName = _params select 1;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
-		private _description = format ['Пілот ( %1 ) катапультувався зі свого транспорту та потребує транспорту на базу. Коли він буде на відстані 500м від бази - міссію буде завершено.',_entityName];
+		private _description = format ['Пілот ( %1 ) катапультувався зі свого транспорту та потребує транспорту на базу. Коли він буде на відстані 500м від бази - міссію буде закінчено.',_entityName];
 		_array = [
 			_taskID,
 			'ADD',

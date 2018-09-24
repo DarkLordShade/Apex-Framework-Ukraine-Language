@@ -178,7 +178,7 @@ if (_state isEqualTo 2) then {
 	};
 	if ((((_unit distance _missionDestination) < 3.5) && (isNull (attachedTo _unit))) || (([0,_unit] call (missionNamespace getVariable 'QS_fnc_isNearFieldHospital')) && (isNull (attachedTo _unit)) && (isNull (objectParent _unit)))) exitWith {
 		//comment 'Mission success';
-		['ST_MEDEVAC',['Medevac','Евакуацію завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Medevac','Евакуацію закінчено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];

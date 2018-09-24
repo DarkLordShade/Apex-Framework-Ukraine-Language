@@ -24,7 +24,7 @@ if (!isNil {player getVariable 'QS_client_createdBoat'}) then {
 	};
 };
 if (_exit) exitWith {
-	50 cutText [(format ['У Вас вже є активний човен в сітці %1, будьласка, зареспавніть або знищіть його пер ніж створювати новий.',(mapGridPosition (player getVariable 'QS_client_createdBoat'))]),'PLAIN DOWN'];
+	50 cutText [(format ['У Вас вже є активний човен в сітці %1, Будь ласка, зареспавніть або знищіть його пер ніж створювати новий.',(mapGridPosition (player getVariable 'QS_client_createdBoat'))]),'PLAIN DOWN'];
 };
 player removeItem 'ToolKit';
 private _boatType = ['B_Lifeboat','B_T_Lifeboat'] select (worldName isEqualTo 'Tanoa');

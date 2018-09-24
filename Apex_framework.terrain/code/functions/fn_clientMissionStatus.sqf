@@ -1,9 +1,9 @@
 /*/
 File: fn_clientMissionStatus.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	9/12/2017 A3 1.80 by Quiksilver
@@ -53,7 +53,7 @@ _fn_sectorHint = {
 			};
 			if (!(missionNamespace getVariable 'QS_client_vs_msgEnteredCaptureArea')) then {
 				missionNamespace setVariable ['QS_client_vs_msgEnteredCaptureArea',TRUE,FALSE];
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Entering CAPTURE area',[],(serverTime + 15)];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Входимо в зону ЗАХОПЛЕННЯ',[],(serverTime + 15)];
 			};
 			if (missionNamespace getVariable 'QS_client_vs_msgEnteredControlArea') then {
 				missionNamespace setVariable ['QS_client_vs_msgEnteredControlArea',FALSE,FALSE];
@@ -68,11 +68,11 @@ _fn_sectorHint = {
 			};
 			if (!(missionNamespace getVariable 'QS_client_vs_msgEnteredControlArea')) then {
 				missionNamespace setVariable ['QS_client_vs_msgEnteredControlArea',TRUE,FALSE];
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Entering CONTROL area',[],(serverTime + 15)];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Входимо в зону КОНТРОЛЮ',[],(serverTime + 15)];
 			};
 			if (missionNamespace getVariable 'QS_client_vs_msgEnteredCaptureArea') then {
 				missionNamespace setVariable ['QS_client_vs_msgEnteredCaptureArea',FALSE,FALSE];
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Leaving CAPTURE area, entering CONTROL area',[],(serverTime + 15)];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Залишаємо зону ЗАХОПЛЕННЯ, входимо в зону КОНТРОЛЮ',[],(serverTime + 15)];
 			};
 		};
 	} else {
@@ -85,13 +85,13 @@ _fn_sectorHint = {
 		if (missionNamespace getVariable 'QS_client_vs_msgEnteredCaptureArea') then {
 			missionNamespace setVariable ['QS_client_vs_msgEnteredCaptureArea',FALSE,FALSE];
 			if ((_playerPos distance2D _position) < (_radiusControl * 1.5)) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Leaving CAPTURE area',[],(serverTime + 15)];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Залишаємо зону ЗАХОПЛЕННЯ',[],(serverTime + 15)];
 			};
 		};
 		if (missionNamespace getVariable 'QS_client_vs_msgEnteredControlArea') then {
 			missionNamespace setVariable ['QS_client_vs_msgEnteredControlArea',FALSE,FALSE];
 			if ((_playerPos distance2D _position) < (_radiusControl * 1.5)) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Leaving CONTROL area',[],(serverTime + 15)];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,3,-1,'Залишаємо зону КОНТРОЛЮ',[],(serverTime + 15)];
 			};
 		};
 	};
@@ -387,7 +387,7 @@ _QS_ctrl11 ctrlCommit 0;
 _QS_ctrl12_pos_x = ((ctrlPosition _QS_ctrl1) select 0) + (((ctrlPosition _QS_ctrl1) select 2) / 0.98);
 _QS_ctrl12_pos_y = ((0.025 * safezoneH) + safezoneY) + (((ctrlPosition _QS_ctrl1) select 3) / 4); //comment '0.035';
 _QS_ctrl12_pos_w = 0.1;
-_QS_ctrl12_pos_h = 0.015;	
+_QS_ctrl12_pos_h = 0.015;
 _QS_ctrlCreateArray = ['RscBackground',12359];
 _QS_ctrl120 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl120 ctrlShow FALSE;
@@ -485,11 +485,11 @@ _QS_ctrl14 progressSetPosition _QS_ctrl14_progress;
 _QS_ctrl4_scale = 0.5;
 _QS_ctrl1_position_0 = ((ctrlPosition _QS_ctrl1) select 0) + (((ctrlPosition _QS_ctrl1) select 2) / 4);
 _QS_ctrl1_position_1 = ((0.01 * safezoneH) + safezoneY) + (((ctrlPosition _QS_ctrl1) select 3) / 4);
-_QS_ctrl5_scale = 0.5; 
-_QS_ctrl2_position_0 = ((ctrlPosition _QS_ctrl2) select 0) + (((ctrlPosition _QS_ctrl2) select 2) / 4); 
+_QS_ctrl5_scale = 0.5;
+_QS_ctrl2_position_0 = ((ctrlPosition _QS_ctrl2) select 0) + (((ctrlPosition _QS_ctrl2) select 2) / 4);
 _QS_ctrl2_position_1 = ((0.01 * safezoneH) + safezoneY) + (((ctrlPosition _QS_ctrl2) select 3) / 4);
-_QS_ctrl6_scale = 0.5; 
-_QS_ctrl3_position_0 = ((ctrlPosition _QS_ctrl3) select 0) + (((ctrlPosition _QS_ctrl3) select 2) / 4); 
+_QS_ctrl6_scale = 0.5;
+_QS_ctrl3_position_0 = ((ctrlPosition _QS_ctrl3) select 0) + (((ctrlPosition _QS_ctrl3) select 2) / 4);
 _QS_ctrl3_position_1 = ((0.01 * safezoneH) + safezoneY) + (((ctrlPosition _QS_ctrl3) select 3) / 4);
 _QS_ctrl7_position_0 = ((ctrlPosition _QS_ctrl1) select 0) + (((ctrlPosition _QS_ctrl1) select 2) / 1.35);
 _QS_ctrl7_position_1 = ((0.01 * safezoneH) + safezoneY) + (((ctrlPosition _QS_ctrl1) select 3) / 1.175);
@@ -721,7 +721,7 @@ _QS_ctrl21 ctrlSetPosition [
 _QS_ctrl21_backgroundColor = [0,0,0,0]; //comment '[0,0,0,0.95];';
 _QS_ctrl21 ctrlSetTextColor [0,0,0,0];
 _QS_ctrl21 ctrlSetBackgroundColor _QS_ctrl21_backgroundColor;
-_QS_ctrl21 ctrlCommit 0;		
+_QS_ctrl21 ctrlCommit 0;
 
 //comment 'Background';
 _QS_ctrlCreateArray = ['RscPicture',12385];
@@ -760,11 +760,11 @@ _QS_ctrl23 ctrlCommit 0;
 _QS_ctrlCreateArray = ['RscPictureKeepAspect',12387];
 _QS_ctrl24 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl24 ctrlShow FALSE;
-_QS_ctrl24 ctrlSetPosition [ 
-	((0.30845 * safezoneW) + safezoneX), 
-	((0.0175 * safezoneH) + safezoneY), 
-	0.075, 
-	0.05 
+_QS_ctrl24 ctrlSetPosition [
+	((0.30845 * safezoneW) + safezoneX),
+	((0.0175 * safezoneH) + safezoneY),
+	0.075,
+	0.05
 ];
 private _QS_ctrl_text24 = '';
 private _QS_ctrl_color24 = [0.8,0.6,0,1]; /*/_QS_color_profile;/*/
@@ -782,7 +782,7 @@ _productVersionCtrl ctrlSetPosition [
 	((0.97 * safezoneH) + safezoneY),
 	1,
 	0.05
-];  
+];
 _productVersionCtrl ctrlSetTextColor [1,1,1,0];
 _productVersionCtrl ctrlSetFont 'TahomaB';
 _productVersionCtrl ctrlSetText (missionNamespace getVariable ['QS_system_devBuild_text','Apex Framework (Beta)']);
@@ -1280,9 +1280,9 @@ for '_x' from 0 to 1 step 0 do {
 			_keyText = _key select [1,((count _key) - 2)];
 		};
 		if (ctrlShown _QS_ctrl0) then {
-			_QS_ctrl_text10 = format ['Press [%1] to hide',_keyText];
+			_QS_ctrl_text10 = format ['Натисніть [%1] щоб приховати',_keyText];
 		} else {
-			_QS_ctrl_text10 = format ['Press [%1] to show mission status',_keyText];
+			_QS_ctrl_text10 = format ['Натисніть [%1] щоб відобразити статус міссії',_keyText];
 		};
 		_QS_ctrl01 ctrlSetTextColor _QS_ctrl01_backgroundColor;
 		{
@@ -1355,18 +1355,18 @@ for '_x' from 0 to 1 step 0 do {
 				_currentTaskData = _x;
 				if (_currentTaskData isEqualType []) then {
 					_currentTaskID = _currentTaskData select 0;
-					_currentTaskCustomData = _currentTaskData select 1; 
+					_currentTaskCustomData = _currentTaskData select 1;
 					_currentTaskTimerData = _currentTaskData select 2;
 					_currentTaskProgressData = _currentTaskData select 3;
 					if ([_currentTaskID,_currentTaskStr,_false] call _fn_inString) then {
 						_exit = _true;
-						_currentTaskType = _currentTaskCustomData select 0; 
+						_currentTaskType = _currentTaskCustomData select 0;
 						_currentTaskTooltip = _currentTaskCustomData select 1;
 						_currentTaskDescription = _currentTaskCustomData select 2;
-						_currentTaskTimer = _currentTaskTimerData select 0; 
-						_currentTaskTimeout = _currentTaskTimerData select 1; 
-						_currentTaskProgress = _currentTaskProgressData select 0; 
-						_currentTaskRate = _currentTaskProgressData select 1; 
+						_currentTaskTimer = _currentTaskTimerData select 0;
+						_currentTaskTimeout = _currentTaskTimerData select 1;
+						_currentTaskProgress = _currentTaskProgressData select 0;
+						_currentTaskRate = _currentTaskProgressData select 1;
 						if (_currentTaskTimer) then {
 							_currentTaskTimeout = _currentTaskTimeout max 0;
 						};

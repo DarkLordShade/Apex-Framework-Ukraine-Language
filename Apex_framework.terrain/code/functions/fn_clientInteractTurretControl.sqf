@@ -3,11 +3,11 @@ File: fn_turretControl.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	15/11/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	Turret Control action-manager
@@ -27,22 +27,22 @@ if (isNil {_v getVariable 'QS_turretSafety'}) then {
 };
 private _actionIndex = -1;
 if (_v getVariable 'QS_turretL_locked') then {
-	_actionIndex = QS_turretActions pushBack (player addAction ['Unlock turret (Left)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,1,0],80,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionUnlockL']);
+	_actionIndex = QS_turretActions pushBack (player addAction ['Розблокувати турель (Ліва)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,1,0],80,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionUnlockL']);
 	player setUserActionText [(QS_turretActions select _actionIndex),((player actionParams (QS_turretActions select _actionIndex)) select 0),(format ["<t size='3'>%1</t>",((player actionParams (QS_turretActions select _actionIndex)) select 0)])];
 };
 if (_v getVariable 'QS_turretR_locked') then {
-	_actionIndex = QS_turretActions pushBack (player addAction ['Unlock turret (Right)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,2,0],79,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionUnlockR']);
+	_actionIndex = QS_turretActions pushBack (player addAction ['Розблокувати турель (Права)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,2,0],79,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionUnlockR']);
 	player setUserActionText [(QS_turretActions select _actionIndex),((player actionParams (QS_turretActions select _actionIndex)) select 0),(format ["<t size='3'>%1</t>",((player actionParams (QS_turretActions select _actionIndex)) select 0)])];
 };
 if (!(_v getVariable 'QS_turretL_locked')) then {
-	_actionIndex = QS_turretActions pushBack (player addAction ['Lock turret (Left)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,1,1],78,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionLockL']);
+	_actionIndex = QS_turretActions pushBack (player addAction ['Заблокувати турель (Ліва)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,1,1],78,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionLockL']);
 	player setUserActionText [(QS_turretActions select _actionIndex),((player actionParams (QS_turretActions select _actionIndex)) select 0),(format ["<t size='3'>%1</t>",((player actionParams (QS_turretActions select _actionIndex)) select 0)])];
 };
 if (!(_v getVariable 'QS_turretR_locked')) then {
-	_actionIndex = QS_turretActions pushBack (player addAction ['Lock turret (Right)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,2,1],77,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionLockR']);
+	_actionIndex = QS_turretActions pushBack (player addAction ['Заблокувати турель (Права)',(missionNamespace getVariable 'QS_fnc_turretActions'),[_v,2,1],77,FALSE,FALSE,'','[] call QS_fnc_conditionTurretActionLockR']);
 	player setUserActionText [(QS_turretActions select _actionIndex),((player actionParams (QS_turretActions select _actionIndex)) select 0),(format ["<t size='3'>%1</t>",((player actionParams (QS_turretActions select _actionIndex)) select 0)])];
 };
-_actionIndex = QS_turretActions pushBack (player addAction ['Cancel turret actions',(missionNamespace getVariable 'QS_fnc_turretActionCancel'),[],76]);
+_actionIndex = QS_turretActions pushBack (player addAction ['Відмінити дії з турелями',(missionNamespace getVariable 'QS_fnc_turretActionCancel'),[],76]);
 player setUserActionText [(QS_turretActions select _actionIndex),((player actionParams (QS_turretActions select _actionIndex)) select 0),(format ["<t size='3'>%1</t>",((player actionParams (QS_turretActions select _actionIndex)) select 0)])];
 if (!(QS_inturretloop)) then {
 	QS_inturretloop = TRUE;

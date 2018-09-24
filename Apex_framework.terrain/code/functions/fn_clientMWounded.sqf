@@ -3,15 +3,15 @@ File: fn_clientMWounded.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	24/03/2017 A3 1.68 by Quiksilver
-	
+
 Description:
 
 	Client Wounded system
-	
+
 Note:
 
 	OBSOLETE, superceded by QS_fnc_incapacitated
@@ -160,9 +160,9 @@ _QS_Revive_blockEscape = (findDisplay 8000) displayAddEventHandler [
 ];
 _deathTimer = (_ui displayCtrl 1001);
 _nearestMedic = (_ui displayCtrl 1002);
-_buttonWait = (_ui displayCtrl 1600); 
+_buttonWait = (_ui displayCtrl 1600);
 _buttonWait ctrlEnable (!(_iAmPilot));
-_buttonSpectate = (_ui displayCtrl 1601); 
+_buttonSpectate = (_ui displayCtrl 1601);
 
 if (count (units (group player)) > 1) then {
 	_spectateVar = TRUE;
@@ -216,7 +216,7 @@ if (missionNamespace getVariable 'QS_module_fob_client_respawnEnabled') then {
 	};
 };
 _buttonRespawnFOB ctrlSetText 'FOB';
-_buttonRespawnFOB ctrlSetToolTip (format ['Respawn at FOB (Tickets remaining: %1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+_buttonRespawnFOB ctrlSetToolTip (format ['Респун на ПОБ (Квитів залишилось: %1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 /*/================================= SET BLEED TIMER/*/
 
 _medicalTimerDelay = 10 * 60;
@@ -301,13 +301,13 @@ for '_x' from 0 to 1 step 0 do {
 	/*/================================ FIND NEAREST MEDIC/*/
 
 	_nearestMedic ctrlSetText ([] call (missionNamespace getVariable 'QS_fnc_clientMFindHealer'));
-	
+
 	/*/================================ BLEED-OUT TIMER/*/
-	
-	_deathTimer ctrlSetText format ['%1 (Bleeding out)',([(_medicalTimer - _timeNow),'MM:SS'] call (missionNamespace getVariable 'QS_fnc_secondsToString'))];
-	
+
+	_deathTimer ctrlSetText format ['%1 (стікає кров’ю)',([(_medicalTimer - _timeNow),'MM:SS'] call (missionNamespace getVariable 'QS_fnc_secondsToString'))];
+
 	/*/=============================== ENSURE DIALOG STAYS THE FUCK OPEN!/*/
-	
+
 	if (isNull (findDisplay 8000)) then {
 		waitUntil {
 			createDialog 'QS_RD_client_dialog_menu_wounded';
@@ -316,7 +316,7 @@ for '_x' from 0 to 1 step 0 do {
 		_ui = uiNamespace getVariable 'QS_revive_dialog';
 		_deathTimer = (_ui displayCtrl 1001);
 		_nearestMedic = (_ui displayCtrl 1002);
-		_buttonWait = (_ui displayCtrl 1600); 
+		_buttonWait = (_ui displayCtrl 1600);
 		_buttonWait ctrlEnable ((!(_iAmPilot)) && (player getVariable 'QS_revive_waitButton'));
 		_buttonSpectate = (_ui displayCtrl 1601);
 		if (count (units (group player)) > 1) then {
@@ -333,7 +333,7 @@ for '_x' from 0 to 1 step 0 do {
 		_buttonRespawnBASE ctrlEnable (player getVariable 'QS_revive_waitButton');
 		_buttonRespawnFOB = (_ui displayCtrl 1605);
 		_buttonRespawnFOB ctrlEnable FALSE;
-		
+
 		if (missionNamespace getVariable 'QS_module_fob_client_respawnEnabled') then {
 			if (missionNamespace getVariable 'QS_module_fob_respawnEnabled') then {
 				if (!(_iAmPilot)) then {
@@ -372,9 +372,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/================================ IF BLEED-OUT/*/
-	
+
 	if (_timeNow > _medicalTimer) exitWith {
 		if (!isNull (findDisplay 8000)) then {
 			(findDisplay 8000) closeDisplay 0;
@@ -384,9 +384,9 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		forceRespawn player;
 	};
-	
+
 	/*/================================ IF UNDERWATER/*/
-	
+
 	if (((getPosASL player) select 2) < -1.5) then {
 		if (!isNull (findDisplay 8000)) then {
 			(findDisplay 8000) closeDisplay 0;
@@ -396,9 +396,9 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		forceRespawn player;
 	};
-	
+
 	/*/================================ IF AT BASE MEDEVAC STATION/*/
-	
+
 	if ((player distance _medevacBase) < 3) then {
 		if (isNull (objectParent player)) then {
 			if (isNull (attachedTo player)) then {
@@ -409,22 +409,22 @@ for '_x' from 0 to 1 step 0 do {
 					};
 				};
 				player setVariable ['QS_revive_incapacitated',FALSE,TRUE];
-				[34,['TaskSucceeded',['',format ['%1 Medevac Successful!',profileName]]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
+				[34,['TaskSucceeded',['',format ['%1 Мед.евакуацію виконано!',profileName]]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
 			};
 		};
 	};
-	
+
 	/*/================================ CHECK PLAYER STANCE (bug mitigation)/*/
-	
+
 	if ((stance player) isEqualTo 'STAND') then {
 		if (isNull (attachedTo player)) then {
 			['switchMove',player,'acts_InjuredLyingRifle02'] remoteExec ['QS_fnc_remoteExecCmd',0,FALSE];
 			player switchMove 'acts_InjuredLyingRifle02';
 		};
 	};
-	
+
 	/*/================================ IF IN MEDICAL VEHICLE and TICKETS REMAINING/*/
-	
+
 	if (!(_revivedAtVehicle)) then {
 		if (!isNull (objectParent player)) then {
 			if ((['medical',(typeOf _v1),FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) || {(['medevac',(typeOf _v1),FALSE] call (missionNamespace getVariable 'QS_fnc_inString'))}) then {
@@ -436,7 +436,7 @@ for '_x' from 0 to 1 step 0 do {
 					player setVariable ['QS_revive_incapacitated',FALSE,TRUE];
 					_remainingTickets = (getNumber (configFile >> 'CfgVehicles' >> (typeOf _v1) >> 'transportSoldier')) - 1;
 					_v1 setVariable ['QS_medicalVehicle_reviveTickets',_remainingTickets,TRUE];
-					_textReviveTickets = format ['%1 ( %2 ) - Revive Tickets Remaining - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _v1) >> 'displayName')),(mapGridPosition _v1),_remainingTickets];
+					_textReviveTickets = format ['%1 ( %2 ) - Залишилось квитків оживлення - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _v1) >> 'displayName')),(mapGridPosition _v1),_remainingTickets];
 					['sideChat',[WEST,'BLU'],_textReviveTickets] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				} else {
 					if ((_v1 getVariable 'QS_medicalVehicle_reviveTickets') isEqualType 0) then {
@@ -458,7 +458,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 
 	/*/================================ IF REVIVED/*/
-	
+
 	if (((!(missionNamespace getVariable 'QS_medSys')) && (!(player getVariable 'QS_revive_incapacitated'))) || {((missionNamespace getVariable 'QS_medSys') && (!(_lifeState isEqualTo 'INCAPACITATED')))}) exitWith {
 		if (alive player) then {
 			if (!isNull (findDisplay 8000)) then {
@@ -483,9 +483,9 @@ for '_x' from 0 to 1 step 0 do {
 			['switchMove',player,'AmovPpneMstpSnonWnonDnon'] remoteExec ['QS_fnc_remoteExecCmd',0,FALSE];
 		};
 	};
-	
+
 	/*/================================ IF ACT OF GOD/*/
-	
+
 	if (_actOfGod) then {
 		if (_timeNow > _actOfGod_delay) then {
 			if (((!(missionNamespace getVariable 'QS_medSys')) && (player getVariable 'QS_revive_incapacitated')) || ((missionNamespace getVariable 'QS_medSys') && (_lifeState isEqualTo 'INCAPACITATED'))) then {
@@ -495,7 +495,7 @@ for '_x' from 0 to 1 step 0 do {
 					if ((_deadVehicles findIf {((_x distance player) < 5)}) isEqualTo -1) then {
 						if (!(((getPosASL player) select 2) < -1)) then {
 							if ((animationState player) in _QS_revive_injuredAnims) then {
-								_text = 'Revived by an act of the gods. Praise the gods!';
+								_text = 'Оживлено милістю Богів. Славтися Боги!';
 								50 cutText [_text,'PLAIN DOWN',1];
 								if (_lifeState isEqualTo 'INCAPACITATED') then {
 									player setUnconscious FALSE;
@@ -511,9 +511,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/================================ IF RESPAWNED/*/
-	
+
 	if (!((player getVariable 'QS_revive_respawnType') isEqualTo '')) exitWith {
 		if (!isNull (findDisplay 8000)) then {
 			(findDisplay 8000) closeDisplay 0;
@@ -523,11 +523,11 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		forceRespawn player;
 	};
-	
+
 	/*/================================ IF DEAD/*/
-	
+
 	if ((!alive player) || {(isNull player)}) exitWith {};
-	
+
 	/*/================================ BUTTON CONTROL/*/
 
 	if (count (units (group player)) > 1) then {
@@ -577,7 +577,7 @@ for '_x' from 0 to 1 step 0 do {
 			_buttonRespawnFOB ctrlEnable FALSE;
 		};
 	};
-	_buttonRespawnFOB ctrlSetToolTip (format ['Respawn at FOB (Tickets remaining: %1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+	_buttonRespawnFOB ctrlSetToolTip (format ['Респун на ПОБ (Квитків залишилось: %1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 	_buttonRespawnFOB ctrlSetText (format ['FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 	if (!((player getVariable 'QS_revive_waitTime') isEqualto -1)) then {
 		if (_timeNow > (player getVariable 'QS_revive_waitTime')) then {
@@ -588,6 +588,6 @@ for '_x' from 0 to 1 step 0 do {
 };
 (findDisplay 8000) displayRemoveEventHandler ['KeyDown',_QS_Revive_blockEscape];
 player setBleedingRemaining 0;
-[0,(missionNamespace getVariable 'QS_woundedCam')] call (missionNamespace getVariable 'QS_fnc_clientMCameraMode');	
+[0,(missionNamespace getVariable 'QS_woundedCam')] call (missionNamespace getVariable 'QS_fnc_clientMCameraMode');
 showHUD (missionNamespace getVariable [(format ['QS_allowedHUD_%1',playerSide]),WEST]);
 [29,(missionNamespace getVariable 'QS_module_fob_side')] call (missionNamespace getVariable 'QS_fnc_remoteExec');

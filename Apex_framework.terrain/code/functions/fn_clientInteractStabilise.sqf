@@ -7,7 +7,7 @@ Author:
 Last modified:
 
 	3/11/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	Stablise
@@ -30,7 +30,7 @@ _event = player addEventHandler [
 			missionNamespace setVariable ['QS_client_stabilise_entity',objNull,FALSE];
 		};
 		if (
-			(['medicdummyend',_anim,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) || 
+			(['medicdummyend',_anim,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) ||
 			((['medicother',_anim,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) && (!(['medicotherin',_anim,FALSE] call (missionNamespace getVariable 'QS_fnc_inString'))))
 		) then {
 			player removeEventHandler ['AnimDone',_thisEventHandler];
@@ -46,7 +46,7 @@ _event = player addEventHandler [
 									_entity setVariable ['QS_unit_needsStabilise',FALSE,TRUE];
 								};
 							};
-							50 cutText ['Stabilised','PLAIN DOWN',0.25];
+							50 cutText ['Стабілізовано','PLAIN DOWN',0.25];
 						};
 					};
 				};

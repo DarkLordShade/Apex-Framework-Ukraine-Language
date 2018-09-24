@@ -3,11 +3,11 @@ File: fn_clientInteractUnload.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	4/09/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	-
@@ -24,7 +24,7 @@ if (((vectorMagnitude (velocity _t)) * 3.6) < 2) then {
 	};
 };
 if (!(_approved)) exitWith {
-	50 cutText ['Vehicle is moving','PLAIN DOWN',0.3];
+	50 cutText ['Транспорт рухається','PLAIN DOWN',0.3];
 };
 _exit = FALSE;
 {
@@ -87,7 +87,7 @@ _exit = FALSE;
 				} else {
 					0 = [90,_unit,1] remoteExec ['QS_fnc_remoteExec',0,FALSE];
 				};
-				50 cutText [(format ['%1 unloaded',(name _unit)]),'PLAIN DOWN',0.3];
+				50 cutText [(format ['%1 вивантажено',(name _unit)]),'PLAIN DOWN',0.3];
 				_unit setVariable ['QS_RD_loaded',FALSE,TRUE];
 				waitUntil {
 					(isNull (objectParent _unit))
@@ -115,7 +115,7 @@ _exit = FALSE;
 		};
 	};
 	if (_exit) exitWith {
-		50 cutText [(format ['%1 unloaded',(name _unit)]),'PLAIN DOWN',0.5];
+		50 cutText [(format ['%1 вивантажено',(name _unit)]),'PLAIN DOWN',0.5];
 	};
 } count ((crew _t) + (attachedObjects _t));
 TRUE;

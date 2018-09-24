@@ -2,9 +2,9 @@
 Script Name: QS Magazine Repack
 File: fn_clientRepackMagazines.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	18/03/2018 A3 1.82 by Quiksilver
@@ -12,7 +12,7 @@ Last Modified:
 Description:
 
 	Repack Magazines
-	
+
 Example:
 
 	<unit> spawn QS_fnc_clientRepackMagazines;
@@ -37,7 +37,7 @@ if ((isPlayer _unit) && (!isNull (objectParent _unit)) && (_unit in [(driver _ve
 	//comment 'Fail quietly, key binding overlap';
 };
 if (_unit isEqualTo player) then {
-	50 cutText ['Repacking magazines','PLAIN DOWN',0.3];
+	50 cutText ['Перепакування магазинів','PLAIN DOWN',0.3];
 };
 _unit setVariable ['QS_unit_repackingMagazines',TRUE,FALSE];
 _canSuspend = canSuspend;
@@ -149,5 +149,5 @@ if (_canSuspend) then {
 	};
 };
 if (_unit isEqualTo player) then {
-	50 cutText ['Magazines repacked','PLAIN DOWN',0.2];
+	50 cutText ['Магазини перепаковано','PLAIN DOWN',0.2];
 };

@@ -3,7 +3,7 @@ File: fn_clientMSpectate.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	15/05/2016 A3 1.58 by Quiksilver
@@ -47,7 +47,7 @@ if ((count _groupMembers) > 1) then {
 			(preloadCamera (getPos (missionNamespace getVariable 'QS_client_spectatedUnit'))) ||
 			(time > _timeNow)
 		};
-		50 cutText [(format ['Spectating %1',(name (missionNamespace getVariable 'QS_client_spectatedUnit'))]),'PLAIN DOWN'];
+		50 cutText [(format ['Спостерігання за %1',(name (missionNamespace getVariable 'QS_client_spectatedUnit'))]),'PLAIN DOWN'];
 		(vehicle (missionNamespace getVariable 'QS_client_spectatedUnit')) switchCamera 'Internal';
 	};
 	('RscSpectator_fade' call (missionNamespace getVariable 'BIS_fnc_rscLayer')) cutText ['','BLACK IN'];
@@ -65,7 +65,7 @@ if ((count _groupMembers) > 1) then {
 	_nextUnit = _groupMembers select _nextUnitID;
 	_nameNextUnit = name _nextUnit;
 	_typeNextUnit = getText (configFile >> 'CfgVehicles' >> (typeOf _nextUnit) >> 'displayName');
-	
+
 	if (player != _nextUnit) then {
 		_buttonSpectate ctrlSetText format ['Spectate %1',_nameNextUnit];
 	} else {

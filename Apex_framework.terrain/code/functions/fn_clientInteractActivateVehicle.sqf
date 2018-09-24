@@ -21,7 +21,7 @@ if (
 ) exitWith {};
 _QS_tto = player getVariable ['QS_tto',0];
 if (_QS_tto > 3) exitWith {
-	50 cutText ['ROBOCOP: Доступ закрито. Будьласка, зачекайте рестарту або попросіть вибачення в персоналу','PLAIN DOWN',1];
+	50 cutText ['ROBOCOP: Доступ закрито. Будь ласка, зачекайте рестарту або попросіть вибачення в персоналу','PLAIN DOWN',1];
 };
 if ((_cursorObject isKindOf 'Plane') && (!(player getUnitTrait 'QS_trait_pilot'))) exitWith {
 	50 cutText ['Тільки пілоти можуть активувати літаки та гелікоптери','PLAIN DOWN',0.5];

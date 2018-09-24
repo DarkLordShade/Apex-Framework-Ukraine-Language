@@ -1,9 +1,9 @@
 /*/
 File: fn_clientInteractSurrender.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	4/02/2017 A3 1.80 by Quiksilver
@@ -82,11 +82,11 @@ _onCompleted = {
 		['QS_RD_loadable',TRUE,TRUE],
 		['QS_surrender_captor',[profileName,(getPlayerUID player)],TRUE]
 	];
-	_text = format ['%1 has captured a unit at grid %2',profileName,(mapGridPosition player)];
+	_text = format ['%1 захопив об’єкт в квадраті %2',profileName,(mapGridPosition player)];
 	['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	50 cutText ['Captured!','PLAIN DOWN',0.75];
+	50 cutText ['Захоплено!','PLAIN DOWN',0.75];
 };
-/*/ 
+/*/
 How hard should it be to capture the unit?
 Maybe we could check how depleted the enemy units group is
 /*/

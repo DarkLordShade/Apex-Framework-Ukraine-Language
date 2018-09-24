@@ -3,7 +3,7 @@ File: fn_clientMFindHealer.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	9/12/2017 A3 1.80 by Quiksilver
@@ -15,7 +15,7 @@ ________________________________________________________________________________
 
 _px = player;
 private _md = 500;
-private _mg = format ['No medics within %1m',_md];
+private _mg = format ['Немає медиків в радіусі %1м',_md];
 _ps = getPosATL _px;
 _mc = ['Man'];
 _vt = ['LandVehicle','Ship','Air'];
@@ -42,7 +42,7 @@ if (!(_mn isEqualTo [])) then {
 								if (_x getUnitTrait 'medic') then {
 									_mx = _x;
 									_md = (vehicle _x) distance _px;
-									_mg = format ['Nearest medic is %1 (%2m)',(name _mx),(round (_md))];
+									_mg = format ['Найближчий медик %1 (%2м)',(name _mx),(round (_md))];
 								};
 							};
 						};

@@ -1,9 +1,9 @@
 /*
 File: fn_clientRadio.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	29/06/2016 A3 1.62 by Quiksilver
@@ -11,7 +11,7 @@ Last Modified:
 Description:
 
 	Client Radio
-	
+
 Example:
 
 	[0,((missionNamespace getVariable 'QS_radioChannels') select 2)] call (missionNamespace getVariable 'QS_fnc_clientRadio');
@@ -24,7 +24,7 @@ if (_type isEqualTo 0) then {
 		if (currentChannel > 5) then {
 			setCurrentChannel 5;
 		};
-		diag_log format ['***** RADIO ***** Removed from channel %1',_channel];
+		diag_log format ['***** RADIO ***** Вилучено з каналу %1',_channel];
 		missionNamespace setVariable [
 			'QS_client_radioChannels',
 			((missionNamespace getVariable 'QS_client_radioChannels') - [_channel]),
@@ -37,7 +37,7 @@ if (_type isEqualTo 0) then {
 			if (!(_channel isEqualTo 1)) then {
 				_channel radioChannelAdd [player];
 			};
-			diag_log format ['***** RADIO ***** Added to channel %1',_channel];
+			diag_log format ['***** RADIO ***** Добано до каналу %1',_channel];
 			missionNamespace setVariable [
 				'QS_client_radioChannels',
 				((missionNamespace getVariable 'QS_client_radioChannels') + [_channel]),

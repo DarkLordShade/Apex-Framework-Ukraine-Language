@@ -3,11 +3,11 @@ File: fn_clientInteractUnloadCargo.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	25/10/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	-
@@ -95,7 +95,7 @@ private _hasUnloaded = FALSE;
 					if (isObjectHidden _cargo) then {
 						[71,_cargo,FALSE] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 					};
-					detach _cargo;				
+					detach _cargo;
 					_cargo setVectorUp (surfaceNormal _position);
 					_cargo setPos _position; //comment 'maybe setvehicleposition?';
 					_cargo allowDamage (_cargo getVariable ['QS_isDamageAllowed',TRUE]);
@@ -121,9 +121,9 @@ private _hasUnloaded = FALSE;
 							drawIcon3D ['a3\ui_f\data\map\VehicleIcons\iconcrate_ca.paa',[1,1,1,1],(getPosVisual _object),0,0,0,'Cargo',1,0.1,'RobotoCondensed','right',TRUE];
 						}
 					];
-					50 cutText [(format ['Unloaded %1',(_cargo getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _cargo) >> 'displayName'))])]),'PLAIN DOWN',0.3];
+					50 cutText [(format ['Вивантажено %1',(_cargo getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _cargo) >> 'displayName'))])]),'PLAIN DOWN',0.3];
 				} else {
-					50 cutText ['No clear position to unload.','PLAIN DOWN',0.3];
+					50 cutText ['Немає чистого місця для вивантаження.','PLAIN DOWN',0.3];
 				};
 			};
 		};
