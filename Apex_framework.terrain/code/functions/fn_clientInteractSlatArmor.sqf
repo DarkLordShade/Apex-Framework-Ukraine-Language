@@ -3,11 +3,11 @@ File: fn_clientInteractSlatArmor.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	14/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	-
@@ -16,13 +16,13 @@ _____________________________________________________________/*/
 params ['_actionTarget','_actionCaller','_actionID','_actionArguments'];
 _actionArguments params ['_vehicle','_newPhase','_animationSources'];
 if ((!(player getUnitTrait 'engineer')) && (!(['_crew_',(typeOf player),FALSE] call (missionNamespace getVariable 'QS_fnc_inString')))) exitWith {
-	50 cutText ['Only engineers and crewmen can mount or remove slat armor','PLAIN DOWN',0.5];
+	50 cutText ['Тільки інженери можуть встановлювати або знімати накладну броню','PLAIN DOWN',0.5];
 };
 if (isEngineOn _vehicle) exitWith {
-	50 cutText ['Engine must be off','PLAIN DOWN',0.5];
+	50 cutText ['Двишун має бути вимкнений','PLAIN DOWN',0.5];
 };
 if (!((damage _vehicle) isEqualTo 0)) exitWith {
-	50 cutText ['Vehicle must be undamaged to modify slat armor','PLAIN DOWN',0.5];
+	50 cutText ['Транспорт має бути непошкодженим для зміни накладної броні','PLAIN DOWN',0.5];
 };
 private _exitCamo = FALSE;
 _camonetArmor_anims = ['showcamonethull','showcamonetcannon','showcamonetcannon1','showcamonetturret','showcamonetplates1','showcamonetplates2'];
@@ -56,7 +56,7 @@ if (!(_camonetArmor_vAnims isEqualTo [])) then {
 	};
 };
 if (_exitCamo) exitWith {
-	50 cutText ['Remove camo net to mount slat armor','PLAIN DOWN',0.5];
+	50 cutText ['Зніміть камуфляжну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
 };
 _onCancelled = {
 	params ['_v','_position'];
@@ -109,7 +109,7 @@ _onCompleted = {
 		};
 	};
 	if (_exitCamo) exitWith {
-		50 cutText ['Remove camo net to mount slat armor','PLAIN DOWN',0.5];
+		50 cutText ['Зніміть камуфляжну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
 	};
 	{
 		_vehicle animateSource [_x,_newPhase,TRUE];
@@ -140,7 +140,7 @@ _onCompleted = {
 				['enableVehicleCargo',_vehicle,FALSE] remoteExec ['QS_fnc_remoteExecCmd',_vehicle,FALSE];
 			};
 		};
-		50 cutText ['Slat armor mounted','PLAIN DOWN',0.333];
+		50 cutText ['Накладну броню встановлено','PLAIN DOWN',0.333];
 	} else {
 		if (!((_vehicle getVariable ['QS_vehicle_massArmor',-1]) isEqualTo -1)) then {
 			if (local _vehicle) then {
@@ -156,16 +156,16 @@ _onCompleted = {
 				};
 			};
 		};
-		50 cutText ['Slat armor removed','PLAIN DOWN',0.333];
+		50 cutText ['Накладну броню знято','PLAIN DOWN',0.333];
 	};
 	missionNamespace setVariable ['QS_repairing_vehicle',FALSE,FALSE];
 };
 missionNamespace setVariable ['QS_repairing_vehicle',TRUE,FALSE];
 private _text = '';
 if (_newPhase isEqualTo 1) then {
-	_text = 'Mounting slat armor';
+	_text = 'Встановлення накладної броні';
 } else {
-	_text = 'Removing slat armor';
+	_text = 'Знімання накладної броні';
 };
 private _duration = 5;
 [

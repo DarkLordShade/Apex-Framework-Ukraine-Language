@@ -67,7 +67,7 @@ if (!(_cameraOn getVariable ['QS_carrier_launch',FALSE])) then {
 			params ['_actionTarget','_actionCaller','_actionID','_actionArguments'];
 			_actionArguments params ['_cameraOn'];
 			if (!isEngineOn _cameraOn) exitWith {
-				50 cutText ['Двигун має бути увімкнуто для запуску','PLAIN',0.5];
+				50 cutText ['Двигун має бути увімкннено для запуску','PLAIN',0.5];
 			};
 			if (_cameraOn getVariable ['QS_carrier_launch',FALSE]) then {
 				_cameraOn setAirplaneThrottle 0;
@@ -99,8 +99,8 @@ if (!(_cameraOn getVariable ['QS_carrier_launch',FALSE])) then {
 		uiSleep 5;
 		if (diag_tickTime > (uiNamespace getVariable ['QS_fighterPilot_lastMsg',(diag_tickTime - 1)])) then {
 			uiNamespace setVariable ['QS_fighterPilot_lastMsg',(diag_tickTime + 300)];
-			[63,[4,['CAS_1',['','Close Air Support online!']]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
-			['sideChat',[WEST,'AirBase'],(format ['Close Air Support (%1) is available. Pilot: %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _this) >> 'displayName')),profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			[63,[4,['CAS_1',['','Близька Повітрянна Підтримка доступна!']]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
+			['sideChat',[WEST,'AirBase'],(format ['Близбка Повітрянна Підтримка (%1) доступна. Пілот: %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _this) >> 'displayName')),profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 		_carrierAnimData = _this getVariable ['QS_vehicle_carrierAnimData',[]];
 		if (!(_carrierAnimData isEqualTo [])) then {

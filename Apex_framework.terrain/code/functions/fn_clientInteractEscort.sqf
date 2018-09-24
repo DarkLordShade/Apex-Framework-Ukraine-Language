@@ -3,11 +3,11 @@ File: fn_clientInteractEscort.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	15/08/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	-
@@ -39,5 +39,5 @@ _obj disableAI 'FSM';
 _obj disableAI 'TEAMSWITCH';
 _obj allowDamage TRUE;
 _obj setCaptive FALSE;
-50 cutText ['Escorting','PLAIN DOWN',0.3];
+50 cutText ['Супроводження','PLAIN DOWN',0.3];
 TRUE;

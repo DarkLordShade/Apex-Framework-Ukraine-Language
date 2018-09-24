@@ -3,11 +3,11 @@ File: fn_clientInteractRevive.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	16/05/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Revive
@@ -26,10 +26,10 @@ if (
 	{(!isNull (objectParent player))}
 ) exitWith {};
 if (_t getVariable ['QS_revive_disable',FALSE]) exitWith {
-	50 cutText [(format ['%1 cannot be revived and requires medevac',(name _t)]),'PLAIN',0.5];
+	50 cutText [(format ['%1 не може бути оживилений та потребує евакуації',(name _t)]),'PLAIN',0.5];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Unit needs to be stabilised','PLAIN',0.3];
+	50 cutText ['Бійця потрібно стабілізувати спочатку.','PLAIN',0.3];
 };
 _medi = ['Medikit'];
 _fak = ['FirstAidKit'];
@@ -41,15 +41,15 @@ if ((player getVariable 'QS_stamina_multiplier') select 0) then {
 };
 _playerHasMedikit = (!((_medi findIf {(_x in _itemsPlayer)}) isEqualTo -1));
 if (!(_playerHasMedikit)) exitWith {
-	50 cutText ['Revive failed! You require both a Medikit and a First Aid Kit to revive!','PLAIN DOWN'];	
+	50 cutText ['Оживлення не вдалося! Для оживлення потрібна обидва: Аптечка та Набір первинної допомоги!','PLAIN DOWN'];
 };
 _playerHasFAK = (!((_fak findIf {(_x in _itemsPlayer)}) isEqualTo -1));
 _incapacitatedHasFAK = (!((_fak findIf {(_x in _itemsIncapacitated)}) isEqualTo -1));
 if ((!(_playerHasFAK)) && (!(_incapacitatedHasFAK))) exitWith {
-	50 cutText ['Revive failed! No available First Aid Kits! You require both a Medikit and a First Aid Kit to revive fallen soldiers. Each revive consumes a first aid kit.','PLAIN DOWN'];
+	50 cutText ['Оживлення не вдалося! Немає перев’язувальних пакетів! Вам потрібні обидва: Аптечка та Набір первинної допомоги для оживлення солдатів. Кожне оживлення використовує один Набір первинної допомоги.','PLAIN DOWN'];
 };
 if (isPlayer _t) then {
-	private _text = format ['Being revived by %1',profileName];
+	private _text = format ['Оживлений %1-м',profileName];
 	[63,[5,[_text,'PLAIN',0.5]]] remoteExec ['QS_fnc_remoteExec',_t,FALSE];
 };
 _time = diag_tickTime + 5.5;
@@ -154,7 +154,7 @@ waitUntil {
 };
 if (player getVariable 'QS_client_animCancel') exitWith {
 	player setVariable ['QS_client_animCancel',FALSE,FALSE];
-	50 cutText ['Cancelled','PLAIN DOWN',0.333];
+	50 cutText ['Відмінено','PLAIN DOWN',0.333];
 };
 if (_stance isEqualTo 'PRONE') then {
 	_time2 = diag_tickTime + 0.5;
@@ -180,10 +180,10 @@ if (_stance isEqualTo 'PRONE') then {
 };
 if (player getVariable 'QS_client_animCancel') exitWith {
 	player setVariable ['QS_client_animCancel',FALSE,FALSE];
-	50 cutText ['Cancelled','PLAIN DOWN',0.333];
+	50 cutText ['Відмінено','PLAIN DOWN',0.333];
 };
 if (_exit) exitWith {
-	50 cutText ['Revive cancelled','PLAIN DOWN',0.25];
+	50 cutText ['Оживлення відмінено','PLAIN DOWN',0.25];
 };
 if (_cancelEnabled) then {
 	player removeAction _action_cancel;
@@ -220,7 +220,7 @@ if (!(player getVariable ['QS_client_animCancel',FALSE])) then {
 							_t allowDamage TRUE;
 						};
 						if (isPlayer _t) then {
-							_text = format ['Revived by %1',profileName];
+							_text = format ['Оживлено %1-м',profileName];
 							[63,[5,[_text,'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_t,FALSE];
 						};
 						if (isNil {player getVariable 'QS_revive_lastPatient'}) then {
@@ -236,10 +236,10 @@ if (!(player getVariable ['QS_client_animCancel',FALSE])) then {
 							};
 						};
 					} else {
-						50 cutText ['Revive failed, someone else may be interacting with your patient!','PLAIN DOWN',0.3];
+						50 cutText ['Оживлення не відбулося, можливо хтось інший взаємодіє зараз з вашим пацієнтом!','PLAIN DOWN',0.3];
 					};
 				} else {
-					50 cutText ['Revive failed!','PLAIN DOWN',0.3];
+					50 cutText ['Оживлення не відбулося!','PLAIN DOWN',0.3];
 				};
 			};
 		};

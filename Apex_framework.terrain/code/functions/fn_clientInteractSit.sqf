@@ -3,11 +3,11 @@ File: fn_clientInteractSit.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	27/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Sit Down / Stand Up
@@ -74,10 +74,10 @@ if (_type isEqualTo 1) then {
 		};
 	};
 	if (_chairTaken) exitWith {
-		50 cutText ['Someone is too close to this chair!','PLAIN DOWN'];
+		50 cutText ['Хтось занадто близько до цього стільця!','PLAIN DOWN'];
 	};
 	if ((toLower (animationState player)) in _sittingAnimations) exitWith {50 cutText ['Already seated!','PLAIN DOWN'];};
-	
+
 	if (local _object) then {
 		_object setVectorUp [0,0,1];
 	} else {

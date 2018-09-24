@@ -27,7 +27,7 @@ if (!((getVehicleCargo _t) isEqualTo [])) exitWith {
 	50 cutText ['Автомобіль має вантаж всередині.','PLAIN',0.3];
 };
 if (!isNull (getSlingLoad _t)) exitWith {
-	50 cutText ['Vehicle has sling load.','PLAIN',0.3];
+	50 cutText ['Автомобіль має тент.','PLAIN',0.3];
 };
 if (!((ropes _t) isEqualTo [])) exitWith {
 	50 cutText ['Автомобіль причеплений тросами.','PLAIN',0.3];

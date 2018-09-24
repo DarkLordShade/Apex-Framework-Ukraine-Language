@@ -3,11 +3,11 @@ File: fn_clientInteractRelease.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	26/11/2017 A3 1.78 by Quiksilver
-	
+
 Description:
 
 	-
@@ -107,7 +107,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 						};
 						if (!(_unit isEqualTo (missionNamespace getVariable 'QS_sideMission_POW'))) then {
 							if ((player distance2D (missionNamespace getVariable ['QS_prisonPos',(markerPos 'QS_marker_gitmo')])) < 20) then {
-								50 cutText ['Imprisoned!','PLAIN DOWN',0.3];
+								50 cutText ['Ув’язнено!','PLAIN DOWN',0.3];
 								_prisonPos = missionNamespace getVariable ['QS_prisonPos',[0,0,0]];
 								_unit setPos [((_prisonPos select 0) + 2 - (random 4)),((_prisonPos select 1) + 2 - (random 4)),0];
 								_unit forceAddUniform 'U_C_WorkerCoveralls';
@@ -118,7 +118,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 								} else {
 									['setDir',_unit,(random 360)] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
 								};
-								_text = format ['%1 has put a prisoner into Gitmo!',profileName];
+								_text = format ['%1 доставив полоненого до в’язниці!',profileName];
 								['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 								_puid1 = getPlayerUID player;
 								_pname1 = profileName;
@@ -129,7 +129,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 								missionNamespace setVariable ['QS_prisoners',((missionNamespace getVariable 'QS_prisoners') + [_unit]),TRUE];
 								if (!(_unit in _allAgents)) then {
 									[79,_unit,EAST,TRUE] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-								};								
+								};
 								[60,[['PRISONER',_puid1,_pname1,1],['PRISONER',_puid2,_pname2,1],[player,1]]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 								['ScoreBonus',[(format ['%1 Corrections',worldName]),'1']] call (missionNamespace getVariable 'QS_fnc_showNotification');
 							};
@@ -156,9 +156,9 @@ if (!((attachedObjects player) isEqualTo [])) then {
 							_object setVectorUp [0,0,1];
 						};
 						uiSleep 0.1;
-						
+
 						/*/ credit: commy2 (ace3) for the below fix /*/
-						
+
 						private _isDamageAllowed = isDamageAllowed _object;
 						private _hitPointsDamages = getAllHitPointsDamage _object;
 						if (_hitPointsDamages isEqualTo []) then {
@@ -178,7 +178,7 @@ if (!((attachedObjects player) isEqualTo [])) then {
 						};
 						50 cutText ['Released','PLAIN DOWN',0.3];
 					} else {
-						50 cutText ['Cannot release here (obstructions detected).','PLAIN DOWN',0.5];
+						50 cutText ['Не можливо тут звільнити (виявлено перепони).','PLAIN DOWN',0.5];
 					};
 				};
 			};

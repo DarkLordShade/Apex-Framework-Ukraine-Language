@@ -3,11 +3,11 @@ File: fn_clientInteractCustomizeInventory.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	13/05/2017 A3 1.70 by Quiksilver
-	
+
 Description:
 
 	-
@@ -50,9 +50,9 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 	_list = [[],[],[],[],[],[],[],[],[],[],[],[]];
 	_magazines = [];
 	_blacklistedStuff = [
-	
-	
-	
+
+
+
 	];
 	{
 		_addon = tolower _x;
@@ -196,7 +196,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 			_backpackCargo = backpackCargo _entity;
 			if ((count _backpackCargo) > _cfgTransportMaxBackpacks) then {
 				clearBackpackCargoGlobal _entity;
-				50 cutText ['Crate overfilled, removing excess backpacks','PLAIN DOWN',0.25];
+				50 cutText ['Ящик перевантажено, вилучаємо зайві рюкзаки','PLAIN DOWN',0.25];
 				_index = 0;
 				for '_x' from 0 to ((count _backpackCargo) - 1) step 1 do {
 					if (_index >= _cfgTransportMaxBackpacks) exitWith {};
@@ -207,7 +207,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 			_magazineCargo = magazineCargo _entity;
 			if ((count _magazineCargo) > _cfgTransportMaxMagazines) then {
 				clearMagazineCargoGlobal _entity;
-				50 cutText ['Crate overfilled, removing excess magazines','PLAIN DOWN',0.25];
+				50 cutText ['Ящик перевантажено, вилучаємо зайві магазини','PLAIN DOWN',0.25];
 				_index = 0;
 				for '_x' from 0 to ((count _magazineCargo) - 1) step 1 do {
 					if (_index >= _cfgTransportMaxMagazines) exitWith {};
@@ -218,7 +218,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 			_weaponCargo = weaponCargo _entity;
 			if ((count _weaponCargo) > _cfgTransportMaxWeapons) then {
 				clearWeaponCargoGlobal _entity;
-				50 cutText ['Crate overfilled, removing excess weapons','PLAIN DOWN',0.25];
+				50 cutText ['Ящик перевантажено, вилучаємо зайву зброю','PLAIN DOWN',0.25];
 				_index = 0;
 				for '_x' from 0 to ((count _weaponCargo) - 1) step 1 do {
 					if (_index >= _cfgTransportMaxWeapons) exitWith {};

@@ -3,11 +3,11 @@ File: fn_clientInteractPush.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	13/06/2018 A3 1.82
-	
+
 Description:
 
 	Push Vehicle
@@ -19,14 +19,14 @@ if (!alive player) exitWith {};
 if (!isNull (objectParent player)) exitWith {};
 if (!alive _t) exitWith {};
 if (!((crew _t) isEqualTo [])) exitWith {
-	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Cannot push occupied vehicles!',[],-1];
+	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Не можливо штовхнути зайнятий транспорт!',[],-1];
 };
 if ((getMass _t) > 5000) then {
 	if (!(surfaceIsWater (getPosWorld _t))) then {
 		_nearbyUnits = (getPosATL _t) nearEntities ['Man',10];
 		if ((count _nearbyUnits) < 2) then {
 			_canPush = FALSE;
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'No other person nearby. You need another person nearby (10m) in order to push a vehicle this heavy!',[],-1,TRUE,'Too weak',TRUE];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Поблизу немає інших гравців. Вам потрібен ще хтось поряд (10m) тому що штовхати транспорт важкувато самому!',[],-1,TRUE,'Too weak',TRUE];
 		};
 	};
 };

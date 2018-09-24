@@ -134,7 +134,7 @@ if (_QS_actionName isEqualTo 'RepairVehicle') exitWith {
 						['setFuel',_v,(0.03 + (random 0.03))] remoteExec ['QS_fnc_remoteExecCmd',_v,FALSE];
 					};
 					_dn = getText (configFile >> 'CfgVehicles' >> (typeOf (_this select 0)) >> 'displayName');
-					50 cutText [(format ['%1 refueled',_dn]),'PLAIN DOWN',0.75];
+					50 cutText [(format ['%1 перезаправлено',_dn]),'PLAIN DOWN',0.75];
 				};
 			};
 			if ((_this select 0) isKindOf 'Helicopter') then {
@@ -195,7 +195,7 @@ if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 	};
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || (!((secondaryWeapon player) isEqualTo '')) || (!((handgunWeapon player) isEqualTo ''))) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій теніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -355,7 +355,7 @@ if (_QS_actionName isEqualTo 'GetInTurret') exitWith {
 				if (!(_currentMortarGunners isEqualTo [])) then {
 					_currentMortarGunnerName = name (_currentMortarGunners select 0);
 				};
-				50 cutText [(format ['Тільки Мк6 мінометчики (%1) можуть використовувати міномети.',_currentMortarGunnerName]),'PLAIN DOWN',0.75];
+				50 cutText [(format ['Тільки Мк6 мінометники (%1) можуть використовувати міномети.',_currentMortarGunnerName]),'PLAIN DOWN',0.75];
 				_QS_c = TRUE;
 			};
 		};
