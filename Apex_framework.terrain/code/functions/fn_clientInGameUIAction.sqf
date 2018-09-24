@@ -33,7 +33,7 @@ if (!((lifeState player) in ['HEALTHY','INJURED'])) exitWith {
 	_QS_c;
 };
 if ((!(((attachedObjects player) findIf {((!isNull _x) && (!(_x isKindOf 'Sign_Sphere10cm_F')))}) isEqualTo -1)) && (!((toLower _QS_actionText) in [
-	'release','load','retract cargo ropes','extend cargo ropes','shorten cargo ropes','release cargo','deploy cargo ropes','attach to cargo ropes','drop cargo ropes','pickup cargo ropes'
+	'відпустити','завантажити','втягнути вантажні троси','подовжити вантажні троси','вкоротити вантажні троси','відпустити вантажні троси','випустити вантажні троси','приєднати вантажні троси','скинути вантажні троси','підняти вантажні троси','release','load','retract cargo ropes','extend cargo ropes','shorten cargo ropes','release cargo','deploy cargo ropes','attach to cargo ropes','drop cargo ropes','pickup cargo ropes'
 ])) && (!(_QS_actionName in ['OpenParachute']))) exitWith {
 	50 cutText ['Зайнятий','PLAIN DOWN',0.333];
 	_QS_c = TRUE;
