@@ -75,7 +75,7 @@ if (_v isKindOf 'Man') then {
 	_n1 = name _causedBy1;
 	_currentWeapon1 = currentWeapon _causedBy1;
 	_currentWeaponText = getText (configFile >> 'CfgWeapons' >> _currentWeapon1 >> 'displayName');
-	_text = format ['You were wounded by %1, a %2, likely with a %3',_n1,_vtxt,_currentWeaponText];
+	_text = format ['Вас пошкодив %1, %2, можливо з %3',_n1,_vtxt,_currentWeaponText];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 };
 if (_v isKindOf 'StaticWeapon') then {
@@ -89,7 +89,7 @@ if (_v isKindOf 'StaticWeapon') then {
 			_causedBy1 = gunner _v;
 			_n1 = name _causedBy1;
 			_uid1 = getPlayerUID _causedBy1;
-			_text = format ['You were wounded by %1, operating a(n) %2 Static Weapon',_n1,_vtxt];
+			_text = format ['Вас пошкодив %1, що керує %2 стаціонарна зброя',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -127,7 +127,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n2 = '[N/A]';
 				};
-				_text = format ['You were wounded by %1, the gunner of a(n) %2.',_n2,_vtxt];
+				_text = format ['Вас пошкодив:<br/> %1.<br/>, стрілець в %2.',_n2,_vtxt];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			} else {
 				if (!isNull (driver _v)) then {
