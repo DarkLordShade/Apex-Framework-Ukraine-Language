@@ -1733,7 +1733,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Пілот;
+						description="Пілот";
 						isPlayable=1;
 					};
 					id=83;
@@ -2763,4 +2763,3 @@ class Mission
 		};
 	};
 };
-

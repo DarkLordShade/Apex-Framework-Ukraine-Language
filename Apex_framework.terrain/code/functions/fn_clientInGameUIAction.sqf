@@ -189,7 +189,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 };
 if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 	if ((!((toLower (typeOf player)) in ['b_pilot_f','b_helipilot_f','b_t_pilot_f','b_t_helipilot_f','b_fighter_pilot_f'])) && (!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) then {
-		_text = format ['ROBOCOP: Pilot seats are for Pilots only! You are a(n) ***** %1 *****. Play your role or re-assign!',(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName'))];
+		_text = format ['ROBOCOP: Сидіння пілота тільки для Пілотів! Ви ***** %1 *****. Грайте свою роль або оберіть іншу!',(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName'))];
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,8,-1,_text,[],-1];
 		_QS_c = TRUE;
 	};

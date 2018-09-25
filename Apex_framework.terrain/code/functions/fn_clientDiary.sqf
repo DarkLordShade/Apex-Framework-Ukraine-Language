@@ -179,14 +179,14 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
-		'Gitmo',
+		'В’язниця',
 		'Отримуйте бали за розміщення ворогів у в’язниці.<br/><br/>Мультиплеєри: n/a<br/><br/>В’зницю позначено на ваших мапах на базі. Дивіться детальну інформацію в щоденнику'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_leaderboards',
 	[
-		'Tower Rangers',
+		'Рейнжер веж',
 		'Отримуйте бали за знищення радіовеж (не доступно для пілотів).<br/><br/>Мультиплеєри: n/a'
 	]
 ];
@@ -231,19 +231,19 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_hotkeys',
 	[
-		'Key Bindings',
+		'Клавіатурні скорочення',
 		(format ['
-		<br/>Client Menu - [Home]
-		<br/>Earplugs - [End]
-		<br/>Holster Weapon - [4]
-		<br/>Magazine Repack - [L.Ctrl]+[%2]
-		<br/>Jump - [%5] while running
-		<br/>Group Manager - [%6]
-		<br/>Tasks - [%3]
-		<br/>Hints - [%4]
-		<br/>Gestures - [Ctrl]+[Numpad x]
-		<br/>Tactical Ping - %1
-		<br/>Open and close doors - [Space]
+		<br/>Меню гравця - [Home]
+		<br/>Беруші - [End]
+		<br/>Сховати зброю за спину - [4]
+		<br/>Перепакувати магазини - [L.Ctrl]+[%2]
+		<br/>Стрибнути - [%5] під час бігу
+		<br/>Менеджер груп - [%6]
+		<br/>Завдання - [%3]
+		<br/>Підказки - [%4]
+		<br/>Жести - [Ctrl]+[Numpad x]
+		<br/>Тактичний пінг - %1
+		<br/>Відкрити або закрити двері - [Space]
 		',(actionKeysNames 'TacticalPing'),(actionKeysNames 'ReloadMagazine'),(actionKeysNames 'Diary'),(actionKeysNames 'Help'),(actionKeysNames 'GetOver'),(actionKeysNames 'Teamswitch')])
 	]
 ];
