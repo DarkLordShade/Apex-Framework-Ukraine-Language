@@ -1284,7 +1284,7 @@ for '_x' from 0 to 1 step 0 do {
 							if (isPlayer _instigator) then {
 								private _text = '';
 								if ((random 1) > 0.666) then {
-									_text = format ['Цивільного вбито %1-м!',(name _instigator)];
+									_text = format ['Цивільного вбив %1!',(name _instigator)];
 								} else {
 									_text = format ['%1 вбив цивільного',(name _instigator)];
 								};

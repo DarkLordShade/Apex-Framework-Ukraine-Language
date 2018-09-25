@@ -107,7 +107,7 @@ if (_state isEqualTo 1) then {
 					_vehicle
 				]
 			];
-			diag_log 'Знищити ворощий транспорт';
+			diag_log 'Знищити ворожий транспорт';
 		};
 	};
 };

@@ -46,7 +46,7 @@ _blacklistedString = [
 } count _blacklistedString;
 _reservedClients = [
 	['varrkan_ua','76561198023185330'],
-	['LordShade [UkAZ]','76561198059570583']
+	['LordShade','76561198059570583']
 ];
 {
 	_nameArray = _reservedClients select _forEachIndex;

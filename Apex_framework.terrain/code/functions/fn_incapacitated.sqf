@@ -165,9 +165,9 @@ if (!isNull _instigator) then {
 					_incapacitatedText = format ['%1 виведено з ладу.',_profileName];
 				} else {
 					if ((side _instigator) in [EAST,RESISTANCE]) then {
-						_incapacitatedText = format ['%1 виведено з ладу %2-м',_profileName,(name _instigator)];
+						_incapacitatedText = format ['%1 виведено з ладу гравцем %2',_profileName,(name _instigator)];
 					} else {
-						_incapacitatedText = format ['%1 виведено з ладу %2-м (Дружній вогонь)',_profileName,(name _instigator)];
+						_incapacitatedText = format ['%1 виведено з ладу гравцем %2 (Дружній вогонь)',_profileName,(name _instigator)];
 					};
 				};
 			} else {
