@@ -3,11 +3,11 @@ File: fn_hCommMenu.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	10/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	-
@@ -31,7 +31,7 @@ if (_type isEqualTo 1) then {
 		if ((!isDedicated) && (hasInterface)) then {
 			if (player isEqualTo (leader _group)) then {
 				playSound 'TacticalPing4';
-				50 cutText [(format ['[Commander] %1 requested a SITREP for %2',_profileName,_groupID]),'PLAIN DOWN',0.5,TRUE,FALSE];
+				50 cutText [(format ['[КОМАНДИР] %1 запитує про СИТУАЦІЮ по %2',_profileName,_groupID]),'PLAIN DOWN',0.5,TRUE,FALSE];
 			};
 		};
 	};

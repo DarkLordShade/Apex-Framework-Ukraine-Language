@@ -1282,7 +1282,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (ctrlShown _QS_ctrl0) then {
 			_QS_ctrl_text10 = format ['Натисніть [%1] щоб приховати',_keyText];
 		} else {
-			_QS_ctrl_text10 = format ['Натисніть [%1] щоб відобразити статус міссії',_keyText];
+			_QS_ctrl_text10 = format ['Натисніть [%1] щоб відобразити статус місії',_keyText];
 		};
 		_QS_ctrl01 ctrlSetTextColor _QS_ctrl01_backgroundColor;
 		{

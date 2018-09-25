@@ -49,7 +49,7 @@ if (_QS_responseNeutrality isEqualTo 0) then {
 			if ((random 1) > 0.5) then {
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [2,TRUE,7.5,-1,'Цей цивільний звузив вам коло пошуку полоненого на мапі.',[],-1,TRUE,'Civilian',TRUE];
 			} else {
-				_text = format ['%1 підвищив точність маркера міссії на мапі',name _t];
+				_text = format ['%1 підвищив точність маркера місії на мапі',name _t];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [2,TRUE,7.5,-1,_text,[],-1,TRUE,'Civilian',TRUE];
 			};
 		} else {

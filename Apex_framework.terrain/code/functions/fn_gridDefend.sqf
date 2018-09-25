@@ -1,6 +1,6 @@
 /*/
 File: fn_gridDefend.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -45,8 +45,8 @@ _taskType = 'defend';
 	_taskID,
 	TRUE,
 	[
-		'The guerilla forces are mounting a counterattack to retake their HQ. Hold them back at all cost, boys!',
-		'Defend HQ',
+		'Партизани збираються відбити свій Штаб. Стримайте їх за будь-яку ціну!',
+		'Захистити Штаб',
 		''
 	],
 	[(_centerPos select 0),(_centerPos select 1),10],
@@ -86,11 +86,11 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (_sectorControl <= 0) exitWith {
 		//comment 'enemy wins';
-		['GRID_IG_UPDATE',['Defend','Defense failed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Defend','Захист провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	if (_serverTime > _endTime) exitWith {
 		//comment 'friends win';
-		['GRID_IG_UPDATE',['Defend','Defense successful!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Defend','Захист вдалий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	uiSleep 2;
 };

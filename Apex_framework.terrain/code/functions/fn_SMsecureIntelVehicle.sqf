@@ -247,7 +247,7 @@ for '_x' from 0 to 1 step 0 do {
 
 	if (!alive _intelObj) exitWith {
 		sleep 0.3;
-		['sideChat',[WEST,'HQ'],'Об’єкт знищено. Міссію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт знищено. Місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{

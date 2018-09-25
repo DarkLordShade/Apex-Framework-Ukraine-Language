@@ -3,11 +3,11 @@ File: fn_eventHandleDisconnect.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	28/09/2017 A3 1.76 by Quiksilver
-	
+
 Description:
 
 	Handle Disconnect Mission Event
@@ -198,7 +198,7 @@ if (!isNil {_object getVariable 'QS_pilot_vehicleInfo'}) then {
 							0 = [
 								[_name],
 								{
-									50 cutText [(format ['Attention: Your pilot (%1) has disconnected, an AI pilot is attempting to fly you to the nearest base, please stand by. Fastrope enabled.',(_this select 0)]),'PLAIN DOWN',8];
+									50 cutText [(format ['Увага! Ваш пілот (%1) від’єднався, автопілот намагається доставити вас до найближчої бази, буль ласка зачекайте. Швидкий спуск увімкнено.',(_this select 0)]),'PLAIN DOWN',8];
 								}
 							] remoteExec [
 								'call',
@@ -219,7 +219,7 @@ if (!isNil {_object getVariable 'QS_pilot_vehicleInfo'}) then {
 							[
 								[_name,(count (crew _vehicle)),(mapGridPosition _vehicle)],
 								{
-									50 cutText [(format ['Attention: A pilot (%1) has disconnected mid-flight with %2 passengers onboard at %3. An AI pilot is attempting to fly them to the nearest base.',(_this select 0),(_this select 1),(_this select 2)]),'PLAIN DOWN',5];
+									50 cutText [(format ['Увага:Пілот (%1) від’єднався просто у повітрі з %2 пасажирами на борту в %3. Автопілот намагається доставити їх на найближчу базу.',(_this select 0),(_this select 1),(_this select 2)]),'PLAIN DOWN',5];
 								}
 							] remoteExec [
 								'call',

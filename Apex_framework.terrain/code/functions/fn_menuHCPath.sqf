@@ -3,11 +3,11 @@ File: fn_menuHCPath.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	10/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Alias of BIS_HC_path_menu
@@ -32,13 +32,13 @@ if (_this isEqualType '') then {
 		if (_this isEqualTo 'WP_TYPE_LOAD') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_TYPE_GETOUT') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_TYPE_GETIN') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'WP_COMBAT_STEALTH') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_COMBAT_DANGER') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_COMBAT_AWARE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_COMBAT_SAFE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_COMBAT_UNCHANGED') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'WP_COLUMN') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_STAG COLUMN') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_WEDGE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
@@ -49,12 +49,12 @@ if (_this isEqualType '') then {
 		if (_this isEqualTo 'WP_FILE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_DIAMOND') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_UNCHANGED') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'WP_SPEED_LIMITED') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_SPEED_NORMAL') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_SPEED_FULL') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WP_SPEED_UNCHANGED') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'WP_WAIT_NO') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
 		if (_this isEqualTo 'WP_WAIT_1MIN') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
 		if (_this isEqualTo 'WP_WAIT_5MIN') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
@@ -65,26 +65,26 @@ if (_this isEqualType '') then {
 		if (_this isEqualTo 'WP_WAIT_30MIN') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
 		if (_this isEqualTo 'WP_WAIT_45MIN') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
 		if (_this isEqualTo 'WP_WAIT_60MIN') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
-		
+
 		if (_this isEqualTo 'WP_CREATETASK') then {50 cutText [_text1,'PLAIN DOWN',0.5,TRUE,FALSE];_undefined = TRUE;};
 		if (_this isEqualTo 'WP_CANCELWP') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'NEXTWP') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'CANCELWP') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'CANCELALLWP') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'OPENFIRE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'HOLDFIRE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'SPEED_LIMITED') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'SPEED_NORMAL') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'SPEED_FULL') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'COMBAT_STEALTH') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'COMBAT_DANGER') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'COMBAT_AWARE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'COMBAT_SAFE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
-		
+
 		if (_this isEqualTo 'COLUMN') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'STAG COLUMN') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
 		if (_this isEqualTo 'WEDGE') then {50 cutText [_text,'PLAIN DOWN',0.5,TRUE,FALSE];};
@@ -134,12 +134,12 @@ if (_this isEqualType '') then {
 							if (local this) then {
 								_leader = leader (group this);
 								if (player isEqualTo _leader) then {
-									50 cutText ["[Commander] Waypoint complete","PLAIN DOWN",0.5,TRUE,FALSE];
+									50 cutText ["[Командир] Точку пройдено","PLAIN DOWN",0.5,TRUE,FALSE];
 								};
 								deleteWaypoint [group this,currentWaypoint (group this)];
 							} else {
 								if (player isEqualTo (missionNamespace getVariable "QS_hc_Commander")) then {
-									_text = format ["%1 ( %2 ) completed its task at grid %3",(groupID (group this)),profileName,(mapGridPosition this)];
+									_text = format ["%1 ( %2 ) завершили свою місію в квадраті %3",(groupID (group this)),profileName,(mapGridPosition this)];
 									systemChat _text;
 								};
 							};
@@ -151,16 +151,16 @@ if (_this isEqualType '') then {
 							[34,['hcTaskCreated',['','New orders']]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
 						};
 						_leader setVariable ['QS_HComm_ordersNotifInterval',(diag_tickTime + 15),FALSE];
-						[63,[5,[(format['Orders assigned by [Commander] %1',profileName]),'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
+						[63,[5,[(format['Порядок визначено [Командир] %1',profileName]),'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
 					} else {
-						[63,[5,[(format['Orders updated by [Commander] %1',profileName]),'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
+						[63,[5,[(format['Порядок оновлено [Командир] %1',profileName]),'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
 					};
 				};
 			} else {
-				50 cutText ['Too close (30m)','PLAIN DOWN',0.25,TRUE,FALSE];
+				50 cutText ['Занадто близько (30м)','PLAIN DOWN',0.25,TRUE,FALSE];
 			};
 		} else {
-			50 cutText ['Too many waypoints (max 3)','PLAIN DOWN',0.25,TRUE,FALSE];
+			50 cutText ['Занадто багато маршрутних точок (max 3)','PLAIN DOWN',0.25,TRUE,FALSE];
 		};
 	} forEach _arraySelected;
 };

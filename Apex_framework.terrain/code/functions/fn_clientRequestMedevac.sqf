@@ -17,9 +17,9 @@ closeDialog 2;
 0 spawn {
 	uiSleep 0.05;
 	_textBody = '- Якщо обрати ОК - респуан та вихід будуть не доступні для вас на 10 хвилин.<br/>- Медики не зможуть оживити вас.<br/>- Щоб вас оживити - інші гравці мають доставити вас точки, що екіпійована для Медичних операцій, до того часу, як ви спливете кров’ю.';
-	_textHeader = 'Нагадування про міссію Медичної евакуації (Прочитайте, будь ласка)';
+	_textHeader = 'Нагадування про місію Медичної евакуації (Прочитайте, будь ласка)';
 	_textOk = 'OK';
-	_textCancel = 'CANCEL';
+	_textCancel = 'Відмінити';
 	private _result = [_textBody,_textHeader,_textOk,_textCancel,(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 	if (_result) then {
 		if ((!(missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE])) && ((lifeState player) isEqualTo 'INCAPACITATED') && (isNull (objectParent player)) && (isNull (attachedTo player))) then {

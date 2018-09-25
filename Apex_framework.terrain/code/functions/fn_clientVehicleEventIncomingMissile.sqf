@@ -1,9 +1,9 @@
 /*
 File: fn_clientVehicleEventIncomingMissile.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	8/03/2018 A3 1.80 by Quiksilver
@@ -75,7 +75,7 @@ if (_cfgRadar > 0) then {
 			};
 		};
 	};
-	50 cutText [(format ['Incoming missile! Bearing %1 %2',(round (_vehicle getDir _shooter)),_relDirText]),'PLAIN',0.5];
+	50 cutText [(format ['Наближається Ракета! Напрямок %1 %2',(round (_vehicle getDir _shooter)),_relDirText]),'PLAIN',0.5];
 	0 spawn {
 		uiSleep 2;
 		player setVariable ['QS_incomingMissile_active',nil,FALSE];

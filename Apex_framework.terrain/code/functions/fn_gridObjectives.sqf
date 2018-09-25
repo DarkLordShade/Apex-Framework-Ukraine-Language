@@ -1,6 +1,6 @@
 /*/
 File: fn_gridObjectives.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -34,7 +34,7 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 	_requiredCount = (15 + (round (_playersCount / 2))) min ((count _gridMarkers) - 3);
 	'QS_marker_grid_capState' setMarkerColor 'ColorOPFOR';
 	'QS_marker_grid_capState' setMarkerPos _centroidOffset;
-	'QS_marker_grid_capState' setMarkerText (format ['%1Сітки перетворені: 0 / %2',(toString [32,32,32]),_requiredCount]);
+	'QS_marker_grid_capState' setMarkerText (format ['%1Квадратів перетворено: 0 / %2',(toString [32,32,32]),_requiredCount]);
 	_objectiveCode = {
 		params ['_gridMarkers','_gridMarkersCount','_duration'];
 		private _c = 0;
@@ -44,8 +44,8 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 			_requiredCount = round (_requiredCount / 2);
 		};
 		_currentCount = {((markerColor _x) isEqualTo 'ColorGREEN')} count _gridMarkers;
-		if (!( (markerText 'QS_marker_grid_capState') isEqualTo (format ['   Квадрати перетворені: %1 / %2',_currentCount,_requiredCount]))) then {
-			'QS_marker_grid_capState' setMarkerText (format ['%1Сітки перетворені: %2 / %3',(toString [32,32,32]),_currentCount,_requiredCount]);
+		if (!( (markerText 'QS_marker_grid_capState') isEqualTo (format ['   Квадратів перетворені: %1 / %2',_currentCount,_requiredCount]))) then {
+			'QS_marker_grid_capState' setMarkerText (format ['%1Квадратів перетворено: %2 / %3',(toString [32,32,32]),_currentCount,_requiredCount]);
 		};
 		if (_currentCount >= _requiredCount) then {
 			_c = 1;
@@ -57,7 +57,7 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 		'QS_marker_grid_capState' setMarkerColor 'ColorGREEN';
 	};
 	_objectiveOnFailed = {
-		
+
 	};
 	_return = [
 		_type,
@@ -152,7 +152,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 			(missionNamespace getVariable 'QS_registeredPositions') pushBack _position;
 			_usedPositions pushBack _position;
 			//comment 'Spawn composition';
-			{	
+			{
 				if ((_x distance2D _position) < 6) then {
 					(missionNamespace getVariable 'QS_grid_hiddenTerrainObjects') pushBack _x;
 					_x hideObjectGlobal TRUE;
@@ -172,7 +172,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 	];
 	'QS_marker_grid_rspState' setMarkerColor 'ColorOPFOR';
 	'QS_marker_grid_rspState' setMarkerPos _centroidOffset;
-	'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелі зруйновані: 0 / %2',(toString [32,32,32]),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
+	'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелів зруйновано: 0 / %2',(toString [32,32,32]),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
 	if (!(_entities isEqualTo [])) then {
 		_objectiveIsRequired = 1;
 		_objectiveArguments = [
@@ -183,8 +183,8 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 			params ['_entities','_entitiesTotal'];
 			private _c = 0;
 			_aliveCount = {(alive _x)} count _entities;
-			if (!((toLower (markerText 'QS_marker_grid_rspState')) isEqualTo (toLower (format ['   Зруйнованих колодязів: %1 / %2',((_entitiesTotal - _aliveCount) max 0),(missionNamespace getVariable 'QS_grid_AIRspTotal')])))) then {
-				'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелі зруйновані: %2 / %3',(toString [32,32,32]),(_entitiesTotal - _aliveCount),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
+			if (!((toLower (markerText 'QS_marker_grid_rspState')) isEqualTo (toLower (format ['   Зруйновано колодязів: %1 / %2',((_entitiesTotal - _aliveCount) max 0),(missionNamespace getVariable 'QS_grid_AIRspTotal')])))) then {
+				'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелів зруйновано: %2 / %3',(toString [32,32,32]),(_entitiesTotal - _aliveCount),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
 			};
 			if (_aliveCount isEqualTo 0) then {
 				_c = 1;
@@ -193,7 +193,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 		};
 		_objectiveOnCompleted = {
 			'QS_marker_grid_rspState' setMarkerColor 'ColorGREEN';
-			['GRID_IG_UPDATE',['Area of Operations','Сві колодязі зруйновані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['GRID_IG_UPDATE',['Area of Operations','Всі колодязі зруйновано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 		_objectiveOnFailed = {};
 		_return = [
@@ -248,7 +248,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 	_spawnPos set [2,0];
 	if ((_spawnPos distance2D _aoPos) < (_aoSize * 2)) then {
 		//comment 'Spawn composition';
-		{	
+		{
 			(missionNamespace getVariable 'QS_grid_hiddenTerrainObjects') pushBack _x;
 			_x hideObjectGlobal TRUE;
 		} forEach (nearestTerrainObjects [_spawnPos,[],15,FALSE,TRUE]);
@@ -278,7 +278,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 			missionNamespace setVariable ['QS_grid_IGflag',_igFlag,FALSE];
 		};
 		if (_potentialBuildings isEqualTo []) then {
-			{	
+			{
 				_building = _x;
 				_buildingPositions = [_building,(_building buildingPos -1)] call (missionNamespace getVariable 'QS_fnc_customBuildingPositions');
 				if (!(_buildingPositions isEqualTo [])) then {
@@ -349,7 +349,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 					['GRID_UPDATE',['Area Of Operations','Ворожий командир вбитий']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
-							_text = format ['%1 (%2) killed the enemy commander',(name _instigator),(groupID (group _instigator))];
+							_text = format ['%1 (%2) вбив ворожого командира',(name _instigator),(groupID (group _instigator))];
 							_text remoteExec ['systemChat',-2,FALSE];
 						};
 					};
@@ -496,7 +496,7 @@ if (_type isEqualTo 'SITE_IDAP') exitWith {
 	};
 	if ((_checkPos distance2D _aoPos) < (_aoSize * 2)) then {
 		//comment 'Spawn composition';
-		{	
+		{
 			(missionNamespace getVariable 'QS_grid_hiddenTerrainObjects') pushBack _x;
 			_x hideObjectGlobal TRUE;
 		} forEach (nearestTerrainObjects [_checkPos,[],12,FALSE,TRUE]);
@@ -537,7 +537,7 @@ if (_type isEqualTo 'SITE_IDAP') exitWith {
 			};
 			if (diag_tickTime > _findTimeout) exitWith {};
 			if (_positionFound) exitWith {};
-		};		
+		};
 		if (_positionFound) then {
 			if ((random 1) > 0.666) then {
 				if (!(missionNamespace getVariable ['QS_grid_IDAP_taskActive',FALSE])) then {
@@ -628,10 +628,10 @@ if (_type isEqualTo 'SITE_IDAP') exitWith {
 					_c;
 				};
 				_objectiveOnCompleted = {
-					['GRID_IDAP_UPDATE',['Area Of Operations','Unexploded Ordnance (UXO) cleared']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_IDAP_UPDATE',['Area Of Operations','Мінне поле (UXO) зачищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					{
 						_x setMarkerColor 'ColorGreen';
-						_x setMarkerText (format ['%1UXO Field (cleared)',(toString [32,32,32])]);
+						_x setMarkerText (format ['%1Мінне поле (зачищено)',(toString [32,32,32])]);
 					} forEach [
 						'QS_marker_grid_IDAPmkr',
 						'QS_marker_grid_IDAPcircle'
@@ -673,7 +673,7 @@ if (_type isEqualTo 'MORTAR_DELAYED') exitWith {
 		[] call (missionNamespace getVariable 'QS_fnc_aoMortarSite');
 	};
 	_objectiveOnFailed = {
-	
+
 	};
 	_return = [
 		_type,
@@ -730,14 +730,14 @@ if (_type isEqualTo 'INTEL') exitWith {
 					_monitorStructure = FALSE;
 					if (_intelType isEqualTo 'TUNNEL_ENTRANCE') then {
 						//comment 'Find position';
-						
+
 						_buildingPosition = selectRandom _buildingPositionsInPolygon;
 						_buildingPositionIndex = _buildingPositionsInPolygon find _buildingPosition;
 						_buildingPositionsInPolygon set [_buildingPositionIndex,FALSE];
 						_buildingPositionsInPolygon deleteAt _buildingPositionIndex;
-						
+
 						diag_log format ['QS intel building position: %1',_buildingPosition];
-						
+
 						//comment 'Get building';
 						_buildingPositionASL = AGLToASL _buildingPosition;
 						_intersections = lineIntersectsSurfaces [
@@ -772,7 +772,7 @@ if (_type isEqualTo 'INTEL') exitWith {
 								};
 							};
 						};
-						
+
 						//comment 'Create entities';
 						_buildingPositionASL set [2,((_buildingPositionASL select 2) + 0.15)];  /*/0.3 - can be too high off ground in some cases due to poorly configured vanilla building positions/*/
 						_table = createSimpleObject ['a3\structures_f\civ\camping\campingtable_small_f.p3d',_buildingPositionASL];
@@ -789,11 +789,11 @@ if (_type isEqualTo 'INTEL') exitWith {
 						};
 						_entities pushBack _intel;
 						_entityIntels pushBack _intel;
-						
+
 						//comment 'Assign variables';
-						
+
 						diag_log (str _j);
-						
+
 						if (_j isEqualTo 0) then {
 							_mkr = createMarker [(format ['QS_marker_intel_%1',_buildingPosition]),[-1000,-1000,0]];
 							_mkr setMarkerText (toString [32,32,32]);
@@ -811,7 +811,7 @@ if (_type isEqualTo 'INTEL') exitWith {
 									((_intelPosition select 1) - 45 + (random 90)),
 									0
 								];
-								
+
 							};
 							(missionNamespace getVariable 'QS_grid_intelMarkers') pushBack _mkr;
 						};
@@ -831,10 +831,10 @@ if (_type isEqualTo 'INTEL') exitWith {
 						};
 					};
 					if (_intelType isEqualTo 'IG_HVT') then {
-					
+
 					};
 					if (_intelType isEqualTo 'CACHE_SUPPLY') then {
-					
+
 					};
 				};
 				if (!(_entityIntels isEqualTo [])) then {

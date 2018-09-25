@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuSupporters.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	24/08/2016 A3 1.62 by Quiksilver
@@ -26,7 +26,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	(_display displayCtrl 1804) ctrlEnable FALSE;
 	(_display displayCtrl 1807) ctrlEnable TRUE;
 	(_display displayCtrl 1808) ctrlEnable FALSE;
-	
+
 	(_display displayCtrl 1809) ctrlSetText '- - -';
 	(_display displayCtrl 1809) ctrlSetToolTip '';
 	(_display displayCtrl 1809) ctrlEnable FALSE;
@@ -74,7 +74,7 @@ if (_type isEqualTo 'B5') exitWith {
 
 };
 if (_type isEqualTo 'B6') exitWith {
-	50 cutText ['Soon','PLAIN',0.25];
+	50 cutText ['Скоро','PLAIN',0.25];
 };
 if (_type isEqualTo 'Back') exitWith {
 	closeDialog 2;

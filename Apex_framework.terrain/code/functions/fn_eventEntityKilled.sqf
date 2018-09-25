@@ -3,11 +3,11 @@ File: fn_eventEntityKilled.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	10/07/2017 A3 1.72 by Quiksilver
-	
+
 Description:
 
 	Event Entity Killed
@@ -42,7 +42,7 @@ if (isPlayer _killed) then {
 				'QS_playerKilledCountServer',
 				((missionNamespace getVariable 'QS_playerKilledCountServer') + 1),
 				FALSE
-			];	
+			];
 			if (unitIsUAV _killer) then {
 				if (!local _killer) then {
 					if (([(getPosATL _killer),15,[WEST,CIVILIAN],allPlayers,0] call (missionNamespace getVariable 'QS_fnc_serverDetector')) isEqualTo []) then {
@@ -65,7 +65,7 @@ if (isPlayer _killed) then {
 			if (!isNull _killer) then {
 				if (isPlayer _killer) then {
 					if (!((vehicle _killer) isKindOf 'Air')) then {
-						_text = format ['Enemy sniper ( %1 ) killed by %2!',(name _killed),(name _killer)];
+						_text = format ['Ворожого снайпера ( %1 ) вбив %2!',(name _killed),(name _killer)];
 						['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 					};
 				};

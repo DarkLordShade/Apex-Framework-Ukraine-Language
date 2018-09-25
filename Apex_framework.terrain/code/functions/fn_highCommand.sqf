@@ -3,15 +3,15 @@ File: fn_highCommand.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	21/03/2018 A3 1.80 by Quiksilver
-	
+
 Description:
 
 	High Command
-	
+
 Concept:
 
 	Commander can issue orders to subordinate squads
@@ -25,7 +25,7 @@ private _commanderCanUseWeapons = TRUE;
 _maxDistFromBase = 1000;
 _basePos = markerPos 'QS_marker_base_marker';
 if (!(_commanderCanLeaveBase)) then {
-	50 cutText ['Commander is not able to leave the base area','PLAIN',3];
+	50 cutText ['Командир не може залишати базу','PLAIN',3];
 };
 disableRemoteSensors FALSE;
 1 enableChannel [TRUE,TRUE];

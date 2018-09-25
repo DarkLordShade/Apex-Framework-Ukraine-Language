@@ -3,11 +3,11 @@ File: fn_missionGeorgetown.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	17/12/2017 A3 1.80 by Quiksilver
-	
+
 Description:
 
 	Georgetown
@@ -377,7 +377,7 @@ private _vehicleTypes = [
 	"C_Hatchback_01_F","C_Hatchback_01_F","C_Hatchback_01_F","C_Offroad_01_F","C_Offroad_02_unarmed_F","C_Hatchback_01_F","C_Offroad_02_unarmed_F","C_Offroad_01_F","C_SUV_01_F","C_Van_01_transport_F","C_Van_01_box_F","C_Offroad_02_unarmed_F",
 	"I_Truck_02_transport_F","I_G_Offroad_01_F","B_G_Offroad_01_F","O_G_Offroad_01_F","B_G_Van_01_transport_F","I_G_Van_01_transport_F","O_G_Van_01_transport_F",
 	"B_GEN_Offroad_01_gen_F","C_Truck_02_transport_F","C_Truck_02_covered_F","I_C_Offroad_02_unarmed_F","I_C_Van_01_transport_F","c_van_02_vehicle_f","c_van_02_transport_f"
-];	
+];
 private _vehicleType = '';
 //comment 'Spawn vehicles on roads';
 private _vehicleExclusionZone_roads = ([5770.46,10369.2,0.00140572] nearRoads 500) select {(((position _x) inPolygon QS_georgetown_vExclusion_polygon) && (_x isEqualType objNull))};
@@ -585,8 +585,8 @@ _gridpos = {
 _makegrid = {
 	params ['_start','_offset','_size','_res','_alpha'];
 	private _markers = [];
-	_ind = -1;  
-	_start = _start apply {_ind = _ind + 1; _x + (_offset select _ind)};  
+	_ind = -1;
+	_start = _start apply {_ind = _ind + 1; _x + (_offset select _ind)};
 	_sx = _start select 0;
 	_sz = _start select 1;
 	for '_i' from 0 to round((_size select 0)/_res) do {
@@ -715,9 +715,9 @@ for '_x' from 0 to (_intelObjectCount - 1) step 1 do {
 	_intelMarker setMarkerShape 'ICON';
 	_intelMarker setMarkerSize [0.5,0.5];
 	_intelMarker setMarkerColor 'COLORYELLOW';
-	_intelMarker setMarkerType 'mil_dot';		
-	_intelMarkers pushBack _intelMarker;		
-	
+	_intelMarker setMarkerType 'mil_dot';
+	_intelMarkers pushBack _intelMarker;
+
 	_intelCrate = createVehicle ['Land_WoodenCrate_01_F',[-500,-500,50],[],15,'NONE'];
 	missionNamespace setVariable [
 		'QS_analytics_entities_created',
@@ -864,17 +864,17 @@ private _hiddenTablets = [];
 	TRUE,
 	[
 		(format ['
-			A CSAT armored vehicle carrying sensitive strategic intel was ambushed by a surprise Syndikat offensive in Georgetown. While the intel it was transporting is classified above our clearance, recovery of it has been designated as a priority mission by CENTCOM.<br/><br/>
-		
-			Locate the CSAT armored vehicle in Georgetown, it will have a tracker we can utilize to locate a number of stolen tablets.<br/><br/>
-			
-			The city is heavily occupied by Syndikat forces and reports advise they have significant AA capabilities. It is suggested to approach low from the south and move in on foot. Stay with your squad, and remember your urban warfare training.<br/><br/>
-			
-			This objective is not accurately marked.<br/>
+			Броньована машина CSAT, що перевозила чутливі стратегічні дані, потрапила в засідку в  Georgetown. У зв’язку з тим, що дані, що перевозились, були кваліфіковано як надзвичайно важливі, ЦЕНТР позначив цю місію найвищим пріоритетом.<br/><br/>
+
+			Знайдіть броньовик CSAT в Georgetown, в ньому знаходиться трекер, за допомогою якого ви знайдете втрачені дані.<br/><br/>
+
+			Місто переповнене силами Синдікату і розвід. дані вказують, що  вони маэть значні можливості АА. Пропонується наблизитися з півдня і рухатись пішки. Залишайтеся зі своєю командою і пам’ятайте про тренування з буїв у міських умовах.<br/><br/>
+
+			Це завдання відмічено не точно.<br/>
 			<img size="3" image="%1"/>
 		',(getText (configfile >> 'CfgVehicles' >> 'O_T_Truck_03_repair_ghex_F' >> 'editorPreview'))]),
-		'1 of 2: Locate CSAT Transport',
-		'1 of 2: Locate CSAT Transport'
+		'1 of 2: Знайти транспорт CSAT',
+		'1 of 2: Знайти транспорт CSAT'
 	],
 	[5762,10367,0],
 	'CREATED',
@@ -906,7 +906,7 @@ _timeMarker setMarkerShape 'ICON';
 _timeMarker setMarkerSize [0.5,0.5];
 _timeMarker setMarkerColor 'COLORBLACK';
 _timeMarker setMarkerType 'mil_dot';
-_missionObjectiveMarkers pushBack _timeMarker;	
+_missionObjectiveMarkers pushBack _timeMarker;
 
 private _timerText = '';
 
@@ -933,15 +933,15 @@ for '_x' from 0 to 1 step 0 do {
 	_serverTime = serverTime;
 	if (_serverTime > _missionEnd) exitWith {
 		//comment 'Mission failure';
-		['CUSTOM_GEORGETOWN',['','Mission failed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'We took too long in Georgetown, soldiers. Better luck next time!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ми забарилися в Georgetown, солдате. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_missionStatus isEqualTo 'SUCCESS') exitWith {
 		//comment 'Mission success';
-		['CUSTOM_GEORGETOWN',['','Mission success!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'Great work soldiers, get back to base and prepare for your next mission!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Місію виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Гарна робота, солдате, повертайтеся на бюазу та готуйтеся до наступного завдання!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
-	
+
 	if (_timeNow > _updateInfoCheckDelay) then {
 		_allPlayersCount = count allPlayers;
 		_allUnitsCount = count allUnits;
@@ -1253,7 +1253,7 @@ for '_x' from 0 to 1 step 0 do {
 			while {(({(alive _x)} count _civilians) <= _civiliansCount)} do {
 				_civilianType = selectRandom _civilianTypes;
 				_road = selectRandom _vehicleExclusionZone_roads;
-				_vehicleExclusionZone_roads deleteAt (_vehicleExclusionZone_roads find _road);		
+				_vehicleExclusionZone_roads deleteAt (_vehicleExclusionZone_roads find _road);
 				_roadPosition = position _road;
 				_civilian = createAgent [_civilianType,[0,0,0],[],0,'NONE'];
 				missionNamespace setVariable [
@@ -1284,9 +1284,9 @@ for '_x' from 0 to 1 step 0 do {
 							if (isPlayer _instigator) then {
 								private _text = '';
 								if ((random 1) > 0.666) then {
-									_text = format ['Civilian was murdered by %1!',(name _instigator)];
+									_text = format ['Цивільного вбито %1-м!',(name _instigator)];
 								} else {
-									_text = format ['Civilian killed by %1',(name _instigator)];
+									_text = format ['%1 вбив цивільного',(name _instigator)];
 								};
 								['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
@@ -1305,7 +1305,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} forEach _civilians;
 		{
-			
+
 			if (_x isEqualType objNull) then {
 				_civilian = _x;
 				if (!isNull _civilian) then {
@@ -1352,7 +1352,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 			_aaCheckDelay = _timeNow + _aaDelay;
 		};
-	};	
+	};
 	//comment 'SNIPER GRP';
 	if (_sniperPatrols) then {
 		if (_timeNow > _sniperCheckDelay) then {
@@ -1438,14 +1438,14 @@ for '_x' from 0 to 1 step 0 do {
 				TRUE,
 				[
 					(format ['
-						Move through the city and secure %1 pieces of intel.<br/><br/>
-						
-						Their locations have been downloaded to your map (marked in yellow).<br/><br/>
-						
+						Рухайтесь містов та захопіть %1 частин даних.<br/><br/>
+
+						їх розміщення завантажено на вашу мапу (позначено жовтим).<br/><br/>
+
 						<img size="3" image="%2"/>
 					',_captureThreshold,(getText (configfile >> 'CfgVehicles' >> 'Land_Tablet_02_F' >> 'editorPreview'))]),
-					'2 of 2: Secure Intel',
-					'2 of 2: Secure Intel'
+					'2 of 2: Захопити дані',
+					'2 of 2: Захопити дані'
 				],
 				[5762,10367,0],
 				'CREATED',
@@ -1465,12 +1465,12 @@ for '_x' from 0 to 1 step 0 do {
 				_x setMarkerAlpha 1;
 			} forEach _intelMarkers;
 			_intelStateMarker setMarkerAlpha 1;
-			['CUSTOM_GEORGETOWN',['',(format ['Secure intel (%1)',_captureThreshold])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['CUSTOM_GEORGETOWN',['',(format ['Захопити дані (%1)',_captureThreshold])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 	} else {
 		_hiddenTablets = _missionTablets select {(isObjectHidden _x)};
 		_countTablets = count _hiddenTablets;
-		_intelStateMarker setMarkerText (format ['%1Intel secured: %2 / %3',(toString [32,32,32]),_countTablets,_captureThreshold]);
+		_intelStateMarker setMarkerText (format ['%1Дані захоплено: %2 / %3',(toString [32,32,32]),_countTablets,_captureThreshold]);
 		if (_countTablets >= _captureThreshold) then {
 			_missionStatus = 'SUCCESS';
 		};
@@ -1489,9 +1489,9 @@ for '_x' from 0 to 1 step 0 do {
 			} forEach _hiddenTablets;
 		};
 	};
-	_timeMarker setMarkerText (format ['%1Time remaining: %2',(toString [32,32,32]),([((round(_missionEnd - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString'))]);
+	_timeMarker setMarkerText (format ['%1Часу залишилось: %2',(toString [32,32,32]),([((round(_missionEnd - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString'))]);
 	if ((count allPlayers) > 45) exitWith {
-		['CUSTOM_GEORGETOWN',['','Mission Cancelled (max player threshold)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Місію відмінено (максимальна кількість гравців)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	uiSleep 3;
 };
@@ -1569,5 +1569,5 @@ deleteMarker _teleportMarker;
 	};
 	{
 		((_x select 0) nearestObject (_x select 1)) hideObjectGlobal FALSE;
-	} forEach (_this select 0);	
+	} forEach (_this select 0);
 };

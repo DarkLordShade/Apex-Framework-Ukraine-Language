@@ -3,15 +3,15 @@ File: fn_enemyCAS.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	20/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Spawn an enemy CAS jet with some routines
-	
+
 List of jets:
 
 	'b_plane_cas_01_f',
@@ -141,8 +141,8 @@ if ((random 1) > 0.333) then {
 	};
 };
 if (_jetActual isKindOf 'I_Plane_Fighter_03_Cluster_F') then {
-	{ 
-		_jetActual setObjectTextureGlobal [_forEachIndex,_x]; 
+	{
+		_jetActual setObjectTextureGlobal [_forEachIndex,_x];
 	} forEach (getArray (configFile >> 'CfgVehicles' >> _jetSelect >> 'TextureSources' >> 'Hex' >> 'textures'));
 };
 if ((toLower(typeOf _jetActual)) in ['c_plane_civil_01_racing_f']) then {
@@ -190,7 +190,7 @@ _jetPilot addEventHandler [
 			params ['_jet','_killer'];
 			_jet removeAllEventHandlers 'Hit';
 			if (!isNull _killer) then {
-				['EnemyJetDown',['Enemy plane is down!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['EnemyJetDown',['Ворожий літак збито!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			};
 		}
 	],
@@ -255,7 +255,7 @@ _grp setBehaviour 'COMBAT';
 _grp setSpeedMode 'FULL';
 if (!((toLower _jetSelect) in ['o_plane_fighter_02_stealth_f'])) then {
 	if (!(missionNamespace getVariable ['QS_defendActive',FALSE])) then {
-		['EnemyJet',['Enemy plane inbound!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['EnemyJet',['Наближається ворожий літак!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 } else {
 	if ((random 1) > 0.8) then {

@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuInsignia.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	24/08/2016 ArmA 3 1.62 by Quiksilver
@@ -54,7 +54,7 @@ if (_type isEqualTo 'Select') then {
 			_text = format ['Insignia Set: %1',_displayName];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],(serverTime + 10)];
 		} else {
-			_text = parseText format ['Supporter level required: %1<br/>Your supporter level: %2<br/>Insignia not set.',_supporterAccess,_supporterLevel];
+			_text = parseText format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Insignia not set.',_supporterAccess,_supporterLevel];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],(serverTime + 10)];
 		};
 	};

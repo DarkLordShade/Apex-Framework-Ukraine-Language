@@ -3,11 +3,11 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	20/01/2016 ArmA 1.54 by Quiksilver
-	
+
 Description:
 
 	Respawn timer
@@ -20,14 +20,14 @@ if (!isNull _instigator) then {
 		if (!isNil {_killed getVariable 'QS_surrender_captor'}) then {
 			_captor = (_killed getVariable 'QS_surrender_captor') select 0;
 			if (!(_captor == (name _instigator))) then {
-				_text = format ['%1 has killed %2s prisoner!',(name _instigator),_captor];
+				_text = format ['%1 вбив полоненого у %2!',(name _instigator),_captor];
 				['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			} else {
-				_text = format ['%1 has killed a prisoner!',(name _instigator)];
+				_text = format ['%1 вбив полоненого!',(name _instigator)];
 				['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			};
 		} else {
-			_text = format ['%1 has killed a prisoner!',(name _instigator)];
+			_text = format ['%1 вбив полоненого!',(name _instigator)];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};

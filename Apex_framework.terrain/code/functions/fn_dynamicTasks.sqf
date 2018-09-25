@@ -21,9 +21,9 @@ if (_case isEqualTo 1) then {
 		_taskAuthor = _params select 1;
 		_taskAuthorClass = _params select 2;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
-		private _description = format ['Destroy a(n) %1.',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))];
+		private _description = format ['Знищити %1.',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))];
 		if (_isRx) then {
-			_description = format ['%1 Task created by %2 ( %3 ).',_description,_taskAuthor,_taskAuthorClass];
+			_description = format ['%1 Задачу створено %2 ( %3 ).',_description,_taskAuthor,_taskAuthorClass];
 		};
 		_array = [
 			_taskID,
@@ -41,8 +41,8 @@ if (_case isEqualTo 1) then {
 						TRUE,
 						[
 							_description,
-							'Destroy',
-							'Destroy'
+							'Знищити',
+							'Знищити'
 						],
 						[_entity,TRUE],
 						'CREATED',
@@ -82,7 +82,7 @@ if (_case isEqualTo 1) then {
 		_entityName = _params select 1;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
 		(missionNamespace getVariable ['QS_dynTask_medevac_array',[]]) pushBack _entity;
-		[_entityName,{50 cutText [(format ['%1 has requested Medevac',_this]),'PLAIN DOWN',0.5];}] remoteExec ['call',(allPlayers select {(_x getUnitTrait 'QS_trait_pilot')}),FALSE];
+		[_entityName,{50 cutText [(format ['%1 запросив медичну евакуацію',_this]),'PLAIN DOWN',0.5];}] remoteExec ['call',(allPlayers select {(_x getUnitTrait 'QS_trait_pilot')}),FALSE];
 		private _description = format ['Врятувати %1.<br/><br/> Принести %1 до мед палатки на базі. Місце розташування позначено на вашій карті як Мед.штаб.<br/><br/>Цю людину не можуть відродити інші.<br/><br/>Якщо завдання не закінчено, тоді той, кого доставили до Мед.штабу, мусить зачекати в ньому 30-50 секунд.',_entityName];
 		_array = [
 			_taskID,
@@ -220,7 +220,7 @@ if (_case isEqualTo 1) then {
 		_entity = _params select 0;
 		_entityName = _params select 1;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
-		private _description = format ['Пілот ( %1 ) катапультувався зі свого транспорту та потребує транспорту на базу. Коли він буде на відстані 500м від бази - міссію буде закінчено.',_entityName];
+		private _description = format ['Пілот ( %1 ) катапультувався зі свого транспорту та потребує транспорту на базу. Коли він буде на відстані 500м від бази - місію буде закінчено.',_entityName];
 		_array = [
 			_taskID,
 			'ADD',
@@ -286,7 +286,7 @@ if (_case isEqualTo 1) then {
 		_taskAuthorName = _params select 1;
 		_taskID = format ['QS_DYNTASK_%1_%2',_type,(round (random 10000))];
 		_timeout = diag_tickTime + 900;
-		private _description = format ['%1 has requested CAS/Artillery on a(n) %2. This task will expire in 15 minutes.',_taskAuthorName,(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))];
+		private _description = format ['%1 запросив Повітряну/Артилерійську підтримку на позицію %2. Час на виконання цього завдання сплине через 15 хвилин.',_taskAuthorName,(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))];
 		_array = [
 			_taskID,
 			'ADD',
@@ -303,8 +303,8 @@ if (_case isEqualTo 1) then {
 						TRUE,
 						[
 							_description,
-							'CAS / Fire Support',
-							'CAS / Fire Support'
+							'Повітряна / Артилерійська підтримка',
+							'Повітряна / Артилерійська підтримка'
 						],
 						[_entity,TRUE],
 						'CREATED',

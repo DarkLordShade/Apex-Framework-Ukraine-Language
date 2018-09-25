@@ -3,11 +3,11 @@ File: fn_incapacitated.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	14/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Unit Incapacitated
@@ -151,32 +151,32 @@ private _medicalStartTime = _tickTimeNow;
 private _medicalTimer = _medicalStartTime + _medicalTimerDelay;
 private _medevacRequested = FALSE;
 private _revivedAtVehicle = FALSE;
-private _incapacitatedText = format ['%1 was incapacitated',_profileName];
+private _incapacitatedText = format ['%1 виведено з ладу',_profileName];
 if (!isNull _instigator) then {
 	if (_instigator isEqualTo _unit) then {
-		_incapacitatedText = format ['%1 was incapacitated',_profileName];
+		_incapacitatedText = format ['%1 виведено з ладу',_profileName];
 	} else {
 		if ((toLower (typeOf _instigator)) in ['o_sniper_f','o_ghillie_ard_f','o_ghillie_lsh_f','o_ghillie_sard_f','o_t_sniper_f','o_t_ghillie_tna_f']) then {
 			_nameKiller = name _instigator;
-			_incapacitatedText = format ['%1 %2',_profileName,(selectRandom [(format ['was rekt by an enemy sniper ( %1 )',_nameKiller]),(format ['was incapacitated by an enemy sniper ( %1 )',_nameKiller]),(format ['got sniped ( %1 )',_nameKiller]),(format ['was blown away by an enemy sniper ( %1 )',_nameKiller])])];
+			_incapacitatedText = format ['%1 %2',_profileName,(selectRandom [(format ['був вражений ворожим снайпером ( %1 )',_nameKiller]),(format ['був виведений з ладу ворожим снайпером ( %1 )',_nameKiller]),(format ['вражений снайпером ( %1 )',_nameKiller]),(format ['був вбитий ( %1 )',_nameKiller])])];
 		} else {
 			if (isPlayer _instigator) then {
 				if ((getPlayerUID _instigator) in (['CURATOR'] call (missionNamespace getVariable 'QS_fnc_whitelist'))) then {
-					_incapacitatedText = format ['%1 was incapacitated.',_profileName];
+					_incapacitatedText = format ['%1 виведено з ладу.',_profileName];
 				} else {
 					if ((side _instigator) in [EAST,RESISTANCE]) then {
-						_incapacitatedText = format ['%1 was incapacitated by %2',_profileName,(name _instigator)];
+						_incapacitatedText = format ['%1 виведено з ладу %2-м',_profileName,(name _instigator)];
 					} else {
-						_incapacitatedText = format ['%1 was incapacitated by %2 (Friendly fire)',_profileName,(name _instigator)];
+						_incapacitatedText = format ['%1 виведено з ладу %2-м (Дружній вогонь)',_profileName,(name _instigator)];
 					};
 				};
 			} else {
-				_incapacitatedText = format ['%1 was incapacitated',_profileName];
+				_incapacitatedText = format ['%1 виведено з ладу',_profileName];
 			};
 		};
 	};
 } else {
-	_incapacitatedText = format ['%1 was incapacitated',_profileName];
+	_incapacitatedText = format ['%1 виведено з ладу',_profileName];
 };
 ['systemChat',_incapacitatedText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 private _textReviveTickets = '';
@@ -204,7 +204,7 @@ _display = findDisplay 46;
 private _ctrlIncapacitated = _display ctrlCreate _QS_ctrlCreateArray;
 _ctrlIncapacitated ctrlSetPosition [((0.0075 * safezoneW) + safezoneX),((0.01 * safezoneH) + safezoneY),1,1];
 private _string1 = actionKeysNames ['InGamePause',1];
-private _text1 = parseText format ['<t size="1.5" align="left">INCAPACITATED<t/><br/><t size="1" align="left">Press [%1] to respawn<br/>Bleeding out (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call (missionNamespace getVariable 'BIS_fnc_secondsToString')),([] call (missionNamespace getVariable 'QS_fnc_clientMFindHealer'))];
+private _text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для віжродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call (missionNamespace getVariable 'BIS_fnc_secondsToString')),([] call (missionNamespace getVariable 'QS_fnc_clientMFindHealer'))];
 _ctrlIncapacitated ctrlSetStructuredText _text1;
 _ctrlIncapacitated ctrlCommit 0;
 if (isNil 'bis_revive_ppColor') then {
@@ -220,8 +220,8 @@ bis_revive_ppColor ppEffectAdjust [1,1,0.15,[0.3,0.3,0.3,0],[0.3,0.3,0.3,0.3],[1
 bis_revive_ppVig ppEffectAdjust [1,1,0,[0.15,0,0,1],[1.0,0.5,0.5,1],[0.587,0.199,0.114,0],[1,1,0,0,0,0.2,1]];
 bis_revive_ppBlur ppEffectAdjust [0];
 {
-	_x ppEffectCommit 3; 
-	_x ppEffectEnable TRUE; 
+	_x ppEffectCommit 3;
+	_x ppEffectEnable TRUE;
 	_x ppEffectForceInNVG TRUE;
 } forEach [bis_revive_ppColor, bis_revive_ppVig, bis_revive_ppBlur];
 private _forceRespawned = FALSE;
@@ -249,7 +249,7 @@ for '_x' from 0 to 1 step 0 do {
 	_attachedTo = attachedTo _unit;
 	//comment 'Display';
 	_string1 = actionKeysNames ['InGamePause',1];
-	_text1 = parseText format ['<t size="1.5" align="left">INCAPACITATED<t/><br/><t size="1" align="left">Press [%1] to respawn<br/>Bleeding out (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call _fn_secondsToString),(call _fn_findHealer)];
+	_text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для віжродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call _fn_secondsToString),(call _fn_findHealer)];
 	_ctrlIncapacitated ctrlSetStructuredText ([_text1,(parseText '')] select visibleMap);
 	//comment 'Agony sound simulation';
 	if (_tickTimeNow > _soundDelay) then {
@@ -294,7 +294,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	//comment 'Bled out';
 	if (_tickTimeNow >= _medicalTimer) then {
-		['systemChat',(format ['%1 bled out',_profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['%1 стік кров’ю',_profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		_forceRespawned = TRUE;
 	} else {
 		if (!isNull _objectParent) then {
@@ -327,7 +327,7 @@ for '_x' from 0 to 1 step 0 do {
 	//comment 'Underwater';
 	if (_tickTimeNow > _ambulanceDelay) then {
 		if (((getPosASL _unit) select 2) < -1.5) then {
-			['systemChat',(format ['%1 drowned',_profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['systemChat',(format ['%1 втонув',_profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			_forceRespawned = TRUE;
 		};
 	};
@@ -342,7 +342,7 @@ for '_x' from 0 to 1 step 0 do {
 					if (_lifeState isEqualTo 'INCAPACITATED') then {
 						if ([0,_unit] call _fn_isNearFieldHospital) then {
 							if (_tickTimeNow > (_unit getVariable ['QS_client_revivedAtHospital',-1])) then {
-								50 cutText ['Revived at field hospital','PLAIN DOWN',0.5];
+								50 cutText ['Оживлено в польовому шпиталі','PLAIN DOWN',0.5];
 								_unit setVariable ['QS_client_revivedAtHospital',(_tickTimeNow + 900),FALSE];
 								_unit setUnconscious FALSE;
 								if (captive _unit) then {
@@ -354,7 +354,7 @@ for '_x' from 0 to 1 step 0 do {
 							if (captive _unit) then {
 								_unit setCaptive FALSE;
 							};
-							[34,['ST_MEDEVAC',['Medevac Complete',(format ['%1 medevac<br/>successfully completed!',profileName])]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
+							[34,['ST_MEDEVAC',['Медичну евакуацію завершено',(format ['%1 евакуацію<br/>вдало завершено!',profileName])]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
 						};
 					};
 				};
@@ -398,7 +398,7 @@ for '_x' from 0 to 1 step 0 do {
 										};
 										_remainingTickets = (_vehicle getVariable 'QS_medicalVehicle_reviveTickets') - 1;
 										_vehicle setVariable ['QS_medicalVehicle_reviveTickets',_remainingTickets,TRUE];
-										_textReviveTickets = format ['%1 ( %2 ) - Revive Tickets Remaining - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
+										_textReviveTickets = format ['%1 ( %2 ) - Квитків оживлиння залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
 										['sideChat',[WEST,'BLU'],_textReviveTickets] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								};
@@ -438,7 +438,7 @@ for '_x' from 0 to 1 step 0 do {
 						if ((_deadVehicles inAreaArray [(getPosATL _unit),5,5,0,FALSE]) isEqualTo []) then {
 							if (!(((getPosASL _unit) select 2) < -1)) then {
 								if ((_unit targets [TRUE,30]) isEqualTo []) then {
-									_text = 'Revived by an act of the gods. Praise the gods!';
+									_text = 'Оживлено милістю богів. Славте богів!';
 									50 cutText [_text,'PLAIN DOWN',0.5];
 									if (_lifeState isEqualTo 'INCAPACITATED') then {
 										_unit setUnconscious FALSE;
@@ -463,8 +463,8 @@ for '_x' from 0 to 1 step 0 do {
 			private _vel = velocity _objectParent;
 			_unit setDir (random 360);
 			_unit setVelocity [
-				(_vel select 0) + ((sin (_objectParent getDir _unit)) * (3 + random 12)), 
-				(_vel select 1) + ((cos (_objectParent getDir _unit)) * (3 + random 12)), 
+				(_vel select 0) + ((sin (_objectParent getDir _unit)) * (3 + random 12)),
+				(_vel select 1) + ((cos (_objectParent getDir _unit)) * (3 + random 12)),
 				(((_vel select 2) + 1) + (random 9))
 			];
 			uiSleep 0.25;
@@ -484,7 +484,7 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				_QS_buttonCtrl = _d49 displayCtrl _x;
 				if (!isNull _QS_buttonCtrl) then {
-					_QS_buttonCtrl ctrlSetText 'Player Menu';
+					_QS_buttonCtrl ctrlSetText 'Меню гравця';
 					_QS_buttonCtrl ctrlSetTooltip 'Invade & Annex player menu';
 					_QS_buttonAction = "[] call QS_fnc_clientMenu2";
 					_QS_buttonCtrl buttonSetAction _QS_buttonAction;
@@ -492,9 +492,9 @@ for '_x' from 0 to 1 step 0 do {
 				};
 			} forEach [16700,2];
 			(_d49 displayCtrl 103) ctrlEnable FALSE;
-			(_d49 displayCtrl 103) ctrlSetText 'Respawn at Base';
+			(_d49 displayCtrl 103) ctrlSetText 'Відроження на базі';
 			(_d49 displayCtrl 103) ctrlEnable (_tickTimeNow > (_unit getVariable ['QS_respawn_disable',-1]));
-			(_d49 displayCtrl 103) ctrlSetTooltip 'Respawn at the main base.';
+			(_d49 displayCtrl 103) ctrlSetTooltip 'Відроження на головній базі.';
 			_QS_buttonCtrl = (_d49 displayCtrl 103);
 			_QS_buttonAction = "player setVariable ['QS_revive_respawnType','BASE',FALSE];";
 			_QS_buttonCtrl buttonSetAction _QS_buttonAction;
@@ -503,8 +503,8 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_buttonCtrl = _buttonRespawnFOB;
 			_QS_buttonAction = "player setVariable ['QS_revive_respawnType','FOB',FALSE];";
 			_QS_buttonCtrl buttonSetAction _QS_buttonAction;
-			_buttonRespawnFOB ctrlSetText (format ['Respawn at FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
-			_buttonRespawnFOB ctrlSetTooltip (format ['Respawn at FOB %1 (%2 tickets remaining).',(missionNamespace getVariable ['QS_module_fob_displayName','']),(missionNamespace getVariable ['QS_module_fob_respawnTickets',0])]);
+			_buttonRespawnFOB ctrlSetText (format ['Респаун на FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+			_buttonRespawnFOB ctrlSetTooltip (format ['Респаун на FOB %1 (%2 tickets remaining).',(missionNamespace getVariable ['QS_module_fob_displayName','']),(missionNamespace getVariable ['QS_module_fob_respawnTickets',0])]);
 			_buttonRespawnFOB ctrlEnable FALSE;
 			if (player getVariable ['QS_module_fob_client_respawnEnabled',TRUE]) then {
 				if (missionNamespace getVariable 'QS_module_fob_respawnEnabled') then {
@@ -531,8 +531,8 @@ for '_x' from 0 to 1 step 0 do {
 			//comment 'Configure / Request Medevac option';
 			_QS_buttonMedevac = (_d49 displayCtrl 101);
 			_QS_buttonMedevac ctrlEnable FALSE;
-			_QS_buttonMedevac ctrlSetText 'Request Medevac';
-			_QS_buttonMedevac ctrlSetTooltip 'Disables Revive/Respawn and creates a Medevac mission for others to attempt.';
+			_QS_buttonMedevac ctrlSetText 'Запросити медичну евакуацію';
+			_QS_buttonMedevac ctrlSetTooltip 'Вимикає Оживлення/Респаун та створює завдання Медичної евакуації для інших гравців.';
 			_QS_buttonMedevac ctrlRemoveAllEventHandlers 'OnButtonClick';
 			_QS_buttonMedevac ctrlRemoveAllEventHandlers 'OnButtonDown';
 			_QS_buttonAction = 'call (missionNamespace getVariable "QS_fnc_clientRequestMedevac")';
@@ -543,8 +543,8 @@ for '_x' from 0 to 1 step 0 do {
 			(_d49 displayCtrl 122) ctrlEnable TRUE;
 			(_d49 displayCtrl 122) ctrlSetText 'Field Manual';
 			(_d49 displayCtrl 104) ctrlEnable FALSE;
-			(_d49 displayCtrl 104) ctrlSetText 'Abort';
-			(_d49 displayCtrl 104) ctrlSetTooltip 'Abort to role assignment (Respawn to enable).';
+			(_d49 displayCtrl 104) ctrlSetText 'Відмінити';
+			(_d49 displayCtrl 104) ctrlSetTooltip 'Вийти в лоббі (Відновлює функцію респауну).';
 			(_d49 displayCtrl 523) ctrlSetText (format ['%1',_profileName]);
 			(_d49 displayCtrl 109) ctrlSetText (format ['%1',_playerClassDName]);
 		};
@@ -580,15 +580,15 @@ for '_x' from 0 to 1 step 0 do {
 			} else {
 				(_d49 displayCtrl 1010) ctrlEnable FALSE;
 			};
-			(_d49 displayCtrl 1010) ctrlSetText (format ['Respawn at FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+			(_d49 displayCtrl 1010) ctrlSetText (format ['Відродження на FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 			(_d49 displayCtrl 1010) ctrlCommit 0;
 			_QS_buttonMedevac ctrlEnable ((!(missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE])) && (_tickTimeNow > (_unit getVariable ['QS_client_lastMedevacRequest',-1])) && ((lifeState _unit) isEqualTo 'INCAPACITATED') && (isNull (objectParent _unit)) && (isNull (attachedTo _unit)));
 			if (_tickTimeNow > (_unit getVariable ['QS_respawn_disable',-1])) then {
-				_QS_buttonMedevac ctrlSetText 'Request Medevac';
+				_QS_buttonMedevac ctrlSetText 'Запросити медичну евакуацію';
 			} else {
 				_QS_buttonMedevac ctrlSetText ([((_unit getVariable ['QS_respawn_disable',-1]) - _tickTimeNow),'MM:SS'] call _fn_secondsToString);
 			};
-			_QS_buttonMedevac ctrlSetTooltip (['Disables Revive/Respawn and creates a Medevac mission for others to attempt.','Medevac unavailable at this time.'] select ((missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE]) || {(_tickTimeNow < (_unit getVariable ['QS_client_lastMedevacRequest',-1]))}));
+			_QS_buttonMedevac ctrlSetTooltip (['Вимикає Оживлення/Респаун та створює завдання Медичної евакуації для інших гравців.','Медична евакуація наразі не доступна.'] select ((missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE]) || {(_tickTimeNow < (_unit getVariable ['QS_client_lastMedevacRequest',-1]))}));
 			_QS_buttonAction = 'call (missionNamespace getVariable "QS_fnc_clientRequestMedevac");';
 			_QS_buttonCtrl = _QS_buttonMedevac;
 			_QS_buttonCtrl buttonSetAction _QS_buttonAction;
@@ -602,7 +602,7 @@ for '_x' from 0 to 1 step 0 do {
 	} else {
 		if (!(ctrlShown _ctrlIncapacitated)) then {
 			_ctrlIncapacitated ctrlShow TRUE;
-		};	
+		};
 	};
 	if (!(_medevacRequested)) then {
 		if (_unit getVariable ['QS_client_medevacRequested',FALSE]) then {
