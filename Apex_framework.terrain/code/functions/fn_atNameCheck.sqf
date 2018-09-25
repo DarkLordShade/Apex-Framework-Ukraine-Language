@@ -3,11 +3,11 @@ File: fn_atNameCheck.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	20/12/2016 A3 1.66 by Quiksilver
-	
+
 Description:
 
 	-
@@ -23,33 +23,30 @@ _blacklistedString = [
 	'Fuck','Shit','Cunt','Bitch','Nigger','Prick','Fag','Phag',
 	'Penis','Vagina','Asshole','Gay','Lesbian','Cvnt',
 	'Sh1t','Shlt','G4y','Fvck','H4ck','N1gger','Nlgger','pussy','pvssy','puzzy','pvzzy',
-	'rape','r4pe','r4p3','rapist','r4pist','r4p1st','Server','Admin'
+	'rape','r4pe','r4p3','rapist','r4pist','r4p1st','Server','Admin','Administrator','User','user','Админ','Администратор','Адмін','Адміністратор'
 ];
 {
 	if ([_x,profileName,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) exitWith {
 		if (userInputDisabled) then {
 			disableUserInput FALSE;
 		};
-		['systemChat',(format ['Robocop kicked %1 for disallowed profile name.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['Robocop кікнув %1 за заборонене ім’я користувача.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		endMission 'QS_RD_end_5';
-		[ 
-			(format ['Auto-kicked for disallowed profile name string ( %1 ).',_x]),
+		[
+			(format ['Автоматично кікнуто за заборонене ім’я користувача ( %1 ).',_x]),
 			'Robocop',
-			TRUE, 
-			FALSE, 
-			(findDisplay 46), 
-			FALSE, 
-			FALSE 
+			TRUE,
+			FALSE,
+			(findDisplay 46),
+			FALSE,
+			FALSE
 		] call (missionNamespace getVariable 'BIS_fnc_GUImessage');
 		_validated = FALSE;
 	};
 } count _blacklistedString;
 _reservedClients = [
-	['Quiksilver','76561198084065754'],
-	['QS','76561198084065754'],
-	['QuiksiIver','76561198084065754'],
-	['Quicksilver','76561198084065754'],
-	['QuicksiIver','76561198084065754']
+	['varrkan_ua','76561198023185330'],
+	['LordShade [UkAZ]','76561198059570583']
 ];
 {
 	_nameArray = _reservedClients select _forEachIndex;
@@ -60,16 +57,16 @@ _reservedClients = [
 			if (userInputDisabled) then {
 				disableUserInput FALSE;
 			};
-			['systemChat',(format ['Robocop kicked %1 for reserved profile name.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['systemChat',(format ['Robocop кікнув %1 за використання зарезервованого імені.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			endMission 'QS_RD_end_5';
-			[ 
-				'Auto-kicked for reserved profile name.',
+			[
+				'Автоматично кікнуто за використання зарезервованого імені.',
 				'Robocop',
-				TRUE, 
-				FALSE, 
-				(findDisplay 46), 
-				FALSE, 
-				FALSE 
+				TRUE,
+				FALSE,
+				(findDisplay 46),
+				FALSE,
+				FALSE
 			] call (missionNamespace getVariable 'BIS_fnc_GUImessage');
 			_validated = FALSE;
 		};

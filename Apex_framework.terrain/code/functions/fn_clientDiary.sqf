@@ -23,17 +23,17 @@ __________________________________________________________/*/
 {
 	player createDiarySubject _x;
 } forEach [
-	['QS_diary_hotkeys','Key Bindings'],
-	['QS_diary_rules','Rules'],
-	['QS_diary_radio','Radio Channels'],
-	['QS_diary_roles','Roles'],
-	['QS_diary_mods','Mods'],
+	['QS_diary_hotkeys','Клавіатурні сполучення'],
+	['QS_diary_rules','Правила'],
+	['QS_diary_radio','Канали радіо'],
+	['QS_diary_roles','Ролі'],
+	['QS_diary_mods','Модифікації'],
 	['QS_diary_teamspeak','Teamspeak'],
-	['QS_diary_leaderboards','Leaderboards'],
-	['QS_diary_gitmo','Gitmo'],
-	['QS_diary_fobs','FOBs'],
-	['QS_diary_revive','Revive'],
-	['QS_diary_inventory','Inventory']
+	['QS_diary_leaderboards','Дошка лідерів'],
+	['QS_diary_gitmo','В’язниця'],
+	['QS_diary_fobs','FOB-и (ПОБ-и)'],
+	['QS_diary_revive','Оживлення'],
+	['QS_diary_inventory','Інвентар']
 ];
 
 /*/========== Create Diary Records/*/
@@ -55,21 +55,21 @@ player createDiaryRecord [
 	'QS_diary_radio',
 	[
 		'Загальний канал',
-		'Підключіться до Загального каналу для голосового звязку.<br/><br/>Передача музики та інших неголосних звуків не дозволяється на цьому каналі.<br/><br/>.'
+		'Під’єднайтесь до Загального каналу для голосового звязку.<br/><br/>Передача музики та інших набридливих звуків не дозволяється на цьому каналі.<br/><br/>.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
 		'Канал Взводів',
-		'Приєднуйтесь до канал взводу (Альфа, Браво або Чарлі) для спілкування в групі.<br/><br/>Одночасно можна підключитись лише до одного каналу.'
+		'Приєднуйтесь до канал взводу (Альфа, Браво або Чарлі) для спілкування в групі.<br/><br/>Одночасно можна під’єднуватись лише до одного каналу.'
 	]
 ];
 player createDiaryRecord [
 	'QS_diary_radio',
 	[
 		'Канали AO',
-		'If you are subscribed to these channels, you will automatically be added to these channels when within 2km of the Primary AO, and 1km of the Secondary AO (side mission). When you leave this area, you will no longer be able to receive or transmit on it.'
+		'Якщо ви підписані на ці канали - вас будете автоматично додано до них коли ви будете в радіусі 2км від Основної Зони операції, та в радіусі 1км від Другорядної Зони операції (Другорядна ціль). Коли ви залишете ці зони - ви більше не зможете спілкуватись в ціх каналах.'
 	]
 ];
 player createDiaryRecord [
@@ -100,7 +100,7 @@ player createDiaryRecord [
 	'QS_diary_inventory',
 	[
 		'Редагування інвентарю',
-		'Near the Crate Area and Inventory markers at base, you are able to easily customize the inventory of vehicles and ammo crates'
+		'Поблизу з Зоною ящиків та Зоною спорядження на базі у вас з’явиться можливість редагувати спорядження в транспорті та в ящиках з амуніцією.'
 	]
 ];
 
@@ -254,9 +254,9 @@ if ((getPlayerUID player) in (['ALL'] call (missionNamespace getVariable 'QS_fnc
 		[
 			'Staff Bindings',
 			'
-			<br/>Staff Menu Open - [Shift]+[F2]
-			<br/>Staff Menu Close - [Shift]+[F2]
-			<br/>Exit Spectate - [Shift]+[F2]
+			<br/>Відкрити меню персонала - [Shift]+[F2]
+			<br/>Закрити меню персонала - [Shift]+[F2]
+			<br/>Вийти з режиму спостереження - [Shift]+[F2]
 			'
 		]
 	];
@@ -319,7 +319,7 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_rules',
 	[
-		'General',
+		'Загальне',
 		(missionNamespace getVariable ['QS_missionConfig_splash_serverRules',''])
 	]
 ];
@@ -440,7 +440,7 @@ player createDiarySubject ['QS_diary_credits','Credits'];				// EULA relevant li
 player createDiaryRecord [
 	'QS_diary_credits',
 	[
-		'Community Editors',
+		'Редактори',
 		'Prioric, LordShade, varrkan_ua'
 	]
 ];
