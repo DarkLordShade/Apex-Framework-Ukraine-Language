@@ -4682,7 +4682,7 @@ for '_x' from 0 to 1 step 0 do {
 				if (missionNamespace getVariable ['QS_airbaseDefense',_false]) then {
 					_airDefenseAvailable = _false;
 					_airDefenseOnline = _true;
-					['sideChat',[_west,'AirBase'],'Air defense activated!'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+					['sideChat',[_west,'AirBase'],'Протиповітряну оборону активовано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 					_airDefenseArray = [(_airDefensePos nearEntities ['Air',1500])] call _fn_airbaseDefense;
 				};
 			} else {
@@ -4697,13 +4697,13 @@ for '_x' from 0 to 1 step 0 do {
 							];
 							deleteVehicle _x;
 						} count (_airDefenseArray select 0);
-						['sideChat',[_west,'AirBase'],'Air defense offline'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+						['sideChat',[_west,'AirBase'],'Протиповітряну оборону вимкнено'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 					};
 				};
 				if (_timeNow > (_airDefenseArray select 2)) then {
 					_airDefenseAvailable = _true;
 					missionNamespace setVariable ['QS_airbaseDefense',_false,_true];
-					['sideChat',[_west,'AirBase'],'Air defense available'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+					['sideChat',[_west,'AirBase'],'Протиповітряна оборона досяжна'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 				};
 			};
 			_QS_module_airDefense_checkDelay = _timeNow + _QS_module_airDefense_delay;

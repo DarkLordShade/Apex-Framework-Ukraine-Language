@@ -114,9 +114,9 @@ _onCompleted = {
 missionNamespace setVariable ['QS_repairing_vehicle',TRUE,FALSE];
 private _text = '';
 if (_newPhase isEqualTo 1) then {
-	_text = 'Розгортання камуфляжноі сітки';
+	_text = 'Розгортання маскувальної сітки';
 } else {
-	_text = 'Згортання камуфляжноі сітки';
+	_text = 'Згортання маскувальної сітки';
 };
 private _duration = 5;
 [

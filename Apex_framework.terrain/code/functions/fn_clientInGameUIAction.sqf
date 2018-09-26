@@ -146,14 +146,14 @@ if (_QS_actionName isEqualTo 'RepairVehicle') exitWith {
 };
 if (_QS_actionName isEqualTo 'UseMagazine') exitWith {
 	if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-		50 cutText ['Вибухівку знешкоджено поблизу бази','PLAIN'];
+		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
 	_QS_c;
 };
 if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 	if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-		50 cutText ['Вибухівку знешкоджено поблизу бази','PLAIN'];
+		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
 	_QS_c;
@@ -546,7 +546,7 @@ if (_QS_actionName isEqualTo 'UserType') then {
 };
 if (_QS_actionName in ['ListRightVehicleDisplay','NextModeRightVehicleDisplay']) then {
 	_QS_c = TRUE;
-	50 cutText ['Будь ласка, привязуйте ці дії до клавіш. [Esc]>>[Configure]>>[Controls]>>[Keyboard]>>[Common]>>[Panels]. За замовчуванням [ та ] клавіші','PLAIN DOWN',2];
+	50 cutText ['Будь ласка, привязуйте ці дії до клавіш. [Esc]>>[Configure]>>[Controls]>>[Keyboard]>>[Common]>>[Panels]. За замовчуванням клавіші [ та ]','PLAIN DOWN',2];
 };
 if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (isNull (objectParent player)) then {

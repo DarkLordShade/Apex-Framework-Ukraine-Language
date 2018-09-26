@@ -637,7 +637,7 @@ if (_QS_rappelling) then {
 	_QS_action_rappelSelf_array = [_QS_action_rappelSelf_text,{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractRappel')},1,-10,TRUE,TRUE,'','TRUE',-1,FALSE,''];
 	_QS_interaction_rappelSelf = FALSE;
 	_QS_action_rappelAI = nil;
-	_QS_action_rappelAI_text = 'Fastrope AI units';
+	_QS_action_rappelAI_text = 'Швидко спустити ботів';
 	_QS_action_rappelAI_array = [_QS_action_rappelAI_text,{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractRappel')},2,-11,FALSE,TRUE,'','TRUE',-1,FALSE,''];
 	_QS_interaction_rappelAI = FALSE;
 	_QS_action_rappelDetach = nil;
@@ -669,7 +669,7 @@ if (_QS_module_liveFeed) then {
 	_QS_liveFeed_text = 'Нашоломна камера (Наживо):';
 	player setVariable ['QS_RD_client_liveFeed',FALSE,TRUE];
 	_QS_liveFeed_action_1 = _QS_liveFeed_display addAction [
-		'Увімкнути живу трансляцію',
+		'Увімкнути трансляцію наживо',
 		{
 			if (isPipEnabled) then {
 				player setVariable ['QS_RD_client_liveFeed',TRUE,FALSE];

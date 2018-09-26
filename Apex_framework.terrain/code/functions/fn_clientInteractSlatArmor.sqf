@@ -56,7 +56,7 @@ if (!(_camonetArmor_vAnims isEqualTo [])) then {
 	};
 };
 if (_exitCamo) exitWith {
-	50 cutText ['Зніміть камуфляжну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
+	50 cutText ['Зніміть маскувальну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
 };
 _onCancelled = {
 	params ['_v','_position'];
@@ -109,7 +109,7 @@ _onCompleted = {
 		};
 	};
 	if (_exitCamo) exitWith {
-		50 cutText ['Зніміть камуфляжну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
+		50 cutText ['Зніміть маскувальну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
 	};
 	{
 		_vehicle animateSource [_x,_newPhase,TRUE];
