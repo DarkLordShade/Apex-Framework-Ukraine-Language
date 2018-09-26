@@ -669,7 +669,7 @@ if (_QS_module_liveFeed) then {
 	_QS_liveFeed_text = 'Нашоломна камера (Наживо):';
 	player setVariable ['QS_RD_client_liveFeed',FALSE,TRUE];
 	_QS_liveFeed_action_1 = _QS_liveFeed_display addAction [
-		'Turn on live feed',
+		'Увімкнути живу трансляцію',
 		{
 			if (isPipEnabled) then {
 				player setVariable ['QS_RD_client_liveFeed',TRUE,FALSE];
@@ -770,7 +770,7 @@ if (!isNil {missionNamespace getVariable 'QS_airdefense_laptop'}) then {
 	if (_airDefenseLaptop isEqualType objNull) then {
 		if (!isNull _airDefenseLaptop) then {
 			_QS_airbaseDefense_action_1 = _airDefenseLaptop addAction [
-				'Активувати протиповітряну оборону',
+				'Активувати ППО',
 				{
 					if (missionNamespace getVariable ['QS_airbaseDefense',FALSE]) exitWith {
 						50 cutText ['Очікування ППО','PLAIN DOWN',0.5];
@@ -778,7 +778,7 @@ if (!isNil {missionNamespace getVariable 'QS_airdefense_laptop'}) then {
 					missionNamespace setVariable ['QS_airbaseDefense',TRUE,TRUE];
 					player playAction 'PutDown';
 					playSound ['Orange_Access_FM',FALSE];
-					50 cutText ['Активація протиповітряної оборони','PLAIN DOWN',0.5];
+					50 cutText ['Активація ППО','PLAIN DOWN',0.5];
 				},
 				[],
 				90,
