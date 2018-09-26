@@ -1,13 +1,13 @@
 /*/
 File: fn_initPlayerLocal.sqf
 Author:
-	
+
 	Quiksilver
 
 Last modified:
 
 	7/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Player Init
@@ -30,7 +30,7 @@ _validated = [_uid] call (missionNamespace getVariable 'QS_fnc_atNameCheck');
 if (!(_validated)) exitWith {};
 _fn_inString = missionNamespace getVariable 'QS_fnc_inString';
 if (['whitelist',_roleDescription,FALSE] call _fn_inString) then {
-	if (['Spectator',_roleDescription,FALSE] call _fn_inString) then {
+	if (['Спостерігач',_roleDescription,FALSE] call _fn_inString) then {
 		if (isNil 'QS_Spectator_Whitelist') then {
 			_exit = TRUE;
 			waitUntil {(!isNull (findDisplay 46))};
@@ -43,7 +43,7 @@ if (['whitelist',_roleDescription,FALSE] call _fn_inString) then {
 		};
 	};
 	if (!((toLower _playerClass) in ['b_fighter_pilot_f'])) then {
-		if (['Pilot',_roleDescription,FALSE] call _fn_inString) then {
+		if (['Пілот',_roleDescription,FALSE] call _fn_inString) then {
 			if (isNil 'QS_pilot_whitelist') then {
 				_exit = TRUE;
 				endMission 'QS_RD_end_1';
@@ -54,7 +54,7 @@ if (['whitelist',_roleDescription,FALSE] call _fn_inString) then {
 			};
 		};
 	};
-	if (['Medic',_roleDescription,FALSE] call _fn_inString) then {
+	if (['Медик',_roleDescription,FALSE] call _fn_inString) then {
 		if (isNil 'QS_cls_whitelist') then {
 			_exit = TRUE;
 			endMission 'QS_RD_end_1';
@@ -64,13 +64,13 @@ if (['whitelist',_roleDescription,FALSE] call _fn_inString) then {
 			endMission 'QS_RD_end_1';
 		};
 	};
-	if (['Sniper',_roleDescription,FALSE] call _fn_inString) then {
+	if (['Снайпер',_roleDescription,FALSE] call _fn_inString) then {
 		if ((!(_uid in ((['S3'] call (missionNamespace getVariable 'QS_fnc_whitelist'))))) && (!(serverCommandAvailable '#logout'))) then {
 			_exit = TRUE;
 			endMission 'QS_RD_end_1';
 		};
 	};
-	if (['Engineer',_roleDescription,FALSE] call _fn_inString) then {
+	if (['Інженер',_roleDescription,FALSE] call _fn_inString) then {
 		if ((!(_uid in ((['S3'] call (missionNamespace getVariable 'QS_fnc_whitelist'))))) && (!(serverCommandAvailable '#logout'))) then {
 			_exit = TRUE;
 			endMission 'QS_RD_end_1';
@@ -656,10 +656,10 @@ _playerClass spawn {
 									player setVariable ['QS_ClientUTexture2',(profileNamespace getVariable 'QS_ClientUTexture2'),FALSE];
 									player setVariable ['QS_ClientUTexture2_Uniforms2',(profileNamespace getVariable 'QS_ClientUTexture2_Uniforms2'),FALSE];
 									if (!((vest player) isEqualTo '')) then {
-									
+
 									};
 									if (!((backpack player) isEqualTo '')) then {
-									
+
 									};
 								};
 							};
@@ -698,7 +698,7 @@ if (!((uniform player) isEqualTo '')) then {
 			_itemToRemove = selectRandom ((uniformItems player) + (uniformMagazines player));
 			player removeItemFromUniform _itemToRemove;
 		};
-	};	
+	};
 };
 0 spawn (missionNamespace getVariable 'QS_fnc_clientDiary');
 0 spawn (missionNamespace getVariable 'QS_fnc_icons');
