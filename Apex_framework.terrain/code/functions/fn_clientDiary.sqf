@@ -29,7 +29,6 @@ __________________________________________________________/*/
 	['QS_diary_roles','Ролі'],
 	['QS_diary_mods','Модифікації'],
 	['QS_diary_teamspeak','Teamspeak'],
-	['QS_diary_discord','Discord'],
 	['QS_diary_leaderboards','Дошка лідерів'],
 	['QS_diary_gitmo','В’язниця'],
 	['QS_diary_fobs','FOB-и (ПОБ-и)'],
@@ -430,20 +429,6 @@ player createDiaryRecord [
 		<br/>
 		<br/> Завжди раді новим обличчам (голосам :) )!
 		',(missionNamespace getVariable ['QS_missionConfig_commTS',''])]
-	]
-];
-
-/*/-------------------------------------------------- Discord/*/
-
-player createDiaryRecord [
-	'QS_diary_discord',
-	[
-		'Discord Сервер',
-		format ['
-		<br/> Посилання: %1
-		<br/>
-		<br/> Приєднуйтесь та спілкуйтесь!
-		',(missionNamespace getVariable ['QS_missionConfig_commDS',''])]
 	]
 ];
 
