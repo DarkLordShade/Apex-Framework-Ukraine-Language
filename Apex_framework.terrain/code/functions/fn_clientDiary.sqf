@@ -423,11 +423,11 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_teamspeak',
 	[
-		'TS3 Server',
+		'TS3 Сервер',
 		format ['
-		<br/> Address: %1
+		<br/> Адреса: %1
 		<br/>
-		<br/> Visitors and guests welcome!
+		<br/> Завжди раді новим обличчам (голосам :) )!
 		',(missionNamespace getVariable ['QS_missionConfig_commTS',''])]
 	]
 ];
