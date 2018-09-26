@@ -441,7 +441,7 @@ player createDiaryRecord [
 	'QS_diary_credits',
 	[
 		'Редактори',
-		'Prioric, LordShade, varrkan_ua'
+		'Prioric, varrkan_ua'
 	]
 ];
 
