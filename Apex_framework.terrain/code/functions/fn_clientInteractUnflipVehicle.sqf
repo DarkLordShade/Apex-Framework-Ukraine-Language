@@ -28,7 +28,7 @@ if (((count _engies) < 2) && {(!((toLower (typeOf _v)) in ['b_apc_tracked_01_crv
 };
 if (!alive _t) exitWith {};
 if (!(_canUnflip)) exitWith {};
-50 cutText ['Unflipping','PLAIN DOWN',0.3];
+50 cutText ['Перевертання','PLAIN DOWN',0.3];
 player allowDamage FALSE;
 if ((_t isKindOf 'LandVehicle') || {(_t isKindOf 'Reammobox_F')} || {(_t isKindOf 'StaticWeapon')}) then {
 	if (isNull (objectParent player)) then {

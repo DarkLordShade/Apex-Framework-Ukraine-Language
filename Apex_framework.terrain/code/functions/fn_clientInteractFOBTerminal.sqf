@@ -3,13 +3,13 @@ File: fn_clientInteractFOBTerminal.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	29/05/2016 A3 1.58 by Quiksilver
-	
+
 Description:
-	
+
 	-
 __________________________________________________________________________*/
 
@@ -73,18 +73,18 @@ if (_type isEqualTo 2) exitWith {
 		playSound ['AddItemOK',FALSE];
 		[50,[playerSide,profileName]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 	} else {
-		50 cutText ['Enemies are within 100m of you, FOB activation failed!','PLAIN DOWN',1];
+		50 cutText ['Ворог в радіусі 100м від вас, FOB не активовано!','PLAIN DOWN',1];
 	};
 };
 if (_type isEqualTo 3) exitWith {
 	if (['pilot',(typeOf player),FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) then {
-		50 cutText ['Pilots cannot respawn at the FOB!','PLAIN'];
+		50 cutText ['Пілоти на можуть відроджуватись на FOB!','PLAIN'];
 	} else {
-		50 cutText ['Personal Respawn Beacon activated','PLAIN'];
+		50 cutText ['Особистий Маяк Відродження активовано','PLAIN'];
 		playSound ['AddItemOK',FALSE];
-		player setVariable ['QS_module_fob_client_respawnEnabled',TRUE,FALSE];	
+		player setVariable ['QS_module_fob_client_respawnEnabled',TRUE,FALSE];
 	};
 };
 if (_type isEqualTo 4) exitWith {
-	50 cutText ['Soon','PLAIN'];
+	50 cutText ['Скоро','PLAIN'];
 };

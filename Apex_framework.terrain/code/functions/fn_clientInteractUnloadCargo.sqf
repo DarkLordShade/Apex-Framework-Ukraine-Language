@@ -86,7 +86,7 @@ private _hasUnloaded = FALSE;
 						['setVelocity',_entity,[0,0,-1]] remoteExec ['QS_fnc_remoteExecCmd',_entity,FALSE];
 					};
 				};
-				50 cutText [(format ['Carrying a(n) %1',(_cargo getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _cargo) >> 'displayName'))])]),'PLAIN DOWN',0.3];
+				50 cutText [(format ['Підіймання %1',(_cargo getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _cargo) >> 'displayName'))])]),'PLAIN DOWN',0.3];
 			} else {
 				_position = (position player) findEmptyPosition [0,10,(typeOf _cargo)];
 				if (!(_position isEqualTo [])) then {

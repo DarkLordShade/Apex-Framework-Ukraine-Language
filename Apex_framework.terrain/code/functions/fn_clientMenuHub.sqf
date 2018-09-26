@@ -1,9 +1,9 @@
 /*/
 File: fn_clientMenuHub.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	22/05/2018 A3 1.82 by Quiksilver
@@ -20,12 +20,12 @@ if (_type isEqualTo 'onLoad') exitWith {
 	_title = _display displayCtrl 1802;
 	_title ctrlSetText 'Comm-Link';
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
-	
-	/*/======================= EDIT BELOW =======================/*/ 
+
+	/*/======================= EDIT BELOW =======================/*/
 	_ctrlB1 = _display displayCtrl 1804;
 	_ctrlB1 ctrlSetStructuredText (parseText (format ["<a href=%1>%2</a>",((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 0),((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 1)]));
 	_ctrlB1 ctrlSetToolTip ((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 2);
-	_ctrlB1 ctrlEnable TRUE;	//(!(((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 0) isEqualTo ''));	
+	_ctrlB1 ctrlEnable TRUE;	//(!(((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 0) isEqualTo ''));
 	_ctrlB2 = _display displayCtrl 1805;
 	_ctrlB2 ctrlSetStructuredText (parseText (format ["<a href=%1>%2</a>",((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 0),((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 1)]));
 	_ctrlB2 ctrlSetToolTip ((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 2);
@@ -37,21 +37,21 @@ if (_type isEqualTo 'onLoad') exitWith {
 	_ctrlB4 = _display displayCtrl 1812;
 	_ctrlB4 ctrlSetStructuredText (parseText (format ["<a href=%1>%2</a>",((call (missionNamespace getVariable ['QS_missionConfig_monetizeURL',{}])) select 0),((call (missionNamespace getVariable ['QS_missionConfig_monetizeURL',{}])) select 1)]));
 	_ctrlB4 ctrlSetToolTip ((call (missionNamespace getVariable ['QS_missionConfig_monetizeURL',{}])) select 2);
-	_ctrlB4 ctrlEnable TRUE;	
-	/*/======================= EDIT ABOVE =======================/*/ 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	_ctrlB4 ctrlEnable TRUE;
+	/*/======================= EDIT ABOVE =======================/*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 	(_display displayCtrl 1806) ctrlSetText 'Radio Management';
 	(_display displayCtrl 1806) ctrlEnable TRUE;
 	(_display displayCtrl 1807) ctrlSetText 'Group Management';
@@ -60,7 +60,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	(_display displayCtrl 1810) ctrlEnable TRUE;
 
 	/*/======================= DO NOT EDIT BELOW =======================/*/
-	/*/ 
+	/*/
 	Please do not tamper with the below lines.
 	Part of license for use of this framework is to maintain accessibility for players to donate to the Apex Framework developer.
 	Servers which have changed, altered or tampered with access this link are in violation of the EULA.
@@ -69,7 +69,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	_ctrlB8 ctrlSetStructuredText (parseText "<a href='https://goo.gl/bZABA5'>Donate to Quiksilver</a>");
 	_ctrlB8 ctrlSetToolTip 'Donate to the Apex Framework developer (by Patreon)';
 	_ctrlB8 ctrlEnable TRUE;
-	/*/ 
+	/*/
 	Please do not tamper with the above lines.
 	Part of license for use of this framework is to maintain accessibility for players to donate to the Apex Framework developer.
 	Servers which have changed, altered or tampered with access this link are in violation of the EULA.
@@ -104,7 +104,7 @@ if (_type isEqualTo 'B4') exitWith {
 			(!dialog)
 		};
 		(findDisplay 46) createDisplay 'RscDisplayDynamicGroups';
-		50 cutText ['Use [Page Up] / [Page Down] to navigate the group list','PLAIN'];
+		50 cutText ['Використовуйте [Page Up] / [Page Down] для навігації по переліку груп','PLAIN'];
 	};
 };
 if (_type isEqualTo 'B5') exitWith {

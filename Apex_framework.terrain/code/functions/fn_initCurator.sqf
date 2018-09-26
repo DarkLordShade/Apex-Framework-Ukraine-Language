@@ -1,13 +1,13 @@
 /*/
 File: fn_initCurator.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
-Last Modified: 
+
+Last Modified:
 
 	23/04/2017 A3 1.68 by Quiksilver
-	
+
 Description:
 
 
@@ -158,7 +158,7 @@ if (_type isEqualTo 1) then {
 			['curatorObjectRegistered',(missionNamespace getVariable 'QS_fnc_clientEventCuratorObjectRegistered')],
 			['curatorWaypointPlaced',(missionNamespace getVariable 'QS_fnc_clientEventCuratorWaypointPlaced')]
 		];
-		[_module,[-1,-2,0]] call (missionNamespace getVariable 'BIS_fnc_setCuratorVisionModes');	
+		[_module,[-1,-2,0]] call (missionNamespace getVariable 'BIS_fnc_setCuratorVisionModes');
 		{
 			_module setVariable _x;
 		} forEach [
@@ -179,17 +179,17 @@ if (_type isEqualTo 1) then {
 							_result = ['Suspend side missions','Side missions','Suspend','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',TRUE,TRUE];
-								50 cutText ['Side missions suspended','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Resume side missions',(format ["<t size='3'>%1</t>",'Resume side missions'])];
-								['systemChat',(format ['%1 (staff) suspended side missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								50 cutText ['Побічну місію відкладено','PLAIN DOWN',0.5];
+								_actionTarget setUserActionText [_actionID,'Resume side missions',(format ["<t size='3'>%1</t>",'Поновити побічну місію'])];
+								['systemChat',(format ['%1 (персонал) відклав побічну місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						} else {
 							_result = ['Resume side missions','Side missions','Resume','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',FALSE,TRUE];
-								50 cutText ['Side missions resumed','PLAIN DOWN',0.5];
+								50 cutText ['Продовжити побічну місію','PLAIN DOWN',0.5];
 								_actionTarget setUserActionText [_actionID,'Suspend side missions',(format ["<t size='3'>%1</t>",'Suspend side missions'])];
-								['systemChat',(format ['%1 (staff) resumed side missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								['systemChat',(format ['%1 (персонал) поновив побічну місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						};
 					},
@@ -208,7 +208,7 @@ if (_type isEqualTo 1) then {
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
-						
+
 						if (!((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'NONE')) then {
 							if (!(missionNamespace getVariable ['QS_customAO_GT_active',FALSE])) then {
 								if (!(missionNamespace getVariable 'QS_aoSuspended')) then {
@@ -217,25 +217,25 @@ if (_type isEqualTo 1) then {
 										missionNamespace setVariable ['QS_aoSuspended',TRUE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
 										missionNamespace setVariable ['QS_forceDefend',-1,TRUE];
-										50 cutText ['Primary missions suspended, please wait ...','PLAIN DOWN',0.5];
+										50 cutText ['Основні місії призупинено, зачекайте ...','PLAIN DOWN',0.5];
 										_actionTarget setUserActionText [_actionID,'Resume primary missions',(format ["<t size='3'>%1</t>",'Resume primary missions'])];
-										['systemChat',(format ['%1 (staff) suspended primary missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+										['systemChat',(format ['%1 (персонал) призупинив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								} else {
 									_result = ['Resume primary missions','Primary missions','Resume','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoSuspended',FALSE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',FALSE,TRUE];
-										50 cutText ['Primary missions resumed, please wait ...','PLAIN DOWN',0.5];
+										50 cutText ['Основні місії поновлено, зачекайте ...','PLAIN DOWN',0.5];
 										_actionTarget setUserActionText [_actionID,'Suspend primary missions',(format ["<t size='3'>%1</t>",'Suspend primary missions'])];
-										['systemChat',(format ['%1 (staff) resumed primary missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+										['systemChat',(format ['%1 (персонал) поновив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								};
 							} else {
-								50 cutText ['Cannot suspend this mission','PLAIN DOWN',0.5];
+								50 cutText ['Не можна призупинити цю місію','PLAIN DOWN',0.5];
 							};
 						} else {
-							50 cutText ['Primary missions disabled in server config, cycle attempt failed','PLAIN DOWN',0.5];
+							50 cutText ['Основні місії вимкнено в конфігурації сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
 						};
 					},
 					[],
@@ -256,7 +256,7 @@ if (_type isEqualTo 1) then {
 						if (!((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'NONE')) then {
 							if (!(missionNamespace getVariable ['QS_customAO_GT_active',FALSE])) then {
 								if (diag_tickTime < (player getVariable ['QS_client_aoCycleCooldown',-1])) exitWith {
-									50 cutText [(format ['Too soon, please wait %1s',(round((player getVariable ['QS_client_aoCycleCooldown',-1]) - diag_tickTime))]),'PLAIN',0.5];
+									50 cutText [(format ['Занадто швидко, будь ласка, зачекайте %1с',(round((player getVariable ['QS_client_aoCycleCooldown',-1]) - diag_tickTime))]),'PLAIN',0.5];
 								};
 								player setVariable ['QS_client_aoCycleCooldown',(diag_tickTime + 60),FALSE];
 								if (!(missionNamespace getVariable ['QS_aoSuspended',FALSE])) then {
@@ -264,18 +264,18 @@ if (_type isEqualTo 1) then {
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
 										['systemChat',(format ['%1 (staff) cycled primary missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-										50 cutText ['Primary mission cycling, please wait ...','PLAIN DOWN',0.5];
+										50 cutText ['Основна місія зациклюється, please wait ...','PLAIN DOWN',0.5];
 									} else {
-										50 cutText ['Cancelled cycle attempt','PLAIN DOWN',0.5];
+										50 cutText ['Відміна спроби зациклювання','PLAIN DOWN',0.5];
 									};
 								} else {
-									50 cutText ['Primary missions are suspended, cycle attempt failed','PLAIN DOWN',0.5];
+									50 cutText ['Основні місії призупинено, спроба зациклювання не вдалась','PLAIN DOWN',0.5];
 								};
 							} else {
-								50 cutText ['Cannot suspend this mission','PLAIN DOWN',0.5];
+								50 cutText ['Не можна призупинити цю місію','PLAIN DOWN',0.5];
 							};
 						} else {
-							50 cutText ['Primary missions disabled in server config, cycle attempt failed','PLAIN DOWN',0.5];
+							50 cutText ['Основні місії вимкнено в конфігурації сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
 						};
 					},
 					[],

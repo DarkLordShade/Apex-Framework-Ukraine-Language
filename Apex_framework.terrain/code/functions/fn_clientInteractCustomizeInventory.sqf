@@ -24,7 +24,7 @@ createDialog 'RscDisplayAttributesInventory';
 if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 [_cursorObject] spawn {
 	_entity = _this select 0;
-	50 cutText ['Please wait ...','PLAIN',1];
+	50 cutText ['Зачекайте будь ласка ...','PLAIN',1];
 	[5] spawn (missionNamespace getVariable 'QS_fnc_clientDisableUserInput');
 	waitUntil {
 		uiSleep 1;
@@ -169,7 +169,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 	} foreach _cargo;
 	RscAttributeInventory_selected = 0;
 	playSound ['Click',FALSE];
-	50 cutText ['Initialization complete, select tab above','PLAIN',1];
+	50 cutText ['Ініціалізацію завершено, оберіть вкладку зверху','PLAIN',1];
 	titleFadeOut 3;
 	if (userInputDisabled) then {
 		disableUserInput FALSE;

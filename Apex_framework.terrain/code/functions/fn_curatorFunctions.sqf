@@ -3,15 +3,15 @@ File: fn_curatorFunctions.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	7/07/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Custom Curator Functions
-	
+
 Keys:
 
 	NUM_0 = 82
@@ -207,7 +207,7 @@ if (_key isEqualTo 77) exitWith {
 						_unit doSuppressiveFire (_unit findNearestEnemy _unit);
 					} else {
 						0 = [30,_unit,(_unit findNearestEnemy _unit)] remoteExec ['QS_fnc_remoteExec',_unit,FALSE];
-					};				
+					};
 				} else {
 					if (local _unit) then {
 						_unit doSuppressiveFire (getPosASL (_unit findNearestEnemy _unit));
@@ -363,7 +363,7 @@ if (_key isEqualTo 72) exitWith {
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Player view directions - OFF',[],-1,TRUE,'Curator',FALSE];
 		removeMissionEventHandler ['Draw3D',(missionNamespace getVariable 'QS_curator_playerViewDirections')];
 		missionNamespace setVariable ['QS_curator_playerViewDirections',nil,FALSE];
-	};	
+	};
 };
 if (_key isEqualTo 73) exitWith {
 	playSound ['ClickSoft',FALSE];
@@ -400,9 +400,9 @@ if (_key isEqualTo 73) exitWith {
 			_unit setCaptive TRUE;
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'Unit set unconscious',[],-1,TRUE,'Curator',FALSE];
 		} else {
-			50 cutText ['Can only set unconscious units spawned by Zeus','PLAIN DOWN',0.333];
+			50 cutText ['Можна ставити лише одиниці без свідомостіб створені Зевсом','PLAIN DOWN',0.333];
 		};
 	} else {
-		50 cutText ['Cannot set this unit unconscious','PLAIN DOWN',0.333];
+		50 cutText ['Не можна встановити цю одиницю без свідомості','PLAIN DOWN',0.333];
 	};
 };

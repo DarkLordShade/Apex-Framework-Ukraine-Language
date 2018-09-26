@@ -1,13 +1,13 @@
 /*
 File: fn_clientEventHandleHeal.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	30/08/2016 A3 1.62 by Quiksilver
-	
+
 Description:
 
 	Handle Heal Event
@@ -50,7 +50,7 @@ if (!isPlayer _healer) then {
 } else {
 	if (!(player isEqualTo _healer)) then {
 		if (player isEqualTo _unit) then {
-			50 cutText [(format ['Being treated by %1',(name _healer)]),'PLAIN DOWN',0.5];
+			50 cutText [(format ['%1 лікує',(name _healer)]),'PLAIN DOWN',0.5];
 		};
 	};
 };

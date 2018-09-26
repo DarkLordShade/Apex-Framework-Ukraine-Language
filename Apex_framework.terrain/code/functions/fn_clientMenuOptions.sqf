@@ -61,11 +61,11 @@ if (_type isEqualTo 'StaminaCheckbox') then {
 	_state = _this select 2;
 	if ((_this select 2) isEqualTo 1) then {
 		_state = TRUE;
-		50 cutText ['Stamina enabled','PLAIN DOWN',0.5];
+		50 cutText ['Витривалість увімкнено','PLAIN DOWN',0.5];
 	};
 	if ((_this select 2) isEqualTo 0) then {
 		_state = FALSE;
-		50 cutText ['Витривалісь вимкнена','PLAIN DOWN',0.5];
+		50 cutText ['Витривалісь вимкнено','PLAIN DOWN',0.5];
 	};
 	if ((missionNamespace getVariable ['QS_missionConfig_stamina',0]) isEqualTo 0) then {
 		player enableStamina _state;

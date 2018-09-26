@@ -48,7 +48,7 @@ if (isPlayer _killed) then {
 			if (!isNull _killer) then {
 				if (isPlayer _killer) then {
 					if (!((vehicle _killer) isKindOf 'Air')) then {
-						_text = format ['Ворожого снайпера ( %1 ) вбито %2!',(name _killed),(name _killer)];
+						_text = format ['Ворожого снайпера ( %1 ) вбив %2!',(name _killed),(name _killer)];
 						['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 					};
 				};

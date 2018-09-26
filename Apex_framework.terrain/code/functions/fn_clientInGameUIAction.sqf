@@ -28,7 +28,7 @@ if (((animationState player) in [
 	_QS_c;
 };
 if (!((lifeState player) in ['HEALTHY','INJURED'])) exitWith {
-	50 cutText ['Incapacitated','PLAIN DOWN',0.333];
+	50 cutText ['Недієздатний','PLAIN DOWN',0.333];
 	_QS_c = TRUE;
 	_QS_c;
 };

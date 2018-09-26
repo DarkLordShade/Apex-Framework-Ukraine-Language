@@ -865,7 +865,7 @@ _QS_module_safezone_pos = markerPos 'QS_marker_base_marker';
 _QS_module_safezone_radius = 500;
 _QS_module_safezone_playerProtection = 1;
 _QS_safeZoneText_entering = 'Вхід в безпечну зону';
-_QS_safeZoneText_leaving = 'Вихід в безпечну зону';
+_QS_safeZoneText_leaving = 'Вихід з безпечної зони';
 _QS_firstRun2 = TRUE;
 player addRating (0 - (rating player));
 _QS_safezone_action = -1;
@@ -4059,7 +4059,7 @@ for '_x' from 0 to 1 step 0 do {
 						if (local _QS_v2) then {
 							if (isTouchingGround _QS_v2) then {
 								[17,_QS_v2] remoteExec ['QS_fnc_remoteExec',2,_false];
-								50 cutText ['Vehicles in the spawn area are prohibited.','PLAIN',1];
+								50 cutText ['Транспорт в зоні відродження заборонений.','PLAIN',1];
 							};
 						};
 					};
@@ -4361,7 +4361,7 @@ for '_x' from 0 to 1 step 0 do {
 										forceRespawn player;
 									} else {
 										if (_QS_currentTimeOnGround > _QS_warningTimeOnGround) then {
-											(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Ви пілот. Будь ласкаб грайте свою роль або оберіть іншу. На сервері більше 30 гравців, будь ласка, відродіться, якщо своєчасний евакуація недоступна.',[],(serverTime + 20),_true,'Обмеження ролі',_false];
+											(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Ви пілот. Будь ласка, грайте свою роль або оберіть іншу. На сервері більше 30 гравців, будь ласка, відродіться, якщо своєчасний евакуація недоступна.',[],(serverTime + 20),_true,'Обмеження ролі',_false];
 										};
 									};
 								} else {
@@ -5040,7 +5040,7 @@ for '_x' from 0 to 1 step 0 do {
 							_QS_inGeorgetown = _true;
 							_QS_georgetown_priorVD = viewDistance;
 							_QS_georgetown_priorOVD = getObjectViewDistance select 0;
-							50 cutText [(format ['Lowering view distance (%1) ...',(['Kavala','Georgetown'] select (_QS_worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.25];
+							50 cutText [(format ['Зменьшення дистанції огляду (%1) ...',(['Kavala','Georgetown'] select (_QS_worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.25];
 							[_QS_georgetown_priorVD,_QS_georgetown_priorOVD,_QS_georgetown_VD,_QS_georgetown_OVD] spawn {
 								params ['_QS_georgetown_priorVD','_QS_georgetown_priorOVD','_QS_georgetown_VD','_QS_georgetown_OVD'];
 								if (_QS_georgetown_priorVD > _QS_georgetown_VD) then {

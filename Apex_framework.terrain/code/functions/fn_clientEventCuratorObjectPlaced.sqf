@@ -3,11 +3,11 @@ File: fn_clientEventCuratorObjectPlaced.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	13/03/2018 A3 1.80 by Quiksilver
-	
+
 Description:
 
 	Event Curator Object Placed
@@ -53,7 +53,7 @@ if (_object isKindOf 'Man') exitWith {
 				_object forceAddUniform 'U_C_WorkerCoveralls';
 				removeHeadgear _object;
 				0 = [_object] spawn {
-					uiSleep 1; 
+					uiSleep 1;
 					(_this select 0) setObjectTextureGlobal [0,'#(rgb,8,8,3)color(1,0.1,0,1)'];
 				};
 				_object setVariable ['QS_unit_isPrisoner',TRUE,TRUE];
@@ -108,7 +108,7 @@ if (_object isKindOf 'Man') exitWith {
 			if (_typeL in [
 				'i_c_soldier_para_4_f','i_c_soldier_bandit_3_f','i_g_soldier_ar_f','i_soldier_ar_f','b_ctrg_soldier_ar_tna_f',
 				'b_g_soldier_ar_f','b_soldier_ar_f','b_heavygunner_f','b_t_soldier_ar_f','o_soldier_ar_f','o_heavygunner_f',
-				'o_soldieru_ar_f','o_urban_heavygunner_f','o_t_soldier_ar_f','o_g_soldier_ar_f'	
+				'o_soldieru_ar_f','o_urban_heavygunner_f','o_t_soldier_ar_f','o_g_soldier_ar_f'
 			]) then {
 				_object addPrimaryWeaponItem (selectRandom ['optic_Hamr','optic_MRCO','optic_DMS','optic_Holosight','optic_ERCO_blk_F','optic_ERCO_khk_F','optic_ERCO_snd_F','optic_KHS_old']);
 			};
@@ -133,7 +133,7 @@ if (_object isKindOf 'Man') exitWith {
 		};
 	};
 	if (_typeL in ['c_soldier_vr_f','b_soldier_vr_f','o_soldier_vr_f','i_soldier_vr_f','b_protagonist_vr_f','o_protagonist_vr_f','i_protagonist_vr_f']) then {
-		50 cutText [(format ['Object %1 not configured for this scenario',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
+		50 cutText [(format ['Об`єкт %1 не нашалтовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
 		[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 	};
 };
@@ -176,8 +176,8 @@ if (_typeL in [
 };
 if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object isKindOf 'Ship')} || {(_object isKindOf 'Reammobox_F')}) exitWith {
 	if (_typeL in ['b_t_vtol_01_vehicle_f','b_t_vtol_01_vehicle_blue_f','b_t_vtol_01_vehicle_olive_f','b_t_vtol_01_armed_blue_f','b_t_vtol_01_armed_f','b_t_vtol_01_armed_olive_f']) then {
-		{ 
-			_object setObjectTextureGlobal [_forEachIndex,_x]; 
+		{
+			_object setObjectTextureGlobal [_forEachIndex,_x];
 		} forEach (getArray (configFile >> 'CfgVehicles' >> _typeL >> 'TextureSources' >> 'Blue' >> 'textures'));
 	};
 	_object setFuel (0.4 + (random 0.45));
@@ -197,7 +197,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 	if (_object isKindOf 'Helicopter') then {
 		if (_typeL in ['b_heli_light_01_armed_f','b_heli_attack_01_f','o_heli_light_02_f','o_heli_light_02_v2_f','i_heli_light_03_f','o_heli_attack_02_f','o_heli_attack_02_black_f','o_heli_light_02_dynamicloadout_f','o_heli_attack_02_dynamicloadout_black_f','o_heli_attack_02_dynamicloadout_black_f','i_heli_light_03_dynamicloadout_f','b_heli_attack_01_dynamicloadout_f','b_heli_light_01_dynamicloadout_f']) then {
 			if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-				50 cutText ['Armed aircraft currently disabled','PLAIN DOWN',1];
+				50 cutText ['Обзброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
 				[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			};
 		};
@@ -226,7 +226,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 			];
 		};
 		if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-			50 cutText ['Armed aircraft currently disabled','PLAIN DOWN',1];
+			50 cutText ['Обзброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
 			[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 		};
 	};
@@ -255,7 +255,7 @@ if (['Module',_type,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')
 	]) then {
 		[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 		closeDialog 0;
-		50 cutText [format ['Module %1 not configured for this scenario',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))],'PLAIN'];
+		50 cutText [format ['Модуль %1 не налаштовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))],'PLAIN'];
 	} else {
 		_module setVariable [
 			'QS_curator_modules',

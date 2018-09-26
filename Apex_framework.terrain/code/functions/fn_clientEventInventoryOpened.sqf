@@ -25,10 +25,10 @@ private _isBackpack = getNumber (configFile >> 'CfgVehicles' >> (typeOf _invento
 			if (!isNull ((findDisplay 602) displayCtrl 12346)) then {
 				if (!isNil {player getVariable 'QS_backpack_lockState'}) then {
 					if (player getVariable 'QS_backpack_lockState') then {
-						50 cutText ['Backpack unlocked','PLAIN DOWN',0.5];
+						50 cutText ['Рюкзак заблоковано','PLAIN DOWN',0.5];
 						player setVariable ['QS_backpack_lockState',FALSE,TRUE];
 					} else {
-						50 cutText ['Backpack locked','PLAIN DOWN',0.5];
+						50 cutText ['Рукзак розблоковано','PLAIN DOWN',0.5];
 						player setVariable ['QS_backpack_lockState',TRUE,TRUE];
 					};
 					player setVariable ['QS_backpack_lockTime',(time + 1),FALSE];
