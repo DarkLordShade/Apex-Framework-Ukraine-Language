@@ -3,8 +3,8 @@ File: fn_smDebrief2.sqf
 Author:
 
 	Quiksilver
-	
-Last modified: 
+
+Last modified:
 
 	18/11/2017 A3 1.76 by Quiksilver
 
@@ -18,9 +18,9 @@ missionNamespace setVariable ['QS_evacPosition_2',_smPos,TRUE];
 ['QS_IA_TASK_SM_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 if (_type isEqualTo 0) exitWith {
 	['playMusic','EventTrack02_F_Curator'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	_failedText = parseText "<t align='center'><t size='2.2'>Side Mission</t><br/><t size='1.5' color='#b60000'>FAILED</t><br/>____________________<br/>
-		You'll have to do better than that next time!<br/><br/><br/>Focus on the main objective for now; we'll relay the bad news to HQ, with some luck we'll have another objective lined up. 
-		We'll get back to you in 15 - 30 minutes.</t>";
+	_failedText = parseText "<t align='center'><t size='2.2'>Другорядну місію</t><br/><t size='1.5' color='#b60000'>ПРОВАЛЕНО</t><br/>____________________<br/>
+		Наступного разу зроби це краще!<br/><br/><br/>Зараз зфокусуйся на основному завдані; ми передамо погані новини до штабу, за деякої вдачі в нас буде ще один шанс показати себе.
+		Ми повернемося до тебе за 15 - 30 хвилин.</t>";
 	['hint',_failedText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 };
 if (_type isEqualTo 1) then {
@@ -66,7 +66,7 @@ if (_type isEqualTo 1) then {
 			[14833.3,16677.8,0],[14875.7,16665,0],[14868.5,16656.5,0],[14860.2,16647.4,0],[14850.8,16640,0],
 			[14841.5,16632.9,0],[14834.7,16624.4,0],[14827.2,16617.4,0],[14819.6,16609.6,0],[14812.4,16601.1,0],
 			[14803.7,16593.6,0],[14797.3,16585.2,0],[14789.2,16578.8,0],[14783.2,16570.2,0],[14775.6,16563.1,0],
-			[14768.2,16555.3,0],[14767.1,16607.7,0],[14760,16598.1,0],[14748.9,16588.7,0],[14742.2,16579.5,0]	
+			[14768.2,16555.3,0],[14767.1,16607.7,0],[14760,16598.1,0],[14748.9,16588.7,0],[14742.2,16579.5,0]
 		];
 		_shipRewardLocations = [];
 		_rewardPosition = selectRandom _landRewardLocations;
@@ -522,10 +522,10 @@ if (_type isEqualTo 1) then {
 		private ['_obj','_bagFenceRoundType','_bagFenceLongType'];
 		if (worldName isEqualTo 'Tanoa') then {
 			_bagFenceRoundType = 'Land_BagFence_01_round_green_F';
-			_bagFenceLongType = 'Land_BagFence_01_long_green_F';		
+			_bagFenceLongType = 'Land_BagFence_01_long_green_F';
 		} else {
 			_bagFenceRoundType = 'Land_BagFence_Round_F';
-			_bagFenceLongType = 'Land_BagFence_Long_F';		
+			_bagFenceLongType = 'Land_BagFence_Long_F';
 		};
 		_position = getPosASL _rewardVeh;
 		{
@@ -675,7 +675,7 @@ if (_type isEqualTo 1) then {
 			_static1 attachTo [_rewardVeh,[0.17,-0.4,1.1]];
 			_static1 setVariable ['QS_cleanup_protected',TRUE,TRUE];
 			_static1 enableWeaponDisassembly FALSE;
-			_static1 disableTIEquipment TRUE; 
+			_static1 disableTIEquipment TRUE;
 			_static1 allowDamage FALSE;
 			_rewardVeh setVariable ['QS_attachedObjects',[_static1],FALSE];
 			_rewardVeh addEventHandler [
@@ -816,7 +816,7 @@ if (_type isEqualTo 1) then {
 		_rewardVeh setVariable ['QS_disableRespawnAction',TRUE,TRUE];
 		[_rewardVeh] call (missionNamespace getVariable 'QS_fnc_vSetup');
 		_rewardText = 'a(n) Qilin (Armed)';
-	};	
+	};
 	if (_reward isEqualTo 19) then {
 		comment 'O_T_VTOL_02_infantry_grey_F';
 		_rewardType = 'O_T_VTOL_02_infantry_dynamicLoadout_F';
@@ -927,7 +927,7 @@ if (_type isEqualTo 1) then {
 		];
 		_rewardText = 'a(n) MB 4WD Stalker';
 		_rewardVeh setVariable ['QS_ST_customDN','MB 4WD Stalker',TRUE];
-	};	
+	};
 	if (_reward isEqualTo 22) then {
 		comment "'c_plane_civil_01_racing_f','i_c_plane_civil_01_f'";
 		_rewardType = selectRandom ['i_c_plane_civil_01_f','i_c_plane_civil_01_f'];
@@ -975,8 +975,8 @@ if (_type isEqualTo 1) then {
 		_static setVariable ['QS_ST_customDN','',TRUE];
 		_static setVariable ['QS_cleanup_protected',TRUE,TRUE];
 		_static setVariable ['QS_uav_protected',TRUE,FALSE];
-		{ 
-			_static setObjectTextureGlobal [_forEachIndex,_x]; 
+		{
+			_static setObjectTextureGlobal [_forEachIndex,_x];
 		} forEach (getArray (configFile >> 'CfgVehicles' >> _rewardType >> 'TextureSources' >> (['Sand','Green'] select (worldName isEqualTo 'Tanoa')) >> 'textures'));
 		_rewardVeh enableRopeAttach FALSE;
 		_rewardVeh enableVehicleCargo FALSE;
@@ -1110,7 +1110,7 @@ if (_type isEqualTo 1) then {
 		[_rewardVeh,2,[]] call (missionNamespace getVariable 'QS_fnc_vehicleLoadouts');
 		_rewardVeh setVariable ['QS_ST_customDN',(format ['%1 X',(getText (configFile >> 'CfgVehicles' >> _rewardType >> 'displayName'))]),TRUE];
 	};
-	
+
 	if (_reward isEqualTo 28) then {
 		comment 'Shitty technical';
 		_rewardType = 'B_G_Van_01_transport_F';
@@ -1225,7 +1225,7 @@ if (_type isEqualTo 1) then {
 		_rewardVeh setVariable ['QS_disableRespawnAction',TRUE,TRUE];
 		[_rewardVeh] call (missionNamespace getVariable 'QS_fnc_vSetup');
 		_rewardText = format ['a(n) %1',(getText (configFile >> 'CfgVehicles' >> _rewardType >> 'displayName'))];
-	};	
+	};
 	if (!isNull _rewardVeh) then {
 		if ((attachedObjects _rewardVeh) isEqualTo []) then {
 			(missionNamespace getVariable 'QS_v_Monitor') pushBack [_rewardVeh,30,FALSE,{},_rewardType,_rewardPosition,(getDir _rewardVeh),FALSE,0,-1,50,500,0,6,FALSE,0];
@@ -1234,7 +1234,7 @@ if (_type isEqualTo 1) then {
 	_newRewardArray deleteAt (_newRewardArray find _reward);
 	missionNamespace setVariable ['QS_smReward_array',_newRewardArray,FALSE];
 	_pic = getText (configfile >> 'CfgVehicles' >> _rewardType >> 'editorPreview');
-	_completeText = parseText format ["<t align='center'><t size='2.2'>Side Mission</t><br/><t size='1.5' color='#08b000'>COMPLETE</t><br/>____________________<br/>Fantastic job, lads! The OPFOR stationed on the island won't last long if you keep that up!<br/><br/>We've given you %1 to help with the fight.<br/> <img size='5' image='%2'/> <br/><br/>You'll find it at base.</t>",_rewardText,_pic];
+	_completeText = parseText format ["<t align='center'><t size='2.2'>Другорядну місію</t><br/><t size='1.5' color='#08b000'>ЗАВЕРШЕНО</t><br/>____________________<br/>Фантастична робота, хлопці! OPFORне на довго затримається на острові якщо ви це втримаєте!<br/><br/>Ми дали вам %1 щоб допомогти в бою.<br/> <img size='5' image='%2'/> <br/><br/>Ви знайдете це на базі.</t>",_rewardText,_pic];
 	//['hintSilent',_completeText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	['Reward',[format ['Your team received %1!',_rewardText]]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['Reward',[format ['Ваша команда отримала %1!',_rewardText]]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 };

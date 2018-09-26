@@ -2,21 +2,21 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	25/04/2014
-	
+
 Description:
 
 	Destroy chopper
-	
+
 Notes:
 
 	Deprecated mission
 ____________________________________*/
 
-scriptName 'Side Mission - Secure Chopper';
+scriptName 'Другорядна місія - захопити вертоліт';
 
 private [
 	"_objPos","_flatPos","_accepted","_position","_randomDir","_hangar","_x","_enemiesArray",
@@ -24,9 +24,9 @@ private [
 	'_c4Messages','_researchTable','_dummyTypes','_dummyType','_objectTypes','_objectType'
 ];
 _c4Messages = [
-	"Chopper data secured. The charge has been set! 15 seconds until detonation.",
-	"Heli data secured. The explosives have been set! 15 seconds until detonation.",
-	"Chopper intel secured. The charge is planted! 15 seconds until detonation."
+	"Дані з вертушки захоплено. Треба встановити заряд! 15 секунд до детонації.",
+	"Дані з вертольота у нас. Треба встановити вибухівку! 15 секунд до детонації.",
+	"Ми отримали дані. Заряд встановлено! 15 секунд до детонації."
 ];
 _c4Message = selectRandom _c4Messages;
 _chopperTypes = ["O_Heli_Attack_02_dynamicLoadout_black_F","O_Heli_Light_02_unarmed_F","B_Heli_Attack_01_dynamicLoadout_F","C_Heli_Light_01_civil_F","O_Heli_Transport_04_box_F"];
@@ -114,7 +114,7 @@ for '_x' from 0 to 2 step 1 do {
 /*/-------------------- SPAWN FORCE PROTECTION/*/
 
 _enemiesArray = [QS_sideObj] call (missionNamespace getVariable 'QS_fnc_smEnemyEast');
-	
+
 /*/-------------------- BRIEF/*/
 
 _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 300) + (random 600),0];
@@ -123,15 +123,15 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Chopper',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити вертоліт',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Secure the enemy helicopter! CSAT is experimenting with new radar-defeating technology. Get over there and steal the schematics. It will be located in a nearby building! Once secured, the helicopter will self-destruct, so be sure to clear the area. This objective is not accurately marked.',
-		'Secure Chopper',
-		'Secure Chopper'
+		'Захопити ворожий вертоліт! CSAT експериментують з новою технологією захисту від радарів. Рушайте та викрадіть схеми. Вони будуть в будинку поблизу! Щойно вертоліт буде захоплено - його знищать, sтому впевніться - що зачистили зону. Це завдання відмічено не точно.',
+		'Захопити Вертоліт',
+		'Захопити Вертоліт'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -142,7 +142,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Enemy Chopper</t><br/>____________________<br/>OPFOR forces have been provided with a new prototype attack chopper and they're keeping it in a hangar somewhere on the island.<br/><br/>We've marked the suspected location on your map; head to the hangar, get the data and destroy the helicopter.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова Другорядна Місія</t><br/><t size='1.5' color='#00B2EE'>Захопити Ворожий ВертолІт</t><br/>____________________<br/>OPFOR працюють над прототипом нового атакуючого вертольота і вони тримають його десь в ангарі на острові.<br/><br/>Ми відмітили підозрілу локацію на вашій мапі; потрапте до ангаруб захопіть дані та знищіть вертоліт.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Enemy Chopper']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
@@ -153,20 +153,20 @@ missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 for '_x' from 0 to 1 step 0 do {
 
 	if (!alive QS_sideObj) exitWith {
-		
+
 		/*/-------------------- DE-BRIEFING/*/
 
-		['sideChat',[WEST,'HQ'],'Prototype intel lost, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Дані про прототип втрачено, місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-		
+
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		
+
 		/*/-------------------- DELETE/*/
-		
+
 		{
 			missionNamespace setVariable [
 				'QS_analytics_entities_deleted',
@@ -190,13 +190,13 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
 
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	
+
 		/*/-------------------- BOOM!/*/
-		
+
 		_dummy = createVehicle [_dummyType,[0,0,0],[],0,'NONE'];
 		missionNamespace setVariable [
 			'QS_analytics_entities_created',
@@ -231,7 +231,7 @@ for '_x' from 0 to 1 step 0 do {
 		];
 		deleteVehicle _researchTable;
 		sleep 0.1;
-	
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
@@ -240,7 +240,7 @@ for '_x' from 0 to 1 step 0 do {
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-	
+
 		/*/-------------------- DELETE/*/
 		sleep 120;
 		{

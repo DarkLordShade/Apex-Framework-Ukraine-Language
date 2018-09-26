@@ -3,15 +3,15 @@ File: QS_data_notifications.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	15/05/2017 A3 1.70 by Quiksilver
-	
+
 Description:
 
 	Notifications Config
-	
+
 	defaultNotification
 __________________________________________________________________________/*/
 
@@ -52,7 +52,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK ASSIGNED'
-		];	
+		];
 	};
 	if (_case isEqualTo 'TaskCanceled') then {
 		_return = [
@@ -70,7 +70,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK CANCELED'
-		];	
+		];
 	};
 	if (_case isEqualTo 'TaskCreated') then {
 		_return = [
@@ -88,8 +88,8 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK CREATED'
-		];	
-	};	
+		];
+	};
 	if (_case isEqualTo 'TaskFailed') then {
 		_return = [
 			/*/color array/*/ 				[1,0.3,0.2,1],
@@ -106,7 +106,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK FAILED'
-		];	
+		];
 	};
 	if (_case isEqualTo 'TaskSucceeded') then {
 		_return = [
@@ -124,7 +124,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK COMPLETED'
-		];	
+		];
 	};
 	if (_case isEqualTo 'TaskUpdated') then {
 		_return = [
@@ -142,7 +142,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'TASK UPDATED'
-		];	
+		];
 	};
 	if (_case isEqualTo 'NewMain') then {
 		_return = [
@@ -267,7 +267,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW SIDE MISSION'
+			/*/title string/*/ 				'НОВА ДРУГОРЯДНА МІСІЯ'
 		];
 	};
 	if (_case isEqualTo 'NewSideMissionFileData') then {
@@ -285,7 +285,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW SIDE MISSION'
+			/*/title string/*/ 				'НОВА ДРУГОРЯДНА МІСІЯ'
 		];
 	};
 	if (_case isEqualTo 'NewSideMissionFileDataComplete') then {
@@ -303,7 +303,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'FILE DATA SAVED'
+			/*/title string/*/ 				'ФАЙЛ З ДАНИМИ ЗБЕРЕЖЕНО'
 		];
 	};
 	if (_case isEqualTo 'NewSideMissionRadar') then {
@@ -321,7 +321,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW SIDE MISSION'
+			/*/title string/*/ 				'НОВА ДРУГОРЯДНА МІСІЯ'
 		];
 	};
 	if (_case isEqualTo 'CompletedSideMission') then {
@@ -339,7 +339,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'SIDE MISSION COMPLETE'
+			/*/title string/*/ 				'ДРУГОРЯДНУ МІСІЮ ЗАВЕРШЕНО'
 		];
 	};
 	if (_case isEqualTo 'NewPriorityTarget') then {
@@ -357,7 +357,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW PRIORITY TARGET'
+			/*/title string/*/ 				'НОВА ПРІОРИТЕТНА ЦІЛЬ'
 		];
 	};
 	if (_case isEqualTo 'CompletedPriorityTarget') then {
@@ -375,7 +375,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'PRIORITY TARGET DOWN'
+			/*/title string/*/ 				'ПРІОРИТЕТНУ ЦІЛЬ ВБИТО'
 		];
 	};
 	if (_case isEqualTo 'EnemyJetDown') then {
@@ -393,7 +393,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'ENEMY CAS DESTROYED'
+			/*/title string/*/ 				'ВОРОЖУ АВІАПІДТРИМКУ ЗНИЩЕНО'
 		];
 	};
 	if (_case isEqualTo 'EnemyJet') then {
@@ -411,7 +411,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'ENEMY CAS ALERT'
+			/*/title string/*/ 				'ПОПЕРЕДЖЕННЯ ПРО ВОРОЖУ АВІАПІДТРИМКУ'
 		];
 	};
 	if (_case isEqualTo 'NewSideMissionJet') then {
@@ -429,7 +429,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW SIDE MISSION'
+			/*/title string/*/ 				'НОВА ДРУГОРЯДНА МІСІЯ'
 		];
 	};
 	if (_case isEqualTo 'Reward') then {
@@ -447,7 +447,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Side Mission Reward'
+			/*/title string/*/ 				'Винагорода за другорядну місію'
 		];
 	};
 	if (_case isEqualTo 'Reward2') then {
@@ -465,7 +465,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Side Mission Reward'
+			/*/title string/*/ 				'Винагорода за другорядну місію'
 		];
 	};
 	if (_case isEqualTo 'ScoreBonus') then {
@@ -483,7 +483,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'SCORE BONUS'
+			/*/title string/*/ 				'РАХУНОК БОНУСІВ'
 		];
 	};
 	if (_case isEqualTo 'aoSmallTaskCreated') then {
@@ -501,8 +501,8 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'AO Side Task'
-		];	
+			/*/title string/*/ 				'AO Другорядне завдання'
+		];
 	};
 	if (_case isEqualTo 'aoSmallTaskSucceeded') then {
 		_return = [
@@ -519,8 +519,8 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'AO Side Task Completed'
-		];	
+			/*/title string/*/ 				'AO Другорядне завдання завершено'
+		];
 	};
 	if (_case isEqualTo 'aoSmallTaskFailed') then {
 		_return = [
@@ -537,8 +537,8 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'AO Side Task Failed'
-		];	
+			/*/title string/*/ 				'AO Другорядне завдання провалено'
+		];
 	};
 	if (_case isEqualTo 'hcTaskCreated') then {
 		_return = [
@@ -556,7 +556,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'Commander'
-		];	
+		];
 	};
 	if (_case isEqualTo 'hcTaskSucceeded') then {
 		_return = [
@@ -574,7 +574,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'Commander'
-		];	
+		];
 	};
 	if (_case isEqualTo 'hcTaskFailed') then {
 		_return = [
@@ -592,7 +592,7 @@ if (_case isEqualType '') then {
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
 			/*/title string/*/ 				'Commander'
-		];	
+		];
 	};
 	if (_case isEqualTo 'System') then {
 		_return = [
@@ -789,7 +789,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Close Air Support'
+			/*/title string/*/ 				'Повітрянна підтримка'
 		];
 	};
 	if (_case isEqualTo 'FOB_INIT') then {
@@ -807,7 +807,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Forward Operating Base'
+			/*/title string/*/ 				'Передова Оперативна База'
 		];
 	};
 	if (_case isEqualTo 'FOB_UPDATE') then {
@@ -825,7 +825,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Forward Operating Base'
+			/*/title string/*/ 				'Передова Оперативна База'
 		];
 	};
 	if (_case isEqualTo 'SM_UPDATE') then {
@@ -843,7 +843,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Side Mission Update'
+			/*/title string/*/ 				'Оновлення другорядної місії'
 		];
 	};
 	if (_case isEqualTo 'SM_IDAP_UPDATE') then {

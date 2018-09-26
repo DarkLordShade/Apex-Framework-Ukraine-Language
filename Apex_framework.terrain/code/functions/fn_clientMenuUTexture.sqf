@@ -74,7 +74,7 @@ if (_type isEqualTo 'Select') then {
 						/*/
 					};
 					saveProfileNamespace;
-					_text = parseText format ['Uniform Texture Set: %1<br/>by %2',_displayName,_author];
+					_text = parseText format ['Встановлення текстур уныформи: %1<br/>by %2',_displayName,_author];
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],-1];
 				} else {
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'You must be at base to re-skin your uniform!',[],-1];

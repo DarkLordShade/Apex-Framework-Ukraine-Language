@@ -3,21 +3,21 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	24/04/2014
-	
+
 Description:
 
 	Secure HQ supplies before destroying it.
-	
+
 Notes:
 
 	Deprecated mission, needs overhaul with composition instead of solitary building
 ____________________________________*/
 
-scriptName 'Side Mission - Insurgency';
+scriptName 'Другорядна місія - Повстання';
 
 private [
 	"_flatPos","_accepted","_position","_enemiesArray","_fuzzyPos","_x","_briefing",
@@ -25,9 +25,9 @@ private [
 ];
 
 _c4Messages = [
-	"Supply crate secured. The charge has been set! 15 seconds until detonation.",
-	"Weapons secured. The explosives have been set! 15 seconds until detonation.",
-	"Insurgents supply secured. The charge is planted! 15 seconds until detonation."
+	"Ящики зі спорядженням в безпеці. Можна встановлювати заряд! 15 секунд до детонації.",
+	"Зброя в безпеці. Треба встановити вибухівку! 15 секунд до детонації.",
+	"Спорядження повстанців захоплене. Заряд встановлено! 15 секунд до детонації."
 ];
 _c4Message = selectRandom _c4Messages;
 
@@ -114,15 +114,15 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Insurgency Supply',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити постачання повстанців',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		(format ['The enemy has been supplying an insurgency on %1, get over there and secure their weapons cache. This objective is not accurately marked.',worldName]),
-		'Secure Insurgents Cache',
-		'Secure Insurgents Cache'
+		(format ['Ворог постачає припаси повстанцям %1, висувайтесь туди та захопіть їхній склад зброї. Це завдання позначено не точно.',worldName]),
+		'Захопити склад повстанців',
+		'Захопити склад повстанців'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -133,9 +133,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText format ["<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Insurgency Supply</t><br/>____________________<br/>OPFOR are training an insurgency on %1.<br/><br/>We've marked the position on your map; head over there, sanitize the area and secure their supply.</t>",worldName];
+_briefing = parseText format ["<t align='center'><t size='2.2'>Нова Другорядна Місія</t><br/><t size='1.5' color='#00B2EE'>Захопити спорядження повстанців</t><br/>____________________<br/>OPFOR тренує повстанців в %1.<br/><br/>Ми позначили позицію на мапі; рушайте туди, зачистіть зону та захопіть спорядження.</t>",worldName];
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Secure Insurgency Supply']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити спорядження повстанців']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 /*/-------------------- [ CORE LOOPS ] ------------------------ [ CORE LOOPS ]/*/
 
@@ -147,20 +147,20 @@ for '_x' from 0 to 1 step 0 do {
 	/*/--------------------------------------------- IF PACKAGE DESTROYED [FAIL]/*/
 
 	if (!alive (missionNamespace getVariable 'QS_sideObj')) exitWith {
-	
+
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-		
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		['sideChat',[WEST,'HQ'],'Objective destroyed, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об`єкт знищено, місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 
 		/*/-------------------- DELETE/*/
-		
+
 		missionNamespace setVariable [
 			'QS_analytics_entities_deleted',
 			((missionNamespace getVariable 'QS_analytics_entities_deleted') + 1),
@@ -182,19 +182,19 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	/*/----------------------------------------------- IF PACKAGE SECURED [SUCCESS]/*/
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
-	
+
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	
+
 		/*/-------------------- BOOM!/*/
-	
+
 		uiSleep 14;											/*/ ghetto bomb timer/*/
 		'Bo_Mk82' createVehicle (getPos _object); 			/*/ default "Bo_Mk82"/*/
 		missionNamespace setVariable [
@@ -209,12 +209,12 @@ for '_x' from 0 to 1 step 0 do {
 			FALSE
 		];
 		deleteVehicle _object;
-	
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
-	
+
 		/*/--------------------- DELETE/*/
 		sleep 120;
 		{

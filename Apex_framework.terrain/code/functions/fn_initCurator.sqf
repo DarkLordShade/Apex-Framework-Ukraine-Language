@@ -179,9 +179,9 @@ if (_type isEqualTo 1) then {
 							_result = ['Suspend side missions','Side missions','Suspend','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',TRUE,TRUE];
-								50 cutText ['Побічну місію відкладено','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Resume side missions',(format ["<t size='3'>%1</t>",'Поновити побічну місію'])];
-								['systemChat',(format ['%1 (персонал) відклав побічну місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								50 cutText ['Другорядну місію відкладено','PLAIN DOWN',0.5];
+								_actionTarget setUserActionText [_actionID,'Resume side missions',(format ["<t size='3'>%1</t>",'Поновити другорядну місію'])];
+								['systemChat',(format ['%1 (персонал) відклав другорядно місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						} else {
 							_result = ['Resume side missions','Side missions','Resume','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
