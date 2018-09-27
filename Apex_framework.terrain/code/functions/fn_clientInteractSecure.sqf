@@ -91,6 +91,6 @@ if (!isNil {_cursorObject getVariable 'QS_sc_subObj_3'}) exitWith {
 };
 player playAction 'PutDown';
 ['sideChat',[WEST,'BLU'],(format ['%1 зачистив об’єк!',(groupID (group player))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-50 cutText ['Secured','PLAIN DOWN',0.75];
+50 cutText ['Захоплено','PLAIN DOWN',0.75];
 missionNamespace setVariable ['QS_smSuccess',TRUE,TRUE];
 TRUE;

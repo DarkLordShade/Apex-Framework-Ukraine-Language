@@ -182,35 +182,35 @@ if (_ctrl) then {
 							private _order = '';
 							if (_key isEqualTo 0x4C) exitWith {
 								player playActionNow (selectRandom ['gestureNo']);
-								50 cutText ['"No"','PLAIN DOWN',0.1];
+								50 cutText ['"Ні"','PLAIN DOWN',0.1];
 							};
 							if (_key isEqualTo 0x4B) exitWith {
 								player playActionNow (selectRandom ['gestureGo']);
-								50 cutText ['"Go"','PLAIN DOWN',0.1];
-								_order = '"Go!" - (Group order)';
+								50 cutText ['"Вперед"','PLAIN DOWN',0.1];
+								_order = '"Вперед!" - (Наказ групі)';
 							};
 							if (_key isEqualTo 0x47) exitWith {
 								player playActionNow (selectRandom ['gesturePoint','gestureAdvance']);
-								50 cutText ['"Advance"','PLAIN DOWN',0.1];
-								_order = '"Advance!" - (Group order)';
+								50 cutText ['"Просувайтись"','PLAIN DOWN',0.1];
+								_order = '"Просувайтесь!" - (Наказ групі)';
 							};
 							if (_key isEqualTo 0x48) exitWith {
 								player playActionNow (selectRandom ['gestureNod']);
-								50 cutText ['"Nod"','PLAIN DOWN',0.1];
+								50 cutText ['"Кивнути"','PLAIN DOWN',0.1];
 							};
 							if (_key isEqualTo 0x49) exitWith {
 								player playActionNow (selectRandom ['gestureFreeze']);
-								50 cutText ['"Freeze"','PLAIN DOWN',0.1];
-								_order = '"Hold!" - (Group order)';
+								50 cutText ['"Завмерти"','PLAIN DOWN',0.1];
+								_order = '"Завмерти!" - (Наказ групі)';
 							};
 							if (_key isEqualTo 0x4D) exitWith {
 								player playActionNow (selectRandom ['gestureHi']);
-								50 cutText ['"Hi"','PLAIN DOWN',0.1];
+								50 cutText ['"Привіт"','PLAIN DOWN',0.1];
 							};
 							if (_key isEqualTo 0x51) exitWith {
 								player playActionNow (selectRandom ['gestureCeaseFire']);
-								50 cutText ['"Ceasefire"','PLAIN DOWN',0.1];
-								_order = '"Ceasefire!" - (Group order)';
+								50 cutText ['"Припинити вогонь"','PLAIN DOWN',0.1];
+								_order = '"Припинити вогонь!" - (Наказ групі)';
 							};
 							if (isNull (objectParent player)) then {
 								if ((count (units (group player))) > 1) then {
@@ -218,7 +218,7 @@ if (_ctrl) then {
 										if (!(_order isEqualTo '')) then {
 											_arrayToSend = (units (group player)) select {(((_x distance player) < 45) && (alive _x) && ((lifeState _x) in ['HEALTHY','INJURED']) && (isPlayer _x))};
 											if (!(_arrayToSend isEqualTo [])) then {
-												[63,[5,[(format ['%1 (Group leader) - %2',profileName,_order]),'PLAIN DOWN',0.333]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
+												[63,[5,[(format ['%1 (Командир групи) - %2',profileName,_order]),'PLAIN DOWN',0.333]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
 											};
 										};
 									};

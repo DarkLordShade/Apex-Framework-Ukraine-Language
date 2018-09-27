@@ -3,11 +3,11 @@ File: fn_artillery.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	16/08/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	-
@@ -116,7 +116,7 @@ if (_type isEqualTo 0) exitWith {
 						{
 							_unit = _x;
 							if (alive _unit) then {
-								[[],{50 cutText ['The artillery has depleted its allowed shells, no more can be fired until the AO is completed!','PLAIN DOWN',1];}] remoteExec ['call',_unit,FALSE];
+								[[],{50 cutText ['Артилеія використала весь боєкомплект. Більше не можна користуватись, доки не буде завершено зону операції!','PLAIN DOWN',1];}] remoteExec ['call',_unit,FALSE];
 							};
 							moveOut _unit;
 						} count (crew (missionNamespace getVariable 'QS_arty'));

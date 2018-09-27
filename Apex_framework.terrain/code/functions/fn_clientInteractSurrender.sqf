@@ -94,7 +94,7 @@ private _timerRange = [1.5,2.1,2.35];
 private _timerMin = 0.5;
 private _duration = ((random _timerRange) + (morale _t) - (damage _t) - (needReload _t)) max _timerMin;
 [
-	'Capturing unit',
+	'Захоплення в полон',
 	_duration,
 	0,
 	[[_t],{FALSE}],

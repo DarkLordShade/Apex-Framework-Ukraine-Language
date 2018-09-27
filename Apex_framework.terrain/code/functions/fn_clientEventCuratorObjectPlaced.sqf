@@ -133,7 +133,7 @@ if (_object isKindOf 'Man') exitWith {
 		};
 	};
 	if (_typeL in ['c_soldier_vr_f','b_soldier_vr_f','o_soldier_vr_f','i_soldier_vr_f','b_protagonist_vr_f','o_protagonist_vr_f','i_protagonist_vr_f']) then {
-		50 cutText [(format ['Об`єкт %1 не нашалтовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
+		50 cutText [(format ['Об’єкт %1 не нашалтовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
 		[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 	};
 };

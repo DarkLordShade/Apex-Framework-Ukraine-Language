@@ -59,7 +59,7 @@ if ((_unit getUnitTrait 'QS_trait_pilot') || {(_unit getUnitTrait 'QS_trait_figh
 	//comment 'If pilot or over water, set dead';
 	_unit setDamage [1,TRUE];
 	if (isPlayer _unit) then {
-		['systemChat',(format ['%1 was killed',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['%1 було вбито',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 };
 if (!((secondaryWeapon _unit) isEqualTo '')) then {
@@ -111,7 +111,7 @@ if (isForcedWalk _unit) then {
 //comment 'AI Exit';
 if (!isPlayer _unit) exitWith {};
 if (!((lifeState _unit) isEqualTo 'INCAPACITATED')) exitWith {
-	['systemChat',(format ['%1 died of unknown causes',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	['systemChat',(format ['%1 помер за невизначених обставин',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	_unit setDamage [1,TRUE];
 };
 showHUD [FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE];
@@ -381,7 +381,7 @@ for '_x' from 0 to 1 step 0 do {
 								};
 								_remainingTickets = (getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'transportSoldier')) - 1;
 								_vehicle setVariable ['QS_medicalVehicle_reviveTickets',_remainingTickets,TRUE];
-								_textReviveTickets = format ['%1 ( %2 ) - Revive Tickets Remaining - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
+								_textReviveTickets = format ['%1 ( %2 ) - Квитків оживлення залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
 								['sideChat',[WEST,'BLU'],_textReviveTickets] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							} else {
 								if ((_vehicle getVariable 'QS_medicalVehicle_reviveTickets') isEqualType 0) then {
@@ -413,7 +413,7 @@ for '_x' from 0 to 1 step 0 do {
 							if ((vectorMagnitude (velocity _medicalBox)) < 1) then {
 								if ((!(unitIsUav _medicalBox)) || {((unitIsUav _medicalBox) && (isUavConnected _medicalBox))}) then {
 									deleteVehicle _medicalBox;
-									_text = format ['%1 was revived with a(n) %1',_profileName,(_medicalBox getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _medicalBox) >> 'displayName'))])];
+									_text = format ['%1 був оживлений %1',_profileName,(_medicalBox getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _medicalBox) >> 'displayName'))])];
 									['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									_revivedAtVehicle = TRUE;
 									if (_lifeState isEqualTo 'INCAPACITATED') then {
@@ -485,16 +485,16 @@ for '_x' from 0 to 1 step 0 do {
 				_QS_buttonCtrl = _d49 displayCtrl _x;
 				if (!isNull _QS_buttonCtrl) then {
 					_QS_buttonCtrl ctrlSetText 'Меню гравця';
-					_QS_buttonCtrl ctrlSetTooltip 'Invade & Annex player menu';
+					_QS_buttonCtrl ctrlSetTooltip 'Меню гравця Invade & Annex';
 					_QS_buttonAction = "[] call QS_fnc_clientMenu2";
 					_QS_buttonCtrl buttonSetAction _QS_buttonAction;
 					_QS_buttonCtrl ctrlCommit 0;
 				};
 			} forEach [16700,2];
 			(_d49 displayCtrl 103) ctrlEnable FALSE;
-			(_d49 displayCtrl 103) ctrlSetText 'Відроження на базі';
+			(_d49 displayCtrl 103) ctrlSetText 'Вiдроження на базi';
 			(_d49 displayCtrl 103) ctrlEnable (_tickTimeNow > (_unit getVariable ['QS_respawn_disable',-1]));
-			(_d49 displayCtrl 103) ctrlSetTooltip 'Відроження на головній базі.';
+			(_d49 displayCtrl 103) ctrlSetTooltip 'Вiдроження на головнiй базi.';
 			_QS_buttonCtrl = (_d49 displayCtrl 103);
 			_QS_buttonAction = "player setVariable ['QS_revive_respawnType','BASE',FALSE];";
 			_QS_buttonCtrl buttonSetAction _QS_buttonAction;
@@ -531,8 +531,8 @@ for '_x' from 0 to 1 step 0 do {
 			//comment 'Configure / Request Medevac option';
 			_QS_buttonMedevac = (_d49 displayCtrl 101);
 			_QS_buttonMedevac ctrlEnable FALSE;
-			_QS_buttonMedevac ctrlSetText 'Запросити медичну евакуацію';
-			_QS_buttonMedevac ctrlSetTooltip 'Вимикає Оживлення/Респаун та створює завдання Медичної евакуації для інших гравців.';
+			_QS_buttonMedevac ctrlSetText 'Запит на медичну евакуацiю';
+			_QS_buttonMedevac ctrlSetTooltip 'Вимикає Оживлення/Респаун та створює завдання Медичноi евакуацii для iнших гравцiв.';
 			_QS_buttonMedevac ctrlRemoveAllEventHandlers 'OnButtonClick';
 			_QS_buttonMedevac ctrlRemoveAllEventHandlers 'OnButtonDown';
 			_QS_buttonAction = 'call (missionNamespace getVariable "QS_fnc_clientRequestMedevac")';
@@ -543,8 +543,8 @@ for '_x' from 0 to 1 step 0 do {
 			(_d49 displayCtrl 122) ctrlEnable TRUE;
 			(_d49 displayCtrl 122) ctrlSetText 'Field Manual';
 			(_d49 displayCtrl 104) ctrlEnable FALSE;
-			(_d49 displayCtrl 104) ctrlSetText 'Відмінити';
-			(_d49 displayCtrl 104) ctrlSetTooltip 'Вийти в лоббі (Відновлює функцію респауну).';
+			(_d49 displayCtrl 104) ctrlSetText 'Вiдмiнити';
+			(_d49 displayCtrl 104) ctrlSetTooltip 'Вийти в лоббi (Вiдновлює функцiю респауну).';
 			(_d49 displayCtrl 523) ctrlSetText (format ['%1',_profileName]);
 			(_d49 displayCtrl 109) ctrlSetText (format ['%1',_playerClassDName]);
 		};
@@ -580,15 +580,15 @@ for '_x' from 0 to 1 step 0 do {
 			} else {
 				(_d49 displayCtrl 1010) ctrlEnable FALSE;
 			};
-			(_d49 displayCtrl 1010) ctrlSetText (format ['Відродження на FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+			(_d49 displayCtrl 1010) ctrlSetText (format ['Вiдродження на FOB (%1)',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 			(_d49 displayCtrl 1010) ctrlCommit 0;
 			_QS_buttonMedevac ctrlEnable ((!(missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE])) && (_tickTimeNow > (_unit getVariable ['QS_client_lastMedevacRequest',-1])) && ((lifeState _unit) isEqualTo 'INCAPACITATED') && (isNull (objectParent _unit)) && (isNull (attachedTo _unit)));
 			if (_tickTimeNow > (_unit getVariable ['QS_respawn_disable',-1])) then {
-				_QS_buttonMedevac ctrlSetText 'Запросити медичну евакуацію';
+				_QS_buttonMedevac ctrlSetText 'Запит на медичну евакуацiю';
 			} else {
 				_QS_buttonMedevac ctrlSetText ([((_unit getVariable ['QS_respawn_disable',-1]) - _tickTimeNow),'MM:SS'] call _fn_secondsToString);
 			};
-			_QS_buttonMedevac ctrlSetTooltip (['Вимикає Оживлення/Респаун та створює завдання Медичної евакуації для інших гравців.','Медична евакуація наразі не доступна.'] select ((missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE]) || {(_tickTimeNow < (_unit getVariable ['QS_client_lastMedevacRequest',-1]))}));
+			_QS_buttonMedevac ctrlSetTooltip (['Вимикає Оживлення/Респаун та створює завдання Медичноi евакуацii для iнших гравцiв.','Медична евакуацiя наразі не доступна.'] select ((missionNamespace getVariable ['QS_dynTask_medevac_inProgress',TRUE]) || {(_tickTimeNow < (_unit getVariable ['QS_client_lastMedevacRequest',-1]))}));
 			_QS_buttonAction = 'call (missionNamespace getVariable "QS_fnc_clientRequestMedevac");';
 			_QS_buttonCtrl = _QS_buttonMedevac;
 			_QS_buttonCtrl buttonSetAction _QS_buttonAction;

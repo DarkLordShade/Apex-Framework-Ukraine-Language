@@ -76,7 +76,7 @@ if (_type isEqualTo 1) then {
 	if (_chairTaken) exitWith {
 		50 cutText ['Хтось занадто близько до цього стільця!','PLAIN DOWN'];
 	};
-	if ((toLower (animationState player)) in _sittingAnimations) exitWith {50 cutText ['Already seated!','PLAIN DOWN'];};
+	if ((toLower (animationState player)) in _sittingAnimations) exitWith {50 cutText ['Вже сидить!','PLAIN DOWN'];};
 
 	if (local _object) then {
 		_object setVectorUp [0,0,1];

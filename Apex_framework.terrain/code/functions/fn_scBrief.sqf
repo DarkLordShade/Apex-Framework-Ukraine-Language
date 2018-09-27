@@ -105,6 +105,6 @@ if (_type isEqualTo 1) exitWith {
 		} forEach (missionNamespace getVariable 'QS_virtualSectors_siteMarkers');
 	};
 	comment 'Communicate here';
-	['SC_INIT',['','Зачистити всі об`єкти!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['SC_INIT',['','Зачистити всі об’єкти!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	missionNamespace setVariable ['QS_missionStatus_SC_canShow',TRUE,TRUE];
 };

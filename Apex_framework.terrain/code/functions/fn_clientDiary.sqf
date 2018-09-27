@@ -39,11 +39,11 @@ __________________________________________________________/*/
 /*/========== Create Diary Records/*/
 
 if ((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'GRID') then {
-	_description = format ['After the war between NATO and CSAT ended in an uneasy truce, an opportunistic insurgency sponsored by surrounding nations crushed local militias and moved in to fill the power vacuum.<br/><br/>They have been destabilizing the region and threatening to pull NATO and CSAT back into open conflict on %1.<br/><br/>Moving around using an old wartime tunnel network, they have thus far thwarted low-cost attempts to destroy the insurgency with drone warfare.<br/><br/>In a last ditch effort, NATO has deployed boots on the ground to root out the determined enemy and bring peace to %1.',worldName];
+	_description = format ['Після війни між NATO та CSAT що завершилась хитким перемир’ям, опортуністичні повстанці, що спонсувались навколишніми країнами, протистояли місцевій міліції та заповнили вакуум, що втворився за відсутності сили.<br/><br/>Вони дестабілізували регіон та погружують втягнути NATO та CSAT знову у відкрите протистояння на %1.<br/><br/>Використовуючи стару мережу тунелів часів війни, вони досі перешкоджають кволим спробам знищити повстанські сили за допомогою дронв.<br/><br/>В останній спробі знищити ворога NATO розгорнула підрозділи на місцях на %1.',worldName];
 	player createDiaryRecord [
 		'Diary',
 		[
-			(format ['%1 Campaign',worldName]),
+			(format ['%1 Кампанія',worldName]),
 			_description
 		]
 	];
