@@ -1,6 +1,6 @@
 /*/
 File: fn_grid.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -11,12 +11,12 @@ Last Modified:
 Description:
 
 	-
-	
+
 	0 = incomplete = Independent
 	1 = in progress = OPFOR
 	2 = succeeded = WEST
 	3 = failed = ColorUnknown
-	
+
 Notes:
 
 	Pre-compile marker data so we dont have to procedurally generate each init
@@ -166,7 +166,7 @@ if (_type isEqualTo 'AO_SETSTATE') exitWith {
 	_region_data1 set [1,_region_ao_data1];
 	QS_GRID_DATA set [_regionIndex,_region_data1];
 	_ao_data;
-};	
+};
 if (_type isEqualTo 'EVALUATE_AO') exitWith {
 	params ['','_regionIndex','_aoIndex'];
 	private _c = FALSE;
@@ -195,12 +195,12 @@ if (_type isEqualTo 'AI_TRIGGER') exitWith {
 if (_type isEqualTo 'INIT') exitWith {
 	//comment 'Get persistent data';
 	// Note: This part takes way too long and needs to be optimized at some point.
-	
+
 	diag_log format ['Grid initializing START - %1',diag_tickTime];
-	
+
 	private _grid_data_persistent = profileNamespace getVariable [(format ['QS_grid_data_persistent_%1',worldName]),[]];
 	if (_grid_data_persistent isEqualTo []) then {
-		_grid_data_persistent = call (compile (preprocessFileLineNumbers 'code\config\QS_data_grid.sqf')); 
+		_grid_data_persistent = call (compile (preprocessFileLineNumbers 'code\config\QS_data_grid.sqf'));
 	};
 	private _tempData = [];
 	private _regionAOs = [];
@@ -241,7 +241,7 @@ if (_type isEqualTo 'INIT') exitWith {
 			'ColorBLACK','ColorOPFOR','ColorWEST','ColorUNKNOWN'
 		];
 		private _markerAlphas = [0,0,0.5,0.5];	// [0,0.75,0.5,0.5];
-		_ind = -1;  
+		_ind = -1;
 		_start = _start apply {_ind = _ind + 1; _x + (_offset select _ind)};
 		_start params ['_sx','_sz'];
 		for '_i' from 0 to (round((_size select 0)/_res)) step 1 do {
@@ -347,15 +347,15 @@ if (_type isEqualTo 'INIT') exitWith {
 		missionNamespace setVariable ['QS_grid_script',(['MANAGE'] spawn (missionNamespace getVariable 'QS_fnc_grid')),FALSE];
 	};
 	_missionMarkerData = [
-		['QS_marker_grid_capState',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Grids controlled: 0 / 0'],
-		['QS_marker_grid_rspState',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Tunnels destroyed: 0 / 0'],
-		['QS_marker_grid_civState',[-1000,-1000,0],'mil_dot','Icon','','ColorCIVILIAN',[0.5,0.5],0,[-1000,-1000,0],0,'No civilian casualties'],
-		['QS_marker_grid_IGmkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'HQ'],
+		['QS_marker_grid_capState',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Квадратів перетворено: 0 / 0'],
+		['QS_marker_grid_rspState',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Тунелів знищено: 0 / 0'],
+		['QS_marker_grid_civState',[-1000,-1000,0],'mil_dot','Icon','','ColorCIVILIAN',[0.5,0.5],0,[-1000,-1000,0],0,'Без жертв серед цивільних'],
+		['QS_marker_grid_IGmkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Штаб'],
 		['QS_marker_grid_IGcircle',[-1000,-1000,0],'Empty','Ellipse','Border','ColorOPFOR',[200,200],0,[-1000,-1000,0],0,''],
 		['QS_marker_grid_IDAPloc',[-1000,-1000,0],'flag_IDAP','Icon','','ColorWHITE',[0.5,0.5],0,[-1000,-1000,0],0,''],
-		['QS_marker_grid_IDAPmkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOrange',[0.5,0.5],0,[-1000,-1000,0],0,'UXO Field'],
+		['QS_marker_grid_IDAPmkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOrange',[0.5,0.5],0,[-1000,-1000,0],0,'Мінне поле (UXO Field)'],
 		['QS_marker_grid_IDAPcircle',[-1000,-1000,0],'Empty','Ellipse','Border','ColorOrange',[50,50],0,[-1000,-1000,0],0,''],
-		['QS_marker_grid_mtrMkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Mortar'],
+		['QS_marker_grid_mtrMkr',[-1000,-1000,0],'mil_dot','Icon','','ColorOPFOR',[0.5,0.5],0,[-1000,-1000,0],0,'Міномет'],
 		['QS_marker_grid_mtrCircle',[-1000,-1000,0],'Empty','Ellipse','Border','ColorOPFOR',[100,100],0,[-1000,-1000,0],0,'']
 	];
 	{
@@ -563,7 +563,7 @@ if (_type isEqualTo 'MANAGE') then {
 										};
 									} else {
 										if (_markerColor isEqualTo 'ColorUNKNOWN') then {
-									
+
 										};
 									};
 								};

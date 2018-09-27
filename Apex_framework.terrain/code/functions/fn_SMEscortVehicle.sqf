@@ -348,7 +348,7 @@ comment 'Communicate to players';
 	'Truck',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['NewSideMission',['Escort truck']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Супроводити вантажівку']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 'QS_marker_sideMarker' setMarkerText (format ['%1Супровід вантажівки',(toString [32,32,32])]);
 waitUntil {
 	sleep 3;
@@ -359,7 +359,7 @@ if (!alive _vehicle) exitWith {
 	comment 'Mission fail';
 	deleteMarker _marker0;
 	['QS_IA_TASK_SM_ESCORT'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-	['TaskFailed',['','Truck destroyed!']] remoteExec [_fuctionNotification,-2,FALSE];
+	['TaskFailed',['','Вантажвку знищено!']] remoteExec [_fuctionNotification,-2,FALSE];
 	sleep 5;
 	[0,_destination] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 };
@@ -916,13 +916,13 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (!alive _vehicle) exitWith {
 		comment 'Mission fail';
-		['SM_TRUCK',['Side mission','Truck mission failed!<br/>Truck destroyed']] remoteExec [_fuctionNotification,-2,FALSE];
+		['SM_TRUCK',['Другорядна місія','Місію з вантажівкою провалено!<br/>Вантажівку знищено']] remoteExec [_fuctionNotification,-2,FALSE];
 		sleep 5;
 		[0,_destination] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
 	if ((_vehicle distance2D _destination) < 50) exitWith {
 		comment 'Mission success';
-		['SM_TRUCK',['Side mission','Truck mission complete!<br/>Truck at destination']] remoteExec [_fuctionNotification,-2,FALSE];
+		['SM_TRUCK',['Другорядна місія','Місію з вантажівкою завершено!<br/>Вантажівка в точці призначення']] remoteExec [_fuctionNotification,-2,FALSE];
 		sleep 5;
 		[1,_destination] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};

@@ -3,11 +3,11 @@ File: fn_remoteExec.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	14/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Scripted Remote Executions
@@ -45,22 +45,22 @@ if (_case < 10) exitWith {
 		/*/[0.5,'AO_INIT'] remoteExec ['QS_fnc_remoteExec',-999];/*/
 		_instruction = _this select 1;
 		if (_instruction isEqualTo 'AO_INIT') then {
-		
+
 		};
 		if (_instruction isEqualTo 'AO_EXIT') then {
-		
+
 		};
 		if (_instruction isEqualTo 'SM_INIT') then {
-		
+
 		};
 		if (_instruction isEqualTo 'SM_EXIT') then {
-		
+
 		};
 	};
 	/*/===== Task Update/*/
 	if (_case isEqualTo 0.6) then {
 		params ['',''];
-	
+
 	};
 	/*/pow/*/
 	if (_case isEqualTo 1) then {
@@ -432,7 +432,7 @@ if (_case < 30) exitWith {
 	if (_case isEqualTo 20) then {
 		if (!isServer) then {
 			if (!hasInterface) then {
-			
+
 			};
 		};
 	};
@@ -490,7 +490,7 @@ if (_case < 30) exitWith {
 				};
 				if (_isPrisoner) then {
 					0 = [_agent] spawn {
-						uiSleep 1; 
+						uiSleep 1;
 						(_this select 0) setObjectTextureGlobal [0,'#(rgb,8,8,3)color(1,0.1,0,1)'];
 					};
 				};
@@ -865,7 +865,7 @@ if (_case < 50) exitWith {
 			} else {
 				_element = ((missionNamespace getVariable 'QS_leaderboards') select 2) select _i;
 				_object setVariable ['QS_IA_revivePoints',(_element select 1),TRUE];
-			};	
+			};
 		};
 	};
 	/*/===== Register Pilot/*/
@@ -1138,7 +1138,7 @@ if (_case < 60) exitWith {
 			_array = _this select 1;
 			_name = _array select 0;
 			{
-				_x setMarkerColor 'ColorWEST'; 
+				_x setMarkerColor 'ColorWEST';
 				_x setMarkerPos (missionNamespace getVariable 'QS_HQpos');
 			} forEach [
 				'QS_marker_hqMarker',
@@ -1179,7 +1179,7 @@ if (_case < 70) exitWith {
 				FALSE
 			];
 			((_array select 2) select 0) addScore ((_array select 2) select 1);
-			diag_log format ['***** LEADERBOARD ***** %1 (%2) incarcerated a prisoner *****',_name,_puid];	
+			diag_log format ['***** LEADERBOARD ***** %1 (%2) incarcerated a prisoner *****',_name,_puid];
 		};
 	};
 	/*/===== Add Ear/*/
@@ -1379,7 +1379,7 @@ if (_case < 80) exitWith {
 					_QS_virtualSectors_scoreSides set [0,((_QS_virtualSectors_scoreSides select 0) - _scoreToRemove)];
 					missionNamespace setVariable ['QS_virtualSectors_scoreSides',_QS_virtualSectors_scoreSides,FALSE];
 				};
-				
+
 				comment 'disrupt active datalink';
 				{
 					if ((side _x) in [EAST,RESISTANCE]) then {
@@ -1447,13 +1447,13 @@ if (_case < 80) exitWith {
 				_marker1 setMarkerSize [0.5,0.5];
 				_marker1 setMarkerPos (missionNamespace getVariable ['QS_virtualSectors_sd_position',[-1000,-1000,0]]);
 				_marker1 setMarkerAlpha 1;
-				(missionNamespace getVariable 'QS_virtualSectors_sd_marker') pushBack _marker1;		
+				(missionNamespace getVariable 'QS_virtualSectors_sd_marker') pushBack _marker1;
 				{
 					if (!((markerAlpha _x) isEqualTo 0)) then {
 						_x setMarkerAlpha 0;
 					};
 				} forEach (missionNamespace getVariable 'QS_virtualSectors_sub_3_markers');
-			};		
+			};
 			comment 'Communicate here';
 			['QS_virtualSectors_sub_3_task'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 			['SC_SUB_COMPLETED',['','Supply Depot secured']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
@@ -1545,7 +1545,7 @@ if (_case < 80) exitWith {
 				(missionNamespace getVariable _var) set [_iconIndex,_iconData];
 			} else {
 				(missionNamespace getVariable _var) pushBack _iconData;
-			};		
+			};
 		};
 	};
 
@@ -1591,7 +1591,7 @@ if (_case < 80) exitWith {
 		};
 		if (_isPrisoner) then {
 			0 = [_agent] spawn {
-				uiSleep 1; 
+				uiSleep 1;
 				(_this select 0) setObjectTextureGlobal [0,'#(rgb,8,8,3)color(1,0.1,0,1)'];
 				(_this select 0) enableSimulationGlobal FALSE;
 			};
@@ -1600,7 +1600,7 @@ if (_case < 80) exitWith {
 };
 if (_case < 90) exitWith {
 	if (_case isEqualTo 80) then {
-		params ['','_entity','_player','_groupID','_profileName','_clientOwner'];		
+		params ['','_entity','_player','_groupID','_profileName','_clientOwner'];
 		if (!(isObjectHidden _entity)) then {
 			if (!((_entity getVariable ['QS_entity_intel_copy',[]]) isEqualTo [])) then {
 				{
@@ -1679,7 +1679,7 @@ if (_case < 90) exitWith {
 						if (!(_carrierAnimData isEqualTo [])) then {
 							(_carrierAnimData select 0) animateSource (_carrierAnimData select 1);
 							playSound3D ['A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_Flaps_Down.wss',objNull,FALSE,((_carrierAnimData select 0) modelToWorldWorld ((_carrierAnimData select 0) selectionPosition ((_carrierAnimData select 1) select 0))),25,1,75];
-						};						
+						};
 					}
 				],
 				[
@@ -1688,12 +1688,12 @@ if (_case < 90) exitWith {
 						params ['_entity'];
 						{
 							_entity removeEventHandler _x;
-						} forEach (_entity getVariable ['QS_vehicle_tempEvents',[]]);	
+						} forEach (_entity getVariable ['QS_vehicle_tempEvents',[]]);
 						_carrierAnimData = _entity getVariable ['QS_vehicle_carrierAnimData',[]];
 						if (!(_carrierAnimData isEqualTo [])) then {
 							(_carrierAnimData select 0) animateSource (_carrierAnimData select 1);
 							playSound3D ['A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_Flaps_Down.wss',objNull,FALSE,((_carrierAnimData select 0) modelToWorldWorld ((_carrierAnimData select 0) selectionPosition ((_carrierAnimData select 1) select 0))),25,1,75];
-						};						
+						};
 					}
 				],
 				[
@@ -1707,7 +1707,7 @@ if (_case < 90) exitWith {
 						if (!(_carrierAnimData isEqualTo [])) then {
 							(_carrierAnimData select 0) animateSource (_carrierAnimData select 1);
 							playSound3D ['A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_Flaps_Down.wss',objNull,FALSE,((_carrierAnimData select 0) modelToWorldWorld ((_carrierAnimData select 0) selectionPosition ((_carrierAnimData select 1) select 0))),25,1,75];
-						};						
+						};
 					}
 				],
 				[
@@ -1721,7 +1721,7 @@ if (_case < 90) exitWith {
 						if (!(_carrierAnimData isEqualTo [])) then {
 							(_carrierAnimData select 0) animateSource (_carrierAnimData select 1);
 							playSound3D ['A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_Flaps_Down.wss',objNull,FALSE,((_carrierAnimData select 0) modelToWorldWorld ((_carrierAnimData select 0) selectionPosition ((_carrierAnimData select 1) select 0))),25,1,75];
-						};						
+						};
 					}
 				]
 			];
@@ -1729,7 +1729,7 @@ if (_case < 90) exitWith {
 		};
 	};
 	if (_case isEqualTo 84) then {
-		params ['','_entity','_player','_groupID','_profileName','_clientOwner'];	
+		params ['','_entity','_player','_groupID','_profileName','_clientOwner'];
 		if (!(isObjectHidden _entity)) then {
 			_entity hideObjectGlobal TRUE;
 			_entity enableSimulationGlobal FALSE;
@@ -1739,7 +1739,7 @@ if (_case < 90) exitWith {
 		};
 	};
 	if (_case isEqualTo 85) then {
-		['GRID_IDAP_UPDATE',['Area Of Operations','Objective failed<br/>No civilian casualties']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IDAP_UPDATE',['Area Of Operations','Завдання провалено<br/>Без жертв серед цивільних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_grid_civState' setMarkerText (format ['%1Жодних жертв серед цивільного населення (Провалено)',(toString [32,32,32])]);
 		'QS_marker_grid_civState' setMarkerColor 'ColorRED';
 	};
@@ -1836,6 +1836,6 @@ if (_case < 100) exitWith {
 		};
 	};
 	if (_case isEqualTo 92) then {
-	
+
 	};
 };

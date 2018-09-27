@@ -541,7 +541,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_buttonMedevac buttonSetAction _QS_buttonAction;
 			_QS_buttonMedevac ctrlCommit 0;
 			(_d49 displayCtrl 122) ctrlEnable TRUE;
-			(_d49 displayCtrl 122) ctrlSetText 'Field Manual';
+			(_d49 displayCtrl 122) ctrlSetText 'Польова iнструкцiя';
 			(_d49 displayCtrl 104) ctrlEnable FALSE;
 			(_d49 displayCtrl 104) ctrlSetText 'Вiдмiнити';
 			(_d49 displayCtrl 104) ctrlSetTooltip 'Вийти в лоббi (Вiдновлює функцiю респауну).';
