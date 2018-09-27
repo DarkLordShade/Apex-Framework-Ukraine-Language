@@ -18,7 +18,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	disableSerialization;
 	params ['','_display'];
 	_title = _display displayCtrl 1802;
-	_title ctrlSetText 'Comm-Link';
+	_title ctrlSetText 'Комунiкацiя';
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
 
 	/*/======================= EDIT BELOW =======================/*/
@@ -52,9 +52,9 @@ if (_type isEqualTo 'onLoad') exitWith {
 
 
 
-	(_display displayCtrl 1806) ctrlSetText 'Radio Management';
+	(_display displayCtrl 1806) ctrlSetText 'Налаштування радiо';
 	(_display displayCtrl 1806) ctrlEnable TRUE;
-	(_display displayCtrl 1807) ctrlSetText 'Group Management';
+	(_display displayCtrl 1807) ctrlSetText 'Нелештування груп';
 	(_display displayCtrl 1807) ctrlEnable TRUE;
 	(_display displayCtrl 1808) ctrlEnable FALSE;
 	(_display displayCtrl 1810) ctrlEnable TRUE;

@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuMain.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	22/05/2018 A3 1.82 by Quiksilver
@@ -19,7 +19,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	params ['','_display'];
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
 	(_display displayCtrl 1600) ctrlEnable TRUE;
-	(_display displayCtrl 1600) ctrlSetText 'Comm-Link';
+	(_display displayCtrl 1600) ctrlSetText 'Комункiцiя';
 	(_display displayCtrl 1600) ctrlSetToolTip 'Community Hub & Radio Control';
 	(_display displayCtrl 1601) ctrlSetText 'Area 51';
 	(_display displayCtrl 1601) ctrlSetToolTip '';
@@ -33,13 +33,13 @@ if (_type isEqualTo 'onLoad') exitWith {
 			(_display displayCtrl 1601) ctrlEnable TRUE;
 		};
 	};
-	(_display displayCtrl 1602) ctrlSetText 'Leaderboards';
+	(_display displayCtrl 1602) ctrlSetText 'Дошка пошани';
 	(_display displayCtrl 1602) ctrlEnable TRUE;
-	(_display displayCtrl 1603) ctrlSetText 'Visibility';
-	(_display displayCtrl 1603) ctrlSetToolTip 'View distance';
-	(_display displayCtrl 1604) ctrlSetText 'Close';
+	(_display displayCtrl 1603) ctrlSetText 'Видимiсть';
+	(_display displayCtrl 1603) ctrlSetToolTip 'Дистанцiя огляду';
+	(_display displayCtrl 1604) ctrlSetText 'Закрити';
 	(_display displayCtrl 1604) ctrlSetToolTip '';
-	(_display displayCtrl 1605) ctrlSetText 'Options';
+	(_display displayCtrl 1605) ctrlSetText 'Опцii';
 	(_display displayCtrl 1605) ctrlSetToolTip '';
 };
 if (_type isEqualTo 'onUnload') exitWith {

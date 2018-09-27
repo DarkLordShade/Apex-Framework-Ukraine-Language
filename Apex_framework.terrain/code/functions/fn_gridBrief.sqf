@@ -17,7 +17,7 @@ params ['_type','_usedObjectives','_gridMarkers'];
 if (_type isEqualTo 0) exitWith {
 	//comment 'Debrief';
 	['QS_TASK_GRID_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-	['GRID_BRIEF',['Area Of Operations','Objectives complete']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['GRID_BRIEF',['Area Of Operations','Завдання виконано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	{
 		_x setMarkerAlpha 0;
 	} forEach [

@@ -3,11 +3,11 @@ File: fn_aoDefend.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	6/07/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	AO Defend
@@ -52,11 +52,11 @@ diag_log 'Defend AO 0.5';
 missionNamespace setVariable ['QS_defendCount',((missionNamespace getVariable 'QS_defendCount') + 1),TRUE];
 missionNamespace setVariable ['QS_defendActive',TRUE,TRUE];
 _defendMessages = [
-	'OPFOR Forces incoming! Seek cover immediately and defend the objective the HQ!',
-	'The enemy managed to mount a counterattack! Hold the HQ at all cost!',
-	'Dig in at the HQ boys, they are coming!'
+	'Сили OPFOR на підході! Повертайтесь негайно та обороняйте штаб!',
+	'Вороги організували контратаку! Втримайте штаб за будь-яку ціну!',
+	'Окопайтеся в штабі, хлопці! Вони йдуть!'
 ];
-['DEFEND_HQ',['Defend','Defend HQ']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['DEFEND_HQ',['Захистити','Захистити штаб']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerAlpha 0.75;
 	_x setMarkerPos (missionNamespace getVariable 'QS_HQpos');
@@ -66,7 +66,7 @@ _centerPos = missionNamespace getVariable 'QS_HQpos';
 _centerPos params ['_centerPosX','_centerPosY','_centerPosZ'];
 private _allPlayers = allPlayers;
 _taskID = 'QS_IA_TASK_DEFENDHQ';
-[_taskID,TRUE,['Defend the HQ boys!','Defend HQ','Defend HQ'],_centerPos,'AUTOASSIGNED',5,FALSE,TRUE,'Defend',TRUE] call (missionNamespace getVariable 'BIS_fnc_setTask');
+[_taskID,TRUE,['Захищайте штаб, Хлопці!','Хахистити штаб','Захистити штаб'],_centerPos,'AUTOASSIGNED',5,FALSE,TRUE,'Defend',TRUE] call (missionNamespace getVariable 'BIS_fnc_setTask');
 _timeNow = time;
 _serverTime = serverTime;
 _tickTimeNow = diag_tickTime;
@@ -75,7 +75,7 @@ _QS_worldSize = worldSize;
 _duration = serverTime + 1200 + (random 600);
 _durationAlmostOver = _duration - 30 - (random 60);
 //[_taskID,TRUE,_duration] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');			//----- Task timer reduces suspense and tension, better to not know how long remaining? Uncomment to show timer UI
-[_taskID,['Defend','Defend 1','Defend 2']] call (missionNamespace getVariable 'QS_fnc_taskSetCustomData');
+[_taskID,['Захистити','Захистити 1','Захистити 2']] call (missionNamespace getVariable 'QS_fnc_taskSetCustomData');
 [_taskID,TRUE,1] call (missionNamespace getVariable 'QS_fnc_taskSetProgress');
 _durationAlmostOverHint = FALSE;
 _exitSuccess = FALSE;
@@ -184,7 +184,7 @@ if (_isArmedAirEnabled) then {
 			_armorTypes = [
 				'O_T_APC_Tracked_02_cannon_ghex_F','O_T_APC_Wheeled_02_rcws_v2_ghex_F','O_T_MBT_02_cannon_ghex_F','O_T_APC_Tracked_02_AA_ghex_F','I_APC_Wheeled_03_cannon_F',
 				'O_T_MRAP_02_gmg_ghex_F','O_T_MRAP_02_hmg_ghex_F','I_MRAP_03_gmg_F','I_MRAP_03_hmg_F','O_T_LSV_02_armed_ghex_F'
-			];	
+			];
 		} else {
 			_armorTypes = [
 				'O_APC_Tracked_02_cannon_F','O_APC_Wheeled_02_rcws_v2_F','O_MBT_02_cannon_F','O_APC_Tracked_02_AA_F','I_APC_Wheeled_03_cannon_F',
@@ -210,7 +210,7 @@ if (_isArmedAirEnabled) then {
 			_armorTypes = [
 				'O_T_APC_Tracked_02_cannon_ghex_F','O_T_APC_Wheeled_02_rcws_v2_ghex_F','O_T_APC_Tracked_02_AA_ghex_F','I_APC_Wheeled_03_cannon_F',
 				'O_T_MRAP_02_gmg_ghex_F','O_T_MRAP_02_hmg_ghex_F','I_MRAP_03_gmg_F','I_MRAP_03_hmg_F','O_T_LSV_02_armed_ghex_F'
-			];	
+			];
 		} else {
 			_armorTypes = [
 				'O_APC_Tracked_02_cannon_F','O_APC_Wheeled_02_rcws_v2_F','O_APC_Tracked_02_AA_F','I_APC_Wheeled_03_cannon_F',
@@ -307,7 +307,7 @@ if (_allPlayersCount > 20) then {
 			'o_heli_light_02_dynamicloadout_f','i_heli_light_03_dynamicloadout_f',
 			'o_heli_light_02_dynamicloadout_f','i_heli_light_03_dynamicloadout_f',
 			'O_Heli_Attack_02_dynamicLoadout_black_F','O_Heli_Attack_02_dynamicLoadout_F','O_T_VTOL_02_infantry_dynamicLoadout_F'
-		];	
+		];
 	};
 } else {
 	_helicopterTypes = [
@@ -743,7 +743,7 @@ for '_x' from 0 to 1 step 0 do {
 				};
 				if (!isNull (commander _av)) then {
 					(commander _av) doWatch _centerPos;
-				};				
+				};
 				_av allowDamage TRUE;
 			};
 			_armorCheckDelay = time + 15;
@@ -932,7 +932,7 @@ for '_x' from 0 to 1 step 0 do {
 			_groundTransportCheckDelay = time + 5;
 		};
 	};
-	
+
 	if (_vPara) then {
 		if (_timeNow > _vParaInitialDelay) then {
 			_vPara = FALSE;
@@ -1067,7 +1067,7 @@ for '_x' from 0 to 1 step 0 do {
 						};
 					} forEach _paratrooperArray;
 				};
-			};	
+			};
 		};
 		if ((missionNamespace getVariable ['QS_defend_propulsion',1]) isEqualTo 2) then {
 			{
@@ -1098,7 +1098,7 @@ for '_x' from 0 to 1 step 0 do {
 						};
 					} forEach _paratrooperArray;
 				};
-			};		
+			};
 		};
 		if ((missionNamespace getVariable ['QS_defend_propulsion',1]) isEqualTo 3) then {
 			{
@@ -1122,7 +1122,7 @@ for '_x' from 0 to 1 step 0 do {
 						};
 					} forEach _paratrooperArray;
 				};
-			};				
+			};
 		};
 		if ((missionNamespace getVariable ['QS_defend_propulsion',1]) isEqualTo 4) then {
 			{
@@ -1277,7 +1277,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	if (_timeNow > _heliParaCheckDelay) then {
 		if ((count _helicopterArray) > 0) then {
 			{
@@ -1338,7 +1338,7 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		_heliParaCheckDelay = time + 3;
 	};
-	
+
 	if (_paratroopers) then {
 		if (_timeNow > _paratrooperInitialDelay) then {
 			_paratroopers = FALSE;
@@ -1369,7 +1369,7 @@ for '_x' from 0 to 1 step 0 do {
 			[(units _grp),1] call _fn_setAISkill;
 		};
 	};
-	
+
 	if (_paratroopers2) then {
 		if (_timeNow > _paratrooper2InitialDelay) then {
 			_paratroopers2 = FALSE;
@@ -1402,7 +1402,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	if (_timeNow > _vehicleReammoDelay) then {
 		if (!(_allArray isEqualTo [])) then {
 			{
@@ -1414,7 +1414,7 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		_vehicleReammoDelay = time + 70;
 	};
-	
+
 	if (_timeNow > _updatePlayers) then {
 		_playersInArea = _allPlayers inAreaArray [_centerPos,600,600,0,FALSE];
 		if (!(_playersInArea isEqualTo [])) then {
@@ -1445,19 +1445,19 @@ for '_x' from 0 to 1 step 0 do {
 		};
 		_updatePlayers = time + 15;
 	};
-	
+
 	if (!(_durationAlmostOverHint)) then {
 		if (serverTime > _durationAlmostOver) then {
 			_durationAlmostOverHint = TRUE;
 			if ((random 1) > 0.5) then {
-				_text = 'The attack is almost over!';
+				_text = 'Атаку майже завершено!';
 			} else {
-				_text = 'Hang on boys, the end is near!';
+				_text = 'Тримайтесь хлопці, кінець близько!';
 			};
 			['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
-	
+
 	if (serverTime > _duration) then {
 		if (!(missionNamespace getVariable ['QS_defend_blockTimeout',FALSE])) then {
 			_exitSuccess = TRUE;
@@ -1488,7 +1488,7 @@ for '_x' from 0 to 1 step 0 do {
 				if (_enemyInHQCount >= 5) then {
 					//comment 'There are more than 5 enemies in HQ';
 					if (_sectorControlTicker isEqualTo 1) then {
-						['sideChat',[WEST,'HQ'],'CSAT is taking the HQ!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+						['sideChat',[WEST,'HQ'],'CSAT атакує штаб!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 					};
 					if (_sectorControlTicker > _sectorControlThreshold) then {
 						_exitFail = TRUE;
@@ -1513,10 +1513,10 @@ for '_x' from 0 to 1 step 0 do {
 			_checkHeldDelay = time + 15;
 		};
 	};
-	
+
 	if (_exitSuccess) exitWith {
-		['sideChat',[WEST,'HQ'],'Well done boys! Secure an LZ and get back to base for rearm!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-		['DEFEND_SUCCESS',['Defend HQ','HQ defense completed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Добра робота, хлопці! Зачистіть зону висадки та повертайтесь для переспорядження!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['DEFEND_SUCCESS',['Захистіть штаб','Захист штабу завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_DEFENDHQ','SUCCEEDED',FALSE] call (missionNamespace getVariable 'BIS_fnc_taskSetState');
 		profileNamespace setVariable [
 			'QS_defendHQ_statistics',
@@ -1527,8 +1527,8 @@ for '_x' from 0 to 1 step 0 do {
 		];
 	};
 	if (_exitFail) exitWith {
-		['sideChat',[WEST,'HQ'],'Bad luck soldiers!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-		['DEFEND_FAIL',['Defend','HQ Defense Failed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Погана вдача, солдате!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['DEFEND_FAIL',['Захист','Захист штабу не вдався!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_DEFENDHQ','FAILED',FALSE] call (missionNamespace getVariable 'BIS_fnc_taskSetState');
 		profileNamespace setVariable [
 			'QS_defendHQ_statistics',
@@ -1539,7 +1539,7 @@ for '_x' from 0 to 1 step 0 do {
 	   ];
 	};
 	if (missionNamespace getVariable 'QS_defend_terminate') exitWith {
-		['hint','Defense cancelled!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['hint','Оборону відмінено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	sleep 1.5;
 };
