@@ -37,7 +37,7 @@ if (_type isEqualTo 0) then {
 			if (!(_channel isEqualTo 1)) then {
 				_channel radioChannelAdd [player];
 			};
-			diag_log format ['***** RADIO ***** Добано до каналу %1',_channel];
+			diag_log format ['***** RADIO ***** Додано до каналу %1',_channel];
 			missionNamespace setVariable [
 				'QS_client_radioChannels',
 				((missionNamespace getVariable 'QS_client_radioChannels') + [_channel]),

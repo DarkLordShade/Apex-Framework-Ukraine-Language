@@ -501,7 +501,7 @@ if (_QS_actionName isEqualTo 'AutoHover') then {
 };
 if (_QS_actionName isEqualTo 'UAVTerminalHackConnection') then {
 	if (!local _QS_actionTarget) then {
-		_text = format ['%1 (%2) has hacked a(n) %3!',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf _QS_actionTarget) >> 'displayName'))];
+		_text = format ['%1 (%2) хакнув %3!',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf _QS_actionTarget) >> 'displayName'))];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	_QS_actionTarget spawn {
