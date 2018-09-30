@@ -6,12 +6,12 @@ Author:
 	
 Last modified:
 
-	4/12/2017 A3 1.78 by Quiksilver
+	29/08/2018 A3 1.84 by Quiksilver
 	
 Description:
 
 	Markers Data
-__________________________________________________________________________/*/
+________________________________________________/*/
 _worldName = worldName;
 _teamspeakText = missionNamespace getVariable ['QS_missionConfig_commTS',''];
 if (_worldName isEqualTo 'Altis') exitWith {
@@ -66,8 +66,8 @@ if (_worldName isEqualTo 'Altis') exitWith {
 		['QS_marker_ferry_9',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[9735.86,22341.3,0],0,'Boat'],
 		['QS_marker_ferry_10',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[16743.5,20514,0],0,'Boat'],
 		['QS_marker_ferry_11',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[10632.4,10972.6,0],0,'Boat'],
-		['QS_marker_ferry_12',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[3366.78,12924.7,0],0,'Boat'],
-		['QS_marker_carrier_1',_markerStoragePos,'b_naval','Icon','','ColorWEST',[0.25,0.25],0,[-1500,-1500,0],0,'Aircraft Carrier']
+		['QS_marker_ferry_12',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[3366.78,12924.7,0],0,'Boat']
+		//['QS_marker_carrier_1',_markerStoragePos,'b_naval','Icon','','ColorWEST',[0.25,0.25],0,[-1500,-1500,0],0,'Aircraft Carrier']
 	]
 };
 if (_worldName isEqualTo 'Tanoa') exitWith {
@@ -115,8 +115,8 @@ if (_worldName isEqualTo 'Tanoa') exitWith {
 		['QS_marker_ferry_3',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[2215.99,8642.79,-0.586619],0,'Boat'],
 		['QS_marker_ferry_4',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[11061.8,13375.1,-0.493759],0,'Boat'],
 		['QS_marker_ferry_5',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[13248.8,13663.7,-0.584546],0,'Boat'],
-		['QS_marker_ferry_6',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[4528.14,5215.41,-0.625423],0,'Boat'],
-		['QS_marker_carrier_1',_markerStoragePos,'b_naval','Icon','','ColorWEST',[0.25,0.25],0,[-1500,-1500,0],0,'Aircraft Carrier']
+		['QS_marker_ferry_6',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[4528.14,5215.41,-0.625423],0,'Boat']
+		//['QS_marker_carrier_1',_markerStoragePos,'b_naval','Icon','','ColorWEST',[0.25,0.25],0,[-1500,-1500,0],0,'Aircraft Carrier']
 	]
 };
 if (_worldName isEqualTo 'Malden') exitWith {
@@ -137,10 +137,10 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		['QS_marker_airbaseDefense',[7957.03,10026.5,0],'b_antiair','Icon','','ColorWEST',[0.5,0.5],0,[7957.03,10026.5,0],0,''],
 		['QS_marker_airbaseArtillery',[7958.52,10180,0],'b_art','Icon','','ColorWEST',[0.5,0.5],0.75,[7958.52,10180,0],0,'Артилерія'],
 		['QS_marker_casJet_spawn',[8069.07,9994.63,0],'respawn_plane','Icon','','ColorWEST',[0.5,0.5],0.75,[8069.07,9994.63,0],0,'Авіація'],
-		['QS_marker_crate_area',[7970.25,10109.8,0],'b_support','Icon','','ColorWEST',[0.5,0.5],0.75,[7970.25,10109.8,0],0,'Область ящиків'],
+		['QS_marker_crate_area',[7970.25,10109.8,0],'b_support','Icon','','ColorWEST',[0.5,0.5],0.75,[7970.25,10109.8,0],0,'Зона ящиків'],
 		['QS_marker_heli_spawn',[8078.72,10315.5,0],'respawn_air','Icon','','ColorWEST',[0.5,0.5],0.75,[8078.72,10315.5,0],0,'Гвинтокрили'],
 		['QS_marker_veh_spawn',[8174.2,10144.4,0],'respawn_armor','Icon','','ColorWEST',[0.5,0.5],0.75,[8174.2,10144.4,0],0,'Транспорт'],
-		['QS_marker_boats_1',[8543.58,10116.4,0],'respawn_naval','Icon','','ColorWEST',[0.5,0.5],0.75,[8543.58,10116.4,0],0,'Лодки'],
+		['QS_marker_boats_1',[8543.58,10116.4,0],'respawn_naval','Icon','','ColorWEST',[0.5,0.5],0.75,[8543.58,10116.4,0],0,'Лодка'],
 		['QS_marker_side_rewards',[8027.57,10467.7,0],'b_unknown','Icon','','ColorWEST',[0.5,0.5],0.75,[8027.57,10467.7,0],0,'Нагороди'],
 		['QS_marker_gitmo',[8105.83,10048.9,0.00145149],'b_unknown','Icon','','ColorWEST',[0.5,0.5],0.75,[8105.83,10048.9,0.00145149],0,'Вязниця'],
 		['QS_marker_medevac_hq',[8111.93,10075.7,0],'b_med','Icon','','ColorWEST',[0.5,0.5],0.75,[8111.93,10075.7,0],0,'Мед. штаб'],
@@ -159,11 +159,11 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		['QS_marker_module_fob',_markerStoragePos,'b_hq','Icon','','ColorWEST',[0.5,0.5],0,_markerStoragePos,0,'FOB'],
 		['QS_marker_veh_inventoryService_01',[8259.2,10156.5,0],'b_maint','Icon','','ColorWEST',[0.5,0.5],0.75,[8259.2,10156.5,0],0,'Припаси'],
 		['QS_marker_teamspeak',[(worldSize / 2),(worldSize / 2),0],'mil_dot','Icon','','ColorYELLOW',[0.75,0.75],0.75,[(worldSize / 2),(worldSize / 2),0],0,(format ['Teamspeak:   %1',_teamspeakText])],
-		['QS_marker_ferry_1',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[927.554,11824.1,0],0,'Лодки'],
-		['QS_marker_ferry_2',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[5493.62,11660.8,0],0,'Лодки'],
-		['QS_marker_ferry_3',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[9286.06,3720.37,0],0,'Лодки'],
-		['QS_marker_ferry_4',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[8497.2,3799.11,0],0,'Лодки'],
-		['QS_marker_ferry_5',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[3676.83,3035.56,0],0,'Лодки'],
+		['QS_marker_ferry_1',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[927.554,11824.1,0],0,'Лодка'],
+		['QS_marker_ferry_2',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[5493.62,11660.8,0],0,'Лодка'],
+		['QS_marker_ferry_3',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[9286.06,3720.37,0],0,'Лодка'],
+		['QS_marker_ferry_4',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[8497.2,3799.11,0],0,'Лодка'],
+		['QS_marker_ferry_5',_markerStoragePos,'c_ship','Icon','','ColorCIVILIAN',[0.25,0.25],0.5,[3676.83,3035.56,0],0,'Лодка'],
 		['QS_marker_carrier_1',_markerStoragePos,'b_naval','Icon','','ColorWEST',[0.25,0.25],0,[-1500,-1500,0],0,'Aircraft Carrier']
 	]
 };

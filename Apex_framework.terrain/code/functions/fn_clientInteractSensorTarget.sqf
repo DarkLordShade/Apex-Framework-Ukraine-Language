@@ -6,8 +6,7 @@ Author:
 
 Last Modified:
 
-	20/01/2018 A3 1.80 by Quiksilver
-
+	7/9/2018 A3 1.84 by Quiksilver
 Description:
 
 	Remote Sensors / Datalink Interaction
@@ -32,6 +31,12 @@ if (_cursorObject in ([(listRemoteTargets playerSide),0] call (missionNamespace 
 };
 if (_cursorObject getVariable ['QS_remoteTarget_reported',FALSE]) exitWith {
 	50 cutText ['Про ціль вже повідомлено','PLAIN DOWN',0.45];
+};
+if ((_vehicle animationSourcePhase 'showcamonethull') isEqualTo 1) exitWith {
+	50 cutText ['Неможливо відслідити ціль (маскувальна сітка)','PLAIN DOWN',0.45];
+};
+if (_vehicle getVariable ['QS_reportTarget_disable',FALSE]) exitWith {
+	50 cutText ['Неможливо повідомити про цю ціль','PLAIN DOWN',0.45];
 };
 if (uiNamespace getVariable ['QS_client_progressVisualization_active',FALSE]) exitWith {};
 _onCancelled = {
@@ -69,7 +74,7 @@ _onCompleted = {
 			player setVariable ['QS_client_jtac_sensorTarget',_cursorObject,FALSE];
 			50 cutText ['Повідомлено про ціль','PLAIN DOWN',0.3];
 			playSound 'beep_target';
-			['sideChat',[WEST,'BLU'],(format ['%1 (JTAC) відмічено %2 в квадраті %3 для Повітрянної/Артилерійської підтримки',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'BLU'],(format ['%1 (JTAC) відмічтив %2 в квадраті %3 для Повітрянної/Артилерійської підтримки',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			[77,'FIRE_SUPPORT',[_cursorObject,profileName],FALSE] remoteExec ['QS_fnc_remoteExec',2];
 		} else {
 			50 cutText ['Про ціль вже повідомлено','PLAIN DOWN',0.3];

@@ -6,8 +6,7 @@ Author:
 
 Last Modified:
 
-	5/10/2017 A3 1.76 by Quiksilver
-
+	7/9/2018 A3 1.84 by Quiksilver
 Description:
 
 	Recover intel from a unit
@@ -89,6 +88,7 @@ _obj1 setDir (random 360);
 _obj1 enableRopeAttach FALSE;
 _obj1 enableVehicleCargo FALSE;
 _obj1 setVectorUp (surfaceNormal (getPosWorld _obj1));
+_obj1 setVariable ['QS_reportTarget_disable',TRUE,TRUE];
 _objUnitType = selectRandom _objUnitTypes;
 _intelObj = _aGroup createUnit [_objUnitType,_flatPos1,[],0,'NONE'];
 _intelDriver = _aGroup createUnit [_crewUnitType,_flatPos1,[],0,'NONE'];
@@ -115,7 +115,7 @@ _intelObj addEventHandler [
 				_killerDisplayName = getText (configFile >> 'CfgVehicles' >> _killerType >> 'displayName');
 				_objDisplayName = getText (configFile >> 'CfgVehicles' >> _objType >> 'displayName');
 				_name = name _killer;
-				['sideChat',[WEST,'BLU'],format ['%1 знищив ціль!',_name]] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+				['sideChat',[WEST,'BLU'],format ['%1 знищив об’єкт з даними!',_name]] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			};
 		};
 	}
@@ -135,6 +135,7 @@ _obj2 setDir (random 360);
 _obj2 enableRopeAttach FALSE;
 _obj2 enableVehicleCargo FALSE;
 _obj2 setVectorUp (surfaceNormal (getPosWorld _obj2));
+_obj2 setVariable ['QS_reportTarget_disable',TRUE,TRUE];
 _objUnitType = selectRandom _objUnitTypes;
 _decoy1 = _bGroup createUnit [_objUnitType,_flatPos1,[],0,'NONE'];
 _decoyDriver1 = _bGroup createUnit [_crewUnitType,_flatPos1,[],0,'NONE'];
@@ -161,6 +162,7 @@ _obj3 setDir (random 360);
 _obj3 enableRopeAttach FALSE;
 _obj3 enableVehicleCargo FALSE;
 _obj3 setVectorUp (surfaceNormal (getPosWorld _obj3));
+_obj3 setVariable ['QS_reportTarget_disable',TRUE,TRUE];
 _objUnitType = selectRandom _objUnitTypes;
 _decoy2 = _cGroup createUnit [_objUnitType,_flatPos1,[],0,'NONE'];
 _decoyDriver2 = _cGroup createUnit [_crewUnitType,_flatPos1,[],0,'NONE'];
@@ -268,7 +270,7 @@ for '_x' from 0 to 1 step 0 do {
 
 		/*/---------- DE-BRIEF/*/
 
-		['sideChat',[WEST,'HQ'],'Ціль вбито, місія провалена!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ціль вбито, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
@@ -305,7 +307,7 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				_x enableAI 'PATH';
 			} forEach [_intelObj,_decoy1,_decoy2,_intelDriver,_decoyDriver1,_decoyDriver2];
-			['sideChat',[WEST,'HQ'],'Ворог помітив нас і намагається втекти!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'HQ'],'Ворог помітив нас і намагається втекти з даними!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 
 			/*/---------- WHERE TO / HOW WILL THE OBJECTIVES ESCAPE?/*/
 
@@ -374,7 +376,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_heEscaped) exitWith {
 
 		/*/---------- DE-BRIEF/*/
-		['sideChat',[WEST,'HQ'],'Ціль втекла, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт втік, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
@@ -414,7 +416,7 @@ for '_x' from 0 to 1 step 0 do {
 
 		/*/---------- DE-BRIEF/*/
 
-		['sideChat',[WEST,'HQ'],"Документи отримано. Місію виконано."] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],"Дані отримано. Місію виконано."] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
