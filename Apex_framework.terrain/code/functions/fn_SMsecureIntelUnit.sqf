@@ -246,7 +246,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'download',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повідомлення від місцевих жителів які чули, що стратегічна інформація потрапила до рук ворога!<br/><br/>Ми позначили завдання на вашій карті. Інформація в одному з транспортних засобів або у когось з бійців</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повідомлення від місцевих жителів, які чули, що стратегічна інформація потрапила до рук ворога!<br/><br/>Ми позначили завдання на вашій карті. Інформація в одному з транспортних засобів або у когось з бійців</t>";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Intel']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 

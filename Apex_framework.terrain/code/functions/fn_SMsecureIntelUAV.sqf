@@ -111,7 +111,7 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Secure Intel (UAV)',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити дані (UAV)',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',

@@ -3,15 +3,15 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	24/06/2016 A3 1.62 by Quiksilver
-	
+
 Description:
 
 	Get radar telemetry from enemy radar site, then destroy it.
-	
+
 Notes:
 
 	Deprecated mission
@@ -29,9 +29,9 @@ missionNamespace setVariable ['QS_sidemission_objectsArray',[],FALSE];
 missionNamespace setVariable ['QS_sideObj',objNull,FALSE];
 _objectsArray = [];
 _c4Messages = [
-	"Radar data secured. The charge has been set! 15 seconds until detonation.",
-	"Radar telemetry secured. The explosives have been set! 15 seconds until detonation.",
-	"Radar intel secured. The charge is planted! 15 seconds until detonation."
+	"Дані радара захоплені. Заряд встановлено! 15 секунд до детонації.",
+	"Телеметрію з радару отримано. Вибухівку встановлено! 15 секунд до детонації.",
+	"Дані в безпеці. Заряд розміщено! 15 секунд до детонації."
 ];
 _c4Message = selectRandom _c4Messages;
 
@@ -109,9 +109,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'We have located an enemy radar installation. It appears to be under-defended, so this is our chance to learn more about enemy Anti-Air capabilities. Get over there and secure the radar intel. It will be located in a building near the dome. Be careful, once tampered with, the radar will self-destruct. This objective is not accurately marked.',
-		'Secure Radar',
-		'Secure Radar'
+		'Ми визначили розташування ворожого радару. Здається його недостатньо захищають, так що це наш шанс дізнатися більше про можливості ворожої ППО. Вирушайте туди та захопіть дані про цей радар. Вони будуть знаходитись в будівлі біля куполу. Обережно, щойно дані буде порушено - радар почне самознищення. Об’экт позначено не точно.',
+		'Захопити Радар',
+		'Захопити Радар'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -122,28 +122,28 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>New Side Mission</t><br/><t size='1.5' color='#00B2EE'>Secure Radar</t><br/>____________________<br/>OPFOR have captured a small radar on the island to support their aircraft.<br/><br/>We've marked the position on your map; head over there and secure the site. Take the data and destroy it.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова другорядна місія</t><br/><t size='1.5' color='#00B2EE'>Захопити Радар</t><br/>____________________<br/>OPFOR розгорнули невеличкий радар на острові для підтримки їхнїх повітряних сил.<br/><br/>Ми позначили позицію на мапі; вирушйте туди та захопіть розташування. Захопіть дані та знищіть його.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Secure Radar']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Радар']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 
 for '_x' from 0 to 1 step 0 do {
 
 	if (!alive (missionNamespace getVariable 'QS_sideObj')) exitWith {
-		
+
 		/*/------------------ DE-BRIEFING/*/
 
-		['sideChat',[WEST,'HQ'],'Intel destroyed, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Дані знищено, місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		
+
 		/*/------------------- DELETE/*/
-		
+
 		{
 			missionNamespace setVariable [
 				'QS_analytics_entities_deleted',
@@ -159,13 +159,13 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count (_enemiesArray + _objectsArray);
 	};
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
-		
+
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	
+
 		/*/------------------- BOOM!/*/
-		
+
 		_dummy = createVehicle [_dummyType,[0,0,0],[],0,'NONE'];
 		missionNamespace setVariable [
 			'QS_analytics_entities_created',
@@ -201,7 +201,7 @@ for '_x' from 0 to 1 step 0 do {
 		];
 		deleteVehicle _researchTable;
 		sleep 0.1;
-	
+
 		/*/------------------ DE-BRIEFING/*/
 
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
@@ -210,7 +210,7 @@ for '_x' from 0 to 1 step 0 do {
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-	
+
 		/*/-------------------- DELETE/*/
 		sleep 120;
 		{

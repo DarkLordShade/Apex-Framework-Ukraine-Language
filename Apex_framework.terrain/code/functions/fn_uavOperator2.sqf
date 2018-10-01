@@ -3,11 +3,11 @@ File: fn_uavOperator.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	2/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	UAV Operator
@@ -187,7 +187,7 @@ _uavInitCodeGeneric = {
 	_grp setVariable ['QS_HComm_grp',FALSE,TRUE];
 	if (_uavEntity isKindOf 'Plane') then {
 		params ['','_loiterPos'];
-		_text = format ['A(n) %1 is available at grid %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _uavEntity) >> 'displayName')),(mapGridPosition _uavEntity),worldName];
+		_text = format ['%1 доступний в квадраті %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _uavEntity) >> 'displayName')),(mapGridPosition _uavEntity),worldName];
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7,-1,_text,[],-1];
 		_uavEntity setVariable ['QS_ropeAttached',FALSE,TRUE];
 		_uavEntity enableRopeAttach TRUE;
@@ -278,7 +278,7 @@ _uavInitCodeGeneric = {
 							deleteVehicle _x;
 						};
 					} forEach (attachedObjects _entity);
-				};				
+				};
 			}
 		];
 		_uavEntity addEventHandler [
@@ -299,12 +299,12 @@ _uavInitCodeGeneric = {
 		_stretcher1 = createSimpleObject ['a3\props_f_orange\humanitarian\camps\stretcher_01_f.p3d',[0,0,0]];
 		_stretcher1 attachTo [_uavEntity,[0,-0.75,-0.7]];
 		_stretcher2 = createSimpleObject ['a3\props_f_orange\humanitarian\camps\stretcher_01_f.p3d',[0,0,0]];
-		_stretcher2 attachTo [_uavEntity,[0.85,-0.75,-0.7]];	
+		_stretcher2 attachTo [_uavEntity,[0.85,-0.75,-0.7]];
 	};
 	if (_uavEntity isKindOf 'ugv_01_rcws_base_f') then {
 		_uavEntity addBackpackCargoGlobal ['b_uav_01_backpack_f',2];
 		_uavEntity setVariable ['QS_ropeAttached',FALSE,TRUE];
-		_uavEntity enableVehicleCargo TRUE;	
+		_uavEntity enableVehicleCargo TRUE;
 		_uavEntity enableRopeAttach TRUE;
 		_uavEntity addEventHandler ['Fired',
 			{

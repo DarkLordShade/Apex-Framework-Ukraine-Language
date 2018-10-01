@@ -7,7 +7,7 @@ Author:
 Last Modified:
 
 	7/9/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Recover intel from a vehicle
@@ -190,7 +190,7 @@ _intelObj addEventHandler [
 	{
 		params ['_container','_unit'];
 		if (isPlayer _unit) then {
-			['sideChat',[WEST,'BLU'],(format ['%1 secured an objective!',(name _unit)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'BLU'],(format ['%1 захопив об’єкт!',(name _unit)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			missionNamespace setVariable ['QS_smSuccess',TRUE,FALSE];
 			_container setVariable ['QS_secureable',FALSE,TRUE];
 		};

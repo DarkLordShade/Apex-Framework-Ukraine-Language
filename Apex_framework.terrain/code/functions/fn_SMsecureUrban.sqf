@@ -682,7 +682,7 @@ _QS_firstDetected = FALSE;
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Ворог постачає повстанцям передові системами наведення для протиповітряних пускових установок. Прямуйте туди і захопіть ящики. У відмічених областях буде розташовано 3 ящики.',
+		'Ворог постачає повстанцям передові системами наведення для протиповітряних пускових установок. Прямуйте туди і захопіть ящики. У відмічених областях буде розташовано 3 ящики. Обшукуйте будівлі поблизую',
 		'Захопити ворожі схрони',
 		'Захопити ворожі схрони'
 	],
@@ -696,7 +696,7 @@ _QS_firstDetected = FALSE;
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
 missionNamespace setVariable ['QS_mission_urban_active',TRUE,TRUE];
-['NewSideMission',['Secure Weapons Caches']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити ворожі схрони']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 _box1_secured = FALSE;
 _box2_secured = FALSE;
 _box3_secured = FALSE;
@@ -797,7 +797,7 @@ for '_x' from 0 to 1 step 0 do {
 			['QS_IA_TASK_SM_0',TRUE,_QS_enemyDetected_endTime] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 			_QS_bombTimer_started = TRUE;
 			_QS_urbanTimerBroadcast_delay = time + 25;
-			_QS_text = format ['CSAT намагається знищити документи %1',[((round(_QS_enemyDetected_endTime - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
+			_QS_text = format ['CSAT збирається знищити об’экт о %1',[((round(_QS_enemyDetected_endTime - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
 			['systemChat',_QS_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
@@ -811,7 +811,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object1 setPos [-5000,-5000,0];
 					(_markers select 0) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкти захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -825,7 +825,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object2 setPos [-5000,-5000,0];
 					(_markers select 1) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -839,7 +839,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object3 setPos [-5000,-5000,0];
 					(_markers select 2) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 документи захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};

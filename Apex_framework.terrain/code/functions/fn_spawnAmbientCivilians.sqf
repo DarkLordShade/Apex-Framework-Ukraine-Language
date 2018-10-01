@@ -177,7 +177,7 @@ if (_type isEqualTo 'FOOT') then {
 						if (!isNull _instigator) then {
 							if (isPlayer _instigator) then {
 								_name = name _instigator;
-								_text = format ['%1 %2 a civilian!',_name,(selectRandom ['killed','murdered','butchered','slaughtered'])];
+								_text = format ['%1 %2 цивільного!',_name,(selectRandom ['вбив','знищив','нейтралізував','ліквідував'])];
 								['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						};
