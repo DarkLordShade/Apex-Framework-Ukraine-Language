@@ -3,11 +3,11 @@ File: fn_SMregenerator.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	7/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	AI regenerator side mission
@@ -41,7 +41,7 @@ for '_x' from 0 to 99 step 1 do {
 };
 (missionNamespace getVariable 'QS_AI_regen_usedPositions') pushBack _spawnPosition;
 _terrainData = [2,_spawnPosition,500,[]] call (missionNamespace getVariable 'QS_fnc_aoGetTerrainData');
-{	
+{
 	if ((_x distance2D _spawnPosition) < 10) then {
 		_nearestTerrainObjects pushBack _x;
 		_x hideObjectGlobal TRUE;
@@ -49,15 +49,15 @@ _terrainData = [2,_spawnPosition,500,[]] call (missionNamespace getVariable 'QS_
 } forEach (nearestTerrainObjects [_spawnPosition,[],20,FALSE,TRUE]);
 private _regenerator = objNull;
 _compositionData = [
-	["Land_Device_assembled_F",[-0.223328,-1.41943,0],90.1458,[],true,true,false,{}], 
-	["CamoNet_BLUFOR_open_F",[-0.0315552,-1.51709,0],177.875,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_1_F",[-0.825806,1.73486,0],0,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_1_F",[-2.48407,1.75146,0],0,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_1_F",[2.53467,1.73096,0],0,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_3_F",[-3.27258,-1.4292,0.086091],270.445,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_3_F",[3.35931,-1.43408,0],90.8868,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_1_F",[0.824219,-4.57129,0],181.01,[],false,false,true,{}], 
-	["Land_Bunker_01_blocks_1_F",[-2.52747,-4.54443,0],181.01,[],false,false,true,{}], 
+	["Land_Device_assembled_F",[-0.223328,-1.41943,0],90.1458,[],true,true,false,{}],
+	["CamoNet_BLUFOR_open_F",[-0.0315552,-1.51709,0],177.875,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_1_F",[-0.825806,1.73486,0],0,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_1_F",[-2.48407,1.75146,0],0,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_1_F",[2.53467,1.73096,0],0,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_3_F",[-3.27258,-1.4292,0.086091],270.445,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_3_F",[3.35931,-1.43408,0],90.8868,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_1_F",[0.824219,-4.57129,0],181.01,[],false,false,true,{}],
+	["Land_Bunker_01_blocks_1_F",[-2.52747,-4.54443,0],181.01,[],false,false,true,{}],
 	["Land_Bunker_01_blocks_1_F",[2.52686,-4.59473,0],181.01,[],false,false,true,{}]
 ];
 _composition = [_spawnPosition,(random 360),_compositionData,FALSE] call (missionNamespace getVariable 'QS_fnc_serverObjectsMapper');
@@ -100,7 +100,7 @@ _composition = [_spawnPosition,(random 360),_compositionData,FALSE] call (missio
 				{
 					deleteVehicle _x;
 				} forEach (attachedObjects _entity);
-			};			
+			};
 		}
 	]
 ];
@@ -206,7 +206,7 @@ if ((random 1) > 0.5) then {
 		if ((random 1) > 0.666) then {
 			_tent = createVehicle ['CamoNet_INDP_big_F',(getPosATL _tank),[],0,'CAN_COLLIDE'];
 			_tent allowDamage FALSE;
-			_tent setDir ((getDir _tank) - 180); 
+			_tent setDir ((getDir _tank) - 180);
 			_all pushBack _tent;
 		};
 	};
@@ -234,7 +234,7 @@ _task = [
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['NewSideMission',['Enemy Regenerator']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Ворожий Регенератор']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 private _time = diag_tickTime;
 private _respawnDelay = 30;
 private _respawnCheckDelay = _time + _respawnDelay;
@@ -303,7 +303,7 @@ for '_x' from 0 to 1 step 0 do {
 							_unit addPrimaryWeaponItem _x;
 						} forEach [
 							(selectRandom ['optic_tws','optic_Nightstalker'])
-						];	
+						];
 					};
 					_all pushBack _unit;
 					_enemies pushBack _unit;
@@ -340,7 +340,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 		_signalPulseCheckDelay = _time + 15;
-	};	
+	};
 	if (_time > _regeneratorCheckDelay) then {
 		{
 			if (local _x) then {

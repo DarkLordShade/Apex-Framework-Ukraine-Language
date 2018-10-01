@@ -405,7 +405,7 @@ private _uncertainPosition = [
 	'QS_TASK_SM_IDAP_1',
 	TRUE,
 	[
-		(format ['<br/>1. Перевірте сцену.<br/>2. Знайдіть поранених і шукайте підказки.<br/>3. Знайдіть медичні приналежності.<br/>4. Bring critical medical supplies to wounded aid worker.<br/>5. ???.<br/><br/><br/>Місцевий пункт постачання IDAP. Цивільні поряд говорять, що один з робітників допоміжної служби все ще залишається в живих. Ваша робота - дістатися туди та визволити його. Дехто з повстанців залишив зону та забрав з собою деяке медичне устаткування. Вам треба відстежити їх та повернути медичне обладнання.<br/><br/>Оглядайте тіла загиблих на місці щоб дізнатись про розташування повстанців.<br/><br/>Цілі не точно позначені на мапі']),
+		(format ['<br/>1. Перевірте сцену.<br/>2. Знайдіть поранених і шукайте підказки.<br/>3. Знайдіть медичні приналежності.<br/>4. Надайте першу медичну допомогу пораненому робітнику IDAP.<br/>5. Евакуюйте пораненого до Медичного пункту на базі або іншого польового шпиталю.<br/><br/><br/>Місцевий пункт постачання IDAP. Цивільні поряд говорять, що один з робітників допоміжної служби все ще залишається в живих. Ваша робота - дістатися туди та визволити його. Дехто з повстанців залишив зону та забрав з собою деяке медичне устаткування. Вам треба відстежити їх та повернути медичне обладнання.<br/><br/>Оглядайте тіла загиблих на місці щоб дізнатись про розташування повстанців.<br/><br/>Цілі не точно позначені на мапі']),
 		'Допомога IDAP',
 		'Допомога IDAP'
 	],
@@ -526,7 +526,7 @@ private _sounds = [
 private _unitStabilised = FALSE;
 private _aidMarker = '';
 _aidMarker = createMarker [(format ['QS_marker_aid_%1',(str (random 10e3))]),[0,0,0]];
-_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Side Mission: Aid worker']);
+_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Другорядна місія: Медичний працівник']);
 _aidMarker setMarkerPos (getPosATL _recoverableUnit);
 _aidMarker setMarkerShape 'ICON';
 _aidMarker setMarkerSize [0.5,0.5];
@@ -544,12 +544,12 @@ for '_x' from 0 to 1 step 0 do {
 		};
 	};
 	if (_taskState isEqualTo 'SUCCEEDED') exitWith {
-		['SM_IDAP_BRIEF',['Side Mission','Mission succeeded!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['SM_IDAP_BRIEF',['Другорядна місія','Місію виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		sleep 5;
 		[1,[0,0,0]] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
 	if (_taskState isEqualTo 'FAILED') exitWith {
-		['SM_IDAP_BRIEF',['Side Mission','Mission failed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['SM_IDAP_BRIEF',['Другорядна місія','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		sleep 5;
 		[0,[0,0,0]] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
@@ -672,7 +672,7 @@ for '_x' from 0 to 1 step 0 do {
 								50 cutText ['Медичних припасів не знайдено.  Продовжуй пошуки, солдат!','PLAIN DOWN',0.75];
 							}
 						] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
-						['SM_IDAP_UPDATE',['Side Mission Update','Medical supplies not found']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+						['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медикаменти не знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 						_findNewLocation = TRUE;
 						_monitorScene = FALSE;
@@ -691,7 +691,7 @@ for '_x' from 0 to 1 step 0 do {
 
 							if (!(_suppliesFound)) then {
 								_suppliesFound = TRUE;
-								['SM_IDAP_UPDATE',['Side Mission Update','Medical supplies located!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+								['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медикаменти знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 								[
 									[],
 									{
@@ -772,8 +772,8 @@ for '_x' from 0 to 1 step 0 do {
 								TRUE,
 								[
 									'Гуманітарного працівника стабілізовано. Доставте його до польового шпиталю як найшвидше щоб завершити місію!',
-									'Medevac',
-									'Medevac'
+									'Медична Евакуація',
+									'Медична Евакуація'
 								],
 								[_recoverableUnit,TRUE],
 								'CREATED',
@@ -887,11 +887,11 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (_crateSpawned) then {
 		if (!alive _crate) then {
-			[[WEST,'BLU'],'Medical supplies destroyed, mission failed!'] remoteExec ['sideChat',-2,FALSE];
+			[[WEST,'BLU'],'Медикаменти знищено, місію провалено!'] remoteExec ['sideChat',-2,FALSE];
 			_taskState = 'FAILED';
 		};
 		if (serverTime > _timeoutFailsafe) then {
-			[[WEST,'BLU'],'Mission failed, took too long!'] remoteExec ['sideChat',-2,FALSE];
+			[[WEST,'BLU'],'Місію провалено, занадто довго!'] remoteExec ['sideChat',-2,FALSE];
 			_taskState = 'FAILED';
 		};
 	};

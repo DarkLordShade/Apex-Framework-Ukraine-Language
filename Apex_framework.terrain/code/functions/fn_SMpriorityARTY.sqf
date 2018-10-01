@@ -3,11 +3,11 @@ File: fn_SMpriorityARTY.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	19/09/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	-
@@ -33,7 +33,7 @@ for '_x' from 0 to 1 step 0 do {
 _unitsArray = [_flatPos,(random 360),([] call (missionNamespace getVariable 'QS_data_artyPit'))] call (missionNamespace getVariable 'QS_fnc_serverObjectsMapper');
 _priorityTargets = [];
 {
-	
+
 	if (!isSimpleObject _x) then {
 		if ((toLower (typeOf _x)) in [
 			'o_mbt_02_arty_f','o_t_mbt_02_arty_ghex_f','i_truck_02_mrl_f'
@@ -105,9 +105,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'The enemy has set up an Artillery Battery. Get over there and neutralize it before its too late! This objective is not accurately marked.',
-		'Artillery Battery',
-		'Artillery Battery'
+		'Ворог встановив артилерійську батарею. Вирушайте туди та знищіть її доки не стало пізно! Цю ціль позначено не точно.',
+		'Артилерійська Батарея',
+		'Артилерійська Батарея'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -117,7 +117,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center' size='2.2'>Priority Target</t><br/><t size='1.5' color='#b60000'>Artillery</t><br/>____________________<br/>OPFOR forces are setting up an artillery battery to hit you guys damned hard! We've picked up their positions with thermal imaging scans and have marked it on your map.<br/><br/>This is a priority target, boys! They're just setting up now; they'll be firing in about five minutes!";
+_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Артилерія</t><br/>____________________<br/>Сили OPFOR встановлюють артилерійську батарею щоб надавата вам по сраці! Ми знайшли їхню позицію за допомогою термальних знімків та позначили її на вашій мапі.<br/><br/>Це пріоритетна ціль, хлопці! Вони ще розгортаються, але будуть готові до відкриття вогню за 5 хвилин!";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewPriorityTarget',['Artillery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
@@ -125,14 +125,14 @@ waitUntil {
 	sleep 5;
 	(((_priorityTargets findIf {((canMove _x) && (alive _x))}) isEqualTo -1) || {(missionNamespace getVariable 'QS_smSuccess')})
 };
-_completeText = parseText "<t align='center' size='2.2'>Priority Target</t><br/><t size='1.5' color='#08b000'>NEUTRALISED</t><br/>____________________<br/>Incredible job, boys! Make sure you jump on those priority targets quickly; they can really cause havoc if they're left to their own devices.<br/><br/>Keep on with the main objective; we'll tell you if anything comes up.";
+_completeText = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#08b000'>НЕЙТРАЛІЗОВАНО</t><br/>____________________<br/>Неперевершена робота, козаки! Переконайтесь, що ви можете швидко переміщуватись між цілями, тому що якщо вони залишаться зі своїми іграшками - то можуть спричинити справжній хаос.<br/><br/>Продовжуйте основну операцію. Ми сповістимо вас, якщо щось зміниться.";
 ['hint',_completeText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['CompletedPriorityTarget',['Artillery Neutralized']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerPos [-5000,-5000,0];
 	_x setMarkerAlpha 0;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');																
+[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 {
 	if (alive _x) then {
 		_x setDamage [1,TRUE];

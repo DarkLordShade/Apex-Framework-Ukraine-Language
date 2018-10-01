@@ -39,8 +39,8 @@ private _entitiesParams = [['Air'],['UAV_01_base_F','UAV_06_base_F','ParachuteBa
 private _rearmInterval = _time + (240 + (random 80));
 private _rearming = FALSE;
 private _rearmDelay = [15,20,30];
-_rearmingText = 'The CSAT AA Battery is rearming!';
-_finishedRearmText = 'The CSAT AA Battery has finished rearming!';
+_rearmingText = 'ПП батарея CSAT AA перезаряджається!';
+_finishedRearmText = 'ПП батарея CSAT AA закінчила перезарядку!';
 private _turretParams = [];
 private _targetListEnemy = [];
 private _targetType = '';
@@ -209,13 +209,13 @@ _compositionData = nil;
 				};
 				if (!isNull _instigator) then {
 					if (isPlayer _instigator) then {
-						_text = format ['%1 ( %2 ) destroyed an AA tank!',(name _instigator),(groupID (group _instigator))];
+						_text = format ['%1 ( %2 ) знищив ПП транспорт ворога!',(name _instigator),(groupID (group _instigator))];
 						[[WEST,'BLU'],_text] remoteExec ['sideChat',-2,FALSE];
 					} else {
-						[[WEST,'BLU'],'AA tank destroyed!'] remoteExec ['sideChat',-2,FALSE];
+						[[WEST,'BLU'],'ПП транспорт знищено!'] remoteExec ['sideChat',-2,FALSE];
 					};
 				} else {
-					[[WEST,'BLU'],'AA tank destroyed!'] remoteExec ['sideChat',-2,FALSE];
+					[[WEST,'BLU'],'ПП транспорт знищено!'] remoteExec ['sideChat',-2,FALSE];
 				};
 			}
 		];
@@ -257,7 +257,7 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Противоповітряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповітряну батарею, щоб заблокувати наш повітряний транспорт! Ми визначили їхне розташування за допомогою зображень з безпілотника і позначили ціль на карті.<br/><br/>Пріоритетна ціль";
+_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Противоповітряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповітряну батарею, щоб заблокувати наш повітряний транспорт! Ми визначили їхнє розташування за допомогою зображень з безпілотника і позначили ціль на карті.<br/><br/>Пріоритетна ціль";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewPriorityTarget',['Anti-Air Battery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 //comment 'Loop';
