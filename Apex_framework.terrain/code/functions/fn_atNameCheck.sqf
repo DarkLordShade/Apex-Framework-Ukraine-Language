@@ -23,7 +23,8 @@ _blacklistedString = [
 	'Fuck','Shit','Cunt','Bitch','Nigger','Prick','Fag','Phag',
 	'Penis','Vagina','Asshole','Gay','Lesbian','Cvnt',
 	'Sh1t','Shlt','G4y','Fvck','H4ck','N1gger','Nlgger','pussy','pvssy','puzzy','pvzzy',
-	'rape','r4pe','r4p3','rapist','r4pist','r4p1st','Server','Admin','Administrator','User','user','Админ','Администратор','Адмін','Адміністратор'
+	'rape','r4pe','r4p3','rapist','r4pist','r4p1st','Server','Admin','Administrator',
+	'User','user','Админ','Администратор','Адмін','Адміністратор'
 ];
 {
 	if ([_x,profileName,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) exitWith {

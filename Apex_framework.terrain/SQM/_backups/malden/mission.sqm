@@ -1659,7 +1659,7 @@ class Mission
 					class Attributes
 					{
 						skill=0;
-						description="Mortar Gunner ( Mk6 )";
+						description="Мінометник ( Mk6 )";
 						isPlayable=1;
 					};
 					id=79;
