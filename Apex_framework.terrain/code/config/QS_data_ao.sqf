@@ -3,15 +3,15 @@ File: QS_data_ao.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	17/01/2018 A3 1.80 by Quiksilver
-	
+
 Description:
 
 	AO Data
-	
+
 	[AO display name,AO location,custom function name,building coef,water coef,0,0,defendenabled,reinforceInfantry,reinforceVehicle]
 __________________________________________________________________________/*/
 
@@ -56,7 +56,7 @@ if (_worldName isEqualTo 'Altis') exitWith {
 		[
 			2,
 			[
-				['Sofia Radar Station',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
+				['Радарна станія Sofia',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Research Facility',[20948.4,19258.8,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Molos',[27006.6,23292.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Nidasos Woodlands',[23926.2,22597.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
@@ -91,8 +91,8 @@ if (_worldName isEqualTo 'Altis') exitWith {
 				['The Stadium',[5479.61,14988.7,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Vikos Outpost',[12300.2,8875.71,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Athanos',[4238.88,10789.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['South Kavala',[3704.8,12198.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['North Kavala',[4030.79,14149.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Південна Kavala',[3704.8,12198.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Північна Kavala',[4030.79,14149.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Topolia',[7361.48,15438.3,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Therisa',[10505.5,12264.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
 			]
@@ -172,7 +172,7 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		[
 			0,
 			[
-				['Old military base',[6089.62,10793.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
+				['Стара військова база',[6089.62,10793.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Radio Station',[7042.5,10104.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Moray',[933.491,12078.6,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
 				['Lolisse',[5543.27,11193.7,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
@@ -193,7 +193,7 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		[
 			1,
 			[
-				['Island military base',[9754.7,3949.39,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
+				['Військова База острова',[9754.7,3949.39,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
 				['Le Port',[8251.1,3145.07,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Chapoi',[5867.74,3523.77,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Cancon',[5398.12,2790.64,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
@@ -204,7 +204,7 @@ if (_worldName isEqualTo 'Malden') exitWith {
 				['Corton Woodland',[3173.67,5535.26,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Eperon Valley',[4700.29,5674.06,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Plateau',[5825.52,6345.95,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
-				['Point Lookout',[11425.1,4368.71,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
+				['Пункт Спостереження',[11425.1,4368.71,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
 				['Midi Valley',[6371.65,5361.49,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Arette Hills',[2459.02,4346.19,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1]
 			]

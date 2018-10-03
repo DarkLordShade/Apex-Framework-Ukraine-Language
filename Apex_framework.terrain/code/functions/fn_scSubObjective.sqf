@@ -515,7 +515,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker1 setMarkerShape 'ICON';
 			_marker1 setMarkerType 'mil_dot';
 			_marker1 setMarkerColor 'ColorOPFOR';
-			_marker1 setMarkerText (format ['%1Ворожі припаси',(toString [32,32,32])]);
+			_marker1 setMarkerText (format ['%1Ворожий склад',(toString [32,32,32])]);
 			_marker1 setMarkerSize [0.5,0.5];
 			_marker1 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker1;
@@ -529,9 +529,9 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker2;
 			missionNamespace setVariable ['QS_virtualSectors_sd_position',_position,FALSE];
-			_description = 'Знищити припаси противника.<br/><br/>Ворог використовує ці припаси для поширення зброї. Ці припаси дозволяють ворогам обладнати солдат ПТ і ПА.<br/><br/>Знищення цієї бази зменшить кількість ПА і ПТ бійців<br/><br/>Щоб убезпечити склад - просто використай своє Скролл-меню на нижній частині Taru всередині укріплення.';
-			_title = 'Ворожі припаси';
-			_tooltip = 'Ворожі припаси';
+			_description = 'Знищити склад противника.<br/><br/>Ворог використовує цей склад для поширення зброї. Цей склад дозволяють ворогам споряджати солдат ПТ і ПА.<br/><br/>Знищення цього складу зменшить кількість ПА і ПТ бійців<br/><br/>Щоб убезпечити його - просто використай своє Скролл-меню на нижній частині Taru всередині укріплення.';
+			_title = 'Ворожий склад';
+			_tooltip = 'Ворожий склад';
 			_icon = 'rearm';
 			[
 				'QS_virtualSectors_sub_3_task',
