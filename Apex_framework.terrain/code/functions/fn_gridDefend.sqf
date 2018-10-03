@@ -13,7 +13,7 @@ Description:
 	-
 ____________________________________________________________________________/*/
 
-['GRID_IG_UPDATE',['Defend','Defend HQ']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['GRID_IG_UPDATE',['Захистити','Захистити Штаб']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_grid_defend_active',TRUE,TRUE];
 missionNamespace setVariable ['QS_grid_defend_AIinit',TRUE,TRUE];
 _playersCount = count allPlayers;
@@ -58,7 +58,7 @@ _taskType = 'defend';
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 [_taskID,TRUE,_endTime] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
-[_taskID,[_taskType,'Defend 1','Defend 2']] call (missionNamespace getVariable 'QS_fnc_taskSetCustomData');
+[_taskID,[_taskType,'Захистити 1','Захистити 2']] call (missionNamespace getVariable 'QS_fnc_taskSetCustomData');
 [_taskID,TRUE,_sectorControl] call (missionNamespace getVariable 'QS_fnc_taskSetProgress');
 _fn_detector = missionNamespace getVariable 'QS_fnc_serverDetector';
 _fn_taskSetProgress = missionNamespace getVariable 'QS_fnc_taskSetProgress';
@@ -86,11 +86,11 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (_sectorControl <= 0) exitWith {
 		//comment 'enemy wins';
-		['GRID_IG_UPDATE',['Defend','Захист провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Захистити','Захист провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	if (_serverTime > _endTime) exitWith {
 		//comment 'friends win';
-		['GRID_IG_UPDATE',['Defend','Захист вдалий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Захистити','Захист вдалий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	uiSleep 2;
 };

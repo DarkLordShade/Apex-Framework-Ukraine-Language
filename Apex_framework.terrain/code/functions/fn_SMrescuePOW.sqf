@@ -1086,7 +1086,7 @@ _QS_fuzzyPos = [((_QS_buildingPosATL select 0) - 290) + (random 580),((_QS_build
 	'heal',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['NewSideMission',['Rescue P.O.W.']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Врятувати полоненого']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 missionNamespace setVariable ['QS_sideMission_POW_active',TRUE,TRUE];
@@ -1119,7 +1119,7 @@ for '_x' from 0 to 1 step 0 do {
 		['QS_IA_TASK_SM_0',FALSE,-1] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 		missionNamespace setVariable ['QS_sideMission_POW_active',FALSE,TRUE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		['ST_MEDEVAC',['POW Mission Failed','The POW has died!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Місію полоненого провалено','Полонений помер!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_sideCircle' setMarkerSize [300,300];
 		{
 			_x setMarkerPos [-5000,-5000,0];
@@ -1176,7 +1176,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_QS_missionComplete) exitWith {
 		['QS_IA_TASK_SM_0',FALSE,-1] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 		missionNamespace setVariable ['QS_sideMission_POW_active',FALSE,TRUE];
-		['ST_MEDEVAC',['Місія полоненого завершена','Полоненого було врятовано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Місію полоненого завершено','Полоненого було врятовано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_sideCircle' setMarkerSize [300,300];
 		{
 			_x setMarkerPos [-5000,-5000,0];

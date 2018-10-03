@@ -121,7 +121,7 @@ if (_state isEqualTo 1) then {
 				['QS_revive_disable',TRUE,TRUE]
 			];
 		};
-		['ST_MEDEVAC',['Medevac','Medevac wounded soldier']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Медична евакуація','Евакуювати пораненого солдата']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		[
 			'QS_IA_TASK_AO_3',
 			TRUE,
@@ -163,7 +163,7 @@ if (_state isEqualTo 2) then {
 	};
 	if (serverTime > _missionDuration) exitWith {
 		//comment 'Mission failure';
-		['ST_MEDEVAC',['Medevac','Евакуацію провалено, солдат не вибрався!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Медична евакуація','Евакуацію провалено, солдат не вибрався!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		_return = [
 			_case,
@@ -177,7 +177,7 @@ if (_state isEqualTo 2) then {
 	};
 	if ((((_unit distance _missionDestination) < 3.5) && (isNull (attachedTo _unit))) || (([0,_unit] call (missionNamespace getVariable 'QS_fnc_isNearFieldHospital')) && (isNull (attachedTo _unit)) && (isNull (objectParent _unit)))) exitWith {
 		//comment 'Mission success';
-		['ST_MEDEVAC',['Medevac','Евакуацію закінчено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Медична евакуація','Евакуацію закінчено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];
@@ -201,7 +201,7 @@ if (_state isEqualTo 2) then {
 	};
 	if (!alive _unit) exitWith {
 		//comment 'Mission failure';
-		['ST_MEDEVAC',['Medevac','Евакуацію провалено, солдат вбитий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Медична евакуація','Евакуацію провалено, солдат вбитий!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		_return = [
 			_case,

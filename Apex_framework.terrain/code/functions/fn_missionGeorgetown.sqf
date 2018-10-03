@@ -864,7 +864,7 @@ private _hiddenTablets = [];
 	TRUE,
 	[
 		(format ['
-			Броньована машина CSAT, що перевозила чутливі стратегічні дані, потрапила в засідку в  Georgetown. У зв’язку з тим, що дані, що перевозились, були кваліфіковано як надзвичайно важливі, ЦЕНТР позначив цю місію найвищим пріоритетом.<br/><br/>
+			Броньована машина CSAT, що перевозила важливі стратегічні дані, потрапила в засідку в  Georgetown. У зв’язку з тим, що дані, що перевозились, були кваліфіковано як надзвичайно важливі, ЦЕНТР позначив цю місію найвищим пріоритетом.<br/><br/>
 
 			Знайдіть броньовик CSAT в Georgetown, в ньому знаходиться трекер, за допомогою якого ви знайдете втрачені дані.<br/><br/>
 
@@ -934,7 +934,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_serverTime > _missionEnd) exitWith {
 		//comment 'Mission failure';
 		['CUSTOM_GEORGETOWN',['','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'Ми забарилися в Georgetown, солдате. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ми забарилися в Georgetown, солдати. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_missionStatus isEqualTo 'SUCCESS') exitWith {
 		//comment 'Mission success';
@@ -1438,7 +1438,7 @@ for '_x' from 0 to 1 step 0 do {
 				TRUE,
 				[
 					(format ['
-						Рухайтесь містов та захопіть %1 частин даних.<br/><br/>
+						Рухайтесь містом та захопіть %1 частин даних.<br/><br/>
 
 						їх розміщення завантажено на вашу мапу (позначено жовтим).<br/><br/>
 
@@ -1470,7 +1470,7 @@ for '_x' from 0 to 1 step 0 do {
 	} else {
 		_hiddenTablets = _missionTablets select {(isObjectHidden _x)};
 		_countTablets = count _hiddenTablets;
-		_intelStateMarker setMarkerText (format ['%1Дані захоплено: %2 / %3',(toString [32,32,32]),_countTablets,_captureThreshold]);
+		_intelStateMarker setMarkerText (format ['%1Даних захоплено: %2 / %3',(toString [32,32,32]),_countTablets,_captureThreshold]);
 		if (_countTablets >= _captureThreshold) then {
 			_missionStatus = 'SUCCESS';
 		};

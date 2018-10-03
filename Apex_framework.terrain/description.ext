@@ -2313,7 +2313,7 @@ class QS_RD_client_dialog_menu_main {
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 			text = "";
-			tooltip = "Score, Rating, Health, Equipment";
+			tooltip = "Рахунок, Рейтинг, Здоров’я, Екiпировка";
 		};
 		class QS_RD_client_dialog_menu_main_text_2: QS_RD_dialog_RscText {
 			moving = 1;
@@ -2325,7 +2325,7 @@ class QS_RD_client_dialog_menu_main {
 			sizeEx = 0.028;
 			shadow = 0;
 			colorText[] = {1,1,1,1};
-			tooltip = "FPS, Time to server restart (estimated)";
+			tooltip = "FPS, Час до рестарту сервера (приблизно)";
 		};
 
 		class QS_RD_client_dialog_menu_main_button_1: QS_RD_dialog_RscButton {
@@ -2440,7 +2440,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 		class QS_RD_client_dialog_menu_view_text_1: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1802;
-			text = "Visibility";
+			text = "Видимiсть";
 			x = 0.374500 * safezoneW + safezoneX;
 			y = 0.525 * safezoneH + safezoneY;
 			w = 0.0955624 * safezoneW;
@@ -2469,7 +2469,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			sizeEx = 0.028;
 			shadow = 0;
 			colorText[] = {1,1,1,1};
-			tooltip = "Health, Equipment load (kg), FPS";
+			tooltip = "Здоров’я, Вага екiпировки (кг), FPS";
 		};
 		class QS_RD_client_dialog_menu_view_button_1: QS_RD_dialog_RscButtonInvisible {
 			moving = 1;
@@ -2481,7 +2481,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			h = 0.0410023 * safezoneH;
 			shadow = 0;
 			onButtonClick = "['onButtonClick',0] call (missionNamespace getVariable 'QS_fnc_clientViewOptions');";
-			tooltip = "Visibility on foot";
+			tooltip = "Видимiсть пiшком";
 		};
 		class QS_RD_client_dialog_menu_view_picture_2: QS_RD_dialog_RscPictureKeepAspect {
 			moving = 1;
@@ -2496,7 +2496,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 		class QS_RD_client_dialog_menu_view_text_2: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1806;
-			text = "Overall";
+			text = "Загалом";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.655 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -2553,7 +2553,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			h = 0.0410023 * safezoneH;
 			shadow = 0;
 			onButtonClick = "['onButtonClick',1] call (missionNamespace getVariable 'QS_fnc_clientViewOptions');";
-			tooltip = "Visibility in land vehicle or boat";
+			tooltip = "Видимiсть в наземному транспортi або в човнах";
 		};
 		class QS_RD_client_dialog_menu_view_picture_3: QS_RD_dialog_RscPictureKeepAspect {
 			moving = 1;
@@ -2625,7 +2625,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			h = 0.0410023 * safezoneH;
 			shadow = 0;
 			onButtonClick = "['onButtonClick',2] call (missionNamespace getVariable 'QS_fnc_clientViewOptions');";
-			tooltip = "Visibility in helicopter";
+			tooltip = "Видимiсть в гелiкоптерах";
 		};
 		class QS_RD_client_dialog_menu_view_picture_4: QS_RD_dialog_RscPictureKeepAspect {
 			moving = 1;
@@ -2640,7 +2640,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 		class QS_RD_client_dialog_menu_view_text_6: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1816;
-			text = "Shadow";
+			text = "Тiнь";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.755 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -2697,7 +2697,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			h = 0.0410023 * safezoneH;
 			shadow = 0;
 			onButtonClick = "['onButtonClick',3] call (missionNamespace getVariable 'QS_fnc_clientViewOptions');";
-			tooltip = "Visibility in plane";
+			tooltip = "Видимiсть в лiтаках";
 		};
 		class QS_RD_client_dialog_menu_view_picture_5: QS_RD_dialog_RscPictureKeepAspect {
 			moving = 1;
@@ -2712,7 +2712,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 		class QS_RD_client_dialog_menu_view_text_8: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1821;
-			text = "Grass";
+			text = "Трава";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.805 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -2727,7 +2727,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 			colorFocused[] = {0,0,0,0};
 			colorShadow[] = {0,0,0,0};
 			colorBorder[] = {0,0,0,0};
-			tooltip = "Terrain resolution. Lower = more detail. Higher = less detail.";
+			tooltip = "Роздiльна здатнiсть землi. Нижче = детальнiше. Вище = менш детально.";
 		};
 		class QS_RD_client_dialog_menu_view_xslider_4 : QS_RD_XSlider {
 			moving = 1;
@@ -2804,7 +2804,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_1: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1802;
-			text = "Options";
+			text = "Опцii";
 			x = 0.374500 * safezoneW + safezoneX;
 			y = 0.525 * safezoneH + safezoneY;
 			w = 0.0955624 * safezoneW;
@@ -2827,8 +2827,8 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_2: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1804;
-			text = "Stamina";
-			tooltip = "ArmA 3 Stamina";
+			text = "Витривалiсть";
+			tooltip = "Витривалiсть ArmA 3";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.59 * safezoneH + safezoneY;
 			w = 0.045 * safezoneW;
@@ -2852,13 +2852,13 @@ class QS_RD_client_dialog_menu_options {
 			y = 0.585 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
-			tooltip = "Click to toggle Stamina";
+			tooltip = "Натиснiть щоб увiмкнути Витривалiсть";
 			onCheckedChanged = "['StaminaCheckbox',_this select 0,_this select 1] call (missionNamespace getVariable 'QS_fnc_clientMenuOptions');";
 		};
 		class QS_RD_client_dialog_menu_options_text_3: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1806;
-			text = "Weapon Sway";
+			text = "Коливання зброi";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.63 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -2873,7 +2873,7 @@ class QS_RD_client_dialog_menu_options {
 			colorFocused[] = {0,0,0,0};
 			colorShadow[] = {0,0,0,0};
 			colorBorder[] = {0,0,0,0};
-			tooltip = "Aim Coefficient";
+			tooltip = "Коефiцiент прицiлювання";
 		};
 		class QS_RD_client_dialog_menu_options_xslider_1 : QS_RD_XSlider {
 			moving = 1;
@@ -2910,7 +2910,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_5: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1809;
-			text = "First-Person";
+			text = "Вид вiд першоi особи";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.695 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -2925,7 +2925,7 @@ class QS_RD_client_dialog_menu_options {
 			colorFocused[] = {0,0,0,0};
 			colorShadow[] = {0,0,0,0};
 			colorBorder[] = {0,0,0,0};
-			tooltip = "Lock to first-person. Can only change once per 20 minutes or by re-connect.";
+			tooltip = "Блокування виду вiд першоi особи.Мозна змiнити раз на 20 хвилин або пiсля реконекту.";
 		};
 		class QS_RD_client_dialog_menu_options_checkbox_2 : QS_RD_RscCheckbox {
 			moving = 1;
@@ -2934,7 +2934,7 @@ class QS_RD_client_dialog_menu_options {
 			y = 0.69 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
-			tooltip = "Toggle First-Person Lock";
+			tooltip = "Перемкнути вид вiд першоi особи";
 			onCheckedChanged = "['1PVCheckbox',(_this select 0),(_this select 1)] spawn (missionNamespace getVariable 'QS_fnc_clientMenuOptions');";
 		};
 		class QS_RD_client_dialog_menu_options_button_1: QS_RD_dialog_RscButton {
@@ -2953,7 +2953,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_6: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1812;
-			text = "Squad Radar";
+			text = "Радар пiдроздiлу";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.735 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -2982,8 +2982,8 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_7: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1814;
-			text = "Ambient Life";
-			tooltip = "Ambient Life (snakes, fish, rabbits) use some CPU calculations. Disabling will slightly raise FPS.";
+			text = "Навколишнє життя";
+			tooltip = "Навколишнє життя (змii, риби, кролi) трохи вiдбирають потожностi CPU. Вiдключення дещу збiльшить FPS.";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.78 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -3006,14 +3006,14 @@ class QS_RD_client_dialog_menu_options {
 			y = 0.775 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
-			tooltip = "Toggle Ambient Life (fish, snakes, rabbits)";
+			tooltip = "Перемкнути Навколишнє життя (змii, риби, кролi)";
 			onCheckedChanged = "['AmbientCheckbox',(_this select 0),(_this select 1)] spawn (missionNamespace getVariable 'QS_fnc_clientMenuOptions');";
 		};
 		class QS_RD_client_dialog_menu_options_text_8: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1816;
-			text = "Dynamic Simulation";
-			tooltip = "Experimental (Use at own risk!). Reduces CPU calculations from distant and non-visible entities. Enabling may raise FPS in some situations. Not available for pilots.";
+			text = "Динамiчна симуляцiя";
+			tooltip = "Експериментально (Використовуйте на власний ризик!). Знижує навантаження на CPU вiд вiддалених та невидимих об’єктiв. Увiмкнення може збiльшити FPS iв деяких ситуяцiях. Не доступно для пiлотiв.";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.825 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -3036,7 +3036,7 @@ class QS_RD_client_dialog_menu_options {
 			y = 0.82 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
-			tooltip = "Toggle Dynamic Simulation";
+			tooltip = "Перемикнути Динамiчну симуляцiю";
 			onCheckedChanged = "['DynSimCheckbox',(_this select 0),(_this select 1)] spawn (missionNamespace getVariable 'QS_fnc_clientMenuOptions');";
 		};
 	};
@@ -3070,7 +3070,7 @@ class QS_RD_client_dialog_menu_supporters {
 		class QS_RD_client_dialog_menu_supporters_text_1: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1802;
-			text = "Area 51";
+			text = "Зона 51";
 			x = 0.374500 * safezoneW + safezoneX;
 			y = 0.525 * safezoneH + safezoneY;
 			w = 0.0955624 * safezoneW;
@@ -3305,7 +3305,7 @@ class QS_RD_client_dialog_menu_wounded {
 			moving = 1;
 			idc = 1000;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-			text = "Revive Menu";
+			text = "Меню Оживлення";
 			font = "RobotoCondensed";
 			SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.05)";
 			shadow = 1;
@@ -3344,7 +3344,7 @@ class QS_RD_client_dialog_menu_wounded {
 		class QS_Menu_Wounded_Text_RespawnAt01: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1003;
-			text = "Respawn at:";
+			text = "Респаун в :";
 			font = "RobotoCondensed";
 			SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 			shadow = 1;
