@@ -28,7 +28,7 @@ __________________________________________________________/*/
 	['QS_diary_radio','Канали радіо'],
 	['QS_diary_roles','Ролі'],
 	['QS_diary_mods','Модифікації'],
-	['QS_diary_teamspeak','Teamspeak'],
+	['QS_diary_teamspeak','Discord'],
 	['QS_diary_leaderboards','Дошка лідерів'],
 	['QS_diary_gitmo','В’язниця'],
 	['QS_diary_fobs','FOB-и (ПОБ-и)'],

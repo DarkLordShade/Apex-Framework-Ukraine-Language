@@ -3,8 +3,8 @@ File: config.sqf
 Author:
 
 	Quiksilver
-	
-Last modified: 
+
+Last modified:
 
 	30/09/2018 A3 1.84 by Quiksilver
 
@@ -72,7 +72,7 @@ if (!isDedicated) exitWith {
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 if ((!((productVersion select 7) isEqualTo 'x64')) && (!((productVersion select 6) isEqualTo 'Linux'))) exitWith {
@@ -86,7 +86,7 @@ if ((!((productVersion select 7) isEqualTo 'x64')) && (!((productVersion select 
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 if (!isFilePatchingEnabled) exitWith {
@@ -100,7 +100,7 @@ if (!isFilePatchingEnabled) exitWith {
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 private _difficultyData = [];
@@ -143,7 +143,7 @@ if (_difficultyInvalid) exitWith {
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 if ((('real_date' callExtension '') isEqualTo '') && (!((productVersion select 6) isEqualTo 'Linux'))) exitWith {
@@ -156,7 +156,7 @@ if ((('real_date' callExtension '') isEqualTo '') && (!((productVersion select 6
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 private _addonActive = FALSE;
@@ -181,7 +181,7 @@ if (!(_addonActive)) exitWith {
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 if (isNil {uiNamespace getVariable 'QS_fnc_serverCommandPassword'}) exitWith {
@@ -194,7 +194,7 @@ if (isNil {uiNamespace getVariable 'QS_fnc_serverCommandPassword'}) exitWith {
 					uisleep 1;
 				};
 			};
-		} 
+		}
 	] remoteExec ['call',-2,TRUE];
 };
 
@@ -285,7 +285,8 @@ _sidesFlagsTextures = [
 ] select (_worldName isEqualTo 'Tanoa');
 _ah = TRUE;
 _flagTextureFriendly = (missionNamespace getVariable ['QS_missionConfig_textures_defaultFlag','a3\data_f\flags\flag_nato_co.paa']);
-_teamspeak = '-teamspeak address-    Password:   -teamspeak password-';
+// _teamspeak = '-teamspeak address-    Password:   -teamspeak password-';
+_teamspeak = '-Discord address-  ';
 _website = '-website-';
 private _sectorAreaObjects = [];
 if ((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'SC') then {
@@ -1154,7 +1155,7 @@ if (isNil {profileNamespace getVariable (format ['QS_QRF_date_%1',worldName])}) 
 	if (!isNil {profileNamespace getVariable (format ['QS_QRF_date_%1',worldName])}) then {
 		_QS_date = profileNamespace getVariable (format ['QS_QRF_date_%1',worldName]);
 		setDate _QS_date;
-		profileNamespace setVariable [(format ['QS_QRF_date_%1',worldName]),_QS_date]; 
+		profileNamespace setVariable [(format ['QS_QRF_date_%1',worldName]),_QS_date];
 		saveProfileNamespace;
 	};
 };
@@ -1208,5 +1209,5 @@ missionNamespace setVariable ['QS_mission_init',TRUE,FALSE];
 } count [
 	'*****************************************************************************',
 	'************************* Server Config Complete ****************************',
-	'*****************************************************************************'	
+	'*****************************************************************************'
 ];
