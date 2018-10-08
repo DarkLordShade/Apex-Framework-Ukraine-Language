@@ -54,7 +54,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 
 	(_display displayCtrl 1806) ctrlSetText 'Налаштування радiо';
 	(_display displayCtrl 1806) ctrlEnable TRUE;
-	(_display displayCtrl 1807) ctrlSetText 'Нелештування груп';
+	(_display displayCtrl 1807) ctrlSetText 'Налаштування груп';
 	(_display displayCtrl 1807) ctrlEnable TRUE;
 	(_display displayCtrl 1808) ctrlEnable FALSE;
 	(_display displayCtrl 1810) ctrlEnable TRUE;
