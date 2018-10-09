@@ -1,22 +1,22 @@
-/*/
-File: fn_clientEventKeyDown.sqf
+/*/ 
+File: fn_clientEventKeyDown.sqf 
 Author:
+	
+	Quiksilver 	 
+	
+Last Modified:  	
 
-	Quiksilver
+	9/10/2018 A3 1.84 by Quiksilver  
+	
+Description:  	
 
-Last Modified:
-
-	15/08/2018 A3 1.84 by Quiksilver
-
-Description:
-
-	Client Event Key Down
-__________________________________________________________/*/
+	Client Event Key Down 
+__________________________________________________________/*/  
 
 params ['','_key','_shift','_ctrl','_alt'];
-private _c = FALSE;
-player setVariable ['QS_client_afkTimeout',time,FALSE];
-if (_key isEqualTo 5) then {
+private _c = FALSE; 
+player setVariable ['QS_client_afkTimeout',time,FALSE]; 
+if (_key isEqualTo 5) then { 	
 	if (commandingMenu isEqualTo '') then {
 		if (isNull (objectParent player)) then {
 			if (isNull (attachedTo player)) then {
@@ -170,7 +170,7 @@ if (_key in (actionKeys 'ReloadMagazine')) then {
 	};
 };
 if (_key in (actionKeys 'VehLockTargets')) then {};
-if (_key in (actionKeys 'Zeus')) then {};
+if (_key in (actionKeys 'Zeus')) then {}; 
 if (_ctrl) then {
 	if (_key in [0x4C,0x4B,0x47,0x48,0x49,0x4D,0x51]) then {
 		if (isNull (objectParent player)) then {
@@ -240,10 +240,10 @@ if (_key isEqualTo 15) then {
 				player setVariable ['QS_pilot_rappellSafety',TRUE,FALSE];
 				if (isNil {(vehicle player) getVariable 'QS_rappellSafety'}) then {
 					(vehicle player) setVariable ['QS_rappellSafety',TRUE,TRUE];
-					50 cutText ['Швидкий спуск канатом вимкнено','PLAIN DOWN',1];
+					50 cutText ['Швидкий спуск вимкнено','PLAIN DOWN',1];
 				} else {
 					(vehicle player) setVariable ['QS_rappellSafety',nil,TRUE];
-					50 cutText ['Швидкий спуск канатом увімкнуто','PLAIN DOWN',1];
+					50 cutText ['Швидкий спуск увімкнуто','PLAIN DOWN',1];
 				};
 				0 spawn {
 					uiSleep 4.5;
@@ -428,6 +428,11 @@ if (_key in (actionKeys 'help')) then {
 				};
 			};
 		};
+		_c = TRUE;
+	};
+};
+if (_key in (actionKeys 'deployWeaponAuto')) then {
+	if (!((lifeState player) in ['HEALTHY','INJURED'])) then {
 		_c = TRUE;
 	};
 };
