@@ -1,3 +1,5 @@
+PRE: Місії в цьому репозиторії перекладено українською мовою! Встановити за інструкцією нижче та грати.
+
 Apex Framework 1.1.1 "Encore" by Quiksilver       ( armacombatgroup@gmail.com ) ( https://www.patreon.com/QS )
 
 Support
