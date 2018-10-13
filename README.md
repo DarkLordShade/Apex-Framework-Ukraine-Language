@@ -1,6 +1,6 @@
 PRE: Місії в цьому репозиторії перекладено українською мовою! Встановити за інструкцією нижче та грати.
 
-Apex Framework 1.1.1 "Encore" by Quiksilver       ( armacombatgroup@gmail.com ) ( https://www.patreon.com/QS )
+Apex Framework 1.1.2 "Encore" by Quiksilver       ( armacombatgroup@gmail.com ) ( https://www.patreon.com/QS )
 
 Support
 
@@ -54,11 +54,11 @@ class Missions {
 
   class apex_framework {
 
-    template="Apex_framework_111.Altis";
+    template="Apex_framework_112.Altis";
 
-    //template="Apex_framework_111.Tanoa";
+    //template="Apex_framework_112.Tanoa";
 
-    //template="Apex_framework_111.Malden";
+    //template="Apex_framework_112.Malden";
 
     difficulty="Custom";
 
@@ -68,7 +68,7 @@ class Missions {
 
 ```
 forcedDifficulty = "Custom";
-missionWhitelist[] = {"Apex_framework_111.Altis","Apex_framework_111.Tanoa","Apex_framework_111.Malden"};
+missionWhitelist[] = {"Apex_framework_112.Altis","Apex_framework_112.Tanoa","Apex_framework_112.Malden"};
 ```
 
 --------------------------

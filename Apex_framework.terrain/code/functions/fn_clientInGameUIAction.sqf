@@ -3,13 +3,13 @@ File: fn_clientInGameUIAction.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
-	5/05/2018 A3 1.82 by Quiksilver
-
+	12/10/2018 A3 1.84 by Quiksilver
+	
 Description:
-
+	
 	-
 ______________________________________________/*/
 
@@ -95,8 +95,54 @@ if (_QS_actionName isEqualTo 'HealSoldier') exitWith {
 		50 cutText ['Його не можна лікувати','PLAIN DOWN'];
 	};
 	if (!(_QS_c)) then {
+		_QS_c = TRUE;
 		if (isPlayer _QS_actionTarget) then {
 			[63,[5,[(format ['Вас лікує %1',profileName]),'PLAIN DOWN',0.5]]] remoteExec ['QS_fnc_remoteExec',_QS_actionTarget,FALSE];
+		};
+		player setVariable ['QS_treat_entryAnim',(animationState player),FALSE];
+		player setVariable ['QS_treat_target',_QS_actionTarget,FALSE];
+		_animEvent = player addEventHandler [
+			'AnimDone',
+			{
+				params ['_unit','_anim'];
+				if (['medicdummyend',_anim,false] call (missionNamespace getVariable 'QS_fnc_inString')) then {
+					if ((lifeState _unit) in ['HEALTHY','INJURED']) then {
+						_target = _unit getVariable ['QS_treat_target',objNull];
+						if (!isNull _target) then {
+							if (((_target distance _unit) <= 2.5) && (isNull (objectParent _target)) && ((lifeState _target) in ['HEALTHY','INJURED'])) then {
+								_unit removeItem 'FirstAidKit';
+								_target setDamage [([0.25,0] select (_unit getUnitTrait 'medic')),TRUE];
+							};
+						};
+					};
+					if (!isNull (_unit getVariable ['QS_treat_target',objNull])) then {
+						_unit setVariable ['QS_treat_target',objNull,FALSE];
+					};
+				};
+			}
+		];
+		player playActionNow 'MedicOther';
+		[_QS_actionTarget,_animEvent] spawn {
+			params ['_injured','_animEvent'];
+			_timeout = diag_tickTime + 10;
+			uiSleep 0.5;
+			waitUntil {
+				uiSleep 0.05;
+				((isNull (player getVariable 'QS_treat_target')) || {(!((lifeState player) in ['HEALTHY','INJURED']))} || {(diag_tickTime > _timeout)} || {((_injured distance player) > 2.5)})
+			};
+			if ((_injured distance player) > 2.5) then {
+				player setVariable ['QS_treat_target',objNull,FALSE];
+				if ((lifeState player) in ['HEALTHY','INJURED']) then {
+					_nearbyPlayers = allPlayers inAreaArray [player,100,100,0,FALSE,-1];
+					if (!(_nearbyPlayers isEqualTo [])) then {
+						['switchMove',player,(player getVariable ['QS_treat_entryAnim',''])] remoteExec ['QS_fnc_remoteExecCmd',_nearbyPlayers,FALSE];
+					};
+				};
+			};
+			if (!isNull (player getVariable 'QS_treat_target')) then {
+				player setVariable ['QS_treat_target',objNull,FALSE];
+			};
+			player removeEventHandler ['AnimDone',_animEvent];
 		};
 	};
 	_QS_c;
@@ -156,7 +202,7 @@ if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
-	_QS_c;
+	_QS_c;	
 };
 if (_QS_actionName isEqualTo 'StartTimer') exitWith {
 
@@ -166,7 +212,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 		if (player isEqualTo (driver (vehicle player))) then {
 			_QS_c = TRUE;
 			0 spawn {
-				private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+				private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
 				if (_result) then {
 					player action ['eject',(vehicle player)];
 				};
@@ -176,7 +222,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 				if (((vectorMagnitude (velocity (vehicle player))) * 3.6) > 25) then {
 					_QS_c = TRUE;
 					0 spawn {
-						private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+						private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
 						if (_result) then {
 							player action ['eject',(vehicle player)];
 						};
@@ -558,7 +604,7 @@ if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (!isNull (isVehicleCargo _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити цього разу','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
-
+		
 	};
 	if (surfaceIsWater (getPosWorld _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити це тут','PLAIN DOWN',0.5];

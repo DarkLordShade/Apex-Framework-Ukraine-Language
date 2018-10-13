@@ -3,10 +3,11 @@ File: fn_clientCore.sqf
 Author:
 
 	Quiksilver
-
+	
 Last Modified:
 
-	22/08/2018 A3 1.84 by Quiksilver
+	10/10/2018 A3 1.84 by Quiksilver
+	
 Description:
 
 	Client Core
@@ -72,7 +73,7 @@ private [
 	'_opsec_actionCondition','_opsec_actionRadius','_opsec_actionUnconscious','_opsec_actionTextWindowB','_opsec_actionTextWindowF','_opsec_actionIDs',
 	'_opsec_actionParams','_opsec_actionWhitelist','_nearCargoVehicles','_QS_action_loadCargo','_QS_action_loadCargo_text','_QS_action_loadCargo_array',
 	'_QS_interaction_loadCargo','_QS_action_loadCargo_vTypes','_QS_action_loadCargo_cargoTypes','_QS_action_loadCargo_validated','_QS_action_loadCargo_vehicle','_thermalsEnabled','_QS_module_revealPlayers',
-	'_QS_module_revealPlayers_delay','_QS_module_revealPlayers_checkDelay','_QS_lbRank','_QS_modelInfoPlayer','_QS_rappelling','_QS_action_rappelSelf','_QS_action_rappelSelf_text','_QS_action_rappelSelf_array',
+	'_QS_module_revealPlayers_delay','_QS_module_revealPlayers_checkDelay','_QS_modelInfoPlayer','_QS_rappelling','_QS_action_rappelSelf','_QS_action_rappelSelf_text','_QS_action_rappelSelf_array',
 	'_QS_action_rappelAI','_QS_action_rappelAI_text','_QS_action_rappelAI_array','_QS_action_rappelDetach','_QS_action_rappelDetach_text','_QS_action_rappelDetach_array','_QS_interaction_rappelSelf',
 	'_QS_interaction_rappelAI','_QS_interaction_rappelDetach','_commandingMenu','_kicked','_QS_module_opsec_memCheck_script','_QS_objectTypePlayer','_QS_action_sit_chairModels','_QS_action_rappelSafety',
 	'_QS_action_rappelSafety_textDisable','_QS_action_rappelSafety_textEnable','_QS_action_rappelSafety_array','_QS_interaction_rappelSafety','_QS_arsenal_model','_QS_resolution','_QS_module_opsec_displays_default',
@@ -261,7 +262,7 @@ if (_revalidate) then {
 				[TRUE,TRUE,FALSE,FALSE]
 			],
 			FALSE
-		];
+		];	
 	};
 	profileNamespace setVariable [_QS_viewSettings_var,(player getVariable _QS_viewSettings_var)];
 	saveProfileNamespace;
@@ -335,7 +336,7 @@ _QS_interaction_respawnVehicle = FALSE;
 _QS_action_respawnVehicle = nil;
 _QS_action_respawnVehicle_text = 'Респаун транспорту';
 _QS_action_respawnVehicle_array = [_QS_action_respawnVehicle_text,{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractRespawnVehicle')},[],-80,FALSE,TRUE,'','TRUE',-1,FALSE,''];
-_QS_interaction_vehDoors = FALSE;
+_QS_interaction_vehDoors = FALSE;				
 _QS_action_vehDoors = nil;
 _QS_action_vehDoors_textOpen = 'Відкрити двері для вантажів';
 _QS_action_vehDoors_textClose = 'Закрити двері для вантажів';
@@ -566,12 +567,10 @@ _QS_ugv = objNull;
 _QS_ugvTow = objNull;
 _QS_action_ugv_stretcherModel = 'a3\props_f_orange\humanitarian\camps\stretcher_01_f.p3d';
 _QS_action_ugvLoad = nil;
-//Load
 _QS_action_ugvLoad_text = 'Завантажити';
 _QS_action_ugvLoad_array = [_QS_action_ugvLoad_text,{(_this select 3) spawn (missionNamespace getVariable 'QS_fnc_clientInteractUGV');},[_QS_ugv,4],50,TRUE,TRUE,'','TRUE',-1,FALSE,''];
 _QS_interaction_ugvLoad = FALSE;
 _QS_action_ugvUnload = nil;
-//unload
 _QS_action_ugvUnload_text = 'Вивантажити';
 _QS_action_ugvUnload_array = [_QS_action_ugvUnload_text,{(_this select 3) spawn (missionNamespace getVariable 'QS_fnc_clientInteractUGV');},[_QS_ugv,5],50,TRUE,TRUE,'','TRUE',-1,FALSE,''];
 _QS_interaction_ugvUnload = FALSE;
@@ -579,7 +578,6 @@ _QS_interaction_serviceDrone = FALSE;
 _QS_interaction_towUGV = FALSE;
 _QS_action_towUGV = nil;
 _QS_action_uavSelfDestruct = nil;
-//Self destruct
 _QS_action_uavSelfDestruct_text = 'Самознищення';
 _QS_action_uavSelfDestruct_array = [_QS_action_uavSelfDestruct_text,{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractUAVSelfDestruct')},nil,-20,FALSE,TRUE,'','TRUE',-1,FALSE,''];
 _QS_interaction_uavSelfDestruct = FALSE;
@@ -964,16 +962,6 @@ _QS_module_leaderboards = TRUE;
 _QS_module_leaderboards_delay = 5;
 _QS_module_leaderboards_checkDelay = _timeNow + _QS_module_leaderboards_delay;
 _QS_module_leaderboards_pilots = TRUE;
-if (_iAmPilot) then {
-	_QS_lbRank = [player,'TRANSPORT'] call (missionNamespace getVariable 'QS_fnc_clientGetLBRank');
-	if (_QS_lbRank isEqualTo 9999) then {
-		_QS_lbRank = 0;
-	};
-	player setVariable ['QS_IA_PP',_QS_lbRank,TRUE];
-	player setVariable ['QS_IA_PP_loadedAtBase',[],TRUE];
-	player setVariable ['QS_IA_PP_loadedAtMission',[],TRUE];
-	player setVariable ['QS_IA_PP_loadedInField',[],TRUE];
-};
 /*/Register Leaderboard/*/
 [45,[player,_puid,(player getUnitTrait 'medic'),(player getUnitTrait 'QS_trait_pilot')]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 /*/===== Difficulties propagation/*/
@@ -1173,7 +1161,7 @@ if (_QS_module_opsec) then {
 	_QS_module_opsec_detected = 0;
 	_detected = '';
 	_QS_module_opsec_chatIntercept_IDD = 24;
-	_QS_module_opsec_chatIntercept_IDC = 101;
+	_QS_module_opsec_chatIntercept_IDC = 101; 
 	_QS_module_opsec_chatIntercept_script = scriptNull;
 	_QS_module_opsec_chatIntercept_code = {
 		disableSerialization;
@@ -1268,7 +1256,7 @@ if (_QS_module_opsec) then {
 				if (_canSuspend) then {
 					uiSleep 0.01;
 				};
-			} forEach (_this select 5);
+			} forEach (_this select 5);		
 		};
 		if (_type isEqualTo 'MissionDisplay') then {
 			{
@@ -1285,7 +1273,7 @@ if (_QS_module_opsec) then {
 				if (_canSuspend) then {
 					uiSleep 0.01;
 				};
-			} forEach (_this select 5);
+			} forEach (_this select 5);		
 		};
 		if (_type isEqualTo 'RscTitles') then {
 			{
@@ -1319,7 +1307,7 @@ if (_QS_module_opsec) then {
 				if (_canSuspend) then {
 					uiSleep 0.01;
 				};
-			} forEach (_this select 5);
+			} forEach (_this select 5);		
 		};
 		if (!(_QS_module_opsec_detected isEqualTo 0)) then {
 			[
@@ -1529,7 +1517,7 @@ if (_QS_module_opsec) then {
 				_detected,
 				player,
 				_QS_productVersion
-			]
+			]		
 		] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 	};
 } else {
@@ -1611,7 +1599,7 @@ if (!((damage player) isEqualTo 0)) then {
 [(((player getVariable _QS_viewSettings_var) select 0) select 0)] spawn {
 	scriptName 'QS - Ramp View Distance';
 	_targetViewDistance = _this select 0;
-	for '_x' from 0 to 1 step 0 do {
+	for '_x' from 0 to 1 step 0 do { 
 		setViewDistance (viewDistance + 1);
 		uiSleep 0.004;
 		if (viewDistance >= _targetViewDistance) exitWith {};
@@ -1805,7 +1793,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-
+	
 	if (_QS_module_liveFeed) then {
 		if (_timeNow > _QS_module_liveFeed_checkDelay) then {
 			if (_QS_player getVariable ['QS_RD_client_liveFeed',_false]) then {
@@ -1860,9 +1848,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_liveFeed_checkDelay = _timeNow + _QS_module_liveFeed_delay;
 		};
 	};
-
+	
 	/*/===== View Distance/*/
-
+	
 	if (_QS_module_viewSettings) then {
 		if (scriptDone _deltaVD_script) then {
 			if ((!(cameraOn isEqualTo _QS_cameraOn)) || {(player getVariable ['QS_RD_viewSettings_update',_false])}) then {
@@ -1907,7 +1895,7 @@ for '_x' from 0 to 1 step 0 do {
 							if (!(_terrainGrid isEqualTo ((_clientViewSettings select 3) select 0))) then {
 								setTerrainGrid ((_clientViewSettings select 3) select 0);
 							};
-						} else {
+						} else {	
 							if ((_QS_cameraOn isKindOf 'LandVehicle') || {(_QS_cameraOn isKindOf 'Ship')}) then {
 								if (!(_viewDistance isEqualTo ((_clientViewSettings select 0) select 1))) then {
 									if (_fadeView) then {
@@ -2024,9 +2012,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-
+	
 	/*/===== Action Manager/*/
-
+	
 	if (alive _QS_player) then {
 		if ((lifeState _QS_player) in ['HEALTHY','INJURED']) then {
 			_cursorTarget = cursorTarget;
@@ -3156,7 +3144,7 @@ for '_x' from 0 to 1 step 0 do {
 						_QS_ugv = _QS_cO;
 					};
 					if (({(_x isKindOf 'CAManBase')} count (attachedObjects _QS_cO)) < ({((toLower ((getModelInfo _x) select 1)) isEqualTo _QS_action_ugv_stretcherModel)} count (attachedObjects _QS_cO))) then {
-						_listOfFrontStuff = ((_QS_cO getRelPos [3,0]) nearEntities ['CAManBase',3]) select {(((lifeState _x) isEqualTo 'INCAPACITATED') && (isNull (attachedTo _x)) && (isNull (objectParent _x)) && (!(_x getVariable ['QS_unit_needsStabilise',FALSE])))};	/*/unit needs to be stabilised first?/*/
+						_listOfFrontStuff = ((_QS_cO getRelPos [3,0]) nearEntities ['CAManBase',3]) select {(((lifeState _x) isEqualTo 'INCAPACITATED') && (isNull (attachedTo _x)) && (isNull (objectParent _x)) && (!(_x getVariable ['QS_unit_needsStabilise',_false])))};	/*/unit needs to be stabilised first?/*/
 						if (!(_listOfFrontStuff isEqualTo [])) then {
 							if (!(_QS_interaction_ugvLoad)) then {
 								_QS_interaction_ugvLoad = _true;
@@ -3795,7 +3783,7 @@ for '_x' from 0 to 1 step 0 do {
 						if (((attachedObjects _QS_player) findIf {(!isNull _x)}) isEqualTo -1) then {
 							player setVariable ['QS_RD_dragging',_false,_true];
 							player setVariable ['QS_RD_interacting',_false,_true];
-							_QS_player playAction 'released';
+							_QS_player playAction 'released';						
 						} else {
 							{
 								if (!isNull _x) then {
@@ -3812,7 +3800,6 @@ for '_x' from 0 to 1 step 0 do {
 										};
 									};
 								};
-
 							} count (attachedObjects _QS_player);
 						};
 					};
@@ -3820,7 +3807,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-
+	
 	/*/========== Fuel consumption module/*/
 
 	if (_QS_module_fuelConsumption) then {
@@ -3867,9 +3854,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_fuelConsumption_checkDelay = time + _QS_module_fuelConsumption_delay;
 		};
 	};
-
+	
 	/*/========== Vehicle manifest display/*/
-
+	
 	if (_QS_module_crewIndicator) then {
 		if (_timeNow > _QS_module_crewIndicator_checkDelay) then {
 			if (
@@ -3951,7 +3938,7 @@ for '_x' from 0 to 1 step 0 do {
 							_QS_crewIndicatorIDD cutText ['','PLAIN'];
 						};
 					};
-				};
+				};			
 			} else {
 				if (_QS_crewIndicator_shown) then {
 					_QS_crewIndicator_shown = _false;
@@ -3961,16 +3948,16 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_crewIndicator_checkDelay = _timeNow + _QS_module_crewIndicator_delay;
 		};
 	};
-
+	
 	if (_QS_module_gearManager) then {
 		if (missionNamespace getVariable ['QS_client_triggerGearCheck',_false]) then {
 			missionNamespace setVariable ['QS_client_triggerGearCheck',_false,_false];
 			[_QS_player,_arsenalType,_arsenalData] call _fn_gearRestrictions;
 		};
 	};
-
+	
 	/*/========== Base safezone module/*/
-
+	
 	if (_QS_module_safezone) then {
 		if (_timeNow > _QS_module_safezone_checkDelay) then {
 			_allPlayers = allPlayers;
@@ -3999,7 +3986,7 @@ for '_x' from 0 to 1 step 0 do {
 							_QS_module_safezone_speedlimit_event = addMissionEventHandler ['EachFrame',_QS_module_safezone_speedlimit_code];
 						};
 					};
-				};
+				};	
 			} else {
 				if (_QS_module_safezone_isInSafezone) then {
 					_QS_module_safezone_isInSafezone = _false;
@@ -4019,9 +4006,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_safezone_checkDelay = _timeNow + _QS_module_safezone_delay;
 		};
 	};
-
+	
 	/*/=========== CLIENT RATING MANAGER/*/
-
+	
 	if (_QS_clientRatingManager) then {
 		if (_timeNow > _QS_clientRatingManager_delay) then {
 			if ((rating _QS_player) < 0) then {
@@ -4030,9 +4017,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_clientRatingManager_delay = _timeNow + 5;
 		};
 	};
-
+	
 	/*/=========== CLIENT RANK MANAGER /*/
-
+	
 	if (_QS_clientRankManager) then {
 		if (_timeNow > _QS_clientRankManager_delay) then {
 			if (_QS_player isEqualTo (leader (group _QS_player))) then {
@@ -4053,7 +4040,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_clientRankManager_delay = _timeNow + 10;
 		};
 	};
-
+	
 	/*/=========== CLIENT GROUP MANAGER /*/
 
 	if (_QS_clientDynamicGroups) then {
@@ -4080,7 +4067,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-
+	
 	/*/=========== ROBOCOP /*/
 
 	if (_QS_clientATManager) then {
@@ -4211,9 +4198,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_clientATManager_delay = _timeNow + 5;
 		};
 	};
-
+	
 	/*/========== 3PV/*/
-
+	
 	if (cameraView isEqualTo 'EXTERNAL') then {
 		if (!isNull _QS_cO) then {
 			if ((side _QS_cO) in _enemysides) then {
@@ -4228,9 +4215,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-
+	
 	/*/========== Boot non-pilots out of pilot seats where necessary/*/
-
+	
 	if (_pilotCheck) then {
 		if ((count _allPlayers) > 20) then {
 			if (_QS_v2 isKindOf 'Air') then {
@@ -4256,7 +4243,7 @@ for '_x' from 0 to 1 step 0 do {
 								if (!(player getUnitTrait 'QS_trait_pilot')) then {
 									if (((getPosATL _QS_v2) select 2) < 5) then {
 										moveOut _QS_player;
-										_playerClassDName spawn {
+										_playerClassDName spawn { 
 											uiSleep 2;
 											_role = getText (configFile >> 'CfgVehicles' >> _this >> 'displayName');
 											systemChat format ['Ви не пілот. Грайте свою роль (***** %1 *****) або оберіть потрібну!',_role];
@@ -4269,7 +4256,7 @@ for '_x' from 0 to 1 step 0 do {
 				};
 			};
 			/*/===== Pilot babysitter/*/
-
+			
 			if (_QS_pilotBabysitter) then {
 				if ((count _allPlayers) >= 30) then {
 					if (_iAmPilot) then {
@@ -4282,7 +4269,7 @@ for '_x' from 0 to 1 step 0 do {
 										forceRespawn player;
 									} else {
 										if (_QS_currentTimeOnGround > _QS_warningTimeOnGround) then {
-											(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Ви пілот. Будь ласка, грайте свою роль або оберіть іншу. На сервері більше 30 гравців, будь ласка, відродіться, якщо своєчасний евакуація недоступна.',[],(serverTime + 20),_true,'Обмеження ролі',_false];
+											(missionNamespace getVariable 'QS_managed_hints') pushBack [5,_false,10,-1,'Ви пілот. Будь ласка, грайте свою роль або оберіть іншу. На сервері більше 30 гравців, будь ласка, відродіться, якщо своєчасний евакуація недоступна.',[],(serverTime + 20),_true,'Обмеження ролі',_false];
 										};
 									};
 								} else {
@@ -4300,26 +4287,26 @@ for '_x' from 0 to 1 step 0 do {
 					if ((_timeNow - _QS_afkTimer) >= (player getVariable 'QS_client_afkTimeout')) then {
 						if (!(_QS_isAdmin)) then {
 							if (!(_kicked)) then {
-								_kicked = TRUE;
+								_kicked = _true;
 								with uiNamespace do {
 									0 spawn {
 										[
 											'Авто-кік за таймаут AFK.',
 											'Robocop',
-											TRUE,
-											FALSE,
-											(findDisplay 46),
-											FALSE,
-											FALSE
+											TRUE, 
+											FALSE, 
+											(findDisplay 46), 
+											FALSE, 
+											FALSE 
 										] call (missionNamespace getVariable 'BIS_fnc_GUImessage');
 									};
 								};
-								[33,_QS_clientOwner,_profileName] remoteExec ['QS_fnc_remoteExec',2,FALSE];
+								[33,_QS_clientOwner,_profileName] remoteExec ['QS_fnc_remoteExec',2,_false];
 							};
 						};
 					} else {
 						if (!(_QS_posWorldPlayer isEqualTo _QS_afkTimer_playerPos)) then {
-							player setVariable ['QS_client_afkTimeout',time,FALSE];
+							player setVariable ['QS_client_afkTimeout',time,_false];
 							_QS_afkTimer_playerPos = _QS_posWorldPlayer;
 						};
 					};
@@ -4329,21 +4316,21 @@ for '_x' from 0 to 1 step 0 do {
 	};
 
 	/*/===== Bobcat cleanup module/*/
-
+	
 	if (_QS_v2TypeL in ['b_apc_tracked_01_crv_f','b_t_apc_tracked_01_crv_f']) then {
 		if (_QS_player isEqualTo (driver _QS_v2)) then {
 			if ((_QS_v2 animationSourcePhase 'MovePlow') isEqualTo 1) then {
 				_posInFront = _QS_v2 modelToWorld [0,6,0];
 				_listOfFrontStuff = _posInFront nearObjects ['All',4];
 				_array = lineIntersectsSurfaces [
-					(_QS_v2 modelToWorldWorld (_QS_v2 selectionPosition 'plow')),
-					(AGLToASL _posInFront),
-					_QS_v2,
-					_objNull,
-					_true,
-					-1,
-					'GEOM',
-					'VIEW',
+					(_QS_v2 modelToWorldWorld (_QS_v2 selectionPosition 'plow')), 
+					(AGLToASL _posInFront), 
+					_QS_v2, 
+					_objNull, 
+					_true, 
+					-1, 
+					'GEOM', 
+					'VIEW', 
 					_true
 				];
 				{
@@ -4400,17 +4387,11 @@ for '_x' from 0 to 1 step 0 do {
 	};
 
 	/*/===== Leaderboards module/*/
-
+	
 	if (_QS_module_leaderboards) then {
 		if (_timeNow > _QS_module_leaderboards_checkDelay) then {
-
-			/*/===== Pilot scoring/*/
-
 			if (_QS_module_leaderboards_pilots) then {
 				if (_iAmPilot) then {
-
-					/*/===== Is advanced flight model enabled?/*/
-
 					_difficultyEnabledRTD = difficultyEnabledRTD;
 					if (!((player getVariable 'QS_PP_difficultyEnabledRTD') select 0)) then {
 						if (_timeNow > ((player getVariable 'QS_PP_difficultyEnabledRTD') select 1)) then {
@@ -4421,39 +4402,27 @@ for '_x' from 0 to 1 step 0 do {
 							player setVariable ['QS_PP_difficultyEnabledRTD',[_difficultyEnabledRTD,(_timeNow + 900)],_true];
 						};
 					};
-
-					_loadedAtBase = player getVariable 'QS_IA_PP_loadedAtBase';
+					/*/
+					_loadedAtBase = player getVariable ['QS_IA_PP_loadedAtBase',[]];
 					if (!(_loadedAtBase isEqualTo [])) then {
-						{
-							if ((isNull _x) || {(!alive _x)}) then {
-								_newArray = (player getVariable 'QS_IA_PP_loadedAtBase') - [_x];
-							};
-						} count _loadedAtBase;
-						player setVariable ['QS_IA_PP_loadedAtBase',_newArray,_true];
+						_loadedAtBase = _loadedAtBase select {(alive _x)};
+						player setVariable ['QS_IA_PP_loadedAtBase',(_loadedAtBase select {(alive _x)}),_true];
 					};
-					_loadedAtMission = player getVariable 'QS_IA_PP_loadedAtMission';
+					_loadedAtMission = player getVariable ['QS_IA_PP_loadedAtMission',[]];
 					if (!(_loadedAtMission isEqualTo [])) then {
-						{
-							if ((isNull _x) || {(!alive _x)}) then {
-								_newArray = (player getVariable 'QS_IA_PP_loadedAtMission') - [_x];
-							};
-						} count _loadedAtMission;
-						player setVariable ['QS_IA_PP_loadedAtMission',_newArray,_true];
+						_loadedAtMission = _loadedAtMission select {(alive _x)};
+						player setVariable ['QS_IA_PP_loadedAtMission',(_loadedAtMission select {(alive _x)}),_true];
 					};
-					_loadedInField = player getVariable 'QS_IA_PP_loadedInField';
+					_loadedInField = player getVariable ['QS_IA_PP_loadedInField',[]];
 					if (!(_loadedInField isEqualTo [])) then {
-						{
-							if ((isNull _x) || {(!alive _x)}) then {
-								_newArray = (player getVariable 'QS_IA_PP_loadedInField') - [_x];
-							};
-						} count _loadedInField;
-						player setVariable ['QS_IA_PP_loadedInField',_newArray,_true];
+						player setVariable ['QS_IA_PP_loadedInField',(_loadedInField select {(alive _x)}),_true];
 					};
+					/*/
 				};
 			};
 			_QS_module_leaderboards_checkDelay = _timeNow + _QS_module_leaderboards_delay;
 		};
-
+		
 		if (_QS_reportDifficulty) then {
 			if (_timeNow > _QS_reportDifficulty_checkDelay) then {
 				if (!((primaryWeapon _QS_player) isEqualTo '')) then {
@@ -4489,7 +4458,7 @@ for '_x' from 0 to 1 step 0 do {
 				};
 				_QS_reportDifficulty_checkDelay = _timeNow + _QS_reportDifficulty_delay;
 			};
-		};
+		};		
 	};
 
 	/*/========== Animation state manager/*/
@@ -4538,7 +4507,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_animState_checkDelay = _timeNow + _QS_module_animState_delay;
 		};
 	};
-
+	
 	/*/========== HUD Manager/*/
 
 	if (_QS_module_manageHUD) then {
@@ -4559,7 +4528,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 
 	/*/========== Texture Manager/*/
-
+	
 	if (_QS_module_texture) then {
 		if (_timeNow > _QS_module_texture_checkDelay) then {
 			if (!((player getVariable 'QS_ClientUnitInsignia2') isEqualTo '#(argb,8,8,3)color(0,0,0,0)')) then {
@@ -4582,9 +4551,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_texture_checkDelay = _timeNow + _QS_module_texture_delay;
 		};
 	};
-
+	
 	/*/========== Map scale manager/*/
-
+	
 	if (visibleMap) then {
 		if ((ctrlMapScale ((findDisplay 12) displayCtrl 51)) < 0.07) then {
 			{
@@ -4600,9 +4569,9 @@ for '_x' from 0 to 1 step 0 do {
 			} count _baseMarkers;
 		};
 	};
-
+	
 	/*/========== HandleHeal Handler/*/
-
+	
 	if (_QS_module_handleHeal) then {
 		if (_timeNow > _QS_module_handleHeal_checkDelay) then {
 			if (!(((units (group _QS_player)) findIf {(!isPlayer _x)}) isEqualTo -1)) then {
@@ -4630,9 +4599,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_handleHeal_checkDelay = _timeNow + _QS_module_handleHeal_delay;
 		};
 	};
-
+	
 	/*/========== Radio Channel Manager /*/
-
+	
 	if (_QS_module_radioChannelManager) then {
 		if (_timeNow > _QS_module_radioChannelManager_checkDelay) then {
 			if ((missionNamespace getVariable 'QS_client_radioChannels_dynamic') select 0) then {
@@ -4691,7 +4660,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (currentChannel isEqualTo 6) then {
 			if (!isNull (findDisplay 55)) then {
 				if (!(_puid in (['ALL'] call _fn_uidStaff))) then {
-					50 cutText ['Використовуйте загальний канал для загального голосового звязку.  Нажміть [Home] >> [Comm-Link] >> [Radio Management] щоб підписатися.','PLAIN DOWN'];
+					50 cutText ['Використовуйте загальний канал для загального голосового звязку.  Нажміть [Home] >> [Комунікація] >> [Налаштування радіо] щоб підписатися.','PLAIN DOWN'];
 					setCurrentChannel 5;
 				};
 			};
@@ -4713,13 +4682,13 @@ for '_x' from 0 to 1 step 0 do {
 				};
 			};
 		};
-		if (player getVariable ['QS_client_radioDisabled',FALSE]) then {
+		if (player getVariable ['QS_client_radioDisabled',_false]) then {
 			if ('ItemRadio' in (assignedItems _QS_player)) then {
-				_QS_player unassignItem 'ItemRadio';
+				_QS_player unassignItem 'ItemRadio'; 
 			};
 		};
 	};
-
+	
 	/*/========== Sway Module/*/
 
 	if (_QS_module_swayManager) then {
@@ -4860,7 +4829,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_swayManager_checkDelay = diag_tickTime + _QS_module_swayManager_delay;
 		};
 	};
-
+	
 	/*/========== Task Manager Module/*/
 
 	if (_QS_module_taskManager) then {
@@ -4889,7 +4858,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_taskManager_checkDelay = _timeNow + _QS_module_taskManager_delay;
 		};
 	};
-
+	
 	/*/========== Reveal Players module/*/
 
 	if (_QS_module_revealPlayers) then {
@@ -4909,7 +4878,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_revealPlayers_checkDelay = _timeNow + _QS_module_revealPlayers_delay;
 		};
 	};
-
+	
 	/*/========== SC Assistant Module/*/
 
 	if (_QS_module_scAssistant) then {
@@ -4935,9 +4904,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_scAssistant_checkDelay = _QS_uiTime + _QS_module_scAssistant_delay;
 		};
 	};
-
+	
 	/*/========== Module Georgetown/*/
-
+	
 	if (_QS_isTanoa) then {
 		if (_QS_uiTime > _QS_tanoa_checkDelay) then {
 			if (missionNamespace getVariable ['QS_customAO_GT_active',_false]) then {
@@ -4952,7 +4921,7 @@ for '_x' from 0 to 1 step 0 do {
 										};
 									};
 									if (!(((crew _QS_v2) findIf {(alive _x)}) isEqualTo -1)) then {
-										['setVehicleAmmo',_QS_v2,0] remoteExec ['QS_fnc_remoteExecCmd',(crew _QS_v2),FALSE];
+										['setVehicleAmmo',_QS_v2,0] remoteExec ['QS_fnc_remoteExecCmd',(crew _QS_v2),_false];
 									};
 								};
 							};
@@ -4970,7 +4939,7 @@ for '_x' from 0 to 1 step 0 do {
 										setViewDistance (viewDistance - 10);
 										if (viewDistance <= _QS_georgetown_VD) exitWith {};
 										if (diag_tickTime > _time) exitWith {
-											setViewDistance _QS_georgetown_VD;
+											setViewDistance _QS_georgetown_VD; 
 										};
 										uiSleep 0.05;
 									};
@@ -4981,7 +4950,7 @@ for '_x' from 0 to 1 step 0 do {
 										setObjectViewDistance ((getObjectViewDistance select 0) - 10);
 										if ((getObjectViewDistance select 0) <= _QS_georgetown_OVD) exitWith {};
 										if (diag_tickTime > _time) exitWith {
-											setObjectViewDistance _QS_georgetown_OVD;
+											setObjectViewDistance _QS_georgetown_OVD; 
 										};
 										uiSleep 0.05;
 									};
@@ -5012,7 +4981,7 @@ for '_x' from 0 to 1 step 0 do {
 									setViewDistance (viewDistance + 10);
 									if (viewDistance >= _QS_georgetown_priorVD) exitWith {};
 									if (diag_tickTime > _time) exitWith {
-										setViewDistance _QS_georgetown_priorVD;
+										setViewDistance _QS_georgetown_priorVD; 
 									};
 									uiSleep 0.05;
 								};
@@ -5023,7 +4992,7 @@ for '_x' from 0 to 1 step 0 do {
 									setObjectViewDistance ((getObjectViewDistance select 0) + 10);
 									if ((getObjectViewDistance select 0) >= _QS_georgetown_priorOVD) exitWith {};
 									if (diag_tickTime > _time) exitWith {
-										setObjectViewDistance _QS_georgetown_priorOVD;
+										setObjectViewDistance _QS_georgetown_priorOVD; 
 									};
 									uiSleep 0.05;
 								};
@@ -5043,7 +5012,7 @@ for '_x' from 0 to 1 step 0 do {
 								setViewDistance (viewDistance + 10);
 								if (viewDistance >= _QS_georgetown_priorVD) exitWith {};
 								if (diag_tickTime > _time) exitWith {
-									setViewDistance _QS_georgetown_priorVD;
+									setViewDistance _QS_georgetown_priorVD; 
 								};
 								uiSleep 0.05;
 							};
@@ -5054,7 +5023,7 @@ for '_x' from 0 to 1 step 0 do {
 								setObjectViewDistance ((getObjectViewDistance select 0) + 10);
 								if ((getObjectViewDistance select 0) >= _QS_georgetown_priorOVD) exitWith {};
 								if (diag_tickTime > _time) exitWith {
-									setObjectViewDistance _QS_georgetown_priorOVD;
+									setObjectViewDistance _QS_georgetown_priorOVD; 
 								};
 								uiSleep 0.05;
 							};
@@ -5065,31 +5034,31 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_tanoa_checkDelay = _QS_uiTime + _QS_tanoa_delay;
 		};
 	};
-
+	
 	/*/===== Module Group Indicator/*/
-
+	
 	if (_QS_module_groupIndicator) then {
 		if (_QS_uiTime > _QS_module_groupIndicator_checkDelay) then {
 			if (isNull _objectParent) then {
 				if (!isNil {player getVariable ['QS_HUD_3',nil]}) then {
-					missionNamespace setVariable ['QS_client_groupIndicator_units',(((_posATLPlayer select [0,2]) nearEntities [_QS_module_groupIndicator_types,_QS_module_groupIndicator_radius]) select _QS_module_groupIndicator_filter),FALSE];
+					missionNamespace setVariable ['QS_client_groupIndicator_units',(((_posATLPlayer select [0,2]) nearEntities [_QS_module_groupIndicator_types,_QS_module_groupIndicator_radius]) select _QS_module_groupIndicator_filter),_false];
 				};
 			};
 			_QS_module_groupIndicator_checkDelay = _QS_uiTime + _QS_module_groupIndicator_delay;
 		};
 	};
-
+	
 	/*/===== Medic Revive icons/*/
-
+	
 	if (_QS_player getUnitTrait 'medic') then {
 		if (_QS_uiTime > _QS_medicIcons_checkDelay) then {
 			missionNamespace setVariable ['QS_client_medicIcons_units',(_posATLPlayer nearEntities ['CAManBase',_QS_medicIcons_radius]),_false];
 			_QS_medicIcons_checkDelay = _QS_uiTime + _QS_medicIcons_delay;
 		};
 	};
-
+	
 	/*/===== Client AI/*/
-
+	
 	if (_QS_module_clientAI) then {
 		if (_QS_uiTime > _QS_module_clientAI_checkDelay) then {
 			if (_QS_player isEqualTo (leader (group _QS_player))) then {
@@ -5102,9 +5071,9 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_clientAI_checkDelay = _QS_uiTime + _QS_module_clientAI_delay;
 		};
 	};
-
+	
 	/*/========== Operational Security Module/*/
-
+	
 	if (_QS_module_opsec) then {
 		if (_QS_uiTime > _QS_module_opsec_checkDelay) then {
 			_QS_module_opsec_detected = 0;
@@ -5216,7 +5185,7 @@ for '_x' from 0 to 1 step 0 do {
 								if ((count (allControls _display)) > 90) then {		/*/88/*/
 									_QS_module_opsec_detected = 2;
 									_detected = format ['MenuHack_RscDisplayInventory_Controls_%1',(count (allControls _display))];
-								};
+								};									
 							};
 							if (_QS_module_opsec_displayIDDstr isEqualTo '163') then {
 								uiSleep 0.025;
@@ -5228,7 +5197,7 @@ for '_x' from 0 to 1 step 0 do {
 								} forEach [
 									((toLower (ctrlText (_display displayCtrl 1000))) != (toLower (localize 'STR_DISP_OPTIONS_SCHEME'))),
 									{
-										if (buttonAction (_display displayCtrl _x) != '') exitWith {TRUE};
+										if (buttonAction (_display displayCtrl _x) != '') exitWith {TRUE}; 
 										_false
 									} forEach [1,2]
 								];
@@ -5270,7 +5239,7 @@ for '_x' from 0 to 1 step 0 do {
 								_display closeDisplay 1;
 								_QS_module_opsec_detected = 1;
 								/*/
-							};
+							};									
 							if (_QS_module_opsec_displayIDDstr isEqualTo '49') then {
 								if (!isNull (_display displayCtrl 0)) then {
 									_detected = 'MenuHack_DISPLAY_49_C_0';
@@ -5643,7 +5612,7 @@ for '_x' from 0 to 1 step 0 do {
 					['_hintAdv',_false,[_false]],
 					['_advTitle','',['',_parsedText]],
 					['_advRecall',_false,[_false]]
-				];
+				];	
 				_hintsQueue set [0,_false];
 				_hintsQueue deleteAt 0;
 				if ((!((toLower (str _hintText)) isEqualTo (toLower (str _hintTextPrevious)))) || {(_QS_uiTime > (_hintPriorClosedAt + 15))} || {(_hintsQueue isEqualTo [])}) then {
