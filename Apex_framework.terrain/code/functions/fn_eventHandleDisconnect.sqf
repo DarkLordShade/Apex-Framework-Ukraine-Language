@@ -14,7 +14,7 @@ Description:
 __________________________________________________/*/
 
 params ['_object','_cid','_uid','_name'];
-if (((_this select 1) select [0,2]) isEqualTo 'HC') exitWith {};
+if ((_uid select [0,2]) isEqualTo 'HC') exitWith {};
 if (!isNil {_object getVariable 'QS_pilot_vehicleInfo'}) then {
 	_vehicleInfo = _object getVariable 'QS_pilot_vehicleInfo';
 	_vehicle = _vehicleInfo select 0;

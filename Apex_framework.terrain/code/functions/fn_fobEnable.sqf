@@ -3,7 +3,7 @@ File: fn_fobEnable.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	8/09/2016 A3 1.62 by Quiksilver
@@ -51,7 +51,7 @@ if (_side isEqualTo sideUnknown) then {
 ] remoteExec ['call',-2,FALSE];
 [(missionNamespace getVariable 'QS_module_fob_flag'),_side,'',FALSE,objNull,1] call (missionNamespace getVariable 'QS_fnc_setFlag');
 /*/'QS_marker_module_fob' setMarkerColor 'ColorINDEPENDENT';/*/
-['sideChat',[WEST,'HQ'],(format ['FOB %1 activated by %2!',(missionNamespace getVariable 'QS_module_fob_displayName'),_activatorName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+['sideChat',[WEST,'HQ'],(format ['FOB %1 активовано %2!',(missionNamespace getVariable 'QS_module_fob_displayName'),_activatorName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['FOB_UPDATE',['','Online']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 0 spawn {
 	sleep 2;
@@ -64,7 +64,7 @@ if (_side isEqualTo sideUnknown) then {
 		(missionNamespace getVariable 'QS_module_fob_baseDataTerminal')
 	];
 	sleep 3;
-	['FOB_UPDATE',['','Radar Service online']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['FOB_UPDATE',['','Послуги радару онлайн']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 };
 /*/taskfailed for other sides?/*/
 missionNamespace setVariable ['QS_module_fob_side',_side,TRUE];

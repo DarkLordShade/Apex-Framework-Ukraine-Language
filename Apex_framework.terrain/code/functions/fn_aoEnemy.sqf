@@ -3,11 +3,11 @@ File: fn_aoEnemy.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	20/04/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	AO Enemies
@@ -85,7 +85,7 @@ if (worldName in ['Tanoa','Lingor3']) then {
 				'O_T_MBT_02_cannon_ghex_F',
 				'I_APC_Wheeled_03_cannon_F',
 				'I_MBT_03_cannon_F'
-			];		
+			];
 		};
 	} else {
 		if (_isArmedAirEnabled) then {
@@ -147,7 +147,7 @@ if (worldName in ['Tanoa','Lingor3']) then {
 				'B_APC_Tracked_01_rcws_F',
 				'O_MBT_02_cannon_F',
 				'I_APC_tracked_03_cannon_F'
-			];	
+			];
 		};
 	} else {
 		if (_isArmedAirEnabled) then {
@@ -256,7 +256,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit1 = _unit1 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit1 assignAsDriver _aa; 
+			_unit1 assignAsDriver _aa;
 			_unit1 moveInDriver _aa;
 			_unit2 = _aaGroup createUnit [_engineerType,_randomPos,[],0,'NONE'];
 			missionNamespace setVariable [
@@ -265,7 +265,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit2 = _unit2 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit2 assignAsGunner _aa; 
+			_unit2 assignAsGunner _aa;
 			_unit2 moveInGunner _aa;
 			_unit3 = _aaGroup createUnit [_engineerType,_randomPos,[],0,'NONE'];
 			missionNamespace setVariable [
@@ -274,7 +274,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit3 = _unit3 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit3 assignAsCommander _aa; 
+			_unit3 assignAsCommander _aa;
 			_unit3 moveInCommander _aa;
 			_aaGroup addVehicle _aa;
 			if ((random 1) > 0.5) then {
@@ -305,7 +305,7 @@ if (_playerCount > 0) then {
 };
 
 /*/=============================================================== INFANTRY PATROLS RANDOM/*/
-	
+
 diag_log '****************************************************';
 diag_log '***** AO ENEMY ***** Spawning infantry patrols *****';
 diag_log '****************************************************';
@@ -411,7 +411,7 @@ for '_x' from 0 to 2 do {
 		FALSE
 	];
 	_unit1 = _unit1 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-	_unit1 assignAsGunner _static; 
+	_unit1 assignAsGunner _static;
 	_unit1 moveInGunner _static;
 	_staticUnits pushBack _unit1;
 	_unit1 setVariable ['QS_staticGunnerVehicle',_static,FALSE];
@@ -518,7 +518,7 @@ if (_playerCount > 30) then {
 };
 if (_playerCount > 40) then {
 	_vehCount = [4,5] select _allowVehicles;
-};	
+};
 if (_playerCount > 50) then {
 	_vehCount = [4,5] select _allowVehicles;
 };
@@ -644,7 +644,7 @@ for '_x' from 0 to 2 do {
 	{
 		_x setVehiclePosition [(getPosWorld _x),[],0,'CAN_COLLIDE'];
 		[_x] call (missionNamespace getVariable 'QS_fnc_setCollectible');
-		_x doWatch _centerPos; 
+		_x doWatch _centerPos;
 		0 = _enemiesArray pushBack _x;
 	} count (units _sniperGroup);
 };
@@ -674,7 +674,7 @@ if ((count (_terrainData select 4)) > 6) then {
 		_indArray = [
 			"i_c_soldier_para_1_f","i_c_soldier_para_2_f","i_c_soldier_para_3_f","i_c_soldier_para_4_f","i_c_soldier_para_5_f","i_c_soldier_para_6_f",
 			"i_c_soldier_para_7_f","i_c_soldier_para_8_f"
-		];	
+		];
 	} else {
 		_indArray = [
 			"o_soldieru_a_f","o_soldieru_aar_f","o_soldieru_ar_f","o_soldieru_medic_f","o_engineer_u_f","o_soldieru_exp_f","o_soldieru_gl_f",
@@ -843,11 +843,11 @@ _commander addEventHandler [
 			'QS_marker_hqMarker',
 			'QS_marker_hqCircle'
 		];
-		['CompletedSub',['CSAT Commander killed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CompletedSub',['Командира CSAT вбито!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		if (!isNull _killer) then {
 			if (isPlayer _killer) then {
 				_name = name _killer;
-				_text = format ['%1 has killed the CSAT Commander',_name];
+				_text = format ['%1 вбив командира CSAT',_name];
 				['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			};
 		};

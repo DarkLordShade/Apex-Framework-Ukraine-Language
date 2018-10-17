@@ -1,17 +1,17 @@
 /*/
 File: fn_casRespawn.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	8/04/2018 A3 1.82 by Quiksilver
 
-Description: 
+Description:
 
 	Respawn CAS
-	
+
 List of jets:
 
 	'b_plane_cas_01_f',
@@ -264,9 +264,9 @@ if ((missionNamespace getVariable ['QS_missionConfig_carrierEnabled',0]) isEqual
 			params ['_jet','_killer','_instigator','_useEffects'];
 			private _text = '';
 			if (((getPosATL _jet) select 2) > 20) then {
-				_text = 'Our CAS has been shot down!';
+				_text = 'Нашу повітряну підтримку підбили!';
 			} else {
-				_text = 'Our CAS has been destroyed!';
+				_text = 'Нашу повітряну підтримку знищили!';
 			};
 			if (!isDedicated) then {
 				[WEST,'AirBase'] sideChat _text;
@@ -336,6 +336,6 @@ if ((missionNamespace getVariable ['QS_missionConfig_carrierEnabled',0]) isEqual
 			[3,"a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa"],
 			[4,"a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_04_ca.paa"],
 			[5,"a3\air_f_jets\plane_fighter_04\data\Numbers\Fighter_04_number_08_ca.paa"]
-		];	
+		];
 	};
 };

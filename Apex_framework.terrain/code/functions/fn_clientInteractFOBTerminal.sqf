@@ -17,32 +17,32 @@ _type = _this select 3;
 if (_type isEqualTo 1) exitWith {
 	private ['_text','_respawnEnabled','_respawnTickets','_vehicleRespawnEnabled','_vehicleRepairService','_vehicleAmmoService','_radarServices','_vehicleFuelService','_personalRespawn'];
 	_text = format [
-		'<t align="left" size="2">FOB %1<t/><br/><t align="left" size="1.5">Status</t><br/><t align="left" size="1">__________</t><br/>',
+		'<t align="left" size="2">FOB %1<t/><br/><t align="left" size="1.5">Статус</t><br/><t align="left" size="1">__________</t><br/>',
 		(missionNamespace getVariable 'QS_module_fob_displayName')
 	];
 	if ((missionNamespace getVariable 'QS_module_fob_side') isEqualTo playerSide) then {
-		_radarServices = '<t size="1" align="left">Radar Services</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_radarServices = '<t size="1" align="left">Послуги радару</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_radarServices = '<t size="1" align="left">Radar Services</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_radarServices = '<t size="1" align="left">Послуги радару</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _radarServices;
 	if (missionNamespace getVariable 'QS_module_fob_respawnEnabled') then {
-		_respawnEnabled = '<t size="1" align="left">Respawn</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_respawnEnabled = '<t size="1" align="left">Відродження</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_respawnEnabled = '<t size="1" align="left">Respawn</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_respawnEnabled = '<t size="1" align="left">Відродження</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _respawnEnabled;
-	_text = _text + (format ['<t size="1" align="left">Respawn Tickets</t><t size="1" align="right">%1</t><br/>',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
+	_text = _text + (format ['<t size="1" align="left">Квитки відродження</t><t size="1" align="right">%1</t><br/>',(missionNamespace getVariable 'QS_module_fob_respawnTickets')]);
 	if (missionNamespace getVariable 'QS_module_fob_vehicleRespawnEnabled') then {
-		_vehicleRespawnEnabled = '<t size="1" align="left">Vehicle Services - Respawn</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_vehicleRespawnEnabled = '<t size="1" align="left">Транспортні послуги - Респаун</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_vehicleRespawnEnabled = '<t size="1" align="left">Vehicle Services - Respawn</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_vehicleRespawnEnabled = '<t size="1" align="left">Транспортні послуги - Респаун</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _vehicleRespawnEnabled;
 	if (missionNamespace getVariable 'QS_module_fob_services_repair') then {
-		_vehicleRepairService = '<t size="1" align="left">Vehicle Services - Repair</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_vehicleRepairService = '<t size="1" align="left">Транспортні послуги - Ремонт</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_vehicleRepairService = '<t size="1" align="left">Vehicle Services - Repair</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_vehicleRepairService = '<t size="1" align="left">Транспортні послуги - Ремонт</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _vehicleRepairService;
 	if (missionNamespace getVariable 'QS_module_fob_services_ammo') then {
@@ -52,15 +52,15 @@ if (_type isEqualTo 1) exitWith {
 	};
 	_text = _text + _vehicleAmmoService;
 	if (missionNamespace getVariable 'QS_module_fob_services_fuel') then {
-		_vehicleFuelService = '<t size="1" align="left">Vehicle Services - Fuel</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_vehicleFuelService = '<t size="1" align="left"Транспортні послуги - Пальне</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_vehicleFuelService = '<t size="1" align="left">Vehicle Services - Fuel</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_vehicleFuelService = '<t size="1" align="left">Транспортні послуги - Пальне</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _vehicleFuelService;
 	if (player getVariable ['QS_module_fob_client_respawnEnabled',TRUE]) then {
-		_personalRespawn = '<br/><t size="1" align="left">Personal FOB Respawn Beacon</t><t color="#008000" size="1" align="right">Online</t><br/>';
+		_personalRespawn = '<br/><t size="1" align="left">Персональний маяк відродження на FOB</t><t color="#008000" size="1" align="right">Online</t><br/>';
 	} else {
-		_personalRespawn = '<br/><t size="1" align="left">Personal FOB Respawn Beacon</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
+		_personalRespawn = '<br/><t size="1" align="left">Персональний маяк відродження на FOB</t><t color="#ff0000" size="1" align="right">Offline</t><br/>';
 	};
 	_text = _text + _personalRespawn;
 	playSound ['AddItemOK',FALSE];

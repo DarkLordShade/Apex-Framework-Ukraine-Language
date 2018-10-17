@@ -69,7 +69,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK CANCELED'
+			/*/title string/*/ 				'ЗАВДАННЯ ВIДМIНЕНО'
 		];
 	};
 	if (_case isEqualTo 'TaskCreated') then {
@@ -87,7 +87,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK CREATED'
+			/*/title string/*/ 				'ЗАВДАННЯ СТВОРЕНО'
 		];
 	};
 	if (_case isEqualTo 'TaskFailed') then {
@@ -105,7 +105,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK FAILED'
+			/*/title string/*/ 				'ЗАВДАННЯ ПРОВАЛЕНО'
 		];
 	};
 	if (_case isEqualTo 'TaskSucceeded') then {
@@ -123,7 +123,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK COMPLETED'
+			/*/title string/*/ 				'ЗАВДАННЯ ЗАВЕРШЕНО'
 		];
 	};
 	if (_case isEqualTo 'TaskUpdated') then {
@@ -141,7 +141,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK UPDATED'
+			/*/title string/*/ 				'ЗАВДАННЯ ОНОВЛЕНО'
 		];
 	};
 	if (_case isEqualTo 'NewMain') then {
@@ -159,7 +159,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'NEW MAIN OBJECTIVE'
+			/*/title string/*/ 				'НОВА ОСНОВНА ЦIЛЬ'
 		];
 	};
 	if (_case isEqualTo 'CompletedMain') then {
@@ -177,7 +177,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'MAIN OBJECTIVE COMPLETE'
+			/*/title string/*/ 				'ОСНОВНУ ЦIЛЬ ВИКОНАНО'
 		];
 	};
 	if (_case isEqualTo 'NewMainDefend') then {
