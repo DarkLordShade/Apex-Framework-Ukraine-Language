@@ -35,7 +35,7 @@ if (!((ropes _t) isEqualTo [])) exitWith {
 if (!(isNull (attachedTo _t))) exitWith {
 	50 cutText ['Автомобіль прикріплений до чогось.','PLAIN',0.3];
 };
-private _result = [(format ['Ви впевнені, що хочете відновити це %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'Warning','Respawn vehicle','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+private _result = [(format ['Ви впевнені, що хочете відновити цей %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'Попередження','Відновлення транспорту','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 if (_result) then {
 	player setVariable ['QS_RD_canRespawnVehicle',(diag_tickTime + 120),FALSE];
 	player playAction 'PutDown';

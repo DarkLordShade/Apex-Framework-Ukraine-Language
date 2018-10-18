@@ -49,7 +49,7 @@ if ((!(_playerHasFAK)) && (!(_incapacitatedHasFAK))) exitWith {
 	50 cutText ['Оживлення не вдалося! Немає перев’язувальних пакетів! Вам потрібні обидва: Аптечка та Набір первинної допомоги для оживлення солдатів. Кожне оживлення використовує один Набір первинної допомоги.','PLAIN DOWN'];
 };
 if (isPlayer _t) then {
-	private _text = format ['Оживлений %1',profileName];
+	private _text = format ['Оживлює %1',profileName];
 	[63,[5,[_text,'PLAIN',0.5]]] remoteExec ['QS_fnc_remoteExec',_t,FALSE];
 };
 _time = diag_tickTime + 5.5;
@@ -128,7 +128,7 @@ waitUntil {
 if (_stance isEqualTo 'PRONE') then {
 	_cancelEnabled = TRUE;
 	_action_cancel = player addAction [
-		'Cancel',
+		'Відмінити',
 		{
 			player removeAction (_this select 2);
 			player setVariable ['QS_client_animCancel',TRUE,FALSE];

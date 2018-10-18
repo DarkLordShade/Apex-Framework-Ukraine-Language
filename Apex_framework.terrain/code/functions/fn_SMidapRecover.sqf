@@ -417,7 +417,7 @@ private _uncertainPosition = [
 	'Help',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['SM_IDAP_BRIEF',['Side Mission','Recover IDAP aid worker']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['SM_IDAP_BRIEF',['Другорядна місія','Врятувати медичного працівника IDAP']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 for '_x' from 0 to 1 step 0 do {
 	sleep 3;
 	if (
@@ -526,7 +526,7 @@ private _sounds = [
 private _unitStabilised = FALSE;
 private _aidMarker = '';
 _aidMarker = createMarker [(format ['QS_marker_aid_%1',(str (random 10e3))]),[0,0,0]];
-_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Другорядна місія: Медичний працівник']);
+_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Другорядна місія: Медичний працівник IDAP']);
 _aidMarker setMarkerPos (getPosATL _recoverableUnit);
 _aidMarker setMarkerShape 'ICON';
 _aidMarker setMarkerSize [0.5,0.5];

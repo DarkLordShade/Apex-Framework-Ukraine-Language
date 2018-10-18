@@ -171,25 +171,25 @@ if (_type isEqualTo 1) then {
 			if (!isNull (missionNamespace getVariable 'QS_airdefense_laptop')) then {
 				_laptop = missionNamespace getVariable 'QS_airdefense_laptop';
 				_actionID = _laptop addAction [
-					'Suspend side missions',
+					'Призупинити побічні місії',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
 						if (!(missionNamespace getVariable 'QS_smSuspend')) then {
-							_result = ['Suspend side missions','Side missions','Suspend','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+							_result = ['Призупинити побічні місії','Побічні місії','Призупинити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',TRUE,TRUE];
 								50 cutText ['Другорядну місію відкладено','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Resume side missions',(format ["<t size='3'>%1</t>",'Поновити другорядну місію'])];
-								['systemChat',(format ['%1 (персонал) відклав другорядно місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								_actionTarget setUserActionText [_actionID,'Продовжити побічні місії',(format ["<t size='3'>%1</t>",'Поновити другорядну місію'])];
+								['systemChat',(format ['%1 (персонал) відклав другорядні місіі',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						} else {
-							_result = ['Resume side missions','Side missions','Resume','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+							_result = ['Продовжити побічні місії','Побічні місії','Продовжити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',FALSE,TRUE];
-								50 cutText ['Продовжити побічну місію','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Suspend side missions',(format ["<t size='3'>%1</t>",'Suspend side missions'])];
-								['systemChat',(format ['%1 (персонал) поновив побічну місію',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								50 cutText ['Призупинити побічні місії','PLAIN DOWN',0.5];
+								_actionTarget setUserActionText [_actionID,'Призупинити побічні місії',(format ["<t size='3'>%1</t>",'Призупинити побічні місії'])];
+								['systemChat',(format ['%1 (персонал) призупинив побічні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						};
 					},
@@ -204,7 +204,7 @@ if (_type isEqualTo 1) then {
 				];
 				_laptop setUserActionText [_actionID,((_laptop actionParams _actionID) select 0),(format ["<t size='3'>%1</t>",((_laptop actionParams _actionID) select 0)])];
 				_actionID2 = _laptop addAction [
-					'Suspend primary missions',
+					'Призупинити основні місії',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
@@ -212,7 +212,7 @@ if (_type isEqualTo 1) then {
 						if (!((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'NONE')) then {
 							if (!(missionNamespace getVariable ['QS_customAO_GT_active',FALSE])) then {
 								if (!(missionNamespace getVariable 'QS_aoSuspended')) then {
-									_result = ['Suspend primary missions','Primary missions','Suspend','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Призупинити основні місії','Primary missions','Suspend','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoSuspended',TRUE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
@@ -222,7 +222,7 @@ if (_type isEqualTo 1) then {
 										['systemChat',(format ['%1 (персонал) призупинив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								} else {
-									_result = ['Resume primary missions','Primary missions','Resume','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Resume primary missions','Primary missions','Resume','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoSuspended',FALSE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',FALSE,TRUE];
@@ -260,7 +260,7 @@ if (_type isEqualTo 1) then {
 								};
 								player setVariable ['QS_client_aoCycleCooldown',(diag_tickTime + 60),FALSE];
 								if (!(missionNamespace getVariable ['QS_aoSuspended',FALSE])) then {
-									_result = ['Cycle primary mission','Primary missions','Cycle','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Cycle primary mission','Primary missions','Cycle','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
 										['systemChat',(format ['%1 (staff) cycled primary missions',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];

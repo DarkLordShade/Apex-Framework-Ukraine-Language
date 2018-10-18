@@ -1,6 +1,6 @@
 /*/
 File: fn_signalStrength.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -10,7 +10,7 @@ Last Modified:
 
 Description:
 
-	Signal Strength
+	Рівень сигналу
 _____________________________________________/*/
 
 params ['_type','_position','_radius'];
@@ -24,11 +24,11 @@ if (_type isEqualTo 0) then {
 		if (underwater player) then {
 			if ('ItemGPS' in (assignedItems player)) then {
 				if (isNull (objectParent player)) then {
-					_text = format ['<t size="1.5">Signal Strength</t><br/><br/> %1 percent',_val];
+					_text = format ['<t size="1.5">Рівень сигналу</t><br/><br/> %1 відсоток(ів)',_val];
 					50 cutText [_text,'PLAIN DOWN',0.5,TRUE,TRUE];
 				};
 			} else {
-				_text = format ['<t size="1.5">Signal Strength</t><br/><br/> No GPS Receiver ...',_val];
+				_text = format ['<t size="1.5">Рівень сигналу</t><br/><br/> Немає синалу GPS ...',_val];
 				50 cutText [_text,'PLAIN DOWN',0.5,TRUE,TRUE];
 			};
 		};
@@ -42,10 +42,10 @@ if (_type isEqualTo 1) then {
 			};
 			if (isNull (objectParent player)) then {
 				if ('ItemGPS' in (assignedItems player)) then {
-					_text = format ['<t size="1.5">Signal Strength</t><br/><br/> %1 percent',_val];
+					_text = format ['<t size="1.5">Рівень сигналу</t><br/><br/> %1 відсоток(ів)',_val];
 					50 cutText [_text,'PLAIN DOWN',0.5,TRUE,TRUE];
 				} else {
-					_text = format ['<t size="1.5">Signal Strength</t><br/><br/> No GPS Receiver ...',_val];
+					_text = format ['<t size="1.5">Рівень сигналу</t><br/><br/> Немає синалу GPS ...',_val];
 					50 cutText [_text,'PLAIN DOWN',0.5,TRUE,TRUE];
 				};
 			};
