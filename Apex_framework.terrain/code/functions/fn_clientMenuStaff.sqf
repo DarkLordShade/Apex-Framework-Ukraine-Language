@@ -318,7 +318,7 @@ if (_type2 isEqualType 0) exitWith {
 		};
 	};
 	if (_type2 isEqualTo 14) then {
-		_result = ['Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.','Очищення бази','Execute','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+		_result = ['Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.','Очищення бази','Виконати','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 		if (_result) then {
 			playSound 'ClickSoft';
 			[53,[profileName,(getPlayerUID player)]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
@@ -329,7 +329,7 @@ if (_type2 isEqualType 0) exitWith {
 		};
 	};
 	if (_type2 isEqualTo 15) then {
-		_result = [(format ['Очистити %1. Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.',worldName]),(format ['%1 cleanup',worldName]),'Execute','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+		_result = [(format ['Очистити %1. Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.',worldName]),(format ['%1 cleanup',worldName]),'Виконати','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 		if (_result) then {
 			playSound 'ClickSoft';
 			[54] remoteExec ['QS_fnc_remoteExec',2,FALSE];
