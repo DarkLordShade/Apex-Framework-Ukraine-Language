@@ -3,13 +3,13 @@ File: fn_clientInGameUIAction.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	12/10/2018 A3 1.84 by Quiksilver
-	
+
 Description:
-	
+
 	-
 ______________________________________________/*/
 
@@ -202,7 +202,7 @@ if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
-	_QS_c;	
+	_QS_c;
 };
 if (_QS_actionName isEqualTo 'StartTimer') exitWith {
 
@@ -212,7 +212,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 		if (player isEqualTo (driver (vehicle player))) then {
 			_QS_c = TRUE;
 			0 spawn {
-				private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
+				private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 				if (_result) then {
 					player action ['eject',(vehicle player)];
 				};
@@ -222,7 +222,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 				if (((vectorMagnitude (velocity (vehicle player))) * 3.6) > 25) then {
 					_QS_c = TRUE;
 					0 spawn {
-						private _result = ['Eject?','Eject warning','Eject','Cancel',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
+						private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
 						if (_result) then {
 							player action ['eject',(vehicle player)];
 						};
@@ -604,7 +604,7 @@ if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (!isNull (isVehicleCargo _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити цього разу','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
-		
+
 	};
 	if (surfaceIsWater (getPosWorld _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити це тут','PLAIN DOWN',0.5];

@@ -10,7 +10,7 @@ Last Modified:
 
 Description:
 
-	Signal Strength
+	Рівень сигналу
 _____________________________________________/*/
 
 params ['_type','_position','_radius'];

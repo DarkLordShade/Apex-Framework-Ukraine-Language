@@ -171,7 +171,7 @@ if (_type isEqualTo 1) then {
 			if (!isNull (missionNamespace getVariable 'QS_airdefense_laptop')) then {
 				_laptop = missionNamespace getVariable 'QS_airdefense_laptop';
 				_actionID = _laptop addAction [
-					'Suspend side missions',
+					'Призупинити побічні місії',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
