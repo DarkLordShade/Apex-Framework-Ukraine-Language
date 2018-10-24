@@ -50,7 +50,7 @@ if (_worldName isEqualTo 'Altis') exitWith {
 				['Fotia Turbines',[4059.06,19228.8,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				/*/['Gori Refinery',[5411.99,17913.7,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],/*/
 				['Krya Nera',[10135.1,21912.4,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Faros Turbines',[8444,23073.6,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
+				['Вітряки Faros-у',[8444,23073.6,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
 			]
 		],
 		[
