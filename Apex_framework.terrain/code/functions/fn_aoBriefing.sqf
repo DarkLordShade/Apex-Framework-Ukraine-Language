@@ -27,7 +27,7 @@ if (_type isEqualTo 'BRIEF') then {
 		'QS_marker_aoCircle',
 		'QS_marker_aoMarker'
 	];
-	'QS_marker_aoMarker' setMarkerText format ['%1Take %2',(toString [32,32,32]),_ao];
+	'QS_marker_aoMarker' setMarkerText format ['%1Захопити %2',(toString [32,32,32]),_ao];
 	_targetStartText = parseText format [
 		"<t align='center' size='2.2'>Нова ціль</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>Ми добре попрацювали на останній місії. Я хочу знову побачити це. Рухайся до %1 та вбий їх всіх!<br/><br/>Не забудьте знищити радіовишку щоб припинити виклик підтримки з повітря.",
 		_ao

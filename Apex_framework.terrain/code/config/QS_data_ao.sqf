@@ -63,7 +63,7 @@ if (_worldName isEqualTo 'Altis') exitWith {
 				['Limni',[20901.9,14626.3,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Paros',[20966.4,16968.8,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Gatolia Solar Farm',[27076.5,21451.1,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Sofia Powerplant',[25425.5,20339,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Електростанція Sofia',[25425.5,20339,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Delfinaki Outpost',[23572.4,21102.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1]
 			]
 		],

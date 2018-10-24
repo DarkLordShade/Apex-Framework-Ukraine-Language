@@ -587,7 +587,7 @@ for '_x' from 0 to 1 step 0 do {
 			missionNamespace setVariable ['QS_sidemission_building',_house,FALSE];
 			_housePosition = position _house;
 			_houseMarker = createMarker [(format ['QS_marker_house_%1',(str (random 10e3))]),[0,0,0]];
-			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Додаткова місія: Знайдіть медичні приналежності']);
+			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Додаткова місія: Знайдіть медичне обладнання']);
 			_houseMarker setMarkerAlpha 0;
 			_houseMarker setMarkerPos _housePosition;
 			_houseMarker setMarkerShape 'ICON';
@@ -596,7 +596,7 @@ for '_x' from 0 to 1 step 0 do {
 			_houseMarker setMarkerType 'mil_triangle';
 			_houseMarker setMarkerAlpha 1;
 
-			['SM_IDAP_UPDATE',['Side Mission Update','Locate medical supplies']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['SM_IDAP_UPDATE',['Оновлення другорядної місії','Знайти медичне обладнання']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 			_truckPos = [_housePosition,10,25,5,0,0.5,0] call _fn_findSafePos;
 			if ((_truckPos distance2D _housePosition) < 30) then {
@@ -627,7 +627,7 @@ for '_x' from 0 to 1 step 0 do {
 				_crate setVariable ['QS_medbox_disableRevive',TRUE,TRUE];
 				_crate setVariable ['QS_inventory_disabled',TRUE,TRUE];
 				_crate setVariable ['QS_dynSim_ignore',TRUE,TRUE];
-				_crate setVariable ['QS_ST_customDN','Medical Supplies',TRUE];
+				_crate setVariable ['QS_ST_customDN','Медичне обладнання',TRUE];
 				_timeoutFailsafe = serverTime + 3600;
 				_crateSpawned = TRUE;
 				_cratePositionIndex = _houseBuildingPositions find _cratePosition;
@@ -669,10 +669,10 @@ for '_x' from 0 to 1 step 0 do {
 						[
 							[],
 							{
-								50 cutText ['Медичних припасів не знайдено.  Продовжуй пошуки, солдат!','PLAIN DOWN',0.75];
+								50 cutText ['Медичне обладнання не знайдено.  Продовжуй пошуки, солдат!','PLAIN DOWN',0.75];
 							}
 						] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
-						['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медикаменти не знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+						['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медичне обладнання не знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 						_findNewLocation = TRUE;
 						_monitorScene = FALSE;
@@ -691,11 +691,11 @@ for '_x' from 0 to 1 step 0 do {
 
 							if (!(_suppliesFound)) then {
 								_suppliesFound = TRUE;
-								['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медикаменти знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+								['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медичне обладнання знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 								[
 									[],
 									{
-										50 cutText ['Медичні припаси знайдені!','PLAIN DOWN',0.75];
+										50 cutText ['Медичне обладнання знайдено!','PLAIN DOWN',0.75];
 									}
 								] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
 							};
@@ -711,7 +711,7 @@ for '_x' from 0 to 1 step 0 do {
 									15,
 									15,
 									0,
-									'Medical Supplies',
+									'Медичне обладнання',
 									2,
 									0.04,
 									'RobotoCondensed',
@@ -734,7 +734,7 @@ for '_x' from 0 to 1 step 0 do {
 										15,
 										15,
 										0,
-										'Medical Supplies',
+										'Медичне обладнання',
 										2,
 										0.04,
 										'RobotoCondensed',
@@ -759,7 +759,7 @@ for '_x' from 0 to 1 step 0 do {
 								_x setMarkerAlpha 0;
 							} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 							['QS_TASK_SM_IDAP_1'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-							['SM_IDAP_UPDATE',['Side Mission Update','Stabilise and Medevac aid worker']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+							['SM_IDAP_UPDATE',['Оновлення другорядної місії','Стабілізувати медичного працівника']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 							_sceneType = 1;
 							deleteMarker _aidMarker;
 							deleteVehicle _crate;
@@ -887,7 +887,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (_crateSpawned) then {
 		if (!alive _crate) then {
-			[[WEST,'BLU'],'Медикаменти знищено, місію провалено!'] remoteExec ['sideChat',-2,FALSE];
+			[[WEST,'BLU'],'Медичне обладнання знищено, місію провалено!'] remoteExec ['sideChat',-2,FALSE];
 			_taskState = 'FAILED';
 		};
 		if (serverTime > _timeoutFailsafe) then {
