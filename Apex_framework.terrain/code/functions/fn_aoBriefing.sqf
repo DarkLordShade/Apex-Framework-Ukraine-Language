@@ -29,13 +29,13 @@ if (_type isEqualTo 'BRIEF') then {
 	];
 	'QS_marker_aoMarker' setMarkerText format ['%1Захопити %2',(toString [32,32,32]),_ao];
 	_targetStartText = parseText format [
-		"<t align='center' size='2.2'>Нова ціль</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>Ми добре попрацювали на останній місії. Я хочу знову побачити це. Рухайся до %1 та вбий їх всіх!<br/><br/>Не забудьте знищити радіовишку щоб припинити виклик підтримки з повітря.",
+		"<t align='center' size='2.2'>Нова ціль</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>Ми добре попрацювали на останній місії. Я хочу знову побачити це. Рухайся до %1 та вбий їх всіх!<br/><br/>Не забудьте знищити радіовежу щоб припинити виклик підтримки з повітря.",
 		_ao
 	];
 	if (!(missionNamespace getVariable 'QS_mainao_firstRun')) then {
 		//['hint',_targetStartText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		['NewMain',[_ao]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['NewSub',['Destroy radio tower']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['NewSub',['Знищити радіовежу']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	} else {
 		missionNamespace setVariable ['QS_mainao_firstRun',FALSE,FALSE];
 	};
