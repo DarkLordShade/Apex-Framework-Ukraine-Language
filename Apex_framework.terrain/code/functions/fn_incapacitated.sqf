@@ -3,11 +3,11 @@ File: fn_incapacitated.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
 	14/06/2018 A3 1.82 by Quiksilver
-
+	
 Description:
 
 	Unit Incapacitated
@@ -119,12 +119,7 @@ private _text = '';
 private _timeNow = time;
 private _tickTimeNow = diag_tickTime;
 private _actOfGod = FALSE;
-private _iAmMedic = FALSE;
-private _chance = 0.625;
-if (_unit getUnitTrait 'medic') then {
-	_iAmMedic = TRUE;
-	_chance = 0.57;
-};
+private _chance = [0.57,0.625] select (_unit getUnitTrait 'medic');
 private _randomN = random 1;
 private _actOfGod_delay = -1;
 if (_randomN > 0.5) then {
@@ -143,7 +138,7 @@ _soundDelayRandom = 20;
 _soundDelay = _tickTimeNow + _soundDelayFixed + (random _soundDelayRandom);
 _sound = '';
 _medevacBase = markerPos 'QS_marker_medevac_hq';
-private _medicalTimerDelay = 10 * 60;
+private _medicalTimerDelay = 600;
 private _medicalStartTime = _tickTimeNow;
 private _medicalTimer = _medicalStartTime + _medicalTimerDelay;
 private _medevacRequested = FALSE;
@@ -155,7 +150,7 @@ if (!isNull _instigator) then {
 	} else {
 		if ((toLower (typeOf _instigator)) in ['o_sniper_f','o_ghillie_ard_f','o_ghillie_lsh_f','o_ghillie_sard_f','o_t_sniper_f','o_t_ghillie_tna_f']) then {
 			_nameKiller = name _instigator;
-			_incapacitatedText = format ['%1 %2',_profileName,(selectRandom [(format ['був вражений ворожим снайпером ( %1 )',_nameKiller]),(format ['був виведений з ладу ворожим снайпером ( %1 )',_nameKiller]),(format ['вражений снайпером ( %1 )',_nameKiller]),(format ['був вбитий ( %1 )',_nameKiller])])];
+			_incapacitatedText = format ['%1 %2',_profileName,(selectRandom [(format ['був вражений ворожим снайпером ( %1 )',_nameKiller]),(format ['був виведений з ладу ворожим снайпером ( %1 )',_nameKiller]),(format ['вражений снайпером ( %1 )',_nameKiller]),(format ['був вбитий ворожим снайпером ( %1 )',_nameKiller])])];
 		} else {
 			if (isPlayer _instigator) then {
 				if ((getPlayerUID _instigator) in (['CURATOR'] call (missionNamespace getVariable 'QS_fnc_whitelist'))) then {
@@ -201,7 +196,7 @@ _display = findDisplay 46;
 private _ctrlIncapacitated = _display ctrlCreate _QS_ctrlCreateArray;
 _ctrlIncapacitated ctrlSetPosition [((0.0075 * safezoneW) + safezoneX),((0.01 * safezoneH) + safezoneY),1,1];
 private _string1 = actionKeysNames ['InGamePause',1];
-private _text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для віжродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call (missionNamespace getVariable 'BIS_fnc_secondsToString')),([] call (missionNamespace getVariable 'QS_fnc_clientMFindHealer'))];
+private _text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для відродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call (missionNamespace getVariable 'BIS_fnc_secondsToString')),([] call (missionNamespace getVariable 'QS_fnc_clientMFindHealer'))];
 _ctrlIncapacitated ctrlSetStructuredText _text1;
 _ctrlIncapacitated ctrlCommit 0;
 if (isNil 'bis_revive_ppColor') then {
@@ -217,8 +212,8 @@ bis_revive_ppColor ppEffectAdjust [1,1,0.15,[0.3,0.3,0.3,0],[0.3,0.3,0.3,0.3],[1
 bis_revive_ppVig ppEffectAdjust [1,1,0,[0.15,0,0,1],[1.0,0.5,0.5,1],[0.587,0.199,0.114,0],[1,1,0,0,0,0.2,1]];
 bis_revive_ppBlur ppEffectAdjust [0];
 {
-	_x ppEffectCommit 3;
-	_x ppEffectEnable TRUE;
+	_x ppEffectCommit 3; 
+	_x ppEffectEnable TRUE; 
 	_x ppEffectForceInNVG TRUE;
 } forEach [bis_revive_ppColor, bis_revive_ppVig, bis_revive_ppBlur];
 private _forceRespawned = FALSE;
@@ -246,7 +241,7 @@ for '_x' from 0 to 1 step 0 do {
 	_attachedTo = attachedTo _unit;
 	//comment 'Display';
 	_string1 = actionKeysNames ['InGamePause',1];
-	_text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для віжродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call _fn_secondsToString),(call _fn_findHealer)];
+	_text1 = parseText format ['<t size="1.5" align="left">ВИВЕДЕНО З ЛАДУ<t/><br/><t size="1" align="left">Натисніть [%1] для відродження<br/>Стече кров’ю (%2)<br/>%3</t>',(_string1 select [1,((count _string1) - 2)]),([(_medicalTimer - _tickTimeNow),'MM:SS'] call _fn_secondsToString),(call _fn_findHealer)];
 	_ctrlIncapacitated ctrlSetStructuredText ([_text1,(parseText '')] select visibleMap);
 	//comment 'Agony sound simulation';
 	if (_tickTimeNow > _soundDelay) then {
@@ -376,7 +371,7 @@ for '_x' from 0 to 1 step 0 do {
 								};
 								_remainingTickets = (getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'transportSoldier')) - 1;
 								_vehicle setVariable ['QS_medicalVehicle_reviveTickets',_remainingTickets,TRUE];
-								_textReviveTickets = format ['%1 ( %2 ) - Квитків оживлення залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
+								_textReviveTickets = format ['%1 ( %2 ) - Квитків відродження залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
 								['sideChat',[WEST,'BLU'],_textReviveTickets] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							} else {
 								if ((_vehicle getVariable 'QS_medicalVehicle_reviveTickets') isEqualType 0) then {
@@ -393,7 +388,7 @@ for '_x' from 0 to 1 step 0 do {
 										};
 										_remainingTickets = (_vehicle getVariable 'QS_medicalVehicle_reviveTickets') - 1;
 										_vehicle setVariable ['QS_medicalVehicle_reviveTickets',_remainingTickets,TRUE];
-										_textReviveTickets = format ['%1 ( %2 ) - Квитків оживлиння залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
+										_textReviveTickets = format ['%1 ( %2 ) - Квитків відродження залишилось - %3',(getText (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'displayName')),(mapGridPosition _vehicle),_remainingTickets];
 										['sideChat',[WEST,'BLU'],_textReviveTickets] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								};
@@ -408,7 +403,7 @@ for '_x' from 0 to 1 step 0 do {
 							if ((vectorMagnitude (velocity _medicalBox)) < 1) then {
 								if ((!(unitIsUav _medicalBox)) || {((unitIsUav _medicalBox) && (isUavConnected _medicalBox))}) then {
 									deleteVehicle _medicalBox;
-									_text = format ['%1 був оживлений %1',_profileName,(_medicalBox getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _medicalBox) >> 'displayName'))])];
+									_text = format ['%2 оживив %1',_profileName,(_medicalBox getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _medicalBox) >> 'displayName'))])];
 									['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									_revivedAtVehicle = TRUE;
 									if (_lifeState isEqualTo 'INCAPACITATED') then {
@@ -458,8 +453,8 @@ for '_x' from 0 to 1 step 0 do {
 			private _vel = velocity _objectParent;
 			_unit setDir (random 360);
 			_unit setVelocity [
-				(_vel select 0) + ((sin (_objectParent getDir _unit)) * (3 + random 12)),
-				(_vel select 1) + ((cos (_objectParent getDir _unit)) * (3 + random 12)),
+				(_vel select 0) + ((sin (_objectParent getDir _unit)) * (3 + random 12)), 
+				(_vel select 1) + ((cos (_objectParent getDir _unit)) * (3 + random 12)), 
 				(((_vel select 2) + 1) + (random 9))
 			];
 			uiSleep 0.25;
@@ -597,7 +592,7 @@ for '_x' from 0 to 1 step 0 do {
 	} else {
 		if (!(ctrlShown _ctrlIncapacitated)) then {
 			_ctrlIncapacitated ctrlShow TRUE;
-		};
+		};	
 	};
 	if (!(_medevacRequested)) then {
 		if (_unit getVariable ['QS_client_medevacRequested',FALSE]) then {
