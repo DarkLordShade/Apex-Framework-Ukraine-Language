@@ -4,25 +4,25 @@ File: parameters.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	30/09/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Mission Parameters
-	
+
 Official Support/Help Channels:
 
 	Discord: 	https://discord.gg/FfVaPce
 	Forum: 		https://forums.bistudio.com/forums/topic/212240-apex-framework/
 	Email: 		armacombatgroup@gmail.com
-	
+
 For URLs:
 
 	Use Google URL Shortener ( https://goo.gl/ ) to make something like this:   https://goo.gl/7Xajd9
-	
+
 Notes for editing below:
 
 	- Be aware of the quotation marks " and ', they need to be what they are. Notice in links there are two sets of quotations:   "'https://goo.gl/7Xajd9'"     and for servercommandpassword:   _serverCommandPassword = "'ShVQArtpGdc5aDQq'";
@@ -33,19 +33,19 @@ _______________________________________________________/*/
 
 _teamspeak_server = 'ts3.address.com : 1234     - Password: N/A';					// Teamspeak server address, for use with map marker, map tabs, ec. Customize this accordingly.		Example:	_teamspeak_server = 'ts3.address.com : 1234     - Password: N/A';
 																					// These options can be seen in your Player Menu under [Comm-Link]. Player menu default key binding is [Home], and also in the Escape menu, top button.
-_website_url = 
+_website_url =
 [
 	"'https://goo.gl/7Xajd9'",														// Website URL of your website		Example:	"'https://goo.gl/7Xajd9'"
 	"Our Website",																	// Button text.
 	"Link 1"																		// Tooltip (text shown when mouse hovering over button).
 ];
-_discord_server = 
+_discord_server =
 [
 	"'https://goo.gl/7Xajd9'",														// Discord server (change this to yours).	Example:	"'https://goo.gl/7Xajd9'"
 	"Our Discord",																	// Button text.
 	"Link 2"																		// Tooltip (text shown when mouse hovering over button).
 ];
-_arma_units_url = 
+_arma_units_url =
 [
 	"'https://units.arma3.com'", 													// url path to your A3 Unit		Example:	"'https://goo.gl/7Xajd9'"
 	"Our ArmA Unit",																// Button text.
@@ -83,7 +83,7 @@ _dynamic_simulation = 1;								// Dynamic Simulation. 	0 - Disabled. 1 - Enable
 // 		'SC' 				Sector Control.		 			Recommended: 36-64+ players.			Example: 	_main_mission_type = 'SC';
 // 		'GRID'				Insurgency Campaign (Beta). 	Recommended: 4-24+ players.				Example: 	_main_mission_type = 'GRID';				//---- This mission type is in Beta currently (9/12/2017)
 // 		'NONE'				Primary missions disabled.												Example: 	_main_mission_type = 'NONE';				//---- Use this when you want to create Zeus missions and use the framework mechanics without the scripted missions.
-//====================================================//	
+//====================================================//
 
 _main_mission_type = 'CLASSIC';
 
@@ -118,7 +118,7 @@ _anticheat = 1;											// 0 - Disabled. 1 - Enabled. (Default 1). 		Disable i
 
 //===================================================== MONETIZATION
 
-// Cosmetics system (uniform + vehicle + shoulder patches). 	
+// Cosmetics system (uniform + vehicle + shoulder patches).
 // Controls access to [Area 51] vehicle/uniform/insignia texture system.
 
 _monetizeCosmetics = 0;									// 0 - Disabled (None have access). 1 - Enabled (Only whitelisted "S3" have access). 2 - All have access.
@@ -159,6 +159,7 @@ if (_aircraft_carrier_enabled > 0) then {
 	missionNamespace setVariable _x;
 } forEach [
 	['QS_missionConfig_commTS',_teamspeak_server,TRUE],
+	['QS_missionConfig_commDiscord',_discord_server2,TRUE],
 	['QS_missionConfig_commDS',(compileFinal (str _discord_server)),TRUE],
 	['QS_missionConfig_commURL',(compileFinal (str _website_url)),TRUE],
 	['QS_missionConfig_commA3U',(compileFinal (str _arma_units_url)),TRUE],
