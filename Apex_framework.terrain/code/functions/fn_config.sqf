@@ -286,7 +286,7 @@ _sidesFlagsTextures = [
 _ah = TRUE;
 _flagTextureFriendly = (missionNamespace getVariable ['QS_missionConfig_textures_defaultFlag','a3\data_f\flags\flag_nato_co.paa']);
 // _teamspeak = '-teamspeak address-    Password:   -teamspeak password-';
-_teamspeak = '-Discord address-  ';
+_teamspeak = '-TeamSpeak address-  ';
 _website = '-website-';
 private _sectorAreaObjects = [];
 if ((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'SC') then {
