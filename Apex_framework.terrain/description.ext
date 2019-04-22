@@ -1,13 +1,13 @@
 /*/
 File: description.ext
 Author:
-
+	
 	Quiksilver
 
 Last modified:
 
-	17/08/2018 A3 1.84 by Quiksilver
-
+	20/04/2019 A3 1.90 by Quiksilver
+	
 Description:
 
 	https://community.bistudio.com/wiki/Description.ext
@@ -26,7 +26,7 @@ onLoadMissionTime = 0;												/*/ Time and date displayed while the mission 
 class Header {
 	gameType = COOP;												/*/ Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend./*/
 	minPlayers = 1;													/*/ Min # of players the MISSION supports/*/
-	maxPlayers = 83;												/*/ Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots./*/
+	maxPlayers = 81;												/*/ Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots./*/
 };
 disabledAI = 1;											/*/ No AI in playable units/*/
 aiKills = 0; 											/*/ disable scorelist for AI players/*/
@@ -37,7 +37,7 @@ showGroupIndicator = 0;
 showSquadRadar = 0;
 forceRotorLibSimulation = 0;							/*/ Advanced Flight Model /*/
 scriptedPlayer = 1;
-skipLobby = 0;
+skipLobby = 1;
 corpseManagerMode = 0;
 corpseLimit = 30;
 corpseRemovalMinTime = 60;
@@ -113,7 +113,7 @@ class CfgDisabledCommands {
             targets[] = {0,0,0};
             args[] = {{},{"STRING","CODE"}};
         };
-    };
+    };	
     class ALLVARIABLES
     {
         class SYNTAX1
@@ -177,10 +177,10 @@ class CfgDisabledCommands {
 };
 class CfgRemoteExec {
 	class Commands {
-		mode = 1;
+		mode = 2;
 	};
 	class Functions {
-		mode = 1;
+		mode = 2;
 		jip = 0;
 		allowedTargets = 0;
 		class BIS_fnc_callScriptedEventHandler {};
@@ -237,7 +237,7 @@ class CfgDebriefing {
 	};
 	class QS_RD_end_4 {
 		title = "Reserved Profile Name";
-		description = "Your profile name is reserved for another a staff member or supporter on this server, please use different profile name!";
+		description = "Your profile name is reserved for a staff member or supporter on this server, please use a different profile name!";
 		picture = "media\images\insignia\comm_patch.paa";
 	};
 	class QS_RD_end_5 {
@@ -253,7 +253,7 @@ class CfgDebriefing {
 	class QS_RD_end_7 {
 		title = "Depleted Assets";
 		description = "You have depleted your pool of aircraft (3), it will refresh after server restart!";
-		picture = "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa";
+		picture = "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa";	
 	};
 	class QS_RD_end_8 {
 		title = "Role Disabled";
@@ -268,7 +268,7 @@ class CfgDebriefing {
 	class QS_RD_end_10 {
 		title = "Insufficient Playtime";
 		description = "You must play on the server more prior to using the Pilot roles";
-		picture = "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa";
+		picture = "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa";	
 	};
 };
 class CfgLeaflets {
@@ -380,6 +380,7 @@ class CfgFunctions {
 			class clientEventCuratorGroupPlaced {file = "code\functions\fn_clientEventCuratorGroupPlaced.sqf";};
 			class clientEventCuratorKeyDown {file = "code\functions\fn_clientEventCuratorKeyDown.sqf";};
 			class clientEventCuratorMarkerPlaced {file = "code\functions\fn_clientEventCuratorMarkerPlaced.sqf";};
+			class clientEventCuratorObjectDeleted {file = "code\functions\fn_clientEventCuratorObjectDeleted.sqf";};
 			class clientEventCuratorObjectPlaced {file = "code\functions\fn_clientEventCuratorObjectPlaced.sqf";};
 			class clientEventCuratorObjectRegistered {file = "code\functions\fn_clientEventCuratorObjectRegistered.sqf";};
 			class clientEventCuratorWaypointPlaced {file = "code\functions\fn_clientEventCuratorWaypointPlaced.sqf";};
@@ -493,6 +494,7 @@ class CfgFunctions {
 			class clientMenuMain {file = "code\functions\fn_clientMenuMain.sqf";};
 			class clientMenuOptions {file = "code\functions\fn_clientMenuOptions.sqf";};
 			class clientMenuRadio {file = "code\functions\fn_clientMenuRadio.sqf";};
+			class clientMenuRSS {file = "code\functions\fn_clientMenuRSS.sqf";};
 			class clientMenuStaff {file = "code\functions\fn_clientMenuStaff.sqf";};
 			class clientMenuSupporters {file = "code\functions\fn_clientMenuSupporters.sqf";};
 			class clientMenuUTexture {file = "code\functions\fn_clientMenuUTexture.sqf";};
@@ -506,6 +508,8 @@ class CfgFunctions {
 			class clientServiceVehicle {file = "code\functions\fn_clientServiceVehicle.sqf";};
 			class clientSetUnitInsignia {file = "code\functions\fn_clientSetUnitInsignia.sqf";};
 			class clientSimulationManager {file = "code\functions\fn_clientSimulationManager.sqf";};
+			class clientVehicleEventDammaged {file = "code\functions\fn_clientVehicleEventDammaged.sqf";};
+			class clientVehicleEventDeleted {file = "code\functions\fn_clientVehicleEventDeleted.sqf";};
 			class clientVehicleEventEngine {file = "code\functions\fn_clientVehicleEventEngine.sqf";};
 			class clientVehicleEventEpeContactStart {file = "code\functions\fn_clientVehicleEventEpeContactStart.sqf";};
 			class clientVehicleEventFired {file = "code\functions\fn_clientVehicleEventFired.sqf";};
@@ -553,6 +557,7 @@ class CfgFunctions {
 			class enemySides {file = "code\functions\fn_enemySides.sqf";};
 			class explosiveVestMP {file = "code\functions\fn_explosiveVestMP.sqf";};
 			class eventAgentKilled {file = "code\functions\fn_eventAgentKilled.sqf";};
+			class eventEachFrame {file = "code\functions\fn_eventEachFrame.sqf";};
 			class eventEntityKilled {file = "code\functions\fn_eventEntityKilled.sqf";};
 			class eventEntityRespawned {file = "code\functions\fn_eventEntityRespawned.sqf";};
 			class eventHandleDisconnect {file = "code\functions\fn_eventHandleDisconnect.sqf";};
@@ -606,6 +611,7 @@ class CfgFunctions {
 			class initCurator {file = "code\functions\fn_initCurator.sqf";};
 			class initPlayerLocal {file = "code\functions\fn_initPlayerLocal.sqf";};
 			class initPlayerServer {file = "code\functions\fn_initPlayerServer.sqf";};
+			class initTrait {file = "code\functions\fn_initTrait.sqf";};
 			class inString {file = "code\functions\fn_inString.sqf";};
 			class isBoundingBoxIntersected {file = "code\functions\fn_isBoundingBoxIntersected.sqf";};
 			class isNearFieldHospital {file = "code\functions\fn_isNearFieldHospital.sqf";};
@@ -632,8 +638,10 @@ class CfgFunctions {
 			class remoteExec {file = "code\functions\fn_remoteExec.sqf";};
 			class remoteExecCmd {file = "code\functions\fn_remoteExecCmd.sqf";};
 			class replaceWithVehicle {file = "code\functions\fn_replaceWithVehicle.sqf";};
+			class respawnOPFOR {file = "code\functions\fn_respawnOPFOR.sqf";};
 			class respawnPilot {file = "code\functions\fn_respawnPilot.sqf";};
 			class returnGroupComposition {file = "code\functions\fn_returnGroupComposition.sqf";};
+			class roles {file = "code\functions\fn_roles.sqf";};
 			class sc {file = "code\functions\fn_sc.sqf";};
 			class scBrief {file = "code\functions\fn_scBrief.sqf";};
 			class scEnemy {file = "code\functions\fn_scEnemy.sqf";};
@@ -662,8 +670,10 @@ class CfgFunctions {
 			class setCollectible {file = "code\functions\fn_setCollectible.sqf";};
 			class setFlag {file = "code\functions\fn_setFlag.sqf";};
 			class setSimpleObject {file = "code\functions\fn_setSimpleObject.sqf";};
+			//class setUnitRole {file = "code\functions\fn_setUnitRole.sqf";};
 			class showNotification {file = "code\functions\fn_showNotification.sqf";};
 			class showNotification_process {file = "code\functions\fn_showNotification_process.sqf";};
+			class sideID {file = "code\functions\fn_sideID.sqf";};
 			class signalStrength {file = "code\functions\fn_signalStrength.sqf";};
 			class simpleObjectAdjust {file = "code\functions\fn_simpleObjectAdjust.sqf";};
 			class simpleObjectCreate {file = "code\functions\fn_simpleObjectCreate.sqf";};
@@ -743,22 +753,22 @@ class CfgSounds {
 	class QS_audio_notification {
         name="Notification Apex";
         sound[]={"media\audio\QS_notification.ogg",1,1};
-        titles[] = {};
+        titles[] = {};	
 	};
 	class QS_audio_notificationClose {
         name="Notification Apex";
         sound[]={"media\audio\QS_notificationClose.ogg",1,1};
-        titles[] = {};
+        titles[] = {};	
 	};
 	class QS_audio_notification_2 {
         name="Notification Apex 2";
         sound[]={"media\audio\QS_notification2.ogg",1,1};
-        titles[] = {};
+        titles[] = {};	
 	};
 	class QS_audio_notification_2Close {
         name="Notification Apex 2";
         sound[]={"media\audio\QS_notificationClose2.ogg",1,1};
-        titles[] = {};
+        titles[] = {};	
 	};
 	class Intro {
         name="Intro";
@@ -828,32 +838,32 @@ class CfgSounds {
 	class QS_radio_in_0 {
 		name = "Radio_In_1";
 		sound[] = {"media\audio\in2a.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_radio_in_1 {
 		name = "Radio_In_2";
 		sound[] = {"media\audio\in2b.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_radio_in_2 {
 		name = "Radio_In_3";
 		sound[] = {"media\audio\in2c.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_radio_out_0 {
 		name = "Radio_Out_1";
 		sound[] = {"media\audio\out2a.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_radio_out_1 {
 		name = "Radio_Out_2";
 		sound[] = {"media\audio\out2b.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_radio_out_2 {
 		name = "Radio_Out_3";
 		sound[] = {"media\audio\out2b.ogg",1.0,1};
-		titles[] = {};
+		titles[] = {};	
 	};
 	class QS_restart {
 		name = "Restart_Indicator";
@@ -1044,13 +1054,13 @@ class QS_RD_dialog_RscCombo {
 	color[] = {0, 0, 0, 0.6};
 	colorActive[] = {0, 0, 0, 1};
 	colorDisabled[] = {0, 0, 0, 0.3};
-	font = "Zeppelin32";
+	font = "RobotoCondensed";
 	sizeEx = 0.031;
 	soundSelect[] = {"\ca\ui\data\sound\new1", 0.09, 1};
 	soundExpand[] = {"\ca\ui\data\sound\new1", 0.09, 1};
 	soundCollapse[] = {"\ca\ui\data\sound\new1", 0.09, 1};
 	maxHistoryDelay = 1.0;
-
+	
 	class ScrollBar {
 		color[] = {1, 1, 1, 0.6};
 		colorActive[] = {1, 1, 1, 1};
@@ -1077,12 +1087,75 @@ class QS_RD_dialog_RscCombo {
 		autoScrollRewind = 0;
 		shadow = 0;
 	};
-
+	
 	class HScrollbar {
 		color[] = {1, 1, 1, 0.6};
 		height = 0.028;
 		shadow = 0;
 	};
+};
+
+class QS_RD_dialog_RscCombo_2
+{
+    deletable = 0;
+    fade = 0;
+    access = 0;
+    type = CT_COMBO;
+	style = ST_LEFT;
+    colorSelect[] = {0, 0, 0, 1};
+    colorText[] = {1, 1, 1, 1};
+    colorBackground[] = {0, 0, 0, 0.5};
+    colorScrollbar[] = {1, 0, 0, 1};
+    colorDisabled[] = {1, 1, 1, 0.25};
+    colorPicture[] = {1, 1, 1, 1};
+    colorPictureSelected[] = {1, 1, 1, 1};
+    colorPictureDisabled[] = {1, 1, 1, 0.25};
+    colorPictureRight[] = {1, 1, 1, 1};
+    colorPictureRightSelected[] = {1, 1, 1, 1};
+    colorPictureRightDisabled[] = {1, 1, 1, 0.25};
+    colorTextRight[] = {1, 1, 1, 1};
+    colorSelectRight[] = {0, 0, 0, 1};
+    colorSelect2Right[] = {0, 0, 0, 1};
+    tooltipColorText[] = {1, 1, 1, 1};
+    tooltipColorBox[] = {1, 1, 1, 1};
+    tooltipColorShade[] = {0, 0, 0, 0.65};
+    soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect", 0.1, 1};
+    soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand", 0.1, 1};
+    soundCollapse[] = {"\A3\ui_f\data\sound\RscCombo\soundCollapse", 0.1, 1};
+    maxHistoryDelay = 1;
+	class ScrollBar {
+		color[] = {1, 1, 1, 0.6};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.3};
+		thumb = "";
+		arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
+		arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
+		border = "\ca\ui\data\ui_border_scroll_ca.paa";
+	};
+    class ComboScrollBar: ScrollBar {
+        color[] = {1, 1, 1, 1};
+    };
+	class VScrollbar {
+		color[] = {1, 1, 1, 0.6};
+		width = 0.021;
+		autoScrollSpeed = -1;
+		autoScrollDelay = 5;
+		autoScrollRewind = 0;
+		shadow = 0;
+	};
+    colorSelectBackground[] = {1, 1, 1, 0.7};
+    colorActive[] = {1, 0, 0, 1};
+    font = "RobotoCondensed";
+    sizeEx = 0.02;
+    shadow = 0;
+    x = 0;
+    y = 0;
+    w = 0;
+    h = 0;
+    arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
+    arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
+    wholeHeight = 0.05;
+	rowHeight = 0.04;
 };
 
 class QS_RD_dialog_RscControlsGroup {
@@ -1094,7 +1167,7 @@ class QS_RD_dialog_RscControlsGroup {
 	h = safeZoneH;
 	shadow = 0;
 	style = 16;
-
+	
 	class VScrollbar {
 		color[] = {1, 1, 1, 0.6};
 		width = 0.021;
@@ -1103,13 +1176,13 @@ class QS_RD_dialog_RscControlsGroup {
 		autoScrollRewind = 0;
 		shadow = 0;
 	};
-
+	
 	class HScrollbar {
 		color[] = {1, 1, 1, 0.6};
 		height = 0.028;
 		shadow = 0;
 	};
-
+	
 	class ScrollBar {
 		color[] = {1, 1, 1, 0.6};
 		colorActive[] = {1, 1, 1, 1};
@@ -1119,7 +1192,7 @@ class QS_RD_dialog_RscControlsGroup {
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
-
+	
 	class ComboScrollBar {
 		color[] = {1, 1, 1, 0.6};
 		colorActive[] = {1, 1, 1, 1};
@@ -1129,7 +1202,7 @@ class QS_RD_dialog_RscControlsGroup {
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
-
+	
 	class Controls {};
 };
 class RscProgress
@@ -1366,6 +1439,22 @@ class QS_RD_dialog_Box {
     sizeEx = 0.03;
     text = "";
 };
+class QS_RD_dialog_Box_2: QS_RD_dialog_Box {
+    type = CT_STATIC;
+    idc = -1;
+    style = ST_CENTER;
+    shadow = 0;
+    colorBackground[] = {0,0,0,0.5};
+	colorBorder[] = {1,1,1,1};
+    colorText[] = {1,1,1,0.5};
+    font = "RobotoCondensed";
+    sizeEx = 0.03;
+    text = "";
+	x = 0;
+	y = 0;
+	w = 0;
+	h = 0;
+};
 
 class QS_RD_XSlider {
 	style = 1024;
@@ -1406,7 +1495,7 @@ class QS_RD_RscStructuredText {
 	SizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	colorText[] = {0,1,1,1};
-	colorBackground[] = { 0, 0, 0, 0 };
+	colorBackground[] = { 0, 0, 0, 0 };	
 	linespacing = 1;
 };
 
@@ -1509,19 +1598,19 @@ class QS_RD_dialog_RscListBox {
 };
 class QS_RD_dialog_RscListNBox {
 	//access = 0;
-	type = CT_LISTNBOX;			// 102;
+	type = CT_LISTNBOX;			// 102; 
 	style = ST_MULTI;
-	w = 0.4;
-	h = 0.4;
-	font = "RobotoCondensed";
-	sizeEx = 0.04;
+	w = 0.4;   
+	h = 0.4; 
+	font = "RobotoCondensed"; 
+	sizeEx = 0.04; 
 
-	autoScrollSpeed = -1;
-	autoScrollDelay = 5;
-	autoScrollRewind = 0;
-	arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
-	arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
-	columns[] = {0.3, 0.6, 0.7};
+	autoScrollSpeed = -1; 
+	autoScrollDelay = 5; 
+	autoScrollRewind = 0; 
+	arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)"; 
+	arrowFull = "#(argb,8,8,3)color(1,1,1,1)"; 
+	columns[] = {0.3, 0.6, 0.7}; 
 
 	color[] = {0.7, 0.7, 0.7, 1};
 	colorSelect[] = {1, 1, 1, 1};
@@ -1536,14 +1625,14 @@ class QS_RD_dialog_RscListNBox {
 	colorPictureDisabled[] = {1,1,1,1};
 	colorActive[] = {0,0,0,1};
 	colorDisabled[] = {0,0,0,0.3};
-	drawSideArrows = 0;
-	idcLeft = -1;
-	idcRight = -1;
-	maxHistoryDelay = 1;
-	rowHeight = 0;
-	soundSelect[] = {"", 0.1, 1};
-	period = 1;
-	shadow = 2;
+	drawSideArrows = 0; 
+	idcLeft = -1; 
+	idcRight = -1; 
+	maxHistoryDelay = 1; 
+	rowHeight = 0; 
+	soundSelect[] = {"", 0.1, 1}; 
+	period = 1; 
+	shadow = 2; 
 	class ScrollBar {
 		arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
 		arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
@@ -2254,6 +2343,13 @@ class QS_RD_dialog_RscMapControl2 {
 		color[] = {0, 0, 0, 1};
 	};
 };
+class QS_client_dialog_menu_roles {
+	idd = 42000;
+	movingEnable = 1;
+	enableSimulation = 1;
+	onLoad = "uiNamespace setVariable ['QS_client_dialog_menu_roles',_this select 0]; 0 spawn (missionNamespace getVariable 'QS_fnc_clientMenuRSS');";
+	onUnload = "uiNamespace setVariable ['QS_client_dialog_menu_roles',displayNull];";
+};
 class QS_RD_client_dialog_menu_main {
 	idd = 2000;
 	movingEnable = 1;
@@ -2327,7 +2423,7 @@ class QS_RD_client_dialog_menu_main {
 			colorText[] = {1,1,1,1};
 			tooltip = "FPS, Час до рестарту сервера (приблизно)";
 		};
-
+		
 		class QS_RD_client_dialog_menu_main_button_1: QS_RD_dialog_RscButton {
 			moving = 1;
 			idc = 1600;
@@ -2823,7 +2919,7 @@ class QS_RD_client_dialog_menu_options {
 			h = 0.050 * safezoneH;
 			shadow = 0;
 		};
-
+		
 		class QS_RD_client_dialog_menu_options_text_2: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1804;
@@ -2844,11 +2940,11 @@ class QS_RD_client_dialog_menu_options {
 			colorShadow[] = {0,0,0,0};
 			colorBorder[] = {0,0,0,0};
 		};
-
+		
 		class QS_RD_client_dialog_menu_options_checkbox_1 : QS_RD_RscCheckbox {
 			moving = 1;
 			idc = 1805;
-			x = 0.475 * safezoneH + safezoneY;
+			x = 0.475 * safezoneH + safezoneY; 
 			y = 0.585 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -2930,7 +3026,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_checkbox_2 : QS_RD_RscCheckbox {
 			moving = 1;
 			idc = 1810;
-			x = 0.475 * safezoneH + safezoneY;
+			x = 0.475 * safezoneH + safezoneY; 
 			y = 0.69 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -2972,7 +3068,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_checkbox_3 : QS_RD_RscCheckbox {
 			moving = 1;
 			idc = 1813;
-			x = 0.475 * safezoneH + safezoneY;
+			x = 0.475 * safezoneH + safezoneY; 
 			y = 0.73 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -3002,7 +3098,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_checkbox_4 : QS_RD_RscCheckbox {
 			moving = 1;
 			idc = 1815;
-			x = 0.475 * safezoneH + safezoneY;
+			x = 0.475 * safezoneH + safezoneY; 
 			y = 0.775 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -3032,7 +3128,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_checkbox_5 : QS_RD_RscCheckbox {
 			moving = 1;
 			idc = 1817;
-			x = 0.475 * safezoneH + safezoneY;
+			x = 0.475 * safezoneH + safezoneY; 
 			y = 0.82 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
@@ -3089,7 +3185,7 @@ class QS_RD_client_dialog_menu_supporters {
 			h = 0.050 * safezoneH;
 			shadow = 0;
 		};
-
+		
 		class QS_RD_client_dialog_menu_supporters_button_1: QS_RD_dialog_RscButton {
 			moving = 1;
 			idc = 1804;
@@ -3435,7 +3531,7 @@ class QS_RD_client_dialog_menu_wounded {
 			onButtonClick="[6] call (missionNamespace getVariable 'QS_fnc_clientMenuWounded')";
 			tooltip = "Soon™";
 			colorText[] = {1,1,1,1};
-		};
+		};		
 	};
 };
 class QS_RD_client_dialog_menu_insignia {
@@ -3591,8 +3687,8 @@ class QS_RD_client_dialog_menu_utexture {
 	};
 };
 
-/*/
-The below dialog contains EULA License-relevant code, please be aware prior to editing.
+/*/ 
+The below dialog contains EULA License-relevant code, please be aware prior to editing. 
 Essentially, dont tamper with lines related to developer patreon link (idc = 1811)
 The license stipulates this dialog and link to developer patreon must be accessible to players ingame as normal (as it is in official build).
 /*/
@@ -3844,7 +3940,7 @@ class QS_RD_client_dialog_menu_context {
 			h = 0.050 * safezoneH;
 			shadow = 0;
 		};
-
+		
 		class QS_RD_client_dialog_menu_context_button_1: QS_RD_dialog_RscButton {
 			moving = 1;
 			idc = 1804;
@@ -4236,7 +4332,7 @@ class QS_RD_client_dialog_menu_console {
 			x = 0 * 			(			((safezoneW / safezoneH) min 1.2) / 40);
 			y = 1.1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 			w = 22 * 			(			((safezoneW / safezoneH) min 1.2) / 40);
-			h = 12 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+			h = 12 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);			
 			sizeEx = (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 1;
 			linespacing = 1;
@@ -4254,7 +4350,7 @@ class QS_RD_client_dialog_menu_console {
 			x = 0.2 * 			(			((safezoneW / safezoneH) min 1.2) / 40);
 			y = 1.1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 			w = 22 * 			(			((safezoneW / safezoneH) min 1.2) / 40);
-			h = 0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+			h = 0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);			
 			sizeEx = 0.8 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 			shadow = 1;
 			linespacing = 1;
@@ -4375,7 +4471,7 @@ class QS_RD_client_dialog_menu_console {
 			x = "0 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			y = "13.2 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w = "1 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";	
 			sizeEx = (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 1;
 			linespacing = 1;
@@ -4469,8 +4565,8 @@ class QS_RD_client_dialog_menu_radio {
 			tooltip = "";
 		};
 
-
-
+		
+		
 		/*/ CHANNELS HEADER ------------------------------------------------------------------------------ /*/
 		class QS_RD_client_dialog_menu_radio_text_2: QS_RD_RscStructuredText {
 			moving = 1;
@@ -4490,8 +4586,8 @@ class QS_RD_client_dialog_menu_radio {
 				align = "left";
 			};
 		};
-
-
+		
+		
 		/*/ STATUS HEADER ------------------------------------------------------------------------------ /*/
 		class QS_RD_client_dialog_menu_radio_text_3: QS_RD_RscStructuredText {
 			moving = 1;
@@ -4511,8 +4607,8 @@ class QS_RD_client_dialog_menu_radio {
 				align = "left";
 			};
 		};
-
-
+		
+		
 		/*/ SUBSCRIBE HEADER ------------------------------------------------------------------------------ /*/
 		class QS_RD_client_dialog_menu_radio_text_4: QS_RD_RscStructuredText {
 			moving = 1;
@@ -4532,8 +4628,8 @@ class QS_RD_client_dialog_menu_radio {
 				align = "left";
 			};
 		};
-
-
+		
+		
 		/*/ CHANNELS ------------------------------------------------------------------------------ /*/
 		/*/ GENERAL /*/
 		class QS_RD_client_dialog_menu_radio_text_5: QS_RD_RscStructuredText {
@@ -5037,7 +5133,7 @@ class RscTitles {
 		onLoad = "uiNamespace setVariable ['QS_RD_client_dialog_crewIndicator',_this select 0]";
 		onUnload = "uiNamespace setVariable ['QS_RD_client_dialog_crewIndicator',nil]";
 		class controlsBackground {
-			class QS_RD_client_dialog_crewIndicator_1: QS_RD_RscStructuredText {
+			class QS_RD_client_dialog_crewIndicator_1: QS_RD_RscStructuredText {		
 				idc = 1001;
 				size = 0.040;
 				x = 0.005 * safezoneW + safezoneX;
@@ -5105,7 +5201,7 @@ class RscTitles {
 				class Attributes {
 					align = "left";
 				};
-			};
+			};			
 			class QS_RD_client_dialog_hud_3: QS_RD_dialog_RscPictureKeepAspect {
 				idc = 1003;
 				size = 0.040;
@@ -5134,12 +5230,12 @@ class RscTitles {
 		class Objects {
 			class Radio {
 				idc = 101;
-				onLoad = "(_this select 0) ctrlSetModelScale 1.5; (_this select 0) ctrlSetPosition [0.25 * safezoneW + safezoneX,0.35,2 * safezoneH + safezoneY]; (_this select 0) ctrlSetModelDirAndUp [[0,-1,0],[0,0,-1]];(_this select 0) ctrlSetModelScale (1 * 0.675 * (SafeZoneW Min SafeZoneH)); (_this select 0) ctrlCommit 0; (_this select 0) ctrlSetPosition [0.25 * safezoneW + safezoneX,0.35,0.75 * safezoneH + safezoneY]; (_this select 0) ctrlCommit 1;";
+				onLoad = "(_this select 0) ctrlSetModelScale 1.5; (_this select 0) ctrlSetPosition [0.25 * safezoneW + safezoneX,0.35,2 * safezoneH + safezoneY]; (_this select 0) ctrlSetModelDirAndUp [[0,-1,0],[0,0,-1]];(_this select 0) ctrlSetModelScale (1 * 0.675 * (SafeZoneW Min SafeZoneH)); (_this select 0) ctrlCommit 0; (_this select 0) ctrlSetPosition [0.25 * safezoneW + safezoneX,0.35,0.75 * safezoneH + safezoneY]; (_this select 0) ctrlCommit 1;";				
 				type = 81;
 				model = "\a3\Weapons_F\Ammo\mag_radio.p3d";
 				scale = "(1 * 0.675 * (SafeZoneW Min SafeZoneH))";
 				direction[] = {0,-1,0};
-				up[] = {0,0,-1};
+				up[] = {0,0,-1}; 
 				inBack = 1;
 				x = 0.677 * safezoneW + safezoneX;
 				y = 0.78 * safezoneH + safezoneY;
@@ -5166,7 +5262,7 @@ class RscTitles {
 				idc = 102;
 				moving = 1;
 				h = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFORIGHT_H"",		(10 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))]) - 1.25 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
-				w = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFORIGHT_W"",		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))]) - 0.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
+				w = "(profilenamespace getvariable [""IGUI_GRID_CUSTOMINFORIGHT_W"",		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))]) - 0.25 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";			
 				x = "0.125 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 				y = "1.125 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 				text = "#(argb,512,512,1)r2t(QS_HComm_LiveFeed_r2t,1.25)";

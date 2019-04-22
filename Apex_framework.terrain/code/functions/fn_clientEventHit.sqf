@@ -3,11 +3,11 @@ File: fn_clientEventHit.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
-	13/06/2018 A3 1.82 by Quiksilver
-
+	18/12/2018 A3 1.88 by Quiksilver
+	
 Description:
 
 	-
@@ -23,16 +23,16 @@ if (
 	{(_unit isEqualTo _causedBy)} ||
 	{(_vu isEqualTo _v)} ||
 	{((rating _unit) < 0)} ||
-	{((player getVariable ['QS_tto',0]) > 3)} ||
-	{(!((lifeState player) in ['HEALTHY','INJURED']))} ||
-	{(['U_O',(uniform player),FALSE] call (missionNamespace getVariable 'QS_fnc_inString'))} ||
-	{((!isNull _instigator) && ((side (group _instigator)) in (playerSide call (missionNamespace getVariable 'QS_fnc_enemySides'))))} ||
+	{((_unit getVariable ['QS_tto',0]) > 3)} ||
+	{(!((lifeState _unit) in ['HEALTHY','INJURED']))} ||
+	{(['U_O',(uniform _unit),FALSE] call (missionNamespace getVariable 'QS_fnc_inString'))} ||
+	{((!isNull _instigator) && ((side (group _instigator)) in ((_unit getVariable ['QS_unit_side',WEST]) call (missionNamespace getVariable 'QS_fnc_enemySides'))))} ||
 	{((missionNamespace getVariable 'QS_sub_sd') && ((count _this) <= 4))}
 ) exitWith {
 	if (!isNull _instigator) then {
 		if (alive _instigator) then {
 			if (!isPlayer _instigator) then {
-				if ((side _instigator) isEqualTo WEST) then {
+				if ((side (group _instigator)) isEqualTo (_unit getVariable ['QS_unit_side',WEST])) then {
 					if (_dmg > 0.25) then {
 						[17,_instigator] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 					};
@@ -50,6 +50,7 @@ private [
 _exit = FALSE;
 missionNamespace setVariable ['QS_sub_sd',TRUE,FALSE];
 if (((count _this) > 4) && (time < (missionNamespace getVariable ['QS_sub_ramDetection',0]))) exitWith {};
+if (diag_tickTime < (uiNamespace getVariable ['QS_robocop_timeout',-1])) exitWith {};
 if ((count _this) > 4) then {
 	missionNamespace setVariable ['QS_sub_ramDetection',(time + 30),FALSE];
 };
@@ -75,7 +76,7 @@ if (_v isKindOf 'Man') then {
 	_n1 = name _causedBy1;
 	_currentWeapon1 = currentWeapon _causedBy1;
 	_currentWeaponText = getText (configFile >> 'CfgWeapons' >> _currentWeapon1 >> 'displayName');
-	_text = format ['Вас пошкодив %1, %2, можливо з %3',_n1,_vtxt,_currentWeaponText];
+	_text = format ['Вас пошкодив %1, %2, ймовірно з %3',_n1,_vtxt,_currentWeaponText];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 };
 if (_v isKindOf 'StaticWeapon') then {
@@ -150,7 +151,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 						_n2 = '[AI]';
 					};
 				} else {
-					_n2 = '[N/A]';
+					_n2 = '[N/A]'; 
 				};
 				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)',_vtxt,_n1,_n2];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
@@ -229,7 +230,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 			};
 			_text = parseText format ['Вас пошкодив %1, що контролюється %2',_vtxt,_n1];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
-		} else {
+		} else {	
 			if (!isNull (driver _v)) then {
 				if (isPlayer (driver _v)) then {
 					_causedBy1 = driver _v;
@@ -339,7 +340,7 @@ if (_v isKindOf 'Air') then {
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,12,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-
+	
 	if (_vTypeL in _gunnerVehicles) then {
 		if ((_posObject distance2D _posCausedBy) > 15) then {
 			if (!isNull (gunner _v)) then {
@@ -382,7 +383,7 @@ if (_v isKindOf 'Air') then {
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-
+	
 	if (_vTypeL in _driverGunnerVehicles) then {
 		_causedBy1 = driver _v;
 		_n1 = name _causedBy1;
@@ -440,7 +441,7 @@ if (_v isKindOf 'Air') then {
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
-
+	
 	if ((_posCausedBy distance2D _posObject) < 15) then {
 		_exclusionFound = FALSE;
 		if (_v isKindOf 'Helicopter') then {
@@ -549,7 +550,6 @@ if (_exit) exitWith {
 				while {(!((missionNamespace getVariable 'QS_sub_actions') isEqualTo []))} do {
 					_tr = (_ti - time);
 					[(format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>В Вашому Меню взаємодії (SCROLL MENU), у Вас є можливість анонімно повідомити про інцидент. Ця опція доступна %1 секунд.',(round _tr),_image])] call (missionNamespace getVariable 'QS_fnc_hint');
-					//hintSilent parseText format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>In your Action Menu (SCROLL MENU), you have the option to anonymously report the incident. This option is available for %1 seconds.',(round _tr),_image];
 					uiSleep 0.5;
 					if ((missionNamespace getVariable 'QS_sub_actions') isEqualTo []) exitWith {};
 					if (time >= _ti) exitWith {[''] call (missionNamespace getVariable 'QS_fnc_hint');};

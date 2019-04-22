@@ -1,19 +1,21 @@
 /*/
 File: fn_clientEventFiredMan.sqf
-Author:
+Author: 
 
 	Quiksilver
-
+	
 Last Modified:
 
 	3/09/2017 A3 1.74 by Quiksilver
-
+	
 Description:
 
 	Fired Man Event
-___________________________________________________________________/*/
 
 params ['_unit','_weapon','_muzzle','_mode','_ammo','_magazine','_projectile','_vehicle'];
+_______________________________________________________/*/
+
+params ['_unit','_weapon','_muzzle','','_ammo','_magazine','_projectile',''];
 if (!((lifeState _unit) in ['HEALTHY','INJURED'])) exitWith {
 	deleteVehicle _projectile;
 };
@@ -75,20 +77,20 @@ if (_weapon isEqualTo 'Throw') then {
 		if (_muzzle isEqualTo 'DemoChargeMuzzle') then {
 			if (_magazine isEqualTo 'DemoCharge_Remote_Mag') then {
 				_cursorIntersections = lineIntersectsSurfaces [
-					(AGLToASL (positionCameraToWorld [0,0,0])),
-					(AGLToASL (positionCameraToWorld [0,0,(if (cameraView isEqualTo 'INTERNAL') then [{2},{4.55}])])),
-					cameraOn,
-					objNull,
-					TRUE,
-					1,
+					(AGLToASL (positionCameraToWorld [0,0,0])), 
+					(AGLToASL (positionCameraToWorld [0,0,(if (cameraView isEqualTo 'INTERNAL') then [{2},{4.55}])])), 
+					cameraOn, 
+					objNull, 
+					TRUE, 
+					1, 
 					'GEOM'
 				];
 				if (!(_cursorIntersections isEqualTo [])) then {
-					_firstCursorIntersection = _cursorIntersections select 0;
+					_firstCursorIntersection = _cursorIntersections # 0;
 					_firstCursorIntersection params [
 						'_intersectPosASL',
 						'_surfaceNormal',
-						'_intersectObject',
+						'',
 						'_objectParent'
 					];
 					_canAttachExp = _objectParent getVariable ['QS_client_canAttachExp',FALSE];
@@ -105,7 +107,7 @@ if (_weapon isEqualTo 'Throw') then {
 		};
 		if (!((getAllOwnedMines _unit) isEqualTo [])) then {
 			if ((count (getAllOwnedMines _unit)) > 7) then {
-				deleteVehicle ((getAllOwnedMines _unit) select 0);
+				deleteVehicle ((getAllOwnedMines _unit) # 0);
 				50 cutText ['Досягнуто ліміт на вибухівку ( 7 )','PLAIN DOWN',0.5];
 			};
 		};
@@ -120,7 +122,7 @@ if (_weapon isEqualTo 'Throw') then {
 				{((!(isNull _cursorTarget)) && (isPlayer _cursorTarget))} ||
 				{((!(isNull _cursorObject)) && (!(isNull (effectiveCommander _cursorObject))) && (isPlayer (effectiveCommander _cursorObject)))}
 			) then {
-				if (!((side (group _cursorTarget)) in (playerSide call (missionNamespace getVariable 'QS_fnc_enemySides')))) then {
+				if (!((side (group _cursorTarget)) in ((player getVariable ['QS_unit_side',WEST]) call (missionNamespace getVariable 'QS_fnc_enemySides')))) then {
 					deleteVehicle _projectile;
 				};
 			};

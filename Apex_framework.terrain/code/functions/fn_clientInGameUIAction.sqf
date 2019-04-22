@@ -3,13 +3,13 @@ File: fn_clientInGameUIAction.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
-	12/10/2018 A3 1.84 by Quiksilver
-
+	21/11/2018 A3 1.86 by Quiksilver
+	
 Description:
-
+	
 	-
 ______________________________________________/*/
 
@@ -202,7 +202,7 @@ if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
-	_QS_c;
+	_QS_c;	
 };
 if (_QS_actionName isEqualTo 'StartTimer') exitWith {
 
@@ -234,8 +234,8 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 	_QS_c;
 };
 if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
-	if ((!((toLower (typeOf player)) in ['b_pilot_f','b_helipilot_f','b_t_pilot_f','b_t_helipilot_f','b_fighter_pilot_f'])) && (!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) then {
-		_text = format ['ROBOCOP: Сидіння пілота тільки для Пілотів! Ви ***** %1 *****. Грайте свою роль або оберіть іншу!',(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName'))];
+	if ((!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) then {
+		_text = 'ROBOCOP: Сидіння пілота тільки для Пілотів! Ви ***** %1 *****. Грайте свою роль або оберіть іншу!';
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,8,-1,_text,[],-1];
 		_QS_c = TRUE;
 	};
@@ -270,7 +270,7 @@ if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 	]) then {
 		if (!(player getUnitTrait 'QS_trait_fighterPilot')) then {
 			_QS_c = TRUE;
-			_text = 'Тільки пілот винищувача (Роль в лобі) може використовувати цей літак';
+			_text = 'Тільки пілот винищувача може використовувати цей літак';
 			50 cutText [_text,'PLAIN',0.5];
 		};
 	};
@@ -377,9 +377,9 @@ if (_QS_actionName isEqualTo 'GetInTurret') exitWith {
 		_QS_c = TRUE;
 	};
 	if (['Copilot',(_this select 4),FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) then {
-		if (!((typeOf (_this select 0)) in ['B_Heli_Light_01_F','B_Heli_Light_01_stripped_F','I_Heli_light_03_F','I_Heli_light_03_unarmed_F','I_Heli_light_03_dynamicLoadout_F'])) then {
+		if (!( (toLower (typeOf (_this select 0))) in ['b_heli_light_01_f','b_heli_light_01_stripped_f','i_heli_light_03_f','i_heli_light_03_unarmed_f','i_heli_light_03_dynamicloadout_f'])) then {
 			if ((count allPlayers) > 20) then {
-				if (!((typeOf player) in ['B_Helipilot_F','B_pilot_F','B_T_Helipilot_F','B_T_pilot_F'])) then {
+				if ((!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) then {
 					_QS_c = TRUE;
 				};
 			};
@@ -462,7 +462,7 @@ if (_QS_actionName in ['TouchOffMines','TouchOff']) then {
 						};
 					} forEach _playersNearby;
 					if (_QS_c) then {
-						50 cutText [(format ['%1 гравці занадто близько (30m) до однієї або декількох ваших вибухівок. Підрив не відбувся!',_count]),'PLAIN DOWN',1];
+						50 cutText [(format ['%1 гравець (гравця) занадто близько (30m) до однієї або декількох ваших вибухівок. Підрив не відбувся!',_count]),'PLAIN DOWN',1];
 					};
 				};
 			};
@@ -514,7 +514,7 @@ if (_QS_actionName isEqualTo 'DisAssemble') then {
 if (_QS_actionName in ['TakeVehicleControl','MoveToPilot']) then {
 	if (!(player getUnitTrait 'QS_trait_pilot')) then {
 		if ((vehicle player) isKindOf 'Air') then {
-			if (!((typeOf (vehicle player)) in ['B_Heli_Light_01_F','B_Heli_Light_01_stripped_F'])) then {
+			if (!((toLower (typeOf (vehicle player))) in ['b_heli_light_01_f','b_heli_light_01_stripped_f'])) then {
 				if ((count allPlayers) > 20) then {
 					_QS_c = TRUE;
 				};
@@ -547,7 +547,7 @@ if (_QS_actionName isEqualTo 'AutoHover') then {
 };
 if (_QS_actionName isEqualTo 'UAVTerminalHackConnection') then {
 	if (!local _QS_actionTarget) then {
-		_text = format ['%1 (%2) хакнув %3!',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf player) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf _QS_actionTarget) >> 'displayName'))];
+		_text = format ['%1 хакнув %2!',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _QS_actionTarget) >> 'displayName'))];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	_QS_actionTarget spawn {
@@ -596,15 +596,15 @@ if (_QS_actionName in ['ListRightVehicleDisplay','NextModeRightVehicleDisplay'])
 };
 if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (isNull (objectParent player)) then {
-		50 cutText ['Непритомний пасажир вивантажений','PLAIN DOWN',0.5];
+		50 cutText ['Непритомного пасажира вивантажено','PLAIN DOWN',0.5];
 	} else {
-		50 cutText ['Має бути на ногах','PLAIN DOWN',0.5];
+		50 cutText ['Must be on foot','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
 	};
 	if (!isNull (isVehicleCargo _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити цього разу','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
-
+		
 	};
 	if (surfaceIsWater (getPosWorld _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити це тут','PLAIN DOWN',0.5];
@@ -652,6 +652,12 @@ if (_QS_actionName isEqualTo 'UnhookCargo') then {
 			};
 		};
 	} else {
+		_QS_c = TRUE;
+	};
+};
+if (_QS_actionName isEqualTo 'ManualFire') then {
+	if ((cameraOn distance2D (markerPos 'QS_marker_base_marker')) < 600) then {
+		50 cutText ['Manual Fire disabled near base','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
 	};
 };

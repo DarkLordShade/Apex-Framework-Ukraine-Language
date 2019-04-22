@@ -3,11 +3,11 @@ File: fn_aoEnemy.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
-	20/04/2018 A3 1.82 by Quiksilver
-
+	24/10/2018 A3 1.84 by Quiksilver
+	
 Description:
 
 	AO Enemies
@@ -85,7 +85,7 @@ if (worldName in ['Tanoa','Lingor3']) then {
 				'O_T_MBT_02_cannon_ghex_F',
 				'I_APC_Wheeled_03_cannon_F',
 				'I_MBT_03_cannon_F'
-			];
+			];		
 		};
 	} else {
 		if (_isArmedAirEnabled) then {
@@ -147,7 +147,7 @@ if (worldName in ['Tanoa','Lingor3']) then {
 				'B_APC_Tracked_01_rcws_F',
 				'O_MBT_02_cannon_F',
 				'I_APC_tracked_03_cannon_F'
-			];
+			];	
 		};
 	} else {
 		if (_isArmedAirEnabled) then {
@@ -256,7 +256,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit1 = _unit1 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit1 assignAsDriver _aa;
+			_unit1 assignAsDriver _aa; 
 			_unit1 moveInDriver _aa;
 			_unit2 = _aaGroup createUnit [_engineerType,_randomPos,[],0,'NONE'];
 			missionNamespace setVariable [
@@ -265,7 +265,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit2 = _unit2 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit2 assignAsGunner _aa;
+			_unit2 assignAsGunner _aa; 
 			_unit2 moveInGunner _aa;
 			_unit3 = _aaGroup createUnit [_engineerType,_randomPos,[],0,'NONE'];
 			missionNamespace setVariable [
@@ -274,7 +274,7 @@ if (_playerCount > 0) then {
 				FALSE
 			];
 			_unit3 = _unit3 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-			_unit3 assignAsCommander _aa;
+			_unit3 assignAsCommander _aa; 
 			_unit3 moveInCommander _aa;
 			_aaGroup addVehicle _aa;
 			if ((random 1) > 0.5) then {
@@ -305,7 +305,7 @@ if (_playerCount > 0) then {
 };
 
 /*/=============================================================== INFANTRY PATROLS RANDOM/*/
-
+	
 diag_log '****************************************************';
 diag_log '***** AO ENEMY ***** Spawning infantry patrols *****';
 diag_log '****************************************************';
@@ -387,20 +387,17 @@ diag_log '****************************************************';
 private _staticUnits = [];
 _staticGroup = createGroup [RESISTANCE,TRUE];
 for '_x' from 0 to 2 do {
-	_randomPos = [_centerPos,(_aoSize * 0.5),10,10] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
+	private _watchPos = selectRandom [(AGLToASL _centerPos),(AGLToASL _QS_HQpos)];
+	_randomPos = [_watchPos,(_aoSize * 0.5),10,10,[[objNull,'VIEW'],(0.1 max (random 1))]] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
 	_staticType = selectRandom _staticTypes;
 	_static = createVehicle [_staticType,_randomPos,[],0,'NONE'];
-	missionNamespace setVariable [
-		'QS_analytics_entities_created',
-		((missionNamespace getVariable 'QS_analytics_entities_created') + 1),
-		FALSE
-	];
+	missionNamespace setVariable ['QS_analytics_entities_created',((missionNamespace getVariable 'QS_analytics_entities_created') + 1),FALSE];
 	_static setVectorUp (surfaceNormal _randomPos);
 	_static setVelocity [0,0,0];
 	if (_playerCount < 30) then {
 		[_static] call (missionNamespace getVariable 'QS_fnc_downgradeVehicleWeapons');
 	} else {
-		if ((random 1) > 0.5) then {
+		if ((random 1) > 0.666) then {
 			[_static] call (missionNamespace getVariable 'QS_fnc_downgradeVehicleWeapons');
 		};
 	};
@@ -411,7 +408,7 @@ for '_x' from 0 to 2 do {
 		FALSE
 	];
 	_unit1 = _unit1 call (missionNamespace getVariable 'QS_fnc_unitSetup');
-	_unit1 assignAsGunner _static;
+	_unit1 assignAsGunner _static; 
 	_unit1 moveInGunner _static;
 	_staticUnits pushBack _unit1;
 	_unit1 setVariable ['QS_staticGunnerVehicle',_static,FALSE];
@@ -435,17 +432,10 @@ for '_x' from 0 to 2 do {
 	];
 	_staticGroup setBehaviour 'AWARE';
 	_staticGroup setCombatMode 'RED';
-	if ((random 1) > 0.5) then {
-		_dirToCenter = _randomPos getDir _centerPos;
+	_dirToCenter = _randomPos getDir _watchPos;
 		_static setDir _dirToCenter;
 		_staticGroup setFormDir _dirToCenter;
-		_unit1 doWatch _centerPos;
-	} else {
-		_dirToCenter = _randomPos getDir _basePos;
-		_static setDir _dirToCenter;
-		_staticGroup setFormDir _dirToCenter;
-		_unit1 doWatch _basePos;
-	};
+	_unit1 doWatch (ASLToAGL _watchPos);
 	_static lock 3;
 	for '_x' from 0 to 2 step 1 do {
 		_static setVectorUp [0,0,1];
@@ -474,9 +464,9 @@ if (_playerCount > 15) then {
 		_grpCount = 5;
 	};
 };
-
 for '_x' from 0 to _grpCount step 1 do {
-	_randomPos = [_centerPos,(_aoSize * 0.8),25,10] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
+	private _watchPos = selectRandom [(AGLToASL _centerPos),(AGLToASL _QS_HQpos)];
+	_randomPos = [_watchPos,(_aoSize * 0.8),25,10,[[objNull,'VIEW'],(0.1 max (random 1))]] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
 	_infUrbanType = selectRandomWeighted _infUrbanTypes;
 	_overwatchGroup = [_randomPos,(random 360),EAST,_infUrbanType,FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 	[(units _overwatchGroup),2] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
@@ -486,7 +476,7 @@ for '_x' from 0 to _grpCount step 1 do {
 		if ((random 1) > 0.5) then {
 			_overwatchGroup setFormDir (random 360);
 		} else {
-			_overwatchGroup setFormDir (_randomPos getDir _centerPos);
+			_overwatchGroup setFormDir (_randomPos getDir _watchPos);
 		};
 		{_x setUnitPosWeak 'Middle';} count (units _overwatchGroup);
 	};
@@ -518,7 +508,7 @@ if (_playerCount > 30) then {
 };
 if (_playerCount > 40) then {
 	_vehCount = [4,5] select _allowVehicles;
-};
+};	
 if (_playerCount > 50) then {
 	_vehCount = [4,5] select _allowVehicles;
 };
@@ -627,24 +617,28 @@ if (_allowVehicles) then {
 diag_log '****************************************************';
 diag_log '***** AO ENEMY ***** Spawning Snipers *****';
 diag_log '****************************************************';
-
-for '_x' from 0 to 2 do {
-	_randomPos = [_centerPos,(_aoSize * 1.25),(_aoSize / 2),10] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
-	_sniperGroup = [_randomPos,(random 360),EAST,'OI_SniperTeam',FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
+for '_x' from 0 to 2 step 1 do {
+	private _watchPos = selectRandom [(AGLToASL _centerPos),(AGLToASL _QS_HQpos)];
+	_randomPos = [_watchPos,(_aoSize * 1.25),(_aoSize / 2),10,[[objNull,'VIEW'],0.75]] call (missionNamespace getVariable 'QS_fnc_findOverwatchPos');
+	_sniperGroup = [_randomPos,(random 360),EAST,'OI_SniperTeam_2',FALSE] call (missionNamespace getVariable 'QS_fnc_spawnGroup');
 	_sniperGroup setBehaviour 'COMBAT';
 	_sniperGroup setCombatMode 'RED';
 	[(units _sniperGroup),(selectRandom [3,4])] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
-	_dirToCenter = _randomPos getDir _centerPos;
+	_dirToCenter = _randomPos getDir _watchPos;
 	_sniperGroup setFormDir _dirToCenter;
-	if ((random 1) > 0.5) then {
+	if ((random 1) > 0.333) then {
 		{
 			_x setUnitPos 'DOWN';
+		} forEach (units _sniperGroup);
+	} else {
+		{
+			_x setUnitPosWeak 'DOWN';
 		} forEach (units _sniperGroup);
 	};
 	{
 		_x setVehiclePosition [(getPosWorld _x),[],0,'CAN_COLLIDE'];
 		[_x] call (missionNamespace getVariable 'QS_fnc_setCollectible');
-		_x doWatch _centerPos;
+		_x doWatch (ASLToAGL _watchPos); 
 		0 = _enemiesArray pushBack _x;
 	} count (units _sniperGroup);
 };
@@ -674,7 +668,7 @@ if ((count (_terrainData select 4)) > 6) then {
 		_indArray = [
 			"i_c_soldier_para_1_f","i_c_soldier_para_2_f","i_c_soldier_para_3_f","i_c_soldier_para_4_f","i_c_soldier_para_5_f","i_c_soldier_para_6_f",
 			"i_c_soldier_para_7_f","i_c_soldier_para_8_f"
-		];
+		];	
 	} else {
 		_indArray = [
 			"o_soldieru_a_f","o_soldieru_aar_f","o_soldieru_ar_f","o_soldieru_medic_f","o_engineer_u_f","o_soldieru_exp_f","o_soldieru_gl_f",
@@ -689,11 +683,7 @@ if ((count (_terrainData select 4)) > 6) then {
 	for '_x' from 0 to 26 step 1 do {
 		_randomUnit = selectRandom _indArray;
 		_unit = _AOgarrisonGroup createUnit [_randomUnit,_centerPos,[],0,'NONE'];
-		missionNamespace setVariable [
-			'QS_analytics_entities_created',
-			((missionNamespace getVariable 'QS_analytics_entities_created') + 1),
-			FALSE
-		];
+		missionNamespace setVariable ['QS_analytics_entities_created',((missionNamespace getVariable 'QS_analytics_entities_created') + 1),FALSE];
 		_unit = _unit call (missionNamespace getVariable 'QS_fnc_unitSetup');
 		0 = _enemiesArray pushBack _unit;
 		0 = _toGarrison pushBack _unit;

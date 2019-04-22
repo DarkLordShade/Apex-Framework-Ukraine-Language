@@ -1,10 +1,10 @@
 /*
 File: fn_aoBriefing.sqf
-Author:
+Author: 
 
 	Quiksilver
 
-Last modified:
+Last modified: 
 
 	9/06/2016 A3 1.61 by Quiksilver
 
@@ -27,7 +27,10 @@ if (_type isEqualTo 'BRIEF') then {
 		'QS_marker_aoCircle',
 		'QS_marker_aoMarker'
 	];
-	'QS_marker_aoMarker' setMarkerText format ['%1Захопити %2',(toString [32,32,32]),_ao];
+	if (!((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 0)) then {
+		[objNull,_QS_AOpos] remoteExec ['QS_fnc_respawnOPFOR',[EAST,RESISTANCE],FALSE];
+	};
+	'QS_marker_aoMarker' setMarkerText (format ['%1Захопити %2',(toString [32,32,32]),_ao]);
 	_targetStartText = parseText format [
 		"<t align='center' size='2.2'>Нова ціль</t><br/><t size='1.5' align='center' color='#FFCF11'>%1</t><br/>____________________<br/>Ми добре попрацювали на останній місії. Я хочу знову побачити це. Рухайся до %1 та вбий їх всіх!<br/><br/>Не забудьте знищити радіовежу щоб припинити виклик підтримки з повітря.",
 		_ao
@@ -73,7 +76,7 @@ if (_type isEqualTo 'BRIEF') then {
 			_x setMarkerColor 'ColorOPFOR';
 			_x setMarkerAlpha 0.5;
 		} forEach (missionNamespace getVariable 'QS_virtualSectors_sub_3_markers');
-	};
+	};	
 	{
 		_x call (missionNamespace getVariable 'BIS_fnc_setTask');
 	} forEach [
@@ -125,7 +128,7 @@ if (_type isEqualTo 'BRIEF') then {
 			'X',
 			TRUE
 		]
-	];
+	];	
 };
 if (_type isEqualTo 'DEBRIEF') then {
 	['QS_IA_TASK_AO_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');

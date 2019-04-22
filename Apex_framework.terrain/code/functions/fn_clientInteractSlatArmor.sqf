@@ -3,11 +3,11 @@ File: fn_clientInteractSlatArmor.sqf
 Author:
 
 	Quiksilver
-
+	
 Last Modified:
 
 	14/04/2018 A3 1.82 by Quiksilver
-
+	
 Description:
 
 	-
@@ -15,11 +15,11 @@ _____________________________________________________________/*/
 
 params ['_actionTarget','_actionCaller','_actionID','_actionArguments'];
 _actionArguments params ['_vehicle','_newPhase','_animationSources'];
-if ((!(player getUnitTrait 'engineer')) && (!(['_crew_',(typeOf player),FALSE] call (missionNamespace getVariable 'QS_fnc_inString')))) exitWith {
+if ((!(player getUnitTrait 'engineer')) && (!(player getUnitTrait 'QS_trait_crewman'))) exitWith {
 	50 cutText ['Тільки інженери можуть встановлювати або знімати накладну броню','PLAIN DOWN',0.5];
 };
 if (isEngineOn _vehicle) exitWith {
-	50 cutText ['Двишун має бути вимкнений','PLAIN DOWN',0.5];
+	50 cutText ['Двигун має бути вимкнений','PLAIN DOWN',0.5];
 };
 if (!((damage _vehicle) isEqualTo 0)) exitWith {
 	50 cutText ['Транспорт має бути непошкодженим для зміни накладної броні','PLAIN DOWN',0.5];
