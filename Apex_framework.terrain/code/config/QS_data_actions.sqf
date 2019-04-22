@@ -3,11 +3,11 @@ File: QS_data_actions.sqf
 Author:
 
 	Quiksilver
-
+	
 Last modified:
 
 	27/03/2018 A3 1.82 by Quiksilver
-
+	
 Description:
 
 	Actions Text
@@ -54,6 +54,8 @@ ___________________________________________/*/
 	'Закрити двері для вантажів',
 	'Service vehicle',
 	'Обслуговування транспорту',
+	'Service',
+	'Обслуговування',
 	'Clear vehicle inventory',
 	'Очистити інвентар транспорту',
 	'Unflip',
@@ -141,11 +143,11 @@ ___________________________________________/*/
 	'Resume side missions',
 	'Продовжити другорядні місії',
 	'Suspend primary missions',
-	'Resume primary missions',
+	'Resume primary missions',	
 	'Cycle primary mission',
 	'0 - Close Menu',
 	'1 - (Target) Delete',
-	'2 - Spectate',
+	'2 - Spectate',			
 	'3 - Invincibility',
 	'4 - Show Pilots',
 	'5 - (Target) Repair',
@@ -243,5 +245,7 @@ ___________________________________________/*/
 	'Відмова',
 	'Скасувати',
 	'Транспортний сервіс',
-	(if (isLocalized 'STR_A3_action_Recover_Boat') then {localize 'STR_A3_action_Recover_Boat'} else {'Recover boat'})
+	(if (isLocalized 'STR_A3_action_Recover_Boat') then {localize 'STR_A3_action_Recover_Boat'} else {'Відновити човен'}),
+	'Role Selection',
+	'Вибір ролі'
 ]

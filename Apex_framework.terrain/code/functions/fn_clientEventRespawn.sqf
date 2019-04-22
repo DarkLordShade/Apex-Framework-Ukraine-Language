@@ -27,7 +27,6 @@ if (isForcedWalk player) then {
 	['QS_RD_interacting',FALSE,TRUE],
 	['QS_RD_loaded',FALSE,TRUE],
 	['QS_event_handleHeal',nil,TRUE],
-	['QS_revive_respawnType','',FALSE],
 	['QS_revive_disable',FALSE,(player getVariable ['QS_revive_disable',FALSE])],
 	['QS_respawn_disable',-1,FALSE],
 	['QS_client_medevacRequested',FALSE,FALSE],
@@ -103,7 +102,7 @@ if ((missionNamespace getVariable ['QS_missionConfig_artyEngine',1]) in [0,1]) t
 };
 if (player getUnitTrait 'QS_trait_HQ') then {
 	missionNamespace setVariable ['QS_hc_Commander',player,TRUE];
-	};
+};
 if (currentChannel > 5) then {
 	setCurrentChannel 5;
 };
@@ -114,11 +113,11 @@ if (!((player getVariable ['QS_tto',0]) < 1.5)) then {
 	player disableTIEquipment TRUE;
 };
 if (!isNull _oldUnit) then {
-if (!((getAllOwnedMines _oldUnit) isEqualTo [])) then {
-	{
-		player addOwnedMine _x;
-	} count (getAllOwnedMines _oldUnit);
-};
+	if (!((getAllOwnedMines _oldUnit) isEqualTo [])) then {
+		{
+			player addOwnedMine _x;
+		} count (getAllOwnedMines _oldUnit);
+	};
 };
 if (!((missionNamespace getVariable 'QS_client_action_carrierLaunchCancel') isEqualTo [])) then {
 	(missionNamespace getVariable 'QS_client_action_carrierLaunchCancel') params [
@@ -202,6 +201,7 @@ if ((_newUnit getVariable ['QS_unit_side',WEST]) isEqualTo EAST) exitWith {
 			};
 		};
 	};
+	0 spawn {uiSleep 1;createDialog 'QS_client_dialog_menu_roles';};
 };
 // RESISTANCE respawn
 if ((_newUnit getVariable ['QS_unit_side',WEST]) isEqualTo RESISTANCE) exitWith {
@@ -218,6 +218,7 @@ if ((_newUnit getVariable ['QS_unit_side',WEST]) isEqualTo RESISTANCE) exitWith 
 			};
 		};
 	};
+	0 spawn {uiSleep 1;createDialog 'QS_client_dialog_menu_roles';};
 };
 // CIVILIAN respawn
 if ((_newUnit getVariable ['QS_unit_side',WEST]) isEqualTo CIVILIAN) exitWith {
@@ -229,6 +230,7 @@ if ((_newUnit getVariable ['QS_unit_side',WEST]) isEqualTo CIVILIAN) exitWith {
 		};
 		setPlayerRespawnTime 15;
 	};
+	0 spawn {uiSleep 1;createDialog 'QS_client_dialog_menu_roles';};
 };
 // WEST respawn
 setPlayerRespawnTime 5;
@@ -274,5 +276,10 @@ if ((player getVariable 'QS_revive_respawnType') in ['BASE','']) then {
 		};
 		player setVariable ['QS_client_inFOBArea',TRUE,FALSE];
 		missionNamespace setVariable ['QS_module_fob_client_timeLastRespawn',(time + 180),FALSE];
-	};	
+	};
 };
+{
+	player setVariable _x;
+} forEach [
+	['QS_revive_respawnType','',FALSE]
+];
