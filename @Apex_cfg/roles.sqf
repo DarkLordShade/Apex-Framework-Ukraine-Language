@@ -3,11 +3,11 @@ File: roles.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	22/04/2019 A3 1.90 by Quiksilver
-	
+
 Description:
 
 	Roles
@@ -63,7 +63,7 @@ QS_roles_data = [
 			2,
 			2,
 			-1,
-			0,	
+			0,
 			3,
 			0,
 			{((missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]) && (((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 2) || {(((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 1) && ((getPlayerUID player) in (['OPFOR'] call (missionNamespace getVariable 'QS_fnc_whitelist'))))}))},
@@ -78,7 +78,7 @@ QS_roles_data = [
 			(playableSlotsNumber WEST),
 			(playableSlotsNumber WEST),
 			-1,
-			0,	
+			0,
 			0,
 			0,
 			{TRUE},
@@ -91,7 +91,7 @@ QS_roles_data = [
 			3,
 			10,
 			6,
-			0,	
+			0,
 			0,
 			0,
 			{TRUE},
@@ -104,7 +104,7 @@ QS_roles_data = [
 			1,
 			2,
 			10,
-			0,	
+			0,
 			0,
 			0,
 			{TRUE},
@@ -117,7 +117,7 @@ QS_roles_data = [
 			2,
 			8,
 			8,
-			0,	
+			0,
 			0,
 			0,
 			{TRUE},
@@ -130,7 +130,7 @@ QS_roles_data = [
 			2,
 			4,
 			10,
-			0,	
+			0,
 			0,
 			0,
 			{TRUE},
@@ -264,55 +264,55 @@ QS_fnc_roleDescription = {
 	_tropical = worldName in ['Tanoa'];
 	private _description = 'Undefined';
 	if (_role isEqualTo 'rifleman') then {
-		_description = format ['As a Rifleman, you are a front line soldier, and the backbone of the military.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['В якості Стрільця ви є солдатом передової лінії та кістяком війська.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'autorifleman') then {
-		_description = format ['An Automatic Riflemans job is to provide cover fire for their squad during engagements and while their squad is moving.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Завдання Кулеметника на полі бою - надавати вогньову підтримку та прикриття для свого підрозділу у разі сутичок або переміщення.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'machine_gunner') then {
-		_description = format ['A Machine Gunners job is to provide suppressive fire at long ranges. Unlike their lighter Autorifleman cousins, Machine Gunners may operate as part of a smaller detachment of the squad, and move at a slower pace.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Робота Важкого Кулеметника - надавати придушуючий вогонь на великих дистанціях. В протилежність своім товаришам - Легким Кулеметникам, Важкі Кулеметники може працювати як частина меншого підрозділу загону, і рухатися повільніше.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'rifleman_lat') then {
-		_description = format ['As a Rifleman (Light Anti-Tank), your role is to provide fire support against infantry, fortifications, unarmored and light-armored vehicles.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['В якості Стрільця (Легкий ПТ), ваша роль полягає у вогньовій підтримці проти піхоти, укріплень, неброньованої та легко броньованої техніки.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'rifleman_hat') then {
-		_description = format ['As a Rifleman (Heavy Anti-Tank), your role is to provide fire support against armored vehicles.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['В якості Стрільця (Важкий ПТ), ваша роль - надавати вогньову підтримку проти броньованогї техніки.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'engineer') then {
-		_description = format ['An Engineer is a combat soldier with a range of tactical and technical skills.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Інжинер - це бієць з певними тактичними та технічними знаннями.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'medic') then {
-		_description = format ['A Medic is responsible for providing First Aid and Medical services to friendly soldiers and non-combatants.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Медик відповідає за надання першої медичної допомоги дружнім солдатам та некомбатантам.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'sniper') then {
-		_description = format ['A Snipers main task is reconaissance. When the mission calls for it, snipers can also dismantle and dishearten the enemy with a few well-placed rifle shots. When there is no specific objective, a sniper will look for targets of opportunity.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Основне завдання Снайпера - розвідка. Коли місія потребує цього - снайпери можуть дезорієнтувати та суттєво знизити моральний дух противника кількома влучними пострілами з рушниці. Коли немаєконкретних цілей снайпер шукає мішені по можливості.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'crewman') then {
-		_description = format ['A Crewman is able to operate the Driver and Gunner positions of armored vehicles (Tanks, IFVs and APCs).<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Член Екіпажу може оперувати в якості Водія та Стрільця броньованої техніки (Nfyrb, БМП та БТРи).<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'jtac') then {
-		_description = format ['Working from a forward position, a Joint Terminal Attack Controller (JTAC) directs the action of combat aircraft engaged in close air support and other offensive air operations. This soldier will work closely with Pilots, UAV Operators and Squad Leaders.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Працюючи з передових позицій Оператори-Контролери Терміналу Атаки (JTAC) керують рухом бойових дронів на полі бою, що здійснюють тісну повітряну підтримку та інші наступальні повітряні операції. Цей солдат буде тісно співпрацювати з пілотами, операторами безпілотних літаків та лідерами загонів<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'mortar_gunner') then {
-		_description = format ['Mortar Gunners provide indirect fire support to squads. These soldiers can also deactivate mines, explosives and IEDs.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Мінометник надає не пряму вогньову підтримку підрозділам. Ці солдати також можуть деактивувати міни, вибухівку та СВП.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'uav') then {
-		_description = format ['A UAV Operator controls autonomous vehicles for logistics, intel-gathering, support and combat tasks.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Оператор БПЛА контролюють автономний транспорт для логістики, збору даних, підтримки та бойових завдань.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'pilot_heli') then {
-		_description = format ['Transport Pilots provide infantry transport to and from missions.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Транспортні Пілоти транспортують піхоту на та з завдань.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'pilot_plane') then {
-		_description = format ['A Fighter Pilot is responsible for providing Close Air Support to ground elements when requested, and flying Combat Air Patrols to protect transport pilots from enemy aircraft.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Бойові пілоти выдповідають за надання Близької Повітрянної Підтримки наземним елементам за запитом, а також вилітають на Бойові Повітряні Патрулюваннядля захисту транспорту від ворожих повітряних суден.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'commander') then {
-		_description = format ['Organize and deploy available resources (including players) to defeat the enemy. <br/><br/>Soldiers are required under military law to obey your orders.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Командир організовує та оперує наявними ресурсами (включаючи гравців) задля перемоги над ворогом.<br/><br/>Згідно з військовим законодавством - солдати повинні виконувати його накази.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select _tropical),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'o_rifleman') then {
-		_description = format ['As a Rifleman, you are a front line soldier, and the backbone of the military.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['В якості Стрільця ви є солдатом передової лінії та кістяком війська.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	if (_role isEqualTo 'o_autorifleman') then {
-		_description = format ['An Automatic Riflemans job is to provide cover fire for their squad during engagements and while their squad is moving.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
+		_description = format ['Завдання Кулеметника на полі бою - надавати вогньову підтримку та прикриття для свого підрозділу у разі сутичок або переміщення.<br/><br/><img shadow="0" align="center" size="18" image="media\images\roles\%1\%2.jpg"/>',(['arid','tropic'] select (worldName in ['Tanoa'])),(uiNamespace getVariable ['QS_RSS_currentSelectedRole','rifleman'])];
 	};
 	(parseText _description);
 };
