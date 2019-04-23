@@ -15,23 +15,23 @@ _______________________________________________________/*/
 _tropical = worldName in ['Tanoa'];
 
 QS_roles_UI_info = [
-	['rifleman','Rifleman','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['autorifleman','Autorifleman','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa'],
-	['machine_gunner','Machine Gunner','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa'],
-	['rifleman_lat','Rifleman (LAT)','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManAT_ca.paa'],
-	['rifleman_hat','Rifleman (HAT)','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManAT_ca.paa'],
-	['engineer','Engineer','a3\Ui_f\data\GUI\Cfg\RespawnRoles\support_ca.paa','a3\ui_f\data\map\vehicleicons\iconManEngineer_ca.paa'],
-	['medic','Medic','a3\ui_f\data\igui\cfg\actions\heal_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa'],
-	['sniper','Sniper','a3\Ui_f\data\GUI\Cfg\RespawnRoles\recon_ca.paa','a3\ui_f\data\map\vehicleicons\iconManRecon_ca.paa'],
-	['crewman','Crewman','a3\Ui_f\data\GUI\Cfg\RespawnRoles\support_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['rifleman','Стрілець','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['autorifleman','Кулеметник','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa'],
+	['machine_gunner','Важкий Кулеметник','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa'],
+	['rifleman_lat','Стрілець (ЛПТ)','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManAT_ca.paa'],
+	['rifleman_hat','Стрілець (ВПТ)','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManAT_ca.paa'],
+	['engineer','Інженер','a3\Ui_f\data\GUI\Cfg\RespawnRoles\support_ca.paa','a3\ui_f\data\map\vehicleicons\iconManEngineer_ca.paa'],
+	['medic','Медик','a3\ui_f\data\igui\cfg\actions\heal_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa'],
+	['sniper','Снайпер','a3\Ui_f\data\GUI\Cfg\RespawnRoles\recon_ca.paa','a3\ui_f\data\map\vehicleicons\iconManRecon_ca.paa'],
+	['crewman','Член Екіпажу','a3\Ui_f\data\GUI\Cfg\RespawnRoles\support_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
 	['jtac','JTAC','a3\Ui_f\data\GUI\Cfg\RespawnRoles\recon_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['mortar_gunner','Mortar Gunner','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManExplosive_ca.paa'],
-	['uav','UAV Operator','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['pilot_heli','Transport Pilot','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['pilot_plane','Fighter Pilot','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['commander','Commander','a3\ui_f\data\gui\cfg\ranks\general_gs.paa','a3\ui_f\data\map\vehicleicons\iconManCommander_ca.paa'],
-	['o_rifleman','Rifleman','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
-	['o_autorifleman','Autorifleman','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa']
+	['mortar_gunner','Мінометник','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManExplosive_ca.paa'],
+	['uav','Оператор БПЛА','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['pilot_heli','Транспортний Пілот','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['pilot_plane','Бойовий Пілот','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['commander','Командир','a3\ui_f\data\gui\cfg\ranks\general_gs.paa','a3\ui_f\data\map\vehicleicons\iconManCommander_ca.paa'],
+	['o_rifleman','Стрілець','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconMan_ca.paa'],
+	['o_autorifleman','Кулеметник','a3\Ui_f\data\GUI\Cfg\RespawnRoles\assault_ca.paa','a3\ui_f\data\map\vehicleicons\iconManMG_ca.paa']
 ];
 
 QS_roles_defaultLoadouts = [

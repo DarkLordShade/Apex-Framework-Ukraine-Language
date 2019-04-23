@@ -228,7 +228,7 @@ if (_type isEqualTo 1) then {
 										missionNamespace setVariable ['QS_aoSuspended',FALSE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',FALSE,TRUE];
 										50 cutText ['Основні місії поновлено, зачекайте ...','PLAIN DOWN',0.5];
-										_actionTarget setUserActionText [_actionID,'Suspend primary missions',(format ["<t size='3'>%1</t>",'Suspend primary missions'])];
+										_actionTarget setUserActionText [_actionID,'Призупинити основні місії',(format ["<t size='3'>%1</t>",'Призупинити основні місії'])];
 										['systemChat',(format ['%1 (персонал) поновив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								};
