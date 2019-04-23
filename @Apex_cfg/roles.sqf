@@ -3,11 +3,11 @@ File: roles.sqf
 Author:
 
 	Quiksilver
-
+	
 Last Modified:
 
 	22/04/2019 A3 1.90 by Quiksilver
-
+	
 Description:
 
 	Roles
@@ -63,8 +63,8 @@ QS_roles_data = [
 			2,
 			2,
 			-1,
+			0,	
 			0,
-			3,
 			0,
 			{((missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]) && (((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 2) || {(((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 1) && ((getPlayerUID player) in (['OPFOR'] call (missionNamespace getVariable 'QS_fnc_whitelist'))))}))},
 			{((player getVariable ['QS_unit_side',WEST]) isEqualTo EAST) || ((missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]) && (((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 2) || {(((missionNamespace getVariable ['QS_missionConfig_playableOPFOR',0]) isEqualTo 1) && ((getPlayerUID player) in (['OPFOR'] call (missionNamespace getVariable 'QS_fnc_whitelist'))))}))},
@@ -78,7 +78,7 @@ QS_roles_data = [
 			(playableSlotsNumber WEST),
 			(playableSlotsNumber WEST),
 			-1,
-			0,
+			0,	
 			0,
 			0,
 			{TRUE},
@@ -91,7 +91,7 @@ QS_roles_data = [
 			3,
 			10,
 			6,
-			0,
+			0,	
 			0,
 			0,
 			{TRUE},
@@ -104,7 +104,7 @@ QS_roles_data = [
 			1,
 			2,
 			10,
-			0,
+			0,	
 			0,
 			0,
 			{TRUE},
@@ -117,7 +117,7 @@ QS_roles_data = [
 			2,
 			8,
 			8,
-			0,
+			0,	
 			0,
 			0,
 			{TRUE},
@@ -130,7 +130,7 @@ QS_roles_data = [
 			2,
 			4,
 			10,
-			0,
+			0,	
 			0,
 			0,
 			{TRUE},
@@ -144,7 +144,7 @@ QS_roles_data = [
 			10,
 			6,
 			0,
-			3,
+			0,
 			0,
 			{TRUE},
 			{(((player getVariable ['QS_unit_side',WEST]) isEqualTo WEST) || (missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]))},
@@ -157,7 +157,7 @@ QS_roles_data = [
 			10,
 			6,
 			0,
-			3,
+			0,
 			0,
 			{TRUE},
 			{(((player getVariable ['QS_unit_side',WEST]) isEqualTo WEST) || (missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]))},
@@ -250,7 +250,7 @@ QS_roles_data = [
 			0,
 			0,
 			0,
-			{TRUE},
+			{(!((missionNamespace getVariable ['QS_missionConfig_Commander',0]) isEqualTo 0))},
 			{(((player getVariable ['QS_unit_side',WEST]) isEqualTo WEST) || (missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]))},
 			{}
 		]
