@@ -884,7 +884,7 @@ if (_case < 60) exitWith {
 			if (!isNil {missionNamespace getVariable 'QS_staff_requestBaseCleanup_time'}) then {
 				if (time > (missionNamespace getVariable 'QS_staff_requestBaseCleanup_time')) then {
 					missionNamespace setVariable ['QS_staff_requestBaseCleanup_time',(time + 300),FALSE];
-					diag_log format ['%1 (%2) (staff) has initiated base cleanup',((_this # 1) # 0),((_this # 1) # 1)];
+					diag_log format ['%1 (%2) (персонал) запустив очищення бази',((_this # 1) # 0),((_this # 1) # 1)];
 					0 = 0 spawn {
 						_baseMarker = markerPos 'QS_marker_base_marker';
 						{
