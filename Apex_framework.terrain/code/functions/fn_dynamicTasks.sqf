@@ -237,8 +237,8 @@ if (_case isEqualTo 1) then {
 						TRUE,
 						[
 							_description,
-							'Pilot Extract',
-							'Pilot Extract'
+							'Евакуація пілота',
+							'Евакуація пілота'
 						],
 						[_entity,TRUE],
 						'CREATED',

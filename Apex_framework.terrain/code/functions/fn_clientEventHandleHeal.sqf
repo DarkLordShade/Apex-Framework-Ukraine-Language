@@ -41,7 +41,7 @@ if (!isPlayer _healer) then {
 					_unit allowDamage TRUE;
 				};
 				if (isPlayer _unit) then {
-					['systemChat',(format ['Revived by (AI) %1',(name _healer)])] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
+					['systemChat',(format ['Оживив (AI) %1',(name _healer)])] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
 				};
 				_healer doWatch objNull;
 			};

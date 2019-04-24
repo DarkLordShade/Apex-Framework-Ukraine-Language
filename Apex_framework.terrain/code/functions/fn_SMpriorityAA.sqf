@@ -39,8 +39,8 @@ private _entitiesParams = [['Air'],['UAV_01_base_F','UAV_06_base_F','ParachuteBa
 private _rearmInterval = _time + (240 + (random 80));
 private _rearming = FALSE;
 private _rearmDelay = [15,20,30];
-_rearmingText = 'ПП батарея CSAT AA перезаряджається!';
-_finishedRearmText = 'ПП батарея CSAT AA закінчила перезарядку!';
+_rearmingText = 'ПП батарея CSAT перезаряджається!';
+_finishedRearmText = 'ПП батарея CSAT закінчила перезарядку!';
 private _turretParams = [];
 private _targetListEnemy = [];
 private _targetType = '';
@@ -264,7 +264,7 @@ _briefing = parseText "<t align='center' size='2.2'>Пріоритетна ці�
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 for '_x' from 0 to 1 step 0 do {
 	if (((_aaHulls findIf {(alive _x)}) isEqualTo -1) || {(missionNamespace getVariable ['QS_smSuccess',FALSE])}) exitWith {
-		['CompletedPriorityTarget',['Anti-Air Battery Neutralized']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CompletedPriorityTarget',['Протиповітряну батарею нейтралізовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		[1,_spawnPosition] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerAlpha 0;

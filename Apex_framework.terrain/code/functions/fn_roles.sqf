@@ -3,11 +3,11 @@ File: fn_roles.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	24/04/2019 A3 1.90 by Quiksilver
-	
+
 Description:
 
 	Roles System
@@ -120,7 +120,7 @@ if (_type isEqualTo 'GET_ROLE_DESCRIPTION') exitWith {
 		'',
 		['_role','rifleman']
 	];
-	([_role] call (missionNamespace getVariable 'QS_fnc_roleDescription'));	
+	([_role] call (missionNamespace getVariable 'QS_fnc_roleDescription'));
 };
 if (_type isEqualTo 'HANDLE_CONNECT') exitWith {
 	params ['','_data'];
@@ -185,39 +185,39 @@ if (_type isEqualTo 'REQUEST_ROLE') exitWith {
 			_roleCount = ['GET_ROLE_COUNT',_role,_side,FALSE] call (missionNamespace getVariable 'QS_fnc_roles');
 			if ((_roleCount # 0) < (_roleCount # 1)) then {
 				if (!(((player getVariable ['QS_unit_role','rifleman']) isEqualTo _role) && ((player getVariable ['QS_unit_side',WEST]) isEqualTo _side))) then {
-					
+
 				} else {
 					_allowRequest = FALSE;
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Already in selected role',[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Вже у обраній ролі',[],-1,TRUE,'Role Selection',FALSE];
 				};
 			} else {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Maximum number of players in selected role',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Максимальна кількість гравців у обраній ролі',[],-1,TRUE,'Role Selection',FALSE];
 			};
 		} else {
 			if ((!(_side isEqualTo (player getVariable ['QS_unit_side',WEST]))) && (!(missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]))) then {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Cannot switch faction',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Неможливо змінити фракцію',[],-1,TRUE,'Role Selection',FALSE];
 			} else {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Cannot select role',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Неможливо обрати роль',[],-1,TRUE,'Role Selection',FALSE];
 			};
 		};
-		
+
 		if (_role in ['pilot_plane','pilot_cas']) then {
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) isEqualTo 0) then {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Close Air Support roles disabled in mission parameters.',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Роль пілота повітряної підтримки вимкнено в налаштуваннях місії.',[],-1,TRUE,'Role Selection',FALSE];
 			};
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) in [1,3]) then {
 				if (!(_uid in (['CAS'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Not in CAS role whitelist (talk to admins to get whitelisted!)',[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не в білому списку для ролі Пілота Повітрянної Пядтримки (зверніться до адмінів щоб потрапити до білого списку!)',[],-1,TRUE,'Role Selection',FALSE];
 					_allowRequest = FALSE;
 				};
 			};
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) isEqualTo 3) then {
 				if ((player getVariable ['QS_client_casAllowance',0]) >= (missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['CAS jet limit exceeded ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Досягнуто ліміту на кількість Пілотів Літака ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
 					_allowRequest = FALSE;
 				};
 			};
@@ -276,7 +276,7 @@ if (_type isEqualTo 'HANDLE_REQUEST_ROLE') exitWith {
 		};
 	} forEach _roles;
 	_roles = missionNamespace getVariable 'QS_unit_roles';
-	private _roles_side = _roles # _side_ID;	
+	private _roles_side = _roles # _side_ID;
 	_role_data_index = _roles_side findIf {(((_x # 0) # 0) isEqualTo _role)};
 	(_roles_side # _role_data_index) params [
 		'_role_data',
@@ -321,7 +321,7 @@ if (_type isEqualTo 'HANDLE_REQUEST_ROLE') exitWith {
 		};
 		[_unit] joinSilent (createGroup [_side,TRUE]);
 		if (!(_side isEqualTo (_unit getVariable ['QS_unit_side',WEST]))) then {
-			_txt = format ['%1 switched from %2 to %3',(name _unit),(_unit getVariable ['QS_unit_side',WEST]),_side];
+			_txt = format ['%1 перемкнуто з %2 до %3',(name _unit),(_unit getVariable ['QS_unit_side',WEST]),_side];
 			_txt remoteExec ['systemChat',-2,FALSE];
 			remoteExec ['QS_fnc_clientEventRespawn',_unit,FALSE];
 		};
@@ -680,13 +680,13 @@ if (_type isEqualTo 'SET_DEFAULT_LOADOUT') exitWith {
 		if (!((getUnitLoadout player) isEqualTo (((missionNamespace getVariable 'QS_roles_defaultLoadouts') # 0) # 1))) then {
 			player setUnitLoadout [(((missionNamespace getVariable 'QS_roles_defaultLoadouts') # 0) # 1),TRUE];
 		} else {
-			systemChat 'loadout already applied';
+			systemChat 'завантаження вже застосовано';
 		};
 	} else {
 		if (!((getUnitLoadout player) isEqualTo (((missionNamespace getVariable 'QS_roles_defaultLoadouts') # _loadout_index) # 1))) then {
 			player setUnitLoadout [(((missionNamespace getVariable 'QS_roles_defaultLoadouts') # _loadout_index) # 1),TRUE];
 		} else {
-			systemChat 'loadout already applied';
+			systemChat 'завантаження вже застосовано';
 		};
 	};
 	if (_save) then {

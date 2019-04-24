@@ -1,6 +1,6 @@
 /*/
 File: fn_aoTaskSAM.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -72,19 +72,19 @@ if (_state isEqualTo 1) then {
 					params ['_killed','_killer','_instigator'];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
-							['sideChat',[WEST,'HQ'],(format ['Target destroyed by %1!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+							['sideChat',[WEST,'HQ'],(format ['Ціль знищено %1!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
 				}
 			];
-			['ST_DESTROY_VEHICLE',['Destroy','Destroy enemy vehicle']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_DESTROY_VEHICLE',['Знищити','Знищити ворожий транспорт']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			[
 				'QS_IA_TASK_AO_3',
 				TRUE,
 				[
-					'Intel has located an enemy vehicle. Take it out!',
-					'Destroy vehicle',
-					'Destroy vehicle'
+					'Розвідка виявила ворожий транспорт. Розберіться з цим!',
+					'Знищити транспорт',
+					'Знищити транспорт'
 				],
 				[_vehicle,TRUE],
 				'CREATED',
@@ -110,7 +110,7 @@ if (_state isEqualTo 2) then {
 	_vehicle = _data select 0;
 	if ((!alive _vehicle) || {(isNull _vehicle)}) exitWith {
 		//comment 'Mission success';
-		['ST_DESTROY_VEHICLE',['Destroy','Enemy vehicle destroyed']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_DESTROY_VEHICLE',['Знищити','Ворожий транспорт знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];

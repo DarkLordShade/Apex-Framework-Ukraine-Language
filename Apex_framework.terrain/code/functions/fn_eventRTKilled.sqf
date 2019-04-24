@@ -3,11 +3,11 @@ File: fn_eventRTKilled.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	5/12/2018 A3 1.86 by Quiksilver
-	
+
 Description:
 
 	Event Radio Tower Killed
@@ -21,7 +21,7 @@ params ['_object','_killer'];
 _radioTowerDownText = parseText "<t align='center' size='2.2'>Радіовежу</t><br/><t size='1.5' color='#08b000' align='center'>ЗНИЩЕНО</t><br/>____________________<br/>Ворожу радіовежу знищено! Неперевершена робота, хлопці!<br/><br/><t size='1.2' color='#08b000' align='center'> Тепер ворог не зможе викликати підкріплення!</t><br/>";
 //['hint',_radioTowerDownText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['QS_IA_TASK_AO_1'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-['CompletedSub',['Enemy radio tower destroyed!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['CompletedSub',['Ворожу радіовежу знищено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 if (!isNull _killer) then {
 	if (isPlayer _killer) then {
 		_name = name _killer;

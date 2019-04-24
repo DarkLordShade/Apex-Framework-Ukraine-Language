@@ -3,11 +3,11 @@ File: fn_atServer.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	26/10/2016 A3 1.64 by Quiksilver
-	
+
 Description:
 
 	-[41,[0,_uid,_causedBy,_nameCausedBy,player,_val,TRUE]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
@@ -42,7 +42,7 @@ if (_type isEqualTo 1) then {
 	diag_log format ['***** fn_atServer ***** UID to robocop: %1 *****',_uid];
 	if (_i isEqualTo -1) then {
 		_a = [_uid,_val];
-		0 = (missionNamespace getVariable 'QS_roboCop') pushBack _a;		
+		0 = (missionNamespace getVariable 'QS_roboCop') pushBack _a;
 		[nil,[_uid,_cid,_val,TRUE]] remoteExec ['QS_fnc_atClientMisc',_cid,FALSE];
 	} else {
 		_clientArray = (missionNamespace getVariable 'QS_roboCop') select _i;
@@ -66,7 +66,7 @@ if (_type isEqualTo 1) then {
 		(missionNamespace getVariable 'QS_roboCop') set [_i,_a];
 		[nil,[_uid,_cid,_val,TRUE]] remoteExec ['QS_fnc_atClientMisc',_cid,FALSE];
 	};
-	_message = format ['ROBOCOP: %1 has been reported',_nameCausedBy];
+	_message = format ['ROBOCOP: %1 повідомлено',_nameCausedBy];
 	_QS_UID = ['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist');
 	private _arrayToSend = [];
 	{

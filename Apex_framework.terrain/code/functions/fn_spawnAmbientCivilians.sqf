@@ -147,7 +147,7 @@ if (_type isEqualTo 'FOOT') then {
 									if (!(missionNamespace getVariable ['QS_grid_civCasualties',FALSE])) then {
 										missionNamespace setVariable ['QS_grid_civCasualties',TRUE,TRUE];
 										if (isDedicated) then {
-											['GRID_IDAP_UPDATE',['Area Of Operations','Завдання провалено<br/>Без жертв серед цивільних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+											['GRID_IDAP_UPDATE',['Зона Операцій','Завдання провалено<br/>Без жертв серед цивільних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 											'QS_marker_grid_civState' setMarkerText (format ['%1Без жертв серед цивільних (провалено)',(toString [32,32,32])]);
 											'QS_marker_grid_civState' setMarkerColor 'ColorRED';
 										} else {

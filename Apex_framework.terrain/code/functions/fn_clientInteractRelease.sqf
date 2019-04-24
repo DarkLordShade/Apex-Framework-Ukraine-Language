@@ -124,9 +124,9 @@ if (!((attachedObjects player) isEqualTo [])) then {
 							missionNamespace setVariable ['QS_prisoners',((missionNamespace getVariable 'QS_prisoners') + [_unit]),TRUE];
 							if (!(_unit in _allAgents)) then {
 								[79,_unit,EAST,TRUE] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-							};								
+							};
 							[60,[['PRISONER',_puid1,_pname1,1],['PRISONER',_puid2,_pname2,1],[player,1]]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-							['ScoreBonus',[(format ['%1 Corrections',worldName]),'1']] call (missionNamespace getVariable 'QS_fnc_showNotification');
+							['ScoreBonus',[(format ['%1 Виправлень',worldName]),'1']] call (missionNamespace getVariable 'QS_fnc_showNotification');
 						};
 					};
 				};

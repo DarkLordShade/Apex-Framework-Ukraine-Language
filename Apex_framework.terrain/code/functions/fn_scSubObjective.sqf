@@ -389,8 +389,8 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_2_markers') pushBack _marker2;
 			_description = 'Знищити ворожу радіо антену!<br/><br/>Ворог використовує радіозвязок для виклику для підкріплення гвинтокрилів та броньованого транспорту.<br/><br/>Знищення цієї цілі значно зменшить кількість ворожого транспорту.';
-			_title = 'Знищити радіо антену';
-			_tooltip = 'Радіо Антена';
+			_title = 'Знищити радіовежу';
+			_tooltip = 'Радіовежа';
 			_icon = 'destroy';
 			[
 				'QS_virtualSectors_sub_2_task',

@@ -84,7 +84,7 @@ if (_QS_responseNeutrality isEqualTo -1) then {
 		};
 	} else {
 		if ((random 1) > 0.5) then {
-			_text = format ['%1 appears to be going to alert the enemy',name _t];
+			_text = format ['%1, здається, має намір повідомити ворогу',name _t];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [2,TRUE,7.5,-1,_text,[],-1,TRUE,'Civilian',TRUE];
 			_t setVariable ['QS_civilian_alertingEnemy',TRUE,TRUE];
 		} else {

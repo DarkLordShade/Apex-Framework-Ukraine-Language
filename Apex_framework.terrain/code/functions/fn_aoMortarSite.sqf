@@ -81,7 +81,7 @@ _mortar addEventHandler [
 			'QS_marker_grid_mtrMkr',
 			'QS_marker_grid_mtrCircle'
 		];
-		['GRID_UPDATE',['Area Of Operations','Ворожий міномет знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_UPDATE',['Зона Операцій','Ворожий міномет знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	}
 ];
 _gunner call (missionNamespace getVariable 'QS_fnc_unitSetup');
@@ -168,7 +168,7 @@ _uncertainPos = [
 	((_spawnPos select 1) + 100 - (random 200)),
 	0
 ];
-['GRID_UPDATE',['Area Of Operations','Розгорнуто ворожий міномет']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['GRID_UPDATE',['Зона Операцій','Розгорнуто ворожий міномет']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerPos _uncertainPos;
 	_x setMarkerAlpha 0.75;

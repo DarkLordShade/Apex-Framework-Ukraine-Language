@@ -3,15 +3,15 @@ File: QS_data_roles.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	13/10/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Role Assignment Data
-	
+
 Roles:
 
 
@@ -21,8 +21,8 @@ Roles:
 		<max number in role>,
 		<per X number of players another slot will open, up to the max>
 	]
-		
-	
+
+
 __________________________________________________________________________/*/
 
 private _return = [];
@@ -30,7 +30,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 	[
 		[
 			'soldier',				// Role
-			'Стрілок',				// Role Title
+			'Стрілець',				// Role Title
 			-1,						// Minimum slots unlocked
 			-1,						// Max number in role
 			-1,
@@ -100,7 +100,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 		],
 		[
 			'mortar',
-			'Mortar Gunner',
+			'Мінометник',
 			1,
 			1,
 			-1,
@@ -116,7 +116,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 		],
 		[
 			'squad_leader',
-			'Squad Leader',
+			'Командир Загону',
 			2,
 			6,
 			10,
@@ -124,7 +124,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 		],
 		[
 			'commander',
-			'Commander',
+			'Командир',
 			1,
 			1,
 		-1,

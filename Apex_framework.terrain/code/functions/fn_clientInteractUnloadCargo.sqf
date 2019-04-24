@@ -123,7 +123,7 @@ private _hasUnloaded = FALSE;
 					];
 					50 cutText [(format ['Вивантажено %1',(_cargo getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _cargo) >> 'displayName'))])]),'PLAIN DOWN',0.3];
 				} else {
-					50 cutText ['Немає чистого місця для вивантаження.','PLAIN DOWN',0.3];
+					50 cutText ['Немає вільного місця для вивантаження.','PLAIN DOWN',0.3];
 				};
 			};
 		};

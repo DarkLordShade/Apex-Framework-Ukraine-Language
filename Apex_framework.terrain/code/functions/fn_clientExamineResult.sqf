@@ -35,13 +35,13 @@ if (_result isEqualTo 3) exitWith {
 };
 if (_result isEqualTo 4) exitWith {
 	//comment 'IDAP mini task';
-	50 cutText ['Вторинне завдання знайдено','PLAIN',0.5];
+	50 cutText ['Другорядне завдання знайдено','PLAIN',0.5];
 	playSound ['Orange_Access_FM',FALSE];
 	[81,_entity,player,(groupID (group player)),profileName,clientOwner] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 };
 if (_result isEqualTo 5) exitWith {
 	//comment 'IG mini task';
-	50 cutText ['Вторинне завдання знайдено','PLAIN',0.5];
+	50 cutText ['Другорядне завдання знайдено','PLAIN',0.5];
 	playSound ['Orange_Access_FM',FALSE];
 	[82,_entity,player,(groupID (group player)),profileName,clientOwner] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 };

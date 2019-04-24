@@ -3,11 +3,11 @@ File: fn_clientInteractSensorTarget.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	7/9/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Remote Sensors / Datalink Interaction
@@ -77,7 +77,7 @@ _onCompleted = {
 			player setVariable ['QS_client_jtac_sensorTarget',_cursorObject,FALSE];
 			50 cutText ['Повідомлено про ціль','PLAIN DOWN',0.3];
 			playSound 'beep_target';
-			['sideChat',[WEST,'BLU'],(format ['%1 (JTAC) відмічтив %2 в квадраті %3 для Повітрянної/Артилерійської підтримки',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'BLU'],(format ['%1 (JTAC) відмітив %2 в квадраті %3 для Повітрянної/Артилерійської підтримки',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			[77,'FIRE_SUPPORT',[_cursorObject,profileName],FALSE] remoteExec ['QS_fnc_remoteExec',2];
 		} else {
 			50 cutText ['Про ціль вже повідомлено','PLAIN DOWN',0.3];
@@ -89,11 +89,11 @@ _onCompleted = {
 			_cursorObject setVariable ['QS_remoteTarget_reported',TRUE,TRUE];
 			50 cutText ['Повідомлено про ціль','PLAIN DOWN',0.3];
 			playSound 'beep_target';
-			['sideChat',[WEST,'BLU'],(format ['%1 (%2) marked a(n) %3 at grid %4 for CAS/Artillery Support',profileName,(groupID (group player)),(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'BLU'],(format ['%1 (%2) позначив %3 at grid %4 для Повітрянної/Артилерійської підтримки',profileName,(groupID (group player)),(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorObject) >> 'displayName')),(mapGridPosition _cursorObject)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			[77,'FIRE_SUPPORT',[_cursorObject,profileName],FALSE] remoteExec ['QS_fnc_remoteExec',2];
 		} else {
 			50 cutText ['Про ціль вже повідомлено','PLAIN DOWN',0.3];
-		};	
+		};
 	};
 };
 playSound 'clickSoft';

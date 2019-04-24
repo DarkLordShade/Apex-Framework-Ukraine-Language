@@ -51,7 +51,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'TASK ASSIGNED'
+			/*/title string/*/ 				'ЗАВДАННЯ ПРИЗНАЧЕНО'
 		];
 	};
 	if (_case isEqualTo 'TaskCanceled') then {
@@ -555,7 +555,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Commander'
+			/*/title string/*/ 				'Командир'
 		];
 	};
 	if (_case isEqualTo 'hcTaskSucceeded') then {
@@ -573,7 +573,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Commander'
+			/*/title string/*/ 				'Командир'
 		];
 	};
 	if (_case isEqualTo 'hcTaskFailed') then {
@@ -591,7 +591,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Commander'
+			/*/title string/*/ 				'Командир'
 		];
 	};
 	if (_case isEqualTo 'System') then {
@@ -609,7 +609,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'System'
+			/*/title string/*/ 				'Система'
 		];
 	};
 	if (_case isEqualTo 'CUSTOM_GEORGETOWN') then {
@@ -635,7 +635,7 @@ if (_case isEqualType '') then {
 			/*/color array/*/ 				[1,0.81,0.06,1],
 			/*/colorIconPicture array/*/	[1,0.81,0.06,1],
 			/*/colorIconText array/*/ 		[(profileNamespace getVariable ['IGUI_TEXT_RGB_R',0]),(profileNamespace getVariable ['IGUI_TEXT_RGB_G',1]),(profileNamespace getVariable ['IGUI_TEXT_RGB_B',1]),(profileNamespace getVariable ['IGUI_TEXT_RGB_A',0.8])],
-			/*/description string/*/ 		'Intel collected, mission complete!',
+			/*/description string/*/ 		'Дані зібрано, Місію завершено!',
 			/*/difficulties array/*/ 		[],
 			/*/duration number/*/ 			5,
 			/*/iconPicture string/*/ 		'media\images\notificons\main_objective_completed.paa',
@@ -653,7 +653,7 @@ if (_case isEqualType '') then {
 			/*/color array/*/ 				[1,0.81,0.06,1],
 			/*/colorIconPicture array/*/	[1,0.81,0.06,1],
 			/*/colorIconText array/*/ 		[(profileNamespace getVariable ['IGUI_TEXT_RGB_R',0]),(profileNamespace getVariable ['IGUI_TEXT_RGB_G',1]),(profileNamespace getVariable ['IGUI_TEXT_RGB_B',1]),(profileNamespace getVariable ['IGUI_TEXT_RGB_A',0.8])],
-			/*/description string/*/ 		'We took too long, mission failed!',
+			/*/description string/*/ 		'Ми забарилися, місію провалено!',
 			/*/difficulties array/*/ 		[],
 			/*/duration number/*/ 			5,
 			/*/iconPicture string/*/ 		'media\images\notificons\main_objective_completed.paa',
@@ -681,7 +681,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'SC_UPDATE_GOOD') then {
@@ -699,7 +699,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'SC_UPDATE_BAD') then {
@@ -717,7 +717,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'SC_EXIT_GOOD') then {
@@ -735,7 +735,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'SC_EXIT_BAD') then {
@@ -753,7 +753,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'SC_SUB_COMPLETED') then {
@@ -771,7 +771,7 @@ if (_case isEqualType '') then {
 			/*/sound string/*/ 				'QS_audio_notification_2',
 			/*/soundClose string/*/ 		'QS_audio_notification_2Close',
 			/*/soundRadio string/*/ 		'',
-			/*/title string/*/ 				'Area of Operations'
+			/*/title string/*/ 				'Зона Операцій'
 		];
 	};
 	if (_case isEqualTo 'CAS_1') then {

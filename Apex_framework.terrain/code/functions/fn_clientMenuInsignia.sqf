@@ -51,10 +51,10 @@ if (_type isEqualTo 'Select') then {
 			player setVariable ['QS_ClientUnitInsignia2',_texture,FALSE];
 			profileNamespace setVariable ['QS_ClientUnitInsignia2',_texture];
 			saveProfileNamespace;
-			_text = format ['Insignia Set: %1',_displayName];
+			_text = format ['Перелік відзнак: %1',_displayName];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],(serverTime + 10)];
 		} else {
-			_text = parseText format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Insignia not set.',_supporterAccess,_supporterLevel];
+			_text = parseText format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Відзнаку не встановлено.',_supporterAccess,_supporterLevel];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],(serverTime + 10)];
 		};
 	};

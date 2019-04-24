@@ -119,7 +119,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 _briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Артилерія</t><br/>____________________<br/>Сили OPFOR встановлюють артилерійську батарею щоб надавата вам по сраці! Ми знайшли їхню позицію за допомогою термальних знімків та позначили її на вашій мапі.<br/><br/>Це пріоритетна ціль, хлопці! Вони ще розгортаються, але будуть готові до відкриття вогню за 5 хвилин!";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewPriorityTarget',['Artillery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewPriorityTarget',['Артилерія']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 waitUntil {
 	sleep 5;
@@ -127,7 +127,7 @@ waitUntil {
 };
 _completeText = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#08b000'>НЕЙТРАЛІЗОВАНО</t><br/>____________________<br/>Неперевершена робота, козаки! Переконайтесь, що ви можете швидко переміщуватись між цілями, тому що якщо вони залишаться зі своїми іграшками - то можуть спричинити справжній хаос.<br/><br/>Продовжуйте основну операцію. Ми сповістимо вас, якщо щось зміниться.";
 ['hint',_completeText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['CompletedPriorityTarget',['Artillery Neutralized']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['CompletedPriorityTarget',['Артилерію НЕЙТРАЛІЗОВАНО']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerPos [-5000,-5000,0];
 	_x setMarkerAlpha 0;

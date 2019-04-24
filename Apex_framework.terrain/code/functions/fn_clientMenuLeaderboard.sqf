@@ -1,9 +1,9 @@
 /*
 File: fn_clientMenuLeaderboard.sqf
 Author:
-	
+
 	Quiksilver
-	
+
 Last Modified:
 
 	8/02/2015 A3 1.54 by Quiksilver
@@ -17,28 +17,28 @@ private ['_type','_display','_index','_list','_displayName','_toolTip','_leaderb
 _type = _this select 0;
 _list = [
 	[0,'<Empty>',''],
-	[1,'Transporters','Transport pilot leaderboard'],
-	[2,'Revivalists','Combat life saver leaderboard'],
+	[1,'Transporters','Дошка пошани транспортувальників'],
+	[2,'Revivalists','Дошка пошани Бойових медиків'],
 	[3,'---','---'],
-	[4,'Gold Diggers','Gold Tooth collector leaderboard'],
-	[5,'Tower Rangers','Radio tower leaderboard'],
-	[6,'Gitmo','Enemy capture leaderboard']
+	[4,'Gold Diggers','Дошка пошани збирачів золотиз хубів'],
+	[5,'Tower Rangers','Дошка пошани винищувачів веж'],
+	[6,'Gitmo','Дошка пошани захоплювачів ворогів']
 ];
 if (_type isEqualTo 'onLoad') exitWith {
 	disableSerialization;
 	_display = _this select 1;
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
-	(_display displayCtrl 1802) ctrlSetText 'Leaderboards';
+	(_display displayCtrl 1802) ctrlSetText 'Дошка пошани';
 	(_display displayCtrl 1802) ctrlSetToolTip 'v1.0';
 	(_display displayCtrl 1803) ctrlSetText 'media\images\insignia\comm_patch.paa';
-	(_display displayCtrl 1804) ctrlSetText 'Type';
-	(_display displayCtrl 1806) ctrlSetText 'Select';
-	(_display displayCtrl 1806) ctrlSetToolTip 'Refresh';
-	(_display displayCtrl 1807) ctrlSetText 'Back';
-	(_display displayCtrl 1809) ctrlSetText 'Rank';
-	(_display displayCtrl 1810) ctrlSetText 'Player';
-	(_display displayCtrl 1811) ctrlSetText 'Score';
-	(_display displayCtrl 1812) ctrlSetText 'Insignia';
+	(_display displayCtrl 1804) ctrlSetText 'Тип';
+	(_display displayCtrl 1806) ctrlSetText 'Вибрати';
+	(_display displayCtrl 1806) ctrlSetToolTip 'Оновити';
+	(_display displayCtrl 1807) ctrlSetText 'Назад';
+	(_display displayCtrl 1809) ctrlSetText 'Ранг';
+	(_display displayCtrl 1810) ctrlSetText 'Гравець';
+	(_display displayCtrl 1811) ctrlSetText 'Рахунок';
+	(_display displayCtrl 1812) ctrlSetText 'Відзнаки';
 	(_display displayCtrl 1813) ctrlSetText 'v1.0';
 	{
 		_displayName = _x select 1;
@@ -59,9 +59,9 @@ if (_type isEqualTo 'B1') exitWith {
 		_leaderboardID = (_list select _index) select 0;
 		lnbClear 1808;
 		if (_leaderboardID in [0,3]) then {
-			(_display displayCtrl 1809) ctrlSetText 'Player';
-			(_display displayCtrl 1810) ctrlSetText 'Role';
-			(_display displayCtrl 1811) ctrlSetText 'Rating';
+			(_display displayCtrl 1809) ctrlSetText 'Гравець';
+			(_display displayCtrl 1810) ctrlSetText 'Роль';
+			(_display displayCtrl 1811) ctrlSetText 'Рейтинг';
 			if ((count allPlayers) > 0) then {
 				lnbSetColumnsPos [1808,[(1 * (safezoneW * 0.03)),(4 * (safezoneW * 0.03)),(7 * (safezoneW * 0.03)),(10 * (safezoneW * 0.03))]];
 				{
@@ -83,10 +83,10 @@ if (_type isEqualTo 'B1') exitWith {
 				} forEach allPlayers;
 			};
 		} else {
-			(_display displayCtrl 1809) ctrlSetText 'Rank';
-			(_display displayCtrl 1810) ctrlSetText 'Player';
-			(_display displayCtrl 1811) ctrlSetText 'Score';
-			(_display displayCtrl 1812) ctrlSetText 'Insignia';
+			(_display displayCtrl 1809) ctrlSetText 'Ранг';
+			(_display displayCtrl 1810) ctrlSetText 'Гравець';
+			(_display displayCtrl 1811) ctrlSetText 'Рахунок';
+			(_display displayCtrl 1812) ctrlSetText 'Відзнаки';
 			if (isNil {missionNamespace getVariable 'QS_leaderboards'}) exitWith {};
 			_leaderboardDataArray = (missionNamespace getVariable 'QS_leaderboards') select _leaderboardID;
 			_leaderboardDataArray sort FALSE;
@@ -119,7 +119,7 @@ if (_type isEqualTo 'B1') exitWith {
 							if (_rank isEqualTo 5) then {lnbSetPicture [1808,[_forEachIndex,0],'a3\ui_f\data\gui\cfg\ranks\lieutenant_pr.paa'];};
 							if (_rank isEqualTo 6) then {lnbSetPicture [1808,[_forEachIndex,0],'a3\ui_f\data\gui\cfg\ranks\sergeant_pr.paa'];};
 							if (_rank isEqualTo 7) then {lnbSetPicture [1808,[_forEachIndex,0],'a3\ui_f\data\gui\cfg\ranks\corporal_pr.paa'];};
-							if (_rank isEqualTo 8) then {lnbSetPicture [1808,[_forEachIndex,0],'a3\ui_f\data\gui\cfg\ranks\private_pr.paa'];};		
+							if (_rank isEqualTo 8) then {lnbSetPicture [1808,[_forEachIndex,0],'a3\ui_f\data\gui\cfg\ranks\private_pr.paa'];};
 						} else {
 							lnbAddRow [1808,[(str _rank),_pname,(str _points)]];
 							if (_myUID == _puid) then {
@@ -146,7 +146,7 @@ if (_type isEqualTo 'B1') exitWith {
 								lnbSetColor [1808,[_forEachIndex,0],[0.5,0.5,0.5,0.5]];
 								lnbSetColor [1808,[_forEachIndex,1],[0.5,0.5,0.5,0.5]];
 								lnbSetColor [1808,[_forEachIndex,2],[0.5,0.5,0.5,0.5]];
-							};								
+							};
 						};
 						if (_isIngame) then {
 							if (!((squadParams _object) isEqualTo [])) then {
@@ -171,7 +171,7 @@ if (_type isEqualTo 'B1') exitWith {
 					lnbSetCurSelRow [1808,_myIndex];
 				};
 			} else {
-				
+
 			};
 		};
 	};

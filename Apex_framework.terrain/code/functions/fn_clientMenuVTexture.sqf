@@ -116,10 +116,10 @@ if (_type isEqualTo 'Select') then {
 							(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,_text,[],-1,TRUE,'Vehicle Skin',FALSE];
 						};
 					} else {
-						(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ми маєте бути командиром/водієм/володарем транспорту.',[],-1,TRUE,'Vehicle Skin',FALSE];
+						(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ми маєте бути командиром/водієм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',FALSE];
 					};
 				} else {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,12,-1,'Не коректний вид транспорту. Текстуру не встановлено. Ви маєте бути всередині транспорту та маєте бути командиром/водієм/володарем транспорту.',[],-1,TRUE,'Vehicle Skin',TRUE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,12,-1,'Не коректний вид транспорту. Текстуру не встановлено. Ви маєте бути всередині транспорту та маєте бути командиром/водієм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',TRUE];
 				};
 			} else {
 				_text = format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Текстуру не встановлено.',_supporterAccess,_supporterLevel];

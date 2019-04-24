@@ -722,7 +722,7 @@ private _timerText = '';
 
 ['CUSTOM_GEORGETOWN',['','PПріоритетна ціль']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 _teleportMarker = createMarker ['QS_marker_GT_TP',[0,0,0]];
-_teleportMarker setMarkerText (format ['%1Teleporter ([Shift]+[Click here] to teleport)',(toString [32,32,32])]);
+_teleportMarker setMarkerText (format ['%1Телепорт ([Shift]+[Click тут] щоб телепортуватись)',(toString [32,32,32])]);
 _teleportMarker setMarkerAlpha 0;
 _teleportMarker setMarkerShape 'ICON';
 _teleportMarker setMarkerSize [0.5,0.5];
@@ -744,7 +744,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_serverTime > _missionEnd) exitWith {
 		comment 'Mission failure';
 		['CUSTOM_GEORGETOWN',['','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'We took too long in Kavala, солдати. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ми занадто довка в Kavala, солдати. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_missionStatus isEqualTo 'SUCCESS') exitWith {
 		comment 'Mission success';

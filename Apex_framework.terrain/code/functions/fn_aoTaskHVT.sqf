@@ -209,7 +209,7 @@ if (_state isEqualTo 1) then {
 						if (!isNull _killed) then {
 							if (!isNull _killer) then {
 								if (isPlayer _killer) then {
-									_text = format ['Завдання провалено!  HVC загинув від рук %1!',(name _killer)];
+									_text = format ['Завдання провалено! HVC загинув від рук %1!',(name _killer)];
 									['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 								};
 							};

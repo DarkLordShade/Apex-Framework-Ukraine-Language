@@ -53,7 +53,7 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 		_c;
 	};
 	_objectiveOnCompleted = {
-		['GRID_UPDATE',['Area Of Operations','Конвертація сітки завершена!!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_UPDATE',['Зона Операцій','Конвертація сітки завершена!!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_grid_capState' setMarkerColor 'ColorGREEN';
 	};
 	_objectiveOnFailed = {
@@ -193,7 +193,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 		};
 		_objectiveOnCompleted = {
 			'QS_marker_grid_rspState' setMarkerColor 'ColorGREEN';
-			['GRID_IG_UPDATE',['Area of Operations','Всі колодязі зруйновано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['GRID_IG_UPDATE',['Зона Операцій','Всі колодязі зруйновано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 		_objectiveOnFailed = {};
 		_return = [
@@ -346,7 +346,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 				'Killed',
 				{
 					params ['_killed','_killer','_instigator','_usedEffects'];
-					['GRID_UPDATE',['Area Of Operations','Ворожий командир вбитий']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_UPDATE',['Зона Операцій','Ворожий командир вбитий']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
 							_text = format ['%1 (%2) вбив ворожого командира',(name _instigator),(groupID (group _instigator))];
@@ -404,7 +404,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 				if ((!alive _igLeader) || {(_igLeader getVariable ['QS_isSurrendered',FALSE])}) then {
 					if (((_spawnPos nearEntities ['CAManBase',_radius]) select {(((side _x) in [EAST,RESISTANCE]) && ((lifeState _x) in ['HEALTHY','INJURED']))}) isEqualTo []) then {
 						if (!(((_spawnPos nearEntities ['CAManBase',_radius]) select {(((side _x) in [WEST]) && ((lifeState _x) in ['HEALTHY','INJURED']))}) isEqualTo [])) then {
-							['GRID_UPDATE',['Area Of Operations','Ворожий штаб захоплено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+							['GRID_UPDATE',['Зона Операцій','Ворожий штаб захоплено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 							{
 								_x setMarkerPos (missionNamespace getVariable 'QS_grid_IGposition');
 								_x setMarkerColor 'ColorWEST';
@@ -628,7 +628,7 @@ if (_type isEqualTo 'SITE_IDAP') exitWith {
 					_c;
 				};
 				_objectiveOnCompleted = {
-					['GRID_IDAP_UPDATE',['Area Of Operations','Мінне поле (UXO) зачищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_IDAP_UPDATE',['Зона Операцій','Мінне поле (UXO) зачищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					{
 						_x setMarkerColor 'ColorGreen';
 						_x setMarkerText (format ['%1Мінне поле (зачищено)',(toString [32,32,32])]);

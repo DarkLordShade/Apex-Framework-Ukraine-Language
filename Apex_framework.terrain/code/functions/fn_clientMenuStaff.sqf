@@ -175,14 +175,14 @@ if (_type2 isEqualType 0) exitWith {
 			_text = format ['%1 (персонал) увімкнув режим Непереможність',profileName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Invincibility ON',[],-1];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможність УВІМКНЕНО',[],-1];
 			};
 		} else {
 			player allowDamage TRUE;
 			_text = format ['%1 (персонал) увімкнув режим Непереможність',profileName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Invincibility OFF',[],-1];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможніть ВИМКНЕНО',[],-1];
 			};
 		};
 	};

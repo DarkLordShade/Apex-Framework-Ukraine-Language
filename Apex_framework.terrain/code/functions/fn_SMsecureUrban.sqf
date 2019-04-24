@@ -811,7 +811,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object1 setPos [-5000,-5000,0];
 					(_markers select 0) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкти захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкти захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -825,7 +825,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object2 setPos [-5000,-5000,0];
 					(_markers select 1) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -839,7 +839,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object3 setPos [-5000,-5000,0];
 					(_markers select 2) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткова місія оновлена',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};

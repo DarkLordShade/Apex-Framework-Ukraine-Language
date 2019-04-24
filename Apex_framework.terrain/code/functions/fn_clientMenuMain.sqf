@@ -21,7 +21,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	(_display displayCtrl 1600) ctrlEnable TRUE;
 	(_display displayCtrl 1600) ctrlSetText 'Комункiцiя';
 	(_display displayCtrl 1600) ctrlSetToolTip 'Community Hub & Radio Control';
-	(_display displayCtrl 1601) ctrlSetText 'Area 51';
+	(_display displayCtrl 1601) ctrlSetText 'Зона 51';
 	(_display displayCtrl 1601) ctrlSetToolTip '';
 	(_display displayCtrl 1601) ctrlEnable FALSE;
 	if ((call (missionNamespace getVariable 'QS_missionConfig_cosmetics')) > 0) then {

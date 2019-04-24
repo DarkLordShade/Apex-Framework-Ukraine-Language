@@ -50,7 +50,7 @@ if ((_entity getVariable ['QS_entity_sumDmg',0]) >= (_entity getVariable ['QS_en
 	(missionNamespace getVariable 'QS_garbageCollector') pushBack [_smoke,'DELAYED_FORCED',(time + 600)];
 	deleteVehicle _entity;
 	missionNamespace setVariable ['QS_grid_AIRspDestroyed',((missionNamespace getVariable 'QS_grid_AIRspDestroyed') + 1),FALSE];
-	['GRID_IG_UPDATE',['Area of Operations','Тунель знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['GRID_IG_UPDATE',['Зона Операцій','Тунель знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	if (!isNull _instigator) then {
 		if (isPlayer _instigator) then {
 			_instigator addScore 1;

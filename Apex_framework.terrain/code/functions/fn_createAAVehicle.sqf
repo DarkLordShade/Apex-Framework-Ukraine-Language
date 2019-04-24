@@ -1,13 +1,13 @@
 /*/
 File: fn_createAAVehicle.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	13/09/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Create AA Vehicle for AA Sites
@@ -59,14 +59,14 @@ _vehicle setVehicleReportRemoteTargets TRUE;
 						_killerDisplayName = getText (configFile >> 'CfgVehicles' >> _killerType >> 'displayName');
 						_objDisplayName = getText (configFile >> 'CfgVehicles' >> _objType >> 'displayName');
 						_name = name _instigator;
-						['sideChat',[WEST,'BLU'],(format ['%1 has destroyed a(n) %2 with a(n) %3!',_name,_objDisplayName,_killerDisplayName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+						['sideChat',[WEST,'BLU'],(format ['%1 знищив %2 з %3!',_name,_objDisplayName,_killerDisplayName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 					};
 				};
 			};
 			if ((missionNamespace getVariable 'QS_mission_aoType') isEqualTo 'SC') then {
-				['SC_SUB_COMPLETED',['','AA Site destroyed']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['SC_SUB_COMPLETED',['','Розрахунок ППО знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			} else {
-				['CompletedSub',['AA Site Destroyed']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['CompletedSub',['Розрахунок ППО знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			};
 		}
 	],
@@ -205,6 +205,6 @@ if (alive _vehicle) then {
 		_grp setVariable ['QS_AI_GRP_CONFIG',['SC','INF_GENERAL',(count (units _grp))],FALSE];
 		_grp setVariable ['QS_AI_GRP_DATA',[_position,30,30,[]],FALSE];
 		_grp setVariable ['QS_AI_GRP_TASK',['DEFEND',_position,diag_tickTime,-1],FALSE];
-	};	
+	};
 };
 _vehicle;

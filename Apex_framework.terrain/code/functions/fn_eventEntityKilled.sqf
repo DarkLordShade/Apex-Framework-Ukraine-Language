@@ -3,11 +3,11 @@ File: fn_eventEntityKilled.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	30/10/2018 A3 1.84 by Quiksilver
-	
+
 Description:
 
 	Event Entity Killed
@@ -91,7 +91,7 @@ if (isPlayer _killed) then {
 			if (!isNull _killer) then {
 				if (isPlayer _killer) then {
 					if (!((vehicle _killer) isKindOf 'Air')) then {
-						_text = format ['Ворожого снайпера ( %1 ) вбив %2!',(name _killed),(name _killer)];
+						_text = format ['%2 вбив ворожого снайпера ( %1 )!',(name _killed),(name _killer)];
 						_text remoteExec ['systemChat',-2,FALSE];
 					};
 				};

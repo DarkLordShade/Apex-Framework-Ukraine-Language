@@ -17,7 +17,7 @@ params ['_type','_usedObjectives','_gridMarkers'];
 if (_type isEqualTo 0) exitWith {
 	//comment 'Debrief';
 	['QS_TASK_GRID_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-	['GRID_BRIEF',['Area Of Operations','Завдання виконано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['GRID_BRIEF',['Зона Операцій','Завдання виконано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	{
 		_x setMarkerAlpha 0;
 	} forEach [
@@ -101,7 +101,7 @@ if (_type isEqualTo 1) exitWith {
 		'X',
 		TRUE
 	] call (missionNamespace getVariable 'BIS_fnc_setTask');
-	['GRID_BRIEF',['Area Of Operations','Всі цілі завершені']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['GRID_BRIEF',['Зона Операцій','Всі цілі завершені']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	// yes do it again, the marker network propagation can be ... unstable ...
 	{
 		_x setMarkerAlpha 0.75;

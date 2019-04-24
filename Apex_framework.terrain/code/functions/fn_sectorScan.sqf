@@ -1,6 +1,6 @@
 /*
 File: fn_sectorScan.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -35,18 +35,18 @@ if (time > (missionNamespace getVariable 'QS_sectorScan_lastTime')) then {
 			};
 			sleep 0.001;
 		} count allUnits;
-		['sideChat',[WEST,'HQ'],(format ['Satellite scan complete, %1 signatures detected in grid %2',_count,_gridPos])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],(format ['Супутникове сканування завершено, %1 позначки виявлено в %2',_count,_gridPos])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		_marker = createMarker [(format ['QS_marker_sectorScan_%1',time]),_clickPos];
 		_marker setMarkerShape 'Icon';
 		_marker setMarkerType 'mil_dot';
 		_marker setMarkerColor 'ColorGREEN';
 		_marker setMarkerAlpha 0.5;
-		_marker setMarkerText (format ['%1%2 signatures in %3',(toString [32,32,32]),_count,_gridPos]);
+		_marker setMarkerText (format ['%1%2 позначки в %3',(toString [32,32,32]),_count,_gridPos]);
 		sleep 15;
 		deleteMarker _marker;
 	};
 } else {
 	comment 'Next sat scan too soon';
 	_timeToNext = round (ceil(((missionNamespace getVariable 'QS_sectorScan_lastTime') - time) / 60));
-	[63,[5,[(format ['Satellite sector scan unavailable for approximately %1 minutes',_timeToNext]),'PLAIN']]] remoteExec ['QS_fnc_remoteExec',_clientOwner,FALSE];
+	[63,[5,[(format ['Супутникове сканування сектору недоступне ще %1 хвилин',_timeToNext]),'PLAIN']]] remoteExec ['QS_fnc_remoteExec',_clientOwner,FALSE];
 };

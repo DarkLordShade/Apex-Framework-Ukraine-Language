@@ -3,11 +3,11 @@ File: fn_AI.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	12/02/2018 A3 1.88 by Quiksilver
-	
+
 Description:
 
 	AI
@@ -492,7 +492,7 @@ for '_x' from 0 to 1 step 0 do {
 		_QS_module_agentBehaviors_localAgents = _QS_allAgents select {(local _x)};
 		_QS_updateGeneralInfoCheckDelay = _QS_uiTime + _QS_updateGeneralInfoDelay;
 	};
-	
+
 	if (_QS_module_hc) then {
 		if (missionNamespace getVariable ['QS_HC_Active',_false]) then {
 			if (_isDedicated) then {
@@ -506,7 +506,7 @@ for '_x' from 0 to 1 step 0 do {
 								{
 									_QS_module_hc_grp setVariable [_x,(_QS_module_hc_grp getVariable _x),_QS_hc_id];
 								} forEach (allVariables _QS_module_hc_grp);
-								_text = format ['Change of group owner %1 * %2',_QS_module_hc_grp,(['false','true'] select (_QS_module_hc_grp setGroupOwner _QS_hc_id))];
+								_text = format ['Змінити власника групи %1 * %2',_QS_module_hc_grp,(['false','true'] select (_QS_module_hc_grp setGroupOwner _QS_hc_id))];
 								diag_log _text;
 								_text remoteExec ['systemChat',-2];
 							};
@@ -520,7 +520,7 @@ for '_x' from 0 to 1 step 0 do {
 								{
 									_QS_module_hc_entity setVariable [_x,(_QS_module_hc_entity getVariable _x),_QS_hc_id];
 								} forEach (allVariables _QS_module_hc_entity);
-								_text = format ['Change of entity owner %1 * %2',_QS_module_hc_entity,(['false','true'] select (_QS_module_hc_entity setOwner _QS_hc_id))];
+								_text = format ['Змінити власника об’єкта %1 * %2',_QS_module_hc_entity,(['false','true'] select (_QS_module_hc_entity setOwner _QS_hc_id))];
 								diag_log _text;
 								_text remoteExec ['systemChat',-2];
 							};
@@ -533,7 +533,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	if (_QS_module_dynamicSkill) then {
 		if (_QS_uiTime > _QS_module_dynamicSkill_checkDelay) then {
 			/*/pulled from release build/*/
@@ -579,7 +579,7 @@ for '_x' from 0 to 1 step 0 do {
 			} forEach _QS_module_agentBehaviors_localAgents;
 			_QS_module_agentBehaviors_checkDelay = _QS_uiTime + _QS_module_agentBehaviors_delay;
 		};
-	};	
+	};
 	/*/Module virtual sectors/*/
 	if (_QS_module_virtualSectors) then {
 		if (_QS_uiTime > _QS_module_virtualSectors_checkDelay) then {
@@ -667,7 +667,7 @@ for '_x' from 0 to 1 step 0 do {
 							if ((_QS_module_virtualSectors_scoreSides # 1) >= _QS_module_virtualSectors_assaultScore) then {
 								_QS_module_virtualSectors_assaultActive = _true;
 								diag_log '***** QS AI - Sector Assault Active *****';
-								
+
 								//comment 'Select sector herePick random WEST-owned sector';
 								_QS_module_virtualSectors_assaultDuration = _QS_uiTime + _QS_module_virtualSectors_assaultDuration_fixed + (random _QS_module_virtualSectors_assaultDuration_variable);
 							};
@@ -1251,7 +1251,7 @@ for '_x' from 0 to 1 step 0 do {
 													_QS_module_classic_efb_group setVariable ['QS_AI_GRP_DATA',[],_false];
 													_QS_module_classic_efb_group setVariable ['QS_AI_GRP_TASK',['PATROL',[(_QS_module_classic_hqPos getPos [(50 + (random 50)),(random 360)]),(_QS_module_classic_hqPos getPos [(50 + (random 50)),(random 360)]),(_QS_module_classic_hqPos getPos [(50 + (random 50)),(random 360)])],diag_tickTime,-1],_false];
 													_QS_module_classic_efb_group setVariable ['QS_AI_GRP_PATROLINDEX',0,_false];
-													_QS_module_classic_efb_group setVariable ['QS_AI_GRP',_true,_false];													
+													_QS_module_classic_efb_group setVariable ['QS_AI_GRP',_true,_false];
 												};
 											};
 										};
@@ -1262,7 +1262,7 @@ for '_x' from 0 to 1 step 0 do {
 					};
 					_QS_module_classic_efb_checkDelay = _QS_uiTime + _QS_module_classic_efb_delay;
 				};
-			};	
+			};
 			if (!(missionNamespace getVariable 'QS_classic_AI_active')) then {
 				if (missionNamespace getVariable 'QS_classic_AI_triggerDeinit') then {
 					missionNamespace setVariable ['QS_classic_AI_triggerDeinit',_false,_false];
@@ -1350,7 +1350,7 @@ for '_x' from 0 to 1 step 0 do {
 							};
 						} forEach _QS_module_classic_vehReinforce_array;
 						_QS_module_classic_vehReinforce_array = [];
-					};					
+					};
 					if (!(_QS_module_classic_uavs isEqualTo [])) then {
 						{
 							if (_x isEqualType objNull) then {
@@ -1612,7 +1612,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 			if (missionNamespace getVariable ['QS_grid_defend_AIinit',_false]) then {
 				missionNamespace setVariable ['QS_grid_defend_AIinit',_false,_true];
-			};			
+			};
 			if (missionNamespace getVariable ['QS_grid_defend_active',_false]) then {
 				if (_QS_allPlayersCount > 5) then {_QS_module_grid_defendQty = _QS_module_grid_defendQty_1;} else {_QS_module_grid_defendQty = _QS_module_grid_defendQty_0;};
 				if (_QS_allPlayersCount > 10) then {_QS_module_grid_defendQty = _QS_module_grid_defendQty_2;};
@@ -1660,7 +1660,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_grid_checkDelay = _QS_uiTime + _QS_module_grid_delay;
 		};
 	};
-	
+
 	/*/Module Ambient Hostility/*/
 
 	if (_QS_module_ambientHostility) then {
@@ -1800,7 +1800,7 @@ for '_x' from 0 to 1 step 0 do {
 									};
 									if ((_QS_module_enemyCas_plane getVariable ['QS_AI_PLANE_flyInHeight',-1]) isEqualTo 2) then {
 										_QS_module_enemyCas_plane flyInHeight (500 + (random 2000));
-									};								
+									};
 									if ((_QS_module_enemyCas_plane getVariable ['QS_AI_PLANE_flyInHeight',-1]) isEqualTo 3) then {
 										_QS_module_enemyCas_plane flyInHeight (500 + (random 3000));
 									};
@@ -1817,7 +1817,7 @@ for '_x' from 0 to 1 step 0 do {
 											_QS_module_enemyCas_plane setVariable ['QS_enemyCAS_position',(getPosWorld _QS_module_enemyCas_plane),_false];
 										};
 									};
-								};	
+								};
 							};
 							if (alive _QS_module_enemyCas_plane) then {
 								if (!isNull (driver _QS_module_enemyCas_plane)) then {
@@ -1861,15 +1861,15 @@ for '_x' from 0 to 1 step 0 do {
 			};
 			uiSleep 0.1;
 			if (!((missionNamespace getVariable 'QS_AI_supportProviders_CASHELI') isEqualTo [])) then {
-				missionNamespace setVariable ['QS_AI_supportProviders_CASHELI',((missionNamespace getVariable 'QS_AI_supportProviders_CASHELI') select {((alive _x) && ((vehicle _x) isKindOf 'Helicopter'))}),_false];			
+				missionNamespace setVariable ['QS_AI_supportProviders_CASHELI',((missionNamespace getVariable 'QS_AI_supportProviders_CASHELI') select {((alive _x) && ((vehicle _x) isKindOf 'Helicopter'))}),_false];
 			};
 			uiSleep 0.1;
 			if (!((missionNamespace getVariable 'QS_AI_supportProviders_CASPLANE') isEqualTo [])) then {
-				missionNamespace setVariable ['QS_AI_supportProviders_CASPLANE',((missionNamespace getVariable 'QS_AI_supportProviders_CASPLANE') select {((alive _x) && ((vehicle _x) isKindOf 'Plane') && (canMove (vehicle _x)))}),_false];			
+				missionNamespace setVariable ['QS_AI_supportProviders_CASPLANE',((missionNamespace getVariable 'QS_AI_supportProviders_CASPLANE') select {((alive _x) && ((vehicle _x) isKindOf 'Plane') && (canMove (vehicle _x)))}),_false];
 			};
 			uiSleep 0.1;
 			if (!((missionNamespace getVariable 'QS_AI_supportProviders_CASUAV') isEqualTo [])) then {
-				missionNamespace setVariable ['QS_AI_supportProviders_CASUAV',((missionNamespace getVariable 'QS_AI_supportProviders_CASUAV') select {((alive _x) && (unitIsUav (vehicle _x)) && (canMove (vehicle _x)))}),_false];			
+				missionNamespace setVariable ['QS_AI_supportProviders_CASUAV',((missionNamespace getVariable 'QS_AI_supportProviders_CASUAV') select {((alive _x) && (unitIsUav (vehicle _x)) && (canMove (vehicle _x)))}),_false];
 			};
 			uiSleep 0.1;
 			if (!((missionNamespace getVariable 'QS_AI_supportProviders_INTEL') isEqualTo [])) then {
@@ -1893,7 +1893,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (!((missionNamespace getVariable 'QS_AI_scripts_fireMissions') isEqualTo [])) then {
 				missionNamespace setVariable ['QS_AI_scripts_fireMissions',((missionNamespace getVariable 'QS_AI_scripts_fireMissions') select {(!isNull _x)}),_false];
 			};
-			uiSleep 0.1;			
+			uiSleep 0.1;
 			if (!((missionNamespace getVariable 'QS_AI_scripts_moveToBldg') isEqualTo [])) then {
 				missionNamespace setVariable ['QS_AI_scripts_moveToBldg',((missionNamespace getVariable 'QS_AI_scripts_moveToBldg') select {(!isNull _x)}),_false];
 			};

@@ -1,13 +1,13 @@
 /*/
 File: fn_clientEventFiredMan.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	3/09/2017 A3 1.74 by Quiksilver
-	
+
 Description:
 
 	Fired Man Event
@@ -77,12 +77,12 @@ if (_weapon isEqualTo 'Throw') then {
 		if (_muzzle isEqualTo 'DemoChargeMuzzle') then {
 			if (_magazine isEqualTo 'DemoCharge_Remote_Mag') then {
 				_cursorIntersections = lineIntersectsSurfaces [
-					(AGLToASL (positionCameraToWorld [0,0,0])), 
-					(AGLToASL (positionCameraToWorld [0,0,(if (cameraView isEqualTo 'INTERNAL') then [{2},{4.55}])])), 
-					cameraOn, 
-					objNull, 
-					TRUE, 
-					1, 
+					(AGLToASL (positionCameraToWorld [0,0,0])),
+					(AGLToASL (positionCameraToWorld [0,0,(if (cameraView isEqualTo 'INTERNAL') then [{2},{4.55}])])),
+					cameraOn,
+					objNull,
+					TRUE,
+					1,
 					'GEOM'
 				];
 				if (!(_cursorIntersections isEqualTo [])) then {
@@ -138,7 +138,7 @@ if (_weapon isEqualTo 'Throw') then {
 								waitUntil {
 									uiSleep 0.1;
 									if ((_this distance2D _missionPos) < 750) then {
-										50 cutText ['Стрільба в заборонену зону, роззброєно','PLAIN DOWN',0.25];
+										50 cutText ['Стрільба в заборонену зону, розряджено','PLAIN DOWN',0.25];
 										deleteVehicle _this;
 									};
 									((isNull _this) ||

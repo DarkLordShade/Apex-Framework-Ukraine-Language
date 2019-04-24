@@ -380,7 +380,7 @@ for '_x' from 0 to 1 step 0 do {
 		};
 	};
 	if (_taskSucceeded) exitWith {
-		['GRID_IG_UPDATE',['Дургорядне завдання завершено','Дані в безпеці']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Другорядне завдання завершено','Дані в безпеці']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	if (_taskFailed) exitWith {
 		['GRID_IG_UPDATE',['Другорядне завдання провалено','Дані втрачено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];

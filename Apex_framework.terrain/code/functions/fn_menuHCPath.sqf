@@ -148,7 +148,7 @@ if (_this isEqualType '') then {
 					_leader = leader _grp;
 					if (!(_add)) then {
 						if (diag_tickTime > (_leader getVariable ['QS_HComm_ordersNotifInterval',-1])) then {
-							[34,['hcTaskCreated',['','New orders']]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
+							[34,['hcTaskCreated',['','Нові накази']]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];
 						};
 						_leader setVariable ['QS_HComm_ordersNotifInterval',(diag_tickTime + 15),FALSE];
 						[63,[5,[(format['Порядок визначено [Командир] %1',profileName]),'PLAIN DOWN',0.75]]] remoteExec ['QS_fnc_remoteExec',_leader,FALSE];

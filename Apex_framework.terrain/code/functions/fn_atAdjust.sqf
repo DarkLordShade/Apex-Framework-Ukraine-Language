@@ -3,11 +3,11 @@ File: fn_atAdjust.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	21/07/2015 ArmA 3 1.48 by Quiksilver
-	
+
 Description:
 
 	-
@@ -31,7 +31,7 @@ _a = [_uid,_val];
 _targetName = name _target;
 if (_val > 9) exitWith {
 	for '_x' from 0 to 2 step 1 do {
-		['systemChat',(format ['Robocop has banned %1 from the server.',_targetName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['Robocop забанив %1 на сервері.',_targetName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	([] call (uiNamespace getVariable 'QS_fnc_serverCommandPassword')) serverCommand format ['#exec ban %1',_cid];
 	diag_log format ["************************** ADMIN - %1 has been threat-adjusted to %2 - by %3 **************************",_targetName,_val,name _adjuster];
@@ -39,7 +39,7 @@ if (_val > 9) exitWith {
 
 if (_val > 8) exitWith {
 	for '_x' from 0 to 2 step 1 do {
-		['systemChat',(format ['Robocop has kicked %1 from the server.',_targetName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['Robocop кікнув %1 з сервера.',_targetName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	([] call (uiNamespace getVariable 'QS_fnc_serverCommandPassword')) serverCommand format ['#exec kick %1',_cid];
 };

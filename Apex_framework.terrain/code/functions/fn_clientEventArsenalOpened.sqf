@@ -1,6 +1,6 @@
 /*/
 File: fn_clientEventArsenalOpened.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -36,7 +36,7 @@ ____________________________________________________________________________/*/
 			0 spawn {
 				for '_x' from 0 to 4 step 1 do {
 					if (isNull (uiNamespace getVariable ['BIS_fnc_arsenal_display',displayNull])) exitWith {};
-					['showMessage',[(uiNamespace getVariable 'BIS_fnc_arsenal_display'),"To add ammunition, select your uniform/vest/backpack on the left panel and add ammunition on the right panel."]] call (missionNamespace getVariable 'BIS_fnc_arsenal');
+					['showMessage',[(uiNamespace getVariable 'BIS_fnc_arsenal_display'),"Щоб додати амуніцію, оберыть вашу форму/жилет/рюкзак в панелі ліворуч та додайте амуніцію в панелі праворуч."]] call (missionNamespace getVariable 'BIS_fnc_arsenal');
 					uiSleep 5;
 				};
 			};
@@ -78,7 +78,7 @@ ____________________________________________________________________________/*/
 						1,
 						'Arsenal (Too many buttons)',
 						player
-					]		
+					]
 				] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 				(uiNamespace getVariable ['BIS_fnc_arsenal_display',displayNull]) closeDisplay 2;
 			};

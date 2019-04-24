@@ -3,11 +3,11 @@ File: fn_clientEventGetInMan.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	7/06/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	-
@@ -143,11 +143,11 @@ if ((toLower (typeOf _vehicle)) in ['b_t_apc_tracked_01_crv_f','b_apc_tracked_01
 								if (_animPhase in [0,1]) then {
 									if (((player actionParams QS_action_plow) select 0) isEqualTo "Lower plow") then {
 										if (_animPhase isEqualTo 1) then {
-											player setUserActionText [QS_action_plow,"Raise plow","<t size=""3"">Raise plow</t>"];
+											player setUserActionText [QS_action_plow,"Raise plow","<t size=""3"">Підняти плуг</t>"];
 										};
 									} else {
 										if (_animPhase isEqualTo 0) then {
-											player setUserActionText [QS_action_plow,"Lower plow","<t size=""3"">Lower plow</t>"];
+											player setUserActionText [QS_action_plow,"Lower plow","<t size=""3"">Опустити плуг</t>"];
 										};
 									};
 									if (((vectorMagnitude (velocity _v)) * 3.6) < 1) then {

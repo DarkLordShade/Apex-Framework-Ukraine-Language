@@ -3,11 +3,11 @@ File: fn_clientVAS2VA.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	11/01/2017 A3 1.66 by Quiksilver
-	
+
 Description:
 
 	-
@@ -70,7 +70,7 @@ for '_x' from 0 to 24 step 1 do {
 			['ItemMap','ItemCompass','ItemWatch','ItemRadio','ItemGPS'],
 			[(face player),'','']
 		];
-		_newName = format ['%1 (Imported %2)',_vasLoadout_title,_index];
+		_newName = format ['%1 (Імпортовано %2)',_vasLoadout_title,_index];
 		_data = _namespace getVariable ['bis_fnc_saveInventory_data',[]];
 		_nameID = _data find _newName;
 		if (_nameID < 0) then {

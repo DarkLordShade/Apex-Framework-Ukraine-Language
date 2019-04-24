@@ -26,7 +26,7 @@ if ((getMass _t) > 5000) then {
 		_nearbyUnits = (getPosATL _t) nearEntities ['Man',10];
 		if ((count _nearbyUnits) < 2) then {
 			_canPush = FALSE;
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Поблизу немає інших гравців. Вам потрібен ще хтось поряд (10m) тому що штовхати транспорт важкувато самому!',[],-1,TRUE,'Too weak',TRUE];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,'Поблизу немає інших гравців. Вам потрібен ще хтось поряд (10m) тому що штовхати транспорт важкувато самому!',[],-1,TRUE,'Занадто слабкий',TRUE];
 		};
 	};
 };

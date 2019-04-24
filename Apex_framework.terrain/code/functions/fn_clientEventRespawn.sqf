@@ -1,13 +1,13 @@
 /*/
 File fn_clientEventRespawn.sqf
-Author: 
+Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	23/04/2019 A3 1.90 by Quiksilver
-	
+
 Description:
 
 	Apply code to client on respawn
@@ -137,10 +137,10 @@ if (([] call (missionNamespace getVariable 'QS_fnc_clientGetSupporterLevel')) > 
 				if ((uniform player) in (player getVariable 'QS_ClientUTexture2_Uniforms2')) then {
 					player setObjectTextureGlobal [0,(player getVariable 'QS_ClientUTexture2')];
 					if (!((vest player) isEqualTo '')) then {
-					
+
 					};
 					if (!((backpack player) isEqualTo '')) then {
-					
+
 					};
 				};
 			};
@@ -245,7 +245,7 @@ if ((player getVariable 'QS_revive_respawnType') in ['BASE','']) then {
 				_position = [((_position select 0) + 12 - (random 24)),((_position select 1) + 12 - (random 24)),(_position select 2)];
 			};
 			if (worldName isEqualTo 'Tanoa') then {
-			
+
 			};
 			if (worldName isEqualTo 'Malden') then {
 				_position = selectRandom (([8133.47,10123,-0.147434] nearestObject 'Land_MilOffices_V1_F') buildingPos -1);
@@ -272,7 +272,7 @@ if ((player getVariable 'QS_revive_respawnType') in ['BASE','']) then {
 			uiSleep 0.1;
 			player setPos _this;
 			player setDir (player getDir (missionNamespace getVariable 'QS_module_fob_HQ'));
-			50 cutText [format ['Respawned at FOB %1',(missionNamespace getVariable 'QS_module_fob_displayName')],'PLAIN DOWN'];
+			50 cutText [format ['Відроджено на FOB %1',(missionNamespace getVariable 'QS_module_fob_displayName')],'PLAIN DOWN'];
 		};
 		player setVariable ['QS_client_inFOBArea',TRUE,FALSE];
 		missionNamespace setVariable ['QS_module_fob_client_timeLastRespawn',(time + 180),FALSE];

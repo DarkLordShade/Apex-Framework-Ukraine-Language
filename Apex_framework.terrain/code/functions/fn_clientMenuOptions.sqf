@@ -22,7 +22,7 @@ if (_type isEqualTo 'onLoad') then {
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
 	if ((missionNamespace getVariable ['QS_missionConfig_stamina',0]) isEqualTo 1) then {
 			ctrlEnable [1805,FALSE];
-			(_display displayCtrl 1805) ctrlSetTooltip 'Stamina forced ON in server configuration, sorry';
+			(_display displayCtrl 1805) ctrlSetTooltip 'Стаміну примусово УВІМКНЕНО в налаштуваннях сервера, вибачте';
 	};
 	(_display displayCtrl 1805) cbSetChecked (isStaminaEnabled player);
 	sliderSetRange [1807,0.1,1.1];
@@ -46,7 +46,7 @@ if (_type isEqualTo 'onLoad') then {
 	(_display displayCtrl 1815) cbSetChecked (environmentEnabled # 0);
 	if ((player getUnitTrait 'uavhacker') || {(player getUnitTrait 'QS_trait_fighterPilot')} || {(player getUnitTrait 'QS_trait_pilot')} || {(player getUnitTrait 'QS_trait_CAS')} ||{(player getUnitTrait 'QS_trait_HQ')}) then {
 		ctrlEnable [1817,FALSE];
-		(_display displayCtrl 1817) ctrlSetTooltip 'Simulation Manager not available for pilots, uav operators and commanders';
+		(_display displayCtrl 1817) ctrlSetTooltip 'Симуляція Керування не доступна для пілотів, операторів БПЛА та командирів';
 	} else {
 		ctrlEnable [1817,TRUE];
 	};

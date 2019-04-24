@@ -3,11 +3,11 @@ File: fn_initTrait.sqf
 Author:
 
 	Quiksilver
-	
+
 Last Modified:
 
 	20/04/2019 A3 1.90 by Quiksilver
-	
+
 Description:
 
 	-
@@ -47,22 +47,22 @@ if (_trait isEqualTo 'QS_trait_pilot') then {
 	if (_traitValue) then {
 		if (!(2 in (missionNamespace getVariable 'QS_client_radioChannels'))) then {
 			[1,2] call (missionNamespace getVariable 'QS_fnc_clientRadio');
-		};	
+		};
 	} else {
 		if (!(_role in ['pilot','pilot_heli','pilot_plane','uav','pilot_cas','commander','jtac'])) then {
 			[0,2] call (missionNamespace getVariable 'QS_fnc_clientRadio');
-		};	
+		};
 	};
 };
 if (_trait isEqualTo 'QS_trait_JTAC') then {
 	if (_traitValue) then {
 		if (!(2 in (missionNamespace getVariable 'QS_client_radioChannels'))) then {
 			[1,2] call (missionNamespace getVariable 'QS_fnc_clientRadio');
-		};	
+		};
 	} else {
 		if (!(_role in ['pilot','pilot_heli','pilot_plane','uav','pilot_cas','commander','jtac'])) then {
 			[0,2] call (missionNamespace getVariable 'QS_fnc_clientRadio');
-		};	
+		};
 	};
 };
 if (_trait isEqualTo 'QS_trait_fighterPilot') then {
@@ -126,7 +126,7 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 				FALSE,
 				''
 			];
-			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Spawn plane'])];
+			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Заспавнити літак'])];
 		};
 	} else {
 		if (!(_role in ['pilot','pilot_heli','pilot_plane','uav','pilot_cas','commander','jtac'])) then {

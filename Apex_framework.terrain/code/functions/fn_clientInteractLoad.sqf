@@ -60,7 +60,7 @@ if (!(_attachedObjects isEqualTo [])) then {
 				if (isClass (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'VehicleTransport' >> 'Carrier')) then {
 					50 cutText [
 						(format [
-							'%1 loaded into %2',
+							'%1 завантажено до %2',
 							(_obj getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _obj) >> 'displayName'))]),
 							_dn
 						]),

@@ -118,8 +118,8 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 	TRUE,
 	[
 		(format ['Ворожий безпілотник розбився біля узбережжя %1. Це шанс дістати дані щодо того, як працюють їхні системи безпілотника. Доберіться до цілі і захопіть її. Ця місія є підводною, тому переконайтеся, що у вас є ребрізер та окуляри для пірнання! GPS допоможе визначити розташування. Може бути обмеження за часом.',worldName]),
-		'Захопити дані (UAV)',
-		'Захопити дані (UAV)'
+		'Захопити дані (БПЛА)',
+		'Захопити дані (БПЛА)'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -133,7 +133,7 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 
 _briefing = parseText format ["<t align='center'><t size='2.2'>Додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>Безпілотник супротивника розбився на узбережжі %1.<br/><br/> Дані розвідки розвідки вказують, що ворог на місці намагається знайти і знищити безпілотник.!<br/> У вас є близько 30 хвилин для виконання місії.<br/></t>",worldName];
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Secure Intel']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Дані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 private _patrolRoute = [];
 

@@ -144,7 +144,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 
 _briefing = parseText "<t align='center'><t size='2.2'>Нова Другорядна Місія</t><br/><t size='1.5' color='#00B2EE'>Захопити Ворожий ВертолІт</t><br/>____________________<br/>OPFOR працюють над прототипом нового атакуючого вертольота і вони тримають його десь в ангарі на острові.<br/><br/>Ми відмітили підозрілу локацію на вашій мапі; потрапте до ангаруб захопіть дані та знищіть вертоліт.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Secure Enemy Chopper']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Ворожий Вертоліт']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];

@@ -3,13 +3,13 @@ File: fn_clientInGameUIAction.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	21/11/2018 A3 1.86 by Quiksilver
-	
+
 Description:
-	
+
 	-
 ______________________________________________/*/
 
@@ -202,7 +202,7 @@ if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
-	_QS_c;	
+	_QS_c;
 };
 if (_QS_actionName isEqualTo 'StartTimer') exitWith {
 
@@ -222,7 +222,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 				if (((vectorMagnitude (velocity (vehicle player))) * 3.6) > 25) then {
 					_QS_c = TRUE;
 					0 spawn {
-						private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage'); 
+						private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 						if (_result) then {
 							player action ['eject',(vehicle player)];
 						};
@@ -598,13 +598,13 @@ if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (isNull (objectParent player)) then {
 		50 cutText ['Непритомного пасажира вивантажено','PLAIN DOWN',0.5];
 	} else {
-		50 cutText ['Must be on foot','PLAIN DOWN',0.5];
+		50 cutText ['Має стояти','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
 	};
 	if (!isNull (isVehicleCargo _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити цього разу','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
-		
+
 	};
 	if (surfaceIsWater (getPosWorld _QS_actionTarget)) then {
 		50 cutText ['Не можу зробити це тут','PLAIN DOWN',0.5];
@@ -657,7 +657,7 @@ if (_QS_actionName isEqualTo 'UnhookCargo') then {
 };
 if (_QS_actionName isEqualTo 'ManualFire') then {
 	if ((cameraOn distance2D (markerPos 'QS_marker_base_marker')) < 600) then {
-		50 cutText ['Manual Fire disabled near base','PLAIN DOWN',0.5];
+		50 cutText ['Ручний вогонь вимкнено на базі','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
 	};
 };

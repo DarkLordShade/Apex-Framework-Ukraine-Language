@@ -3,15 +3,15 @@ File: HQcoast.sqf
 Author:
 
 	Quiksilver (credit Rarek [AW] for initial design)
-	
+
 Last modified:
 
 	3/02/2016 A3 1.54 by Quiksilver
-	
+
 Description:
 
 	-
-	
+
 Notes:
 
 	Deprecated mission, needs overhaul with composition instead of solitary building
@@ -113,15 +113,15 @@ missionNamespace setVariable [
 {
 	_x = _x call (missionNamespace getVariable 'QS_fnc_unitSetup');
 } count (units _smuggleGroup);
-((units _smuggleGroup) select 0) assignAsCommander _boat; 
-((units _smuggleGroup) select 0) moveInCommander _boat; 
-((units _smuggleGroup) select 1) assignAsDriver _boat; 
-((units _smuggleGroup) select 1) moveInDriver _boat; 
-((units _smuggleGroup) select 2) assignAsGunner _boat; 
-((units _smuggleGroup) select 2) moveInGunner _boat; 
-((units _smuggleGroup) select 3) assignAsCargo _boat; 
-((units _smuggleGroup) select 3) moveInCargo _boat; 
-((units _smuggleGroup) select 4) assignAsCargo _boat; 
+((units _smuggleGroup) select 0) assignAsCommander _boat;
+((units _smuggleGroup) select 0) moveInCommander _boat;
+((units _smuggleGroup) select 1) assignAsDriver _boat;
+((units _smuggleGroup) select 1) moveInDriver _boat;
+((units _smuggleGroup) select 2) assignAsGunner _boat;
+((units _smuggleGroup) select 2) moveInGunner _boat;
+((units _smuggleGroup) select 3) assignAsCargo _boat;
+((units _smuggleGroup) select 3) moveInCargo _boat;
+((units _smuggleGroup) select 4) assignAsCargo _boat;
 ((units _smuggleGroup) select 4) moveInCargo _boat;
 [(units _smuggleGroup),2] call (missionNamespace getVariable 'QS_fnc_serverSetAISkill');
 
@@ -174,9 +174,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		(format ['Захопити ворожу контрабанду! Контрабандні вибухові речовини десь на береговій лінії %1 в цій області. Знайдіть і захопіть їх. Як тільки захопите вибухівку, біжіть подалі від неї!',worldName]),
-		'Захопити ворожу контрабанду',
-		'Захопити ворожу контрабанду'
+		(format ['Знищити ворожу контрабанду! Контрабандні вибухові речовини десь на береговій лінії %1 в цій області. Знайдіть і знищіть їх. Як тільки замінуєте вибухівку, біжіть подалі від неї!',worldName]),
+		'Знищити ворожу контрабанду',
+		'Знищити ворожу контрабанду'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -190,13 +190,13 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 _c4Messages = [
 	'15 секунд до детонації.',
 	'C4 встановлено!  15 секунд до детонації.',
-	'Заряд встановлений!  15 секунд до детонації.'
+	'Заряд встановлено!  15 секунд до детонації.'
 ];
 _c4Message = selectRandom _c4Messages;
-_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити ворожу контрабанду</t><br/>____________________<br/>OPFOR займається контрабандою на острові, вони переховуються у мобільному штабі на узбережжі.<br/><br/>Ми позначили будівлю на вашій карті; направляйся туди і захопіть партію контрабанди.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Знищити ворожу контрабанду</t><br/>____________________<br/>OPFOR займається контрабандою на острові, вони переховуються у мобільному штабі на узбережжі.<br/><br/>Ми позначили будівлю на вашій карті; вирушайте туди та знищіть партію контрабанди.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewSideMission',['Secure Smuggled Explosives']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-	
+
 /*/-------------------- [ CORE LOOPS ]----------------------- [CORE LOOPS]/*/
 
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
@@ -205,21 +205,21 @@ missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 for '_x' from 0 to 1 step 0 do {
 
 	/*/----------------------------------------------------- IF HQ IS DESTROYED [FAIL]/*/
-		
+
 	if (!alive (missionNamespace getVariable 'QS_sideObj')) exitWith {
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-		
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		['sideChat',[WEST,'HQ'],'Objective destroyed, mission FAILED!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
-		
+
 		/*/-------------------- DELETE/*/
-		
+
 		missionNamespace setVariable [
 			'QS_analytics_entities_deleted',
 			((missionNamespace getVariable 'QS_analytics_entities_deleted') + 1),
@@ -249,9 +249,9 @@ for '_x' from 0 to 1 step 0 do {
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-	
+
 		/*/-------------------- BOOM!/*/
-		
+
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		uiSleep 14;											/*/ghetto bomb timer/*/
 		'Bo_GBU12_LGB' createVehicle (getPos _object); 		/*/ default "Bo_Mk82"/*/
@@ -267,14 +267,14 @@ for '_x' from 0 to 1 step 0 do {
 			FALSE
 		];
 		deleteVehicle _object;
-	
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
-		
+
 		/*/--------------------- SECONDARY EXPLOSIONS, create a function for this?/*/
-		
+
 		sleep 10 + (random 10);
 		'SmallSecondary' createVehicle _secondary1;
 		'SmallSecondary' createVehicle _secondary2;
@@ -308,7 +308,7 @@ for '_x' from 0 to 1 step 0 do {
 				FALSE
 			];
 		};
-	
+
 		/*/--------------------- DELETE, DESPAWN, HIDE and RESET/*/
 
 		{

@@ -1,6 +1,6 @@
 /*/
 File: fn_scGenerateAssets.sqf
-Author: 
+Author:
 
 	Quiksilver
 
@@ -101,7 +101,7 @@ if ((([(_sectorPosition select 0),(_sectorPosition select 1)] nearObjects ['Hous
 						_buildingSpawnPositions pushBack _spawnPosition;
 						_breakOut = TRUE;
 					};
-					
+
 				};
 			};
 			if (_breakOut) exitWith {};
@@ -147,7 +147,7 @@ if (_letter isEqualTo 'B') then {
 if (_letter isEqualTo 'C') then {
 	_title = 'Charlie';
 };
-_description = format ['Control %1 ( %2 ).<br/><br/>How to Capture:<br/><br/>Occupy the inner area to help capture and hold the zone.<br/><br/>Enemy within the outer area will slow down or even reverse your progress!<br/><br/>While it is necessary to hold the inner zone, it is also important to control and keep the enemy out of the larger zone.',_title,_letter];
+_description = format ['Контроль %1 ( %2 ).<br/><br/>Як захопити:<br/><br/>Займіть внутрішню зону щоб допомогти в захопленні та утриманні.<br/><br/>Вороги у завнішній зоні уповільнять або навіть повернуть прогрес захоплення у зворотньому напрямку!<br/><br/>Доки потрібно утримувати внутрішню зону - також потрібно контролювати та тримати ворога поза більшою зоною.',_title,_letter];
 _taskData pushBack ([
 	(format ['QS_virtualSectors_%1_task',(count (missionNamespace getVariable 'QS_virtualSectors_data'))]),
 	TRUE,

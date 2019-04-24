@@ -1330,8 +1330,8 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				_x setMarkerAlpha 0;
 			} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-			['systemChat','Контакт з полоненим встановлено! Приведіть його на базу до того, як він сплине кров’ю!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-			['ST_MEDEVAC',['Оновлення місії полоненого','Приведіть полоненого на базу до того, як він сплине кров’ю']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['systemChat','Контакт з полоненим встановлено! Доставте його на базу до того, як він сплине кров’ю!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['ST_MEDEVAC',['Оновлення місії полоненого','Доставте полоненого на базу до того, як він сплине кров’ю']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			if ((count (attachedObjects _QS_POW)) > 0) then {
 				{
 					missionNamespace setVariable [

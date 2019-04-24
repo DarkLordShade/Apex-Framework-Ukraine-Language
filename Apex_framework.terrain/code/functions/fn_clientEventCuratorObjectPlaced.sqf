@@ -38,7 +38,7 @@ if (_object isKindOf 'Man') exitWith {
 					_killer = _this select 1;
 					if (!isNull _killer) then {
 						if (isPlayer _killer) then {
-							_text = format ['Fugitive killed by %1!',(name _killer)];
+							_text = format ['Втікача вбито %1!',(name _killer)];
 							['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
@@ -65,7 +65,7 @@ if (_object isKindOf 'Man') exitWith {
 					_killer = _this select 1;
 					if (!isNull _killer) then {
 						if (isPlayer _killer) then {
-							_text = format ['%1 has murdered a civilian!',(name _killer)];
+							_text = format ['%1 вбив цивільного!',(name _killer)];
 							['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
@@ -197,7 +197,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 	if (_object isKindOf 'Helicopter') then {
 		if (_typeL in ['b_heli_light_01_armed_f','b_heli_attack_01_f','o_heli_light_02_f','o_heli_light_02_v2_f','i_heli_light_03_f','o_heli_attack_02_f','o_heli_attack_02_black_f','o_heli_light_02_dynamicloadout_f','o_heli_attack_02_dynamicloadout_black_f','o_heli_attack_02_dynamicloadout_black_f','i_heli_light_03_dynamicloadout_f','b_heli_attack_01_dynamicloadout_f','b_heli_light_01_dynamicloadout_f']) then {
 			if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-				50 cutText ['Обзброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
+				50 cutText ['Озброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
 				[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			};
 		};
@@ -226,7 +226,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 			];
 		};
 		if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-			50 cutText ['Обзброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
+			50 cutText ['Озброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
 			[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 		};
 	};

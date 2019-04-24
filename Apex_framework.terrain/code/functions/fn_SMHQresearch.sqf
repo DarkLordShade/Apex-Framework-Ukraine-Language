@@ -3,11 +3,11 @@
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	24/04/2014
-	
+
 Description:
 
 	-
@@ -26,9 +26,9 @@ private [
 ];
 
 _c4Messages = [
-	"Жорсткий диск захищений.  Вибухівка встановлена!  15 секунд до детонації.",
-	"Дослідження забезпечено. Вибухівка встановлена!   15 секунд до детонації.",
-	"Дослідження документів secured. Вибухівка встановлена!    15 секунд до детонації."
+	"Жорсткий диск захищений. Вибухівку встановлено! 15 секунд до детонації.",
+	"Дослідження отримано. Вибухівку встановлено! 15 секунд до детонації.",
+	"Дослідження документів виконано. Вибухівку встановлено! 15 секунд до детонації."
 ];
 _c4Message = selectRandom _c4Messages;
 if (worldName isEqualTo 'Tanoa') then {
@@ -63,7 +63,7 @@ while {!_accepted} do {
 };
 
 _vehPos = [_flatPos,15,30,10,0,0.5,0] call (missionNamespace getVariable 'QS_fnc_findSafePos');
-	
+
 /*/-------------------- SPAWN OBJECTIVE BUILDING/*/
 
 QS_sideObj = createVehicle ['Land_Research_HQ_F',[_flatPos select 0,_flatPos select 1,0],[],0,'NONE'];
@@ -103,7 +103,7 @@ for '_x' from 0 to 2 step 1 do {
 	_object setVariable ['QS_secureable',TRUE,TRUE];
 	_object setVariable ['QS_isExplosion',TRUE,TRUE];
 };
-	
+
 /*/-------------------- SPAWN FORCE PROTECTION/*/
 
 _enemiesArray = [QS_sideObj] call (missionNamespace getVariable 'QS_fnc_smEnemyEast');
@@ -121,9 +121,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Захопити дослідницькі данні! Ворог проводить дослідження з тестування секретної зброї і залишив одну з своїх дослідницьких станцій недостатньо захищеною. Направляйтесь туди і захопіть дані!',
-		'Захопити дослідницькі данні',
-		'Захопити дослідницькі данні'
+		'Захопити дослідницькі дані! Ворог проводить дослідження з тестування секретної зброї і залишив одну з своїх дослідницьких станцій недостатньо захищеною. Вирушайте туди і захопіть дані!',
+		'Захопити дослідницькі дані',
+		'Захопити дослідницькі дані'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -134,30 +134,30 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>Нове додаткове завдання</t><br/><t size='1.5' color='#00B2EE'>Захопити дослідницькі данні</t><br/>____________________<br/>OPFOR проводять передові військові дослідження.<br/><br/>Захопіть центр досліджнеь.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нове додаткове завдання</t><br/><t size='1.5' color='#00B2EE'>Захопити дослідницькі дані</t><br/>____________________<br/>OPFOR проводять передові військові дослідження.<br/><br/>Захопіть центр досліджнеь.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Seize Research Data']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити дослідницькі дані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
-	
+
 /*/-------------------- [ CORE LOOPS ] ------------------------ [ CORE LOOPS ]/*/
 
 for '_x' from 0 to 1 step 0 do {
 
 	if (!alive QS_sideObj) exitWith {
-		
+
 		/*/-------------------- DE-BRIEFING/*/
 
-		['sideChat',[WEST,'HQ'],'Ціль знищена, місія провалена!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Ціль знищено, місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		
+
 		/*/-------------------- DELETE/*/
-		
+
 		{
 			missionNamespace setVariable [
 				'QS_analytics_entities_deleted',
@@ -182,13 +182,13 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		} count _enemiesArray;
 	};
-	
+
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
-		
+
 		['sideChat',[WEST,'HQ'],_c4Message] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	
+
 		/*/-------------------- BOOM!/*/
-		
+
 		_dummy = createVehicle [_dummyType,[0,0,0],[],0,'NONE'];
 		missionNamespace setVariable [
 			'QS_analytics_entities_created',
@@ -222,7 +222,7 @@ for '_x' from 0 to 1 step 0 do {
 			deleteVehicle _x;
 		} count [_dummy,_researchTable];
 		sleep 0.1;
-	
+
 		/*/-------------------- DE-BRIEFING/*/
 
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
@@ -231,7 +231,7 @@ for '_x' from 0 to 1 step 0 do {
 			_x setMarkerAlpha 0;
 		} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-	
+
 		/*/--------------------- DELETE/*/
 		sleep 120;
 		{
