@@ -3007,7 +3007,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_text_5: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1809;
-			text = "Вид вiд першоi особи";
+			text = "Вид вiд третьоi особи";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.695 * safezoneH + safezoneY;
 			w = 0.08 * safezoneW;
@@ -3022,7 +3022,7 @@ class QS_RD_client_dialog_menu_options {
 			colorFocused[] = {0,0,0,0};
 			colorShadow[] = {0,0,0,0};
 			colorBorder[] = {0,0,0,0};
-			tooltip = "Блокування виду вiд першоi особи.Мозна змiнити раз на 20 хвилин або пiсля реконекту.";
+			tooltip = "Блокування виду вiд третьоi особи. Можна змiнити раз на 20 хвилин або пiсля реконекту.";
 		};
 		class QS_RD_client_dialog_menu_options_checkbox_2 : QS_RD_RscCheckbox {
 			moving = 1;
@@ -3031,7 +3031,7 @@ class QS_RD_client_dialog_menu_options {
 			y = 0.69 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
 			h = 0.04 * safezoneH;
-			tooltip = "Перемкнути вид вiд першоi особи";
+			tooltip = "Перемкнути вид вiд тертьоi особи";
 			onCheckedChanged = "['1PVCheckbox',(_this select 0),(_this select 1)] spawn (missionNamespace getVariable 'QS_fnc_clientMenuOptions');";
 		};
 		class QS_RD_client_dialog_menu_options_button_1: QS_RD_dialog_RscButton {
