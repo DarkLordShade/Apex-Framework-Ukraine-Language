@@ -5731,12 +5731,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Мінометник ( Mk6 )";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=273;

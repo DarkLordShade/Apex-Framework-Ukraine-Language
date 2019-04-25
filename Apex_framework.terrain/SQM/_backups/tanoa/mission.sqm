@@ -1306,10 +1306,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=158;
-			atlOffset=4.7683716e-007;
+			id=160;
 		};
-		class Item37
+		class Item38
 		{
 			dataType="Group";
 			side="West";
@@ -1695,32 +1694,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< HEAD
-						position[]={7650.3438,3.2212973,14937.857};
-						angles[]={6.2698536,0,6.2805333};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						skill=0;
-						description="Мінометник ( Mk6 )";
-						isPlayable=1;
-					};
-					id=79;
-					type="B_T_Support_Mort_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7655.3442,3.1951523,14932.907};
-						angles[]={6.2805324,0,0.0079936078};
-=======
 						position[]={7611.1157,3.5883751,14928.966};
 						angles[]={0,2.5232923,0};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 					side="West";
 					flags=7;

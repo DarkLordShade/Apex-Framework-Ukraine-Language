@@ -169,23 +169,8 @@ class Mission
 					expression="_this allowdamage _value;";
 					class Value
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-						isPlayable=1;
-=======
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
+						position[]={8059.9141,29.603508,10139.926};
+						angles[]={0,2.2151892,0};
 					};
 				};
 				nAttributes=1;
@@ -217,11 +202,6 @@ class Mission
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
 					class Value
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class data
 						{
 							class type
@@ -233,7 +213,6 @@ class Mission
 							};
 							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk""],[1,10,2,1]],[[""B_Kitbag_mcamo""],[2]]],false]";
 						};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 				class Attribute1
@@ -242,23 +221,8 @@ class Mission
 					expression="_this allowdamage _value;";
 					class Value
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-						isPlayable=1;
-=======
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
+						position[]={8061.6382,29.602127,10141.966};
+						angles[]={0,2.4708102,0};
 					};
 				};
 				nAttributes=2;
@@ -291,11 +255,6 @@ class Mission
 					expression="[_this,_value] call bis_fnc_initAmmoBox;";
 					class Value
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class data
 						{
 							class type
@@ -307,7 +266,6 @@ class Mission
 							};
 							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk""],[1,10,2,1]],[[""B_Kitbag_mcamo""],[2]]],false]";
 						};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 				class Attribute1
@@ -316,23 +274,8 @@ class Mission
 					expression="_this allowdamage _value;";
 					class Value
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
+						position[]={8064.042,29.600204,10143.581};
+						angles[]={0,2.5883234,0};
 					};
 				};
 				nAttributes=2;
@@ -1320,10 +1263,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=150;
-			atlOffset=-2.3841858e-007;
+			id=164;
 		};
-		class Item37
+		class Item44
 		{
 			dataType="Group";
 			side="West";
@@ -1397,7 +1339,7 @@ class Mission
 			id=152;
 			atlOffset=-2.3841858e-007;
 		};
-		class Item38
+		class Item45
 		{
 			dataType="Group";
 			side="West";
@@ -1468,10 +1410,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=154;
-			atlOffset=-2.3841858e-007;
+			id=168;
 		};
-		class Item39
+		class Item46
 		{
 			dataType="Group";
 			side="West";
@@ -1542,10 +1483,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=156;
-			atlOffset=-2.3841858e-007;
+			id=170;
 		};
-		class Item40
+		class Item47
 		{
 			dataType="Group";
 			side="West";
@@ -1616,10 +1556,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=158;
-			atlOffset=-2.3841858e-007;
+			id=172;
 		};
-		class Item41
+		class Item48
 		{
 			dataType="Group";
 			side="West";
@@ -1690,10 +1629,9 @@ class Mission
 			class Attributes
 			{
 			};
-			id=160;
-			atlOffset=-2.3841858e-007;
+			id=174;
 		};
-		class Item42
+		class Item49
 		{
 			dataType="Group";
 			side="West";
@@ -3093,10 +3031,6 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-=======
 						position[]={12009.483,1.4329741,4162.0815};
 					};
 					side="West";
@@ -3104,7 +3038,6 @@ class Mission
 					class Attributes
 					{
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=201;
@@ -3178,12 +3111,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=203;
@@ -3405,12 +3333,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=209;
@@ -3484,12 +3407,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=211;
@@ -3497,11 +3415,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3541,7 +3454,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3569,12 +3481,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=213;
@@ -3582,11 +3489,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3626,7 +3528,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3654,12 +3555,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=215;
@@ -3667,11 +3563,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3711,7 +3602,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3739,12 +3629,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=217;
@@ -3752,11 +3637,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3796,7 +3676,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3824,12 +3703,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=219;
@@ -3837,11 +3711,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3881,7 +3750,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3909,12 +3777,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=221;
@@ -3922,11 +3785,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -3966,7 +3824,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -3994,12 +3851,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=223;
@@ -4007,11 +3859,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4051,7 +3898,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4079,12 +3925,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=225;
@@ -4158,12 +3999,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=227;
@@ -4237,12 +4073,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=229;
@@ -4250,11 +4081,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4294,7 +4120,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4322,12 +4147,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=231;
@@ -4335,11 +4155,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4379,7 +4194,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4407,12 +4221,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=233;
@@ -4420,11 +4229,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4464,7 +4268,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4492,12 +4295,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=235;
@@ -4505,11 +4303,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4549,7 +4342,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4577,12 +4369,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=237;
@@ -4590,11 +4377,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4634,7 +4416,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4662,12 +4443,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=239;
@@ -4675,11 +4451,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4719,7 +4490,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4747,12 +4517,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=241;
@@ -4760,11 +4525,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4804,7 +4564,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4832,12 +4591,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=243;
@@ -4845,11 +4599,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -4889,7 +4638,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -4917,12 +4665,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=245;
@@ -4996,12 +4739,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=247;
@@ -5009,11 +4747,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5053,7 +4786,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5081,12 +4813,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=249;
@@ -5094,11 +4821,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5138,7 +4860,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5166,12 +4887,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=251;
@@ -5179,11 +4895,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5223,7 +4934,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5251,12 +4961,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=253;
@@ -5330,12 +5035,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=255;
@@ -5343,11 +5043,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5387,7 +5082,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5415,12 +5109,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=257;
@@ -5428,11 +5117,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5472,7 +5156,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5500,12 +5183,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Кулеметник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=259;
@@ -5513,11 +5191,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок Гренадер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5557,7 +5230,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5585,12 +5257,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=261;
@@ -5598,11 +5265,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5642,7 +5304,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5664,74 +5325,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< HEAD
-						position[]={12005.511,1.1541232,4168.1504};
-						angles[]={0.019199125,0,0.040777963};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						skill=0;
-						description="Старший сержант Розвідки";
-						isPlayable=1;
-					};
-					id=64;
-					type="B_recon_TL_F";
-					atlOffset=0.0053741932;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={12010.511,1.4532044,4163.1992};
-						angles[]={0.019199125,0,0.040777963};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0;
-						description="Сержант Навідник";
-						isPlayable=1;
-					};
-					id=65;
-					type="B_recon_JTAC_F";
-					atlOffset=0.0054130554;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={12000.511,1.045203,4163.1992};
-						angles[]={0.019199125,0,0.040777963};
-=======
 						position[]={11980.155,4.3361912,4147.8389};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=263;
 					type="B_Soldier_F";
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Стрілок ПТ";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5771,7 +5377,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5798,12 +5403,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший ПТ";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=265;
@@ -5811,11 +5411,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Мінер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5855,7 +5450,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5883,12 +5477,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=267;
@@ -5896,11 +5485,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -5940,7 +5524,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -5968,12 +5551,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Старший Сержант";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=269;
@@ -5981,11 +5559,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6025,7 +5598,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6053,12 +5625,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=271;
@@ -6066,11 +5633,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Медик";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6110,7 +5672,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6138,12 +5699,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Мінометник";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=273;
@@ -6151,11 +5707,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Оператор БПЛА";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6195,7 +5746,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6217,43 +5767,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< HEAD
-						position[]={11988.007,0.52550226,4175.5547};
-						angles[]={0.37150875,0,6.2807932};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						skill=0;
-						description="Пілот";
-						isPlayable=1;
-					};
-					id=82;
-					type="B_Helipilot_F";
-					atlOffset=-0.098095715;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11993.007,0.88821256,4170.6035};
-						angles[]={0.01919602,0,6.2807684};
-=======
 						position[]={11999.771,2.134202,4146.8672};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Пілот";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=275;
@@ -6261,11 +5781,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Пілот";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6305,7 +5820,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6333,12 +5847,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Пілот";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=277;
@@ -6346,11 +5855,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Пілот";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6390,7 +5894,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6412,43 +5915,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< HEAD
-						position[]={12012.112,1.3224441,4165.6113};
-						angles[]={0.066302508,0,6.2767816};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						skill=0;
-						description="Пілот ( Вайтлист )";
-						isPlayable=1;
-					};
-					id=88;
-					type="B_Helipilot_F";
-					atlOffset=-0.018210173;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={12017.112,3.6629443,4160.6602};
-						angles[]={0.083803542,0,0.38738385};
-=======
 						position[]={12005.922,2.502171,4146.5435};
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Парамедик розвідки ( Вайтлист )";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=279;
@@ -6456,11 +5929,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Парамедик розвідки ( Вайтлист )";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6500,7 +5968,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6528,12 +5995,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Інженер ( Вайтлист )";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=281;
@@ -6541,11 +6003,6 @@ class Mission
 					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Снайпер ( Вайтлист )";
-						isPlayable=1;
-=======
 						class Attribute0
 						{
 							property="speaker";
@@ -6585,7 +6042,6 @@ class Mission
 							};
 						};
 						nAttributes=2;
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 					};
 				};
 			};
@@ -6613,12 +6069,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-<<<<<<< HEAD
-						skill=0;
-						description="Пілот ( CAS Вайтлист )";
-=======
 						description="Select role ingame";
->>>>>>> 05853a5c4d677920ebd42354dccc515b3c9f7d35
 						isPlayable=1;
 					};
 					id=283;
