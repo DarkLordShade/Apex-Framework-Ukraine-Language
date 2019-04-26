@@ -1308,7 +1308,7 @@ class Mission
 			};
 			id=160;
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Group";
 			side="West";
