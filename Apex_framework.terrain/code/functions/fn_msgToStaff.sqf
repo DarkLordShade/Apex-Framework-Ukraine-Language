@@ -29,18 +29,18 @@ if (_type isEqualTo 1) then {
 		missionNamespace setVariable ['QS_kiddieActions',[],FALSE];
 	};
 	QS_kiddieAction2 = player addAction [
-		format ['(ROBOCOP) Кікнути %1',(name _object)],
+		format ['(ROBOCOP) Кiкнути %1',(name _object)],
 		(missionNamespace getVariable 'QS_fnc_actionEjectSuspect'),
 		[_object,'KICK'],
 		99
 	];
 	player setUserActionText [QS_kiddieAction2,((player actionParams QS_kiddieAction2) select 0),(format ["<t size='3'>%1</t>",((player actionParams QS_kiddieAction2) select 0)])];
 	QS_kiddieAction3 = player addAction [
-		'(ROBOCOP) Примусове виконання (нічого не робити)',
+		'(ROBOCOP) Примусове виконання (нiчого не робити)',
 		{
 			{player removeAction _x;} count (missionNamespace getVariable 'QS_kiddieActions');
-			systemChat 'Дію не виконано.';
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [3,FALSE,5,-1,'Дію не виконано.',[],-1];
+			systemChat 'Дiю не виконано.';
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [3,FALSE,5,-1,'Дiю не виконано.',[],-1];
 		},
 		[],
 		98

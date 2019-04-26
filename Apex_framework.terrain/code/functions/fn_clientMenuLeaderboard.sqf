@@ -17,12 +17,12 @@ private ['_type','_display','_index','_list','_displayName','_toolTip','_leaderb
 _type = _this select 0;
 _list = [
 	[0,'<Empty>',''],
-	[1,'Transporters','Дошка пошани транспортувальників'],
-	[2,'Revivalists','Дошка пошани Бойових медиків'],
+	[1,'Transporters','Дошка пошани транспортувальникiв'],
+	[2,'Revivalists','Дошка пошани Бойових медикiв'],
 	[3,'---','---'],
-	[4,'Gold Diggers','Дошка пошани збирачів золотиз хубів'],
-	[5,'Tower Rangers','Дошка пошани винищувачів веж'],
-	[6,'Gitmo','Дошка пошани захоплювачів ворогів']
+	[4,'Gold Diggers','Дошка пошани збирачiв золотиз хубiв'],
+	[5,'Tower Rangers','Дошка пошани винищувачiв веж'],
+	[6,'Gitmo','Дошка пошани захоплювачiв ворогiв']
 ];
 if (_type isEqualTo 'onLoad') exitWith {
 	disableSerialization;
@@ -38,7 +38,7 @@ if (_type isEqualTo 'onLoad') exitWith {
 	(_display displayCtrl 1809) ctrlSetText 'Ранг';
 	(_display displayCtrl 1810) ctrlSetText 'Гравець';
 	(_display displayCtrl 1811) ctrlSetText 'Рахунок';
-	(_display displayCtrl 1812) ctrlSetText 'Відзнаки';
+	(_display displayCtrl 1812) ctrlSetText 'Вiдзнаки';
 	(_display displayCtrl 1813) ctrlSetText 'v1.0';
 	{
 		_displayName = _x select 1;
@@ -86,7 +86,7 @@ if (_type isEqualTo 'B1') exitWith {
 			(_display displayCtrl 1809) ctrlSetText 'Ранг';
 			(_display displayCtrl 1810) ctrlSetText 'Гравець';
 			(_display displayCtrl 1811) ctrlSetText 'Рахунок';
-			(_display displayCtrl 1812) ctrlSetText 'Відзнаки';
+			(_display displayCtrl 1812) ctrlSetText 'Вiдзнаки';
 			if (isNil {missionNamespace getVariable 'QS_leaderboards'}) exitWith {};
 			_leaderboardDataArray = (missionNamespace getVariable 'QS_leaderboards') select _leaderboardID;
 			_leaderboardDataArray sort FALSE;

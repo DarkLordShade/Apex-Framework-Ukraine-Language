@@ -82,7 +82,7 @@ _onCompleted = {
 		['QS_RD_loadable',TRUE,TRUE],
 		['QS_surrender_captor',[profileName,(getPlayerUID player)],TRUE]
 	];
-	_text = format ['%1 захопив об’єкт в квадраті %2',profileName,(mapGridPosition player)];
+	_text = format ['%1 захопив об’єкт в квадратi %2',profileName,(mapGridPosition player)];
 	['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	50 cutText ['Захоплено!','PLAIN DOWN',0.75];
 };

@@ -682,9 +682,9 @@ _QS_firstDetected = FALSE;
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Ворог постачає повстанцям передові системи наведення для протиповітряних пускових установок. Прямуйте туди і захопіть ящики. У відмічених областях буде розташовано 3 ящики. Обшукуйте будівлі поблизу.',
-		'Захопити ворожі схрони',
-		'Захопити ворожі схрони'
+		'Ворог постачає повстанцям передовi системи наведення для протиповiтряних пускових установок. Прямуйте туди i захопiть ящики. У вiдмiчених областях буде розташовано 3 ящики. Обшукуйте будiвлi поблизу.',
+		'Захопити ворожi схрони',
+		'Захопити ворожi схрони'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -696,7 +696,7 @@ _QS_firstDetected = FALSE;
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
 missionNamespace setVariable ['QS_mission_urban_active',TRUE,TRUE];
-['NewSideMission',['Захопити ворожі схрони']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити ворожi схрони']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 _box1_secured = FALSE;
 _box2_secured = FALSE;
 _box3_secured = FALSE;
@@ -785,7 +785,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (_QS_enemyDetected) exitWith {};
 		} count _QS_enemyArray;
 		if (_QS_enemyDetected) then {
-			['ST_URBAN',['Додаткова місія оновлена','Ворог виявив наш підхід']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_URBAN',['Додаткова мiсiя оновлена','Ворог виявив наш пiдхiд']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			{
 				if (alive _x) then {
 					if ((random 1) > 0.75) then {
@@ -811,7 +811,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object1 setPos [-5000,-5000,0];
 					(_markers select 0) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкти захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову мiсiю оновлено',(format ['%1 / 3 об’єкти захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -825,7 +825,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object2 setPos [-5000,-5000,0];
 					(_markers select 1) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову мiсiю оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -839,7 +839,7 @@ for '_x' from 0 to 1 step 0 do {
 					_QS_object3 setPos [-5000,-5000,0];
 					(_markers select 2) setMarkerAlpha 0;
 					missionNamespace setVariable ['QS_mission_urban_objectsSecured',((missionNamespace getVariable 'QS_mission_urban_objectsSecured') + 1),FALSE];
-					['ST_URBAN',['Додаткову місію оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['ST_URBAN',['Додаткову мiсiю оновлено',(format ['%1 / 3 об’єкт захоплено',(missionNamespace getVariable 'QS_mission_urban_objectsSecured')])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};

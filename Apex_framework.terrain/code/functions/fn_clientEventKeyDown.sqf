@@ -56,7 +56,7 @@ if (_key in ((actionKeys 'Throw') + (actionKeys 'Put'))) then {
 	if (isNull (objectParent player)) then {
 		if (!(unitIsUav cameraOn)) then {
 			if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-				50 cutText ['Будь ласка, не кидайте гранат біля бази!','PLAIN DOWN'];
+				50 cutText ['Будь ласка, не кидайте гранат бiля бази!','PLAIN DOWN'];
 				_c = TRUE;
 			};
 		};
@@ -69,7 +69,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 				if (!((getPlayerUID player) in (['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
 					if (!(player getUnitTrait 'QS_trait_HQ')) then {
 						setCurrentChannel 5;
-						50 cutText ['Використовуйте Загальний канал для розмов на загальні теми. Натисніть [Home] >> [Comm-Link] >> [Radio Management] для того, щоб підписатися.','PLAIN DOWN'];
+						50 cutText ['Використовуйте Загальний канал для розмов на загальнi теми. Натиснiть [Home] >> [Comm-Link] >> [Radio Management] для того, щоб пiдписатися.','PLAIN DOWN'];
 						_c = TRUE;
 					};
 				};
@@ -80,7 +80,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 							if (!(player getUnitTrait 'QS_trait_HQ')) then {
 								if (!((getPlayerUID player) in (['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
 									setCurrentChannel 5;
-									50 cutText ['Тільки пілоти та оператори БПЛА можуть розмовляти в каналі авіації','PLAIN DOWN'];
+									50 cutText ['Тiльки пiлоти та оператори БПЛА можуть розмовляти в каналi авiацiї','PLAIN DOWN'];
 									_c = TRUE;
 								};
 							};
@@ -90,7 +90,7 @@ if (_key in (actionKeys 'PushToTalk')) then {
 			};
 		} else {
 			setCurrentChannel 5;
-			50 cutText ['Вам потрібна рація щоб розмовляти в радіоканалах!','PLAIN DOWN'];
+			50 cutText ['Вам потрiбна рацiя щоб розмовляти в радiоканалах!','PLAIN DOWN'];
 			_c = TRUE;
 		};
 	};
@@ -133,7 +133,7 @@ if (_key in (actionKeys 'AutoHover')) then {
 					player setVariable ['QS_client_lastAutoHoverMsg',(diag_tickTime + 5),FALSE];
 					_arrayToSend = (crew _v) select {((!(_x isEqualTo player)) && (alive _x) && (isPlayer _x))};
 					if (!(_arrayToSend isEqualTo [])) then {
-						[63,[5,[(format ['Ваш пілот ( %1 ) увімкнув автозависання!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
+						[63,[5,[(format ['Ваш пiлот ( %1 ) увiмкнув автозависання!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
 					};
 				};
 			};
@@ -194,17 +194,17 @@ if (_ctrl) then {
 							private _order = '';
 							if (_key isEqualTo 0x4C) exitWith {
 								player playActionNow (selectRandom ['gestureNo']);
-								50 cutText ['"Ні"','PLAIN DOWN',0.1];
+								50 cutText ['"Нi"','PLAIN DOWN',0.1];
 							};
 							if (_key isEqualTo 0x4B) exitWith {
 								player playActionNow (selectRandom ['gestureGo']);
 								50 cutText ['"Вперед"','PLAIN DOWN',0.1];
-								_order = '"Вперед!" - (Наказ групі)';
+								_order = '"Вперед!" - (Наказ групi)';
 							};
 							if (_key isEqualTo 0x47) exitWith {
 								player playActionNow (selectRandom ['gesturePoint','gestureAdvance']);
 								50 cutText ['"Просувайтись"','PLAIN DOWN',0.1];
-								_order = '"Просувайтесь!" - (Наказ групі)';
+								_order = '"Просувайтесь!" - (Наказ групi)';
 							};
 							if (_key isEqualTo 0x48) exitWith {
 								player playActionNow (selectRandom ['gestureNod']);
@@ -213,16 +213,16 @@ if (_ctrl) then {
 							if (_key isEqualTo 0x49) exitWith {
 								player playActionNow (selectRandom ['gestureFreeze']);
 								50 cutText ['"Завмерти"','PLAIN DOWN',0.1];
-								_order = '"Завмерти!" - (Наказ групі)';
+								_order = '"Завмерти!" - (Наказ групi)';
 							};
 							if (_key isEqualTo 0x4D) exitWith {
 								player playActionNow (selectRandom ['gestureHi']);
-								50 cutText ['"Привіт"','PLAIN DOWN',0.1];
+								50 cutText ['"Привiт"','PLAIN DOWN',0.1];
 							};
 							if (_key isEqualTo 0x51) exitWith {
 								player playActionNow (selectRandom ['gestureCeaseFire']);
 								50 cutText ['"Припинити вогонь"','PLAIN DOWN',0.1];
-								_order = '"Припинити вогонь!" - (Наказ групі)';
+								_order = '"Припинити вогонь!" - (Наказ групi)';
 							};
 							if (isNull (objectParent player)) then {
 								if ((count (units (group player))) > 1) then {
@@ -255,7 +255,7 @@ if (_key isEqualTo 15) then {
 					50 cutText ['Швидкий спуск вимкнено','PLAIN DOWN',1];
 				} else {
 					(vehicle player) setVariable ['QS_rappellSafety',nil,TRUE];
-					50 cutText ['Швидкий спуск увімкнуто','PLAIN DOWN',1];
+					50 cutText ['Швидкий спуск увiмкнуто','PLAIN DOWN',1];
 				};
 				0 spawn {
 					uiSleep 4.5;

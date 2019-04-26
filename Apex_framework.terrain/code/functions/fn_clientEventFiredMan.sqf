@@ -22,7 +22,7 @@ if (!((lifeState _unit) in ['HEALTHY','INJURED'])) exitWith {
 if (_weapon isEqualTo 'Throw') then {
 	if ((_unit distance2D (markerPos 'QS_marker_base_marker')) < 500) then {
 		if (!(unitIsUav cameraOn)) then {
-			50 cutText ['Гранати на базі вимкнено','PLAIN DOWN',0.333];
+			50 cutText ['Гранати на базi вимкнено','PLAIN DOWN',0.333];
 			deleteVehicle _projectile;
 		};
 	} else {
@@ -36,7 +36,7 @@ if (_weapon isEqualTo 'Throw') then {
 						if ((([objNull,'GEOM'] checkVisibility [(getPosASL _x),(getPosASL _projectile)]) > 0) || {(([objNull,'VIEW'] checkVisibility [(getPosASL _x),(getPosASL _projectile)]) > 0)}) exitWith {
 							if ((player targets [TRUE,30,[],0,(getPos _projectile)]) isEqualTo []) then {
 								deleteVehicle _projectile;
-								50 cutText [(format ['Дружні бійці в зоні ураження, %1 розряджено',(getText (configFile >> 'CfgAmmo' >> (typeOf _projectile) >> 'displayName'))]),'PLAIN DOWN',0.5];
+								50 cutText [(format ['Дружнi бiйцi в зонi ураження, %1 розряджено',(getText (configFile >> 'CfgAmmo' >> (typeOf _projectile) >> 'displayName'))]),'PLAIN DOWN',0.5];
 							};
 						};
 					} count _playersNearby;
@@ -108,7 +108,7 @@ if (_weapon isEqualTo 'Throw') then {
 		if (!((getAllOwnedMines _unit) isEqualTo [])) then {
 			if ((count (getAllOwnedMines _unit)) > 7) then {
 				deleteVehicle ((getAllOwnedMines _unit) # 0);
-				50 cutText ['Досягнуто ліміт на вибухівку ( 7 )','PLAIN DOWN',0.5];
+				50 cutText ['Досягнуто лiмiт на вибухiвку ( 7 )','PLAIN DOWN',0.5];
 			};
 		};
 	} else {
@@ -138,7 +138,7 @@ if (_weapon isEqualTo 'Throw') then {
 								waitUntil {
 									uiSleep 0.1;
 									if ((_this distance2D _missionPos) < 750) then {
-										50 cutText ['Стрільба в заборонену зону, розряджено','PLAIN DOWN',0.25];
+										50 cutText ['Стрiльба в заборонену зону, розряджено','PLAIN DOWN',0.25];
 										deleteVehicle _this;
 									};
 									((isNull _this) ||

@@ -247,16 +247,16 @@ if (_type isEqualTo 'REQUEST_ROLE') exitWith {
 
 				} else {
 					_allowRequest = FALSE;
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Вже у обраній ролі',[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Вже у обранiй ролi',[],-1,TRUE,'Role Selection',FALSE];
 				};
 			} else {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Максимальна кількість гравців у обраній ролі',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Максимальна кiлькiсть гравцiв у обранiй ролi',[],-1,TRUE,'Role Selection',FALSE];
 			};
 		} else {
 			if ((!(_side isEqualTo (player getVariable ['QS_unit_side',WEST]))) && (!(missionNamespace getVariable ['QS_RSS_client_canSideSwitch',FALSE]))) then {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Неможливо змінити фракцію',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Неможливо змiнити фракцiю',[],-1,TRUE,'Role Selection',FALSE];
 			} else {
 				_allowRequest = FALSE;
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Неможливо обрати роль',[],-1,TRUE,'Role Selection',FALSE];
@@ -265,17 +265,17 @@ if (_type isEqualTo 'REQUEST_ROLE') exitWith {
 		if (_role in ['pilot_plane','pilot_cas']) then {
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) isEqualTo 0) then {
 				_allowRequest = FALSE;
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Роль пілота повітряної підтримки вимкнено в налаштуваннях місії.',[],-1,TRUE,'Role Selection',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Роль пiлота повiтряної пiдтримки вимкнено в налаштуваннях мiсiї.',[],-1,TRUE,'Role Selection',FALSE];
 			};
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) in [1,3]) then {
 				if (!(_uid in (['CAS'] call (missionNamespace getVariable 'QS_fnc_whitelist')))) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не в білому списку для ролі Пілота Повітрянної Пядтримки (зверніться до адмінів щоб потрапити до білого списку!)',[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не в бiлому списку для ролi Пiлота Повiтрянної Пядтримки (звернiться до адмiнiв щоб потрапити до бiлого списку!)',[],-1,TRUE,'Role Selection',FALSE];
 					_allowRequest = FALSE;
 				};
 			};
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) isEqualTo 3) then {
 				if ((player getVariable ['QS_client_casAllowance',0]) >= (missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Досягнуто ліміту на кількість Пілотів Літака ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Досягнуто лiмiту на кiлькiсть Пiлотiв Лiтака ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
 					_allowRequest = FALSE;
 				};
 			};

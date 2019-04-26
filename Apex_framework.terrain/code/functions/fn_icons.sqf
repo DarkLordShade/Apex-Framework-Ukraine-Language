@@ -210,8 +210,8 @@ _QS_ST_showKnownEnemies = TRUE && ((missionNamespace getVariable ['QS_missionCon
 //================ TEXT (for LOCALIZATION / LANGUAGE TRANSLATION) ==================//
 //==================================================================================//
 
-missionNamespace setVariable ['QS_ST_STR_text1','Натисніть щоб переглянути інформацію про групу',FALSE];				/*/ STRING. Text shown when a player passes Mouse over Group leader (only if _QS_ST_groupInteractiveIcons = TRUE;)/*/
-missionNamespace setVariable ['QS_ST_STR_text2','Ця група не в вашій фракції!',FALSE];		/*/ STRING. Text shown when a player clicks on a Group Icon of other faction. (only if _QS_ST_groupInteractiveIcons = TRUE;)/*/
+missionNamespace setVariable ['QS_ST_STR_text1','Натиснiть щоб переглянути iнформацiю про групу',FALSE];				/*/ STRING. Text shown when a player passes Mouse over Group leader (only if _QS_ST_groupInteractiveIcons = TRUE;)/*/
+missionNamespace setVariable ['QS_ST_STR_text2','Ця група не в вашiй фракцiї!',FALSE];		/*/ STRING. Text shown when a player clicks on a Group Icon of other faction. (only if _QS_ST_groupInteractiveIcons = TRUE;)/*/
 
 //==============================================================================================================================//
 //=============================================================== CONFIGURATION END ============================================//

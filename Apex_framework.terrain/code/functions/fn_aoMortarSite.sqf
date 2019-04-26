@@ -59,7 +59,7 @@ _gunner addEventHandler [
 		(vehicle _killed) setDamage [1,TRUE];
 		if (!isNull _instigator) then {
 			if (isPlayer _instigator) then {
-				_text = format ['%1 ( %2 ) вбив мінометника Mk.6',(name _instigator),(groupId (group _instigator))];
+				_text = format ['%1 ( %2 ) вбив мiнометника Mk.6',(name _instigator),(groupId (group _instigator))];
 				_text remoteExec ['systemChat',-2,FALSE];
 			};
 		};
@@ -81,7 +81,7 @@ _mortar addEventHandler [
 			'QS_marker_grid_mtrMkr',
 			'QS_marker_grid_mtrCircle'
 		];
-		['GRID_UPDATE',['Зона Операцій','Ворожий міномет знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_UPDATE',['Зона Операцiй','Ворожий мiномет знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	}
 ];
 _gunner call (missionNamespace getVariable 'QS_fnc_unitSetup');
@@ -94,7 +94,7 @@ _gunner addEventHandler [
 		(vehicle (_this select 0)) setVehicleAmmo 1;
 		if ((missionNamespace getVariable 'QS_enemy_mortarFireMessage') > (diag_tickTime - 300)) exitWith {};
 		missionNamespace setVariable ['QS_enemy_mortarFireMessage',diag_tickTime,FALSE];
-		['sideChat',[WEST,'HQ'],'Стріляють ворожі міномети!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Стрiляють ворожi мiномети!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	}
 ];
 _gunner addEventHandler [
@@ -168,7 +168,7 @@ _uncertainPos = [
 	((_spawnPos select 1) + 100 - (random 200)),
 	0
 ];
-['GRID_UPDATE',['Зона Операцій','Розгорнуто ворожий міномет']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['GRID_UPDATE',['Зона Операцiй','Розгорнуто ворожий мiномет']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerPos _uncertainPos;
 	_x setMarkerAlpha 0.75;

@@ -674,13 +674,13 @@ comment 'Mission task location';
 	TRUE,
 	[
 		(format ['
-			Броньований транспорт CSAT що перевозив вазливі стратегічні дані потрапив у засідку в Kavala. У зв’язку з тим, що дані, що перевозились, були кваліфіковано як надзвичайно важливі, ЦЕНТР позначив цю місію найвищим пріоритетом.<br/><br/>
+			Броньований транспорт CSAT що перевозив вазливi стратегiчнi данi потрапив у засiдку в Kavala. У зв’язку з тим, що данi, що перевозились, були квалiфiковано як надзвичайно важливi, ЦЕНТР позначив цю мiсiю найвищим прiоритетом.<br/><br/>
 
-			Знайдіть броньовик CSAT в Georgetown, в ньому знаходиться трекер, за допомогою якого ви знайдете втрачені дані.<br/><br/>
+			Знайдiть броньовик CSAT в Georgetown, в ньому знаходиться трекер, за допомогою якого ви знайдете втраченi данi.<br/><br/>
 
-			Місто переповнене силами Синдікату і розвід. дані вказують, що  вони маэть значні можливості АА. Пропонується наблизитися з півдня і рухатись пішки. Залишайтеся зі своєю командою і пам’ятайте про тренування з буїв у міських умовах.<br/><br/>
+			Мiсто переповнене силами Синдiкату i розвiд. данi вказують, що  вони маэть значнi можливостi АА. Пропонується наблизитися з пiвдня i рухатись пiшки. Залишайтеся зi своєю командою i пам’ятайте про тренування з буїв у мiських умовах.<br/><br/>
 
-			Це завдання відмічено не точно.<br/>
+			Це завдання вiдмiчено не точно.<br/>
 			<img size="3" image="%1"/>
 		',(getText (configfile >> 'CfgVehicles' >> 'O_Truck_03_repair_F' >> 'editorPreview'))]),
 		'1 з 2: Знайти транспорт CSAT',
@@ -720,7 +720,7 @@ _missionObjectiveMarkers pushBack _timeMarker;
 
 private _timerText = '';
 
-['CUSTOM_GEORGETOWN',['','PПріоритетна ціль']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['CUSTOM_GEORGETOWN',['','PПрiоритетна цiль']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 _teleportMarker = createMarker ['QS_marker_GT_TP',[0,0,0]];
 _teleportMarker setMarkerText (format ['%1Телепорт ([Shift]+[Click тут] щоб телепортуватись)',(toString [32,32,32])]);
 _teleportMarker setMarkerAlpha 0;
@@ -743,12 +743,12 @@ for '_x' from 0 to 1 step 0 do {
 	_serverTime = serverTime;
 	if (_serverTime > _missionEnd) exitWith {
 		comment 'Mission failure';
-		['CUSTOM_GEORGETOWN',['','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Мiсiю провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['sideChat',[WEST,'HQ'],'Ми занадто довка в Kavala, солдати. Пощастить наступного разу!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_missionStatus isEqualTo 'SUCCESS') exitWith {
 		comment 'Mission success';
-		['CUSTOM_GEORGETOWN',['','Місію виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Мiсiю виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['sideChat',[WEST,'HQ'],'Гарна робота, солдате, повертайтеся на бюазу та готуйтеся до наступного завдання!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 
@@ -1094,9 +1094,9 @@ for '_x' from 0 to 1 step 0 do {
 							if (isPlayer _instigator) then {
 								private _text = '';
 								if ((random 1) > 0.666) then {
-									_text = format ['Цивільного вбив %1!',(name _instigator)];
+									_text = format ['Цивiльного вбив %1!',(name _instigator)];
 								} else {
-									_text = format ['%1 вбив цивільного',(name _instigator)];
+									_text = format ['%1 вбив цивiльного',(name _instigator)];
 								};
 								['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
@@ -1248,14 +1248,14 @@ for '_x' from 0 to 1 step 0 do {
 				TRUE,
 				[
 					(format ['
-					Рухайтесь містом та захопіть %1 частин даних.<br/><br/>
+					Рухайтесь мiстом та захопiть %1 частин даних.<br/><br/>
 
-					їх розміщення завантажено на вашу мапу (позначено жовтим).<br/><br/>
+					їх розмiщення завантажено на вашу мапу (позначено жовтим).<br/><br/>
 
 						<img size="3" image="%2"/>
 					',_captureThreshold,(getText (configfile >> 'CfgVehicles' >> 'Land_Tablet_02_F' >> 'editorPreview'))]),
-					'2 of 2: Захопити дані',
-					'2 of 2: Захопити дані'
+					'2 of 2: Захопити данi',
+					'2 of 2: Захопити данi'
 				],
 				[3476.77,13108.7,0],
 				'CREATED',
@@ -1275,7 +1275,7 @@ for '_x' from 0 to 1 step 0 do {
 				_x setMarkerAlpha 1;
 			} forEach _intelMarkers;
 			_intelStateMarker setMarkerAlpha 1;
-			['CUSTOM_GEORGETOWN',['',(format ['Захопити дані (%1)',_captureThreshold])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['CUSTOM_GEORGETOWN',['',(format ['Захопити данi (%1)',_captureThreshold])]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 	} else {
 		_hiddenTablets = _missionTablets select {(isObjectHidden _x)};
@@ -1301,7 +1301,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	_timeMarker setMarkerText (format ['%1Часу залишилось: %2',(toString [32,32,32]),([((round(_missionEnd - serverTime))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString'))]);
 	if ((count allPlayers) > 45) exitWith {
-		['CUSTOM_GEORGETOWN',['','Місію відмінено (максимальна кількість гравців)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CUSTOM_GEORGETOWN',['','Мiсiю вiдмiнено (максимальна кiлькiсть гравцiв)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	uiSleep 3;
 };

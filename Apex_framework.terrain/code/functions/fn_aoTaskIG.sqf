@@ -307,7 +307,7 @@ private _taskSucceeded = FALSE;
 private _incapacitated = FALSE;
 private _mine = objNull;
 _taskID = 'QS_GRID_TASK_IG_1';
-private _description = 'Надзвичайно вазжливу ціль з чутливими даними знайдено.<br/><br/>Вирушайти, нейтралізуйте його та захопіть дані.<br/><br/>Це завдання треба виконати швидко та обережно. Якщо він дізніється про нашу присутність в зоні - він спробує знищити дані. Звертаємо увагу, зо пристрій з даними захищено біометричним сенсором. Якщо, його серце зупиниться це самознищить дані за короткий час.';
+private _description = 'Надзвичайно вазжливу цiль з чутливими даними знайдено.<br/><br/>Вирушайти, нейтралiзуйте його та захопiть данi.<br/><br/>Це завдання треба виконати швидко та обережно. Якщо вiн дiзнiється про нашу присутнiсть в зонi - вiн спробує знищити данi. Звертаємо увагу, зо пристрiй з даними захищено бiометричним сенсором. Якщо, його серце зупиниться це самознищить данi за короткий час.';
 if (_sentriesEnabled) then {
 	_description = _description + '<br/><br/>Satellite data appears to show he has a security detail with him.';
 };
@@ -316,8 +316,8 @@ if (_sentriesEnabled) then {
 	TRUE,
 	[
 		_description,
-		'Дані',
-		'Дані'
+		'Данi',
+		'Данi'
 	],
 	_nearBuildingPosition,
 	'CREATED',
@@ -327,7 +327,7 @@ if (_sentriesEnabled) then {
 	'kill',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['GRID_IG_UPDATE',['Другорядне завдання','Захопити дані (Партизани)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['GRID_IG_UPDATE',['Другорядне завдання','Захопити данi (Партизани)']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 [_taskID,['kill','','']] call (missionNamespace getVariable 'QS_fnc_taskSetCustomData');
 for '_x' from 0 to 1 step 0 do {
 	_serverTime = serverTime;
@@ -336,7 +336,7 @@ for '_x' from 0 to 1 step 0 do {
 			_taskSucceeded = TRUE;
 		} else {
 			if ((!((_objUnit targets [TRUE,_targetsRadius]) isEqualTo [])) || (!(((units _sentryGrp) findIf {((alive _x) && (!((_x targets [TRUE,_targetsRadius]) isEqualTo [])))}) isEqualTo -1))) then {
-				['GRID_IG_UPDATE',['Другорядне завдання','Ворог виявив нашу присутність']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['GRID_IG_UPDATE',['Другорядне завдання','Ворог виявив нашу присутнiсть']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				_enemyDetected = TRUE;
 				_sentryGrp setSpeedMode 'FULL';
 				_sentryGrp setBehaviour 'COMBAT';
@@ -380,10 +380,10 @@ for '_x' from 0 to 1 step 0 do {
 		};
 	};
 	if (_taskSucceeded) exitWith {
-		['GRID_IG_UPDATE',['Другорядне завдання завершено','Дані в безпеці']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Другорядне завдання завершено','Данi в безпецi']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	if (_taskFailed) exitWith {
-		['GRID_IG_UPDATE',['Другорядне завдання провалено','Дані втрачено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_IG_UPDATE',['Другорядне завдання провалено','Данi втрачено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 	uiSleep 3;
 };

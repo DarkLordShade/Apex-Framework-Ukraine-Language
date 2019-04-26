@@ -214,7 +214,7 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Важлива інформація переходить з рук до рук серед високопосадових ворожих офіцерів. Ми знаємо, що документи знаходиться всередині автомобіля. Якщо вони виявлять нашу присутність - можуть намагатися втекти.',
+		'Важлива iнформацiя переходить з рук до рук серед високопосадових ворожих офiцерiв. Ми знаємо, що документи знаходиться всерединi автомобiля. Якщо вони виявлять нашу присутнiсть - можуть намагатися втекти.',
 		'Захопити документи (Траспорт)',
 		'Захопити документи (Траспорт)'
 	],
@@ -227,9 +227,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повідомлення від місцевих жителів, які чули, що важлива інформація попала в ворожі руки.!<br/><br/>Ми позначили позицію на вашій карті. Її зберігають в одному з транспортних засобів або інформація у когось з бійців.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова мiсiя</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повiдомлення вiд мiсцевих жителiв, якi чули, що важлива iнформацiя попала в ворожi руки.!<br/><br/>Ми позначили позицiю на вашiй картi. Її зберiгають в одному з транспортних засобiв або iнформацiя у когось з бiйцiв.</t>";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Захопити Дані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Данi']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 /*/----- Set vars/*/
 
@@ -248,7 +248,7 @@ for '_x' from 0 to 1 step 0 do {
 
 	if (!alive _intelObj) exitWith {
 		sleep 0.3;
-		['sideChat',[WEST,'HQ'],'Об’єкт знищено. Місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт знищено. Мiсiю ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
@@ -279,7 +279,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (([_intelObj,500] call (missionNamespace getVariable 'QS_fnc_enemyDetected')) || {(missionNamespace getVariable 'QS_sm_enemyDetected')}) then {
 			missionNamespace setVariable ['QS_sm_enemyDetected',FALSE,FALSE];
 			sleep 0.3;
-			['sideChat',[WEST,'HQ'],'Ворог виявив нас і намагається втекти з документами!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'HQ'],'Ворог виявив нас i намагається втекти з документами!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 
 			/*/--------- WHERE TO / HOW WILL THE OBJECTIVES ESCAPE?/*/
 
@@ -333,7 +333,7 @@ for '_x' from 0 to 1 step 0 do {
 	/*/------------------------------------------ THE ENEMY ESCAPED [FAIL]/*/
 
 	if (_heEscaped) exitWith {
-		['sideChat',[WEST,'HQ'],'Об’єкт втік, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт втiк, мiсiю провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		sleep 0.3;
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
@@ -364,7 +364,7 @@ for '_x' from 0 to 1 step 0 do {
 
 	if (missionNamespace getVariable 'QS_smSuccess') exitWith {
 		sleep 0.3;
-		['sideChat',[WEST,'HQ'],'Документи отримані. Місію виконано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Документи отриманi. Мiсiю виконано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{

@@ -16,7 +16,7 @@ Notes:
 	Deprecated mission
 ____________________________________*/
 
-scriptName 'Другорядна місія - захопити вертоліт';
+scriptName 'Другорядна мiсiя - захопити вертолiт';
 
 private [
 	"_objPos","_flatPos","_accepted","_position","_randomDir","_hangar","_x","_enemiesArray",
@@ -24,9 +24,9 @@ private [
 	'_c4Messages','_researchTable','_dummyTypes','_dummyType','_objectTypes','_objectType'
 ];
 _c4Messages = [
-	"Дані з вертушки захоплено. Треба встановити заряд! 15 секунд до детонації.",
-	"Дані з вертольота у нас. Треба встановити вибухівку! 15 секунд до детонації.",
-	"Ми отримали дані. Заряд встановлено! 15 секунд до детонації."
+	"Данi з вертушки захоплено. Треба встановити заряд! 15 секунд до детонацiї.",
+	"Данi з вертольота у нас. Треба встановити вибухiвку! 15 секунд до детонацiї.",
+	"Ми отримали данi. Заряд встановлено! 15 секунд до детонацiї."
 ];
 _c4Message = selectRandom _c4Messages;
 _chopperTypes = ["O_Heli_Attack_02_dynamicLoadout_black_F","O_Heli_Light_02_unarmed_F","B_Heli_Attack_01_dynamicLoadout_F","C_Heli_Light_01_civil_F","O_Heli_Transport_04_box_F"];
@@ -123,15 +123,15 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Захопити вертоліт',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити вертолiт',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Захопити ворожий вертоліт! CSAT експериментують з новою технологією захисту від радарів. Рушайте та викрадіть схеми. Вони будуть в будинку поблизу! Щойно вертоліт буде захоплено - його знищать, sтому впевніться - що зачистили зону. Це завдання відмічено не точно.',
-		'Захопити Вертоліт',
-		'Захопити Вертоліт'
+		'Захопити ворожий вертолiт! CSAT експериментують з новою технологiєю захисту вiд радарiв. Рушайте та викрадiть схеми. Вони будуть в будинку поблизу! Щойно вертолiт буде захоплено - його знищать, sтому впевнiться - що зачистили зону. Це завдання вiдмiчено не точно.',
+		'Захопити Вертолiт',
+		'Захопити Вертолiт'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -142,9 +142,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 
-_briefing = parseText "<t align='center'><t size='2.2'>Нова Другорядна Місія</t><br/><t size='1.5' color='#00B2EE'>Захопити Ворожий ВертолІт</t><br/>____________________<br/>OPFOR працюють над прототипом нового атакуючого вертольота і вони тримають його десь в ангарі на острові.<br/><br/>Ми відмітили підозрілу локацію на вашій мапі; потрапте до ангаруб захопіть дані та знищіть вертоліт.</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова Другорядна Мiсiя</t><br/><t size='1.5' color='#00B2EE'>Захопити Ворожий ВертолІт</t><br/>____________________<br/>OPFOR працюють над прототипом нового атакуючого вертольота i вони тримають його десь в ангарi на островi.<br/><br/>Ми вiдмiтили пiдозрiлу локацiю на вашiй мапi; потрапте до ангаруб захопiть данi та знищiть вертолiт.</t>";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Захопити Ворожий Вертоліт']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Ворожий Вертолiт']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 missionNamespace setVariable ['QS_sideMissionUp',TRUE,TRUE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
@@ -156,7 +156,7 @@ for '_x' from 0 to 1 step 0 do {
 
 		/*/-------------------- DE-BRIEFING/*/
 
-		['sideChat',[WEST,'HQ'],'Дані про прототип втрачено, місію ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Данi про прототип втрачено, мiсiю ПРОВАЛЕНО!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerPos [-5000,-5000,0];

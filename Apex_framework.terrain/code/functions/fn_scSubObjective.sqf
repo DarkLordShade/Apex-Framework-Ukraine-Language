@@ -242,7 +242,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerSize [100,100];
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_1_markers') pushBack _marker2;
-			_description = 'Знайти та знищити ворожий канал звязку.<br/><br/>Дата центр дозволяє ворогу більш легко обмінюватися та ділитися інформацією про маневри наших бійців. За допомогою цих даних вони можуть адаптуватися та краще протидіяти нашим атакам.<br/><br/> Також дата центр дозволяє їм викликати БПЛА. Знищіть дата центр.';
+			_description = 'Знайти та знищити ворожий канал звязку.<br/><br/>Дата центр дозволяє ворогу бiльш легко обмiнюватися та дiлитися iнформацiєю про маневри наших бiйцiв. За допомогою цих даних вони можуть адаптуватися та краще протидiяти нашим атакам.<br/><br/> Також дата центр дозволяє їм викликати БПЛА. Знищiть дата центр.';
 			_title = 'Знищити дата центр';
 			_tooltip = 'Дата центр';
 			_icon = 'intel';
@@ -375,7 +375,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker1 setMarkerShape 'ICON';
 			_marker1 setMarkerType 'mil_dot';
 			_marker1 setMarkerColor 'ColorOPFOR';
-			_marker1 setMarkerText (format ['%1Радіо антена',(toString [32,32,32])]);
+			_marker1 setMarkerText (format ['%1Радiо антена',(toString [32,32,32])]);
 			_marker1 setMarkerSize [0.5,0.5];
 			_marker1 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_2_markers') pushBack _marker1;
@@ -388,9 +388,9 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerSize [100,100];
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_2_markers') pushBack _marker2;
-			_description = 'Знищити ворожу радіо антену!<br/><br/>Ворог використовує радіозвязок для виклику для підкріплення гвинтокрилів та броньованого транспорту.<br/><br/>Знищення цієї цілі значно зменшить кількість ворожого транспорту.';
-			_title = 'Знищити радіовежу';
-			_tooltip = 'Радіовежа';
+			_description = 'Знищити ворожу радiо антену!<br/><br/>Ворог використовує радiозвязок для виклику для пiдкрiплення гвинтокрилiв та броньованого транспорту.<br/><br/>Знищення цiєї цiлi значно зменшить кiлькiсть ворожого транспорту.';
+			_title = 'Знищити радiовежу';
+			_tooltip = 'Радiовежа';
 			_icon = 'destroy';
 			[
 				'QS_virtualSectors_sub_2_task',
@@ -529,7 +529,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker2;
 			missionNamespace setVariable ['QS_virtualSectors_sd_position',_position,FALSE];
-			_description = 'Знищити склад противника.<br/><br/>Ворог використовує цей склад для поширення зброї. Цей склад дозволяють ворогам споряджати солдат ПТ і ПА.<br/><br/>Знищення цього складу зменшить кількість ПА і ПТ бійців<br/><br/>Щоб убезпечити його - просто використай своє Скролл-меню на нижній частині Taru всередині укріплення.';
+			_description = 'Знищити склад противника.<br/><br/>Ворог використовує цей склад для поширення зброї. Цей склад дозволяють ворогам споряджати солдат ПТ i ПА.<br/><br/>Знищення цього складу зменшить кiлькiсть ПА i ПТ бiйцiв<br/><br/>Щоб убезпечити його - просто використай своє Скролл-меню на нижнiй частинi Taru всерединi укрiплення.';
 			_title = 'Ворожий склад';
 			_tooltip = 'Ворожий склад';
 			_icon = 'rearm';
@@ -554,7 +554,7 @@ if (_type isEqualTo 1) exitWith {
 		};
 	};
 	if (_subType isEqualTo 'SUPPORT') then {
-		comment 'База підтримки транспортних засобів';
+		comment 'База пiдтримки транспортних засобiв';
 
 
 

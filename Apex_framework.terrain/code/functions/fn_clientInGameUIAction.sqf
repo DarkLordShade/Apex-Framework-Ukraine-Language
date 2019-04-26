@@ -28,12 +28,12 @@ if (((animationState player) in [
 	_QS_c;
 };
 if (!((lifeState player) in ['HEALTHY','INJURED'])) exitWith {
-	50 cutText ['Недієздатний','PLAIN DOWN',0.333];
+	50 cutText ['Недiєздатний','PLAIN DOWN',0.333];
 	_QS_c = TRUE;
 	_QS_c;
 };
 if ((!(((attachedObjects player) findIf {((!isNull _x) && (!(_x isKindOf 'Sign_Sphere10cm_F')))}) isEqualTo -1)) && (!((toLower _QS_actionText) in [
-	'відпустити','відчепити','завантажити','втягнути вантажні троси','подовжити вантажні троси','вкоротити вантажні троси','відпустити вантажні троси','випустити вантажні троси','приєднати вантажні троси','скинути вантажні троси','підняти вантажні троси','release','load','retract cargo ropes','extend cargo ropes','shorten cargo ropes','release cargo','deploy cargo ropes','attach to cargo ropes','drop cargo ropes','pickup cargo ropes'
+	'вiдпустити','вiдчепити','завантажити','втягнути вантажнi троси','подовжити вантажнi троси','вкоротити вантажнi троси','вiдпустити вантажнi троси','випустити вантажнi троси','приєднати вантажнi троси','скинути вантажнi троси','пiдняти вантажнi троси','release','load','retract cargo ropes','extend cargo ropes','shorten cargo ropes','release cargo','deploy cargo ropes','attach to cargo ropes','drop cargo ropes','pickup cargo ropes'
 ])) && (!(_QS_actionName in ['OpenParachute']))) exitWith {
 	50 cutText ['Зайнятий','PLAIN DOWN',0.333];
 	_QS_c = TRUE;
@@ -75,7 +75,7 @@ if (_exit) exitWith {TRUE;};
 if (['GetIn',_QS_actionName,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) then {
 	if (!((attachedObjects player) isEqualTo [])) then {
 		if (!(((attachedObjects player) findIf {((alive _x) && (_x isKindOf 'CAManBase'))}) isEqualTo -1)) then {
-			50 cutText ['Відпустити / завантажити, перш ніж входити','PLAIN DOWN',0.75];
+			50 cutText ['Вiдпустити / завантажити, перш нiж входити','PLAIN DOWN',0.75];
 			_QS_c = TRUE;
 		};
 	};
@@ -83,21 +83,21 @@ if (['GetIn',_QS_actionName,FALSE] call (missionNamespace getVariable 'QS_fnc_in
 if (_QS_c) exitWith {_QS_c;};
 if (_QS_actionName isEqualTo 'HealSoldier') exitWith {
 	if (!(((attachedObjects player) findIf {((alive _x) && (_x isKindOf 'CAManBase'))}) isEqualTo -1)) then {
-		50 cutText ['Не можемо вилікувати в цей час','PLAIN DOWN'];
+		50 cutText ['Не можемо вилiкувати в цей час','PLAIN DOWN'];
 		_QS_c = TRUE;
 	};
 	if ((lifeState _QS_actionTarget) isEqualTo 'INCAPACITATED') then {
 		_QS_c = TRUE;
-		50 cutText [(format ['%1 потрібна евакуація. Лікування не відбулося!',(name _QS_actionTarget)]),'PLAIN DOWN'];
+		50 cutText [(format ['%1 потрiбна евакуацiя. Лiкування не вiдбулося!',(name _QS_actionTarget)]),'PLAIN DOWN'];
 	};
 	if (!isNil {_QS_actionTarget getVariable 'QS_noHeal'}) then {
 		_QS_c = TRUE;
-		50 cutText ['Його не можна лікувати','PLAIN DOWN'];
+		50 cutText ['Його не можна лiкувати','PLAIN DOWN'];
 	};
 	if (!(_QS_c)) then {
 		_QS_c = TRUE;
 		if (isPlayer _QS_actionTarget) then {
-			[63,[5,[(format ['Вас лікує %1',profileName]),'PLAIN DOWN',0.5]]] remoteExec ['QS_fnc_remoteExec',_QS_actionTarget,FALSE];
+			[63,[5,[(format ['Вас лiкує %1',profileName]),'PLAIN DOWN',0.5]]] remoteExec ['QS_fnc_remoteExec',_QS_actionTarget,FALSE];
 		};
 		player setVariable ['QS_treat_entryAnim',(animationState player),FALSE];
 		player setVariable ['QS_treat_target',_QS_actionTarget,FALSE];
@@ -152,20 +152,20 @@ if (_QS_actionName isEqualTo 'RepairVehicle') exitWith {
 		{
 			if ((side _x) in ([player] call (missionNamespace getVariable 'QS_fnc_enemySides'))) exitWith {
 				_QS_c = TRUE;
-				50 cutText ['Не можна ремонтувати активну техніку ворогів','PLAIN',0.5];
+				50 cutText ['Не можна ремонтувати активну технiку ворогiв','PLAIN',0.5];
 			};
 		} count (crew _QS_actionTarget);
 	};
 	if (!(_QS_c)) then {
 		if (!isNil {_QS_actionTarget getVariable 'QS_RD_noRepair'}) then {
 			_QS_c = TRUE;
-			50 cutText ['Цю техніку не можливо відремонтувати','PLAIN DOWN'];
+			50 cutText ['Цю технiку не можливо вiдремонтувати','PLAIN DOWN'];
 		} else {
 			if (!isNull (effectiveCommander _QS_actionTarget)) then {
 				if (isPlayer _QS_actionTarget) then {
 					if (alive _QS_actionTarget) then {
 						if (!(_QS_actionTarget isEqualTo (vehicle player))) then {
-							[63,[5,[(format ['Ваш автомобіль ремонтує %1',profileName]),'PLAIN DOWN',0.5]]] remoteExec ['QS_fnc_remoteExec',(effectiveCommander _QS_actionTarget),FALSE];
+							[63,[5,[(format ['Ваш автомобiль ремонтує %1',profileName]),'PLAIN DOWN',0.5]]] remoteExec ['QS_fnc_remoteExec',(effectiveCommander _QS_actionTarget),FALSE];
 						};
 					};
 				};
@@ -192,14 +192,14 @@ if (_QS_actionName isEqualTo 'RepairVehicle') exitWith {
 };
 if (_QS_actionName isEqualTo 'UseMagazine') exitWith {
 	if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
+		50 cutText ['Вибухiвку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
 	_QS_c;
 };
 if (_QS_actionName isEqualTo 'UseContainerMagazine') exitWith {
 	if ((cameraOn distance (markerPos 'QS_marker_base_marker')) < 300) then {
-		50 cutText ['Вибухівку заборонено поблизу бази','PLAIN'];
+		50 cutText ['Вибухiвку заборонено поблизу бази','PLAIN'];
 		_QS_c = TRUE;
 	};
 	_QS_c;
@@ -212,7 +212,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 		if (player isEqualTo (driver (vehicle player))) then {
 			_QS_c = TRUE;
 			0 spawn {
-				private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+				private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 				if (_result) then {
 					player action ['eject',(vehicle player)];
 				};
@@ -222,7 +222,7 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 				if (((vectorMagnitude (velocity (vehicle player))) * 3.6) > 25) then {
 					_QS_c = TRUE;
 					0 spawn {
-						private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+						private _result = ['Катапультуватись?','Попередження про катапультування','Катапультуватись','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 						if (_result) then {
 							player action ['eject',(vehicle player)];
 						};
@@ -235,13 +235,13 @@ if (_QS_actionName isEqualTo 'Eject') exitWith {
 };
 if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 	if ((!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) then {
-		_text = 'ROBOCOP: Сидіння пілота тільки для Пілотів! Ви ***** %1 *****. Грайте свою роль або оберіть іншу!';
+		_text = 'ROBOCOP: Сидiння пiлота тiльки для Пiлотiв! Ви ***** %1 *****. Грайте свою роль або оберiть iншу!';
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [1,FALSE,8,-1,_text,[],-1];
 		_QS_c = TRUE;
 	};
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || (!((secondaryWeapon player) isEqualTo '')) || (!((handgunWeapon player) isEqualTo ''))) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цiй технiцi зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -270,7 +270,7 @@ if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 	]) then {
 		if (!(player getUnitTrait 'QS_trait_fighterPilot')) then {
 			_QS_c = TRUE;
-			_text = 'Тільки пілот винищувача може використовувати цей літак';
+			_text = 'Тiльки пiлот винищувача може використовувати цей лiтак';
 			50 cutText [_text,'PLAIN',0.5];
 		};
 	};
@@ -304,7 +304,7 @@ if (_QS_actionName isEqualTo 'GetInPilot') exitWith {
 if (_QS_actionName isEqualTo 'GetInCargo') exitWith {
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || {(!((secondaryWeapon player) isEqualTo ''))} || {(!((handgunWeapon player) isEqualTo ''))}) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цiй технiцi зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -313,7 +313,7 @@ if (_QS_actionName isEqualTo 'GetInCargo') exitWith {
 if (_QS_actionName isEqualTo 'GetInDriver') exitWith {
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || {(!((secondaryWeapon player) isEqualTo ''))} || {(!((handgunWeapon player) isEqualTo ''))}) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цiй технiцi зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -325,7 +325,7 @@ if (_QS_actionName isEqualTo 'GetInDriver') exitWith {
 if (_QS_actionName isEqualTo 'GetInGunner') exitWith {
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || {(!((secondaryWeapon player) isEqualTo ''))} || {(!((handgunWeapon player) isEqualTo ''))}) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цiй технiцi зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -347,7 +347,7 @@ if (_QS_actionName isEqualTo 'GetInGunner') exitWith {
 if (_QS_actionName isEqualTo 'GetInCommander') exitWith {
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || {(!((secondaryWeapon player) isEqualTo ''))} || {(!((handgunWeapon player) isEqualTo ''))}) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цій техніці зброя не дозволена',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'В цiй технiцi зброя не дозволена',[],-1];
 			_QS_c = TRUE;
 		};
 	};
@@ -369,7 +369,7 @@ if (_QS_actionName isEqualTo 'GetInCommander') exitWith {
 if (_QS_actionName isEqualTo 'GetInTurret') exitWith {
 	if (!isNil {(_this select 0) getVariable 'QS_RD_vehicle_ICRC'}) then {
 		if ((!((primaryWeapon player) isEqualTo '')) || {(!((secondaryWeapon player) isEqualTo ''))} || {(!((handgunWeapon player) isEqualTo ''))}) then {
-			50 cutText ['В цій техніці зброя не дозволена','PLAIN DOWN'];
+			50 cutText ['В цiй технiцi зброя не дозволена','PLAIN DOWN'];
 			_QS_c = TRUE;
 		};
 	};
@@ -401,7 +401,7 @@ if (_QS_actionName isEqualTo 'GetInTurret') exitWith {
 				if (!(_currentMortarGunners isEqualTo [])) then {
 					_currentMortarGunnerName = name (_currentMortarGunners select 0);
 				};
-				50 cutText [(format ['Тільки Мк6 мінометники (%1) можуть використовувати міномети.',_currentMortarGunnerName]),'PLAIN DOWN',0.75];
+				50 cutText [(format ['Тiльки Мк6 мiнометники (%1) можуть використовувати мiномети.',_currentMortarGunnerName]),'PLAIN DOWN',0.75];
 				_QS_c = TRUE;
 			};
 		};
@@ -438,7 +438,7 @@ if (_QS_actionName isEqualTo 'Assemble') then {
 		if (!isNil {player getVariable 'QS_client_assembledWeapons'}) then {
 			private _assembledWeapons = player getVariable 'QS_client_assembledWeapons';
 			if (({(alive _x)} count _assembledWeapons) > 2) then {
-				50 cutText ['Максимум 3 зібрані зброї за один раз (включаючи дронів в рюкзаку)','PLAIN DOWN',1];
+				50 cutText ['Максимум 3 зiбранi зброї за один раз (включаючи дронiв в рюкзаку)','PLAIN DOWN',1];
 				_QS_c = TRUE;
 			};
 		};
@@ -462,7 +462,7 @@ if (_QS_actionName in ['TouchOffMines','TouchOff']) then {
 						};
 					} forEach _playersNearby;
 					if (_QS_c) then {
-						50 cutText [(format ['%1 гравець (гравця) занадто близько (30m) до однієї або декількох ваших вибухівок. Підрив не відбувся!',_count]),'PLAIN DOWN',1];
+						50 cutText [(format ['%1 гравець (гравця) занадто близько (30m) до однiєї або декiлькох ваших вибухiвок. Пiдрив не вiдбувся!',_count]),'PLAIN DOWN',1];
 					};
 				};
 			};
@@ -538,7 +538,7 @@ if (_QS_actionName isEqualTo 'AutoHover') then {
 					};
 					_arrayToSend = (crew _v) select {((!(_x isEqualTo player)) && (alive _x) && (isPlayer _x))};
 					if (!(_arrayToSend isEqualTo [])) then {
-						[63,[5,[(format ['Ваш пілот ( %1 ) увімкнув автопілот!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
+						[63,[5,[(format ['Ваш пiлот ( %1 ) увiмкнув автопiлот!',profileName]),'PLAIN DOWN',0.3]]] remoteExec ['QS_fnc_remoteExec',_arrayToSend,FALSE];
 					};
 				};
 			};
@@ -561,7 +561,7 @@ if (_QS_actionName isEqualTo 'OpenBag') then {
 	if (isNull (objectParent player)) then {
 		if ((((vectorMagnitude (velocity (vehicle player))) * 3.6) > 2) || {(((vectorMagnitude (velocity (vehicle _QS_actionTarget))) * 3.6) > 2)}) then {
 			_QS_c = TRUE;
-			50 cutText ['Не можна це робити під час руху','PLAIN DOWN',0.75];
+			50 cutText ['Не можна це робити пiд час руху','PLAIN DOWN',0.75];
 		};
 	};
 };
@@ -592,7 +592,7 @@ if (_QS_actionName isEqualTo 'UserType') then {
 };
 if (_QS_actionName in ['ListRightVehicleDisplay','NextModeRightVehicleDisplay']) then {
 	_QS_c = TRUE;
-	50 cutText ['Будь ласка, привязуйте ці дії до клавіш. [Esc]>>[Configure]>>[Controls]>>[Keyboard]>>[Common]>>[Panels]. За замовчуванням клавіші [ та ]','PLAIN DOWN',2];
+	50 cutText ['Будь ласка, привязуйте цi дiї до клавiш. [Esc]>>[Configure]>>[Controls]>>[Keyboard]>>[Common]>>[Panels]. За замовчуванням клавiшi [ та ]','PLAIN DOWN',2];
 };
 if (_QS_actionName isEqualTo 'UnloadUnconsciousUnits') then {
 	if (isNull (objectParent player)) then {
@@ -657,11 +657,11 @@ if (_QS_actionName isEqualTo 'UnhookCargo') then {
 };
 if (_QS_actionName isEqualTo 'ManualFire') then {
 	if ((cameraOn distance2D (markerPos 'QS_marker_base_marker')) < 600) then {
-		50 cutText ['Ручний вогонь вимкнено на базі','PLAIN DOWN',0.5];
+		50 cutText ['Ручний вогонь вимкнено на базi','PLAIN DOWN',0.5];
 		_QS_c = TRUE;
 	};
 };
-if (_QS_actionText in ['   ','Зброя на запобіжнику']) then {
+if (_QS_actionText in ['   ','Зброя на запобiжнику']) then {
 	_QS_c = TRUE;
 };
 _QS_c;

@@ -43,26 +43,26 @@ if (!isNil {_cursorTarget getVariable 'QS_isExplosion'}) then {
 };
 if (!isNil {_cursorTarget getVariable 'QS_object_GT_0'}) exitWith {
 	player playAction 'PutDown';
-	50 cutText ['Місце розміщення інформації додано на мапу','PLAIN DOWN',0.75];
-	['sideChat',[WEST,'BLU'],(format ['%1 встановив пристрій відсліжування в %2 (перевірте мапу)!',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	50 cutText ['Мiсце розмiщення iнформацiї додано на мапу','PLAIN DOWN',0.75];
+	['sideChat',[WEST,'BLU'],(format ['%1 встановив пристрiй вiдслiжування в %2 (перевiрте мапу)!',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	[71,_cursorTarget,TRUE] remoteExecCall ['QS_fnc_remoteExec',2,FALSE];
 };
 if (!isNil {_cursorObject getVariable 'QS_object_GT_0'}) exitWith {
 	player playAction 'PutDown';
-	50 cutText ['Місце розміщення інформації додано на мапу','PLAIN DOWN',0.75];
-	['sideChat',[WEST,'BLU'],(format ['%1 встановив пристрій відсліжування в %2 (перевірте мапу)!',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	50 cutText ['Мiсце розмiщення iнформацiї додано на мапу','PLAIN DOWN',0.75];
+	['sideChat',[WEST,'BLU'],(format ['%1 встановив пристрiй вiдслiжування в %2 (перевiрте мапу)!',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	[71,_cursorObject,TRUE] remoteExecCall ['QS_fnc_remoteExec',2,FALSE];
 };
 if (!isNil {_cursorTarget getVariable 'QS_object_GT_1'}) exitWith {
 	player playAction 'PutDown';
-	50 cutText ['Информацію захоплено','PLAIN DOWN',0.75];
-	['systemChat',(format ['%1 захопив планшет з інформацією в %2',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	50 cutText ['Информацiю захоплено','PLAIN DOWN',0.75];
+	['systemChat',(format ['%1 захопив планшет з iнформацiєю в %2',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	[71,_cursorTarget,TRUE] remoteExecCall ['QS_fnc_remoteExec',2,FALSE];
 };
 if (!isNil {_cursorObject getVariable 'QS_object_GT_1'}) exitWith {
 	player playAction 'PutDown';
 	50 cutText ['Intel secured','PLAIN DOWN',0.75];
-	['systemChat',(format ['%1 захопив планшет з інформацією в %2',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+	['systemChat',(format ['%1 захопив планшет з iнформацiєю в %2',(groupID (group player)),(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	[71,_cursorObject,TRUE] remoteExecCall ['QS_fnc_remoteExec',2,FALSE];
 };
 if (!isNil {_cursorTarget getVariable 'QS_sc_subObj_1'}) exitWith {

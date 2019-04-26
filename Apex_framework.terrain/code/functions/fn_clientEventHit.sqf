@@ -76,7 +76,7 @@ if (_v isKindOf 'Man') then {
 	_n1 = name _causedBy1;
 	_currentWeapon1 = currentWeapon _causedBy1;
 	_currentWeaponText = getText (configFile >> 'CfgWeapons' >> _currentWeapon1 >> 'displayName');
-	_text = format ['Вас пошкодив %1, %2, ймовірно з %3',_n1,_vtxt,_currentWeaponText];
+	_text = format ['Вас пошкодив %1, %2, ймовiрно з %3',_n1,_vtxt,_currentWeaponText];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 };
 if (_v isKindOf 'StaticWeapon') then {
@@ -90,7 +90,7 @@ if (_v isKindOf 'StaticWeapon') then {
 			_causedBy1 = gunner _v;
 			_n1 = name _causedBy1;
 			_uid1 = getPlayerUID _causedBy1;
-			_text = format ['Вас пошкодив %1, що керує %2 стаціонарна зброя',_n1,_vtxt];
+			_text = format ['Вас пошкодив %1, що керує %2 стацiонарна зброя',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -128,7 +128,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n2 = '[N/A]';
 				};
-				_text = format ['Вас пошкодив:<br/> %1.<br/>, стрілець в %2.',_n2,_vtxt];
+				_text = format ['Вас пошкодив:<br/> %1.<br/>, стрiлець в %2.',_n2,_vtxt];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			} else {
 				if (!isNull (driver _v)) then {
@@ -153,7 +153,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n2 = '[N/A]'; 
 				};
-				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)',_vtxt,_n1,_n2];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водiй)<br/> %3 (Стрiлець)',_vtxt,_n1,_n2];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			};
 		};
@@ -181,7 +181,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n3 = '[N/A]';
 				};
-				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Стрілець)<br/> %3 (Командир)',_vtxt,_n2,_n3];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Стрiлець)<br/> %3 (Командир)',_vtxt,_n2,_n3];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			} else {
 				if (!isNull (driver _v)) then {
@@ -217,7 +217,7 @@ if ((_v isKindOf 'LandVehicle') || {(_v isKindOf 'Ship')}) then {
 				} else {
 					_n3 = '[N/A]';
 				};
-				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)<br/> %4 (Командир)',_vtxt,_n1,_n2,_n3];
+				_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водiй)<br/> %3 (Стрiлець)<br/> %4 (Командир)',_vtxt,_n1,_n2,_n3];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 			};
 		};
@@ -336,7 +336,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n3 = '[N/A]';
 			};
-			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пілот). <br/>%3 (Ліва турель). <br/>%4 (Права турель).',_vtxt,_n1,_n2,_n3];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пiлот). <br/>%3 (Лiва турель). <br/>%4 (Права турель).',_vtxt,_n1,_n2,_n3];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,12,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -354,7 +354,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n2 = '[N/A]';
 			};
-			_text = format ['Ваш пошкодив %1, Стрілець на %2.',_n1,_vtxt];
+			_text = format ['Ваш пошкодив %1, Стрiлець на %2.',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		} else {
 			if (!isNull (driver _v)) then {
@@ -379,7 +379,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n2 = '[N/A]';
 			};
-			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пілот) <br/>%3 (Стрілець)',_vtxt,_n1,_n2];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Пiлот) <br/>%3 (Стрiлець)',_vtxt,_n1,_n2];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -424,7 +424,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_mf = '[OFF]';
 			};
-			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водій)<br/> %3 (Стрілець)<br/> Ручне керування вогнем %4',_vtxt,_n1,_n2,_mf];
+			_text = parseText format ['Вас пошкодив:<br/> %1.<br/> Команда складається з:<br/> %2 (Водiй)<br/> %3 (Стрiлець)<br/> Ручне керування вогнем %4',_vtxt,_n1,_n2,_mf];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -437,7 +437,7 @@ if (_v isKindOf 'Air') then {
 			} else {
 				_n1 = '[AI]';
 			};
-			_text = format ['Вас пошкодив %1, пілот %2.',_n1,_vtxt];
+			_text = format ['Вас пошкодив %1, пiлот %2.',_n1,_vtxt];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [1,TRUE,10,-1,_text,[],(serverTime + 20),TRUE,'Robocop',TRUE];
 		};
 	};
@@ -508,7 +508,7 @@ if (_exit) exitWith {
 		0 = QS_sub_actions pushBack QS_sub_actions01;
 		if (!isNull _causedBy1) then {
 			QS_sub_actions02 = player addAction [
-				format ['(ROBOCOP) Повідомлення %1',_n1],
+				format ['(ROBOCOP) Повiдомлення %1',_n1],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid1,_causedBy1,_posObject,_n1],
 				94,
@@ -520,7 +520,7 @@ if (_exit) exitWith {
 		};
 		if (!isNull _causedBy2) then {
 			QS_sub_actions03 = player addAction [
-				format ['(ROBOCOP) Повідомлення %1',_n2],
+				format ['(ROBOCOP) Повiдомлення %1',_n2],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid2,_causedBy2,_posObject,_n2],
 				93,
@@ -532,7 +532,7 @@ if (_exit) exitWith {
 		};
 		if (!isNull _causedBy3) then {
 			QS_sub_actions04 = player addAction [
-				format ['(ROBOCOP) Повідомлення %1',_n3],
+				format ['(ROBOCOP) Повiдомлення %1',_n3],
 				(missionNamespace getVariable 'QS_fnc_atReport'),
 				[1,_uid3,_causedBy3,_posObject,_n3],
 				92,
@@ -549,7 +549,7 @@ if (_exit) exitWith {
 				_image = "media\images\general\robocop.jpg";
 				while {(!((missionNamespace getVariable 'QS_sub_actions') isEqualTo []))} do {
 					_tr = (_ti - time);
-					[(format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>В Вашому Меню взаємодії (SCROLL MENU), у Вас є можливість анонімно повідомити про інцидент. Ця опція доступна %1 секунд.',(round _tr),_image])] call (missionNamespace getVariable 'QS_fnc_hint');
+					[(format ['<t size="1.1">ROBOCOP<t/><br/><img size="7" image="%2"/><br/><br/>В Вашому Меню взаємодiї (SCROLL MENU), у Вас є можливiсть анонiмно повiдомити про iнцидент. Ця опцiя доступна %1 секунд.',(round _tr),_image])] call (missionNamespace getVariable 'QS_fnc_hint');
 					uiSleep 0.5;
 					if ((missionNamespace getVariable 'QS_sub_actions') isEqualTo []) exitWith {};
 					if (time >= _ti) exitWith {[''] call (missionNamespace getVariable 'QS_fnc_hint');};

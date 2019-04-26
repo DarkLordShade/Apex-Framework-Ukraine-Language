@@ -38,7 +38,7 @@ if (_object isKindOf 'Man') exitWith {
 					_killer = _this select 1;
 					if (!isNull _killer) then {
 						if (isPlayer _killer) then {
-							_text = format ['Втікача вбито %1!',(name _killer)];
+							_text = format ['Втiкача вбито %1!',(name _killer)];
 							['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
@@ -65,7 +65,7 @@ if (_object isKindOf 'Man') exitWith {
 					_killer = _this select 1;
 					if (!isNull _killer) then {
 						if (isPlayer _killer) then {
-							_text = format ['%1 вбив цивільного!',(name _killer)];
+							_text = format ['%1 вбив цивiльного!',(name _killer)];
 							['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
@@ -133,7 +133,7 @@ if (_object isKindOf 'Man') exitWith {
 		};
 	};
 	if (_typeL in ['c_soldier_vr_f','b_soldier_vr_f','o_soldier_vr_f','i_soldier_vr_f','b_protagonist_vr_f','o_protagonist_vr_f','i_protagonist_vr_f']) then {
-		50 cutText [(format ['Об’єкт %1 не нашалтовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
+		50 cutText [(format ['Об’єкт %1 не нашалтовано для цього сценарiю',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))]),'PLAIN'];
 		[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 	};
 };
@@ -197,7 +197,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 	if (_object isKindOf 'Helicopter') then {
 		if (_typeL in ['b_heli_light_01_armed_f','b_heli_attack_01_f','o_heli_light_02_f','o_heli_light_02_v2_f','i_heli_light_03_f','o_heli_attack_02_f','o_heli_attack_02_black_f','o_heli_light_02_dynamicloadout_f','o_heli_attack_02_dynamicloadout_black_f','o_heli_attack_02_dynamicloadout_black_f','i_heli_light_03_dynamicloadout_f','b_heli_attack_01_dynamicloadout_f','b_heli_light_01_dynamicloadout_f']) then {
 			if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-				50 cutText ['Озброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
+				50 cutText ['Озброєнi повiтрянi засоби зараз вiдключено','PLAIN DOWN',1];
 				[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			};
 		};
@@ -226,7 +226,7 @@ if ((_object isKindOf 'LandVehicle') || {(_object isKindOf 'Air')} || {(_object 
 			];
 		};
 		if (!(missionNamespace getVariable 'QS_armedAirEnabled')) then {
-			50 cutText ['Озброєні повітряні засоби зараз відключено','PLAIN DOWN',1];
+			50 cutText ['Озброєнi повiтрянi засоби зараз вiдключено','PLAIN DOWN',1];
 			[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 		};
 	};
@@ -255,7 +255,7 @@ if (['Module',_type,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')
 	]) then {
 		[17,_object] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 		closeDialog 0;
-		50 cutText [format ['Модуль %1 не налаштовано для цього сценарію',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))],'PLAIN'];
+		50 cutText [format ['Модуль %1 не налаштовано для цього сценарiю',(getText (configFile >> 'CfgVehicles' >> _type >> 'displayName'))],'PLAIN'];
 	} else {
 		_module setVariable [
 			'QS_curator_modules',

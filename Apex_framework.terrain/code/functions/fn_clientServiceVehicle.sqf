@@ -16,9 +16,9 @@ __________________________________________________/*/
 private ['_v','_t','_c','_rt','_nearestServiceSite','_fuel'];
 _t = cursorTarget;
 _v = vehicle player;
-if (_t getVariable 'under_service') exitWith {50 cutText ['Щойно виконано технічне обслуговування транспорту','PLAIN DOWN',0.5];};
-if (_v getVariable 'under_service') exitWith {50 cutText ['Щойно виконано технічне обслуговування транспорту','PLAIN DOWN',0.5];};
-if (missionNamespace getVariable 'QS_repairing_vehicle') exitWith {50 cutText ['Вже виконується технічне обслуговування транспорту','PLAIN DOWN',0.5];};
+if (_t getVariable 'under_service') exitWith {50 cutText ['Щойно виконано технiчне обслуговування транспорту','PLAIN DOWN',0.5];};
+if (_v getVariable 'under_service') exitWith {50 cutText ['Щойно виконано технiчне обслуговування транспорту','PLAIN DOWN',0.5];};
+if (missionNamespace getVariable 'QS_repairing_vehicle') exitWith {50 cutText ['Вже виконується технiчне обслуговування транспорту','PLAIN DOWN',0.5];};
 private _isUAV = unitIsUav cameraOn;
 if (_isUAV) then {
 	_v = cameraOn;
@@ -68,27 +68,27 @@ if ((_baseService) || (_isDepot)) then {
 		if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_landservice_mkrs')) then {
 			if (!(_v isKindOf 'LandVehicle')) then {
 				_isQualified = FALSE;
-				50 cutText ['Ця зона тех.обслуговування тільки для наземного транспорту, солдате!','PLAIN DOWN',0.5];
+				50 cutText ['Ця зона тех.обслуговування тiльки для наземного транспорту, солдате!','PLAIN DOWN',0.5];
 			};
 		};
 		if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_planeservice_mkrs')) then {
 			if (!(_v isKindOf 'Plane')) then {
 				_isQualified = FALSE;
-				50 cutText ['Ця зона тех.обслуговування тільки для  Літаків/VTOL-ів, солдате!','PLAIN DOWN',0.5];
+				50 cutText ['Ця зона тех.обслуговування тiльки для  Лiтакiв/VTOL-iв, солдате!','PLAIN DOWN',0.5];
 			};
 		};
 
 		if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_heliservice_mkrs')) then {
 			if (!(_v isKindOf 'Helicopter')) then {
 				_isQualified = FALSE;
-				50 cutText ['Ця зона тех.обслуговування тільки для гелікоптерів (не VTOL), солдате!','PLAIN DOWN',0.5];
+				50 cutText ['Ця зона тех.обслуговування тiльки для гелiкоптерiв (не VTOL), солдате!','PLAIN DOWN',0.5];
 			};
 		};
 	};
 	if (!(local _v)) then {_isQualified = FALSE;};
 	if (!(_isQualified)) exitWith {};
 	if ((!(player isEqualTo (effectiveCommander _v))) && (!(_isUAV))) exitWith {
-		(missionNamespace getVariable 'QS_managed_hints') pushBack [2,FALSE,7.5,-1,'На базі, ви маєте бути командиром/водієм транспорту щоб початку обслуговування!',[],-1];
+		(missionNamespace getVariable 'QS_managed_hints') pushBack [2,FALSE,7.5,-1,'На базi, ви маєте бути командиром/водiєм транспорту щоб початку обслуговування!',[],-1];
 	};
 	_rt = 10 + (60 * (damage _v));
 	if (_v isKindOf 'Plane') then {
@@ -99,7 +99,7 @@ if ((_baseService) || (_isDepot)) then {
 	_sv = TRUE;
 	_onCompleted = {
 		params ['_v'];
-		50 cutText ['Обслуговування транспорту закінчено','PLAIN DOWN',0.5];
+		50 cutText ['Обслуговування транспорту закiнчено','PLAIN DOWN',0.5];
 		_v setDamage [0,FALSE];
 		if (local _v) then {
 			_v setFuel 1;
@@ -173,8 +173,8 @@ if ((_baseService) || (_isDepot)) then {
 			]) then {
 				if (diag_tickTime > (uiNamespace getVariable ['QS_fighterPilot_lastMsg',(diag_tickTime - 1)])) then {
 					uiNamespace setVariable ['QS_fighterPilot_lastMsg',(diag_tickTime + 300)];
-					[63,[4,['CAS_1',['','Повітряна підтримка в мережі!']]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
-					['sideChat',[WEST,'AirBase'],(format ['Повітряна підтримка (%1) доступна. Пілот: %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _v) >> 'displayName')),profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+					[63,[4,['CAS_1',['','Повiтряна пiдтримка в мережi!']]]] remoteExec ['QS_fnc_remoteExec',-2,FALSE];
+					['sideChat',[WEST,'AirBase'],(format ['Повiтряна пiдтримка (%1) доступна. Пiлот: %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _v) >> 'displayName')),profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				};
 			};
 		};
@@ -239,34 +239,34 @@ if ((_baseService) || (_isDepot)) then {
 
 if (_fieldService) then {
 	if ((isNull (objectParent player)) && (!alive _t)) exitWith {
-		50 cutText ['Навіть ізолента вже не допоможе цьому транспорту, вибач.','PLAIN DOWN',0.5];
+		50 cutText ['Навiть iзолента вже не допоможе цьому транспорту, вибач.','PLAIN DOWN',0.5];
 	};
 	if (!(_v isKindOf 'Man')) exitWith {
-		50 cutText ['В полі, обслуговування треба виконати вручну. Вилазь з машини, солдате!','PLAIN DOWN',1];
+		50 cutText ['В полi, обслуговування треба виконати вручну. Вилазь з машини, солдате!','PLAIN DOWN',1];
 	};
 	/*/=========================================== QUALIFY BY VEHICLE TYPE/*/
 	if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_landservice_mkrs')) then {
 		if (!(_t isKindOf 'LandVehicle')) then {
 			_isQualified = FALSE;
-			50 cutText ['Ця зона тех.обслуговування тільки для наземного транспорту, солдате!','PLAIN DOWN',1];
+			50 cutText ['Ця зона тех.обслуговування тiльки для наземного транспорту, солдате!','PLAIN DOWN',1];
 		};
 	};
 	if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_planeservice_mkrs')) then {
 		if (!(_t isKindOf 'Plane')) then {
 			_isQualified = FALSE;
-			50 cutText ['Ця зона тех.обслуговування тільки для  Літаків/VTOL-ів, солдате!','PLAIN DOWN',1];
+			50 cutText ['Ця зона тех.обслуговування тiльки для  Лiтакiв/VTOL-iв, солдате!','PLAIN DOWN',1];
 		};
 	};
 	if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_heliservice_mkrs')) then {
 		if (!(_t isKindOf 'Helicopter')) then {
 			_isQualified = FALSE;
-			50 cutText ['Ця зона тех.обслуговування тільки для гелікоптерів (не VTOL), солдате!','PLAIN DOWN',1];
+			50 cutText ['Ця зона тех.обслуговування тiльки для гелiкоптерiв (не VTOL), солдате!','PLAIN DOWN',1];
 		};
 	};
 	if (_nearestServiceSite in (missionNamespace getVariable 'QS_veh_airservice_mkrs')) then {
 		if (!(_t isKindOf 'Air')) then {
 			_isQualified = FALSE;
-			50 cutText ['Ця зона тех.обслуговування тільки для повітряних суден, солдате!','PLAIN DOWN',1];
+			50 cutText ['Ця зона тех.обслуговування тiльки для повiтряних суден, солдате!','PLAIN DOWN',1];
 		};
 	};
 	if (_isCarrier) then {
@@ -294,7 +294,7 @@ if (_fieldService) then {
 		};
 		_onCompleted = {
 			params ['_t','_fuel','_isCarrier'];
-			50 cutText ['Обслуговування транспорту закінчено','PLAIN DOWN',0.5];
+			50 cutText ['Обслуговування транспорту закiнчено','PLAIN DOWN',0.5];
 			player playActionNow 'stop';
 			if ((missionNamespace getVariable 'QS_module_fob_services_repair') || {(_isCarrier)}) then {
 				_t setDamage [0,FALSE];

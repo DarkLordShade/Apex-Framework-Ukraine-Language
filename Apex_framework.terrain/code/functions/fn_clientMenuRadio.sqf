@@ -20,11 +20,11 @@ if (_type isEqualTo 'onLoad') then {
 	{
 		(_x select 0) ctrlSetText (_x select 1);
 	} forEach [
-		[(_display displayCtrl 1802),'Налаштування Радіо'],
+		[(_display displayCtrl 1802),'Налаштування Радiо'],
 		[(_display displayCtrl 1804),'Закрити'],
 		[(_display displayCtrl 1805),'Канали'],
 		[(_display displayCtrl 1806),'Статус'],
-		[(_display displayCtrl 1807),'Підписатись']
+		[(_display displayCtrl 1807),'Пiдписатись']
 	];
 	/*/CHANNEL 6 - GENERAL - 1808, 1816, 1827/*/
 	(_display displayCtrl 1808) ctrlSetText 'Канал сторони';
@@ -39,15 +39,15 @@ if (_type isEqualTo 'onLoad') then {
 	};
 	/*/
 	/*/CHANNEL 7 - AIRCRAFT - 1809, 1817, 1828/*/
-	(_display displayCtrl 1809) ctrlSetText 'Повітря';
-	(_display displayCtrl 1809) ctrlSetTooltip 'Пілоти та оператори БПЛА';
+	(_display displayCtrl 1809) ctrlSetText 'Повiтря';
+	(_display displayCtrl 1809) ctrlSetTooltip 'Пiлоти та оператори БПЛА';
 	(_display displayCtrl 1817) ctrlSetText (if (2 in (missionNamespace getVariable 'QS_radioChannels')) then [{'Active - Encrypted'},{'Inactive - Encrypted'}]);
 	(_display displayCtrl 1828) cbSetChecked (2 in (missionNamespace getVariable 'QS_client_radioChannels'));
 	(_display displayCtrl 1828) ctrlSetTooltip '';
 	(_display displayCtrl 1828) ctrlEnable FALSE;
 	/*/CHANNEL 8 - AO - 1810, 1818, 1829, 1837/*/
-	(_display displayCtrl 1810) ctrlSetText 'Основної Місії';
-	(_display displayCtrl 1810) ctrlSetTooltip 'Канал основної місії';
+	(_display displayCtrl 1810) ctrlSetText 'Основної Мiсiї';
+	(_display displayCtrl 1810) ctrlSetTooltip 'Канал основної мiсiї';
 	(_display displayCtrl 1818) ctrlSetText (if (3 in (missionNamespace getVariable 'QS_radioChannels')) then [{'Active'},{'Inactive'}]);
 	(_display displayCtrl 1829) cbSetChecked ((missionNamespace getVariable 'QS_client_radioChannels_dynamic') select 0); /*/(3 in (missionNamespace getVariable 'QS_client_radioChannels'));/*/
 	(_display displayCtrl 1837) cbSetChecked ((missionNamespace getVariable 'QS_client_radioChannels_dynamic') select 0);
@@ -56,8 +56,8 @@ if (_type isEqualTo 'onLoad') then {
 	(_display displayCtrl 1837) ctrlEnable FALSE;
 	(_display displayCtrl 1837) ctrlShow FALSE;
 	/*/CHANNEL 9 - SM - 1811, 1819, 1830, 1838/*/
-	(_display displayCtrl 1811) ctrlSetText 'Другорядних Місій';
-	(_display displayCtrl 1811) ctrlSetTooltip 'Канал Другорядних місій';
+	(_display displayCtrl 1811) ctrlSetText 'Другорядних Мiсiй';
+	(_display displayCtrl 1811) ctrlSetTooltip 'Канал Другорядних мiсiй';
 	(_display displayCtrl 1819) ctrlSetText (if (4 in (missionNamespace getVariable 'QS_radioChannels')) then [{'Active'},{'Inactive'}]);
 	(_display displayCtrl 1830) cbSetChecked ((missionNamespace getVariable 'QS_client_radioChannels_dynamic') select 1); /*/(4 in (missionNamespace getVariable 'QS_client_radioChannels'));/*/
 	(_display displayCtrl 1838) cbSetChecked ((missionNamespace getVariable 'QS_client_radioChannels_dynamic') select 1);

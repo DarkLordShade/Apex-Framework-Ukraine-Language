@@ -24,5 +24,5 @@ player playActionNow 'gestureHi';
 [_t] joinSilent (group player);
 (group player) setBehaviour 'CARELESS';
 (group player) setCombatMode 'BLUE';
-50 cutText ['Боєць тепер в вашій групі','PLAIN DOWN',0.5];
+50 cutText ['Боєць тепер в вашiй групi','PLAIN DOWN',0.5];
 true;

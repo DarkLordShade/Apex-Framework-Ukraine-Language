@@ -34,7 +34,7 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 	_requiredCount = (15 + (round (_playersCount / 2))) min ((count _gridMarkers) - 3);
 	'QS_marker_grid_capState' setMarkerColor 'ColorOPFOR';
 	'QS_marker_grid_capState' setMarkerPos _centroidOffset;
-	'QS_marker_grid_capState' setMarkerText (format ['%1Квадратів перетворено: 0 / %2',(toString [32,32,32]),_requiredCount]);
+	'QS_marker_grid_capState' setMarkerText (format ['%1Квадратiв перетворено: 0 / %2',(toString [32,32,32]),_requiredCount]);
 	_objectiveCode = {
 		params ['_gridMarkers','_gridMarkersCount','_duration'];
 		private _c = 0;
@@ -44,8 +44,8 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 			_requiredCount = round (_requiredCount / 2);
 		};
 		_currentCount = {((markerColor _x) isEqualTo 'ColorGREEN')} count _gridMarkers;
-		if (!( (markerText 'QS_marker_grid_capState') isEqualTo (format ['   Квадратів перетворені: %1 / %2',_currentCount,_requiredCount]))) then {
-			'QS_marker_grid_capState' setMarkerText (format ['%1Квадратів перетворено: %2 / %3',(toString [32,32,32]),_currentCount,_requiredCount]);
+		if (!( (markerText 'QS_marker_grid_capState') isEqualTo (format ['   Квадратiв перетворенi: %1 / %2',_currentCount,_requiredCount]))) then {
+			'QS_marker_grid_capState' setMarkerText (format ['%1Квадратiв перетворено: %2 / %3',(toString [32,32,32]),_currentCount,_requiredCount]);
 		};
 		if (_currentCount >= _requiredCount) then {
 			_c = 1;
@@ -53,7 +53,7 @@ if (_type isEqualTo 'GRID_MARKERS') exitWith {
 		_c;
 	};
 	_objectiveOnCompleted = {
-		['GRID_UPDATE',['Зона Операцій','Конвертація сітки завершена!!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['GRID_UPDATE',['Зона Операцiй','Конвертацiя сiтки завершена!!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_grid_capState' setMarkerColor 'ColorGREEN';
 	};
 	_objectiveOnFailed = {
@@ -172,7 +172,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 	];
 	'QS_marker_grid_rspState' setMarkerColor 'ColorOPFOR';
 	'QS_marker_grid_rspState' setMarkerPos _centroidOffset;
-	'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелів зруйновано: 0 / %2',(toString [32,32,32]),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
+	'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелiв зруйновано: 0 / %2',(toString [32,32,32]),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
 	if (!(_entities isEqualTo [])) then {
 		_objectiveIsRequired = 1;
 		_objectiveArguments = [
@@ -183,8 +183,8 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 			params ['_entities','_entitiesTotal'];
 			private _c = 0;
 			_aliveCount = {(alive _x)} count _entities;
-			if (!((toLower (markerText 'QS_marker_grid_rspState')) isEqualTo (toLower (format ['   Зруйновано колодязів: %1 / %2',((_entitiesTotal - _aliveCount) max 0),(missionNamespace getVariable 'QS_grid_AIRspTotal')])))) then {
-				'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелів зруйновано: %2 / %3',(toString [32,32,32]),(_entitiesTotal - _aliveCount),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
+			if (!((toLower (markerText 'QS_marker_grid_rspState')) isEqualTo (toLower (format ['   Зруйновано колодязiв: %1 / %2',((_entitiesTotal - _aliveCount) max 0),(missionNamespace getVariable 'QS_grid_AIRspTotal')])))) then {
+				'QS_marker_grid_rspState' setMarkerText (format ['%1Тунелiв зруйновано: %2 / %3',(toString [32,32,32]),(_entitiesTotal - _aliveCount),(missionNamespace getVariable 'QS_grid_AIRspTotal')]);
 			};
 			if (_aliveCount isEqualTo 0) then {
 				_c = 1;
@@ -193,7 +193,7 @@ if (_type isEqualTo 'SITE_TUNNEL') exitWith {
 		};
 		_objectiveOnCompleted = {
 			'QS_marker_grid_rspState' setMarkerColor 'ColorGREEN';
-			['GRID_IG_UPDATE',['Зона Операцій','Всі колодязі зруйновано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['GRID_IG_UPDATE',['Зона Операцiй','Всi колодязi зруйновано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 		_objectiveOnFailed = {};
 		_return = [
@@ -346,7 +346,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 				'Killed',
 				{
 					params ['_killed','_killer','_instigator','_usedEffects'];
-					['GRID_UPDATE',['Зона Операцій','Ворожий командир вбитий']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_UPDATE',['Зона Операцiй','Ворожий командир вбитий']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
 							_text = format ['%1 (%2) вбив ворожого командира',(name _instigator),(groupID (group _instigator))];
@@ -404,7 +404,7 @@ if (_type isEqualTo 'SITE_IG') exitWith {
 				if ((!alive _igLeader) || {(_igLeader getVariable ['QS_isSurrendered',FALSE])}) then {
 					if (((_spawnPos nearEntities ['CAManBase',_radius]) select {(((side _x) in [EAST,RESISTANCE]) && ((lifeState _x) in ['HEALTHY','INJURED']))}) isEqualTo []) then {
 						if (!(((_spawnPos nearEntities ['CAManBase',_radius]) select {(((side _x) in [WEST]) && ((lifeState _x) in ['HEALTHY','INJURED']))}) isEqualTo [])) then {
-							['GRID_UPDATE',['Зона Операцій','Ворожий штаб захоплено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+							['GRID_UPDATE',['Зона Операцiй','Ворожий штаб захоплено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 							{
 								_x setMarkerPos (missionNamespace getVariable 'QS_grid_IGposition');
 								_x setMarkerColor 'ColorWEST';
@@ -628,10 +628,10 @@ if (_type isEqualTo 'SITE_IDAP') exitWith {
 					_c;
 				};
 				_objectiveOnCompleted = {
-					['GRID_IDAP_UPDATE',['Зона Операцій','Мінне поле (UXO) зачищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_IDAP_UPDATE',['Зона Операцiй','Мiнне поле (UXO) зачищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 					{
 						_x setMarkerColor 'ColorGreen';
-						_x setMarkerText (format ['%1Мінне поле (зачищено)',(toString [32,32,32])]);
+						_x setMarkerText (format ['%1Мiнне поле (зачищено)',(toString [32,32,32])]);
 					} forEach [
 						'QS_marker_grid_IDAPmkr',
 						'QS_marker_grid_IDAPcircle'

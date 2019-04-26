@@ -506,7 +506,7 @@ for '_x' from 0 to 1 step 0 do {
 								{
 									_QS_module_hc_grp setVariable [_x,(_QS_module_hc_grp getVariable _x),_QS_hc_id];
 								} forEach (allVariables _QS_module_hc_grp);
-								_text = format ['Змінити власника групи %1 * %2',_QS_module_hc_grp,(['false','true'] select (_QS_module_hc_grp setGroupOwner _QS_hc_id))];
+								_text = format ['Змiнити власника групи %1 * %2',_QS_module_hc_grp,(['false','true'] select (_QS_module_hc_grp setGroupOwner _QS_hc_id))];
 								diag_log _text;
 								_text remoteExec ['systemChat',-2];
 							};
@@ -520,7 +520,7 @@ for '_x' from 0 to 1 step 0 do {
 								{
 									_QS_module_hc_entity setVariable [_x,(_QS_module_hc_entity getVariable _x),_QS_hc_id];
 								} forEach (allVariables _QS_module_hc_entity);
-								_text = format ['Змінити власника об’єкта %1 * %2',_QS_module_hc_entity,(['false','true'] select (_QS_module_hc_entity setOwner _QS_hc_id))];
+								_text = format ['Змiнити власника об’єкта %1 * %2',_QS_module_hc_entity,(['false','true'] select (_QS_module_hc_entity setOwner _QS_hc_id))];
 								diag_log _text;
 								_text remoteExec ['systemChat',-2];
 							};

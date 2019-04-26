@@ -16,13 +16,13 @@ _____________________________________________________________/*/
 params ['_actionTarget','_actionCaller','_actionID','_actionArguments'];
 _actionArguments params ['_vehicle','_newPhase','_animationSources'];
 if ((!(player getUnitTrait 'engineer')) && (!(player getUnitTrait 'QS_trait_crewman'))) exitWith {
-	50 cutText ['Тільки інженери можуть встановлювати або знімати накладну броню','PLAIN DOWN',0.5];
+	50 cutText ['Тiльки iнженери можуть встановлювати або знiмати накладну броню','PLAIN DOWN',0.5];
 };
 if (isEngineOn _vehicle) exitWith {
 	50 cutText ['Двигун має бути вимкнений','PLAIN DOWN',0.5];
 };
 if (!((damage _vehicle) isEqualTo 0)) exitWith {
-	50 cutText ['Транспорт має бути непошкодженим для зміни накладної броні','PLAIN DOWN',0.5];
+	50 cutText ['Транспорт має бути непошкодженим для змiни накладної бронi','PLAIN DOWN',0.5];
 };
 private _exitCamo = FALSE;
 _camonetArmor_anims = ['showcamonethull','showcamonetcannon','showcamonetcannon1','showcamonetturret','showcamonetplates1','showcamonetplates2'];
@@ -56,7 +56,7 @@ if (!(_camonetArmor_vAnims isEqualTo [])) then {
 	};
 };
 if (_exitCamo) exitWith {
-	50 cutText ['Зніміть маскувальну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
+	50 cutText ['Знiмiть маскувальну сiтку для встановлення накладної бронi','PLAIN DOWN',0.5];
 };
 _onCancelled = {
 	params ['_v','_position'];
@@ -109,7 +109,7 @@ _onCompleted = {
 		};
 	};
 	if (_exitCamo) exitWith {
-		50 cutText ['Зніміть маскувальну сітку для встановлення накладної броні','PLAIN DOWN',0.5];
+		50 cutText ['Знiмiть маскувальну сiтку для встановлення накладної бронi','PLAIN DOWN',0.5];
 	};
 	{
 		_vehicle animateSource [_x,_newPhase,TRUE];
@@ -163,9 +163,9 @@ _onCompleted = {
 missionNamespace setVariable ['QS_repairing_vehicle',TRUE,FALSE];
 private _text = '';
 if (_newPhase isEqualTo 1) then {
-	_text = 'Встановлення накладної броні';
+	_text = 'Встановлення накладної бронi';
 } else {
-	_text = 'Знімання накладної броні';
+	_text = 'Знiмання накладної бронi';
 };
 private _duration = 5;
 [

@@ -15,7 +15,7 @@ ________________________________________________________________________________
 
 _px = player;
 private _md = 500;
-private _mg = format ['Немає медиків в радіусі %1м',_md];
+private _mg = format ['Немає медикiв в радiусi %1м',_md];
 _ps = getPosATL _px;
 _mc = ['Man'];
 _vt = ['LandVehicle','Ship','Air'];

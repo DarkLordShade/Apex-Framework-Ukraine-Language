@@ -63,7 +63,7 @@ if (_type isEqualTo 1) then {
 	] call (missionNamespace getVariable 'QS_fnc_serverObjectsMapper');
 	missionNamespace setVariable ['QS_module_fob_displayName',(([_2] call (missionNamespace getVariable 'QS_data_fobs')) select 5),TRUE];
 	'QS_marker_module_fob' setMarkerPos (([_2] call (missionNamespace getVariable 'QS_data_fobs')) select 0);
-	'QS_marker_module_fob' setMarkerText (format ['%1FOB %2 (Натисніть щоб дізнатися статус)',(toString [32,32,32]),(([_2] call (missionNamespace getVariable 'QS_data_fobs')) select 5)]);
+	'QS_marker_module_fob' setMarkerText (format ['%1FOB %2 (Натиснiть щоб дiзнатися статус)',(toString [32,32,32]),(([_2] call (missionNamespace getVariable 'QS_data_fobs')) select 5)]);
 	'QS_marker_module_fob' setMarkerAlpha 0.8;
 	'QS_marker_module_fob' setMarkerColor 'ColorUnknown';
 	missionNamespace setVariable ['QS_module_fob_side',sideUnknown,TRUE];

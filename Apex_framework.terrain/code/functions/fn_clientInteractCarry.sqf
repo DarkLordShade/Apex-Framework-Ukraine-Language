@@ -18,10 +18,10 @@ _t = cursorTarget;
 if (!isNull (objectParent _t)) exitWith {};
 if ((!(_t isKindOf 'CAManBase')) && (!([0,_t,objNull] call (missionNamespace getVariable 'QS_fnc_getCustomCargoParams')))) exitWith {};
 if (_t getVariable ['QS_interaction_disabled',FALSE]) exitWith {
-	50 cutText ['Взаємодію з цим об’єктом вимкнено','PLAIN',0.3];
+	50 cutText ['Взаємодiю з цим об’єктом вимкнено','PLAIN',0.3];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Одиницю треба стабілізувати','PLAIN',0.3];
+	50 cutText ['Одиницю треба стабiлiзувати','PLAIN',0.3];
 };
 if (_t isKindOf 'CAManBase') then {
 	if (!((currentWeapon player) isEqualTo '')) then {
@@ -53,7 +53,7 @@ if (_t isKindOf 'CAManBase') then {
 			FALSE
 		};
 		[
-			'Підбирання ...',
+			'Пiдбирання ...',
 			3,
 			0,
 			[[_t],{FALSE}],
@@ -62,7 +62,7 @@ if (_t isKindOf 'CAManBase') then {
 			[[],{FALSE}]
 		] spawn (missionNamespace getVariable 'QS_fnc_clientProgressVisualization');
 	} else {
-		50 cutText ['Потрібна зброя в руках щоб підняти гравця.','PLAIN DOWN',0.4];
+		50 cutText ['Потрiбна зброя в руках щоб пiдняти гравця.','PLAIN DOWN',0.4];
 	};
 } else {
 	//comment 'Crate carrying';
@@ -112,7 +112,7 @@ if (_t isKindOf 'CAManBase') then {
 							['setDir',_entity,90] remoteExec ['QS_fnc_remoteExecCmd',[_entity,player],FALSE];
 						};
 					};
-					50 cutText [(format ['Піднімання %1',(_entity getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))])]),'PLAIN DOWN',0.3];
+					50 cutText [(format ['Пiднiмання %1',(_entity getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _entity) >> 'displayName'))])]),'PLAIN DOWN',0.3];
 					[_entity] spawn {
 						scriptName 'QS Interact Carry Monitor';
 						params ['_entity'];
@@ -123,7 +123,7 @@ if (_t isKindOf 'CAManBase') then {
 							if (!((currentWeapon player) isEqualTo '')) then {_exit = TRUE;};
 							if (!((lifeState player) in ['HEALTHY','INJURED'])) then {_exit = TRUE;};
 							if (_exit) exitWith {
-								50 cutText ['Відпущено','PLAIN DOWN',0.3];
+								50 cutText ['Вiдпущено','PLAIN DOWN',0.3];
 								detach _entity;
 								player forceWalk FALSE;
 								if (_entity call (missionNamespace getVariable 'QS_fnc_isBoundingBoxIntersected')) then {
@@ -132,7 +132,7 @@ if (_t isKindOf 'CAManBase') then {
 										_entity setVectorUp (surfaceNormal _position);
 										_entity setPos _position; /*/maybe setvehicleposition?/*/
 										_entity allowDamage (_entity getVariable ['QS_isDamageAllowed',TRUE]);
-										50 cutText ['Відпущено','PLAIN DOWN',0.3];
+										50 cutText ['Вiдпущено','PLAIN DOWN',0.3];
 									};
 								};
 							};
@@ -151,7 +151,7 @@ if (_t isKindOf 'CAManBase') then {
 					FALSE
 				};
 				[
-					'Піднімання',
+					'Пiднiмання',
 					2,
 					0,
 					[[_t],{FALSE}],

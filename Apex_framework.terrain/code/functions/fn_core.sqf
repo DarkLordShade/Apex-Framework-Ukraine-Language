@@ -1541,7 +1541,7 @@ for '_x' from 0 to 1 step 0 do {
 															if (_endImage isEqualTo '') then {
 																_endImage = missionNamespace getVariable ['QS_missionConfig_textures_communityFlag','a3\data_f\flags\flag_nato_co.paa'];
 															};
-															51 cutText [(format ["<img size='4' image='%1'/><br/><br/><t size='3'>%2 Кампанію завершено</t>",_endImage,worldName]),'PLAIN',5,_true,_true];
+															51 cutText [(format ["<img size='4' image='%1'/><br/><br/><t size='3'>%2 Кампанiю завершено</t>",_endImage,worldName]),'PLAIN',5,_true,_true];
 														}
 													] remoteExec ['call',-2,_true];
 													uiSleep 96;
@@ -2437,14 +2437,14 @@ for '_x' from 0 to 1 step 0 do {
 											};
 											missionNamespace setVariable ['QS_module_fob_respawnTickets',((missionNamespace getVariable 'QS_module_fob_respawnTickets') + _module_fob_respawn_ticketsAdded),_true];										
 											_x setVariable ['QS_vehicle_isSuppliedFOB',_true,_true];
-											0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки відродження на FOB: %1 всього квитків: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+											0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки вiдродження на FOB: %1 всього квиткiв: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 											if (!isNil {_x getVariable 'QS_transporter'}) then {
 												if (alive ((_x getVariable 'QS_transporter') # 1)) then {
 													0 = (missionNamespace getVariable 'QS_leaderboards_session_queue') pushBack ['TRANSPORT',((_x getVariable 'QS_transporter') # 2),((_x getVariable 'QS_transporter') # 0),4];
 												};
 												if (!(_supportMessagePopped)) then {
 													_supportMessagePopped = _true;
-													['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+													['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 												};
 											};
 										};
@@ -2467,7 +2467,7 @@ for '_x' from 0 to 1 step 0 do {
 										};									
 										missionNamespace setVariable ['QS_module_fob_respawnTickets',((missionNamespace getVariable 'QS_module_fob_respawnTickets') + _module_fob_respawn_ticketsAdded),_true];
 										_x setVariable ['QS_vehicle_isSuppliedFOB',_true,_true];
-										0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки відродження на FOB: %1 всього квитків: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+										0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки вiдродження на FOB: %1 всього квиткiв: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 										if (!isNil {_x getVariable 'QS_transporter'}) then {
 											if (alive ((_x getVariable 'QS_transporter') # 1)) then {
 												if ((missionNamespace getVariable 'QS_module_fob_respawnTickets') <= 24) then {
@@ -2476,7 +2476,7 @@ for '_x' from 0 to 1 step 0 do {
 											};
 											if (!(_supportMessagePopped)) then {
 												_supportMessagePopped = _true;
-												['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+												['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 											};
 										};
 									};
@@ -2569,7 +2569,7 @@ for '_x' from 0 to 1 step 0 do {
 												};
 												if (!(_supportMessagePopped)) then {
 													_supportMessagePopped = _true;
-													['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+													['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 												};
 											};
 										};
@@ -2605,7 +2605,7 @@ for '_x' from 0 to 1 step 0 do {
 													if (!(_module_fob_logistics_vehicleRespawnEnabled)) then {
 														_module_fob_logistics_vehicleRespawnEnabled = _true;
 														missionNamespace setVariable ['QS_module_fob_vehicleRespawnEnabled',_module_fob_logistics_vehicleRespawnEnabled,_true];
-														0 = ['FOB_UPDATE',['','Відновлення транспорту онлайн']] remoteExec ['QS_fnc_showNotification',-2,_false];
+														0 = ['FOB_UPDATE',['','Вiдновлення транспорту онлайн']] remoteExec ['QS_fnc_showNotification',-2,_false];
 													};
 												};
 											};
@@ -2618,7 +2618,7 @@ for '_x' from 0 to 1 step 0 do {
 											};
 											if (!(_supportMessagePopped)) then {
 												_supportMessagePopped = _true;
-												0 = ['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+												0 = ['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 											};
 										};
 										/*/[_x,(missionNamespace getVariable 'QS_module_fob_supplycrate'),_true] call (missionNamespace getVariable 'QS_fnc_boxTransferCargo');/*/
@@ -2665,7 +2665,7 @@ for '_x' from 0 to 1 step 0 do {
 										};
 										if (!(_supportMessagePopped)) then {
 											_supportMessagePopped = _true;
-											0 = ['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+											0 = ['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 										};
 									};
 									/*/[_x,(missionNamespace getVariable 'QS_module_fob_supplycrate'),_false] call (missionNamespace getVariable 'QS_fnc_boxTransferCargo');/*/
@@ -2694,7 +2694,7 @@ for '_x' from 0 to 1 step 0 do {
 										};
 										if (!(_supportMessagePopped)) then {
 											_supportMessagePopped = _true;
-											['sideChat',[_west,'BLU'],(format ['%1 надав підтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+											['sideChat',[_west,'BLU'],(format ['%1 надав пiдтримку FOB з %2',((_x getVariable 'QS_transporter') # 0),(getText (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'displayName'))])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 										};
 									};
 								};
@@ -4726,7 +4726,7 @@ for '_x' from 0 to 1 step 0 do {
 				if (missionNamespace getVariable ['QS_airbaseDefense',_false]) then {
 					_airDefenseAvailable = _false;
 					_airDefenseOnline = _true;
-					['sideChat',[_west,'AirBase'],'Протиповітряну оборону активовано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+					['sideChat',[_west,'AirBase'],'Протиповiтряну оборону активовано!'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 					_airDefenseArray = [(_airDefensePos nearEntities ['Air',1500])] call _fn_airbaseDefense;
 				};
 			} else {
@@ -4737,13 +4737,13 @@ for '_x' from 0 to 1 step 0 do {
 							missionNamespace setVariable ['QS_analytics_entities_deleted',((missionNamespace getVariable 'QS_analytics_entities_deleted') + 1),_false];
 							deleteVehicle _x;
 						} count (_airDefenseArray # 0);
-						['sideChat',[_west,'AirBase'],'Протиповітряну оборону вимкнено'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+						['sideChat',[_west,'AirBase'],'Протиповiтряну оборону вимкнено'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 					};
 				};
 				if (_timeNow > (_airDefenseArray # 2)) then {
 					_airDefenseAvailable = _true;
 					missionNamespace setVariable ['QS_airbaseDefense',_false,_true];
-					['sideChat',[_west,'AirBase'],'Протиповітряна оборона досяжна'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
+					['sideChat',[_west,'AirBase'],'Протиповiтряна оборона досяжна'] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 				};
 			};
 			_QS_module_airDefense_checkDelay = _timeNow + _QS_module_airDefense_delay;

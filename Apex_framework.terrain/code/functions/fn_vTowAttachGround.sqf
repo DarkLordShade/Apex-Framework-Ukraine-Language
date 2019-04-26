@@ -84,14 +84,14 @@ if (_isHauling && (_towedVehicle isKindOf 'StaticWeapon') && (!(_towedVehicle is
 if (_isUAV) then {
 	_vehicle setVariable [
 		'QS_action_towRelease1',
-		(_vehicle addAction ['Відчепити','[cameraOn] call QS_fnc_vTowRelease',[],21,FALSE,TRUE,'','[cameraOn] call QS_fnc_conditionTowDetach']),
+		(_vehicle addAction ['Вiдчепити','[cameraOn] call QS_fnc_vTowRelease',[],21,FALSE,TRUE,'','[cameraOn] call QS_fnc_conditionTowDetach']),
 		FALSE
 	];
 	_vehicle setUserActionText [(_vehicle getVariable 'QS_action_towRelease1'),((_vehicle actionParams (_vehicle getVariable 'QS_action_towRelease1')) select 0),(format ["<t size='3'>%1</t>",((_vehicle actionParams (_vehicle getVariable 'QS_action_towRelease1')) select 0)])];
 } else {
 	_vehicle setVariable [
 		'QS_action_towRelease2',
-		(player addAction ['Відчепити','[(vehicle player)] call QS_fnc_vTowRelease',[],21,FALSE,TRUE,'','[(vehicle player)] call QS_fnc_conditionTowDetach']),
+		(player addAction ['Вiдчепити','[(vehicle player)] call QS_fnc_vTowRelease',[],21,FALSE,TRUE,'','[(vehicle player)] call QS_fnc_conditionTowDetach']),
 		FALSE
 	];
 	player setUserActionText [(_vehicle getVariable 'QS_action_towRelease2'),((player actionParams (_vehicle getVariable 'QS_action_towRelease2')) select 0),(format ["<t size='3'>%1</t>",((player actionParams (_vehicle getVariable 'QS_action_towRelease2')) select 0)])];
@@ -226,7 +226,7 @@ if (!isNil {_towedVehicle getVariable 'QS_loadCargoIn'}) exitWith {
 	if ((_towedVehicle getVariable 'QS_loadCargoIn') setVehicleCargo _towedVehicle) then {
 		_text = format ['%1 завантажено до %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _towedVehicle) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf (_towedVehicle getVariable 'QS_loadCargoIn')) >> 'displayName'))];
 	} else {
-		_text = format ['Завантаження не відбулося, %1 до %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _towedVehicle) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf (_towedVehicle getVariable 'QS_loadCargoIn')) >> 'displayName'))];
+		_text = format ['Завантаження не вiдбулося, %1 до %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _towedVehicle) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf (_towedVehicle getVariable 'QS_loadCargoIn')) >> 'displayName'))];
 	};
 	_towedVehicle setVariable ['QS_loadCargoIn',nil,FALSE];
 	50 cutText [_text,'PLAIN DOWN',0.5];
@@ -244,7 +244,7 @@ _towedVehicle setPosASL (_vehicle modelToWorldWorld _detachPos);
 if (((getPosATL _towedVehicle) select 2) < 5) then {
 	_towedVehicle setVectorUp (surfaceNormal (getPosWorld _towedVehicle));
 };
-50 cutText ['Відчеплено','PLAIN DOWN',0.25];
+50 cutText ['Вiдчеплено','PLAIN DOWN',0.25];
 uiSleep 0.5;
 _towedVehicle allowDamage TRUE;
 _vehicle allowDamage TRUE;

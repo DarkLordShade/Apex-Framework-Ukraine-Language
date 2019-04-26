@@ -41,21 +41,21 @@ if ((_type2 isEqualType '') && (_type2 isEqualTo 'KeyDown')) exitWith {
 	0 spawn {uiSleep 2;player setVariable ['QS_staff_menuOpened',nil,FALSE];};
 	_moderatorsActions = [
 		['0 - Закрити меню',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),2,81,TRUE,TRUE,'','TRUE'],
-		['1 - (Ціль) Видалити',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),3,80,TRUE,TRUE,'','TRUE'],
-		['2 - Спостерігати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),4,79,TRUE,TRUE,'','TRUE'],
-		['3 - Непереможність',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),5,78,TRUE,TRUE,'','TRUE'],
-		['4 - Показати пілотів',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),6,77,TRUE,TRUE,'','TRUE'],
-		['5 - (Ціль) Відремонтувати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),7,76,TRUE,TRUE,'','TRUE'],
-		['6 - (Ціль) Вибачитись',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),8,75,TRUE,TRUE,'','TRUE'],
-		['7 - (Ціль) Покарати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),9,75,TRUE,TRUE,'','TRUE']
+		['1 - (Цiль) Видалити',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),3,80,TRUE,TRUE,'','TRUE'],
+		['2 - Спостерiгати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),4,79,TRUE,TRUE,'','TRUE'],
+		['3 - Непереможнiсть',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),5,78,TRUE,TRUE,'','TRUE'],
+		['4 - Показати пiлотiв',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),6,77,TRUE,TRUE,'','TRUE'],
+		['5 - (Цiль) Вiдремонтувати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),7,76,TRUE,TRUE,'','TRUE'],
+		['6 - (Цiль) Вибачитись',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),8,75,TRUE,TRUE,'','TRUE'],
+		['7 - (Цiль) Покарати',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),9,75,TRUE,TRUE,'','TRUE']
 		/*/['8 - Anti-hack (toggle)',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),10,74,TRUE,TRUE,'','TRUE'],/*/
 		/*/['9 - Tag Map Markers',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),11,73,TRUE,TRUE,'','TRUE']/*/
 	];
 	_adminsActions = [
-		['10 - (Ціль) Оживити',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),12,72,TRUE,TRUE,'','TRUE'],
-		['11 - Телепортація',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),13,71,TRUE,TRUE,'','TRUE'],
+		['10 - (Цiль) Оживити',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),12,72,TRUE,TRUE,'','TRUE'],
+		['11 - Телепортацiя',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),13,71,TRUE,TRUE,'','TRUE'],
 		['12 - (Очистити) Базу',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),14,70,TRUE,TRUE,'','TRUE'],
-		['13 - (Очистити) Острів',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),15,69,TRUE,TRUE,'','TRUE']
+		['13 - (Очистити) Острiв',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),15,69,TRUE,TRUE,'','TRUE']
 	];
 	_developersActions = [
 		['14 - Splendid Cam',(missionNamespace getVariable 'QS_fnc_clientMenuStaff'),16,68,TRUE,TRUE,'','TRUE'],
@@ -114,14 +114,14 @@ if ((_type2 isEqualType '') && (_type2 isEqualTo 'Curator')) exitWith {
 		if (!isNull _logic) then {
 			if (!isNil {player getVariable 'QS_staff_curatorLastUpdate'}) exitWith {
 				if (!isStreamFriendlyUIEnabled) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Будь ласка,. зачекайте (10s) між спробами синхронізуватись...',[],(serverTime + 10),TRUE,'Curator',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Будь ласка,. зачекайте (10s) мiж спробами синхронiзуватись...',[],(serverTime + 10),TRUE,'Curator',FALSE];
 				};
 			};
 			player setVariable ['QS_staff_curatorLastUpdate',TRUE,FALSE];
 			0 spawn {uiSleep 10;player setVariable ['QS_staff_curatorLastUpdate',nil,FALSE];};
 			[49,_logic] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Синхронізація редагуємих об’єктів',[],-1,TRUE,'Curator',FALSE];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Синхронiзацiя редагуємих об’єктiв',[],-1,TRUE,'Curator',FALSE];
 			};
 		};
 	};
@@ -143,20 +143,20 @@ if (_type2 isEqualType 0) exitWith {
 		if (!isNull cursorTarget) then {
 			playSound 'ClickSoft';
 			_cursorTarget = cursorTarget;
-			if ((!(_cursorTarget isKindOf 'LandVehicle')) && (!(_cursorTarget isKindOf 'Air')) && (!(_cursorTarget isKindOf 'Ship')) && (!(_cursorTarget isKindOf 'StaticWeapon')) && (!(_cursorTarget isKindOf 'Man')) && (!(_cursorTarget isKindOf 'WeaponHolder'))) exitWith {hint 'Не вірний тип цілі!';};
+			if ((!(_cursorTarget isKindOf 'LandVehicle')) && (!(_cursorTarget isKindOf 'Air')) && (!(_cursorTarget isKindOf 'Ship')) && (!(_cursorTarget isKindOf 'StaticWeapon')) && (!(_cursorTarget isKindOf 'Man')) && (!(_cursorTarget isKindOf 'WeaponHolder'))) exitWith {hint 'Не вiрний тип цiлi!';};
 			if ((_cursorTarget isKindOf 'Man') && (isPlayer _cursorTarget) && (alive _cursorTarget)) exitWith {
 				if (!isStreamFriendlyUIEnabled) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не можливо видалити гравців!',[],-1];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не можливо видалити гравцiв!',[],-1];
 				};
 			};
 			if (!isNil {_cursorTarget getVariable 'QS_cleanup_protected'}) exitWith {
 				if (!isStreamFriendlyUIEnabled) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Ціль захищено від очищення!',[],-1];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Цiль захищено вiд очищення!',[],-1];
 				};
 			};
 			if (isNull _cursorTarget) exitWith {};
 			[17,_cursorTarget] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-			_text = format ['%1 (staff) видалено %2 в квадраті %3',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorTarget) >> 'displayName')),(mapGridPosition player)];
+			_text = format ['%1 (staff) видалено %2 в квадратi %3',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _cursorTarget) >> 'displayName')),(mapGridPosition player)];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
@@ -165,24 +165,24 @@ if (_type2 isEqualType 0) exitWith {
 		player setVariable ['QS_staff_spectating',TRUE,FALSE];
 		createDialog 'RscDisplayEGSpectator';
 		if (!isStreamFriendlyUIEnabled) then {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'[Shift]+[F2] для виходу з режиму спостерігача',[],(serverTime + 10)];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'[Shift]+[F2] для виходу з режиму спостерiгача',[],(serverTime + 10)];
 		};
 	};
 	if (_type2 isEqualTo 5) then {
 		playSound 'ClickSoft';
 		if (isDamageAllowed player) then {
 			player allowDamage FALSE;
-			_text = format ['%1 (персонал) увімкнув режим Непереможність',profileName];
+			_text = format ['%1 (персонал) увiмкнув режим Непереможнiсть',profileName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможність УВІМКНЕНО',[],-1];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможнiсть УВІМКНЕНО',[],-1];
 			};
 		} else {
 			player allowDamage TRUE;
-			_text = format ['%1 (персонал) вимкнув режим Непереможність',profileName];
+			_text = format ['%1 (персонал) вимкнув режим Непереможнiсть',profileName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможнсіть ВИМКНЕНО',[],-1];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Непереможнсiть ВИМКНЕНО',[],-1];
 			};
 		};
 	};
@@ -205,11 +205,11 @@ if (_type2 isEqualType 0) exitWith {
 		_cursorTarget = cursorTarget;
 		if (isNull _cursorTarget) exitWith {
 			if (!isStreamFriendlyUIEnabled) then {
-				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Ремонт не відбувся, не обрано правильну ціль',[],-1];
+				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Ремонт не вiдбувся, не обрано правильну цiль',[],-1];
 			};
 		};
 		if ((!(_cursorTarget isKindOf 'LandVehicle')) && (!(_cursorTarget isKindOf 'Ship')) && (!(_cursorTarget isKindOf 'Air'))) exitWith {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не правильна ціль',[],-1];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не правильна цiль',[],-1];
 		};
 		playSound 'ClickSoft';
 		_cursorTarget setDamage 0;
@@ -224,9 +224,9 @@ if (_type2 isEqualType 0) exitWith {
 			_cursorTarget setVectorUp (surfaceNormal (getPosWorld _cursorTarget));
 		};
 		_type2 = getText (configFile >> 'CfgVehicles' >> (typeOf _cursorTarget) >> 'displayName');
-		_text = format ['%1 відремонтовано',_type2];
+		_text = format ['%1 вiдремонтовано',_type2];
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,_text,[],-1];
-		_text = format ['%1 (персонал) відремонтував %2 в квадраті %3',profileName,_type2,(mapGridPosition player)];
+		_text = format ['%1 (персонал) вiдремонтував %2 в квадратi %3',profileName,_type2,(mapGridPosition player)];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_type2 isEqualTo 8) then {
@@ -250,7 +250,7 @@ if (_type2 isEqualType 0) exitWith {
 		if (!(isPlayer _cursorTarget)) exitWith {};
 		playSound 'ClickSoft';
 		['playMoveNow',_cursorTarget,'AmovPercMstpSnonWnonDnon_exercisePushup'] remoteExec ['QS_fnc_remoteExecCmd',_cursorTarget,FALSE];
-		_text = format ['%1 (персонал) покарав %2 через 10 відтискань.',profileName,(name _cursorTarget)];
+		_text = format ['%1 (персонал) покарав %2 через 10 вiдтискань.',profileName,(name _cursorTarget)];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_type2 isEqualTo 10) then {
@@ -263,13 +263,13 @@ if (_type2 isEqualType 0) exitWith {
 	if (_type2 isEqualTo 12) then {
 		_cursorTarget = cursorTarget;
 		if (!(_cursorTarget isKindOf 'Man')) exitWith {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не вірна ціль',[],(serverTime + 10)];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не вiрна цiль',[],(serverTime + 10)];
 		};
 		if (!alive _cursorTarget) exitWith {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не вірна ціль',[],(serverTime + 10)];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Не вiрна цiль',[],(serverTime + 10)];
 		};
 		if (!isNull (attachedTo _cursorTarget)) exitWith {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Зараз неможливо оживити цью ціль',[],(serverTime + 10)];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Зараз неможливо оживити цью цiль',[],(serverTime + 10)];
 		};
 		playSound 'ClickSoft';
 		if (local _cursorTarget) then {
@@ -278,7 +278,7 @@ if (_type2 isEqualType 0) exitWith {
 		} else {
 			[68,_cursorTarget,FALSE,FALSE] remoteExec ['QS_fnc_remoteExec',_cursorTarget,FALSE];
 		};
-		_text = format ['%1 (персонал) оживив %2 в квадраті %3',profileName,(name _cursorTarget),(mapGridPosition _cursorTarget)];
+		_text = format ['%1 (персонал) оживив %2 в квадратi %3',profileName,(name _cursorTarget),(mapGridPosition _cursorTarget)];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (_type2 isEqualTo 13) then {
@@ -321,23 +321,23 @@ if (_type2 isEqualType 0) exitWith {
 		};
 	};
 	if (_type2 isEqualTo 14) then {
-		_result = ['Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.','Очищення бази','Виконати','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+		_result = ['Очищення бази. Виконання цiєї функцiї занадто часто може пiдвищити розсинхрон.','Очищення бази','Виконати','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 		if (_result) then {
 			playSound 'ClickSoft';
 			[53,[profileName,(getPlayerUID player)]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'Виконується очищення ...',[],(serverTime + 6)];
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [6,TRUE,10,-1,'Базу очищено. Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.',[],(serverTime + 20)];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [6,TRUE,10,-1,'Базу очищено. Очищення бази. Виконання цiєї функцiї занадто часто може пiдвищити розсинхрон.',[],(serverTime + 20)];
 			_text = format ['%1 (персонал) очистив зону респауну.',profileName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
 	if (_type2 isEqualTo 15) then {
-		_result = [(format ['Очистити %1. Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.',worldName]),(format ['%1 cleanup',worldName]),'Виконати','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+		_result = [(format ['Очистити %1. Очищення бази. Виконання цiєї функцiї занадто часто може пiдвищити розсинхрон.',worldName]),(format ['%1 cleanup',worldName]),'Виконати','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 		if (_result) then {
 			playSound 'ClickSoft';
 			[54] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'Виконується очищення ...',[],(serverTime + 6)];
-			_hintText = format ['%1 очищено. Очищення бази. Виконання цієї функції занадто часто може підвищити розсинхрон.',worldName];
+			_hintText = format ['%1 очищено. Очищення бази. Виконання цiєї функцiї занадто часто може пiдвищити розсинхрон.',worldName];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [6,TRUE,10,-1,_hintText,[],(serverTime + 20)];
 			_text = format ['%1 (персонал) запустив очищення %2.',profileName,worldName];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];

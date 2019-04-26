@@ -52,9 +52,9 @@ diag_log 'Defend AO 0.5';
 missionNamespace setVariable ['QS_defendCount',((missionNamespace getVariable 'QS_defendCount') + 1),TRUE];
 missionNamespace setVariable ['QS_defendActive',TRUE,TRUE];
 _defendMessages = [
-	'Сили OPFOR на підході! Повертайтесь негайно та обороняйте штаб!',
-	'Вороги організували контратаку! Втримайте штаб за будь-яку ціну!',
-	'Окопайтеся в штабі, хлопці! Вони йдуть!'
+	'Сили OPFOR на пiдходi! Повертайтесь негайно та обороняйте штаб!',
+	'Вороги органiзували контратаку! Втримайте штаб за будь-яку цiну!',
+	'Окопайтеся в штабi, хлопцi! Вони йдуть!'
 ];
 ['DEFEND_HQ',['Захистити','Захистити штаб']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
@@ -66,7 +66,7 @@ _centerPos = missionNamespace getVariable 'QS_HQpos';
 _centerPos params ['_centerPosX','_centerPosY','_centerPosZ'];
 private _allPlayers = allPlayers;
 _taskID = 'QS_IA_TASK_DEFENDHQ';
-[_taskID,TRUE,['Захищайте штаб, Хлопці!','Хахистити штаб','Захистити штаб'],_centerPos,'AUTOASSIGNED',5,FALSE,TRUE,'Defend',TRUE] call (missionNamespace getVariable 'BIS_fnc_setTask');
+[_taskID,TRUE,['Захищайте штаб, Хлопцi!','Хахистити штаб','Захистити штаб'],_centerPos,'AUTOASSIGNED',5,FALSE,TRUE,'Defend',TRUE] call (missionNamespace getVariable 'BIS_fnc_setTask');
 _timeNow = time;
 _serverTime = serverTime;
 _tickTimeNow = diag_tickTime;
@@ -482,7 +482,7 @@ private _groupLeader = objNull;
 missionNamespace setVariable ['QS_defend_blockTimeout',FALSE,FALSE]; //missionNamespace setVariable ['QS_defend_blockTimeout',((random 1) > 0.95),FALSE];
 private _extended = FALSE;
 private _blockMessageShown = FALSE;
-private _blockMessage = 'Вороги не здаються! Протримайтесь скільки зможете, бійці!';
+private _blockMessage = 'Вороги не здаються! Протримайтесь скiльки зможете, бiйцi!';
 missionNamespace setVariable ['QS_AI_targetsKnowledge_suspend',TRUE,FALSE];
 //comment 'Functions preload';
 _fn_serverDetector = missionNamespace getVariable 'QS_fnc_serverDetector';
@@ -1476,7 +1476,7 @@ for '_x' from 0 to 1 step 0 do {
 			if ((random 1) > 0.5) then {
 				_text = 'Атаку майже завершено!';
 			} else {
-				_text = 'Тримайтесь хлопці, кінець близько!';
+				_text = 'Тримайтесь хлопцi, кiнець близько!';
 			};
 			['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
@@ -1539,8 +1539,8 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	
 	if (_exitSuccess) exitWith {
-		['sideChat',[WEST,'HQ'],'Добра робота, хлопці! Зачистіть зону висадки та повертайтесь для переспорядження!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-		['DEFEND_SUCCESS',['Захистіть штаб','Захист штабу завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Добра робота, хлопцi! Зачистiть зону висадки та повертайтесь для переспорядження!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['DEFEND_SUCCESS',['Захистiть штаб','Захист штабу завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		['QS_IA_TASK_DEFENDHQ','SUCCEEDED',FALSE] call (missionNamespace getVariable 'BIS_fnc_taskSetState');
 		profileNamespace setVariable [
 			'QS_defendHQ_statistics',
@@ -1563,7 +1563,7 @@ for '_x' from 0 to 1 step 0 do {
 	   ];
 	};
 	if (missionNamespace getVariable 'QS_defend_terminate') exitWith {
-		['hint','Оборону відмінено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['hint','Оборону вiдмiнено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	sleep 1.5;
 };

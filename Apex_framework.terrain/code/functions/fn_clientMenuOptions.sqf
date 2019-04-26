@@ -22,7 +22,7 @@ if (_type isEqualTo 'onLoad') then {
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
 	if ((missionNamespace getVariable ['QS_missionConfig_stamina',0]) isEqualTo 1) then {
 			ctrlEnable [1805,FALSE];
-			(_display displayCtrl 1805) ctrlSetTooltip 'Стаміну примусово УВІМКНЕНО в налаштуваннях сервера, вибачте';
+			(_display displayCtrl 1805) ctrlSetTooltip 'Стамiну примусово УВІМКНЕНО в налаштуваннях сервера, вибачте';
 	};
 	(_display displayCtrl 1805) cbSetChecked (isStaminaEnabled player);
 	sliderSetRange [1807,0.1,1.1];
@@ -40,13 +40,13 @@ if (_type isEqualTo 'onLoad') then {
 		};
 	} else {
 		ctrlEnable [1810,FALSE];
-		(_display displayCtrl 1810) ctrlSetToolTip 'Гра від третьої особи відключена на цьому сервері';
+		(_display displayCtrl 1810) ctrlSetToolTip 'Гра вiд третьої особи вiдключена на цьому серверi';
 	};
 	(_display displayCtrl 1813) cbSetChecked (!isNil {player getVariable 'QS_HUD_3'});
 	(_display displayCtrl 1815) cbSetChecked (environmentEnabled # 0);
 	if ((player getUnitTrait 'uavhacker') || {(player getUnitTrait 'QS_trait_fighterPilot')} || {(player getUnitTrait 'QS_trait_pilot')} || {(player getUnitTrait 'QS_trait_CAS')} ||{(player getUnitTrait 'QS_trait_HQ')}) then {
 		ctrlEnable [1817,FALSE];
-		(_display displayCtrl 1817) ctrlSetTooltip 'Симуляція Керування не доступна для пілотів, операторів БПЛА та командирів';
+		(_display displayCtrl 1817) ctrlSetTooltip 'Симуляцiя Керування не доступна для пiлотiв, операторiв БПЛА та командирiв';
 	} else {
 		ctrlEnable [1817,TRUE];
 	};
@@ -62,11 +62,11 @@ if (_type isEqualTo 'StaminaCheckbox') then {
 	_state = _this select 2;
 	if ((_this select 2) isEqualTo 1) then {
 		_state = TRUE;
-		50 cutText ['Витривалість увімкнено','PLAIN DOWN',0.5];
+		50 cutText ['Витривалiсть увiмкнено','PLAIN DOWN',0.5];
 	};
 	if ((_this select 2) isEqualTo 0) then {
 		_state = FALSE;
-		50 cutText ['Витривалісь вимкнено','PLAIN DOWN',0.5];
+		50 cutText ['Витривалiсь вимкнено','PLAIN DOWN',0.5];
 	};
 	if ((missionNamespace getVariable ['QS_missionConfig_stamina',0]) isEqualTo 0) then {
 		player enableStamina _state;
@@ -83,7 +83,7 @@ if (_type isEqualTo '1PVCheckbox') then {
 	_state = _this select 2;
 	if ((_this select 2) isEqualTo 1) then {
 		_state = TRUE;
-		50 cutText ['Огляд від першої особи заблоковано на 20 хвилин або до перепідключення','PLAIN DOWN',0.75];
+		50 cutText ['Огляд вiд першої особи заблоковано на 20 хвилин або до перепiдключення','PLAIN DOWN',0.75];
 		if (isNil {player getVariable 'QS_1stPersonLock'}) then {
 			player setVariable ['QS_1stPersonLock',TRUE,FALSE];
 			[46,[player,5]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
@@ -115,11 +115,11 @@ if (_type isEqualTo 'AmbientCheckbox') then {
 	if ((_this select 2) isEqualTo 1) then {
 		profileNamespace setVariable ['QS_options_ambientLife',TRUE];
 		enableEnvironment [TRUE,TRUE];
-		50 cutText ['Оточуючу живність увімкнено','PLAIN DOWN',0.5];
+		50 cutText ['Оточуючу живнiсть увiмкнено','PLAIN DOWN',0.5];
 	} else {
 		profileNamespace setVariable ['QS_options_ambientLife',FALSE];
 		enableEnvironment [FALSE,TRUE];
-		50 cutText ['Оточуючу живність вимкнено','PLAIN DOWN',0.5];
+		50 cutText ['Оточуючу живнiсть вимкнено','PLAIN DOWN',0.5];
 	};
 	saveProfileNamespace;
 };
@@ -141,7 +141,7 @@ if (_type isEqualTo 'DynSimCheckbox') then {
 		if (isNull (missionNamespace getVariable ['QS_dynSim_script',scriptNull])) then {
 			profileNamespace setVariable ['QS_options_dynSim',TRUE];
 			missionNamespace setVariable ['QS_options_dynSim',TRUE,FALSE];
-			50 cutText ['Динамічну симуляцію увімкнено','PLAIN DOWN',0.5];
+			50 cutText ['Динамiчну симуляцiю увiмкнено','PLAIN DOWN',0.5];
 			missionNamespace setVariable [
 				'QS_dynSim_script',
 				(1 spawn (missionNamespace getVariable 'QS_fnc_clientSimulationManager')),
@@ -151,7 +151,7 @@ if (_type isEqualTo 'DynSimCheckbox') then {
 	} else {
 		profileNamespace setVariable ['QS_options_dynSim',FALSE];
 		missionNamespace setVariable ['QS_options_dynSim',FALSE,FALSE];
-		50 cutText ['Динамічну симуляцію вимкнено','PLAIN DOWN',0.5];
+		50 cutText ['Динамiчну симуляцiю вимкнено','PLAIN DOWN',0.5];
 	};
 	saveProfileNamespace;
 };

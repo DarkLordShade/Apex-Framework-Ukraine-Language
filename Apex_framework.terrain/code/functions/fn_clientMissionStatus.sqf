@@ -1281,9 +1281,9 @@ for '_x' from 0 to 1 step 0 do {
 			_keyText = _key select [1,((count _key) - 2)];
 		};
 		if (ctrlShown _QS_ctrl0) then {
-			_QS_ctrl_text10 = format ['Натисніть [%1] щоб приховати',_keyText];
+			_QS_ctrl_text10 = format ['Натиснiть [%1] щоб приховати',_keyText];
 		} else {
-			_QS_ctrl_text10 = format ['Натисніть [%1] щоб відобразити статус місії',_keyText];
+			_QS_ctrl_text10 = format ['Натиснiть [%1] щоб вiдобразити статус мiсiї',_keyText];
 		};
 		_QS_ctrl01 ctrlSetTextColor _QS_ctrl01_backgroundColor;
 		{

@@ -40,7 +40,7 @@ private _rearmInterval = _time + (240 + (random 80));
 private _rearming = FALSE;
 private _rearmDelay = [15,20,30];
 _rearmingText = 'ПП батарея CSAT перезаряджається!';
-_finishedRearmText = 'ПП батарея CSAT закінчила перезарядку!';
+_finishedRearmText = 'ПП батарея CSAT закiнчила перезарядку!';
 private _turretParams = [];
 private _targetListEnemy = [];
 private _targetType = '';
@@ -240,14 +240,14 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Пріоритетне завдання: Протиповітряна батарея',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Прiоритетне завдання: Протиповiтряна батарея',(toString [32,32,32])]);
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Противник встановив протиповітряну батарею біля нашої бази. Це пріоритетна мета, солдати! Батарея має надзвичайно великий радіус дії! Рухайтесь туди і ліквідійте ціль за будь-яку ціну. Поки ціль активна, не рекомендується використовувати повітряний транспорт.',
-		'Противоповітряна Батарея',
-		'Противоповітряна Батарея'
+		'Противник встановив протиповiтряну батарею бiля нашої бази. Це прiоритетна мета, солдати! Батарея має надзвичайно великий радiус дiї! Рухайтесь туди i лiквiдiйте цiль за будь-яку цiну. Поки цiль активна, не рекомендується використовувати повiтряний транспорт.',
+		'Противоповiтряна Батарея',
+		'Противоповiтряна Батарея'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -257,14 +257,14 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Противоповітряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповітряну батарею, щоб заблокувати наш повітряний транспорт! Ми визначили їхнє розташування за допомогою зображень з безпілотника і позначили ціль на карті.<br/><br/>Пріоритетна ціль";
+_briefing = parseText "<t align='center' size='2.2'>Прiоритетна цiль</t><br/><t size='1.5' color='#b60000'>Противоповiтряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповiтряну батарею, щоб заблокувати наш повiтряний транспорт! Ми визначили їхнє розташування за допомогою зображень з безпiлотника i позначили цiль на картi.<br/><br/>Прiоритетна цiль";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 ['NewPriorityTarget',['Anti-Air Battery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 //comment 'Loop';
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 for '_x' from 0 to 1 step 0 do {
 	if (((_aaHulls findIf {(alive _x)}) isEqualTo -1) || {(missionNamespace getVariable ['QS_smSuccess',FALSE])}) exitWith {
-		['CompletedPriorityTarget',['Протиповітряну батарею нейтралізовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['CompletedPriorityTarget',['Протиповiтряну батарею нейтралiзовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		[1,_spawnPosition] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
 			_x setMarkerAlpha 0;

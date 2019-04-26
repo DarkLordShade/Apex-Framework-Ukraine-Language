@@ -38,10 +38,10 @@ if ((count (ropes _vehicle)) isEqualTo _count) then {
 							profileNamespace setVariable ['QS_client_profile_slingToken',((profileNamespace getVariable ['QS_client_profile_slingToken',0]) + 1)];
 							saveProfileNamespace;
 						};
-						_text = format ['Підвішування на тросах %1. Використовуйте [Page Up] та [Page Down] щоб подовжити або вкоротити троси. Альтирнативно: [Ctrl] or [Alt] + %2. Користувацькі налаштування: "Use Action 17" та "Use Action 18".',_displayName,(actionKeysNames ['HeliRopeAction',1])];
+						_text = format ['Пiдвiшування на тросах %1. Використовуйте [Page Up] та [Page Down] щоб подовжити або вкоротити троси. Альтирнативно: [Ctrl] or [Alt] + %2. Користувацькi налаштування: "Use Action 17" та "Use Action 18".',_displayName,(actionKeysNames ['HeliRopeAction',1])];
 						50 cutText [_text,'PLAIN DOWN',1];
 					} else {
-						_text = format ['Підвішування на тросах %1',_displayName];
+						_text = format ['Пiдвiшування на тросах %1',_displayName];
 						50 cutText [_text,'PLAIN DOWN',0.5];
 					};
 				};

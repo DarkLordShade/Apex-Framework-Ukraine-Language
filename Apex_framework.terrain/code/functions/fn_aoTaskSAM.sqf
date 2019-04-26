@@ -72,7 +72,7 @@ if (_state isEqualTo 1) then {
 					params ['_killed','_killer','_instigator'];
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
-							['sideChat',[WEST,'HQ'],(format ['Ціль знищено %1!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+							['sideChat',[WEST,'HQ'],(format ['Цiль знищено %1!',(name _instigator)])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 					};
 				}
@@ -82,7 +82,7 @@ if (_state isEqualTo 1) then {
 				'QS_IA_TASK_AO_3',
 				TRUE,
 				[
-					'Розвідка виявила ворожий транспорт. Розберіться з цим!',
+					'Розвiдка виявила ворожий транспорт. Розберiться з цим!',
 					'Знищити транспорт',
 					'Знищити транспорт'
 				],

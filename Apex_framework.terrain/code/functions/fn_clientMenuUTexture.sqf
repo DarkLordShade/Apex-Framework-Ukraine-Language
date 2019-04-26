@@ -74,7 +74,7 @@ if (_type isEqualTo 'Select') then {
 						/*/
 					};
 					saveProfileNamespace;
-					_text = parseText format ['Встановлення текстур уніформи: %1<br/>by %2',_displayName,_author];
+					_text = parseText format ['Встановлення текстур унiформи: %1<br/>by %2',_displayName,_author];
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],-1];
 				} else {
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'You must be at base to re-skin your uniform!',[],-1];
@@ -89,11 +89,11 @@ if (_type isEqualTo 'Select') then {
 					saveProfileNamespace;
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,'Uniform Texture Reset',[],-1];
 				} else {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,8,-1,'Уніформа не підтримується обраним скіном. Будь ласка, оберіть інший тип уніформи.',[],-1];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,8,-1,'Унiформа не пiдтримується обраним скiном. Будь ласка, оберiть iнший тип унiформи.',[],-1];
 				};
 			};
 		} else {
-			_text = parseText format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Текстура уніформи не встановлена.',_supporterAccess,_supporterLevel];
+			_text = parseText format ['Потрiбен рiвень пiдтримки: %1<br/>Ваш рiвень пiдтримки: %2<br/>Текстура унiформи не встановлена.',_supporterAccess,_supporterLevel];
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,_text,[],-1];
 		};
 	};

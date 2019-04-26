@@ -327,7 +327,7 @@ private _qrfGroup = grpNull;
 missionNamespace setVariable ['QS_sm_enemy_reinforce',FALSE,FALSE];
 
 private _taskID = 'QS_GRID_TASK_IDAP_1';
-private _taskDescription = '<br/>- Розвідати обстановку<br/>- Відновити будь-яке медичне обладнання<br/>- Відновити будь-які втрати<br/>-Доставте до польового шпиталю IDAP до того, як сплине час.<br/><br/>Вантажівка IDAP з життєво важливим медичним обладнанням не дісталася точки прижначення. Вирушайте туди та подивіться - чи можливо щось зробити.<br/><br/>Транспорт стане в нагоді щоб допомогти доставити вантаж.';
+private _taskDescription = '<br/>- Розвiдати обстановку<br/>- Вiдновити будь-яке медичне обладнання<br/>- Вiдновити будь-якi втрати<br/>-Доставте до польового шпиталю IDAP до того, як сплине час.<br/><br/>Вантажiвка IDAP з життєво важливим медичним обладнанням не дiсталася точки прижначення. Вирушайте туди та подивiться - чи можливо щось зробити.<br/><br/>Транспорт стане в нагодi щоб допомогти доставити вантаж.';
 [
 	_taskID,
 	TRUE,
@@ -371,7 +371,7 @@ for '_x' from 0 to 1 step 0 do {
 					['GRID_IDAP_UPDATE',['Другорядне завдання оновлено','Обладнання IDAP врятовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 				if (_objectiveType isEqualTo 'MEDEVAC') then {
-					['GRID_IDAP_UPDATE',['Другорядне завдання оновлено','Медичну евакуяцію IDAP завершено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+					['GRID_IDAP_UPDATE',['Другорядне завдання оновлено','Медичну евакуяцiю IDAP завершено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				};
 			};
 		};
@@ -404,18 +404,18 @@ for '_x' from 0 to 1 step 0 do {
 				];
 				if (_objectiveState isEqualTo 1) then {
 					if (_objectiveType isEqualTo 'LOGISTICS_RECOVER') then {
-						_text = _text + 'Логістичне завдання завершено. ';
+						_text = _text + 'Логiстичне завдання завершено. ';
 					};
 					if (_objectiveType isEqualTo 'MEDEVAC') then {
-						_text = _text + 'Завдання з медичним працівником завершено. ';
+						_text = _text + 'Завдання з медичним працiвником завершено. ';
 					};
 				} else {
 					if (_objectiveState isEqualTo 2) then {
 						if (_objectiveType isEqualTo 'LOGISTICS_RECOVER') then {
-							_text = _text + 'Логістичне завдання провалено. ';
+							_text = _text + 'Логiстичне завдання провалено. ';
 						};
 						if (_objectiveType isEqualTo 'MEDEVAC') then {
-							_text = _text + 'Завдання з медичним працівником провалено. ';
+							_text = _text + 'Завдання з медичним працiвником провалено. ';
 						};
 					};
 				};

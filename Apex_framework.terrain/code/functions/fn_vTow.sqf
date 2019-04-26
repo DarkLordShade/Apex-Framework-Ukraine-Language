@@ -106,7 +106,7 @@ _ft = typeOf _found;
 _foundMass = getMass _found;
 _foundName = getText (configFile >> 'CfgVehicles' >> _ft >> 'displayName');
 if (!(simulationEnabled _found)) exitWith {
-	_text = format ['Цей %1 не можна буксирувати взагалі! Спробуй спершу в нього залізти, перш ніж буксирувати.',_foundName];
+	_text = format ['Цей %1 не можна буксирувати взагалi! Спробуй спершу в нього залiзти, перш нiж буксирувати.',_foundName];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7,-1,_text,[],-1];
 };
 if (!isNull (isVehicleCargo _found)) exitWith {(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,(format ['Не можливо буксирувати %1',_foundName]),[],-1];};
@@ -127,7 +127,7 @@ if (!(((crew _found) findIf {(alive _x)}) isEqualTo -1)) then {
 		_crewInVehicle = TRUE;
 	};
 };
-if (_crewInVehicle) exitWith {50 cutText [format ['%1 зараз зайнятий. Не можна буксирувати транспорт з гравцяци в середині.',_foundName],'PLAIN DOWN',0.5];};
+if (_crewInVehicle) exitWith {50 cutText [format ['%1 зараз зайнятий. Не можна буксирувати транспорт з гравцяци в серединi.',_foundName],'PLAIN DOWN',0.5];};
 if (((vectorUp _found) select 2) < 0) exitWith {
 	_text = format ['%1 спочутку треба перевернути для того, щоб буксирувати!',_foundName];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,5,-1,_text,[],-1];
@@ -142,7 +142,7 @@ if (_found getVariable 'QS_ropeAttached') exitWith {
 };
 if (((toLower _ft) in ['b_sam_system_01_f','b_sam_system_02_f','b_aaa_system_01_f']) && (!((toLower _vt) in ['b_truck_01_mover_f','b_t_truck_01_mover_f']))) exitWith {
 	_image = "A3\EditorPreviews_F\Data\CfgVehicles\B_Truck_01_Mover_F.jpg";
-	50 cutText [(format ['%1 можна буксирувати тільки на HEMTT<br/><br/><img size="5" image="%2"/>',_foundName,_image]),'PLAIN DOWN',0.75,FALSE,TRUE];
+	50 cutText [(format ['%1 можна буксирувати тiльки на HEMTT<br/><br/><img size="5" image="%2"/>',_foundName,_image]),'PLAIN DOWN',0.75,FALSE,TRUE];
 };
 if (((toLower _ft) in [
 	"b_hmg_01_high_f","b_gmg_01_high_f","o_hmg_01_high_f","o_gmg_01_high_f","i_hmg_01_high_f","i_gmg_01_high_f",
@@ -153,7 +153,7 @@ if (((toLower _ft) in [
 	"i_c_van_01_transport_olive_f","c_van_01_transport_f","c_van_01_transport_red_f","c_van_01_transport_white_f"
 ]))) exitWith {
 	_image = "A3\EditorPreviews_F\Data\CfgVehicles\B_G_Van_01_transport_F.jpg";
-	50 cutText [(format ['%1 можна буксирувати тільки вантажівкою<br/><br/><img size="5" image="%2"/>',_foundName,_image]),'PLAIN DOWN',0.75,FALSE,TRUE];
+	50 cutText [(format ['%1 можна буксирувати тiльки вантажiвкою<br/><br/><img size="5" image="%2"/>',_foundName,_image]),'PLAIN DOWN',0.75,FALSE,TRUE];
 };
 if (((toLower _vt) in [
 	"b_g_van_01_transport_f","o_g_van_01_transport_f","i_g_van_01_transport_f","i_c_van_01_transport_f","i_c_van_01_transport_brown_f",
@@ -163,7 +163,7 @@ if (((toLower _vt) in [
 	"b_static_aa_f","b_static_at_f","o_static_aa_f","o_static_at_f","i_static_aa_f","i_static_at_f","b_t_static_aa_f","b_t_static_at_f",
 	"b_g_mortar_01_f","b_mortar_01_f","b_t_mortar_01_f","o_mortar_01_f","o_g_mortar_01_f","i_mortar_01_f","i_g_mortar_01_f"
 ]))) exitWith {
-	50 cutText ['Цей транспорт може буксирувати тільки стаціонарну зброю та міномети','PLAIN DOWN',0.5];
+	50 cutText ['Цей транспорт може буксирувати тiльки стацiонарну зброю та мiномети','PLAIN DOWN',0.5];
 };
 0 spawn {
 	disableUserInput TRUE;

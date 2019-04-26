@@ -35,7 +35,7 @@ if (
 _vehicle = vehicle _unit;
 if ((isPlayer _unit) && (!isNull (objectParent _unit)) && (_unit in [(driver _vehicle),(gunner _vehicle),(commander _vehicle)])) exitWith {};
 if (_unit isEqualTo player) then {
-	50 cutText ['Перепакування магазинів','PLAIN DOWN',0.3];
+	50 cutText ['Перепакування магазинiв','PLAIN DOWN',0.3];
 };
 _unit setVariable ['QS_unit_repackingMagazines',TRUE,FALSE];
 _canSuspend = canSuspend;

@@ -50,7 +50,7 @@ if (!isPlayer _healer) then {
 } else {
 	if (!(player isEqualTo _healer)) then {
 		if (player isEqualTo _unit) then {
-			50 cutText [(format ['%1 лікує',(name _healer)]),'PLAIN DOWN',0.5];
+			50 cutText [(format ['%1 лiкує',(name _healer)]),'PLAIN DOWN',0.5];
 		};
 	};
 };

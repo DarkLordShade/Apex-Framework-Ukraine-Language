@@ -26,7 +26,7 @@ if ((count (ropes _vehicle)) isEqualTo _count) then {
 		if (alive (driver _vehicle)) then {
 			if (isPlayer (driver _vehicle)) then {
 				_attachedObject setVariable ['QS_transporter',[(name (driver _vehicle)),(driver _vehicle),(getPlayerUID (driver _vehicle))],FALSE];
-				_text = format ['Підвішування на тросах %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _attachedObject) >> 'displayName'))];
+				_text = format ['Пiдвiшування на тросах %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _attachedObject) >> 'displayName'))];
 				['hint',_text] remoteExec ['QS_fnc_remoteExecCmd',(driver _vehicle),FALSE];
 			};
 		};

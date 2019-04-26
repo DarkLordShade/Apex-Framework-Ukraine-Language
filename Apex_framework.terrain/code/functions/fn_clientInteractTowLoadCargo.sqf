@@ -72,7 +72,7 @@ if (!((_parent canVehicleCargo _child) isEqualTo [TRUE,TRUE])) exitWith {
 	if (!(_outcome select 1)) then {
 		50 cutText [(format ['%1 не може бути завантажений до %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _child) >> 'displayName')),(getText (configFile >> 'CfgVehicles' >> (typeOf _parent) >> 'displayName'))]),'PLAIN',0.5];
 	} else {
-		50 cutText ['Треба вивантажити інший вантаж, щоб повантажити цей','PLAIN',0.5];
+		50 cutText ['Треба вивантажити iнший вантаж, щоб повантажити цей','PLAIN',0.5];
 	};
 };
 _child setVariable ['QS_loadCargoIn',_parent,FALSE];

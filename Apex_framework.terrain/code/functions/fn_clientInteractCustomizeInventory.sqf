@@ -169,7 +169,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 	} foreach _cargo;
 	RscAttributeInventory_selected = 0;
 	playSound ['Click',FALSE];
-	50 cutText ['Ініціалізацію завершено, оберіть вкладку зверху','PLAIN',1];
+	50 cutText ['Інiцiалiзацiю завершено, оберiть вкладку зверху','PLAIN',1];
 	titleFadeOut 3;
 	if (userInputDisabled) then {
 		disableUserInput FALSE;
@@ -196,7 +196,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 			_backpackCargo = backpackCargo _entity;
 			if ((count _backpackCargo) > _cfgTransportMaxBackpacks) then {
 				clearBackpackCargoGlobal _entity;
-				50 cutText ['Ящик перевантажено, вилучаємо зайві рюкзаки','PLAIN DOWN',0.25];
+				50 cutText ['Ящик перевантажено, вилучаємо зайвi рюкзаки','PLAIN DOWN',0.25];
 				_index = 0;
 				for '_x' from 0 to ((count _backpackCargo) - 1) step 1 do {
 					if (_index >= _cfgTransportMaxBackpacks) exitWith {};
@@ -207,7 +207,7 @@ if (!isNull (getAssignedCuratorLogic player)) exitWith {};
 			_magazineCargo = magazineCargo _entity;
 			if ((count _magazineCargo) > _cfgTransportMaxMagazines) then {
 				clearMagazineCargoGlobal _entity;
-				50 cutText ['Ящик перевантажено, вилучаємо зайві магазини','PLAIN DOWN',0.25];
+				50 cutText ['Ящик перевантажено, вилучаємо зайвi магазини','PLAIN DOWN',0.25];
 				_index = 0;
 				for '_x' from 0 to ((count _magazineCargo) - 1) step 1 do {
 					if (_index >= _cfgTransportMaxMagazines) exitWith {};

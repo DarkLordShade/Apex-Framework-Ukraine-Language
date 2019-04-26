@@ -71,7 +71,7 @@ if (!(_attachedObjects isEqualTo [])) then {
 					_capacity = [3,_obj,_t] call (missionNamespace getVariable 'QS_fnc_getCustomCargoParams');
 					50 cutText [
 						(format [
-							'%1 завантажено до %2<br/><br/><t color="%5">Вантажопід’ємніть: %3 / %4</t>',
+							'%1 завантажено до %2<br/><br/><t color="%5">Вантажопiд’ємнiть: %3 / %4</t>',
 							(_obj getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _obj) >> 'displayName'))]),
 							_dn,
 							(_capacity select 0),
@@ -102,7 +102,7 @@ if (_obj isKindOf 'Man') then {
 			player playAction 'released';
 			50 cutText [(format ['%1 завантажено до %2',(name _obj),_dn]),'PLAIN DOWN',0.3];
 		} else {
-			50 cutText ['Завантаження не відбулося','PLAIN DOWN',0.3];
+			50 cutText ['Завантаження не вiдбулося','PLAIN DOWN',0.3];
 		};
 	} else {
 		for '_x' from 0 to 1 step 1 do {

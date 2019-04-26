@@ -91,13 +91,13 @@ if (_type isEqualTo 1) exitWith {
 					};
 					if (!isNull _instigator) then {
 						if (isPlayer _instigator) then {
-							_text = format ['%1 ( %2 ) знищив пригнічувач GPS!',(name _instigator),(groupID (group _instigator))];
+							_text = format ['%1 ( %2 ) знищив пригнiчувач GPS!',(name _instigator),(groupID (group _instigator))];
 							[[WEST,'BLU'],_text] remoteExec ['sideChat',-2,FALSE];
 						} else {
-							[[WEST,'BLU'],'Пригнічувач GPS знищено!'] remoteExec ['sideChat',-2,FALSE];
+							[[WEST,'BLU'],'Пригнiчувач GPS знищено!'] remoteExec ['sideChat',-2,FALSE];
 						};
 					} else {
-						[[WEST,'BLU'],'Пригнічувач GPS знищено!'] remoteExec ['sideChat',-2,FALSE];
+						[[WEST,'BLU'],'Пригнiчувач GPS знищено!'] remoteExec ['sideChat',-2,FALSE];
 					};
 					_gpsJammers = missionNamespace getVariable ['QS_mission_gpsJammers',[]];
 					if (!(_gpsJammers isEqualTo [])) then {
@@ -147,9 +147,9 @@ if (_type isEqualTo 1) exitWith {
 				_id,
 				TRUE,
 				[
-					'Ворог розгорнув пригнічувач GPS. Знайдіть та знищіть його!',
-					'Пригнічувач GPS',
-					'Пригнічувач GPS'
+					'Ворог розгорнув пригнiчувач GPS. Знайдiть та знищiть його!',
+					'Пригнiчувач GPS',
+					'Пригнiчувач GPS'
 				],
 				_effectPosition,
 				'CREATED',

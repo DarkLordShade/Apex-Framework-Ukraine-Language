@@ -261,9 +261,9 @@ if ((missionNamespace getVariable ['QS_missionConfig_carrierEnabled',0]) isEqual
 			params ['_jet','_killer','_instigator','_useEffects'];
 			private _text = '';
 			if (((getPosATL _jet) select 2) > 20) then {
-				_text = 'Нашу повітряну підтримку підбили!';
+				_text = 'Нашу повiтряну пiдтримку пiдбили!';
 			} else {
-				_text = 'Нашу повітряну підтримку знищили!';
+				_text = 'Нашу повiтряну пiдтримку знищили!';
 			};
 			if (!isDedicated) then {
 				[WEST,'AirBase'] sideChat _text;

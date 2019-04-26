@@ -34,7 +34,7 @@ if (isDedicated || !isMultiplayer || is3DEN) exitWith {};
 				disableUserInput TRUE;
 			};
 			/*/
-			50 cutText ['Ініціалізація ...','BLACK OUT',0.1,TRUE];
+			50 cutText ['Інiцiалiзацiя ...','BLACK OUT',0.1,TRUE];
 		};
 	};
 	private _count = 1;

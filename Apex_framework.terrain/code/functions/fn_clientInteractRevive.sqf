@@ -26,10 +26,10 @@ if (
 	{(!isNull (objectParent player))}
 ) exitWith {};
 if (_t getVariable ['QS_revive_disable',FALSE]) exitWith {
-	50 cutText [(format ['%1 не може бути оживилений та потребує евакуації',(name _t)]),'PLAIN',0.5];
+	50 cutText [(format ['%1 не може бути оживилений та потребує евакуацiї',(name _t)]),'PLAIN',0.5];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Бійця потрібно стабілізувати спочатку.','PLAIN',0.3];
+	50 cutText ['Бiйця потрiбно стабiлiзувати спочатку.','PLAIN',0.3];
 };
 _medi = ['Medikit'];
 _fak = ['FirstAidKit'];
@@ -41,12 +41,12 @@ if ((player getVariable 'QS_stamina_multiplier') select 0) then {
 };
 _playerHasMedikit = (!((_medi findIf {(_x in _itemsPlayer)}) isEqualTo -1));
 if (!(_playerHasMedikit)) exitWith {
-	50 cutText ['Оживлення не вдалося! Для оживлення потрібна обидва: Аптечка та Набір первинної допомоги!','PLAIN DOWN'];
+	50 cutText ['Оживлення не вдалося! Для оживлення потрiбна обидва: Аптечка та Набiр первинної допомоги!','PLAIN DOWN'];
 };
 _playerHasFAK = (!((_fak findIf {(_x in _itemsPlayer)}) isEqualTo -1));
 _incapacitatedHasFAK = (!((_fak findIf {(_x in _itemsIncapacitated)}) isEqualTo -1));
 if ((!(_playerHasFAK)) && (!(_incapacitatedHasFAK))) exitWith {
-	50 cutText ['Оживлення не вдалося! Немає перев’язувальних пакетів! Вам потрібні обидва: Аптечка та Набір первинної допомоги для оживлення солдатів. Кожне оживлення використовує один Набір первинної допомоги.','PLAIN DOWN'];
+	50 cutText ['Оживлення не вдалося! Немає перев’язувальних пакетiв! Вам потрiбнi обидва: Аптечка та Набiр первинної допомоги для оживлення солдатiв. Кожне оживлення використовує один Набiр первинної допомоги.','PLAIN DOWN'];
 };
 if (isPlayer _t) then {
 	private _text = format ['Оживлює %1',profileName];
@@ -128,7 +128,7 @@ waitUntil {
 if (_stance isEqualTo 'PRONE') then {
 	_cancelEnabled = TRUE;
 	_action_cancel = player addAction [
-		'Відмінити',
+		'Вiдмiнити',
 		{
 			player removeAction (_this select 2);
 			player setVariable ['QS_client_animCancel',TRUE,FALSE];
@@ -154,7 +154,7 @@ waitUntil {
 };
 if (player getVariable 'QS_client_animCancel') exitWith {
 	player setVariable ['QS_client_animCancel',FALSE,FALSE];
-	50 cutText ['Відмінено','PLAIN DOWN',0.333];
+	50 cutText ['Вiдмiнено','PLAIN DOWN',0.333];
 };
 if (_stance isEqualTo 'PRONE') then {
 	_time2 = diag_tickTime + 0.5;
@@ -180,10 +180,10 @@ if (_stance isEqualTo 'PRONE') then {
 };
 if (player getVariable 'QS_client_animCancel') exitWith {
 	player setVariable ['QS_client_animCancel',FALSE,FALSE];
-	50 cutText ['Відмінено','PLAIN DOWN',0.333];
+	50 cutText ['Вiдмiнено','PLAIN DOWN',0.333];
 };
 if (_exit) exitWith {
-	50 cutText ['Оживлення відмінено','PLAIN DOWN',0.25];
+	50 cutText ['Оживлення вiдмiнено','PLAIN DOWN',0.25];
 };
 if (_cancelEnabled) then {
 	player removeAction _action_cancel;
@@ -236,10 +236,10 @@ if (!(player getVariable ['QS_client_animCancel',FALSE])) then {
 							};
 						};
 					} else {
-						50 cutText ['Оживлення не відбулося, можливо хтось інший взаємодіє зараз з вашим пацієнтом!','PLAIN DOWN',0.3];
+						50 cutText ['Оживлення не вiдбулося, можливо хтось iнший взаємодiє зараз з вашим пацiєнтом!','PLAIN DOWN',0.3];
 					};
 				} else {
-					50 cutText ['Оживлення не відбулося!','PLAIN DOWN',0.3];
+					50 cutText ['Оживлення не вiдбулося!','PLAIN DOWN',0.3];
 				};
 			};
 		};

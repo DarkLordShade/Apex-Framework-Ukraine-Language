@@ -79,7 +79,7 @@ if (_type isEqualTo 'Select') then {
 				};
 			};
 			player setVariable ['QS_ClientVTexture',[objNull,(getPlayerUID player),[],(time + 5)],TRUE];
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Текстуру транспорту скинуто, тепер ви можете текстурувати інший транспорт. Вам потрібно спочатку скинути цей транспор перед текстуруванням іншого!',[],-1,TRUE,'Vehicle Skin',TRUE];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Текстуру транспорту скинуто, тепер ви можете текстурувати iнший транспорт. Вам потрiбно спочатку скинути цей транспор перед текстуруванням iншого!',[],-1,TRUE,'Vehicle Skin',TRUE];
 		} else {
 			if (_supporterAccess <= _supporterLevel) then {
 				if ((typeOf _v) in _vehicleTypes) then {
@@ -106,23 +106,23 @@ if (_type isEqualTo 'Select') then {
 									_text = format ['Vehicle Texture Set: %1<br/>Author: %2',_displayName,_author];
 									(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,_text,[],-1,TRUE,'Vehicle Skin',FALSE];
 								} else {
-									(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Зачекайте ... Текстуру транспорту можна встановлювати лише кожні 2 секунди',[],-1,TRUE,'Vehicle Skin',FALSE];
+									(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Зачекайте ... Текстуру транспорту можна встановлювати лише кожнi 2 секунди',[],-1,TRUE,'Vehicle Skin',FALSE];
 								};
 							} else {
-								(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ви повинні бути на базі щоб змінювати текстури!',[],-1,TRUE,'Vehicle Skin',FALSE];
+								(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ви повиннi бути на базi щоб змiнювати текстури!',[],-1,TRUE,'Vehicle Skin',FALSE];
 							};
 						} else {
-							_text = format ['У вас вже є текстурований транспорт. %1 в квадраті %2.',(getText (configFile >> 'CfgVehicles' >> (typeOf ((player getVariable 'QS_ClientVTexture') select 0)) >> 'displayName')),(mapGridPosition (getPosWorld ((player getVariable 'QS_ClientVTexture') select 0)))];
+							_text = format ['У вас вже є текстурований транспорт. %1 в квадратi %2.',(getText (configFile >> 'CfgVehicles' >> (typeOf ((player getVariable 'QS_ClientVTexture') select 0)) >> 'displayName')),(mapGridPosition (getPosWorld ((player getVariable 'QS_ClientVTexture') select 0)))];
 							(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,_text,[],-1,TRUE,'Vehicle Skin',FALSE];
 						};
 					} else {
-						(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ми маєте бути командиром/водієм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',FALSE];
+						(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Ми маєте бути командиром/водiєм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',FALSE];
 					};
 				} else {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,12,-1,'Не коректний вид транспорту. Текстуру не встановлено. Ви маєте бути всередині транспорту та маєте бути командиром/водієм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',TRUE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,12,-1,'Не коректний вид транспорту. Текстуру не встановлено. Ви маєте бути всерединi транспорту та маєте бути командиром/водiєм/власником транспорту.',[],-1,TRUE,'Vehicle Skin',TRUE];
 				};
 			} else {
-				_text = format ['Потрібен рівень підтримки: %1<br/>Ваш рівень підтримки: %2<br/>Текстуру не встановлено.',_supporterAccess,_supporterLevel];
+				_text = format ['Потрiбен рiвень пiдтримки: %1<br/>Ваш рiвень пiдтримки: %2<br/>Текстуру не встановлено.',_supporterAccess,_supporterLevel];
 				(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,12,-1,_text,[],-1,TRUE,'Vehicle Skin',FALSE];
 			};
 		};

@@ -86,7 +86,7 @@ _controls pushBack _QS_ctrl_4;
 _QS_ctrlCreateArray = ['RscText',104];
 _QS_ctrl_5 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl_5 ctrlShow TRUE;
-_QS_ctrl_5 ctrlSetText 'Фракції';
+_QS_ctrl_5 ctrlSetText 'Фракцiї';
 _QS_ctrl_5 ctrlSetPosition [
 	((ctrlPosition _QS_ctrl_1) # 0) + (0.01 / _uiScale),
 	((ctrlPosition _QS_ctrl_1) # 1) + (0.065 / _uiScale),
@@ -100,7 +100,7 @@ _controls pushBack _QS_ctrl_5;
 _QS_ctrlCreateArray = ['RscText',105];
 _QS_ctrl_6 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl_6 ctrlShow TRUE;
-_QS_ctrl_6 ctrlSetText 'Ролі';
+_QS_ctrl_6 ctrlSetText 'Ролi';
 _QS_ctrl_6 ctrlSetPosition [
 	((ctrlPosition _QS_ctrl_1) # 0) + (0.15 / _uiScale),
 	((ctrlPosition _QS_ctrl_1) # 1) + (0.065 / _uiScale),
@@ -114,7 +114,7 @@ _controls pushBack _QS_ctrl_6;
 _QS_ctrlCreateArray = ['RscText',106];
 _QS_ctrl_7 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl_7 ctrlShow TRUE;
-_QS_ctrl_7 ctrlSetText 'Опис Ролі';
+_QS_ctrl_7 ctrlSetText 'Опис Ролi';
 _QS_ctrl_7 ctrlSetPosition [
 	((ctrlPosition _QS_ctrl_1) # 0) + (0.45 / _uiScale),
 	((ctrlPosition _QS_ctrl_1) # 1) + (0.065 / _uiScale),
@@ -265,7 +265,7 @@ _controls pushBack _QS_ctrl_13;
 _QS_ctrlCreateArray = ['RscText',118];
 _QS_ctrl_14 = _display ctrlCreate _QS_ctrlCreateArray;
 _QS_ctrl_14 ctrlShow TRUE;
-_QS_ctrl_14 ctrlSetText 'Список гравців';
+_QS_ctrl_14 ctrlSetText 'Список гравцiв';
 _QS_ctrl_14 ctrlSetPosition [
 	((ctrlPosition _QS_ctrl_1) # 0) + (0.01 / _uiScale),
 	((ctrlPosition _QS_ctrl_1) # 1) + (0.25 / _uiScale),
@@ -322,7 +322,7 @@ _QS_ctrl_17 ctrlEnable TRUE;
 _QS_buttonAction = "closeDialog 2;";
 _QS_ctrl_17 buttonSetAction _QS_buttonAction;
 _QS_ctrl_17 ctrlSetText 'Закрити';
-_QS_ctrl_17 ctrlSetTooltip 'Закрити меню обрання ролі';
+_QS_ctrl_17 ctrlSetTooltip 'Закрити меню обрання ролi';
 _QS_ctrl_17 ctrlSetTextColor [1,1,1,1];
 _QS_ctrl_17 ctrlSetBackgroundColor [0,0,0,1];
 _QS_ctrl_17 ctrlCommit 0;
@@ -339,7 +339,7 @@ _QS_ctrl_18 ctrlSetPosition [
 _QS_ctrl_18 ctrlSetText 'Скинути';
 _QS_buttonAction = "['SET_DEFAULT_LOADOUT',(player getVariable ['QS_unit_role','rifleman']),TRUE] call (missionNamespace getVariable 'QS_fnc_roles');";
 _QS_ctrl_18 buttonSetAction _QS_buttonAction;
-_QS_ctrl_18 ctrlSetTooltip 'Відновити збережені у профілі налаштування до налаштувань сервера';
+_QS_ctrl_18 ctrlSetTooltip 'Вiдновити збереженi у профiлi налаштування до налаштувань сервера';
 _QS_ctrl_18 ctrlSetTextColor [1,1,1,1];
 _QS_ctrl_18 ctrlSetBackgroundColor [0,0,0,1];
 _QS_ctrl_18 ctrlCommit 0;
@@ -417,7 +417,7 @@ _QS_ctrl_23 ctrlSetPosition [
 	((ctrlPosition _QS_ctrl_1) # 3) * 0.06
 ];
 _QS_ctrl_23 ctrlSetText 'Обрати роль';
-_QS_ctrl_23 ctrlSetTooltip 'Спробувати приєднатися до обраної ролі';
+_QS_ctrl_23 ctrlSetTooltip 'Спробувати приєднатися до обраної ролi';
 _QS_ctrl_23 ctrlSetTextColor [1,1,1,1];
 _QS_ctrl_23 ctrlSetBackgroundColor [0,0,0,1];
 _QS_ctrl_23 ctrlCommit 0;

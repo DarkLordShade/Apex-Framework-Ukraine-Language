@@ -24,25 +24,25 @@ if ((isMultiplayer) && (!(local _t))) exitWith {};
 if (((vectorMagnitude (velocity _t)) * 3.6) > 1) exitWith {};
 if (diag_tickTime < (player getVariable ['QS_RD_canRespawnVehicle',-1])) exitWith {};
 if (!((getVehicleCargo _t) isEqualTo [])) exitWith {
-	50 cutText ['Автомобіль має вантаж всередині.','PLAIN',0.3];
+	50 cutText ['Автомобiль має вантаж всерединi.','PLAIN',0.3];
 };
 if (!isNull (getSlingLoad _t)) exitWith {
-	50 cutText ['Автомобіль має тент.','PLAIN',0.3];
+	50 cutText ['Автомобiль має тент.','PLAIN',0.3];
 };
 if (!((ropes _t) isEqualTo [])) exitWith {
-	50 cutText ['Автомобіль причеплений тросами.','PLAIN',0.3];
+	50 cutText ['Автомобiль причеплений тросами.','PLAIN',0.3];
 };
 if (!(isNull (attachedTo _t))) exitWith {
-	50 cutText ['Автомобіль прикріплений до чогось.','PLAIN',0.3];
+	50 cutText ['Автомобiль прикрiплений до чогось.','PLAIN',0.3];
 };
-private _result = [(format ['Ви впевнені, що хочете відновити цей %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'Попередження','Вiдновлення транспорту','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+private _result = [(format ['Ви впевненi, що хочете вiдновити цей %1',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'Попередження','Вiдновлення транспорту','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 if (_result) then {
 	player setVariable ['QS_RD_canRespawnVehicle',(diag_tickTime + 120),FALSE];
 	player playAction 'PutDown';
 	playSound 'ClickSoft';
 	50 cutText ['Респаун транспорту','PLAIN DOWN',0.5];
 	if ((_t distance2D (markerPos 'QS_marker_base_marker')) >= 1000) then {
-		_text = format ['%1 відновив %2 на базі %3',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName')),(mapGridPosition (getPosWorld player))];
+		_text = format ['%1 вiдновив %2 на базi %3',profileName,(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName')),(mapGridPosition (getPosWorld player))];
 		['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	};
 	if (!isNil {player getVariable 'QS_client_createdBoat'}) then {
@@ -52,7 +52,7 @@ if (_result) then {
 					if (!((backpack player) isEqualTo '')) then {
 						if (player canAddItemToBackpack ['ToolKit',1]) then {
 							player addItemToBackpack 'ToolKit';
-							50 cutText [(format ['%1 розміщено, інструментарій додано',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'PLAIN DOWN'];
+							50 cutText [(format ['%1 розмiщено, iнструментарiй додано',(getText (configFile >> 'CfgVehicles' >> (typeOf _t) >> 'displayName'))]),'PLAIN DOWN'];
 						};
 					};
 				};
@@ -65,5 +65,5 @@ if (_result) then {
 	};
 	[17,_t] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 } else {
-	50 cutText ['Відміна','PLAIN',0.3];
+	50 cutText ['Вiдмiна','PLAIN',0.3];
 };

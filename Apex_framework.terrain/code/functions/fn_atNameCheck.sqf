@@ -24,17 +24,17 @@ _blacklistedString = [
 	'Penis','Vagina','Asshole','Gay','Lesbian','Cvnt',
 	'Sh1t','Shlt','G4y','Fvck','H4ck','N1gger','Nlgger','pussy','pvssy','puzzy','pvzzy',
 	'rape','r4pe','r4p3','rapist','r4pist','r4p1st','Server','Admin','Administrator',
-	'User','user','Админ','Администратор','Адмін','Адміністратор'
+	'User','user','Админ','Администратор','Адмiн','Адмiнiстратор'
 ];
 {
 	if ([_x,profileName,FALSE] call (missionNamespace getVariable 'QS_fnc_inString')) exitWith {
 		if (userInputDisabled) then {
 			disableUserInput FALSE;
 		};
-		['systemChat',(format ['Robocop кікнув %1 за заборонене ім’я користувача.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['systemChat',(format ['Robocop кiкнув %1 за заборонене iм’я користувача.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		endMission 'QS_RD_end_5';
 		[
-			(format ['Автоматично кікнуто за заборонене ім’я користувача ( %1 ).',_x]),
+			(format ['Автоматично кiкнуто за заборонене iм’я користувача ( %1 ).',_x]),
 			'Robocop',
 			TRUE,
 			FALSE,
@@ -59,10 +59,10 @@ _reservedClients = [
 			if (userInputDisabled) then {
 				disableUserInput FALSE;
 			};
-			['systemChat',(format ['Robocop кікнув %1 за використання зарезервованого імені.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['systemChat',(format ['Robocop кiкнув %1 за використання зарезервованого iменi.',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 			endMission 'QS_RD_end_5';
 			[
-				'Автоматично кікнуто за використання зарезервованого імені.',
+				'Автоматично кiкнуто за використання зарезервованого iменi.',
 				'Robocop',
 				TRUE,
 				FALSE,

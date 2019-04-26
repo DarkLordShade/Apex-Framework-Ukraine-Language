@@ -111,15 +111,15 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Захопити дані (UAV)',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити данi (UAV)',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		(format ['Ворожий безпілотник розбився біля узбережжя %1. Це шанс дістати дані щодо того, як працюють їхні системи безпілотника. Доберіться до цілі і захопіть її. Ця місія є підводною, тому переконайтеся, що у вас є ребрізер та окуляри для пірнання! GPS допоможе визначити розташування. Може бути обмеження за часом.',worldName]),
-		'Захопити дані (БПЛА)',
-		'Захопити дані (БПЛА)'
+		(format ['Ворожий безпiлотник розбився бiля узбережжя %1. Це шанс дiстати данi щодо того, як працюють їхнi системи безпiлотника. Доберiться до цiлi i захопiть її. Ця мiсiя є пiдводною, тому переконайтеся, що у вас є ребрiзер та окуляри для пiрнання! GPS допоможе визначити розташування. Може бути обмеження за часом.',worldName]),
+		'Захопити данi (БПЛА)',
+		'Захопити данi (БПЛА)'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -131,9 +131,9 @@ _fuzzyPos = [((_safePos select 0) - 300) + (random 600),((_safePos select 1) - 3
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 ['QS_IA_TASK_SM_0',TRUE,_timeEnd] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 
-_briefing = parseText format ["<t align='center'><t size='2.2'>Додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>Безпілотник супротивника розбився на узбережжі %1.<br/><br/> Дані розвідки розвідки вказують, що ворог на місці намагається знайти і знищити безпілотник.!<br/> У вас є близько 30 хвилин для виконання місії.<br/></t>",worldName];
+_briefing = parseText format ["<t align='center'><t size='2.2'>Додаткова мiсiя</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>Безпiлотник супротивника розбився на узбережжi %1.<br/><br/> Данi розвiдки розвiдки вказують, що ворог на мiсцi намагається знайти i знищити безпiлотник.!<br/> У вас є близько 30 хвилин для виконання мiсiї.<br/></t>",worldName];
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Захопити Дані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Данi']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 private _patrolRoute = [];
 

@@ -50,20 +50,20 @@ if (_worldName isEqualTo 'Altis') exitWith {
 				['Fotia Turbines',[4059.06,19228.8,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				/*/['Gori Refinery',[5411.99,17913.7,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],/*/
 				['Krya Nera',[10135.1,21912.4,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Вітряки Faros-у',[8444,23073.6,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
+				['Вiтряки Faros-у',[8444,23073.6,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
 			]
 		],
 		[
 			2,
 			[
-				['Радарна станія Sofia',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
+				['Радарна станiя Sofia',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Research Facility',[20948.4,19258.8,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Molos',[27006.6,23292.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Nidasos Woodlands',[23926.2,22597.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Limni',[20901.9,14626.3,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Paros',[20966.4,16968.8,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Gatolia Solar Farm',[27076.5,21451.1,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Електростанція Sofia',[25425.5,20339,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Електростанцiя Sofia',[25425.5,20339,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Delfinaki Outpost',[23572.4,21102.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1]
 			]
 		],
@@ -91,8 +91,8 @@ if (_worldName isEqualTo 'Altis') exitWith {
 				['The Stadium',[5479.61,14988.7,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Vikos Outpost',[12300.2,8875.71,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Athanos',[4238.88,10789.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Південна Kavala',[3704.8,12198.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
-				['Північна Kavala',[4030.79,14149.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Пiвденна Kavala',[3704.8,12198.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
+				['Пiвнiчна Kavala',[4030.79,14149.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Topolia',[7361.48,15438.3,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Therisa',[10505.5,12264.2,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1]
 			]
@@ -172,7 +172,7 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		[
 			0,
 			[
-				['Стара військова база',[6089.62,10793.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
+				['Стара вiйськова база',[6089.62,10793.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Radio Station',[7042.5,10104.2,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Moray',[933.491,12078.6,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
 				['Lolisse',[5543.27,11193.7,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
@@ -193,7 +193,7 @@ if (_worldName isEqualTo 'Malden') exitWith {
 		[
 			1,
 			[
-				['Військова База острова',[9754.7,3949.39,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
+				['Вiйськова База острова',[9754.7,3949.39,0],'QS_fnc_aoCustomize',1,1,0,0,0,0,0],
 				['Le Port',[8251.1,3145.07,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Chapoi',[5867.74,3523.77,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],
 				['Cancon',[5398.12,2790.64,0],'QS_fnc_aoCustomize',1,1,0,0,1,1,1],

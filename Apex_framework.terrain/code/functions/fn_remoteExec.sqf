@@ -1320,7 +1320,7 @@ if (_case < 80) exitWith {
 				_marker1 setMarkerShape 'ICON';
 				_marker1 setMarkerType 'mil_dot';
 				_marker1 setMarkerColor 'ColorWEST';
-				_marker1 setMarkerText (format ['%1Ворожі припаси',(toString [32,32,32])]);
+				_marker1 setMarkerText (format ['%1Ворожi припаси',(toString [32,32,32])]);
 				_marker1 setMarkerSize [0.5,0.5];
 				_marker1 setMarkerPos (missionNamespace getVariable ['QS_virtualSectors_sd_position',[-1000,-1000,0]]);
 				_marker1 setMarkerAlpha 1;
@@ -1333,7 +1333,7 @@ if (_case < 80) exitWith {
 			};
 			comment 'Communicate here';
 			['QS_virtualSectors_sub_3_task'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-			['SC_SUB_COMPLETED',['','Ворожі припаси убезпечено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['SC_SUB_COMPLETED',['','Ворожi припаси убезпечено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		};
 	};
 	/*/===== CAS spawner/*/
@@ -1615,8 +1615,8 @@ if (_case < 90) exitWith {
 		};
 	};
 	if (_case isEqualTo 85) then {
-		['GRID_IDAP_UPDATE',['Area Of Operations','Завдання провалено<br/>Без жертв серед цивільних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		'QS_marker_grid_civState' setMarkerText (format ['%1Жодних жертв серед цивільного населення (Провалено)',(toString [32,32,32])]);
+		['GRID_IDAP_UPDATE',['Area Of Operations','Завдання провалено<br/>Без жертв серед цивiльних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		'QS_marker_grid_civState' setMarkerText (format ['%1Жодних жертв серед цивiльного населення (Провалено)',(toString [32,32,32])]);
 		'QS_marker_grid_civState' setMarkerColor 'ColorRED';
 	};
 	if (_case isEqualTo 86) then {

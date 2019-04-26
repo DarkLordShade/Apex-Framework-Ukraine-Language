@@ -13,5 +13,5 @@ Description:
 	Weapon Safety interaction
 _____________________________________________________________*/
 
-50 cutText ['Зброя на запобіжнику','PLAIN',0.2];
+50 cutText ['Зброя на запобiжнику','PLAIN',0.2];
 TRUE;

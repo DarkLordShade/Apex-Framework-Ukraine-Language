@@ -18,8 +18,8 @@ missionNamespace setVariable ['QS_evacPosition_2',_smPos,TRUE];
 ['QS_IA_TASK_SM_0'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 if (_type isEqualTo 0) exitWith {
 	['playMusic','EventTrack02_F_Curator'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-	_failedText = parseText "<t align='center'><t size='2.2'>Другорядну місію</t><br/><t size='1.5' color='#b60000'>ПРОВАЛЕНО</t><br/>____________________<br/>
-		Наступного разу зроби це краще!<br/><br/><br/>Зараз зфокусуйся на основному завдані; ми передамо погані новини до штабу, за деякої вдачі в нас буде ще один шанс показати себе.
+	_failedText = parseText "<t align='center'><t size='2.2'>Другорядну мiсiю</t><br/><t size='1.5' color='#b60000'>ПРОВАЛЕНО</t><br/>____________________<br/>
+		Наступного разу зроби це краще!<br/><br/><br/>Зараз зфокусуйся на основному завданi; ми передамо поганi новини до штабу, за деякої вдачi в нас буде ще один шанс показати себе.
 		Ми повернемося до тебе за 15 - 30 хвилин.</t>";
 	['hint',_failedText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 };
@@ -1234,7 +1234,7 @@ if (_type isEqualTo 1) then {
 	_newRewardArray deleteAt (_newRewardArray find _reward);
 	missionNamespace setVariable ['QS_smReward_array',_newRewardArray,FALSE];
 	_pic = getText (configfile >> 'CfgVehicles' >> _rewardType >> 'editorPreview');
-	_completeText = parseText format ["<t align='center'><t size='2.2'>Другорядну місію</t><br/><t size='1.5' color='#08b000'>ЗАВЕРШЕНО</t><br/>____________________<br/>Фантастична робота, хлопці! OPFORне на довго затримається на острові якщо ви це втримаєте!<br/><br/>Ми дали вам %1 щоб допомогти в бою.<br/> <img size='5' image='%2'/> <br/><br/>Ви знайдете це на базі.</t>",_rewardText,_pic];
+	_completeText = parseText format ["<t align='center'><t size='2.2'>Другорядну мiсiю</t><br/><t size='1.5' color='#08b000'>ЗАВЕРШЕНО</t><br/>____________________<br/>Фантастична робота, хлопцi! OPFORне на довго затримається на островi якщо ви це втримаєте!<br/><br/>Ми дали вам %1 щоб допомогти в бою.<br/> <img size='5' image='%2'/> <br/><br/>Ви знайдете це на базi.</t>",_rewardText,_pic];
 	//['hintSilent',_completeText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 	['Reward',[format ['Ваша команда отримала %1!',_rewardText]]] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 };

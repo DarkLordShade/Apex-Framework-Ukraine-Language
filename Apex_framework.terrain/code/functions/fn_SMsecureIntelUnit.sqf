@@ -228,15 +228,15 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Захопити інформатора (Офіцер)',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Захопити iнформатора (Офiцер)',(toString [32,32,32])]);
 
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Важлива інформація переходить з рук до рук серед високопосадових ворожих офіцерів. Рухайтесь туди і затримайте офіцера!  Щойно його буде арештовано - він поверне данні. Після цього ви можете стратити його. Якщо вони виявлять нашу присутність, то можуть намагатися втекти.',
-		'Захопити інформатора (Офіцер)',
-		'Захопити інформатора (Офіцер)'
+		'Важлива iнформацiя переходить з рук до рук серед високопосадових ворожих офiцерiв. Рухайтесь туди i затримайте офiцера!  Щойно його буде арештовано - вiн поверне даннi. Пiсля цього ви можете стратити його. Якщо вони виявлять нашу присутнiсть, то можуть намагатися втекти.',
+		'Захопити iнформатора (Офiцер)',
+		'Захопити iнформатора (Офiцер)'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -246,9 +246,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'download',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова місія</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повідомлення від місцевих жителів, які чули, що стратегічна інформація потрапила до рук ворога!<br/><br/>Ми позначили завдання на вашій карті. Інформація в одному з транспортних засобів або у когось з бійців</t>";
+_briefing = parseText "<t align='center'><t size='2.2'>Нова додаткова мiсiя</t><br/><t size='1.5' color='#00B2EE'>Захопити документи</t><br/>____________________<br/>У нас є повiдомлення вiд мiсцевих жителiв, якi чули, що стратегiчна iнформацiя потрапила до рук ворога!<br/><br/>Ми позначили завдання на вашiй картi. Інформацiя в одному з транспортних засобiв або у когось з бiйцiв</t>";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewSideMission',['Захопити Дані']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewSideMission',['Захопити Данi']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 /*/============= SET VARS/*/
 
@@ -270,7 +270,7 @@ for '_x' from 0 to 1 step 0 do {
 
 		/*/---------- DE-BRIEF/*/
 
-		['sideChat',[WEST,'HQ'],'Ціль вбито, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Цiль вбито, мiсiю провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
@@ -307,7 +307,7 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				_x enableAI 'PATH';
 			} forEach [_intelObj,_decoy1,_decoy2,_intelDriver,_decoyDriver1,_decoyDriver2];
-			['sideChat',[WEST,'HQ'],'Ворог помітив нас і намагається втекти з даними!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['sideChat',[WEST,'HQ'],'Ворог помiтив нас i намагається втекти з даними!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 
 			/*/---------- WHERE TO / HOW WILL THE OBJECTIVES ESCAPE?/*/
 
@@ -376,7 +376,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_heEscaped) exitWith {
 
 		/*/---------- DE-BRIEF/*/
-		['sideChat',[WEST,'HQ'],'Об’єкт втік, місію провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Об’єкт втiк, мiсiю провалено!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[0,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{
@@ -416,7 +416,7 @@ for '_x' from 0 to 1 step 0 do {
 
 		/*/---------- DE-BRIEF/*/
 
-		['sideChat',[WEST,'HQ'],"Дані отримано. Місію виконано."] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],"Данi отримано. Мiсiю виконано."] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
 		[1,_flatPos] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 		{

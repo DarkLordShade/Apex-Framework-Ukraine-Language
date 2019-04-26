@@ -30,7 +30,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 	[
 		[
 			'soldier',				// Role
-			'Стрілець',				// Role Title
+			'Стрiлець',				// Role Title
 			-1,						// Minimum slots unlocked
 			-1,						// Max number in role
 			-1,
@@ -77,14 +77,14 @@ if (worldName isEqualTo 'Altis') exitWith {
 		],
 		[
 			'pilot_heli',
-			'Пілот вертольоту',
+			'Пiлот вертольоту',
 			3,
 			5,
 			12
 		],
 		[
 			'pilot_plane',
-			'Пілот літака',
+			'Пiлот лiтака',
 			1,
 			1,
 			-1,
@@ -100,7 +100,7 @@ if (worldName isEqualTo 'Altis') exitWith {
 		],
 		[
 			'mortar',
-			'Мінометник',
+			'Мiнометник',
 			1,
 			1,
 			-1,

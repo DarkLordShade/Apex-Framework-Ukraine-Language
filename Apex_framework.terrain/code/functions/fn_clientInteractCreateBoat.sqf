@@ -24,7 +24,7 @@ if (!isNil {player getVariable 'QS_client_createdBoat'}) then {
 	};
 };
 if (_exit) exitWith {
-	50 cutText [(format ['У Вас вже є активний човен в сітці %1, Будь ласка, зареспавніть або знищіть його пер ніж створювати новий.',(mapGridPosition (player getVariable 'QS_client_createdBoat'))]),'PLAIN DOWN'];
+	50 cutText [(format ['У Вас вже є активний човен в сiтцi %1, Будь ласка, зареспавнiть або знищiть його пер нiж створювати новий.',(mapGridPosition (player getVariable 'QS_client_createdBoat'))]),'PLAIN DOWN'];
 };
 player removeItem 'ToolKit';
 private _boatType = ['B_Lifeboat','B_T_Lifeboat'] select (worldName isEqualTo 'Tanoa');
@@ -34,4 +34,4 @@ if ((!underwater player) && (((eyePos player) select 2) > 0.25)) then {
 private _position = player modelToWorld [0,15,0];
 _position set [2,1];
 [37,profileName,[_boatType,_position,[],0,'NONE'],(getDir player),_position,clientOwner,player] remoteExec ['QS_fnc_remoteExec',2,FALSE];
-50 cutText [(format ['%1 переповнено, інструмент вилучено',(getText (configFile >> 'CfgVehicles' >> _boatType >> 'displayName'))]),'PLAIN DOWN',0.75];
+50 cutText [(format ['%1 переповнено, iнструмент вилучено',(getText (configFile >> 'CfgVehicles' >> _boatType >> 'displayName'))]),'PLAIN DOWN',0.75];

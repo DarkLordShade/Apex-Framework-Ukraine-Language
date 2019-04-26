@@ -74,7 +74,7 @@ if (_type isEqualTo 1) then {
 		};
 	};
 	if (_chairTaken) exitWith {
-		50 cutText ['Хтось занадто близько до цього стільця!','PLAIN DOWN'];
+		50 cutText ['Хтось занадто близько до цього стiльця!','PLAIN DOWN'];
 	};
 	if ((toLower (animationState player)) in _sittingAnimations) exitWith {50 cutText ['Вже сидить!','PLAIN DOWN'];};
 

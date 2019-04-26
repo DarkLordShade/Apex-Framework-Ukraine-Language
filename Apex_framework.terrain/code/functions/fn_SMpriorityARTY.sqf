@@ -105,9 +105,9 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Ворог встановив артилерійську батарею. Вирушайте туди та знищіть її доки не стало пізно! Цю ціль позначено не точно.',
-		'Артилерійська Батарея',
-		'Артилерійська Батарея'
+		'Ворог встановив артилерiйську батарею. Вирушайте туди та знищiть її доки не стало пiзно! Цю цiль позначено не точно.',
+		'Артилерiйська Батарея',
+		'Артилерiйська Батарея'
 	],
 	(markerPos 'QS_marker_sideMarker'),
 	'CREATED',
@@ -117,17 +117,17 @@ _fuzzyPos = [((_flatPos select 0) - 300) + (random 600),((_flatPos select 1) - 3
 	'destroy',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-_briefing = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#b60000'>Артилерія</t><br/>____________________<br/>Сили OPFOR встановлюють артилерійську батарею щоб надавата вам по сраці! Ми знайшли їхню позицію за допомогою термальних знімків та позначили її на вашій мапі.<br/><br/>Це пріоритетна ціль, хлопці! Вони ще розгортаються, але будуть готові до відкриття вогню за 5 хвилин!";
+_briefing = parseText "<t align='center' size='2.2'>Прiоритетна цiль</t><br/><t size='1.5' color='#b60000'>Артилерiя</t><br/>____________________<br/>Сили OPFOR встановлюють артилерiйську батарею щоб надавата вам по срацi! Ми знайшли їхню позицiю за допомогою термальних знiмкiв та позначили її на вашiй мапi.<br/><br/>Це прiоритетна цiль, хлопцi! Вони ще розгортаються, але будуть готовi до вiдкриття вогню за 5 хвилин!";
 ['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewPriorityTarget',['Артилерія']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewPriorityTarget',['Артилерiя']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 waitUntil {
 	sleep 5;
 	(((_priorityTargets findIf {((canMove _x) && (alive _x))}) isEqualTo -1) || {(missionNamespace getVariable 'QS_smSuccess')})
 };
-_completeText = parseText "<t align='center' size='2.2'>Пріоритетна ціль</t><br/><t size='1.5' color='#08b000'>НЕЙТРАЛІЗОВАНО</t><br/>____________________<br/>Неперевершена робота, козаки! Переконайтесь, що ви можете швидко переміщуватись між цілями, тому що якщо вони залишаться зі своїми іграшками - то можуть спричинити справжній хаос.<br/><br/>Продовжуйте основну операцію. Ми сповістимо вас, якщо щось зміниться.";
+_completeText = parseText "<t align='center' size='2.2'>Прiоритетна цiль</t><br/><t size='1.5' color='#08b000'>НЕЙТРАЛІЗОВАНО</t><br/>____________________<br/>Неперевершена робота, козаки! Переконайтесь, що ви можете швидко перемiщуватись мiж цiлями, тому що якщо вони залишаться зi своїми iграшками - то можуть спричинити справжнiй хаос.<br/><br/>Продовжуйте основну операцiю. Ми сповiстимо вас, якщо щось змiниться.";
 ['hint',_completeText] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['CompletedPriorityTarget',['Артилерію НЕЙТРАЛІЗОВАНО']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['CompletedPriorityTarget',['Артилерiю НЕЙТРАЛІЗОВАНО']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 {
 	_x setMarkerPos [-5000,-5000,0];
 	_x setMarkerAlpha 0;

@@ -126,7 +126,7 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 				FALSE,
 				''
 			];
-			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Заспавнити літак'])];
+			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Заспавнити лiтак'])];
 		};
 	} else {
 		if (!(_role in ['pilot','pilot_heli','pilot_plane','uav','pilot_cas','commander','jtac'])) then {

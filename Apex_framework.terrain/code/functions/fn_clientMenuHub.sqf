@@ -104,7 +104,7 @@ if (_type isEqualTo 'B4') exitWith {
 			(!dialog)
 		};
 		(findDisplay 46) createDisplay 'RscDisplayDynamicGroups';
-		50 cutText ['Використовуйте [Page Up] / [Page Down] для навігації по переліку груп','PLAIN'];
+		50 cutText ['Використовуйте [Page Up] / [Page Down] для навiгацiї по перелiку груп','PLAIN'];
 	};
 };
 if (_type isEqualTo 'B5') exitWith {

@@ -18,12 +18,12 @@ if (
 	(!alive _parent) ||
 	{(!alive _child)}
 ) exitWith {
-	50 cutText ['Завантаження не відбулося','PLAIN DOWN',0.5];
+	50 cutText ['Завантаження не вiдбулося','PLAIN DOWN',0.5];
 };
 private _text = '';
 if (_parent setVehicleCargo _child) then {
 	_text = format ['%1 завантажено до) %2',(_child getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _child) >> 'displayName'))]),(getText (configFile >> 'CfgVehicles' >> (typeOf _parent) >> 'displayName'))];
 } else {
-	_text = format ['Завантаження %1 до %2 не відбулося',(_child getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _child) >> 'displayName'))]),(getText (configFile >> 'CfgVehicles' >> (typeOf _parent) >> 'displayName'))];
+	_text = format ['Завантаження %1 до %2 не вiдбулося',(_child getVariable ['QS_ST_customDN',(getText (configFile >> 'CfgVehicles' >> (typeOf _child) >> 'displayName'))]),(getText (configFile >> 'CfgVehicles' >> (typeOf _parent) >> 'displayName'))];
 };
 50 cutText [_text,'PLAIN DOWN',0.5];

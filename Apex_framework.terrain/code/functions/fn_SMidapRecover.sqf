@@ -405,7 +405,7 @@ private _uncertainPosition = [
 	'QS_TASK_SM_IDAP_1',
 	TRUE,
 	[
-		(format ['<br/>1. Перевірте сцену.<br/>2. Знайдіть поранених і шукайте підказки.<br/>3. Знайдіть медичні приналежності.<br/>4. Надайте першу медичну допомогу пораненому робітнику IDAP.<br/>5. Евакуюйте пораненого до Медичного пункту на базі або іншого польового шпиталю.<br/><br/><br/>Місцевий пункт постачання IDAP. Цивільні поряд говорять, що один з робітників допоміжної служби все ще залишається в живих. Ваша робота - дістатися туди та визволити його. Дехто з повстанців залишив зону та забрав з собою деяке медичне устаткування. Вам треба відстежити їх та повернути медичне обладнання.<br/><br/>Оглядайте тіла загиблих на місці щоб дізнатись про розташування повстанців.<br/><br/>Цілі не точно позначені на мапі']),
+		(format ['<br/>1. Перевiрте сцену.<br/>2. Знайдiть поранених i шукайте пiдказки.<br/>3. Знайдiть медичнi приналежностi.<br/>4. Надайте першу медичну допомогу пораненому робiтнику IDAP.<br/>5. Евакуюйте пораненого до Медичного пункту на базi або iншого польового шпиталю.<br/><br/><br/>Мiсцевий пункт постачання IDAP. Цивiльнi поряд говорять, що один з робiтникiв допомiжної служби все ще залишається в живих. Ваша робота - дiстатися туди та визволити його. Дехто з повстанцiв залишив зону та забрав з собою деяке медичне устаткування. Вам треба вiдстежити їх та повернути медичне обладнання.<br/><br/>Оглядайте тiла загиблих на мiсцi щоб дiзнатись про розташування повстанцiв.<br/><br/>Цiлi не точно позначенi на мапi']),
 		'Допомога IDAP',
 		'Допомога IDAP'
 	],
@@ -417,7 +417,7 @@ private _uncertainPosition = [
 	'Help',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['SM_IDAP_BRIEF',['Другорядна місія','Врятувати медичного працівника IDAP']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['SM_IDAP_BRIEF',['Другорядна мiсiя','Врятувати медичного працiвника IDAP']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 for '_x' from 0 to 1 step 0 do {
 	sleep 3;
 	if (
@@ -526,7 +526,7 @@ private _sounds = [
 private _unitStabilised = FALSE;
 private _aidMarker = '';
 _aidMarker = createMarker [(format ['QS_marker_aid_%1',(str (random 10e3))]),[0,0,0]];
-_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Другорядна місія: Медичний працівник IDAP']);
+_aidMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Другорядна мiсiя: Медичний працiвник IDAP']);
 _aidMarker setMarkerPos (getPosATL _recoverableUnit);
 _aidMarker setMarkerShape 'ICON';
 _aidMarker setMarkerSize [0.5,0.5];
@@ -544,12 +544,12 @@ for '_x' from 0 to 1 step 0 do {
 		};
 	};
 	if (_taskState isEqualTo 'SUCCEEDED') exitWith {
-		['SM_IDAP_BRIEF',['Другорядна місія','Місію виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['SM_IDAP_BRIEF',['Другорядна мiсiя','Мiсiю виконано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		sleep 5;
 		[1,[0,0,0]] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
 	if (_taskState isEqualTo 'FAILED') exitWith {
-		['SM_IDAP_BRIEF',['Другорядна місія','Місію провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['SM_IDAP_BRIEF',['Другорядна мiсiя','Мiсiю провалено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		sleep 5;
 		[0,[0,0,0]] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
@@ -587,7 +587,7 @@ for '_x' from 0 to 1 step 0 do {
 			missionNamespace setVariable ['QS_sidemission_building',_house,FALSE];
 			_housePosition = position _house;
 			_houseMarker = createMarker [(format ['QS_marker_house_%1',(str (random 10e3))]),[0,0,0]];
-			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Додаткова місія: Знайдіть медичне обладнання']);
+			_houseMarker setMarkerText (format ['%1 %2',(toString [32,32,32]),'Додаткова мiсiя: Знайдiть медичне обладнання']);
 			_houseMarker setMarkerAlpha 0;
 			_houseMarker setMarkerPos _housePosition;
 			_houseMarker setMarkerShape 'ICON';
@@ -596,7 +596,7 @@ for '_x' from 0 to 1 step 0 do {
 			_houseMarker setMarkerType 'mil_triangle';
 			_houseMarker setMarkerAlpha 1;
 
-			['SM_IDAP_UPDATE',['Оновлення другорядної місії','Знайти медичне обладнання']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['SM_IDAP_UPDATE',['Оновлення другорядної мiсiї','Знайти медичне обладнання']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 			_truckPos = [_housePosition,10,25,5,0,0.5,0] call _fn_findSafePos;
 			if ((_truckPos distance2D _housePosition) < 30) then {
@@ -672,7 +672,7 @@ for '_x' from 0 to 1 step 0 do {
 								50 cutText ['Медичне обладнання не знайдено.  Продовжуй пошуки, солдат!','PLAIN DOWN',0.75];
 							}
 						] remoteExec ['call',(allPlayers select {((_x distance2D _housePosition) < 300)}),FALSE];
-						['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медичне обладнання не знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+						['SM_IDAP_UPDATE',['Оновлення другорядної мiсiї','Медичне обладнання не знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 
 						_findNewLocation = TRUE;
 						_monitorScene = FALSE;
@@ -691,7 +691,7 @@ for '_x' from 0 to 1 step 0 do {
 
 							if (!(_suppliesFound)) then {
 								_suppliesFound = TRUE;
-								['SM_IDAP_UPDATE',['Оновлення другорядної місії','Медичне обладнання знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+								['SM_IDAP_UPDATE',['Оновлення другорядної мiсiї','Медичне обладнання знайдено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 								[
 									[],
 									{
@@ -759,7 +759,7 @@ for '_x' from 0 to 1 step 0 do {
 								_x setMarkerAlpha 0;
 							} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
 							['QS_TASK_SM_IDAP_1'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
-							['SM_IDAP_UPDATE',['Оновлення другорядної місії','Стабілізувати медичного працівника']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+							['SM_IDAP_UPDATE',['Оновлення другорядної мiсiї','Стабiлiзувати медичного працiвника']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 							_sceneType = 1;
 							deleteMarker _aidMarker;
 							deleteVehicle _crate;
@@ -771,9 +771,9 @@ for '_x' from 0 to 1 step 0 do {
 								_medevacTaskID,
 								TRUE,
 								[
-									'Гуманітарного працівника стабілізовано. Доставте його до польового шпиталю як найшвидше щоб завершити місію!',
-									'Медична Евакуація',
-									'Медична Евакуація'
+									'Гуманiтарного працiвника стабiлiзовано. Доставте його до польового шпиталю як найшвидше щоб завершити мiсiю!',
+									'Медична Евакуацiя',
+									'Медична Евакуацiя'
 								],
 								[_recoverableUnit,TRUE],
 								'CREATED',
@@ -887,11 +887,11 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (_crateSpawned) then {
 		if (!alive _crate) then {
-			[[WEST,'BLU'],'Медичне обладнання знищено, місію провалено!'] remoteExec ['sideChat',-2,FALSE];
+			[[WEST,'BLU'],'Медичне обладнання знищено, мiсiю провалено!'] remoteExec ['sideChat',-2,FALSE];
 			_taskState = 'FAILED';
 		};
 		if (serverTime > _timeoutFailsafe) then {
-			[[WEST,'BLU'],'Місію провалено, занадто довго!'] remoteExec ['sideChat',-2,FALSE];
+			[[WEST,'BLU'],'Мiсiю провалено, занадто довго!'] remoteExec ['sideChat',-2,FALSE];
 			_taskState = 'FAILED';
 		};
 	};

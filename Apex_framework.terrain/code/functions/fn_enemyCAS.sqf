@@ -192,7 +192,7 @@ _jetPilot addEventHandler [
 			params ['_jet','_killer'];
 			_jet removeAllEventHandlers 'Hit';
 			if (!isNull _killer) then {
-				['EnemyJetDown',['Ворожий літак збито!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['EnemyJetDown',['Ворожий лiтак збито!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			};
 		}
 	],
@@ -258,7 +258,7 @@ _grp setSpeedMode 'FULL';
 [9,EAST,_grp,(leader _grp),_jetActual] call (missionNamespace getVariable 'QS_fnc_AIGetKnownEnemies');
 if (!((toLower _jetSelect) in ['o_plane_fighter_02_stealth_f'])) then {
 	if (!(missionNamespace getVariable ['QS_defendActive',FALSE])) then {
-		['EnemyJet',['Наближається ворожий літак!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['EnemyJet',['Наближається ворожий лiтак!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	};
 } else {
 	if ((random 1) > 0.8) then {

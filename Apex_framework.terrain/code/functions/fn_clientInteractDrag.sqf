@@ -21,10 +21,10 @@ if (
 	((_t isKindOf 'StaticWeapon') && (!(((crew _t) findIf {(alive _x)}) isEqualTo -1)))
 ) exitWith {};
 if (_t getVariable ['QS_interaction_disabled',FALSE]) exitWith {
-	50 cutText ['Взаємодію з цим об’єктом вимкнено','PLAIN',0.3];
+	50 cutText ['Взаємодiю з цим об’єктом вимкнено','PLAIN',0.3];
 };
 if (_t getVariable ['QS_unit_needsStabilise',FALSE]) exitWith {
-	50 cutText ['Одиниця потребує стабілізації','PLAIN',0.3];
+	50 cutText ['Одиниця потребує стабiлiзацiї','PLAIN',0.3];
 };
 disableUserInput TRUE;
 [0.5] spawn (missionNamespace getVariable 'QS_fnc_clientDisableUserInput');
@@ -54,6 +54,6 @@ _text = format ['Перетягування %1',(_t getVariable ['QS_ST_customDN
 50 cutText [_text,'PLAIN DOWN',0.75];
 if ((uiNamespace getVariable ['QS_dragStuckMsg',-1]) isEqualTo -1) then {
 	uiNamespace setVariable ['QS_dragStuckMsg',0];
-	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,10,-1,'Застрягли ноги? Натисніть [C] або двічі [C], або [W]+[S]',[],-1,TRUE,'Help',TRUE];
+	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,10,-1,'Застрягли ноги? Натиснiть [C] або двiчi [C], або [W]+[S]',[],-1,TRUE,'Help',TRUE];
 };
 TRUE;

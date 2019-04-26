@@ -34,11 +34,11 @@ if (((_playerPos distance (markerPos 'QS_marker_aoMarker')) < 1000) || {((_playe
 } count (missionNamespace getVariable 'QS_sub_actions');
 missionNamespace setVariable ['QS_sub_actions',[],FALSE];
 if (_type isEqualTo 2) then {
-	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Рапорт про інцидент не було недіслано.',[],(serverTime + 15),TRUE,'ROBOCOP',FALSE];
+	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7.5,-1,'Рапорт про iнцидент не було недiслано.',[],(serverTime + 15),TRUE,'ROBOCOP',FALSE];
 	[41,[0,_uid,_causedBy,_nameCausedBy,player,_val,TRUE]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 };
 if (_type isEqualTo 1) then {
-	_text = format ['Рапорт про порушення було зформовано та персонал сервера повідомлено. Дякуємо за Вашу допомогу. Ви на сервері:<br/><br/>%1',serverName];
+	_text = format ['Рапорт про порушення було зформовано та персонал сервера повiдомлено. Дякуємо за Вашу допомогу. Ви на серверi:<br/><br/>%1',serverName];
 	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,10,-1,_text,[],(serverTime + 20),TRUE,'ROBOCOP',TRUE];
 	[41,[1,_uid,_causedBy,_nameCausedBy,player,_val,TRUE]] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 };

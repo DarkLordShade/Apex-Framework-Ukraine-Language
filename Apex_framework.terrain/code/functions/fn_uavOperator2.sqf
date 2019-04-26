@@ -200,7 +200,7 @@ _uavInitCodeGeneric = {
 	_grp setVariable ['QS_HComm_grp',FALSE,TRUE];
 	if (_uavEntity isKindOf 'Plane') then {
 		params ['','_loiterPos'];
-		_text = format ['%1 доступний в квадраті %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _uavEntity) >> 'displayName')),(mapGridPosition _uavEntity),worldName];
+		_text = format ['%1 доступний в квадратi %2',(getText (configFile >> 'CfgVehicles' >> (typeOf _uavEntity) >> 'displayName')),(mapGridPosition _uavEntity),worldName];
 		(missionNamespace getVariable 'QS_managed_hints') pushBack [5,FALSE,7,-1,_text,[],-1];
 		_uavEntity setVariable ['QS_ropeAttached',FALSE,TRUE];
 		_uavEntity enableRopeAttach TRUE;

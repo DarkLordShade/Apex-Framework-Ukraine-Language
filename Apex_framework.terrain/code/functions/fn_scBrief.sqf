@@ -33,20 +33,20 @@ if (_type isEqualTo 0) exitWith {
 			{
 				playSound 'QS_SC_outro_lose';
 				if (!isStreamFriendlyUIEnabled) then {
-					_text = parseText format ["<t align='center' size='2'>Місію провалено</t><br/><br/><img size='7' image='%1'/><br/><br/>Вороги перемогли нас, солдати! Готуйтеся до нового бою!",'\a3\Data_f_exp\Flags\flag_viper_co.paa'];
+					_text = parseText format ["<t align='center' size='2'>Мiсiю провалено</t><br/><br/><img size='7' image='%1'/><br/><br/>Вороги перемогли нас, солдати! Готуйтеся до нового бою!",'\a3\Data_f_exp\Flags\flag_viper_co.paa'];
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [2,FALSE,7.5,-1,_text,[],-1];
 				};
 			}
 		] remoteExec ['spawn',-2,FALSE];
 	} else {
 		//comment 'Mission complete!';
-		['SC_EXIT_GOOD',['','Місію завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['SC_EXIT_GOOD',['','Мiсiю завершено!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		[
 			[],
 			{
 				playSound 'QS_SC_outro_win';
 				if (!isStreamFriendlyUIEnabled) then {
-					_text = parseText format ["<t align='center' size='2'>Місію завершено</t><br/><br/><img size='7' image='%1'/><br/><br/>Ми перемогли їх, солдати! Готуйтеся до нового бою!",(missionNamespace getVariable ['QS_missionConfig_textures_defaultFlag','a3\data_f\flags\flag_nato_co.paa'])];
+					_text = parseText format ["<t align='center' size='2'>Мiсiю завершено</t><br/><br/><img size='7' image='%1'/><br/><br/>Ми перемогли їх, солдати! Готуйтеся до нового бою!",(missionNamespace getVariable ['QS_missionConfig_textures_defaultFlag','a3\data_f\flags\flag_nato_co.paa'])];
 					(missionNamespace getVariable 'QS_managed_hints') pushBack [2,FALSE,7.5,-1,_text,[],-1];
 				};
 			}
@@ -105,6 +105,6 @@ if (_type isEqualTo 1) exitWith {
 		} forEach (missionNamespace getVariable 'QS_virtualSectors_siteMarkers');
 	};
 	//comment 'Communicate here';
-	['SC_INIT',['','Зачистити всі об’єкти!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+	['SC_INIT',['','Зачистити всi об’єкти!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 	missionNamespace setVariable ['QS_missionStatus_SC_canShow',TRUE,TRUE];
 };

@@ -18,7 +18,7 @@ if (isPlayer _u1) then {
 	if (((assignedVehicleRole _u1) select 0) in ['driver','Turret']) then {
 		if ((!(_u1 getUnitTrait 'QS_trait_pilot')) && (!(_u1 getUnitTrait 'QS_trait_fighterPilot'))) then {
 				_v enableCopilot FALSE;
-				['systemChat','Ви не пілот'] remoteExec ['QS_fnc_remoteExecCmd',_u1,FALSE];
+				['systemChat','Ви не пiлот'] remoteExec ['QS_fnc_remoteExecCmd',_u1,FALSE];
 				moveOut _u1;
 		};
 	};

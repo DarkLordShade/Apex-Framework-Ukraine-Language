@@ -47,7 +47,7 @@ if (!(_armor_vAnims isEqualTo [])) then {
 	};
 };
 if (_exitArmor) exitWith {
-	50 cutText ['Зніміть накладну броню щоб розгорнути маскувальну сітку','PLAIN DOWN',0.5];
+	50 cutText ['Знiмiть накладну броню щоб розгорнути маскувальну сiтку','PLAIN DOWN',0.5];
 };
 _onCancelled = {
 	params ['_t','_position'];
@@ -99,24 +99,24 @@ _onCompleted = {
 		};
 	};
 	if (_exitArmor) exitWith {
-		50 cutText ['Зніміть накладну броню щоб розгорнути маскувальну сітку','PLAIN DOWN',0.5];
+		50 cutText ['Знiмiть накладну броню щоб розгорнути маскувальну сiтку','PLAIN DOWN',0.5];
 	};
 	{
 		_vehicle animateSource [_x,_newPhase,TRUE];
 	} forEach _animationSources;
 	if (_newPhase isEqualTo 1) then {
-		50 cutText ['Маскувальну сітку розгорнуто','PLAIN DOWN',0.333];
+		50 cutText ['Маскувальну сiтку розгорнуто','PLAIN DOWN',0.333];
 	} else {
-		50 cutText ['Маскувальну сітку розгорнуто','PLAIN DOWN',0.333];
+		50 cutText ['Маскувальну сiтку розгорнуто','PLAIN DOWN',0.333];
 	};
 	missionNamespace setVariable ['QS_repairing_vehicle',FALSE,FALSE];
 };
 missionNamespace setVariable ['QS_repairing_vehicle',TRUE,FALSE];
 private _text = '';
 if (_newPhase isEqualTo 1) then {
-	_text = 'Розгортання маскувальної сітки';
+	_text = 'Розгортання маскувальної сiтки';
 } else {
-	_text = 'Згортання маскувальної сітки';
+	_text = 'Згортання маскувальної сiтки';
 };
 private _duration = 5;
 [

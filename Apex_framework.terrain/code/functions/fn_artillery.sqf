@@ -116,7 +116,7 @@ if (_type isEqualTo 0) exitWith {
 						{
 							_unit = _x;
 							if (alive _unit) then {
-								[[],{50 cutText ['Артилеія використала весь боєкомплект. Більше не можна користуватись, доки не буде завершено зону операції!','PLAIN DOWN',1];}] remoteExec ['call',_unit,FALSE];
+								[[],{50 cutText ['Артилеiя використала весь боєкомплект. Бiльше не можна користуватись, доки не буде завершено зону операцiї!','PLAIN DOWN',1];}] remoteExec ['call',_unit,FALSE];
 							};
 							moveOut _unit;
 						} count (crew (missionNamespace getVariable 'QS_arty'));

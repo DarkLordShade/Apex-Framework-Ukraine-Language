@@ -332,10 +332,10 @@ _QS_civKilled_EH = {
 			TRUE
 		];
 		if ((random 1) > 0.666) then {
-			_text = format ['%1 здійснив вбивство цивільного!',_name];
+			_text = format ['%1 здiйснив вбивство цивiльного!',_name];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		} else {
-			_text = format ['%1 вбив невідомого цивільного!',_name];
+			_text = format ['%1 вбив невiдомого цивiльного!',_name];
 			['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		};
 	};
@@ -1068,12 +1068,12 @@ _QS_fuzzyPos = [((_QS_buildingPosATL select 0) - 290) + (random 580),((_QS_build
 	TRUE,
 	[
 		'
-			Солдате, щоб виконати цю місію твоя команда повинна врятувати військовополоненого, що знаходиться десь в відміченій зоні.
-			Наш агент повідомляє, що його піддавали тортурам щоб отримати данію Тому він буде на в кращому стані, коли ви до нього дістанетесь.
-			Щоб врятувати військовополоненого та завершити місію, вам потрідно доставити його до Медичного пункту на базі або повантажте його до медичного транспорту (напр. HEMTT Medical) з медиком всередині.
-			Якщо він помре - місію буде провалено.
-			Оотримати точну позицію полоненого можуть допомогти місцеві жителі.
-			Взаємодія з полоненим та цивільними буде в вашому Меню взаємодії.
+			Солдате, щоб виконати цю мiсiю твоя команда повинна врятувати вiйськовополоненого, що знаходиться десь в вiдмiченiй зонi.
+			Наш агент повiдомляє, що його пiддавали тортурам щоб отримати данiю Тому вiн буде на в кращому станi, коли ви до нього дiстанетесь.
+			Щоб врятувати вiйськовополоненого та завершити мiсiю, вам потрiдно доставити його до Медичного пункту на базi або повантажте його до медичного транспорту (напр. HEMTT Medical) з медиком всерединi.
+			Якщо вiн помре - мiсiю буде провалено.
+			Оотримати точну позицiю полоненого можуть допомогти мiсцевi жителi.
+			Взаємодiя з полоненим та цивiльними буде в вашому Меню взаємодiї.
 		',
 		'Врятувати полоненого',
 		'Врятувати полоненого'
@@ -1119,7 +1119,7 @@ for '_x' from 0 to 1 step 0 do {
 		['QS_IA_TASK_SM_0',FALSE,-1] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 		missionNamespace setVariable ['QS_sideMission_POW_active',FALSE,TRUE];
 		missionNamespace setVariable ['QS_sideMissionUp',FALSE,TRUE];
-		['ST_MEDEVAC',['Місію полоненого провалено','Полонений помер!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Мiсiю полоненого провалено','Полонений помер!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_sideCircle' setMarkerSize [300,300];
 		{
 			_x setMarkerPos [-5000,-5000,0];
@@ -1136,7 +1136,7 @@ for '_x' from 0 to 1 step 0 do {
 		sleep 10;
 		_QS_missionAttempts = _QS_priorMissionStatistics_completions + (_QS_priorMissionStatistics_failures + 1);
 		_QS_missionSuccessRate = (_QS_priorMissionStatistics_completions / _QS_missionAttempts) * 100;
-		_text = parseText format ['Статистика врятувань полоненого: <br/>Спроб: %2<br/>Вдалих завершень: %1<br/>Значення вдалості: %3 відсотків',_QS_priorMissionStatistics_completions,_QS_missionAttempts,(round _QS_missionSuccessRate)];
+		_text = parseText format ['Статистика врятувань полоненого: <br/>Спроб: %2<br/>Вдалих завершень: %1<br/>Значення вдалостi: %3 вiдсоткiв',_QS_priorMissionStatistics_completions,_QS_missionAttempts,(round _QS_missionSuccessRate)];
 		['hint',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		sleep 15;
 		[0,_QS_buildingPosATL] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
@@ -1176,7 +1176,7 @@ for '_x' from 0 to 1 step 0 do {
 	if (_QS_missionComplete) exitWith {
 		['QS_IA_TASK_SM_0',FALSE,-1] call (missionNamespace getVariable 'QS_fnc_taskSetTimer');
 		missionNamespace setVariable ['QS_sideMission_POW_active',FALSE,TRUE];
-		['ST_MEDEVAC',['Місію полоненого завершено','Полоненого було врятовано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+		['ST_MEDEVAC',['Мiсiю полоненого завершено','Полоненого було врятовано!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 		'QS_marker_sideCircle' setMarkerSize [300,300];
 		{
 			_x setMarkerPos [-5000,-5000,0];
@@ -1194,7 +1194,7 @@ for '_x' from 0 to 1 step 0 do {
 		_QS_priorMissionStatistics_completions = _QS_priorMissionStatistics_completions + 1;
 		_QS_missionAttempts = (_QS_priorMissionStatistics_completions + 1) + _QS_priorMissionStatistics_failures;
 		_QS_missionSuccessRate = (_QS_priorMissionStatistics_completions / _QS_missionAttempts) * 100;
-		_text = parseText format ['Статистика врятувань полоненого:: <br/>Спроб: %2<br/>Вдалих завершень: %1<br/>Значення вдалості: %3 відсотків',_QS_priorMissionStatistics_completions,_QS_missionAttempts,(round _QS_missionSuccessRate)];
+		_text = parseText format ['Статистика врятувань полоненого:: <br/>Спроб: %2<br/>Вдалих завершень: %1<br/>Значення вдалостi: %3 вiдсоткiв',_QS_priorMissionStatistics_completions,_QS_missionAttempts,(round _QS_missionSuccessRate)];
 		['hint',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		//moveOut _QS_POW;	// https://feedback.bistudio.com/T128186
 		[90,_QS_POW,0] remoteExec ['QS_fnc_remoteExec',0,FALSE];
@@ -1233,7 +1233,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (_QS_enemyDetected) exitWith {};
 		} count _QS_enemyArray;
 		if (_QS_enemyDetected) then {
-			['ST_MEDEVAC',['Оновлення місії полоненого','Ворог виявив нашу присутність']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_MEDEVAC',['Оновлення мiсiї полоненого','Ворог виявив нашу присутнiсть']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			if (alive _QS_BADGUY) then {
 				if ((_QS_BADGUY distance _QS_POW) < 8) then {
 					_QS_dirTo = _QS_BADGUY getDir _QS_POW;
@@ -1296,7 +1296,7 @@ for '_x' from 0 to 1 step 0 do {
 				if (!(_QS_powRescued)) then {
 					/*/ Detonate explosives Vest /*/
 					_QS_POW setDamage 1;
-					['systemChat','CSAT вбив військовополоненого!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+					['systemChat','CSAT вбив вiйськовополоненого!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				};
 			};
 		};
@@ -1330,8 +1330,8 @@ for '_x' from 0 to 1 step 0 do {
 			{
 				_x setMarkerAlpha 0;
 			} count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-			['systemChat','Контакт з полоненим встановлено! Доставте його на базу до того, як він сплине кров’ю!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-			['ST_MEDEVAC',['Оновлення місії полоненого','Доставте полоненого на базу до того, як він сплине кров’ю']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['systemChat','Контакт з полоненим встановлено! Доставте його на базу до того, як вiн сплине кров’ю!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+			['ST_MEDEVAC',['Оновлення мiсiї полоненого','Доставте полоненого на базу до того, як вiн сплине кров’ю']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			if ((count (attachedObjects _QS_POW)) > 0) then {
 				{
 					missionNamespace setVariable [
@@ -1349,7 +1349,7 @@ for '_x' from 0 to 1 step 0 do {
 
 	if ((missionNamespace getVariable 'QS_sideMission_civsKilled') > 0) then {
 		if (!(_QS_civiliansUnhappy)) then {
-			['ST_MEDEVAC',['Оновлення місії полоненого','Цивільні не задоволені!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+			['ST_MEDEVAC',['Оновлення мiсiї полоненого','Цивiльнi не задоволенi!']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 			_QS_civiliansUnhappy = TRUE;
 			{
 				_QS_civ = _x;

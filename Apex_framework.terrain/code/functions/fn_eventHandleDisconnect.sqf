@@ -204,7 +204,7 @@ if (!isNil {_object getVariable 'QS_pilot_vehicleInfo'}) then {
 							0 = [
 								[_name],
 								{
-									50 cutText [(format ['Увага! Ваш пілот (%1) від’єднався, автопілот намагається доставити вас до найближчої бази, буль ласка зачекайте. Швидкий спуск увімкнено.',(_this select 0)]),'PLAIN DOWN',8];
+									50 cutText [(format ['Увага! Ваш пiлот (%1) вiд’єднався, автопiлот намагається доставити вас до найближчої бази, буль ласка зачекайте. Швидкий спуск увiмкнено.',(_this select 0)]),'PLAIN DOWN',8];
 								}
 							] remoteExec [
 								'call',
@@ -225,7 +225,7 @@ if (!isNil {_object getVariable 'QS_pilot_vehicleInfo'}) then {
 							[
 								[_name,(count (crew _vehicle)),(mapGridPosition _vehicle)],
 								{
-									50 cutText [(format ['Увага:Пілот (%1) від’єднався просто у повітрі з %2 пасажирами на борту в %3. Автопілот намагається доставити їх на найближчу базу.',(_this select 0),(_this select 1),(_this select 2)]),'PLAIN DOWN',5];
+									50 cutText [(format ['Увага:Пiлот (%1) вiд’єднався просто у повiтрi з %2 пасажирами на борту в %3. Автопiлот намагається доставити їх на найближчу базу.',(_this select 0),(_this select 1),(_this select 2)]),'PLAIN DOWN',5];
 								}
 							] remoteExec [
 								'call',

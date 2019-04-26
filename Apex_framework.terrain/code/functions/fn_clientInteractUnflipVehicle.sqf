@@ -18,12 +18,12 @@ _t = cursorTarget;
 _engies = (getPosATL _t) nearEntities [['Man'],10];
 _v = vehicle player;
 if ((!(unitIsUav _t)) && (!(((crew _t) findIf {(alive _x)}) isEqualTo -1))) exitWith {
-	50 cutText ['Команда в транспорті, перекидання не відбулося!','PLAIN DOWN',0.5];
+	50 cutText ['Команда в транспортi, перекидання не вiдбулося!','PLAIN DOWN',0.5];
 };
 if (((count _engies) < 2) && {(!((toLower (typeOf _v)) in ['b_apc_tracked_01_crv_f','b_t_apc_tracked_01_crv_f']))}) then {
 	if ((getMass _t) >= 10000) then {
 		_canUnflip = FALSE;
-		50 cutText ['Потрібен ще один гравець поруч щоб виконати перекидання цього транспорту, або використайте CRV-6e Bobcat APC','PLAIN DOWN',1];
+		50 cutText ['Потрiбен ще один гравець поруч щоб виконати перекидання цього транспорту, або використайте CRV-6e Bobcat APC','PLAIN DOWN',1];
 	};
 };
 if (!alive _t) exitWith {};

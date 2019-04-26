@@ -16,15 +16,15 @@
 						_x setMarkerAlpha 0;
 					} forEach (missionNamespace getVariable 'QS_virtualSectors_sub_2_markers');
 				};
-				['SC_SUB_COMPLETED',['','Радіовежу знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['SC_SUB_COMPLETED',['','Радiовежу знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				['QS_virtualSectors_sub_2_task'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 				if (!isNull _instigator) then {
 					if (isPlayer _instigator) then {
 						_name = name _instigator;
 						if ((random 1) > 0.5) then {
-							['sideChat',[WEST,'HQ'],(format ['%1 (%2) знищив радіовежу! Гарна робота солдат!',_name,(groupID (group _instigator))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+							['sideChat',[WEST,'HQ'],(format ['%1 (%2) знищив радiовежу! Гарна робота солдат!',_name,(groupID (group _instigator))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						} else {
-							['sideChat',[WEST,'HQ'],(format ['%1 (%2) звалив радіовежу! Гарна робота хлопці!',_name,(groupID (group _instigator))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+							['sideChat',[WEST,'HQ'],(format ['%1 (%2) звалив радiовежу! Гарна робота хлопцi!',_name,(groupID (group _instigator))])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 						};
 						if ((!(_instigator getUnitTrait 'uavhacker')) && (!(_instigator getUnitTrait 'QS_trait_pilot')) && (!(_instigator getUnitTrait 'QS_trait_fighterPilot'))) then {
 							(missionNamespace getVariable 'QS_leaderboards_session_queue') pushBack ['TOWER',(getPlayerUID _instigator),(name _instigator),1];
@@ -43,7 +43,7 @@
 						_x setMarkerAlpha 0;
 					} forEach (missionNamespace getVariable 'QS_virtualSectors_sub_2_markers');
 				};
-				['SC_SUB_COMPLETED',['','Радіовежу знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+				['SC_SUB_COMPLETED',['','Радiовежу знищено']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 				['QS_virtualSectors_sub_2_task'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 				if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 					private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];

@@ -46,7 +46,7 @@ _event = player addEventHandler [
 									_entity setVariable ['QS_unit_needsStabilise',FALSE,TRUE];
 								};
 							};
-							50 cutText ['Стабілізовано','PLAIN DOWN',0.25];
+							50 cutText ['Стабiлiзовано','PLAIN DOWN',0.25];
 						};
 					};
 				};

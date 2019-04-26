@@ -172,25 +172,25 @@ if (_type isEqualTo 1) then {
 			if (!isNull (missionNamespace getVariable 'QS_airdefense_laptop')) then {
 				_laptop = missionNamespace getVariable 'QS_airdefense_laptop';
 				_actionID = _laptop addAction [
-					'Призупинити побічні місії',
+					'Призупинити побiчнi мiсiї',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
 						if (!(missionNamespace getVariable 'QS_smSuspend')) then {
-							_result = ['Призупинити побічні місії','Побічні місії','Призупинити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+							_result = ['Призупинити побiчнi мiсiї','Побiчнi мiсiї','Призупинити','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',TRUE,TRUE];
-								50 cutText ['Другорядні місії відкладено','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Продовжити другорядні місії',(format ["<t size='3'>%1</t>",'Поновити другорядні місії'])];
-								['systemChat',(format ['%1 (персонал) відклав другорядні місіі',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								50 cutText ['Другоряднi мiсiї вiдкладено','PLAIN DOWN',0.5];
+								_actionTarget setUserActionText [_actionID,'Продовжити другоряднi мiсiї',(format ["<t size='3'>%1</t>",'Поновити другоряднi мiсiї'])];
+								['systemChat',(format ['%1 (персонал) вiдклав другоряднi мiсii',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						} else {
-							_result = ['Продовжити другорядні місії','Другорядні місії','Продовжити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+							_result = ['Продовжити другоряднi мiсiї','Другоряднi мiсiї','Продовжити','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 							if (_result) then {
 								missionNamespace setVariable ['QS_smSuspend',FALSE,TRUE];
-								50 cutText ['Призупинити другорядні місії','PLAIN DOWN',0.5];
-								_actionTarget setUserActionText [_actionID,'Призупинити другорядні місії',(format ["<t size='3'>%1</t>",'Призупинити другорядні місії'])];
-								['systemChat',(format ['%1 (персонал) призупинив другорядні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+								50 cutText ['Призупинити другоряднi мiсiї','PLAIN DOWN',0.5];
+								_actionTarget setUserActionText [_actionID,'Призупинити другоряднi мiсiї',(format ["<t size='3'>%1</t>",'Призупинити другоряднi мiсiї'])];
+								['systemChat',(format ['%1 (персонал) призупинив другоряднi мiсiї',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						};
 					},
@@ -205,7 +205,7 @@ if (_type isEqualTo 1) then {
 				];
 				_laptop setUserActionText [_actionID,((_laptop actionParams _actionID) select 0),(format ["<t size='3'>%1</t>",((_laptop actionParams _actionID) select 0)])];
 				_actionID2 = _laptop addAction [
-					'Призупинити основні місії',
+					'Призупинити основнi мiсiї',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
@@ -213,30 +213,30 @@ if (_type isEqualTo 1) then {
 						if (!((missionNamespace getVariable ['QS_missionConfig_aoType','']) isEqualTo 'NONE')) then {
 							if (!(missionNamespace getVariable ['QS_customAO_GT_active',FALSE])) then {
 								if (!(missionNamespace getVariable 'QS_aoSuspended')) then {
-									_result = ['Призупинити основні місії','Основні місії','Призупинити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Призупинити основнi мiсiї','Основнi мiсiї','Призупинити','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoSuspended',TRUE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
 										missionNamespace setVariable ['QS_forceDefend',-1,TRUE];
-										50 cutText ['Основні місії призупинено, зачекайте ...','PLAIN DOWN',0.5];
-										_actionTarget setUserActionText [_actionID,'Продовжити основні місії',(format ["<t size='3'>%1</t>",'Продовжити основні місії'])];
-										['systemChat',(format ['%1 (персонал) призупинив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+										50 cutText ['Основнi мiсiї призупинено, зачекайте ...','PLAIN DOWN',0.5];
+										_actionTarget setUserActionText [_actionID,'Продовжити основнi мiсiї',(format ["<t size='3'>%1</t>",'Продовжити основнi мiсiї'])];
+										['systemChat',(format ['%1 (персонал) призупинив основнi мiсiї',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								} else {
-									_result = ['Продовжити основні місії','Основні місії','Продовжити','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Продовжити основнi мiсiї','Основнi мiсiї','Продовжити','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoSuspended',FALSE,TRUE];
 										missionNamespace setVariable ['QS_aoCycleVar',FALSE,TRUE];
-										50 cutText ['Основні місії поновлено, зачекайте ...','PLAIN DOWN',0.5];
-										_actionTarget setUserActionText [_actionID,'Призупинити основні місії',(format ["<t size='3'>%1</t>",'Призупинити основні місії'])];
-										['systemChat',(format ['%1 (персонал) поновив основні місії',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+										50 cutText ['Основнi мiсiї поновлено, зачекайте ...','PLAIN DOWN',0.5];
+										_actionTarget setUserActionText [_actionID,'Призупинити основнi мiсiї',(format ["<t size='3'>%1</t>",'Призупинити основнi мiсiї'])];
+										['systemChat',(format ['%1 (персонал) поновив основнi мiсiї',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									};
 								};
 							} else {
-								50 cutText ['Не можна призупинити цю місію','PLAIN DOWN',0.5];
+								50 cutText ['Не можна призупинити цю мiсiю','PLAIN DOWN',0.5];
 							};
 						} else {
-							50 cutText ['Основні місії вимкнено в конфігурації сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
+							50 cutText ['Основнi мiсiї вимкнено в конфiгурацiї сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
 						};
 					},
 					[],
@@ -250,7 +250,7 @@ if (_type isEqualTo 1) then {
 				];
 				_laptop setUserActionText [_actionID2,((_laptop actionParams _actionID2) select 0),(format ["<t size='3'>%1</t>",((_laptop actionParams _actionID2) select 0)])];
 				_actionID3 = _laptop addAction [
-					'Основну місію в цикл',
+					'Основну мiсiю в цикл',
 					{
 						params ['_actionTarget','','_actionID',''];
 						private ['_result'];
@@ -261,22 +261,22 @@ if (_type isEqualTo 1) then {
 								};
 								player setVariable ['QS_client_aoCycleCooldown',(diag_tickTime + 60),FALSE];
 								if (!(missionNamespace getVariable ['QS_aoSuspended',FALSE])) then {
-									_result = ['Основну місію в цикл','Основні місії','Цикл','Відмінити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
+									_result = ['Основну мiсiю в цикл','Основнi мiсiї','Цикл','Вiдмiнити',(findDisplay 46),FALSE,FALSE] call (missionNamespace getVariable 'BIS_fnc_guiMessage');
 									if (_result) then {
 										missionNamespace setVariable ['QS_aoCycleVar',TRUE,TRUE];
-										['systemChat',(format ['%1 (staff) запустив основну місію в циклі',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-										50 cutText ['Основна місія зациклюється, зачекайте...','PLAIN DOWN',0.5];
+										['systemChat',(format ['%1 (staff) запустив основну мiсiю в циклi',profileName])] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+										50 cutText ['Основна мiсiя зациклюється, зачекайте...','PLAIN DOWN',0.5];
 									} else {
-										50 cutText ['Відміна спроби зациклювання','PLAIN DOWN',0.5];
+										50 cutText ['Вiдмiна спроби зациклювання','PLAIN DOWN',0.5];
 									};
 								} else {
-									50 cutText ['Основні місії призупинено, спроба зациклювання не вдалась','PLAIN DOWN',0.5];
+									50 cutText ['Основнi мiсiї призупинено, спроба зациклювання не вдалась','PLAIN DOWN',0.5];
 								};
 							} else {
-								50 cutText ['Не можна призупинити цю місію','PLAIN DOWN',0.5];
+								50 cutText ['Не можна призупинити цю мiсiю','PLAIN DOWN',0.5];
 							};
 						} else {
-							50 cutText ['Основні місії вимкнено в конфігурації сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
+							50 cutText ['Основнi мiсiї вимкнено в конфiгурацiї сервера, спроба виконання циклу не вдалась','PLAIN DOWN',0.5];
 						};
 					},
 					[],

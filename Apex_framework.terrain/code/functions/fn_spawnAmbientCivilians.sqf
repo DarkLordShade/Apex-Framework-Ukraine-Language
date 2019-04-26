@@ -147,8 +147,8 @@ if (_type isEqualTo 'FOOT') then {
 									if (!(missionNamespace getVariable ['QS_grid_civCasualties',FALSE])) then {
 										missionNamespace setVariable ['QS_grid_civCasualties',TRUE,TRUE];
 										if (isDedicated) then {
-											['GRID_IDAP_UPDATE',['Зона Операцій','Завдання провалено<br/>Без жертв серед цивільних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-											'QS_marker_grid_civState' setMarkerText (format ['%1Без жертв серед цивільних (провалено)',(toString [32,32,32])]);
+											['GRID_IDAP_UPDATE',['Зона Операцiй','Завдання провалено<br/>Без жертв серед цивiльних']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+											'QS_marker_grid_civState' setMarkerText (format ['%1Без жертв серед цивiльних (провалено)',(toString [32,32,32])]);
 											'QS_marker_grid_civState' setMarkerColor 'ColorRED';
 										} else {
 											[85] remoteExec ['QS_fnc_remoteExec',2,FALSE];
@@ -178,7 +178,7 @@ if (_type isEqualTo 'FOOT') then {
 						if (!isNull _instigator) then {
 							if (isPlayer _instigator) then {
 								_name = name _instigator;
-								_text = format ['%1 %2 цивільного!',_name,(selectRandom ['вбив','знищив','нейтралізував','ліквідував'])];
+								_text = format ['%1 %2 цивiльного!',_name,(selectRandom ['вбив','знищив','нейтралiзував','лiквiдував'])];
 								['systemChat',_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 							};
 						};

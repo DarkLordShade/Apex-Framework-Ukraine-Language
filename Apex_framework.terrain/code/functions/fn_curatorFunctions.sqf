@@ -399,9 +399,9 @@ if (_key isEqualTo 73) exitWith {
 			_unit setCaptive TRUE;
 			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'Unit set unconscious',[],-1,TRUE,'Curator',FALSE];
 		} else {
-			50 cutText ['Можна ставити лише одиниці без свідомості, створені Зевсом','PLAIN DOWN',0.333];
+			50 cutText ['Можна ставити лише одиницi без свiдомостi, створенi Зевсом','PLAIN DOWN',0.333];
 		};
 	} else {
-		50 cutText ['Не можна встановити цю одиницю без свідомості','PLAIN DOWN',0.333];
+		50 cutText ['Не можна встановити цю одиницю без свiдомостi','PLAIN DOWN',0.333];
 	};
 };

@@ -20,7 +20,7 @@ if (alive _obj) exitWith {};
 if (!(_obj isKindOf 'Man')) exitWith {};
 if ((!isNil {_obj getVariable 'QS_ears_remaining'}) && ((_obj getVariable 'QS_ears_remaining') < 1)) exitWith {};
 if ((!isNil {player getVariable 'QS_ears_collected'}) && (_obj in (player getVariable 'QS_ears_collected'))) exitWith {
-	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'З цього тіла вухо вже вилучено!',[],-1];
+	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,3,-1,'З цього тiла вухо вже вилучено!',[],-1];
 };
 if (isNil {player getVariable 'QS_ears_collected'}) then {
 	player setVariable ['QS_ears_collected',[],FALSE];

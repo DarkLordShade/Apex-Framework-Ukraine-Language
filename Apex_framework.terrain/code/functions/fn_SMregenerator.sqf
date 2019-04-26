@@ -218,12 +218,12 @@ _fuzzyPos = [((_spawnPosition select 0) - 500) + (random 1000),((_spawnPosition 
 	_x setMarkerPos _fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Додаткова місія: Ворожий Регенератор',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Додаткова мiсiя: Ворожий Регенератор',(toString [32,32,32])]);
 _task = [
 	'QS_IA_TASK_SM_0',
 	TRUE,
 	[
-		'Супротивник розгорнув високочастотний іонний пристрій, який активує технологію високого захисту у формі CSAT. Поки пристрій активний, противник може бути важче вбити.<br/><br/>Надішліть команду, щоб знищити ціль!',
+		'Супротивник розгорнув високочастотний iонний пристрiй, який активує технологiю високого захисту у формi CSAT. Поки пристрiй активний, противник може бути важче вбити.<br/><br/>Надiшлiть команду, щоб знищити цiль!',
 		'Регенератор',
 		'Регенератор'
 	],

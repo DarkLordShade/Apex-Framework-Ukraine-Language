@@ -36,7 +36,7 @@ if (missionNamespace getVariable ['QS_customAO_GT_active',FALSE]) then {
 								};
 								player setVehiclePosition [(markerPos 'QS_marker_GT_TP'),[],15,'NONE'];
 								openMap FALSE;
-								50 cutText [(format ['Вітаємо в %1',(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.5];
+								50 cutText [(format ['Вiтаємо в %1',(['Kavala','Georgetown'] select (worldName isEqualTo 'Tanoa'))]),'PLAIN DOWN',0.5];
 							} else {
 								50 cutText ['Не можна телепортуватися пораненим','PLAIN DOWN',0.5];
 							};

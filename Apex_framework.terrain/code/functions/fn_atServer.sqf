@@ -66,7 +66,7 @@ if (_type isEqualTo 1) then {
 		(missionNamespace getVariable 'QS_roboCop') set [_i,_a];
 		[nil,[_uid,_cid,_val,TRUE]] remoteExec ['QS_fnc_atClientMisc',_cid,FALSE];
 	};
-	_message = format ['ROBOCOP: %1 повідомлено',_nameCausedBy];
+	_message = format ['ROBOCOP: %1 повiдомлено',_nameCausedBy];
 	_QS_UID = ['ALL'] call (missionNamespace getVariable 'QS_fnc_whitelist');
 	private _arrayToSend = [];
 	{

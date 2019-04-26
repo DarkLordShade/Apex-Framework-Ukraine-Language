@@ -36,7 +36,7 @@ ____________________________________________________________________________/*/
 			0 spawn {
 				for '_x' from 0 to 4 step 1 do {
 					if (isNull (uiNamespace getVariable ['BIS_fnc_arsenal_display',displayNull])) exitWith {};
-					['showMessage',[(uiNamespace getVariable 'BIS_fnc_arsenal_display'),"Щоб додати амуніцію, оберыть вашу форму/жилет/рюкзак в панелі ліворуч та додайте амуніцію в панелі праворуч."]] call (missionNamespace getVariable 'BIS_fnc_arsenal');
+					['showMessage',[(uiNamespace getVariable 'BIS_fnc_arsenal_display'),"Щоб додати амунiцiю, оберыть вашу форму/жилет/рюкзак в панелi лiворуч та додайте амунiцiю в панелi праворуч."]] call (missionNamespace getVariable 'BIS_fnc_arsenal');
 					uiSleep 5;
 				};
 			};

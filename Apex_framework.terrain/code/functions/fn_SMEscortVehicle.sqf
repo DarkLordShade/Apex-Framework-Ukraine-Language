@@ -181,7 +181,7 @@ _vehicle addEventHandler [
 		params ['_vehicle','_position','_unit','_turret'];
 		if (_position == 'driver') then {
 			if (isPlayer _unit) then {
-				['vehicleChat',_vehicle,'Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
+				['vehicleChat',_vehicle,'Доставте транспорт до мiсця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit,FALSE];
 			};
 		};
 	}
@@ -198,12 +198,12 @@ _vehicle addEventHandler [
 		params ['_vehicle','_unit1','_unit2'];
 		if ('Driver' in (assignedVehicleRole _unit1)) then {
 			if (isPlayer _unit1) then {
-				['vehicleChat',_vehicle,'Місія: Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit1,FALSE];
+				['vehicleChat',_vehicle,'Мiсiя: Доставте транспорт до мiсця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit1,FALSE];
 			};
 		};
 		if ('Driver' in (assignedVehicleRole _unit2)) then {
 			if (isPlayer _unit2) then {
-				['vehicleChat',_vehicle,'Місія: Доставте транспорт до місця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit2,FALSE];
+				['vehicleChat',_vehicle,'Мiсiя: Доставте транспорт до мiсця призначення!'] remoteExec ['QS_fnc_remoteExecCmd',_unit2,FALSE];
 			};
 		};
 	}
@@ -302,7 +302,7 @@ _marker0 setMarkerShape 'Icon';
 _marker0 setMarkerType 'mil_dot';
 _marker0 setMarkerColor 'ColorGreen';
 _marker0 setMarkerAlpha 1;
-_marker0 setMarkerText (format ['%1Додаткова місія: Місце доставки вантажівки',(toString [32,32,32])]);
+_marker0 setMarkerText (format ['%1Додаткова мiсiя: Мiсце доставки вантажiвки',(toString [32,32,32])]);
 _marker0 setMarkerPos _destination;
 _distanceInFront_fixed = 250;
 _distanceInFront_random = 500;
@@ -330,9 +330,9 @@ _suppressTargets pushBack _suppressTarget;
 	'QS_IA_TASK_SM_ESCORT',
 	TRUE,
 	[
-		(format ['Отримайте транспортний засіб %1 (транспорт позначений на мапі).',_nearestVillage]),
-		'Додаткова місія: Супровід вантажівки',
-		'Додаткова місія: Супровід вантажівки'
+		(format ['Отримайте транспортний засiб %1 (транспорт позначений на мапi).',_nearestVillage]),
+		'Додаткова мiсiя: Супровiд вантажiвки',
+		'Додаткова мiсiя: Супровiд вантажiвки'
 	],
 	[_vehicle,TRUE],
 	'CREATED',
@@ -342,8 +342,8 @@ _suppressTargets pushBack _suppressTarget;
 	'Truck',
 	TRUE
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
-['NewSideMission',['Супроводити вантажівку']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-'QS_marker_sideMarker' setMarkerText (format ['%1Супровід вантажівки',(toString [32,32,32])]);
+['NewSideMission',['Супроводити вантажiвку']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+'QS_marker_sideMarker' setMarkerText (format ['%1Супровiд вантажiвки',(toString [32,32,32])]);
 waitUntil {
 	sleep 3;
 	(!alive _vehicle) ||
@@ -373,7 +373,7 @@ for '_x' from 0 to 1 step 0 do {
 							if ((_vehiclePos distance2D _startPosition) > _safezone_radius) then {
 								_timeOffRoad = _timeOffRoad + 1;
 								if (_timeOffRoad > 7) then {
-									['sideChat',[WEST,'BLU'],'Додаткова місія - Транспорт вражено міною!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+									['sideChat',[WEST,'BLU'],'Додаткова мiсiя - Транспорт вражено мiною!'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 									_hasHitLandmine = TRUE;
 								};
 							};
@@ -908,13 +908,13 @@ for '_x' from 0 to 1 step 0 do {
 	};
 	if (!alive _vehicle) exitWith {
 		//comment 'Mission fail';
-		['SM_TRUCK',['Другорядна місія','Місію з вантажівкою провалено!<br/>Вантажівку знищено']] remoteExec [_fuctionNotification,-2,FALSE];
+		['SM_TRUCK',['Другорядна мiсiя','Мiсiю з вантажiвкою провалено!<br/>Вантажiвку знищено']] remoteExec [_fuctionNotification,-2,FALSE];
 		sleep 5;
 		[0,_destination] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};
 	if ((_vehicle distance2D _destination) < 50) exitWith {
 		//comment 'Mission success';
-		['SM_TRUCK',['Другорядна місія','Місію з вантажівкою завершено!<br/>Вантажівка в точці призначення']] remoteExec [_fuctionNotification,-2,FALSE];
+		['SM_TRUCK',['Другорядна мiсiя','Мiсiю з вантажiвкою завершено!<br/>Вантажiвка в точцi призначення']] remoteExec [_fuctionNotification,-2,FALSE];
 		sleep 5;
 		[1,_destination] spawn (missionNamespace getVariable 'QS_fnc_smDebrief');
 	};

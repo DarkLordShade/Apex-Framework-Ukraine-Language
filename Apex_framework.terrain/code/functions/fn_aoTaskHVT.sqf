@@ -209,7 +209,7 @@ if (_state isEqualTo 1) then {
 						if (!isNull _killed) then {
 							if (!isNull _killer) then {
 								if (isPlayer _killer) then {
-									_text = format ['Завдання провалено! HVC загинув від рук %1!',(name _killer)];
+									_text = format ['Завдання провалено! HVC загинув вiд рук %1!',(name _killer)];
 									['sideChat',[WEST,'HQ'],_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 								};
 							};
@@ -230,7 +230,7 @@ if (_state isEqualTo 1) then {
 					'QS_IA_TASK_AO_3',
 					TRUE,
 					[
-						'В розвід данних вказано пріоритетну ціль в області. Рухайтесь туди та заарештуйте його!',
+						'В розвiд данних вказано прiоритетну цiль в областi. Рухайтесь туди та заарештуйте його!',
 						'Арешт HVC',
 						'Арешт HVC'
 					],
@@ -296,7 +296,7 @@ if (_state isEqualTo 2) then {
 	if (missionNamespace getVariable ['QS_aoSmallTask_Arrested',FALSE]) then {
 		//comment 'Mission success';
 		['ST_HVT',['High Value Target','HVC заарештовано']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
-		['sideChat',[WEST,'HQ'],'Доставити HVC на базу та помістити його до вязниці'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
+		['sideChat',[WEST,'HQ'],'Доставити HVC на базу та помiстити його до вязницi'] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 		['QS_IA_TASK_AO_3'] call (missionNamespace getVariable 'BIS_fnc_deleteTask');
 		if (missionNamespace getVariable ['QS_virtualSectors_active',FALSE]) then {
 			private ['_QS_virtualSectors_scoreSides','_scoreEast','_scoreToRemove'];

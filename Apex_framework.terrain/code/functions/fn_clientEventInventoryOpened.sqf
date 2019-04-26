@@ -127,7 +127,7 @@ if (!isNil {_inventory getVariable 'QS_arsenal_object'}) then {
 				['Open',TRUE] call (missionNamespace getVariable 'BIS_fnc_arsenal');
 				if (isNil {player getVariable 'QS_arsenalAmmoPrompt'}) then {
 					player setVariable ['QS_arsenalAmmoPrompt',TRUE,FALSE];
-					50 cutText ['Щоб додати амуніцію відкрийте контейнер ЛІВОРУЧ (уніформа,розгрузка,рюкзак) та додайте амуніцію ПРАВОРУЧ.','PLAIN'];
+					50 cutText ['Щоб додати амунiцiю вiдкрийте контейнер ЛІВОРУЧ (унiформа,розгрузка,рюкзак) та додайте амунiцiю ПРАВОРУЧ.','PLAIN'];
 				};
 				_c = TRUE;
 			};
@@ -135,7 +135,7 @@ if (!isNil {_inventory getVariable 'QS_arsenal_object'}) then {
 	};
 };
 if (!isNil {_inventory getVariable 'QS_inventory_disabled'}) then {
-	50 cutText ['Цей інвентар вимкнено!','PLAIN'];
+	50 cutText ['Цей iнвентар вимкнено!','PLAIN'];
 	_c = TRUE;
 };
 if (_isBackpack isEqualTo 1) then {
