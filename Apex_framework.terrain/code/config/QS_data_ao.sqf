@@ -56,7 +56,7 @@ if (_worldName isEqualTo 'Altis') exitWith {
 		[
 			2,
 			[
-				['Радарна станiя Sofia',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
+				['Радарна станцiя Sofia',[25133,21835.6,0],'QS_fnc_aoCustomize',0,0,0,0,1,1,1],
 				['Research Facility',[20948.4,19258.8,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Molos',[27006.6,23292.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
 				['Nidasos Woodlands',[23926.2,22597.7,0],'QS_fnc_aoCustomize',0,1,0,0,1,1,1],
