@@ -143,11 +143,11 @@ if ((toLower (typeOf _vehicle)) in ['b_t_apc_tracked_01_crv_f','b_apc_tracked_01
 								if (_animPhase in [0,1]) then {
 									if (((player actionParams QS_action_plow) select 0) isEqualTo "Lower plow") then {
 										if (_animPhase isEqualTo 1) then {
-											player setUserActionText [QS_action_plow,"Raise plow","<t size=""3"">Пiдняти плуг</t>"];
+											player setUserActionText [QS_action_plow,"Пiдняти ковш","<t size=""3"">Пiдняти ковш</t>"];
 										};
 									} else {
 										if (_animPhase isEqualTo 0) then {
-											player setUserActionText [QS_action_plow,"Lower plow","<t size=""3"">Опустити плуг</t>"];
+											player setUserActionText [QS_action_plow,"Опустити ковш","<t size=""3"">Опустити ковш</t>"];
 										};
 									};
 									if (((vectorMagnitude (velocity _v)) * 3.6) < 1) then {

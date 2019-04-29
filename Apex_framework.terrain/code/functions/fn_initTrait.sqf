@@ -76,15 +76,15 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 				if (!isNull _casLaptop) then {
 					player setVariable ['QS_cas_lastRequestTime',diag_tickTime,FALSE];
 					_QS_casLaptop_action = _casLaptop addAction [
-						'Spawn plane',
+						'Заспаунити лiтак',
 						{
 							if (diag_tickTime > (player getVariable ['QS_cas_lastRequestTime',(diag_tickTime - 1)])) then {
 								[74,player] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 								player setVariable ['QS_cas_lastRequestTime',(diag_tickTime + 10),FALSE];
 								player playAction 'PutDown';
-								50 cutText ['Requesting plane ...','PLAIN DOWN',0.25];
+								50 cutText ['Запит на літак ...','PLAIN DOWN',0.25];
 							} else {
-								50 cutText ['Too soon since last request (10s cooldown) ...','PLAIN DOWN',0.25];
+								50 cutText ['Занадто швидко після останньоо запиту (10с зачекайте) ...','PLAIN DOWN',0.25];
 							};
 						},
 						[],
@@ -97,7 +97,7 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 						FALSE,
 						''
 					];
-					_casLaptop setUserActionText [_QS_casLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Spawn plane'])];
+					_casLaptop setUserActionText [_QS_casLaptop_action,'Заспаунити лiтак',(format ["<t size='3'>%1</t>",'Заспаунити лiтак'])];
 				};
 			};
 		};
@@ -105,15 +105,15 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 		if (!isNull _carrierLaptop) then {
 			player setVariable ['QS_cas_lastRequestTime',diag_tickTime,FALSE];
 			_QS_carrierLaptop_action = _carrierLaptop addAction [
-				'Spawn plane',
+				'Заспаунити лiтак',
 				{
 					if (diag_tickTime > (player getVariable ['QS_cas_lastRequestTime',(diag_tickTime - 1)])) then {
 						[74,player] remoteExec ['QS_fnc_remoteExec',2,FALSE];
 						player setVariable ['QS_cas_lastRequestTime',(diag_tickTime + 10),FALSE];
 						player playAction 'PutDown';
-						50 cutText ['Requesting plane ...','PLAIN DOWN',0.25];
+						50 cutText ['Запит на літак ...','PLAIN DOWN',0.25];
 					} else {
-						50 cutText ['Too soon since last request (10s cooldown) ...','PLAIN DOWN',0.25];
+						50 cutText ['Занадто швидко після останнього запиту (10с зачекайте) ...','PLAIN DOWN',0.25];
 					};
 				},
 				[],
@@ -126,7 +126,7 @@ if (_trait isEqualTo 'QS_trait_fighterPilot') then {
 				FALSE,
 				''
 			];
-			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Spawn plane',(format ["<t size='3'>%1</t>",'Заспавнити лiтак'])];
+			_carrierLaptop setUserActionText [_QS_carrierLaptop_action,'Заспаунити лiтак',(format ["<t size='3'>%1</t>",'Заспаунити лiтак'])];
 		};
 	} else {
 		if (!(_role in ['pilot','pilot_heli','pilot_plane','uav','pilot_cas','commander','jtac'])) then {

@@ -275,7 +275,7 @@ if (_type isEqualTo 'REQUEST_ROLE') exitWith {
 			};
 			if ((missionNamespace getVariable ['QS_missionConfig_CAS',2]) isEqualTo 3) then {
 				if ((player getVariable ['QS_client_casAllowance',0]) >= (missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])) then {
-					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Досягнуто лiмiту на кiлькiсть Пiлотiв Лiтака ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
+					(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Досягнуто лiмiту на кiлькiсть Лiтаків ( %1 )',(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])]),[],-1,TRUE,'Role Selection',FALSE];
 					_allowRequest = FALSE;
 				};
 			};
