@@ -794,7 +794,7 @@ if (_type isEqualTo 'INIT_ROLE') exitWith {
 	['SET_SAVED_LOADOUT',_role] call (missionNamespace getVariable 'QS_fnc_roles');
 	call (missionNamespace getVariable 'QS_fnc_respawnPilot');
 	uiNamespace setVariable ['QS_client_respawnCooldown',diag_tickTime + 30];
-	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Role changed to %1',(['GET_ROLE_DISPLAYNAME',_role] call (missionNamespace getVariable 'QS_fnc_roles'))]),[],-1,TRUE,'Role Selection',FALSE];
+	(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,(format ['Роль змінено на %1',(['GET_ROLE_DISPLAYNAME',_role] call (missionNamespace getVariable 'QS_fnc_roles'))]),[],-1,TRUE,'Role Selection',FALSE];
 };
 if (_type isEqualTo 'SET_DEFAULT_LOADOUT') exitWith {
 	params ['','_role',['_save',FALSE]];
@@ -804,13 +804,13 @@ if (_type isEqualTo 'SET_DEFAULT_LOADOUT') exitWith {
 		if (!((getUnitLoadout player) isEqualTo (((missionNamespace getVariable 'QS_roles_defaultLoadouts') # 0) # 1))) then {
 			player setUnitLoadout [(((missionNamespace getVariable 'QS_roles_defaultLoadouts') # 0) # 1),TRUE];
 		} else {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Loadout already applied',[],-1,TRUE,'Role Selection',FALSE];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Спорадження вже застосовано',[],-1,TRUE,'Role Selection',FALSE];
 		};
 	} else {
 		if (!((getUnitLoadout player) isEqualTo (((missionNamespace getVariable 'QS_roles_defaultLoadouts') # _loadout_index) # 1))) then {
 			player setUnitLoadout [(((missionNamespace getVariable 'QS_roles_defaultLoadouts') # _loadout_index) # 1),TRUE];
 		} else {
-			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Loadout already applied',[],-1,TRUE,'Role Selection',FALSE];
+			(missionNamespace getVariable 'QS_managed_hints') pushBack [5,TRUE,5,-1,'Спорядження вже застосовано',[],-1,TRUE,'Role Selection',FALSE];
 		};
 	};
 	if (_save) then {

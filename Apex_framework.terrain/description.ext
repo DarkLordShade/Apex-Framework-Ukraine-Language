@@ -2381,7 +2381,7 @@ class QS_RD_client_dialog_menu_main {
 		class QS_RD_client_dialog_menu_main_text_1: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1000;
-			text = "Client Menu";
+			text = "Меню гравця";
 			x = 0.374500 * safezoneW + safezoneX;
 			y = 0.525 * safezoneH + safezoneY;
 			w = 0.0955624 * safezoneW;
@@ -2861,7 +2861,7 @@ class QS_RD_client_dialog_menu_viewSettings {
 		class QS_RD_client_dialog_menu_view_button_5: QS_RD_dialog_RscButton {
 			moving = 1;
 			idc = 1824;
-			text = "Back";
+			text = "Назад";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.87 * safezoneH + safezoneY;
 			w = 0.13 * safezoneW;
@@ -3038,7 +3038,7 @@ class QS_RD_client_dialog_menu_options {
 		class QS_RD_client_dialog_menu_options_button_1: QS_RD_dialog_RscButton {
 			moving = 1;
 			idc = 1811;
-			text = "Back";
+			text = "Назад";
 			x = 0.38 * safezoneW + safezoneX;
 			y = 0.87 * safezoneH + safezoneY;
 			w = 0.13 * safezoneW;
@@ -3280,7 +3280,7 @@ class QS_RD_client_dialog_menu_supporters {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Назад',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuSupporters');";
+			onButtonClick = "['Back',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuSupporters');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3315,7 +3315,7 @@ class QS_RD_client_dialog_menu_vtexture {
 		class QS_RD_client_dialog_menu_vtexture_text_1: QS_RD_dialog_RscText {
 			moving = 1;
 			idc = 1802;
-			text = "Vehicle";
+			text = "Транспорт";
 			x = 0.374500 * safezoneW + safezoneX;
 			y = 0.525 * safezoneH + safezoneY;
 			w = 0.139 * safezoneW;
@@ -3333,7 +3333,7 @@ class QS_RD_client_dialog_menu_vtexture {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Обрати',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuVTexture');";
+			onButtonClick = "['Select',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuVTexture');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3346,7 +3346,7 @@ class QS_RD_client_dialog_menu_vtexture {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Назад',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuVTexture');";
+			onButtonClick = "['Back',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuVTexture');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3583,7 +3583,7 @@ class QS_RD_client_dialog_menu_insignia {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Обрати',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuInsignia');";
+			onButtonClick = "['Select',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuInsignia');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3596,7 +3596,7 @@ class QS_RD_client_dialog_menu_insignia {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Назад',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuInsignia');";
+			onButtonClick = "['Back',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuInsignia');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3659,7 +3659,7 @@ class QS_RD_client_dialog_menu_utexture {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Обрати',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuUTexture');";
+			onButtonClick = "['Select',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuUTexture');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3672,7 +3672,7 @@ class QS_RD_client_dialog_menu_utexture {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Назад',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuUTexture');";
+			onButtonClick = "['Back',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuUTexture');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};
@@ -3848,7 +3848,7 @@ class QS_RD_client_dialog_menu_hub {
 			w = 0.13 * safezoneW;
 			h = 0.0340016 * safezoneH;
 			sizeEx = 0.03;
-			onButtonClick = "['Назад',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuHub');";
+			onButtonClick = "['Back',(_this select 0)] call (missionNamespace getVariable 'QS_fnc_clientMenuHub');";
 			shadow = 0;
 			colorText[] = {1,1,1,1};
 		};

@@ -1062,7 +1062,7 @@ _QS_fuzzyPos = [((_QS_buildingPosATL select 0) - 290) + (random 580),((_QS_build
 	_x setMarkerPos _QS_fuzzyPos;
 	_x setMarkerAlpha 1;
 } count ['QS_marker_sideMarker','QS_marker_sideCircle'];
-'QS_marker_sideMarker' setMarkerText (format ['%1Rescue P.O.W.',(toString [32,32,32])]);
+'QS_marker_sideMarker' setMarkerText (format ['%1Врятувати полоненого',(toString [32,32,32])]);
 [
 	'QS_IA_TASK_SM_0',
 	TRUE,
@@ -1445,7 +1445,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (_QS_killTimer_started) then {
 			/*/
 			if (time > _QS_killTimerBroadcast_delay) then {
-				_QS_text = format ['CSAT will kill the P.O.W. in: %1',[((round(_QS_enemyDetected_endTime - time))/60)+0.01,"HH:MM"] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
+				_QS_text = format ['CSAT вбʼють полоненого через: %1',[((round(_QS_enemyDetected_endTime - time))/60)+0.01,"HH:MM"] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
 				['systemChat',_QS_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				_QS_killTimerBroadcast_delay = time + 25;
 			};
@@ -1480,7 +1480,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (_QS_powBleedout_timer_started) then {
 			/*/
 			if (time > _QS_bleedTimerBroadcast_delay) then {
-				_QS_text = format ['P.O.W. will bleed out in: %1',[((round(_QS_powBleedout_timer - time))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
+				_QS_text = format ['Полонений стече кровʼю через: %1',[((round(_QS_powBleedout_timer - time))/60)+0.01,'HH:MM'] call (missionNamespace getVariable 'BIS_fnc_timeToString')];
 				['systemChat',_QS_text] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
 				_QS_bleedTimerBroadcast_delay = time + 25;
 			};
