@@ -31,7 +31,13 @@ List of jets:
 	'i_plane_fighter_03_dynamicloadout_f',
 	'i_plane_fighter_03_cluster_f',
 	'i_plane_fighter_04_f',
-	'i_plane_fighter_04_cluster_f'
+	'i_plane_fighter_04_cluster_f',
+	'b_plane_cas_01_f',
+	'b_plane_fighter_01_f',
+	'b_plane_fighter_01_ftealth_f',
+	'o_plane_cas_02_f',
+	'o_t_vtol_02_infantry_f',
+	'o_t_vtol_02_vehicle_f'
 ___________________________________________________________________________/*/
 
 if (!(alive (missionNamespace getVariable 'QS_fighterPilot'))) exitWith {};
@@ -99,7 +105,7 @@ if (_missionConfig_CAS isEqualTo 3) then {
 	(missionNamespace getVariable 'QS_CAS_jetAllowance') set [_airIndex,[_uid,_aircraftPool]];
 	missionNamespace setVariable ['QS_CAS_jetAllowance_current',_aircraftPool,FALSE];
 	missionNamespace setVariable ['QS_casJet_destroyedAtBase',FALSE,FALSE];
-	['sideChat',[WEST,'AirBase'],(format ['Friendly CAS respawning ( %1 / %2 ) ...',_aircraftPool,(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])])] remoteExec ['QS_fnc_remoteExecCmd',_pilot,FALSE];
+	['sideChat',[WEST,'AirBase'],(format ['Спавниться літак ( %1 / %2 ) ...',_aircraftPool,(missionNamespace getVariable ['QS_CAS_jetAllowance_value',3])])] remoteExec ['QS_fnc_remoteExecCmd',_pilot,FALSE];
 	private ['_newCasType','_dir','_obstructions','_obstructionArray'];
 	//comment 'Now lets decide what will spawn';
 	private [
