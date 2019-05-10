@@ -259,7 +259,7 @@ _fuzzyPos = [((_spawnPosition select 0) - 300) + (random 600),((_spawnPosition s
 ] call (missionNamespace getVariable 'BIS_fnc_setTask');
 _briefing = parseText "<t align='center' size='2.2'>Прiоритетна цiль</t><br/><t size='1.5' color='#b60000'>Противоповiтряна Батарея</t><br/>____________________<br/>Сили OPFOR створюють протиповiтряну батарею, щоб заблокувати наш повiтряний транспорт! Ми визначили їхнє розташування за допомогою зображень з безпiлотника i позначили цiль на картi.<br/><br/>Прiоритетна цiль";
 //['hint',_briefing] remoteExec ['QS_fnc_remoteExecCmd',-2,FALSE];
-['NewPriorityTarget',['Anti-Air Battery']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
+['NewPriorityTarget',['Противоповiтряна Батарея']] remoteExec ['QS_fnc_showNotification',-2,FALSE];
 //comment 'Loop';
 missionNamespace setVariable ['QS_smSuccess',FALSE,TRUE];
 for '_x' from 0 to 1 step 0 do {

@@ -376,6 +376,7 @@ player createDiaryRecord [
 	]
 ];
 /*/
+
 /*/ Enable or change this if you like
 player createDiaryRecord [
 	'QS_diary_rules',

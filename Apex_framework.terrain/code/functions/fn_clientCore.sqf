@@ -3077,7 +3077,7 @@ for 'x' from 0 to 1 step 0 do {
 				) then {
 					if (!(_QS_interaction_sensorTarget)) then {
 						_QS_interaction_sensorTarget = _true;
-						_QS_action_sensorTarget_array set [0,(['Report target','Confirm target'] select (_QS_player getUnitTrait 'QS_trait_JTAC'))];
+						_QS_action_sensorTarget_array set [0,(['Повідомити про ціль','Підтвердити ціль'] select (_QS_player getUnitTrait 'QS_trait_JTAC'))];
 						_QS_action_sensorTarget = player addAction _QS_action_sensorTarget_array;
 						player setUserActionText [_QS_action_sensorTarget,((player actionParams _QS_action_sensorTarget) # 0),(format ["<t size='3'>%1</t>",((player actionParams _QS_action_sensorTarget) # 0)])];
 					};
