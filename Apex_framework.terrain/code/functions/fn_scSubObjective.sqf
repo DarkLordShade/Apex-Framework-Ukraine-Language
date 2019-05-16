@@ -529,7 +529,7 @@ if (_type isEqualTo 1) exitWith {
 			_marker2 setMarkerPos _uncertaintyPos;
 			(missionNamespace getVariable 'QS_virtualSectors_sub_3_markers') pushBack _marker2;
 			missionNamespace setVariable ['QS_virtualSectors_sd_position',_position,FALSE];
-			_description = 'Знищити склад противника.<br/><br/>Ворог використовує цей склад для поширення зброї. Цей склад дозволяють ворогам споряджати солдат ПТ i ПА.<br/><br/>Знищення цього складу зменшить кiлькiсть ПА i ПТ бiйцiв<br/><br/>Щоб убезпечити його - просто використай своє Скролл-меню на нижнiй частинi Taru всерединi укрiплення.';
+			_description = 'Знищити склад противника.<br/><br/>Ворог використовує цей склад для поширення зброї. Цей склад дозволяє ворогам споряджати солдат ПТ i ПП.<br/><br/>Знищення цього складу зменшить кiлькiсть ПП i ПТ бiйцiв<br/><br/>Щоб убезпечити його - просто використай своє Скролл-меню на нижнiй частинi Taru всерединi укрiплення.';
 			_title = 'Ворожий склад';
 			_tooltip = 'Ворожий склад';
 			_icon = 'rearm';
