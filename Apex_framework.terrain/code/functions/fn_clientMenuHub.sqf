@@ -22,10 +22,11 @@ if (_type isEqualTo 'onLoad') exitWith {
 	setMousePosition (uiNamespace getVariable ['QS_ui_mousePosition',getMousePosition]);
 
 	/*/======================= EDIT BELOW =======================/*/
-	_ctrlB1 = _display displayCtrl 1804;
+/*/	_ctrlB1 = _display displayCtrl 1804;
 	_ctrlB1 ctrlSetStructuredText (parseText (format ["<a href=%1>%2</a>",((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 0),((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 1)]));
 	_ctrlB1 ctrlSetToolTip ((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 2);
 	_ctrlB1 ctrlEnable TRUE;	//(!(((call (missionNamespace getVariable ['QS_missionConfig_commURL',{}])) select 0) isEqualTo ''));
+	/*/
 	_ctrlB2 = _display displayCtrl 1805;
 	_ctrlB2 ctrlSetStructuredText (parseText (format ["<a href=%1>%2</a>",((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 0),((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 1)]));
 	_ctrlB2 ctrlSetToolTip ((call (missionNamespace getVariable ['QS_missionConfig_commDS',{}])) select 2);
