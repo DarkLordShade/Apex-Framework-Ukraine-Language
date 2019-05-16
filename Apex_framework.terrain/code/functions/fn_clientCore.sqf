@@ -1714,7 +1714,7 @@ for 'x' from 0 to 1 step 0 do {
 				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlSetToolTip 'FPS, Час для перезапуску сервера (приблизно)';
 				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlSetText format ['FPS: %1 | Restart: %2h',_QS_fpsLastPull,([(0 max (estimatedEndServerTime - _serverTime) min 36000),'HH:MM'] call _fn_secondsToString)];
 				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetToolTip 'Рахунок, Рейтинг, Здоровʼя, Екіпіровка';
-				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetText format ['Рахунок: %1 | Рейтинг: %2 | Hp: %3 | Навантаження: %4/100',(score _QS_player),(rating _QS_player),_QS_clientHp,_QS_clientMass];
+				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetText format ['Рахунок: %1 | Рейтинг: %2 | Hp: %3 | Вага: %4/100',(score _QS_player),(rating _QS_player),_QS_clientHp,_QS_clientMass];
 				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlCommit 0;
 				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlCommit 0;
 			};

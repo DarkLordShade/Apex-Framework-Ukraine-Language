@@ -2414,7 +2414,7 @@ for '_x' from 0 to 1 step 0 do {
 					_module_fob_logistics_fuelServices = _false;
 					_module_fob_isFobActive = _true;
 					/*/ Communicate with players /*/
-					['FOB_INIT',['',(format ['Secure FOB %1',(([_module_fob_activeRegion] call (missionNamespace getVariable 'QS_data_fobs')) # 5)])]] remoteExec ['QS_fnc_showNotification',-2,_false];
+					['FOB_INIT',['',(format ['Безпечний FOB %1',(([_module_fob_activeRegion] call (missionNamespace getVariable 'QS_data_fobs')) # 5)])]] remoteExec ['QS_fnc_showNotification',-2,_false];
 				};
 			} else {
 				//comment 'RELEVANT FOB IS ALREADY CREATED, MANAGE IT HERE';
