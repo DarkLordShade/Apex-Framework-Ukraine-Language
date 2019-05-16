@@ -509,7 +509,7 @@ class Mission
 			dataType="Marker";
 			position[]={7065.7808,2.6600001,7426.397};
 			name="QS_marker_gitmo";
-			text="   Вʼязниця";
+			text="   В’язниця";
 			type="b_unknown";
 			colorName="ColorWEST";
 			alpha=0.5042358;

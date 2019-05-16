@@ -381,7 +381,7 @@ player createDiaryRecord [
 player createDiaryRecord [
 	'QS_diary_rules',
 	[
-		'Звʼязок',
+		'Зв’язок',
 		'
 		<br />1. Спам в радіоканалах не допустимий
 		<br />2. Ворожнеча в радіоканалах не допустима
