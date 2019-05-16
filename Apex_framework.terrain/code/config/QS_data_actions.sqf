@@ -3,11 +3,11 @@ File: QS_data_actions.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
 	27/03/2018 A3 1.82 by Quiksilver
-	
+
 Description:
 
 	Actions Text
@@ -29,7 +29,7 @@ ___________________________________________/*/
 	'Unload cargo',
 	'Вивантажити вантаж',
 	'Question civilian',
-	'Допитати цивiльного',
+	'Опитати цивільного',
 	'Drag',
 	'Тягти',
 	'Carry',
@@ -78,6 +78,7 @@ ___________________________________________/*/
 	'Безпека турелi',
 	'Collect ear',
 	'Забрати медальон',
+	'Забрати вухо',
 	'Collect gold tooth',
 	'Забрати золотий зуб',
 	'Turn on live feed',
@@ -143,13 +144,13 @@ ___________________________________________/*/
 	'Продовжити другоряднi мiсiї',
 	'Suspend primary missions',
 	'Призупинити основнi мiсiї',
-	'Resume primary missions',	
+	'Resume primary missions',
 	'Продовжити основнi мiсiї',
 	'Cycle primary mission',
 	'Основну мiсiю в цикл',
 	'0 - Close Menu',
 	'1 - (Target) Delete',
-	'2 - Spectate',			
+	'2 - Spectate',
 	'3 - Invincibility',
 	'4 - Show Pilots',
 	'5 - (Target) Repair',

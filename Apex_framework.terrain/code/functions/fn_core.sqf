@@ -1,10 +1,10 @@
 /*/
 File: fn_core.sqf
-Author: 
+Author:
 
 	Quiksilver
 
-Last modified: 
+Last modified:
 
 	13/01/2019 A3 1.88 by Quiksilver
 
@@ -766,7 +766,7 @@ _eastVehicles_delay = time + _eastVehicles_checkDelay;
 
 _QS_fnc_reveal = {
 	_grp = _this # 0;
-	_toReveal = _this # 1;	
+	_toReveal = _this # 1;
 	{
 		_grp reveal [_x,(2 + (random 2))];
 	} count _toReveal;
@@ -898,11 +898,11 @@ if (_QS_module_recruitableAI) then {
 	_QS_module_recruitableAI_array = missionNamespace getVariable 'QS_RD_recruitableAI_1';
 	_QS_module_recruitableAI_side = WEST;
 	if (_QS_worldName isEqualTo 'Tanoa') then {
-		_QS_module_recruitableAI_unitTypes = [	
+		_QS_module_recruitableAI_unitTypes = [
 			'B_CTRG_Soldier_AR_tna_F','B_CTRG_Soldier_LAT_tna_F','B_CTRG_Soldier_M_tna_F'
 		] call (missionNamespace getVariable 'QS_fnc_arrayShuffle');
 	} else {
-		_QS_module_recruitableAI_unitTypes = [	
+		_QS_module_recruitableAI_unitTypes = [
 			'B_Soldier_A_F','B_soldier_AR_F','B_Soldier_GL_F','B_soldier_M_F',
 			'B_Soldier_lite_F','B_Sharpshooter_F','B_soldier_AAR_F','B_G_Sharpshooter_F',
 			'B_G_soldier_LAT_F','B_G_Soldier_AR_F'
@@ -1139,13 +1139,13 @@ if (_QS_module_restart) then {
 	_QS_module_restart_realTimeStart = '';
 	_QS_module_restart_realTimeStart = _QS_ext_date callExtension '';
 	if (_QS_module_restart_realTimeStart isEqualTo '') then {
-		diag_log format ['***** RESTART SCHEDULE * Extension failed!!! %1 *****',_QS_module_restart_realTimeStart];	 
+		diag_log format ['***** RESTART SCHEDULE * Extension failed!!! %1 *****',_QS_module_restart_realTimeStart];
 		_QS_module_restart = FALSE;
 		breakTo '0';
 	};
 	_QS_module_restart_realTimeStart = parseSimpleArray _QS_module_restart_realTimeStart;
 	missionNamespace setVariable ['QS_system_realTimeStart',_QS_module_restart_realTimeStart,TRUE];
-	diag_log format ['***** RESTART SCHEDULE * %1 *****',_QS_module_restart_realTimeStart];	
+	diag_log format ['***** RESTART SCHEDULE * %1 *****',_QS_module_restart_realTimeStart];
 	_QS_module_restart_realTimeStart = (_QS_module_restart_realTimeStart select [2,3]);
 	_QS_module_restart_realTimeNow = _QS_module_restart_realTimeStart;
 	_QS_module_restart_hourCurrent = _QS_module_restart_realTimeNow # 2;
@@ -1333,7 +1333,7 @@ for '_x' from 0 to 1 step 0 do {
 									_mainMissionRegion = selectRandom _mainMissionRegionListProxy;
 									_mainMissionRegionIndex = _mainMissionRegionListProxy find _mainMissionRegion;
 									_mainMissionRegionListProxy deleteAt _mainMissionRegionIndex;
-									missionNamespace setVariable ['QS_activeRegion',(_mainMissionRegion # 0),_false];								
+									missionNamespace setVariable ['QS_activeRegion',(_mainMissionRegion # 0),_false];
 								};
 								_mainMissionRegion_aoList = (_mainMissionRegion # 1) call _fn_arrayShuffle;
 								for '_x' from 0 to (round(((count _mainMissionRegion_aoList) * 0.75) - 1)) step 1 do {
@@ -1348,7 +1348,7 @@ for '_x' from 0 to 1 step 0 do {
 							_mainMissionActive = _true;
 							_defendAO = _false;
 							missionNamespace setVariable ['QS_registeredPositions',[(markerPos 'QS_marker_module_fob')],_true];
-							_defendAOActive = _false;		
+							_defendAOActive = _false;
 							_QS_ao_EFB = _false;
 							_aoGraceTime = _timeNow + 60;
 							_QS_AOpos = _ao # 1;
@@ -1535,7 +1535,7 @@ for '_x' from 0 to 1 step 0 do {
 													[
 														[],
 														{
-															3 fadeMusic 0.666; 
+															3 fadeMusic 0.666;
 															playMusic 'LeadTrack04_F_Tacops';
 															private _endImage = missionNamespace getVariable ['QS_missionConfig_communityLogo',''];
 															if (_endImage isEqualTo '') then {
@@ -1573,7 +1573,7 @@ for '_x' from 0 to 1 step 0 do {
 				if ((missionNamespace getVariable 'QS_mission_aoType') isEqualTo 'CLASSIC') then {
 					if (([0] call (missionNamespace getVariable 'QS_fnc_aoSubObjectives')) || {(missionNamespace getVariable 'QS_aoCycleVar')}) then {
 						diag_log 'Main AO deactivating';
-						_mainMissionActive = _false;						
+						_mainMissionActive = _false;
 						missionNamespace setVariable ['QS_classic_AI_triggerDeinit',_true,([_false,((missionNamespace getVariable 'QS_headlessClients') # 0)] select (missionNamespace getVariable 'QS_HC_Active'))];
 						missionNamespace setVariable ['QS_classic_AI_active',_false,([_false,((missionNamespace getVariable 'QS_headlessClients') # 0)] select (missionNamespace getVariable 'QS_HC_Active'))];
 						if (missionNamespace getVariable 'QS_aoCycleVar') then {
@@ -1749,7 +1749,7 @@ for '_x' from 0 to 1 step 0 do {
 															};
 														};
 													} forEach _array;
-												
+
 												};
 											};
 										};
@@ -1788,7 +1788,7 @@ for '_x' from 0 to 1 step 0 do {
 							['QS_virtualSectors_sub_1_task'],
 							['QS_virtualSectors_sub_2_task'],
 							['QS_virtualSectors_sub_3_task']
-						];							
+						];
 						{
 							missionNamespace setVariable _x;
 						} forEach [
@@ -1826,7 +1826,7 @@ for '_x' from 0 to 1 step 0 do {
 					};
 
 					/*/===== HQ Marker color/*/
-					
+
 					if (_timeNow > _QS_marker_hqMarker_checkDelay) then {
 						if (!alive (missionNamespace getVariable 'QS_csatCommander')) then {
 							if ((markerColor 'QS_marker_hqMarker') isEqualTo 'ColorWEST') then {
@@ -1939,7 +1939,7 @@ for '_x' from 0 to 1 step 0 do {
 									'QS_marker_virtualSectors_mtr_0',
 									'QS_marker_virtualSectors_mtr_00'
 								];
-								missionNamespace setVariable ['QS_virtualSectors_aoMortars',[],_false];								
+								missionNamespace setVariable ['QS_virtualSectors_aoMortars',[],_false];
 							};
 						};
 						if (_timeNow > _avgPlayerCountCheckDelay) then {
@@ -2088,7 +2088,7 @@ for '_x' from 0 to 1 step 0 do {
 																};
 															};
 														} forEach _array;
-													
+
 													};
 												};
 											};
@@ -2347,7 +2347,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 		/*/===== AO Small Tasks/*/
-		
+
 		if (_QS_module_aoSmallTasks) then {
 			if ((_timeNow > _QS_module_aoSmallTasks_checkDelay) || {(!isNil 'QS_aoCycleSmallTask')}) then {
 				if ((_timeNow > 120) || {(!isNil 'QS_aoCycleSmallTask')}) then {
@@ -2384,9 +2384,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/Forward Operating Bases/*/
-	
+
 	if (_module_fob_enabled) then {
 		if (_timeNow > _module_fob_checkDelay) then {
 			if (!((missionNamespace getVariable 'QS_activeRegion') isEqualTo _module_fob_activeRegion)) then {
@@ -2435,7 +2435,7 @@ for '_x' from 0 to 1 step 0 do {
 											} else {
 												_module_fob_respawn_ticketsAdded = _x getVariable ['QS_medicalVehicle_reviveTickets',(getNumber (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'transportSoldier'))];
 											};
-											missionNamespace setVariable ['QS_module_fob_respawnTickets',((missionNamespace getVariable 'QS_module_fob_respawnTickets') + _module_fob_respawn_ticketsAdded),_true];										
+											missionNamespace setVariable ['QS_module_fob_respawnTickets',((missionNamespace getVariable 'QS_module_fob_respawnTickets') + _module_fob_respawn_ticketsAdded),_true];
 											_x setVariable ['QS_vehicle_isSuppliedFOB',_true,_true];
 											0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки вiдродження на FOB: %1 всього квиткiв: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
 											if (!isNil {_x getVariable 'QS_transporter'}) then {
@@ -2464,7 +2464,7 @@ for '_x' from 0 to 1 step 0 do {
 											_module_fob_respawn_ticketsAdded = 4;
 										} else {
 											_module_fob_respawn_ticketsAdded = _x getVariable ['QS_medicalVehicle_reviveTickets',(getNumber (configFile >> 'CfgVehicles' >> (typeOf _x) >> 'transportSoldier'))];
-										};									
+										};
 										missionNamespace setVariable ['QS_module_fob_respawnTickets',((missionNamespace getVariable 'QS_module_fob_respawnTickets') + _module_fob_respawn_ticketsAdded),_true];
 										_x setVariable ['QS_vehicle_isSuppliedFOB',_true,_true];
 										0 = ['sideChat',[_west,'HQ'],(format ['Додано квитки вiдродження на FOB: %1 всього квиткiв: %2',_module_fob_respawn_ticketsAdded,(missionNamespace getVariable 'QS_module_fob_respawnTickets')])] remoteExec ['QS_fnc_remoteExecCmd',-2,_false];
@@ -2482,7 +2482,7 @@ for '_x' from 0 to 1 step 0 do {
 									};
 								};
 							};
-						} count _module_fob_nearEntities;					
+						} count _module_fob_nearEntities;
 					};
 				};
 				if (!(_module_fob_logistics_vehicleRespawnEnabled)) then {
@@ -2501,7 +2501,7 @@ for '_x' from 0 to 1 step 0 do {
 								};
 							};
 						};
-					} count _module_fob_nearEntities;					
+					} count _module_fob_nearEntities;
 				};
 				if (!(_module_fob_logistics_repairServices)) then {
 					{
@@ -2517,16 +2517,16 @@ for '_x' from 0 to 1 step 0 do {
 										'QS_marker_veh_fieldservice_01' setMarkerPos (([_module_fob_activeRegion] call (missionNamespace getVariable 'QS_data_fobs')) # 4);
 										'QS_marker_veh_fieldservice_04' setMarkerAlpha 0.5;
 										'QS_marker_veh_fieldservice_01' setMarkerAlpha 0.5;
-										0 = ['FOB_UPDATE',['','Vehicle Service online']] remoteExec ['QS_fnc_showNotification',-2,_false];
+										0 = ['FOB_UPDATE',['','Транспортний сервiс онлайн']] remoteExec ['QS_fnc_showNotification',-2,_false];
 									};
 								};
 							};
 						};
 					} count _module_fob_nearEntities;
 				} else {
-				
+
 					/* Increase supply further? */
-				
+
 				};
 				if (!(_module_fob_logistics_ammoServices)) then {
 					{
@@ -2562,7 +2562,7 @@ for '_x' from 0 to 1 step 0 do {
 											'QS_marker_veh_fieldservice_01' setMarkerPos (([_module_fob_activeRegion] call (missionNamespace getVariable 'QS_data_fobs')) # 4);
 											'QS_marker_veh_fieldservice_04' setMarkerAlpha 0.5;
 											'QS_marker_veh_fieldservice_01' setMarkerAlpha 0.5;
-											0 = ['FOB_UPDATE',['','Rearm Service online']] remoteExec ['QS_fnc_showNotification',-2,_false];
+											0 = ['FOB_UPDATE',['','Сервіс Переспорядження онлайн']] remoteExec ['QS_fnc_showNotification',-2,_false];
 											if (!isNil {_x getVariable 'QS_transporter'}) then {
 												if (alive ((_x getVariable 'QS_transporter') # 1)) then {
 													0 = (missionNamespace getVariable 'QS_leaderboards_session_queue') pushBack ['TRANSPORT',((_x getVariable 'QS_transporter') # 2),((_x getVariable 'QS_transporter') # 0),4];
@@ -2687,7 +2687,7 @@ for '_x' from 0 to 1 step 0 do {
 									'QS_marker_veh_fieldservice_01' setMarkerPos (([_module_fob_activeRegion] call (missionNamespace getVariable 'QS_data_fobs')) # 4);
 									'QS_marker_veh_fieldservice_04' setMarkerAlpha 0.5;
 									'QS_marker_veh_fieldservice_01' setMarkerAlpha 0.5;
-									0 = ['FOB_UPDATE',['','Vehicle Service online']] remoteExec ['QS_fnc_showNotification',-2,_false];
+									0 = ['FOB_UPDATE',['','Транспортний сервiс онлайн']] remoteExec ['QS_fnc_showNotification',-2,_false];
 									if (!isNil {_x getVariable 'QS_transporter'}) then {
 										if (alive ((_x getVariable 'QS_transporter') # 1)) then {
 											0 = (missionNamespace getVariable 'QS_leaderboards_session_queue') pushBack ['TRANSPORT',((_x getVariable 'QS_transporter') # 2),((_x getVariable 'QS_transporter') # 0),4];
@@ -2702,9 +2702,9 @@ for '_x' from 0 to 1 step 0 do {
 						};
 					} count _module_fob_nearEntities;
 				} else {
-				
+
 					/*/ Increase supply further? /*/
-				
+
 				};
 			};
 			if ((missionNamespace getVariable 'QS_module_fob_side') isEqualTo sideUnknown) then {
@@ -2745,10 +2745,10 @@ for '_x' from 0 to 1 step 0 do {
 								['QS_allowedHUD_CIVILIAN',_QS_module_fob_sideShownHUD_radarOFF,_true]
 							];
 							[29,_west] remoteExec ['QS_fnc_remoteExec',-2,_false];
-						};			
+						};
 					} else {
 						if ((missionNamespace getVariable 'QS_module_fob_side') isEqualTo RESISTANCE) then {
-							if (!((missionNamespace getVariable 'QS_allowedHUD_RESISTANCE') isEqualTo _QS_module_fob_sideShownHUD_radarON)) then {							
+							if (!((missionNamespace getVariable 'QS_allowedHUD_RESISTANCE') isEqualTo _QS_module_fob_sideShownHUD_radarON)) then {
 								{
 									missionNamespace setVariable _x;
 								} forEach [
@@ -2821,7 +2821,7 @@ for '_x' from 0 to 1 step 0 do {
 							if (([(markerPos 'QS_marker_module_fob'),100,[_west],_QS_module_fob_allUnits,1] call _fn_serverDetector) < 1) then {
 								[(missionNamespace getVariable 'QS_module_fob_flag'),_east,'',_false,objNull,1] call _fn_setFlag;
 							};
-						};					
+						};
 						_module_fob_assault_checkDelay = _timeNow + _module_fob_assault_delay;
 					};
 				};
@@ -2860,7 +2860,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/===================================== SECONDARY MISSION/*/
 
 	if (_sideMissions) then {
@@ -2892,7 +2892,7 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/===== CAS module/*/
 
 	if (_QS_module_cas_respawn) then {
@@ -2929,7 +2929,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_cas_respawn_checkDelay = _timeNow + 15;
 		};
 	};
-	
+
 	if (_HVT_targeting_system) then {
 		if (_timeNow > _HVT_checkDelay) then {
 			_HVT_isTargeting = _false;
@@ -3023,7 +3023,7 @@ for '_x' from 0 to 1 step 0 do {
 									deleteVehicle _x;
 								};
 							} forEach (attachedObjects _QS_v);
-							
+
 						};
 					};
 					uiSleep 0.01;
@@ -3040,7 +3040,7 @@ for '_x' from 0 to 1 step 0 do {
 			_HVT_checkDelay = _timeNow + 90;		//DEBUG, set to 90
 		};
 	};
-	
+
 	if (_timeNow > _vRespawn_checkDelay) then {
 		if (!((missionNamespace getVariable 'QS_v_Monitor') isEqualTo [])) then {
 			{
@@ -3292,7 +3292,7 @@ for '_x' from 0 to 1 step 0 do {
 													if (_isCarrierVehicle isEqualTo 1) then {
 														if (!((str _configCode) isEqualTo '{}')) then {
 															_v call _configCode;
-														};													
+														};
 													};
 												};
 											};
@@ -3499,11 +3499,11 @@ for '_x' from 0 to 1 step 0 do {
 													];
 													deleteVehicle _QS_obj;
 												};
-											};											
-										};		
+											};
+										};
 										if (_QS_instructions isEqualTo 'CUSTOM') then {
 
-										};								
+										};
 										if (_QS_deleteThis) then {
 											if (_QS_attemptRecycle) then {
 												if ([1,0,_QS_obj] call _fn_serverObjectsRecycler) then {
@@ -3826,7 +3826,7 @@ for '_x' from 0 to 1 step 0 do {
 				};
 				_QS_revealLoudPlayers_delay = time + _QS_revealLoudPlayers_timer;
 			};
-		};	
+		};
 		_QS_cleanup_checkDelay = time + _QS_cleanup_delay;
 	};
 
@@ -3940,7 +3940,7 @@ for '_x' from 0 to 1 step 0 do {
 					} else {
 						if (!(_QS_currentRain isEqualTo 0)) then {
 							30 setRain 0;
-						};					
+						};
 					};
 				} else {
 					if (_QS_rainSimulated) then {
@@ -3951,7 +3951,7 @@ for '_x' from 0 to 1 step 0 do {
 					} else {
 						if (!(_QS_currentRain isEqualTo 0)) then {
 							30 setRain 0;
-						};				
+						};
 					};
 				};
 				if (_QS_simulateFog) then {
@@ -4103,7 +4103,7 @@ for '_x' from 0 to 1 step 0 do {
 						};
 						_QS_weatherSave_checkDelay = _timeNow + _QS_weatherSave_delay;
 					};
-				};	
+				};
 			} else {
 				//comment 'Override is TRUE';
 				if (_timeNow > (_QS_simulateEvent_data # 1)) then {
@@ -4129,7 +4129,7 @@ for '_x' from 0 to 1 step 0 do {
 						};
 						if (!(_QS_currentFog isEqualTo ((_QS_simulateEvent_data # 7) # 1))) then {
 							((_QS_simulateEvent_data # 7) # 0) setFog ((_QS_simulateEvent_data # 7) # 1);
-						};	
+						};
 					};
 				};
 			};
@@ -4172,7 +4172,7 @@ for '_x' from 0 to 1 step 0 do {
 		if (_QS_saveDate) then {
 			if (_timeNow > _QS_saveDate_delay) then {
 				if (!(_QS_module_restart_isRestarting)) then {
-					profileNamespace setVariable [(format ['QS_QRF_date_%1',_QS_worldName]),date]; 
+					profileNamespace setVariable [(format ['QS_QRF_date_%1',_QS_worldName]),date];
 				};
 				_QS_saveDate_delay = _timeNow + 600;
 			};
@@ -4284,7 +4284,7 @@ for '_x' from 0 to 1 step 0 do {
 							[1,(missionNamespace getVariable 'QS_AOpos'),250,3] call _fn_aoFires;
 						};
 					};
-				};	
+				};
 				_QS_timeAccelerationManager_checkDelay = _timeNow + _QS_timeAccelerationManager_delay;
 			};
 		};
@@ -4363,7 +4363,7 @@ for '_x' from 0 to 1 step 0 do {
 							_lftarget allowDamage _false;
 							_lftarget hideObjectGlobal _true;
 						};
-						missionNamespace setVariable ['QS_RD_liveFeed_target',_lftarget,_true];					
+						missionNamespace setVariable ['QS_RD_liveFeed_target',_lftarget,_true];
 					};
 				} else {
 					_lfpilot = createVehicle ['Sign_Sphere10cm_F',_QS_nullPos,[],0,'NONE'];
@@ -4444,8 +4444,8 @@ for '_x' from 0 to 1 step 0 do {
 									if (((units (group _unit)) findIf {(alive _x)}) isEqualTo -1) then {
 										deleteGroup (group _unit);
 									};
-								};				
-							
+								};
+
 							};
 							if (_fps >= 12) then {
 								if (_allPlayersCount <= 45) then {
@@ -4749,7 +4749,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_airDefense_checkDelay = _timeNow + _QS_module_airDefense_delay;
 		};
 	};
-	
+
 	if (_QS_module_leaderboard) then {
 		if (_timeNow > _QS_module_leaderboard_checkDelay) then {
 			if (!((missionNamespace getVariable 'QS_leaderboards_session_queue') isEqualTo [])) then {
@@ -4848,7 +4848,7 @@ for '_x' from 0 to 1 step 0 do {
 									],
 									_false
 								];
-							};						
+							};
 						};
 						if (_type isEqualTo 'EARS') then {
 							_QS_leaderboards_ears = (missionNamespace getVariable 'QS_leaderboards') # 3;
@@ -4892,7 +4892,7 @@ for '_x' from 0 to 1 step 0 do {
 									],
 									_false
 								];
-							};					
+							};
 						};
 						if (_type isEqualTo 'TOOTH') then {
 							_QS_leaderboards_teeth = (missionNamespace getVariable 'QS_leaderboards') # 4;
@@ -4936,7 +4936,7 @@ for '_x' from 0 to 1 step 0 do {
 									],
 									_false
 								];
-							};					
+							};
 						};
 						if (_type isEqualTo 'TOWER') then {
 							_QS_leaderboards_tower = (missionNamespace getVariable 'QS_leaderboards') # 5;
@@ -5034,7 +5034,7 @@ for '_x' from 0 to 1 step 0 do {
 						(missionNamespace getVariable 'QS_leaderboards_session_queue') deleteAt _forEachIndex;
 					};
 				} forEach (missionNamespace getVariable 'QS_leaderboards_session_queue');
-			};		
+			};
 			if (_timeNow > _QS_leaderboards_publishCheckDelay) then {
 				missionNamespace setVariable ['QS_leaderboards',(missionNamespace getVariable 'QS_leaderboards'),_true];
 				_QS_leaderboards_publishCheckDelay = _timeNow + _QS_leaderboards_publishDelay;
@@ -5089,7 +5089,7 @@ for '_x' from 0 to 1 step 0 do {
 	};
 
 	/*/===== OPSEC module/*/
-	
+
 	if (_QS_module_opsec) then {
 		if (_timeNow > _QS_module_opsec_checkDelay) then {
 			if (_QS_module_opsec_checkMarkers) then {
@@ -5103,7 +5103,7 @@ for '_x' from 0 to 1 step 0 do {
 										_QS_module_opsec_deleteMarker = _true;
 									};
 								};
-							};		
+							};
 						};
 					};
 					if (!(((markerText _x) select [0,3]) isEqualTo _markerCheck)) then {
@@ -5128,7 +5128,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (_QS_module_opsec_checkVariables) then {
 				{
 					{
-					
+
 					} count (allVariables _x);
 				} forEach [
 					missionNamespace,
@@ -5139,7 +5139,7 @@ for '_x' from 0 to 1 step 0 do {
 			if (_QS_module_opsec_clientHeartbeat) then {
 				if (_timeNow > _QS_module_heartbeat_checkDelay) then {
 					if (!(_allPlayers isEqualTo [])) then {
-						remoteExec ['QS_fnc_clientHeartbeat',-2,_false]; 
+						remoteExec ['QS_fnc_clientHeartbeat',-2,_false];
 					};
 					_QS_module_heartbeat_checkDelay = _timeNow + _QS_module_heartbeat_delay;
 				};
@@ -5147,7 +5147,7 @@ for '_x' from 0 to 1 step 0 do {
 			_QS_module_opsec_checkDelay = _timeNow + _QS_module_opsec_delay;
 		};
 	};
-	
+
 	/*/===== Module Dynamic Simulation/*/
 
 	if (_QS_module_dynSim) then {
@@ -5225,9 +5225,9 @@ for '_x' from 0 to 1 step 0 do {
 			};
 		};
 	};
-	
+
 	/*/===== Emergent Tasks/*/
-	
+
 	if (_QS_module_emergentTasks) then {
 		if (_timeNow > _QS_module_emergentTasks_checkDelay) then {
 			if (!((missionNamespace getVariable ['QS_module_dynamicTasks_add',[]]) isEqualTo [])) then {
@@ -5293,7 +5293,7 @@ for '_x' from 0 to 1 step 0 do {
 									};
 								};
 							};
-						};						
+						};
 						if (_QS_module_emergentTask_instruction isEqualTo 'REMOVE') then {
 							[_QS_module_emergentTask_id,_true] call _fn_deleteTask;
 							_QS_module_emergentTasks_array set [_forEachIndex,_false];
@@ -5305,7 +5305,7 @@ for '_x' from 0 to 1 step 0 do {
 						_QS_module_emergentTasks_array deleteAt _forEachIndex;
 					};
 				} forEach _QS_module_emergentTasks_array;
-				
+
 			};
 			if (_QS_module_emergentTasks_medevac) then {
 				missionNamespace setVariable [
@@ -5320,7 +5320,7 @@ for '_x' from 0 to 1 step 0 do {
 				} else {
 					if (!(missionNamespace getVariable 'QS_dynTask_medevac_inProgress')) then {
 						missionNamespace setVariable ['QS_dynTask_medevac_inProgress',_true,_true];
-					};				
+					};
 				};
 			};
 			_QS_module_emergentTasks_checkDelay = _timeNow + _QS_module_emergentTasks_delay;

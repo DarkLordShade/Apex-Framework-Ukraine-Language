@@ -142,7 +142,7 @@ class Mission
     class Intel
     {
 	briefingName="Invade & Annex: Apex Edition";
-	overviewText="Relaxed, combined-arms coop with infantry focus";
+	overviewText="Розслабляючий CooP з комбінованим озрбоєнням та фокусом на піхотні дії";
 	startWeather=0.29999998;
 	startWind=0.099999994;
 	startWaves=0.099999994;
