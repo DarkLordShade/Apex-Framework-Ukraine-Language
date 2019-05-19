@@ -5,17 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=301;
+		nextID=331;
+	};
+	class MarkerIDProvider
+	{
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={14660.972,21.802685,16724.313};
-		dir[]={0.93568236,-0.24746327,-0.25156555};
-		up[]={0.23898235,0.96889412,-0.064252391};
-		aside[]={-0.25964254,-1.4789111e-007,-0.96571732};
+		pos[]={6949.1475,7.2411137,7356.4736};
+		dir[]={0.70273983,-0.26716551,0.6594305};
+		up[]={0.19483496,0.96364683,0.18282697};
+		aside[]={0.68430495,7.2534021e-007,-0.72924691};
 	};
 };
 binarizationWanted=0;
@@ -23,17 +27,18 @@ addons[]=
 {
 	"A3_Structures_F_Items_Electronics",
 	"A3_Weapons_F_Ammoboxes",
+	"A3_Soft_F_Exp_MRAP_01",
 	"A3_Ui_F",
 	"A3_Air_F_Heli_Light_01",
-	"A3_Characters_F",
-	"A3_Soft_F_MRAP_01",
-	"A3_Props_F_Exp_Military_Camps"
+	"A3_Characters_F_Exp",
+	"A3_Props_F_Exp_Military_Camps",
+	"A3_Characters_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -50,29 +55,29 @@ class AddonsMetaData
 		};
 		class Item2
 		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item4
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item4
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 		class Item5
 		{
-			className="A3_Soft_F";
-			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -83,14 +88,27 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item7
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
-randomSeed=2038443;
+class DynamicSimulation
+{
+	enable=0;
+	saturateByObjectDistance=0;
+};
+randomSeed=5000377;
 class ScenarioData
 {
 	author="Quiksilver";
 	disabledAI=1;
 	respawn=3;
+	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {
@@ -120,22 +138,25 @@ class CustomAttributes
 };
 class Mission
 {
+	assetType="Free";
 	class Intel
 	{
 		briefingName="Invade & Annex: Apex Edition";
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
+		overviewText="Розслабляючий CooP з комбінованим озрбоєнням та фокусом на піхотні дії";
+		startWeather=0.29999998;
+		startWind=0.099999994;
+		startWaves=0.099999994;
+		forecastWeather=0;
+		forecastWind=0.099999994;
+		forecastWaves=0.099999994;
+		forecastLightnings=0.099999994;
 		year=2035;
 		month=6;
-		day=24;
+		day=6;
 		hour=12;
 		minute=0;
+		startFogBase=250;
+		forecastFogBase=250;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
@@ -147,8 +168,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14693.333,18.066072,16719.836};
-				angles[]={0,5.4653912,0};
+				position[]={6968.8911,2.8160722,7381.4702};
+				angles[]={0,4.5350881,0};
 			};
 			side="Empty";
 			flags=4;
@@ -189,8 +210,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14696.213,18.802422,16722.369};
-				angles[]={0,5.4653912,0};
+				position[]={6968.5815,3.5524228,7385.2925};
+				angles[]={0,4.5350881,0};
 			};
 			side="Empty";
 			flags=4;
@@ -250,8 +271,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14694.144,18.802422,16724.135};
-				angles[]={0,5.4653912,0};
+				position[]={6965.9287,3.5524228,7384.688};
+				angles[]={0,4.5350881,0};
 			};
 			side="Empty";
 			flags=4;
@@ -261,7 +282,7 @@ class Mission
 				createAsSimpleObject=1;
 				disableSimulation=1;
 			};
-			id=100;
+			id=104;
 			type="B_supplyCrate_F";
 			class CustomAttributes
 			{
@@ -311,8 +332,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14691.948,18.066072,16721.168};
-				angles[]={0,5.4653912,0};
+				position[]={6966.9956,2.8160722,7381.1548};
+				angles[]={0,4.5350881,0};
 			};
 			side="Empty";
 			flags=4;
@@ -322,7 +343,7 @@ class Mission
 				name="QS_cas_laptop";
 				disableSimulation=1;
 			};
-			id=101;
+			id=106;
 			type="Land_Laptop_unfolded_F";
 			class CustomAttributes
 			{
@@ -350,217 +371,235 @@ class Mission
 		};
 		class Item4
 		{
-			dataType="Marker";
-			position[]={14693.144,17.91,16690.063};
-			name="QS_marker_base_marker";
-			text="Base";
-			type="respawn_unknown";
-			colorName="ColorWEST";
-			alpha=0.5;
-			a=0.5;
-			b=0.5;
-			id=103;
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6963.2124,4.8659458,7396.9453};
+				angles[]={0,5.2726045,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="0 = [ " \n " this, " \n " 30, " \n " false, " \n " {}, " \n " 50, " \n " 500, " \n " -1, " \n " true " \n "] call QS_fnc_registerVehicle;";
+			};
+			id=107;
+			type="B_T_MRAP_01_F";
+			atlOffset=2.3841858e-007;
 		};
 		class Item5
 		{
 			dataType="Marker";
-			position[]={14799.321,17.91,16780.852};
-			name="QS_marker_airbaseDefense";
-			text="   AA";
-			type="b_antiair";
-			colorName="ColorWEST";
-			alpha=0.5;
-			a=0.5;
-			b=0.5;
-			id=104;
-		};
-		class Item6
-		{
-			dataType="Marker";
-			position[]={14800.105,17.91,16773.412};
-			name="QS_marker_airbaseArtillery";
-			text="   Arty";
-			type="b_art";
-			colorName="ColorWEST";
-			alpha=0.5;
-			a=0.5;
-			b=0.5;
-			id=105;
-		};
-		class Item7
-		{
-			dataType="Marker";
-			position[]={14800.146,17.91,16766.074};
-			name="QS_marker_casJet_spawn";
-			text="   CAS";
-			type="respawn_plane";
-			colorName="ColorWEST";
-			alpha=0.5042358;
-			a=0.5;
-			b=0.5;
-			id=106;
-		};
-		class Item8
-		{
-			dataType="Marker";
-			position[]={14801.276,17.91,16690.299};
-			name="QS_marker_crate_area";
-			text="   Crate Area";
-			type="b_support";
-			colorName="ColorWEST";
-			alpha=0.5;
-			a=0.5;
-			b=0.5;
-			id=107;
-		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={14800.24,17.91,16758.262};
-			name="QS_marker_heli_spawn";
-			text="   Heli";
-			type="respawn_air";
-			colorName="ColorWEST";
-			alpha=0.5;
-			a=0.5;
-			b=0.5;
-			id=108;
-		};
-		class Item10
-		{
-			dataType="Marker";
-			position[]={14800.69,17.91,16751.844};
-			name="QS_marker_veh_spawn";
-			text="   Vehicle";
-			type="respawn_armor";
+			position[]={6957.8013,2.6600001,7384.5435};
+			name="QS_marker_base_marker";
+			text="База";
+			type="respawn_unknown";
 			colorName="ColorWEST";
 			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=109;
 		};
-		class Item11
+		class Item6
 		{
 			dataType="Marker";
-			position[]={14800.569,17.91,16745.99};
-			name="QS_marker_boats_1";
-			text="   Boat";
-			type="respawn_naval";
+			position[]={7063.979,2.6600001,7475.333};
+			name="QS_marker_airbaseDefense";
+			text="   ППО";
+			type="b_antiair";
 			colorName="ColorWEST";
-			alpha=0.49576423;
+			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=110;
 		};
-		class Item12
+		class Item7
 		{
 			dataType="Marker";
-			position[]={14801.211,17.91,16738.629};
-			name="QS_marker_side_rewards";
-			text="   Rewards";
-			type="b_unknown";
+			position[]={7064.7632,2.6600001,7467.8931};
+			name="QS_marker_airbaseArtillery";
+			text="   Артилерія";
+			type="b_art";
 			colorName="ColorWEST";
-			alpha=0.5042358;
+			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=111;
 		};
-		class Item13
+		class Item8
 		{
 			dataType="Marker";
-			position[]={14801.123,17.91,16731.916};
-			name="QS_marker_gitmo";
-			text="   Gitmo";
-			type="b_unknown";
+			position[]={7064.8032,2.6600001,7460.5562};
+			name="QS_marker_casJet_spawn";
+			text="   Літаки";
+			type="respawn_plane";
 			colorName="ColorWEST";
 			alpha=0.5042358;
 			a=0.5;
 			b=0.5;
 			id=112;
 		};
-		class Item14
+		class Item9
 		{
 			dataType="Marker";
-			position[]={14801.105,17.91,16725.758};
-			name="QS_marker_medevac_hq";
-			text="   Medevac HQ";
-			type="b_med";
+			position[]={7065.9341,2.6600001,7384.7803};
+			name="QS_marker_crate_area";
+			text="   Вантажна зона";
+			type="b_support";
 			colorName="ColorWEST";
-			alpha=0.49576423;
+			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=113;
 		};
-		class Item15
+		class Item10
 		{
 			dataType="Marker";
-			position[]={14800.988,17.91,16718.105};
-			name="QS_marker_veh_baseservice_01";
-			text="   Vehicle Service";
-			type="b_maint";
+			position[]={7064.8979,2.6600001,7452.7432};
+			name="QS_marker_heli_spawn";
+			text="   Гелікоптери";
+			type="respawn_air";
 			colorName="ColorWEST";
-			alpha=0.49576423;
+			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=114;
 		};
-		class Item16
+		class Item11
 		{
 			dataType="Marker";
-			position[]={14801.163,17.91,16711.537};
-			name="QS_marker_veh_baseservice_02";
-			text="   Heli Service";
-			type="b_maint";
+			position[]={7065.3481,2.6600001,7446.3262};
+			name="QS_marker_veh_spawn";
+			text="   Транспорт";
+			type="respawn_armor";
 			colorName="ColorWEST";
-			alpha=0.49576423;
+			alpha=0.5;
 			a=0.5;
 			b=0.5;
 			id=115;
 		};
-		class Item17
+		class Item12
 		{
 			dataType="Marker";
-			position[]={14801.096,17.91,16703.434};
-			name="QS_marker_veh_baseservice_03";
-			text="   Plane Service";
-			type="b_maint";
+			position[]={7065.2271,2.6600001,7440.4722};
+			name="QS_marker_boats_1";
+			text="   Човни";
+			type="respawn_naval";
 			colorName="ColorWEST";
 			alpha=0.49576423;
 			a=0.5;
 			b=0.5;
 			id=116;
 		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={7065.8691,2.6600001,7433.1099};
+			name="QS_marker_side_rewards";
+			text="   Винагороди";
+			type="b_unknown";
+			colorName="ColorWEST";
+			alpha=0.5042358;
+			a=0.5;
+			b=0.5;
+			id=117;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={7065.7808,2.6600001,7426.397};
+			name="QS_marker_gitmo";
+			text="   В’язниця";
+			type="b_unknown";
+			colorName="ColorWEST";
+			alpha=0.5042358;
+			a=0.5;
+			b=0.5;
+			id=118;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={7065.7632,2.6600001,7420.2388};
+			name="QS_marker_medevac_hq";
+			text="   Шпиталь";
+			type="b_med";
+			colorName="ColorWEST";
+			alpha=0.49576423;
+			a=0.5;
+			b=0.5;
+			id=119;
+		};
+		class Item16
+		{
+			dataType="Marker";
+			position[]={7065.646,2.6600001,7412.5879};
+			name="QS_marker_veh_baseservice_01";
+			text="   Транспортний сервіс";
+			type="b_maint";
+			colorName="ColorWEST";
+			alpha=0.49576423;
+			a=0.5;
+			b=0.5;
+			id=120;
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={7065.8208,2.6600001,7406.019};
+			name="QS_marker_veh_baseservice_02";
+			text="   Сервіс гелікоптерів";
+			type="b_maint";
+			colorName="ColorWEST";
+			alpha=0.49576423;
+			a=0.5;
+			b=0.5;
+			id=121;
+		};
 		class Item18
 		{
 			dataType="Marker";
-			position[]={14801.298,17.91,16696.615};
+			position[]={7065.7539,2.6600001,7397.9141};
+			name="QS_marker_veh_baseservice_03";
+			text="   Сервіс літаків";
+			type="b_maint";
+			colorName="ColorWEST";
+			alpha=0.49576423;
+			a=0.5;
+			b=0.5;
+			id=122;
+		};
+		class Item19
+		{
+			dataType="Marker";
+			position[]={7065.9556,2.6600001,7391.0962};
 			name="QS_marker_veh_inventoryService_01";
-			text="   Inventory";
+			text="   Спорядження";
 			type="b_support";
 			colorName="ColorWEST";
 			alpha=0.5;
 			a=0.5;
 			b=0.5;
-			id=117;
+			id=123;
 		};
-		class Item19
+		class Item20
 		{
 			dataType="Marker";
-			position[]={14802.454,17.91,16664.816};
+			position[]={7067.1118,2.6600001,7359.2983};
 			name="QS_marker_teamspeak";
 			text="   Teamspeak: Leave blank, edit parameters.sqf to change this text";
 			type="hd_dot";
 			colorName="ColorYellow";
 			alpha=0.7499153;
-			id=118;
+			id=124;
 		};
-		class Item20
+		class Item21
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14684.859,19.689144,16713.777};
-				angles[]={0,4.8266287,0};
+				position[]={6968.688,4.4391441,7371.0552};
+				angles[]={0,3.8963253,0};
 			};
 			side="Empty";
 			flags=4;
@@ -568,10 +607,11 @@ class Mission
 			{
 				init="0 = [ " \n " this, " \n " 30, " \n " false, " \n " {}, " \n " 50, " \n " 500, " \n " -1, " \n " false] call QS_fnc_registerVehicle;";
 			};
-			id=119;
+			id=125;
 			type="B_Heli_Light_01_F";
+			atlOffset=-2.3841858e-007;
 		};
-		class Item21
+		class Item22
 		{
 			dataType="Group";
 			side="West";
@@ -583,17 +623,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14677.903,17.911438,16709.236};
-						angles[]={0,6.1653929,0};
+						position[]={6968.2109,2.6614389,7362.7837};
+						angles[]={0,5.2350979,0};
 					};
 					side="West";
-					flags=6;
+					flags=7;
 					class Attributes
 					{
 						init="0 = [ " \n " this, " \n " 60, " \n " false, " \n " {}, " \n " -1, " \n " FALSE " \n "] call QS_fnc_registerUnit;";
 					};
-					id=130;
-					type="B_engineer_F";
+					id=127;
+					type="B_T_Engineer_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -642,17 +682,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14675.236,17.911438,16709.072};
-						angles[]={0,0.13782865,0};
+						position[]={6966.748,2.6614389,7360.5488};
+						angles[]={0,5.4907184,0};
 					};
 					side="West";
-					flags=4;
+					flags=5;
 					class Attributes
 					{
 						init="0 = [ " \n " this, " \n " 60, " \n " false, " \n " {}, " \n " -1, " \n " FALSE " \n "] call QS_fnc_registerUnit;";
 					};
-					id=131;
-					type="B_medic_F";
+					id=128;
+					type="B_T_Medic_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -701,17 +741,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14672.408,17.911438,16709.697};
-						angles[]={0,0.25534168,0};
+						position[]={6964.5571,2.6614389,7358.6538};
+						angles[]={0,5.6082315,0};
 					};
 					side="West";
-					flags=4;
+					flags=5;
 					class Attributes
 					{
 						init="0 = [ " \n " this, " \n " 60, " \n " false, " \n " {}, " \n " -1, " \n " FALSE " \n "] call QS_fnc_registerUnit;";
 					};
-					id=132;
-					type="B_helicrew_F";
+					id=129;
+					type="B_T_Helicrew_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -759,55 +799,54 @@ class Mission
 			class Attributes
 			{
 			};
-			id=120;
-		};
-		class Item22
-		{
-			dataType="Marker";
-			position[]={14646.531,20.068359,14466.357};
-			name="QS_marker_subPosition";
-			text="   Submarine position";
-			type="Empty";
-			alpha=0.5;
-			id=124;
-			atlOffset=66.094986;
+			id=126;
 		};
 		class Item23
 		{
 			dataType="Marker";
-			position[]={14801.733,17.91,16641.99};
-			name="QS_marker_respawn_helipilot";
-			text="   Heli Pilot Respawn";
+			position[]={7513.8599,0,6066.645};
+			name="QS_marker_subPosition";
+			text="   Позиція підводного човна";
 			type="Empty";
-			alpha=0.49576423;
-			id=125;
+			alpha=0.5;
+			angle=91.614227;
+			id=132;
+			atlOffset=25.101099;
 		};
 		class Item24
 		{
 			dataType="Marker";
-			position[]={14800.443,17.900816,16622.814};
-			name="QS_marker_respawn_jetpilot";
-			text="   Jet Pilot Respawn";
+			position[]={7066.3911,2.6600001,7336.4712};
+			name="QS_marker_respawn_helipilot";
+			text="   Відродження Пілотів гелікоптерів";
 			type="Empty";
-			alpha=0.5042358;
-			id=126;
-			atlOffset=-0.0013313293;
+			alpha=0.49576423;
+			id=133;
 		};
 		class Item25
 		{
 			dataType="Marker";
-			position[]={14799.445,17.864382,16604.838};
-			name="QS_marker_respawn_uavoperator";
-			text="   UAV Operator Respawn";
+			position[]={7065.1011,2.6600001,7317.2959};
+			name="QS_marker_respawn_jetpilot";
+			text="   Відродження Пілотів літаків";
 			type="Empty";
-			alpha=0.49576423;
-			id=127;
-			atlOffset=-0.00042915344;
+			alpha=0.5042358;
+			id=134;
 		};
 		class Item26
 		{
 			dataType="Marker";
-			position[]={14801.932,17.91,16678.072};
+			position[]={7064.103,2.6600001,7299.3198};
+			name="QS_marker_respawn_uavoperator";
+			text="   Відродження Операторів БПЛА";
+			type="Empty";
+			alpha=0.49576423;
+			id=135;
+		};
+		class Item27
+		{
+			dataType="Marker";
+			position[]={7066.5889,2.6600001,7372.5532};
 			name="QS_marker_base_atc";
 			text="   ATC";
 			type="b_installation";
@@ -815,12 +854,12 @@ class Mission
 			alpha=0.49576423;
 			a=0.5;
 			b=0.5;
-			id=128;
+			id=131;
 		};
-		class Item27
+		class Item28
 		{
 			dataType="Marker";
-			position[]={14801.756,17.91,16684.045};
+			position[]={7066.4141,2.6600001,7378.5259};
 			name="QS_marker_base_toc";
 			text="   TOC";
 			type="b_hq";
@@ -828,32 +867,15 @@ class Mission
 			alpha=0.5;
 			a=0.5;
 			b=0.5;
-			id=129;
-		};
-		class Item28
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={14702.349,20.115946,16733.637};
-				angles[]={0,6.2028999,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="0 = [ " \n " this, " \n " 30, " \n " false, " \n " {}, " \n " 50, " \n " 500, " \n " -1, " \n " true " \n "] call QS_fnc_registerVehicle;";
-			};
-			id=133;
-			type="B_MRAP_01_F";
+			id=130;
 		};
 		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14690.11,18.953165,16719.104};
-				angles[]={0,5.8221321,0};
+				position[]={6967.936,3.7031653,7377.6621};
+				angles[]={0,4.8551569,0};
 			};
 			side="Empty";
 			flags=4;
@@ -862,7 +884,7 @@ class Mission
 				init="missionNamespace setVariable ['QS_Billboard_02',this,FALSE];";
 				disableSimulation=1;
 			};
-			id=134;
+			id=136;
 			type="Land_TripodScreen_01_large_F";
 			class CustomAttributes
 			{
@@ -891,26 +913,26 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={15451.209,-39.57505,14867.957};
+			position[]={7831.0405,2.019434,5639.1704};
 			name="QS_marker_destroyer_1";
-			text="Destroyer ship position";
+			text="Позиція Есмінця";
 			type="Empty";
 			alpha=0.5;
 			angle=88.549187;
-			id=136;
+			id=142;
 			atlOffset=26.347755;
 		};
 		class Item31
 		{
 			dataType="Marker";
-			position[]={15369.932,-17.892792,14191.984};
+			position[]={7133.2847,6.8069134,5293.5757};
 			name="QS_marker_carrier_1";
-			text="Carrier ship position";
+			text="Позиція Авіаносця";
 			type="Empty";
 			alpha=0.5;
 			angle=102.89074;
-			id=137;
-			atlOffset=36.70335;
+			id=143;
+			atlOffset=34.02446;
 		};
 		class Item32
 		{
@@ -924,17 +946,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.3721,107.90626,25135.678};
+						position[]={7613.2153,3.5814393,14925.664};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=141;
-					type="B_Soldier_F";
+					id=151;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -952,7 +976,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -971,7 +995,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -982,7 +1006,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=140;
+			id=150;
+			atlOffset=4.7683716e-007;
 		};
 		class Item33
 		{
@@ -996,17 +1021,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.3818,106.86328,25135.506};
+						position[]={7615.8926,3.5814393,14927.234};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=143;
-					type="B_Soldier_F";
+					id=153;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1024,7 +1051,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1043,7 +1070,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1054,7 +1081,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=142;
+			id=152;
+			atlOffset=4.7683716e-007;
 		};
 		class Item34
 		{
@@ -1068,17 +1096,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.4131,105.4618,25135.275};
+						position[]={7618.4409,3.5749855,14928.913};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=145;
-					type="B_Soldier_F";
+					id=155;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1096,7 +1126,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1115,7 +1145,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1126,7 +1156,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=144;
+			id=154;
+			atlOffset=4.7683716e-007;
 		};
 		class Item35
 		{
@@ -1140,17 +1171,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8446.2715,104.50176,25135.045};
+						position[]={7620.8042,3.5504823,14930.314};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=147;
-					type="B_Soldier_F";
+					id=157;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1168,7 +1201,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1187,7 +1220,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1198,7 +1231,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=146;
+			id=156;
+			atlOffset=4.7683716e-007;
 		};
 		class Item36
 		{
@@ -1212,17 +1246,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.957,104.23595,25134.701};
+						position[]={7623.5903,3.4965565,14932.067};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=149;
-					type="B_Soldier_F";
+					id=159;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1240,7 +1276,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1259,7 +1295,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1270,7 +1306,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=148;
+			id=158;
+			atlOffset=4.7683716e-007;
 		};
 		class Item37
 		{
@@ -1284,17 +1321,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.5273,104.11825,25134.586};
+						position[]={7615.2939,3.5881519,14922.531};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
+						isPlayer=1;
 						isPlayable=1;
 					};
-					id=151;
-					type="B_Soldier_F";
+					id=161;
+					type="B_T_Soldier_F";
+					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1312,7 +1352,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1331,7 +1371,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1342,7 +1382,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=150;
+			id=160;
+			atlOffset=-7.1525574e-007;
 		};
 		class Item38
 		{
@@ -1356,17 +1397,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8457.0977,104.22832,25134.701};
+						position[]={7618.3301,3.5837681,14924.176};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=153;
-					type="B_Soldier_F";
+					id=163;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1384,7 +1427,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1403,7 +1446,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1414,7 +1457,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=152;
+			id=162;
+			atlOffset=2.3841858e-007;
 		};
 		class Item39
 		{
@@ -1428,17 +1472,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.3799,104.23962,25134.758};
+						position[]={7620.8784,3.5699158,14925.854};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=155;
-					type="B_Soldier_F";
+					id=165;
+					type="B_T_Soldier_F";
+					atlOffset=-1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1456,7 +1502,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1475,7 +1521,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1486,7 +1532,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=154;
+			id=164;
+			atlOffset=-1.9073486e-006;
 		};
 		class Item40
 		{
@@ -1500,17 +1547,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.7197,104.34156,25134.873};
+						position[]={7623.2407,3.5319324,14927.256};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=157;
-					type="B_Soldier_F";
+					id=167;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1528,7 +1577,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1547,7 +1596,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1558,7 +1607,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=156;
+			id=166;
+			atlOffset=2.3841858e-007;
 		};
 		class Item41
 		{
@@ -1572,17 +1622,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.3477,104.43468,25134.701};
+						position[]={7626.0278,3.4191895,14929.009};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=159;
-					type="B_Soldier_F";
+					id=169;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1600,7 +1652,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1619,7 +1671,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1630,7 +1682,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=158;
+			id=168;
+			atlOffset=4.7683716e-007;
 		};
 		class Item42
 		{
@@ -1644,18 +1697,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.3145,108.34268,25131.59};
+						position[]={7611.1157,3.5883751,14928.966};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=161;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=171;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1673,7 +1727,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1692,7 +1746,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1703,8 +1757,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=160;
-			atlOffset=7.6293945e-006;
+			id=170;
+			atlOffset=4.7683716e-007;
 		};
 		class Item43
 		{
@@ -1718,17 +1772,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.3242,107.38206,25131.418};
+						position[]={7613.7925,3.576808,14930.536};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=163;
-					type="B_Soldier_F";
+					id=173;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1746,7 +1802,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1765,7 +1821,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1776,7 +1832,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=162;
+			id=172;
+			atlOffset=4.7683716e-007;
 		};
 		class Item44
 		{
@@ -1790,17 +1847,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.3555,105.97628,25131.188};
+						position[]={7616.3413,3.5629773,14932.215};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=165;
-					type="B_Soldier_F";
+					id=175;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1818,7 +1877,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1837,7 +1896,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1848,7 +1907,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=164;
+			id=174;
+			atlOffset=4.7683716e-007;
 		};
 		class Item45
 		{
@@ -1862,17 +1922,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8446.2139,104.88407,25130.957};
+						position[]={7618.7041,3.5520473,14933.616};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=167;
-					type="B_Soldier_F";
+					id=177;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1890,7 +1952,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1909,7 +1971,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1920,7 +1982,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=166;
+			id=176;
+			atlOffset=4.7683716e-007;
 		};
 		class Item46
 		{
@@ -1934,17 +1997,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.8994,104.57936,25130.613};
+						position[]={7621.4907,3.5395904,14935.369};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=169;
-					type="B_Soldier_F";
+					id=179;
+					type="B_T_Soldier_F";
+					atlOffset=7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1962,7 +2027,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -1981,7 +2046,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -1992,7 +2057,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=168;
+			id=178;
+			atlOffset=7.1525574e-007;
 		};
 		class Item47
 		{
@@ -2006,17 +2072,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.4697,104.40907,25130.498};
+						position[]={7608.8594,3.5889294,14932.91};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=171;
-					type="B_Soldier_F";
+					id=181;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2034,7 +2102,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2053,7 +2121,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2064,7 +2132,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=170;
+			id=180;
+			atlOffset=4.7683716e-007;
 		};
 		class Item48
 		{
@@ -2078,17 +2147,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8457.04,104.5218,25130.613};
+						position[]={7611.5366,3.5636899,14934.48};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=173;
-					type="B_Soldier_F";
+					id=183;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2106,7 +2177,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2125,7 +2196,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2136,7 +2207,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=172;
+			id=182;
+			atlOffset=2.3841858e-007;
 		};
 		class Item49
 		{
@@ -2150,17 +2222,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.3223,104.64848,25130.67};
+						position[]={7614.0854,3.5460415,14936.159};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=175;
-					type="B_Soldier_F";
+					id=185;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2178,7 +2252,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2197,7 +2271,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2208,7 +2282,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=174;
+			id=184;
+			atlOffset=4.7683716e-007;
 		};
 		class Item50
 		{
@@ -2222,17 +2297,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.6621,104.84904,25130.785};
+						position[]={7616.4478,3.5418751,14937.561};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=177;
-					type="B_Soldier_F";
+					id=187;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2250,7 +2327,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2269,7 +2346,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2280,7 +2357,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=176;
+			id=186;
+			atlOffset=4.7683716e-007;
 		};
 		class Item51
 		{
@@ -2294,17 +2372,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.29,104.99707,25130.613};
+						position[]={7619.2349,3.5412805,14939.313};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=179;
-					type="B_Soldier_F";
+					id=189;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2322,7 +2402,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2341,7 +2421,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2352,7 +2432,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=178;
+			id=188;
+			atlOffset=4.7683716e-007;
 		};
 		class Item52
 		{
@@ -2366,18 +2447,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.4297,108.97399,25127.557};
+						position[]={7627.5298,3.3854408,14933.917};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=181;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=211;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2395,7 +2477,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2414,7 +2496,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2425,8 +2507,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=180;
-			atlOffset=7.6293945e-006;
+			id=210;
+			atlOffset=4.7683716e-007;
 		};
 		class Item53
 		{
@@ -2440,18 +2522,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.4395,107.9944,25127.385};
+						position[]={7630.2075,3.309406,14935.487};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=183;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=213;
+					type="B_T_Soldier_F";
+					atlOffset=7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2469,7 +2552,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2488,7 +2571,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2499,8 +2582,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=182;
-			atlOffset=7.6293945e-006;
+			id=212;
+			atlOffset=7.1525574e-007;
 		};
 		class Item54
 		{
@@ -2514,18 +2597,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.4707,106.49982,25127.154};
+						position[]={7632.7559,3.2728381,14937.166};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=185;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=215;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2543,7 +2627,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2562,7 +2646,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2573,8 +2657,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=184;
-			atlOffset=7.6293945e-006;
+			id=214;
+			atlOffset=4.7683716e-007;
 		};
 		class Item55
 		{
@@ -2588,18 +2672,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8446.3291,105.42011,25126.924};
+						position[]={7635.1187,3.2485683,14938.567};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=187;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=217;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2617,7 +2702,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2636,7 +2721,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2647,8 +2732,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=186;
-			atlOffset=7.6293945e-006;
+			id=216;
+			atlOffset=4.7683716e-007;
 		};
 		class Item56
 		{
@@ -2662,17 +2747,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8450.0146,104.90221,25126.58};
+						position[]={7637.9053,3.2489979,14940.32};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=189;
-					type="B_Soldier_F";
+					id=219;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2690,7 +2777,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2709,7 +2796,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2720,7 +2807,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=188;
+			id=218;
+			atlOffset=4.7683716e-007;
 		};
 		class Item57
 		{
@@ -2734,18 +2822,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.585,104.67662,25126.465};
+						position[]={7629.9673,3.2138572,14930.858};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=191;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=221;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2763,7 +2852,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2782,7 +2871,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2793,8 +2882,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=190;
-			atlOffset=7.6293945e-006;
+			id=220;
+			atlOffset=2.3841858e-007;
 		};
 		class Item58
 		{
@@ -2808,18 +2897,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8457.1553,104.79282,25126.58};
+						position[]={7632.644,3.1208634,14932.429};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=193;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=223;
+					type="B_T_Soldier_F";
+					atlOffset=7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2837,7 +2927,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2856,7 +2946,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2867,8 +2957,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=192;
-			atlOffset=7.6293945e-006;
+			id=222;
+			atlOffset=7.1525574e-007;
 		};
 		class Item59
 		{
@@ -2882,18 +2972,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.4375,104.92879,25126.637};
+						position[]={7635.1929,3.1079237,14934.107};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=195;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=225;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2911,7 +3002,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -2930,7 +3021,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -2941,8 +3032,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=194;
-			atlOffset=7.6293945e-006;
+			id=224;
+			atlOffset=4.7683716e-007;
 		};
 		class Item60
 		{
@@ -2956,18 +3047,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.7773,105.25063,25126.752};
+						position[]={7637.5557,3.1488903,14935.509};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=197;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=227;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2985,7 +3077,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3004,7 +3096,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3015,8 +3107,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=196;
-			atlOffset=7.6293945e-006;
+			id=226;
+			atlOffset=2.3841858e-007;
 		};
 		class Item61
 		{
@@ -3030,18 +3122,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.4053,105.52817,25126.58};
+						position[]={7640.3423,3.186233,14937.262};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=199;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=229;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3059,7 +3152,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3078,7 +3171,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3089,8 +3182,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=198;
-			atlOffset=7.6293945e-006;
+			id=228;
+			atlOffset=4.7683716e-007;
 		};
 		class Item62
 		{
@@ -3104,18 +3197,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.2568,109.69395,25123.41};
+						position[]={7625.4302,3.4841738,14937.219};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=201;
-					type="B_Soldier_F";
-					atlOffset=2.2888184e-005;
+					id=231;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3133,7 +3227,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3152,7 +3246,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3163,8 +3257,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=200;
-			atlOffset=2.2888184e-005;
+			id=230;
+			atlOffset=4.7683716e-007;
 		};
 		class Item63
 		{
@@ -3178,18 +3272,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.2666,108.76282,25123.238};
+						position[]={7628.1074,3.4170058,14938.789};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=203;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=233;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3207,7 +3302,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3226,7 +3321,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3237,8 +3332,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=202;
-			atlOffset=1.5258789e-005;
+			id=232;
+			atlOffset=4.7683716e-007;
 		};
 		class Item64
 		{
@@ -3252,18 +3347,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.2979,107.26744,25123.008};
+						position[]={7630.6558,3.3589942,14940.468};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=205;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=235;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3281,7 +3377,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3300,7 +3396,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3311,8 +3407,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=204;
-			atlOffset=1.5258789e-005;
+			id=234;
+			atlOffset=4.7683716e-007;
 		};
 		class Item65
 		{
@@ -3326,18 +3422,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8446.1563,106.00233,25122.777};
+						position[]={7633.019,3.3038528,14941.869};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=207;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=237;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3355,7 +3452,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3374,7 +3471,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3385,8 +3482,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=206;
-			atlOffset=1.5258789e-005;
+			id=236;
+			atlOffset=4.7683716e-007;
 		};
 		class Item66
 		{
@@ -3400,17 +3497,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.8418,105.36922,25122.434};
+						position[]={7635.8052,3.2571425,14943.622};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=209;
-					type="B_Soldier_F";
+					id=239;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3428,7 +3527,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3447,7 +3546,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3458,7 +3557,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=208;
+			id=238;
+			atlOffset=4.7683716e-007;
 		};
 		class Item67
 		{
@@ -3472,18 +3572,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.4121,104.97796,25122.318};
+						position[]={7623.1743,3.4947963,14941.163};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=211;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=241;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3501,7 +3602,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3520,7 +3621,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3531,8 +3632,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=210;
-			atlOffset=1.5258789e-005;
+			id=240;
+			atlOffset=4.7683716e-007;
 		};
 		class Item68
 		{
@@ -3546,18 +3647,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8456.9824,105.04385,25122.434};
+						position[]={7625.8511,3.4160731,14942.733};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=213;
-					type="B_Soldier_F";
-					atlOffset=2.2888184e-005;
+					id=243;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3575,7 +3677,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3594,7 +3696,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3605,8 +3707,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=212;
-			atlOffset=2.2888184e-005;
+			id=242;
+			atlOffset=4.7683716e-007;
 		};
 		class Item69
 		{
@@ -3620,18 +3722,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.2646,105.18717,25122.49};
+						position[]={7628.3999,3.3408608,14944.412};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=215;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=245;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3649,7 +3752,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3668,7 +3771,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3679,8 +3782,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=214;
-			atlOffset=1.5258789e-005;
+			id=244;
+			atlOffset=4.7683716e-007;
 		};
 		class Item70
 		{
@@ -3694,18 +3797,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.6045,105.64052,25122.605};
+						position[]={7630.7627,3.2595837,14945.813};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=217;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=247;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3723,7 +3827,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3742,7 +3846,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3753,8 +3857,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=216;
-			atlOffset=1.5258789e-005;
+			id=246;
+			atlOffset=4.7683716e-007;
 		};
 		class Item71
 		{
@@ -3768,18 +3872,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.2324,106.01907,25122.434};
+						position[]={7633.5493,3.188246,14947.566};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=219;
-					type="B_Soldier_F";
-					atlOffset=1.5258789e-005;
+					id=249;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3797,7 +3902,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3816,7 +3921,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3827,8 +3932,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=218;
-			atlOffset=1.5258789e-005;
+			id=248;
+			atlOffset=4.7683716e-007;
 		};
 		class Item72
 		{
@@ -3842,17 +3947,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.1436,110.61093,25118.904};
+						position[]={7604.4478,3.6285341,14939.231};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=221;
-					type="B_Soldier_F";
+					id=251;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3870,7 +3977,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3889,7 +3996,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3900,7 +4007,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=220;
+			id=250;
+			atlOffset=4.7683716e-007;
 		};
 		class Item73
 		{
@@ -3914,17 +4022,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.1533,109.61752,25118.732};
+						position[]={7607.1245,3.5263588,14940.802};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=223;
-					type="B_Soldier_F";
+					id=253;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3942,7 +4052,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -3961,7 +4071,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -3972,7 +4082,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=222;
+			id=252;
+			atlOffset=4.7683716e-007;
 		};
 		class Item74
 		{
@@ -3986,17 +4097,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.1846,108.11111,25118.502};
+						position[]={7609.6733,3.4351845,14942.48};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=225;
-					type="B_Soldier_F";
+					id=255;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4014,7 +4127,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4033,7 +4146,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4044,7 +4157,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=224;
+			id=254;
+			atlOffset=4.7683716e-007;
 		};
 		class Item75
 		{
@@ -4058,17 +4172,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8446.043,106.82259,25118.271};
+						position[]={7612.0361,3.3972647,14943.882};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=227;
-					type="B_Soldier_F";
+					id=257;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4086,7 +4202,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4105,7 +4221,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4116,7 +4232,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=226;
+			id=256;
+			atlOffset=4.7683716e-007;
 		};
 		class Item76
 		{
@@ -4130,17 +4247,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.7285,105.99354,25117.928};
+						position[]={7614.8228,3.3297341,14945.635};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=229;
-					type="B_Soldier_F";
+					id=259;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4158,7 +4277,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4177,7 +4296,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4188,7 +4307,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=228;
+			id=258;
+			atlOffset=4.7683716e-007;
 		};
 		class Item77
 		{
@@ -4202,17 +4322,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.2988,105.37357,25117.813};
+						position[]={7606.8843,3.6119077,14936.173};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=231;
-					type="B_Soldier_F";
+					id=261;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4230,7 +4352,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4249,7 +4371,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4260,7 +4382,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=230;
+			id=260;
+			atlOffset=2.3841858e-007;
 		};
 		class Item78
 		{
@@ -4274,17 +4397,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8456.8691,105.38722,25117.928};
+						position[]={7609.562,3.5418384,14937.743};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=233;
-					type="B_Soldier_F";
+					id=263;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4302,7 +4427,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4321,7 +4446,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4332,7 +4457,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=232;
+			id=262;
+			atlOffset=4.7683716e-007;
 		};
 		class Item79
 		{
@@ -4346,17 +4472,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.1514,105.43941,25117.984};
+						position[]={7612.1104,3.5018766,14939.422};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=235;
-					type="B_Soldier_F";
+					id=265;
+					type="B_T_Soldier_F";
+					atlOffset=7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4374,7 +4502,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4393,7 +4521,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4404,7 +4532,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=234;
+			id=264;
+			atlOffset=7.1525574e-007;
 		};
 		class Item80
 		{
@@ -4418,17 +4547,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.4912,105.96252,25118.1};
+						position[]={7614.4731,3.4886379,14940.823};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=237;
-					type="B_Soldier_F";
+					id=267;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4446,7 +4577,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4465,7 +4596,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4476,7 +4607,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=236;
+			id=266;
+			atlOffset=4.7683716e-007;
 		};
 		class Item81
 		{
@@ -4490,17 +4622,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.1191,106.54826,25117.928};
+						position[]={7617.2598,3.4661832,14942.576};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=239;
-					type="B_Soldier_F";
+					id=269;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4518,7 +4652,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4537,7 +4671,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4548,7 +4682,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=238;
+			id=268;
+			atlOffset=4.7683716e-007;
 		};
 		class Item82
 		{
@@ -4562,17 +4697,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.0283,110.89004,25114.756};
+						position[]={7602.3477,3.5864966,14942.533};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=241;
-					type="B_Soldier_F";
+					id=271;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4590,7 +4727,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4609,7 +4746,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4620,7 +4757,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=240;
+			id=270;
+			atlOffset=4.7683716e-007;
 		};
 		class Item83
 		{
@@ -4634,18 +4772,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.0381,109.89585,25114.584};
+						position[]={7605.0249,3.4622035,14944.104};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=243;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=273;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4663,7 +4802,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4682,7 +4821,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4693,8 +4832,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=242;
-			atlOffset=7.6293945e-006;
+			id=272;
+			atlOffset=4.7683716e-007;
 		};
 		class Item84
 		{
@@ -4708,17 +4847,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.0693,108.58666,25114.354};
+						position[]={7607.5737,3.3135097,14945.782};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=245;
-					type="B_Soldier_F";
+					id=275;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4736,7 +4877,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4755,7 +4896,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4766,7 +4907,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=244;
+			id=274;
+			atlOffset=4.7683716e-007;
 		};
 		class Item85
 		{
@@ -4780,17 +4922,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8445.9277,107.23624,25114.123};
+						position[]={7609.936,3.2321377,14947.184};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=247;
-					type="B_Soldier_F";
+					id=277;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4808,7 +4952,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4827,7 +4971,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4838,7 +4982,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=246;
+			id=276;
+			atlOffset=4.7683716e-007;
 		};
 		class Item86
 		{
@@ -4852,17 +4997,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.6133,106.31429,25113.779};
+						position[]={7612.7231,3.1147013,14948.937};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=249;
-					type="B_Soldier_F";
+					id=279;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4880,7 +5027,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4899,7 +5046,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4910,7 +5057,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=248;
+			id=278;
+			atlOffset=4.7683716e-007;
 		};
 		class Item87
 		{
@@ -4924,17 +5072,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.1836,105.6264,25113.664};
+						position[]={7600.0908,2.9843099,14946.478};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=251;
-					type="B_Soldier_F";
+					id=281;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4952,7 +5101,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -4971,7 +5120,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -4982,7 +5131,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=250;
+			id=280;
 		};
 		class Item88
 		{
@@ -4996,17 +5145,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8456.7539,105.63094,25113.779};
+						position[]={7602.769,2.9278731,14948.048};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=253;
-					type="B_Soldier_F";
+					id=283;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5024,7 +5174,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5043,7 +5193,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5054,7 +5204,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=252;
+			id=282;
 		};
 		class Item89
 		{
@@ -5068,17 +5218,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.0361,105.65633,25113.836};
+						position[]={7605.3169,3.0506625,14949.727};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=255;
-					type="B_Soldier_F";
+					id=285;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5096,7 +5247,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5115,7 +5266,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5126,7 +5277,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=254;
+			id=284;
 		};
 		class Item90
 		{
@@ -5140,17 +5291,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.376,106.2822,25113.951};
+						position[]={7607.6802,2.9318268,14951.128};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=257;
-					type="B_Soldier_F";
+					id=287;
+					type="B_T_Soldier_F";
+					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5168,7 +5321,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5187,7 +5340,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5198,7 +5351,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=256;
+			id=286;
+			atlOffset=-4.7683716e-007;
 		};
 		class Item91
 		{
@@ -5212,17 +5366,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.0039,106.87959,25113.779};
+						position[]={7610.4668,2.7783616,14952.881};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=259;
-					type="B_Soldier_F";
+					id=289;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5240,7 +5395,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5259,7 +5414,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5270,7 +5425,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=258;
+			id=288;
 		};
 		class Item92
 		{
@@ -5284,18 +5439,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.0293,110.64436,25110.553};
+						position[]={7618.0532,3.2605166,14947.094};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=261;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=291;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5313,7 +5469,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5332,7 +5488,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5343,8 +5499,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=260;
-			atlOffset=7.6293945e-006;
+			id=290;
+			atlOffset=4.7683716e-007;
 		};
 		class Item93
 		{
@@ -5358,18 +5514,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.0391,109.85636,25110.381};
+						position[]={7620.731,3.1502795,14948.664};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=263;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=293;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5387,7 +5544,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5406,7 +5563,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5417,8 +5574,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=262;
-			atlOffset=7.6293945e-006;
+			id=292;
+			atlOffset=4.7683716e-007;
 		};
 		class Item94
 		{
@@ -5432,18 +5589,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.0703,108.67176,25110.15};
+						position[]={7623.2793,3.0277505,14950.343};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=265;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=295;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5461,7 +5619,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5480,7 +5638,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5491,8 +5649,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=264;
-			atlOffset=7.6293945e-006;
+			id=294;
+			atlOffset=4.7683716e-007;
 		};
 		class Item95
 		{
@@ -5506,17 +5664,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8445.9287,107.5722,25109.92};
+						position[]={7625.6421,2.9386098,14951.744};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=267;
-					type="B_Soldier_F";
+					id=297;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5534,7 +5694,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5553,7 +5713,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5564,7 +5724,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=266;
+			id=296;
+			atlOffset=4.7683716e-007;
 		};
 		class Item96
 		{
@@ -5578,18 +5739,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.6143,106.61707,25109.576};
+						position[]={7628.4287,2.818063,14953.497};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=269;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=299;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5607,7 +5769,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5626,7 +5788,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5637,8 +5799,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=268;
-			atlOffset=7.6293945e-006;
+			id=298;
+			atlOffset=4.7683716e-007;
 		};
 		class Item97
 		{
@@ -5652,17 +5814,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.1846,105.88323,25109.461};
+						position[]={7620.4907,3.4262221,14944.035};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=271;
-					type="B_Soldier_F";
+					id=301;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5680,7 +5844,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5699,7 +5863,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5710,7 +5874,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=270;
+			id=300;
+			atlOffset=4.7683716e-007;
 		};
 		class Item98
 		{
@@ -5724,18 +5889,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8456.7549,105.88493,25109.576};
+						position[]={7623.1675,3.331471,14945.605};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=273;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=303;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5753,7 +5919,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5772,7 +5938,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5783,8 +5949,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=272;
-			atlOffset=7.6293945e-006;
+			id=302;
+			atlOffset=2.3841858e-007;
 		};
 		class Item99
 		{
@@ -5798,18 +5964,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.0371,105.89459,25109.633};
+						position[]={7625.7163,3.2374845,14947.284};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=275;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=305;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5827,7 +5994,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5846,7 +6013,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5857,8 +6024,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=274;
-			atlOffset=7.6293945e-006;
+			id=304;
+			atlOffset=4.7683716e-007;
 		};
 		class Item100
 		{
@@ -5872,18 +6039,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.377,106.50251,25109.748};
+						position[]={7628.0791,3.1486635,14948.686};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=277;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=307;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5901,7 +6069,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5920,7 +6088,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -5931,8 +6099,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=276;
-			atlOffset=7.6293945e-006;
+			id=306;
+			atlOffset=4.7683716e-007;
 		};
 		class Item101
 		{
@@ -5946,17 +6114,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.0049,107.19035,25109.576};
+						position[]={7630.8657,3.0463135,14950.438};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=279;
-					type="B_Soldier_F";
+					id=309;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5974,7 +6144,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -5993,7 +6163,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6004,7 +6174,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=278;
+			id=308;
+			atlOffset=4.7683716e-007;
 		};
 		class Item102
 		{
@@ -6018,17 +6189,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8433.0859,109.9447,25105.771};
+						position[]={7615.9536,3.0037291,14950.396};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=281;
-					type="B_Soldier_F";
+					id=311;
+					type="B_T_Soldier_F";
+					atlOffset=7.3432922e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6046,7 +6219,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6065,7 +6238,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6076,7 +6249,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=280;
+			id=310;
+			atlOffset=7.3432922e-005;
 		};
 		class Item103
 		{
@@ -6090,17 +6264,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8438.0957,109.2887,25105.6};
+						position[]={7618.6309,2.8755825,14951.966};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=283;
-					type="B_Soldier_F";
+					id=313;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6118,7 +6294,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6137,7 +6313,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6148,7 +6324,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=282;
+			id=312;
+			atlOffset=4.7683716e-007;
 		};
 		class Item104
 		{
@@ -6162,17 +6339,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8442.127,108.46187,25105.369};
+						position[]={7621.1792,2.7350647,14953.645};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=285;
-					type="B_Soldier_F";
+					id=315;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6190,7 +6369,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6209,7 +6388,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6220,7 +6399,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=284;
+			id=314;
+			atlOffset=4.7683716e-007;
 		};
 		class Item105
 		{
@@ -6234,18 +6414,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8445.9854,107.43227,25105.139};
+						position[]={7623.5425,2.6394668,14955.046};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=287;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=317;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6263,7 +6444,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6282,7 +6463,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6293,8 +6474,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=286;
-			atlOffset=7.6293945e-006;
+			id=316;
+			atlOffset=4.7683716e-007;
 		};
 		class Item106
 		{
@@ -6308,17 +6489,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8449.6709,106.73554,25104.795};
+						position[]={7626.3286,2.5202842,14956.799};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=289;
-					type="B_Soldier_F";
+					id=319;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6336,7 +6519,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6355,7 +6538,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6366,7 +6549,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=288;
+			id=318;
+			atlOffset=2.3841858e-007;
 		};
 		class Item107
 		{
@@ -6380,18 +6564,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8453.2412,106.06667,25104.68};
+						position[]={7613.6982,2.6476622,14954.34};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=291;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=321;
+					type="B_T_Soldier_F";
+					atlOffset=2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6409,7 +6594,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6428,7 +6613,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6439,8 +6624,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=290;
-			atlOffset=7.6293945e-006;
+			id=320;
+			atlOffset=2.3841858e-007;
 		};
 		class Item108
 		{
@@ -6454,17 +6639,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8456.8115,106.18137,25104.795};
+						position[]={7616.375,2.5062947,14955.91};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=293;
-					type="B_Soldier_F";
+					id=323;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6482,7 +6668,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6501,7 +6687,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6512,7 +6698,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=292;
+			id=322;
 		};
 		class Item109
 		{
@@ -6526,18 +6712,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8460.0938,106.22689,25104.852};
+						position[]={7618.9229,2.368304,14957.589};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=295;
-					type="B_Soldier_F";
-					atlOffset=7.6293945e-006;
+					id=325;
+					type="B_T_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6555,7 +6741,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6574,7 +6760,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6585,8 +6771,7 @@ class Mission
 			class Attributes
 			{
 			};
-			id=294;
-			atlOffset=7.6293945e-006;
+			id=324;
 		};
 		class Item110
 		{
@@ -6600,17 +6785,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8463.4336,106.64208,25104.967};
+						position[]={7621.2861,2.2598524,14958.99};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=297;
-					type="B_Soldier_F";
+					id=327;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6628,7 +6815,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6647,7 +6834,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6658,7 +6845,8 @@ class Mission
 			class Attributes
 			{
 			};
-			id=296;
+			id=326;
+			atlOffset=4.7683716e-007;
 		};
 		class Item111
 		{
@@ -6672,18 +6860,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8467.0615,107.22661,25104.795};
+						position[]={7624.0728,2.1467202,14960.743};
+						angles[]={0,2.5232923,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Select role ingame";
+						description="Оберiть роль у грi";
 						isPlayable=1;
 					};
-					id=299;
-					type="B_Soldier_F";
-					atlOffset=-7.6293945e-006;
+					id=329;
+					type="B_T_Soldier_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -6701,7 +6890,7 @@ class Mission
 											"STRING"
 										};
 									};
-									value="Male11ENG";
+									value="Male06ENG";
 								};
 							};
 						};
@@ -6720,7 +6909,7 @@ class Mission
 											"SCALAR"
 										};
 									};
-									value=0.97000003;
+									value=1.02;
 								};
 							};
 						};
@@ -6731,20 +6920,20 @@ class Mission
 			class Attributes
 			{
 			};
-			id=298;
-			atlOffset=-7.6293945e-006;
+			id=328;
+			atlOffset=4.7683716e-007;
 		};
 		class Item112
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8495.002,106.39884,25124.461};
-				angles[]={0.066569164,0,6.127131};
+				position[]={7579.6309,1.4014819,14943.872};
+				angles[]={6.2778587,0,0.0080009829};
 			};
 			name="headlessclient";
 			isPlayable=1;
-			id=300;
+			id=330;
 			type="HeadlessClient_F";
 		};
 	};
