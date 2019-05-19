@@ -7,7 +7,7 @@ Author:
 Last Modified:
 
 	12/05/2019 A3 1.92 by Quiksilver
-	
+
 Description:
 
 	Client Core
@@ -555,7 +555,7 @@ _QS_action_medevac_models = [
 ];
 /*/===== Sensor Target/*/
 _QS_action_sensorTarget = nil;
-_QS_action_sensorTarget_array = ['Сповiстити про цiль',{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractSensorTarget')},nil,60,TRUE,TRUE,'','TRUE',-1,FALSE,''];
+_QS_action_sensorTarget_array = ['Повiдомити про цiль',{_this spawn (missionNamespace getVariable 'QS_fnc_clientInteractSensorTarget')},nil,60,TRUE,TRUE,'','TRUE',-1,FALSE,''];
 _QS_interaction_sensorTarget = FALSE;
 /*/===== Attach Explosive (underwater)/*/
 _QS_action_attachExp = nil;
@@ -1711,10 +1711,10 @@ for 'x' from 0 to 1 step 0 do {
 					_QS_fpsLastPull = round diag_fps;
 					_QS_fpsCheckDelay = _timeNow + _QS_fpsDelay;
 				};
-				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlSetToolTip 'FPS, Time to server restart (estimated)';
+				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlSetToolTip 'FPS, Час для перезапуску сервера (приблизно)';
 				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlSetText format ['FPS: %1 | Restart: %2h',_QS_fpsLastPull,([(0 max (estimatedEndServerTime - _serverTime) min 36000),'HH:MM'] call _fn_secondsToString)];
-				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetToolTip 'Score, Rating, Health, Equipment';
-				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetText format ['Score: %1 | Rating: %2 | Hp: %3 | Load: %4/100',(score _QS_player),(rating _QS_player),_QS_clientHp,_QS_clientMass];
+				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetToolTip 'Рахунок, Рейтинг, Здоров’я, Екіпіровка';
+				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlSetText format ['Рахунок: %1 | Рейтинг: %2 | Hp: %3 | Вага: %4/100',(score _QS_player),(rating _QS_player),_QS_clientHp,_QS_clientMass];
 				((findDisplay _mainMenuIDD) displayCtrl 1001) ctrlCommit 0;
 				((findDisplay _mainMenuIDD) displayCtrl 1002) ctrlCommit 0;
 			};
@@ -1728,7 +1728,7 @@ for 'x' from 0 to 1 step 0 do {
 			if (isNull (findDisplay _viewMenuIDD)) then {
 				_viewMenuOpen = _false;
 			} else {
-				((findDisplay _viewMenuIDD) displayCtrl 1001) ctrlSetToolTip 'FPS, Time to server restart (estimated)';
+				((findDisplay _viewMenuIDD) displayCtrl 1001) ctrlSetToolTip 'FPS, Час для перезапуску сервера (приблизно)';
 				((findDisplay _viewMenuIDD) displayCtrl 1001) ctrlSetText format ['FPS: %1 | Restart: %2h',_QS_fpsLastPull,([(0 max (estimatedEndServerTime - _serverTime) min 36000),'HH:MM'] call _fn_secondsToString)];
 			};
 		};
