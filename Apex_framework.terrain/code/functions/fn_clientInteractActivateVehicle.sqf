@@ -3,13 +3,13 @@ File: fn_clientInteractActivateVehicle.sqf
 Author:
 
 	Quiksilver
-	
+
 Last modified:
 
-	23/10/2017 A3 1.76 by Quiksilver
+	6/05/2019 A3 1.92 by Quiksilver
 	
 Description:
-	
+
 	Activate Vehicle
 __________________________________________________________________________/*/
 
@@ -23,8 +23,8 @@ _QS_tto = player getVariable ['QS_tto',0];
 if (_QS_tto > 3) exitWith {
 	50 cutText ['ROBOCOP: Доступ закрито. Будь ласка, зачекайте рестарту або попросiть вибачення в персоналу','PLAIN DOWN',1];
 };
-if ((_cursorObject isKindOf 'Plane') && (!(player getUnitTrait 'QS_trait_pilot'))) exitWith {
-	50 cutText ['Тiльки пiлоти можуть активувати лiтаки та гелiкоптери','PLAIN DOWN',0.5];
+if ((_cursorObject isKindOf 'Plane') && (!(player getUnitTrait 'QS_trait_pilot')) && (!(player getUnitTrait 'QS_trait_fighterPilot'))) exitWith {
+	50 cutText ['Тiльки пiлоти можуть активувати лiтаки та конвертоплани','PLAIN DOWN',0.5];
 };
 if (
 	((missionNamespace getVariable ['QS_missionConfig_armor',1]) isEqualTo 0) &&

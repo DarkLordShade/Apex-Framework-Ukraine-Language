@@ -144,7 +144,7 @@ ___________________________________________/*/
 	'Продовжити другоряднi мiсiї',
 	'Suspend primary missions',
 	'Призупинити основнi мiсiї',
-	'Resume primary missions',
+	'Resume primary missions',	
 	'Продовжити основнi мiсiї',
 	'Cycle primary mission',
 	'Основну мiсiю в цикл',
